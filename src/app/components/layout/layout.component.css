@@ -3,7 +3,7 @@
 }
 
 .sidebar{
-    @apply  w-[240px] h-screen bg-[#0E212E]
+    @apply  w-[240px] h-screen 
 }
 
 .main-container{
