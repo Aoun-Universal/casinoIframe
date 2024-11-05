@@ -1,0 +1,11 @@
+.sidebar-wrapper{
+    @apply  w-[240px] h-screen bg-[#0f212e]
+
+}
+.sidebar-icon{
+
+}
+.sidebar-header{
+
+    @apply h-[60px] flex justify-center items-center w-[100%] p-[0px_20px]
+}
