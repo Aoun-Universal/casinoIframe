@@ -9,16 +9,21 @@ import { SidebarComponent } from '../../shared/sidebar/sidebar.component';
   standalone: true,
   imports: [ContentComponent,SidebarComponent],
   templateUrl: './layout.component.html',
-  styleUrl: './layout.component.css'
+  styleUrls: ['./layout.component.css'] // fixed typo here: styleUrls instead of styleUrl
 })
 export class LayoutComponent {
   currentRoute: any;
-  // getCurrentRoutePath$ = this.conConditionhandlerServicedtion.getCurrentRoutePath();
-  constructor(private conConditionhandlerServicedtion: ConditionHandlerService, public router: Router) {
-    // this.getCurrentRoutePath$.subscribe((resp: any) => {
-    //   this.currentRoute = resp
+  getCurrentRoutePath$: any;
 
-    // })
+  constructor(
+    private conConditionhandlerServicedtion: ConditionHandlerService,
+    public router: Router
+  ) {
+    // Initialize the observable after the service is available
+    this.getCurrentRoutePath$ = this.conConditionhandlerServicedtion.getCurrentRoutePath();
+
+    this.getCurrentRoutePath$.subscribe((resp: any) => {
+      this.currentRoute = resp;
+    });
   }
-  
 }
