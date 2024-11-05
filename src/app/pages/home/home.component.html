@@ -1,1 +1,20 @@
-<p>home works!</p>
+<!-- Home starts -->
+<section>
+  <!-- Hero Slider -->
+  <!-- <ngx-slick-carousel class="carousel" [config]="slideConfig">
+      <div ngxSlickItem *ngFor="let item of carouselItems" class="slide">
+        <img [src]="item.img" alt="Slide image" />
+      </div>
+    </ngx-slick-carousel> -->
+
+
+  <ngx-slick-carousel class="carousel" #slickModal="slick-carousel" [config]="slideConfig">
+    @for (slide of slides; track slide.img) {
+    <div ngxSlickItem class="slide">
+      <img src="{{ slide.img }}" alt="" width="100%">
+    </div>
+    }
+  </ngx-slick-carousel>
+
+
+</section>
