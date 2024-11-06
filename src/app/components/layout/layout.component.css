@@ -14,6 +14,7 @@
   @apply lg:w-[calc(100%-240px)] w-full;
 }
 
-.page-wrapper {
-  @apply h-[calc(100vh-85px)] mt-[25px]   overflow-y-auto;
+.page-wrapper{
+    @apply h-[calc(100vh-85px)] pt-[25px] bg-[rgb(26,44,56)]
 }
+

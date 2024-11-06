@@ -1,0 +1,28 @@
+
+section{
+    @apply max-w-[1200px] m-[0_auto] relative max-[1680px]:p-[0px_30px]
+}
+
+.carousel{
+    @apply w-full 
+}
+
+.slide{
+    @apply mr-[31px] rounded-[10px]
+}
+
+.slide img{
+    @apply max-w-[357.667px] w-[357.667px]
+}
+
+
+.search-wrap{
+    @apply relative flex flex-col justify-end touch-pan-x mt-6
+}
+
+.search-wrap-input{
+    @apply w-full text-white bg-[#0f212e] shadow-[0_1px_3px_0_rgba(0,0,0,.2),0_1px_2px_0_rgba(0,0,0,.12)]  border-[2px] border-solid border-[#2f4553];
+
+    
+}
+
