@@ -1,0 +1,6 @@
+.foot{
+    @apply py-8 bg-gray-800
+}
+.footer-content{
+    @apply w-full m-auto grid gap-6 md:gap-8
+}
