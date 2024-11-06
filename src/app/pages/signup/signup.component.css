@@ -15,7 +15,7 @@
 }
 
 .hero-heading {
-  @apply font-[700]  text-left block text-[3.25rem] leading-[120%] text-white;
+  @apply font-[700]  text-left block text-[3.25rem] max-md:text-[2rem] max-md:text-center  leading-[120%] text-white;
 }
 
 .signup-btn {
@@ -23,7 +23,7 @@
 }
 
 .icons-container {
-  @apply h-full w-full flex flex-col justify-end md:items-start;
+  @apply h-full w-full flex flex-col justify-end md:items-start max-md:items-center;
 }
 
 .or-sign-up {
@@ -34,7 +34,11 @@
   @apply flex gap-[.5rem] items-center;
 }
 .icon-btn {
-  @apply inline-flex relative items-center gap-2 justify-center rounded-sm font-semibold whitespace-nowrap bg-[rgba(47,69,83)] hover:bg-[rgba(85,112,134)] transition disabled:pointer-events-none disabled:opacity-50 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 active:scale-[0.98]  text-white  focus-visible:outline-white text-sm leading-none shadow-md py-[0.8125rem] px-[1rem];
+  @apply inline-flex relative items-center gap-2 justify-center rounded-sm font-semibold whitespace-nowrap bg-[rgba(47,69,83)] hover:bg-[rgba(85,112,134)] transition disabled:pointer-events-none disabled:opacity-50 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 active:scale-[0.98]  text-white  focus-visible:outline-white text-sm leading-none shadow-md py-[0.8125rem] px-[1rem] lg:p-3;
+}
+
+.icon-btn img {
+  @apply h-[20px] w-[20px];
 }
 
 .hero-img-container {
@@ -76,3 +80,237 @@
   border: #04c951;
   display: contents;
 }
+
+.animation-img-slide-wrapper {
+  @apply w-full py-7 md:py-9 lg:px-8 m-auto flex flex-col content-center bg-[#1A2C38];
+}
+
+.slider {
+  @apply overflow-hidden w-full max-w-[1200px] relative m-auto;
+}
+
+.slider-wrapper {
+  @apply flex w-[2694px] gap-x-[76px] items-center;
+}
+
+.slider-track {
+  animation: svelte-1b6cm2e-scroll 20s linear infinite;
+}
+
+@keyframes svelte-1b6cm2e-scroll {
+  0% {
+    transform: translate(0);
+  }
+
+  100% {
+    transform: translate(-50%);
+  }
+}
+
+.explore-casino {
+  @apply bg-[rgba(7,29,42)] px-4 md:px-8 md:pt-4 pt-8;
+}
+
+.thousand-title {
+  @apply text-[40px] text-left font-bold text-white max-md:text-[28px] leading-[1.3];
+}
+
+.games-wrapper {
+  @apply gap-x-4 gap-y-4 isolate grid md:grid-cols-4 md:my-6 mb-2 md:mb-6 md:py-5 p-4 rounded backdrop-blur-md bg-black/15;
+}
+
+.game-grid-wrapper {
+  @apply grid grid-cols-[40px_auto] gap-2 rounded items-center;
+}
+
+.game-grid-wrapper img {
+  @apply max-w-8 md:max-w-10;
+}
+
+.game-text-container {
+  @apply md:max-w-[110px] min-h-[54px] w-full flex items-center overflow-hidden pl-2;
+}
+
+.text-inner-element {
+  @apply inline-block w-full self-center;
+}
+
+.game-title {
+  @apply whitespace-break-spaces text-white leading-[132%] text-[1.25rem] truncate;
+}
+
+.bg-img-wrapper {
+  @apply rounded-lg absolute md:top-4 inset-0 w-full object-cover overflow-hidden;
+}
+
+.hero-img {
+  @apply object-cover max-w-[382px] max-h-[400px] [aspect-ratio:0.955_/_1] w-full self-end hidden md:block;
+}
+
+.mobile-banner-img {
+  @apply object-cover max-w-[300px] max-h-[240px] [aspect-ratio:1.25_/_1] w-full self-end md:hidden m-auto isolate;
+}
+
+.green-btn {
+  @apply !bg-[rgba(0,231,1)] hover:!bg-[rgba(31,255,32)] !text-black;
+}
+
+.video-section-wrapper {
+  @apply px-4 md:px-8 py-8 md:py-12;
+}
+
+.video-main-container {
+  @apply m-auto flex flex-col md:gap-6 gap-5 max-w-[1200px];
+}
+
+.video-content-wrapper {
+  @apply flex flex-row md:gap-[64px];
+}
+.video-container {
+  @apply relative max-w-[568px] w-full h-full hidden md:block;
+}
+
+.bonus-video {
+  @apply top-0 left-0 w-full h-full aspect-square relative;
+}
+
+.video-text-details {
+  @apply text-[1rem] text-white leading-[1.5];
+}
+
+.video-items-wrapper {
+  @apply flex flex-row  p-4 pb-5 rounded relative overflow-hidden  bg-[rgba(33,55,67)];
+}
+
+.play-bar {
+  @apply p-1 bg-[rgb(33,55,67)] w-full absolute bottom-0 left-0 hidden md:block;
+}
+
+.play-bar-progress{
+    @apply ease-linear bg-blue-500 h-full absolute top-0 left-0 w-0;
+    animation: progress infinite 5s;
+}
+
+@keyframes progress {
+    0%{
+        width: 100%;
+    }
+     
+    100%{
+        width: 0px;
+    }
+
+}
+
+.card:nth-child(1) {
+    z-index: 4;
+    transform: translate3d(-50%, -30%, 0);
+    animation: svelte-7cwvd5-animateCard1 8s 2s infinite linear;
+}
+
+.card:nth-child(2) {
+    z-index: 3;
+    transform: translate3d(-50%, -55%, -100px);
+    animation: svelte-7cwvd5-animateCard2 8s 2s infinite linear;
+}
+
+.card:nth-child(3) {
+    z-index: 2;
+    transform: translate3d(-50%, -80%, -200px);
+    animation: svelte-7cwvd5-animateCard3 8s 2s infinite linear;
+}
+
+.card:nth-child(4) {
+    z-index: 1;
+    transform: translate3d(-50%, -105%, -300px);
+    animation: svelte-7cwvd5-animateCard4 8s 2s infinite linear;
+}
+
+
+@keyframes csvelte-7cwvd5-animateCard1 {
+  0% {
+    transform: translate3d(-50%, -30%, 0);
+    z-index: 3;
+}
+
+25% {
+    transform: translate3d(-50%, -30%, 0);
+    z-index: 3;
+}
+25.1% {
+    transform: translate3d(-50%, -30%, 0);
+    z-index: 4;
+}
+29% {
+    transform: translate3d(-50%, 200%, 0);
+    z-index: 4;
+    opacity: 1;
+}
+29.1% {
+    transform: translate3d(-50%, 200%, 0);
+    z-index: -1;
+    opacity: 0;
+}
+30% {
+    transform: translate3d(-50%, -80%, -300px);
+    z-index: -1;
+    opacity: 0;
+}
+30.1% {
+    transform: translate3d(-50%, -80%, -300px);
+    z-index: 1;
+    opacity: 1;
+}
+32% {
+    transform: translate3d(-50%, -105%, -300px);
+    z-index: 1;
+    opacity: 1;
+}
+50% {
+    transform: translate3d(-50%, -105%, -300px);
+    z-index: 1;
+    opacity: 1;
+}
+50.1% {
+    transform: translate3d(-50%, -105%, -300px);
+    z-index: 2;
+    opacity: 1;
+}
+54% {
+    transform: translate3d(-50%, -80%, -200px);
+    z-index: 2;
+}
+75% {
+    transform: translate3d(-50%, -80%, -200px);
+    z-index: 2;
+}
+79% {
+    transform: translate3d(-50%, -55%, -100px);
+    z-index: 3;
+}
+100% {
+    transform: translate3d(-50%, -55%, -100px);
+    z-index: 3;
+}
+}
+
+.carypto-curruncy{
+    @apply flex flex-col-reverse md:flex-row max-w-[1200px] m-auto md:gap-16 md:min-h-[530px] px-4 py-8 md:px-6 md:py-12 overflow-hidden
+}
+
+
+.swiper-card-container{
+   @apply aspect-[343/300] sm:aspect-auto sm:h-96 md:h-auto md:w-6/12 relative 
+}
+
+.swiper-img-container{
+    @apply absolute w-full max-w-[440px] top-2/4 left-2/4 transform -translate-x-2/4 -translate-y-2/4
+}
+
+.swiper-img-container img{
+    @apply object-cover max-w-[800px] max-h-[538px] [aspect-ratio:1.63569_/_1] w-full
+}
+
+
+
+
