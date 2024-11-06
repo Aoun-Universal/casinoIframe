@@ -14,18 +14,18 @@ import { CommonModule } from '@angular/common';
   styleUrls: ['./layout.component.css'] // fixed typo here: styleUrls instead of styleUrl
 })
 export class LayoutComponent  {
-  currentRoute: any;
-  getCurrentRoutePath$: any;
+  // currentRoute: any;
+  // getCurrentRoutePath$: any;
 
-  constructor(
-    private conConditionhandlerServicedtion: ConditionHandlerService,
-    public router: Router
-  ) {
-    // Initialize the observable after the service is available
-    this.getCurrentRoutePath$.subscribe((resp: any) => {
-      this.currentRoute = resp;
-      console.log(resp);
-    });
-  }
+  // constructor(
+  //   private conConditionhandlerServicedtion: ConditionHandlerService,
+  //   public router: Router
+  // ) {
+
+  //   this.getCurrentRoutePath$.subscribe((resp: any) => {
+  //     this.currentRoute = resp;
+  //     console.log(resp);
+  //   });
+  // }
   
 }

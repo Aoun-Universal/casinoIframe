@@ -3,7 +3,7 @@
 }
 
 .sidebar {
-  @apply w-[240px] h-screen;
+  @apply w-[240px] h-screen hidden lg:block;
 }
 
 .main-container {
@@ -11,7 +11,7 @@
 }
 
 .content-container {
-  @apply w-[calc(100%-240px)];
+  @apply lg:w-[calc(100%-240px)] w-full;
 }
 
 .page-wrapper {
