@@ -15,5 +15,5 @@
 }
 
 .page-wrapper {
-  @apply h-[calc(100vh-85px)] mt-[25px] bg-[#071E2A]  overflow-y-auto;
+  @apply h-[calc(100vh-85px)] mt-[25px]   overflow-y-auto;
 }
