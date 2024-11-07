@@ -1,239 +1,147 @@
-<div
-  
-  
-  class="Modal-container"
- 
->
-  <div
-    
-    class="modal-dialog modal-dialog-centered"
-    
-  >
-    <div
-      
-      class="modal-content"
-      
-    >
-      <div  class="modal-body" >
-        <div  class="row2" >
-          <div  class="col12" >
+<div id="svelte" class="">
+  <div class="Modal-container">
+    <div class="svelte-syudie"></div>
+    <div class="card-svelte">
+      <div class="ctainer-div">
+        <div>
+          <div class="wrap-normal">
+            <img class="wrap-normal-svg" src="/login/white.png" />
+          </div>
+        </div>
+        <button
+          type="button"
+          tabindex="0"
+          class="inline-flex relative items-center gap-2 justify-center font-semibold whitespace-nowrap ring-offset-background transition disabled:pointer-events-none disabled:opacity-50 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 active:scale-[0.98] bg-transparent text-white betterhover:hover:bg-grey-900 betterhover:hover:text-white focus-visible:outline-white text-xs leading-none [&amp;_svg]:text-grey-200 [&amp;:hover>svg]:text-white py-[0.75rem] px-[0.75rem] rounded-full"
+          data-test="exit-registration"
+          data-analytics="exit-registration"
+          data-button-root=""
+        >
+          Exit
+        </button>
+      </div>
+
+      <div class="content-svelte">
+        <div class="modal-content">
+          <div class="contenttop">
             <div
-              
-              class="form_block_right"
+              class="ctainer "
               
             >
               <div
-                
-                class="header_block"
-                
-              >
-                <h3 class="header_text" >Create an Account</h3>
-                <button
-                  
-                  type="button"
-                  data-bs-dismiss="modal"
-                  aria-label="Close"
-                  class="btn-close"
-                >
-                <img    style=" width: 20px;
-    height: 20px;
-    fill: #9ca3af;" src="/login/download.svg"/>
-                  <!-- <svg >
-                    <use
-                      
-                      xlink:href="#close_icon"
-                    ></use>
-                  </svg> -->
-                </button>
-              </div>
-              <div
-                
-                class="step_text  "
-                
-              >
-                Step 1/2: Fill out your details
-              </div>
-              <form
+                class="stack "
                 
                
-                class=""
               >
                 <div
+                  class="step-active"
                   
-                  class="input_block"
-                  
-                >
-                  <label  class="form-label"
-                    >Email<span  class="form-label-span">*</span></label
-                  ><input
-                    
-                    formcontrolname="email"
-                    type="text"
-                    placeholder=""
-                    class="form-control "
-                  />
-                </div>
-                <div
-                  
-                  class="input_block"
-                  
-                >
-                  <label  class="form-label"
-                    >Username<span class="form-label-span" >*</span></label
-                  ><input
-                    
-                    formcontrolname="user_name"
-                    type="text"
-                    placeholder=""
-                    class="form-control !bg-[#1A2C38] "
-                  /><span  class="small_text  text-[rgb(177,186,211)]"
-                    >Your username must be 3-14 characters long.</span
-                  ><!---->
-                </div>
-                <div
-                  
-                  class="input_block"
-                  
-                >
-                  <label  class="form-label"
-                    >Password<span class="form-label-span" >*</span></label
-                  >
-                  <div
-                    
-                    class="position-relative"
-                    
-                  >
-                    <input
-                      
-                      formcontrolname="password"
-                      placeholder=""
-                      class="form-control "
-                      type="password"
-                    /><a
-                      
-                      href="javascript:void(0)"
-                      class="eye_icon"
-                      ><svg >
-                        <use
-                          
-                          xlink:href="#eye_icon"
-                        ></use></svg></a
-                    ><!---->
-                  </div>
-                </div>
-                <div
-                  
-                  class="input_block"
-                  
-                >
-                  <label  class="form-label"
-                    >Confirm Password<span  class="form-label-span"
-                      >*</span
-                    ></label
-                  >
-                  <div
-                    
-                    class="position-relative"
-                    
-                  >
-                    <input
-                      
-                      formcontrolname="confirm_password"
-                      placeholder=""
-                      class="form-control "
-                      type="password"
-                    /><a
-                      
-                      href="javascript:void(0)"
-                      class="eye_icon"
-                      ><svg >
-                        <use
-                          
-                          xlink:href="#eye_icon"
-                        ></use></svg></a
-                    ><!---->
-                  </div>
-                </div>
-                <div
-                  
-                  class="input_block"
-                  
-                >
-                  <label  class="form-label"
-                    >Mobile<span class="form-label-span" >*</span></label
-                  >
-                  <div
-                    
-                    class="position-relative"
-                    
-                  >
-                    <input
-                      
-                      formcontrolname="mobile"
-                      type="text"
-                      placeholder=""
-                      class="form-control "
-                    /><!---->
-                  </div>
-                </div>
-                <div
-                  
-                  class="input_block"
-                  
-                >
-                  <label  class="form-label"
-                    >Refral Code<span  class="form-label-span"
-                      >*</span
-                    ></label
-                  >
-                  <div
-                    
-                    class="position-relative"
-                    
-                  >
-                    <input
-                      
-                      formcontrolname="referal_code"
-                      type="text"
-                      placeholder=""
-                      class="form-control "
-                    />
-                  </div>
-                </div>
-              </form>
+                ></div>
+                <div class="step-svelte" ></div>
+                <div class="step-svelte" ></div>
+              </div>
               <div
+                class="stack-padding"
                 
-                class=" mt-4"
-                
+             
               >
+                <span
+                  class="step-text"
+                 
+                  >Step 1 / 3</span
+                >
+              </div>
+            </div>
+            <h2
+              class="select-language"
+             
+            >
+              Select your preferred language
+            </h2>
+            <span
+              class="select-language-span"
+        
+              >Stake is available is several languages. Feel free to personalise
+              your language across our site from the options below.</span
+            >
+            <label class="labelstacked">
+              <div class="select-wrap" >
+                <div class="select-content" >
+                  <select
+                    class="select-spacing"
+                    data-test="select-language"
+                  >
+                    <option value="en">English</option>
+                    <option value="es">Español</option>
+                    <option value="ja">日本語</option>
+                    <option value="zh">中文</option>
+                    <option value="pt">Português</option>
+                    <option value="ru">Русский</option>
+                    <option value="fr">Français</option>
+                    <option value="de">Deutsch</option>
+                    <option value="hi">हिंदी</option>
+                    <option value="id">Bahasa Indonesia</option>
+                    <option value="ko">한국어</option>
+                    <option value="pl">Polski</option>
+                    <option value="tr">Türkçe</option>
+                    <option value="vi">Tiếng Việt</option>
+                    <option value="fi">Suomen</option>
+                    <option value="ar">اَلْعَرَبِيَّةُ</option>
+                  </select>
+                  <div
+                    class="dropdown-icon-wrap"
+                    
+                  >
+                    <svg
+                      fill="currentColor"
+                      viewBox="0 0 64 64"
+                      class="svg-icon-dropdown"
+                     
+                    >
+                      <title></title>
+                      <path
+                        d="M32.271 49.763 9.201 26.692l6.928-6.93 16.145 16.145 16.144-16.144 6.93 6.929-23.072 23.07h-.005Z"
+                      ></path>
+                    </svg>
+                  </div>
+                </div>
+              </div>
+            </label>
+            <div class="flex flex-col justify-end h-full" >
+              <button
+                type="button"
+                tabindex="0"
+                class="inline-flex relative items-center gap-2 justify-center rounded-sm font-semibold whitespace-nowrap ring-offset-background transition disabled:pointer-events-none disabled:opacity-50 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 active:scale-[0.98] bg-blue-500 text-white betterhover:hover:bg-blue-600 betterhover:hover:text-white focus-visible:outline-white text-base leading-none shadow-md py-[1.125rem] px-[1.75rem]"
+                data-analytics="register-language-confirm-button"
+                data-test="register-language"
+                data-button-root=""
+              >
+                <div
+                  data-loader-content=""
+                  class="contents"
+                  
+                >
+                  Confirm
+                </div>
+              </button>
+            </div>
+            <div
+              class="flex flex-col justify-end gap-3"
+              data-content=""
+              
+            >
+              <span
+                class=" text-[#b1bad3]  text-center font-normal text-sm touch-auto"
+               
+                >Already have an account?
                 <button
-                  
-                  type="submit"
-                  class="btn btn-primary"
+                  type="button"
+                  tabindex="0"
+                  class="inline-flex relative items-center gap-2 justify-center rounded-sm font-semibold whitespace-nowrap ring-offset-background transition disabled:pointer-events-none disabled:opacity-50 focus-visible:outline-2 focus-visible:outline-offset-2 active:scale-[0.98] bg-transparent text-white betterhover:hover:bg-transparent betterhover:hover:text-white focus-visible:outline-none text-sm leading-none [&amp;_svg]:text-grey-200 [&amp;:hover>svg]:text-white"
+                  data-button-root=""
                 >
-                  Continue
-                </button>
-              </div>
-              <div
-                
-                class="or_block"
-                
+                  Sign In
+                </button></span
               >
-                <span ></span>
-              </div>
-              <div
-                
-                class="distext"
-                
-              >
-                <span 
-                  >Already have an account?
-                  <a  class="text-[#fff] font-semibold text-[.875rem] no-underline cursor-pointer "  href="javascript:void(0)"
-                    >Sign In</a
-                  ></span
-                >
-              </div>
-              <!----><!----><!---->
             </div>
           </div>
         </div>
