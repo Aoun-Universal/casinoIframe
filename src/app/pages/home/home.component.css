@@ -381,6 +381,31 @@ section {
     @apply [grid-column:12/span_1] justify-self-center
 }
 
-
-
-
+/* Table */
+.table-container {
+    @apply !w-full bg-[#243447] rounded-lg p-5 shadow-lg
+}
+table{
+    @apply w-full
+}
+th, td {
+    @apply w-1/5 p-4  align-middle text-[#b1bad3] text-sm whitespace-nowrap rounded-tl rounded-bl ;
+}
+th {
+    @apply bg-[#1f3b4d] font-normal;
+}
+tr:nth-child(even) {
+    @apply bg-[#2d3e50];
+}
+tr:hover {
+    @apply bg-[#3b4c5e];
+}
+.icon {
+    @apply mr-2 inline-block align-middle;
+}
+.bet-amount {
+    @apply flex items-center !justify-end text-end float-right;
+}
+.bet-amount img {
+    @apply w-5 h-5 ml-2;
+}
