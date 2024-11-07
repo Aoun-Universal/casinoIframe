@@ -2,9 +2,8 @@
     <div class="sidebar"><app-sidebar></app-sidebar></div>
 
     <div class="content-container">
-        <!-- <header class="header-wrapper">Header</header> -->
-         <app-header></app-header>
-        <main class="page-wrapper">
+        <app-header></app-header>
+        <main class="page-wrapper" [ngClass]="{'!pt-0 !h-[calc(100vh-60px)]':currentRoute === '/'}">
             <app-content></app-content>
             <app-footer></app-footer>
         </main>

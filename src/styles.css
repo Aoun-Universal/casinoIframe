@@ -2,10 +2,12 @@
 @tailwind components;
 @tailwind utilities;
 
+/* @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap'); */
 
 
-body{
-    @apply bg-[#071E2A]
+body {
+  background: #071e2a;
+  color: white;
+  font-family: 'Montserrat', sans-serif;
+  cursor: default;
 }
-
-
