@@ -380,6 +380,7 @@ section {
 .market-count{
     @apply [grid-column:12/span_1] justify-self-center
 }
+w
 
 /* Table */
 .table-container {
@@ -409,3 +410,4 @@ tr:hover {
 .bet-amount img {
     @apply w-5 h-5 ml-2;
 }
+
