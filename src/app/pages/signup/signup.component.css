@@ -1,0 +1,78 @@
+.signup-hero-container {
+  @apply w-full bg-[rgba(7,24,36)] py-12 px-4 md:px-8 relative overflow-hidden;
+}
+
+.stake-logo {
+  @apply absolute z-0 top-0 left-0 right-0 bottom-0;
+}
+
+.hero-main-wrapper {
+  @apply flex flex-col-reverse md:flex-row max-w-[1200px] m-auto gap-5 md:gap-8 relative z-10;
+}
+
+.hero-wrapper {
+  @apply grid grid-flow-row grid-rows-[1fr_auto] gap-y-3 md:gap-y-8 lg:max-w-[478px] w-full items-center;
+}
+
+.hero-heading {
+  @apply font-[700]  text-left block text-[3.25rem] leading-[120%] text-white;
+}
+
+.signup-btn {
+  @apply inline-flex relative items-center hover:bg-[rgba(16,94,180)] gap-2 justify-center rounded-sm font-semibold whitespace-nowrap  transition disabled:pointer-events-none disabled:opacity-50 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 active:scale-[0.98] bg-blue-500 text-white   focus-visible:outline-white text-sm leading-none shadow-md py-[0.9375rem] px-[1.25rem] mt-8 md:mt-4 w-full md:w-auto;
+}
+
+.icons-container {
+  @apply h-full w-full flex flex-col justify-end md:items-start;
+}
+
+.or-sign-up {
+  @apply font-[700] text-[#b1bad3] text-left leading-[1.5] text-[0.75rem];
+}
+
+.social-media-wrapper {
+  @apply flex gap-[.5rem] items-center;
+}
+.icon-btn {
+  @apply inline-flex relative items-center gap-2 justify-center rounded-sm font-semibold whitespace-nowrap bg-[rgba(47,69,83)] hover:bg-[rgba(85,112,134)] transition disabled:pointer-events-none disabled:opacity-50 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 active:scale-[0.98]  text-white  focus-visible:outline-white text-sm leading-none shadow-md py-[0.8125rem] px-[1rem];
+}
+
+.hero-img-container {
+  @apply lg:max-w-[690px] w-full flex gap-4 items-start;
+}
+
+.unauth-header-casino {
+  @apply rounded-2xl overflow-hidden relative basis-6/12;
+}
+
+.unauth-header-casino img {
+  @apply rounded-[1rem];
+}
+
+.gradient-border-last {
+  background: linear-gradient(to bottom, #04c951 0%, transparent 100%) 10% 0 /
+    100% 100% no-repeat;
+  transition: transform 0.3s ease;
+  border-radius: 16px;
+  padding: 2px;
+  box-sizing: border-box;
+}
+
+.gradient-border {
+  background: linear-gradient(to bottom, #017aff 0%, transparent 100%) 10% 0 /
+    100% 100% no-repeat;
+  transition: transform 0.3s ease;
+  border-radius: 16px;
+  padding: 2px;
+  box-sizing: border-box;
+}
+
+.first-image {
+  border: #017aff;
+  display: contents;
+}
+
+.last-img {
+  border: #04c951;
+  display: contents;
+}

@@ -1,0 +1,154 @@
+.navigation {
+    @apply w-full z-[100] pr-[6px] bg-black flex items-center flex-col shadow-[#0003_0_4px_6px_-1px,#0000001f_0_2px_px_-1px] touch-none
+}
+.group-container{
+    @apply w-full px-[3vw] flex items-center flex-col h-full justify-center relative;
+
+}
+.ctainer {
+    @apply w-full px-[0_3vw] flex items-center flex-col h-full justify-center relative max-w-[1200px];
+}
+
+.balance-toggle {
+    @apply flex rounded-[.25rem]
+}
+.stack
+{
+@apply gap-[.25rem] items-center  justify-start grid-flow-col grid
+
+}
+.home-button{
+    @apply inline-flex relative items-center gap-2 justify-center rounded-sm font-semibold whitespace-nowrap  transition disabled:pointer-events-none disabled:opacity-50 focus-visible:outline-2 focus-visible:outline-offset-2 active:scale-[0.98] bg-transparent text-white hover:bg-transparent hover:text-white focus-visible:outline-none text-sm leading-none;
+}
+.coin-toggle {
+    @apply flex flex-col items-center justify-center
+}
+.svelte-1hjozqf {
+    @apply flex flex-col items-center justify-center
+}
+.wrapper {
+    @apply flex flex-col justify-center items-start
+}
+.dropdown {
+    @apply relative
+}
+.OpenDropdown-btn{
+    @apply inline-flex relative items-center gap-2 justify-center font-semibold whitespace-nowrap  transition disabled:pointer-events-none disabled:opacity-50 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 active:scale-[0.98]  text-white  hover:text-white focus-visible:outline-white text-sm leading-none py-[0.8125rem] px-[1rem] rounded-sm
+}
+.wrap {
+    @apply relative w-full 
+    
+}
+.svelte-lnje3m {
+    @apply relative w-full 
+    
+}
+.currency.svelte {
+    @apply inline-flex items-center
+}
+.svelte{
+    @apply inline-flex items-center
+}
+.currency.svelte>*+* {
+    @apply ml-[.25rem]
+}
+.content {
+    @apply inline-block overflow-hidden whitespace-nowrap ;
+    font-variant-numeric: tabular-nums;
+}
+.svelte {
+    @apply inline-block overflow-hidden whitespace-nowrap ;
+    font-variant-numeric: tabular-nums;
+}
+.nmric-num{
+@apply max-w-[16ch]
+}
+.svg-icon {
+    @apply pointer-events-none stroke-none fill-current flex-shrink-0 inline-block w-[1em] h-[1em]
+
+}
+
+.dropdown-icon {
+    @apply flex items-center
+}
+
+.dropdown-btn{
+    @apply inline-flex relative items-center gap-2 justify-center font-semibold whitespace-nowrap transition disabled:pointer-events-none disabled:opacity-50 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 active:scale-[0.98]  text-white   focus-visible:outline-white text-sm leading-none py-[0.8125rem] px-[1rem] rounded-sm;
+}
+.wallet{
+    @apply inline-flex relative items-center gap-2 justify-center font-semibold whitespace-nowrap  transition disabled:pointer-events-none disabled:opacity-50 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 active:scale-[0.98] bg-blue-500 text-white hover:bg-blue-600 hover:text-white focus-visible:outline-white text-sm leading-none shadow-md py-[0.8125rem] px-[1rem] rounded-tr-[.25rem] rounded-br-[.25rem]
+}
+.wallet-btn{
+    @apply  rounded-tr-[.25rem] rounded-br-[.25rem]
+}
+.navigation-container {
+@apply grid grid-cols-[1fr_auto_1fr] gap-4
+
+}
+.navigation-container {
+ @apply grid grid-cols-[1fr_auto_1fr] gap-4 relative h-[60px]  w-full items-center 
+ }
+.svelte-right {
+    @apply gap-[.25rem] items-center flex justify-start  grid-flow-col
+}
+.search-btn{
+    @apply inline-flex relative items-center gap-2 rounded-sm font-semibold whitespace-nowrap  transition disabled:pointer-events-none disabled:opacity-50 focus-visible:outline-2 focus-visible:outline-offset-2 active:scale-[0.98] bg-transparent text-white hover:bg-transparent hover:text-white focus-visible:outline-none text-sm leading-none py-[0.8125rem] px-[1rem] w-full justify-start
+}
+.porfile-iocn{
+    @apply inline-flex relative items-center gap-2 justify-center rounded-sm font-semibold whitespace-nowrap  transition disabled:pointer-events-none disabled:opacity-50 focus-visible:outline-2 focus-visible:outline-offset-2 active:scale-[0.98] bg-transparent text-white hover:bg-transparent hover:text-white focus-visible:outline-none text-sm leading-none py-[0.8125rem] px-[1rem]
+}
+.bell-icon{
+    @apply  inline-flex relative items-center gap-2 justify-center rounded-sm font-semibold whitespace-nowrap  transition disabled:pointer-events-none disabled:opacity-50 focus-visible:outline-2 focus-visible:outline-offset-2 active:scale-[0.98] bg-transparent text-white hover:bg-transparent hover:text-white focus-visible:outline-none text-sm leading-none p-3
+}
+.massage-icon{
+    @apply inline-flex relative items-center gap-2 justify-center rounded-sm font-semibold whitespace-nowrap  transition disabled:pointer-events-none disabled:opacity-50 focus-visible:outline-2 focus-visible:outline-offset-2 active:scale-[0.98] bg-transparent text-white hover:bg-transparent hover:text-white focus-visible:outline-none text-sm leading-none p-3
+}
+.x-flex-start {
+    @apply flex justify-start
+}
+.direction-horizontal{
+    @apply grid grid-flow-col
+}
+.image-focus {
+    @apply contents
+}
+.svelte-1bax0ph {
+    @apply contents
+}
+.wrap {
+    @apply max-w-[66.95px] inline-flex items-center justify-center w-full
+}
+
+.wrap>svg {
+    @apply inline-flex items-center justify-center w-full
+}
+
+svg.svelte-md2ju7 {
+    @apply !text-white
+}
+.stack.padding-none.svelte-right {
+    @apply p-0
+}
+.stack.gap-none.svelte-right {
+    @apply gap-0
+}
+.stack.y-center.svelte-right {
+    @apply items-center
+}
+.stack.x-flex-end.svelte-right {
+    @apply justify-end
+}
+.stack.svelte-right {
+    @apply grid-flow-col
+}
+.stack.svelte-right {
+    @apply grid
+}
+
+/* login & signin button */
+.sign-in{
+    @apply  inline-flex relative items-center gap-2 justify-center rounded-sm font-semibold whitespace-nowrap  transition disabled:pointer-events-none disabled:opacity-50 focus-visible:outline-2 focus-visible:outline-offset-2 active:scale-[0.98] bg-transparent text-white hover:bg-transparent hover:text-white focus-visible:outline-none text-sm leading-none py-[0.9375rem] px-[1.25rem]
+}
+.Register{
+@apply inline-flex relative items-center gap-2 justify-center rounded-sm font-semibold whitespace-nowrap  transition disabled:pointer-events-none disabled:opacity-50 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 active:scale-[0.98] bg-blue-500 text-white hover:bg-blue-600 hover:text-white focus-visible:outline-white text-sm leading-none shadow-md py-[0.9375rem] px-[1.25rem]
+}
