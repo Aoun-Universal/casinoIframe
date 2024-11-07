@@ -5,11 +5,12 @@ import { ContentComponent } from '../content/content.component';
 import { SidebarComponent } from '../../shared/sidebar/sidebar.component';
 import { FooterComponent } from '../../shared/footer/footer.component';
 import { CommonModule } from '@angular/common';
+import { HeaderComponent } from '../../shared/header/header.component';
 
 @Component({
   selector: 'app-layout',
   standalone: true,
-  imports: [ContentComponent,SidebarComponent, FooterComponent, CommonModule],
+  imports: [ContentComponent,SidebarComponent, FooterComponent, CommonModule,HeaderComponent],
   templateUrl: './layout.component.html',
   styleUrls: ['./layout.component.css'] // fixed typo here: styleUrls instead of styleUrl
 })
