@@ -3,7 +3,7 @@ import { SignupComponent } from './pages/signup/signup.component';
 export const routes: Routes = [
     {
         path: '',
-        redirectTo: 'signup',
+        redirectTo: 'before-login',
         pathMatch: 'full'
     },
     {
@@ -16,7 +16,7 @@ export const routes: Routes = [
             },
 
             {
-                path: 'signup',
+                path: 'before-login',
                 loadComponent: () => import('./pages/signup/signup.component').then(c => c.SignupComponent),
             },
 
