@@ -527,7 +527,7 @@
 }
 
 .partner-img-container{
-  @apply self-center grid grid-rows-[275px_275px_275px] sm:grid-rows-none sm:grid-flow-col sm:grid-cols-[calc(33.33%-12px)_calc(33.33%-12px)_calc(33.33%-12px)] lg:has-[.item:nth-child(1):hover]:grid-cols-[calc(60%-12px)_calc(20%-12px)_calc(20%-12px)] xl:has-[.item:nth-child(1):hover]:grid-cols-[calc(50%-12px)_calc(25%-12px)_calc(25%-12px)]  lg:has-[.item:nth-child(2):hover]:grid-cols-[calc(20%-12px)_calc(60%-12px)_calc(20%-12px)] xl:has-[.item:nth-child(2):hover]:grid-cols-[calc(25%-12px)_calc(50%-12px)_calc(25%-12px)] lg:has-[.item:nth-child(3):hover]:grid-cols-[calc(20%-12px)_calc(20%-12px)_calc(60%-12px)] xl:has-[.item:nth-child(3):hover]:grid-cols-[calc(25%-12px)_calc(25%-12px)_calc(50%-12px)] gap-3 md:gap-[18px] pt-6 w-full max-w-[1200px] sm:h-[300px] lg:h-[664px] transition-all hover:duration-300 delay-100 hover:delay-0 
+  @apply self-center grid grid-rows-[275px_275px_275px] sm:grid-rows-none sm:grid-flow-col sm:grid-cols-[calc(33.33%-12px)_calc(33.33%-12px)_calc(33.33%-12px)] lg:has-[.item:nth-child(1):hover]:grid-cols-[calc(60%-12px)_calc(20%-12px)_calc(20%-12px)] xl:has-[.item:nth-child(1):hover]:grid-cols-[calc(50%-12px)_calc(25%-12px)_calc(25%-12px)]  lg:has-[.item:nth-child(2):hover]:grid-cols-[calc(20%-12px)_calc(60%-12px)_calc(20%-12px)] xl:has-[.item:nth-child(2):hover]:grid-cols-[calc(25%-12px)_calc(50%-12px)_calc(25%-12px)] lg:has-[.item:nth-child(3):hover]:grid-cols-[calc(20%-12px)_calc(20%-12px)_calc(60%-12px)] xl:has-[.item:nth-child(3):hover]:grid-cols-[calc(25%-12px)_calc(25%-12px)_calc(50%-12px)] gap-3 md:gap-[18px] pt-6 w-full max-w-[1200px] sm:h-[300px] lg:h-[664px] transition-all hover:duration-300 delay-100 hover:delay-0
 }
 
 .partner-img-wrapper{
