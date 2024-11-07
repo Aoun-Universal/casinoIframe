@@ -14,7 +14,7 @@
     @apply inline-flex relative items-center gap-2 justify-center rounded-sm font-semibold whitespace-nowrap  transition disabled:pointer-events-none disabled:opacity-50 focus-visible:outline-2 focus-visible:outline-offset-2 active:scale-[0.98] bg-transparent text-gray-200  focus-visible:text-white focus-visible:outline-none text-sm leading-none
 }
 .line{
-    @apply border-solid border-t-2 border-t-gray-700 border-opacity-[0.90] my-10
+    @apply border-solid border-t-2 border-t-gray-700 border-opacity-[0.90] my-8
 }
 .footer-grid{
     @apply  flex flex-wrap justify-between gap-3 md:gap-10 w-full m-auto break-words hyphens-auto 
@@ -64,10 +64,31 @@
 .img{
     @apply w-[120px] h-[63px]
 }
-
-
-
-
+.about1{
+    @apply text-center text-gray-400 text-[14px] tracking-[-0.5px] font-semibold
+}
+.about-link{
+    @apply inline-flex relative items-center gap-2 justify-center rounded-sm font-semibold whitespace-nowrap  transition disabled:pointer-events-none disabled:opacity-50 focus-visible:outline-2 focus-visible:outline-offset-2 active:scale-[0.98] bg-transparent text-white hover:bg-transparent hover:text-white focus-visible:outline-none text-sm leading-none
+    mb-10
+}
+.information{
+    @apply text-center text-gray-400 text-[0.875rem] tracking-[1.5] leading-[150%] font-[400] block mb-10
+}
+.contact-emails{
+    @apply text-center text-gray-400 text-[0.875rem] tracking-[1.5] leading-[150%] font-[400] block mb-10
+}
+.img2{
+    @apply w-[32px] h-[18px]
+}
+.last-img{
+    @apply w-36 h-[22px]
+}
+.image-focus{
+    @apply flex 
+}
+.seal{
+    @apply flex
+}
 
 @media(max-width: 715px) {
     .site-badges{
