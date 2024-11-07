@@ -274,3 +274,113 @@ section {
     @apply py-2 grid [grid-auto-flow:row] items-center justify-stretch w-full gap-0
 }
 
+
+.fixture-preview {
+    @apply py-2 px-4 grid items-center w-full [grid-template-rows:repeat(3,auto)] [grid-template-columns:repeat(12,1fr)] text-[#b1bad3] [row-gap:.5rem] [grid-column-gap:.5rem];
+}
+
+/* Market rows */
+.misc {
+    @apply [grid-column:1/span_2] flex relative text-xs
+}
+
+.misc-wrapper {
+    @apply flex items-center capitalize justify-between w-full leading-[1.3]
+}
+
+.fixture-details {
+    @apply flex items-center gap-2
+}
+
+.live-badge {
+    @apply px-1 bg-[#e9113c] text-white inline-flex text-xs font-semibold items-center justify-center rounded-[3px] whitespace-nowrap leading-[1.5]
+}
+
+.blinking-dash {
+    animation: blink 2s infinite linear;
+}
+
+@keyframes blink {
+    0%, 100% {
+        opacity: 0;
+    }
+
+    50% {
+        opacity: 1;
+    }
+}
+
+/* line */
+.line {
+    @apply w-full h-[2px]
+}
+
+.line1 {
+    @apply [grid-column:3/span_4]
+}
+
+/* Market name */
+.market-name{
+    @apply px-2 w-full [grid-column:7/span_4] relative items-center text-center bg-[#213743]
+}
+
+.market-name span{
+    @apply !text-center max-w-full
+}
+
+.line2 {
+    @apply [grid-column:10/span_2]
+}
+
+.teams {
+    @apply [grid-column:1/span_3] whitespace-nowrap overflow-hidden grid gap-2 self-center
+}
+
+.teams-tag{
+    @apply !border-none !justify-start
+}
+
+/* FixtureScore */
+.fixture-score {
+    @apply [grid-column:4/span_2] flex justify-end
+}
+
+.fixture-score-wrapper{
+    @apply font-semibold flex justify-end
+}
+
+.score-wrapper{
+    @apply flex flex-col justify-between items-center w-[2ch] pt-[1px] gap-3
+}
+
+.options-wrapper{
+    @apply ml-4 flex items-center flex-col justify-between gap-3
+}
+
+.option-btn{
+    @apply !text-[#b1bad3]
+}
+
+.outcomes{
+    @apply [grid-column:6/span_6] self-stretch place-items-center w-full grid [grid-gap:.5rem] [grid-template-columns:repeat(auto-fit,minmax(50px,1fr))] [grid-template-rows:1fr]
+}
+
+.outcome-btn{
+    @apply px-[10.5px] py-[7px]  bg-[#071824] flex rounded-[.25rem] relative text-sm text-white items-start min-w-0 [transition:background_.1s] justify-center w-full
+}
+
+.outcome-content{
+    @apply flex flex-col items-start justify-between w-full self-center justify-items-start
+}
+
+.outcome-odd{
+    @apply font-bold text-[rgb(67,145,231)]
+}
+
+.market-count{
+    @apply [grid-column:12/span_1] justify-self-center
+}
+
+
+
+
