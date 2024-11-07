@@ -3,7 +3,7 @@
 
     <div class="content-container">
         <app-header></app-header>
-        <main class="page-wrapper">
+        <main class="page-wrapper" [ngClass]="{'!pt-0 !h-[calc(100vh-60px)]':currentRoute === '/signup'}">
             <app-content></app-content>
             <app-footer></app-footer>
         </main>

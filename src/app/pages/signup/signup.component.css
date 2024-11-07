@@ -202,13 +202,13 @@
 
 }
 
-.card:nth-child(1) {
+.card {
     z-index: 4;
     transform: translate3d(-50%, -30%, 0);
     animation: svelte-7cwvd5-animateCard1 8s 2s infinite linear;
 }
 
-.card:nth-child(2) {
+/* .card:nth-child(2) {
     z-index: 3;
     transform: translate3d(-50%, -55%, -100px);
     animation: svelte-7cwvd5-animateCard2 8s 2s infinite linear;
@@ -224,7 +224,7 @@
     z-index: 1;
     transform: translate3d(-50%, -105%, -300px);
     animation: svelte-7cwvd5-animateCard4 8s 2s infinite linear;
-}
+} */
 
 
 @keyframes csvelte-7cwvd5-animateCard1 {
