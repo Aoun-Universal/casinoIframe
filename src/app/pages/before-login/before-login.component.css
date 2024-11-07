@@ -563,5 +563,18 @@
   @apply inline-flex relative items-center gap-2 justify-center rounded-sm font-semibold whitespace-nowrap  transition disabled:pointer-events-none disabled:opacity-50 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 active:scale-[0.98] bg-transparent text-white   border border-solid border-white text-sm leading-none py-[0.8125rem] px-[1rem] self-end h-[40px]
 }
 
+.help-img{
+  @apply max-w-[386px] m-auto px-4 sm:px-0 md:ml-auto md:mr-0
+}
+
+.share-img-wrapper{
+  @apply w-full md:max-w-[600px] m-auto
+}
+
+.share-img-wrapper img{ 
+  @apply  md:max-w-[600px] md:max-h-[600px]  object-cover [aspect-ratio:1_/_1] w-full
+}
+
+
 
 
