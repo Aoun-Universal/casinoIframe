@@ -380,11 +380,52 @@ section {
 .market-count{
     @apply [grid-column:12/span_1] justify-self-center
 }
-w
+
+/* Table topbar */
+.bubble-wrap{
+    @apply mt-[1px]
+}
+.scale-up{
+@apply absolute size-2 rounded-[50%] bg-[#1fff20] [transform:translate(-50%,-50%)scale(1)];
+animation: ScaleUp .2s ease-out; 
+}
+
+@keyframes ScaleUp{
+    0%{
+        transform: translate(-50%,-50%) scale(0);
+    }
+}
+
+/* Select Wrap */
+.select-wrap{
+    @apply flex flex-row justify-self-end items-center gap-2
+}
+
+.mode-btn{
+    @apply py-[13px] px-4 !shadow-md !rounded-[4px] !bg-[rgb(47,69,83)]
+}
+
+label{
+    @apply inline-flex items-start relative flex-col-reverse
+}
+
+.select-content{
+    @apply relative [flex-grow:1] w-full flex 
+}
+
+select{
+    @apply py-[7px] pl-[7px] pr-[28px] text-sm w-full text-white bg-[#0f212e] outline-none m-0 cursor-pointer appearance-none rounded-[.25rem] [transition:all_.25s] font-semibold border-[2px] border-solid border-[#2f4553] shadow-[0_1px_3px_0_rgba(0,0,0,.2),0_1px_2px_0_rgba(0,0,0,.12)];
+}
+
+.dropdown-icon-wrap{
+    @apply absolute top-[52%] right-[.5em] text-[#b1bad3] [transform:translateY(-50%)] pointer-events-none cursor-pointer
+}
+
+
 
 /* Table */
 .table-container {
-    @apply !w-full bg-[#243447] rounded-lg p-5 shadow-lg
+    @apply !w-full  rounded-lg p-5 shadow-lg
 }
 table{
     @apply w-full
@@ -393,10 +434,10 @@ th, td {
     @apply w-1/5 p-4  align-middle text-[#b1bad3] text-sm whitespace-nowrap rounded-tl rounded-bl ;
 }
 th {
-    @apply bg-[#1f3b4d] font-normal;
+    @apply  font-normal !bg-[#1A2C38];
 }
-tr:nth-child(even) {
-    @apply bg-[#2d3e50];
+tr:nth-child(odd) {
+    @apply bg-[#213743];
 }
 tr:hover {
     @apply bg-[#3b4c5e];
