@@ -159,7 +159,7 @@ svg.svelte-md2ju7 {
 }
 /* dropdown  */
 .dropdown-continer{
-    @apply absolute left-[2%] z-[100] top-[60px] py-1  bg-white rounded-[.25rem] shadow-lg w-[223px]
+    @apply absolute left-[2%] z-[100] top-[55px] py-1  bg-white rounded-[.25rem] shadow-lg w-[223px]
 }
 .arrow{
     @apply absolute top-0 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-2 h-2 bg-white rotate-45 border-l border-t border-gray-200
