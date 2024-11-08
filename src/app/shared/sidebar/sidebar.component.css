@@ -61,6 +61,10 @@
   @apply flex flex-col max-w-full bg-[#1a2c38] rounded;
 }
 
+.dropdown-item {
+  @apply !bg-[#213743] bg-opacity-[.5] hover:bg-[rgba(47,69,83)];
+}
+
 .nav-item {
   @apply flex items-center justify-between p-[13px_16px] max-h-[40px] hover:bg-[rgba(47,69,83)] hover:rounded cursor-pointer;
 }
@@ -71,4 +75,20 @@
 
 .svg-container {
   @apply bg-[#374F5F] text-white flex-shrink-0 flex w-4 h-4 -my-1 rounded-full items-center justify-center text-xs  bg-opacity-50;
+}
+
+.inner-content {
+  @apply max-h-0 overflow-hidden ease-in-out transition-all duration-500;
+}
+
+.active-dropdown {
+  @apply max-h-[500px] transition-all ease-in-out duration-500;
+}
+
+.hr-border {
+  @apply bg-[#2f4553] h-0.5 w-full;
+}
+
+.active-svg {
+  @apply rotate-90 bg-[#0F5EB4];
 }

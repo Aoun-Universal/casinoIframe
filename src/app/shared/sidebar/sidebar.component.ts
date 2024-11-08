@@ -15,12 +15,10 @@ export class SidebarComponent implements OnInit {
   routerPath:any
   constructor(private router:Router){}
   toggleOpen(name: string) {
-    // Check if the bar is already open with the same name
+  
     if (this.openBar === name) {
-      // If it is, close it by resetting openBar to an empty string
       this.openBar = '';
     } else {
-      // If it's not, open the bar by setting openBar to the new name
       this.openBar = name;
     }
   }
