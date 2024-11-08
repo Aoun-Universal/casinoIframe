@@ -3,7 +3,7 @@
 }
 
 .sidebar {
-  @apply w-[240px] h-screen hidden lg:block;
+  @apply w-[240px] h-screen ;
 }
 
 .main-container {

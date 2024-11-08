@@ -1,93 +1,89 @@
-.sidebar-wrapper{
-    @apply  w-[240px] h-screen bg-[#0f212e]
-
+.sidebar-wrapper {
+  @apply w-[240px] h-screen bg-[#0f212e] max-md:fixed z-[999]  overflow-y-auto;
 }
 
-.sidebar-header{
-    box-shadow: 0 10px 15px -3px rgba(0, 0, 0, .2), 0 4px 6px -2px rgba(0, 0, 0, .1);;
-    @apply flex p-[0_12px_0_0] align-baseline
+.sidebar-header {
+  box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.2),
+    0 4px 6px -2px rgba(0, 0, 0, 0.1);
+  @apply flex p-[0_12px_0_0] align-baseline;
 }
-.casino-btn{
-    background-image:url('/assets/sidebar/casino-poker-cards-green-en.webp') ;
-    background-repeat: no-repeat;
-@apply  h-[38px] text-[15px] rounded-[7px] text-white leading-[1.5] !font-[500] cursor-pointer uppercase p-[6px_10px] inline-flex bg-cover items-center
+.casino-btn {
+  background-image: url("/assets/sidebar/casino-poker-cards-green-en.webp");
+  background-repeat: no-repeat;
+  @apply h-[38px] text-[15px] rounded-[7px] text-white leading-[1.5] !font-[500] cursor-pointer uppercase p-[6px_10px] inline-flex bg-cover items-center;
 }
-.sidebar-btns{
-    @apply flex justify-between gap-[7px]
+.sidebar-btns {
+  @apply flex justify-between gap-[7px];
 }
-.sport-btn{
-    background-image:url('/assets/sidebar/sports-balls-en.webp') ;
-    @apply  h-[38px] text-[15px] rounded-[7px] text-white !font-[500] cursor-pointer uppercase p-[6px_10px] inline-flex bg-cover items-center
+.sport-btn {
+  background-image: url("/assets/sidebar/sports-balls-en.webp");
+  @apply h-[38px] text-[15px] rounded-[7px] text-white !font-[500] cursor-pointer uppercase p-[6px_10px] inline-flex bg-cover items-center;
 }
-.sidebar-menu{
-    @apply p-[15px] overflow-y-auto h-[86vh]
+.sidebar-menu {
+  @apply p-[15px] overflow-y-auto h-[86vh];
 }
-.side-box{
-    @apply p-0 m-0 w-full flex flex-col list-none bg-[#1a2c38] rounded-[5px] mb-[10px]
+.side-box {
+  @apply p-0 m-0 w-full flex flex-col list-none bg-[#1a2c38] rounded-[5px] mb-[10px];
 }
-.li-options{
-    @apply flex p-[8px_16px] items-center gap-[9px] text-white no-underline text-[14px] font-[500] bg-transparent rounded-[5px] opacity-[0.5]
+.li-options {
+  @apply flex p-[8px_16px] items-center gap-[9px] text-white no-underline text-[14px] font-[500] bg-transparent rounded-[5px] opacity-[0.5];
 }
-.menu-button{
-    @apply flex justify-center items-center cursor-pointer min-w-[3.75rem] h-[3.75rem] rounded-[0.25rem]
+.menu-button {
+  @apply flex justify-center items-center cursor-pointer min-w-[3.75rem] h-[3.75rem] rounded-[0.25rem];
 }
 .svg-icon {
-    @apply pointer-events-none stroke-0 stroke-current fill-[#B1BAD3] shrink-0 inline-block w-[1em] h-[1em];
-  }
-  .link-wrap{
-    @apply flex justify-center gap-[4px] w-[100%] items-center
-  }
-  .header-button{
-    text-shadow: 0px 1px 2px rgba(0, 0, 0, 0.12), 0px 1px 3px rgba(0, 0, 0, 0.2);
+  @apply pointer-events-none stroke-0 stroke-current fill-[#B1BAD3] shrink-0 inline-block w-[1em] h-[1em];
+}
+.link-wrap {
+  @apply flex justify-center gap-[4px] w-[100%] items-center;
+}
+.header-button {
+  text-shadow: 0px 1px 2px rgba(0, 0, 0, 0.12), 0px 1px 3px rgba(0, 0, 0, 0.2);
 
-    @apply relative flex  flex-1 items-center justify-center bg-cover text-white text-[.875rem] !h-[2.25rem] rounded-[.25rem] bg-no-repeat  font-bold select-none
-
-  }
-  .sports{
-    background-image: url('/assets/sidebar/sports-balls-en.webp');
-    background-repeat: no-repeat;
-    background-size: cover;
-   
-  }
-  .casino{
-    background-image: url('/assets/sidebar/casino-poker-cards-en.webp');
-  }
-  .content{
-    @apply flex flex-col gap-[.5rem]
-  }
-  .inner-content{
-    @apply flex flex-col gap-[.5rem] p-4
-  }
-  .section-wrapper{
-    @apply flex flex-col max-w-full bg-[#1a2c38] rounded-[.25rem]
-  }
-  .sidebar-accordian{
-    @apply touch-none
-  }
-  .accordion{
-    @apply flex flex-col w-full relative z-0 rounded-[.25rem]
-  }
-  .header{
-    @apply z-[4] flex justify-between items-center 
-  }
-  .sidebar-btn{
-
-    @apply font-[600] text-[.875rem] py-[10px] px-[1rem] whitespace-nowrap gap-[.5rem] justify-between items-center flex  w-[100%]
-  }
-  .icon-wrapper{
-    background-color: rgba(85, 112, 134,.5);
-    @apply flex-shrink-0 flex w-4 h-4 -my-1 rounded-full items-center justify-center text-xs bg-opacity-50
-  }
-  .sidebar-btn-s{
-
-    @apply font-[600] text-[.875rem] py-[7px] px-[1rem] whitespace-nowrap gap-[.5rem] justify-between items-center flex  w-[100%]
-  }
-  .icon-title{
-    @apply text-white text-nowrap mb-[2px]
-  }
-  .svg-wrapper{
-    @apply flex items-center gap-2
-  }
-  .bottom-line{
-    @apply h-[2px] bg-[#2f4553] w-full
-  }
+  @apply relative flex  flex-1 items-center justify-center bg-cover text-white text-[.875rem] !h-[2.25rem] rounded-[.25rem] bg-no-repeat  font-bold select-none;
+}
+.sports {
+  background-image: url("/assets/sidebar/sports-balls-en.webp");
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+.casino {
+  background-image: url("/assets/sidebar/casino-poker-cards-en.webp");
+}
+.content {
+  @apply flex flex-col gap-[.5rem];
+}
+.inner-content {
+  @apply flex flex-col gap-[.5rem] p-4;
+}
+.section-wrapper {
+  @apply flex flex-col max-w-full bg-[#1a2c38] rounded-[.25rem];
+}
+.sidebar-accordian {
+  @apply touch-none;
+}
+.accordion {
+  @apply flex flex-col w-full relative z-0 rounded-[.25rem];
+}
+.header {
+  @apply z-[4] flex justify-between items-center;
+}
+.sidebar-btn {
+  @apply font-[600] text-[.875rem] py-[10px] px-[1rem] whitespace-nowrap gap-[.5rem] justify-between items-center flex  w-[100%];
+}
+.icon-wrapper {
+  background-color: rgba(85, 112, 134, 0.5);
+  @apply flex-shrink-0 flex w-4 h-4 -my-1 rounded-full items-center justify-center text-xs bg-opacity-50;
+}
+.sidebar-btn-s {
+  @apply font-[600] text-[.875rem] py-[7px] px-[1rem] whitespace-nowrap gap-[.5rem] justify-between items-center flex  w-[100%];
+}
+.icon-title {
+  @apply text-white text-nowrap mb-[2px];
+}
+.svg-wrapper {
+  @apply flex items-center gap-2;
+}
+.bottom-line {
+  @apply h-[2px] bg-[#2f4553] w-full;
+}
