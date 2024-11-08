@@ -1,4 +1,4 @@
-import { NgFor } from '@angular/common';
+import { NgClass, NgFor, NgIf } from '@angular/common';
 import { Component } from '@angular/core';
 import { SlickCarouselModule } from 'ngx-slick-carousel';
 
@@ -6,7 +6,7 @@ import { SlickCarouselModule } from 'ngx-slick-carousel';
 @Component({
   selector: 'app-home',
   standalone: true,
-  imports: [NgFor, SlickCarouselModule],
+  imports: [NgFor, SlickCarouselModule,NgIf,NgClass],
   templateUrl: './home.component.html',
   styleUrl: './home.component.css'
 })
@@ -14,6 +14,23 @@ export class HomeComponent {
 
   currentSlideIndex = 0;
   slideCount = 0;
+  // Winner Dropdown
+  WinnerDropdown=false;
+  toggleDropdown() {
+    this.WinnerDropdown = !this.WinnerDropdown;
+  }
+
+  // Market 1
+  isMarketOpen = true;
+  isMarketOpen2 = true;
+
+  toggleMarket() {
+    this.isMarketOpen = !this.isMarketOpen;
+  }
+  
+  toggleMarket2() {
+    this.isMarketOpen2 = !this.isMarketOpen2;
+  }
 
   // slideConfig = {
   //   slidesToScroll: 1,
