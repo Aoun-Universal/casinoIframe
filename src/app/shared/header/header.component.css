@@ -1,5 +1,5 @@
 .navigation {
-    @apply w-full z-[100] pr-[6px] bg-black flex items-center flex-col shadow-[#0003_0_4px_6px_-1px,#0000001f_0_2px_px_-1px] touch-none
+    @apply w-full z-[100] pr-[6px] bg-[#1a2c38] flex items-center flex-col shadow-[#0003_0_4px_6px_-1px,#0000001f_0_2px_px_-1px] touch-none
 }
 .group-container{
     @apply w-full px-[3vw] flex items-center flex-col h-full justify-center relative;
@@ -269,23 +269,56 @@ svg.svelte-md2ju7 {
     @apply flex items-center justify-center flex-col p-[.5rem] gap-[.5rem]
 }
 .result{
-    @apply z-[1450] inset-[0px_uto_auto_0px] m-0 max-w-[1018.91px] mx-auto;
+    @apply z-[1450] inset-[0px_uto_auto_0px] m-0 max-w-[1018.91px] w-full ;
 }
 input {
     @apply w-full outline-none bg-[#0f212e] text-[#fff] cursor-text p-[.5rem] appearance-none
 }
 .input-wrap {
-@apply w-full text-[#fff] bg-[#0f212e] shadow-[0_1px_3px_0_rgba(0,0,0,2),0_1px_2px_0_rgba(0,0,0,.12)] leading-[0px] font-semibold outline-none m-0 cursor-text
+@apply  text-[#fff] bg-[#0f212e] shadow-[0_1px_3px_0_rgba(0,0,0,2),0_1px_2px_0_rgba(0,0,0,.12)] leading-[0px] font-semibold outline-none m-0 cursor-text
 text-[.875rem] flex items-center appearance-none rounded-[20px] p-[0_1rem]
 
 }
 .casion-btn{
-    @apply flex items-center text-white text-sm font-medium pr-4 py-2 gap-[.5rem] mr-[1rem] rounded-full bg-gray-800 
+    @apply flex items-center  text-white text-sm font-medium pr-4 py-2 gap-[.5rem] mr-[1rem] rounded-full 
 }
 .casion-dropdown{
-    @apply absolute text-[rgb(47_69_83)]  justify-center   z-[100] top-[120px] py-1  bg-white rounded-[.25rem] shadow-lg  w-[94px] 
+    @apply absolute text-[rgb(47_69_83)]  justify-center   z-[2000] top-[60px] py-1  bg-white rounded-[.25rem] shadow-lg  w-[67px] 
 }
 
 .navigation-mobile{
     @apply grid grid-cols-[1fr_auto_1fr]  relative h-[60px]  w-full items-center   
+    }
+
+    .search-overlay{
+        width: 100vw;
+        height: 100%;
+        background: #1a2e38b3;
+        position: fixed; 
+        z-index: 1450;
+    }
+    .search-wrap.svelte-12b0zpm {
+        position: relative;
+        display: flex;
+        flex-direction: column;
+        justify-content: flex-end;
+        touch-action: pan-x;
+    }
+    .results-wrapper.svelte-15c4jgu {
+        width: 100%;
+        background: #0f212e;
+        border-radius: .25rem;
+        color: #fff;
+        max-height: 400px;
+        padding: 1rem;
+        display: flex;
+        flex-direction: column;
+        gap: 2rem;
+    }
+    
+    .search-icon {
+        z-index: 2;
+        color: #557086;
+        font-size:1.25rem;
+        margin-bottom: -3px;
     }

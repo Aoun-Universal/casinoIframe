@@ -1,5 +1,7 @@
 <!-- Header -->
 <div class="hidden md:block lg:block">
+
+
     <div class="navigation">
         <div class="group-container">
             <div class="ctainer">
@@ -168,6 +170,64 @@
                 </div>
             </div>
         </div>
+
+
+
+    </div>
+
+    <div *ngIf="seachbutton" class="search-overlay">
+        <!-- Container for search bar -->
+        <div class="w-[1084.91px] ml-10 mt-2" >
+            <!-- Search bar -->
+            <div class="input-wrap ">
+                <!-- Dropdown button -->
+                <button class="casion-btn z-[2000]" (click)="CosinDropdown()">
+                    Casino
+                    <img src="/assets/header/down.png" class="svg-icon" [class.rotate-180]="cosinoDropOpen">
+                </button>
+                <div class="casion-dropdown" *ngIf="cosinoDropOpen">
+                    <!-- Arrow -->
+                    <div class="arrow"></div>
+                    <div style="max-height: inherit;">
+                        <button type="button" tabindex="0" class="dropdown-scroll">
+                            <span>Casino</span></button> <button type="button" tabindex="0" class="dropdown-scroll">
+                            <span>Sports</span></button>
+                    </div>
+                </div>
+
+                <!-- Search icon -->
+                <svg fill="currentColor" viewBox="0 0 64 64" class="svg-icon  search-icon" >
+                    <title></title>
+                    <path fill-rule="evenodd" clip-rule="evenodd"
+                        d="M10.266 3.893a23.1 23.1 0 1 1 25.668 38.414A23.1 23.1 0 0 1 10.266 3.893Zm5.112 30.764a13.9 13.9 0 1 0 15.444-23.114 13.9 13.9 0 0 0-15.444 23.114ZM38.55 46.33a28.002 28.002 0 0 0 7.78-7.78L64 56.22 56.22 64 38.55 46.33Z">
+                    </path>
+                </svg>
+
+                <!-- Search input -->
+                <input type="text" placeholder="Search your game" class="focus:outline-none placeholder:text-[#53646F] " />
+
+                <!-- Close button -->
+                <button class="ml-3 text-gray-500 hover:text-white" (click)="closeDropdown()">
+                    <svg fill="currentColor" viewBox="0 0 64 64" class="svg-icon ">
+                        <title></title>
+                        <path
+                            d="m54.827 16.187-7.014-7.014L32 24.987 16.187 9.173l-7.014 7.014L24.987 32 9.173 47.813l7.014 7.014L32 39.013l15.813 15.814 7.014-7.014L39.013 32l15.814-15.813Z">
+                        </path>
+                    </svg>
+                </button>
+            </div>
+        </div>
+
+        <!-- Search validation message -->
+        <div data-popper-placement="bottom"
+            style="z-index: 1450; position: fixed; inset: 0px auto auto 0px; margin: 0px; transform: translate3d(282.5px, 115.5px, 0px); width: 1084.69px;">
+            <div class="results-wrapper scrollY svelte-15c4jgu" >
+                <div class="exception-wrap svelte-4te59m"><span
+                        class="font-semibold text-[#b1bad3] text-[.875rem] svelte-17v69ua"
+                        >Search requires at least 3 characters.</span></div>
+            </div>
+        </div>
+
     </div>
 </div>
 
@@ -179,8 +239,7 @@
             style="height: 100%;justify-content:center;position:relative;">
             <div class="ctainer svelte-ntdiml">
                 <div class="navigation-mobile svelte-1nt2705 authenticated">
-                    <div
-                        class="stack x-flex-start y-center gap-smaller">
+                    <div class="stack x-flex-start y-center gap-smaller">
                         <div class="mobile">
                             <div class="image-focus svelte-1bax0ph">
                                 <a data-test="home-button"
@@ -266,10 +325,8 @@
                             </div>
                         </div>
                         <button type="button" tabindex="0"
-                            class="inline-flex relative rounded-tr-[.25rem] rounded-br-[.25rem] items-center gap-2 justify-center rounded-sm font-semibold whitespace-nowrap ring-offset-background transition disabled:pointer-events-none disabled:opacity-50 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 active:scale-[0.98] bg-blue-500 text-white betterhover:hover:bg-blue-600 betterhover:hover:text-white focus-visible:outline-white text-sm leading-none shadow-md py-[0.8125rem] px-[1rem]"
-                             >
-                            <svg fill="currentColor"
-                                viewBox="0 0 64 64" class="svg-icon " >
+                            class="inline-flex relative rounded-tr-[.25rem] rounded-br-[.25rem] items-center gap-2 justify-center rounded-sm font-semibold whitespace-nowrap ring-offset-background transition disabled:pointer-events-none disabled:opacity-50 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 active:scale-[0.98] bg-blue-500 text-white betterhover:hover:bg-blue-600 betterhover:hover:text-white focus-visible:outline-white text-sm leading-none shadow-md py-[0.8125rem] px-[1rem]">
+                            <svg fill="currentColor" viewBox="0 0 64 64" class="svg-icon ">
                                 <title></title>
                                 <path fill-rule="evenodd" clip-rule="evenodd"
                                     d="M45.71 13.349v.024c0 4.316-2.076 8.146-5.32 10.57H24.61l-.034-.024a13.19 13.19 0 0 1-5.286-10.57c0-7.296 5.914-13.21 13.21-13.21 7.296 0 13.21 5.914 13.21 13.21Zm4.806 22.844H62.23v-3.19a5.31 5.31 0 0 0-5.3-5.31H10.14a5.624 5.624 0 0 1-5.24-5.608v-.014a4.914 4.914 0 0 1 0-.522v.012a5.546 5.546 0 0 1 5.51-5.11h3.85a17.489 17.489 0 0 1-.26-2.88v-.01H7.06A7.07 7.07 0 0 0 0 20.63v37.1a6.14 6.14 0 0 0 6.13 6.13h50.79a5.31 5.31 0 0 0 5.31-5.31v-3.19H50.5c-.092.004-.2.006-.31.006-5.296 0-9.59-4.294-9.59-9.59s4.294-9.59 9.59-9.59c.108 0 .218.002.326.006Zm4.733-22.63v2.89h-4.516a18.36 18.36 0 0 0 .267-2.89h4.25Zm-4.516 2.89-.02.11.017-.11h.003ZM8.66 21.983c0-.98.792-1.774 1.77-1.78h4.91l.044.122a17.843 17.843 0 0 0 1.956 3.618h-6.91a1.77 1.77 0 0 1-1.77-1.77v-.19ZM64 39.943v11.67l-13.488-.002a5.84 5.84 0 0 1-6.094-5.834 5.84 5.84 0 0 1 6.082-5.834H64Zm-13.06 8.5a2.67 2.67 0 0 0 2.67-2.66v-.01a2.67 2.67 0 1 0-2.67 2.67Zm-1.26-28.24a18.188 18.188 0 0 1-1.998 3.74h-.002l-.038.058.04-.058H58v-3.74h-8.32Z">
@@ -336,58 +393,3 @@
     </div>
 </div>
 
-<div *ngIf="seachbutton">
-<!-- Container for search bar -->
-<div class="flex items-center justify-center bg-gray-800 p-4   result">
-    <!-- Search bar -->
-    <div class="input-wrap focus:border-white ">
-        <!-- Dropdown button -->
-        <button
-            class="casion-btn" (click)="CosinDropdown()">
-            Casino
-            <img src="/assets/header/down.png" class="svg-icon" [class.rotate-180]="cosinoDropOpen">
-        </button>
-        <div class="casion-dropdown" *ngIf="cosinoDropOpen">
-            <!-- Arrow -->
-            <div class="arrow"></div>
-            <div style="max-height: inherit;">
-                <button type="button" tabindex="0" class="dropdown-scroll">
-                    <span>Casino</span></button> <button type="button" tabindex="0"
-                    class="dropdown-scroll">
-                    <span>Sports</span></button>
-            </div>
-        </div>
-
-        <!-- Search icon -->
-        <svg fill="currentColor" viewBox="0 0 64 64" class="svg-icon " >
-            <title></title>
-            <path fill-rule="evenodd" clip-rule="evenodd"
-                d="M10.266 3.893a23.1 23.1 0 1 1 25.668 38.414A23.1 23.1 0 0 1 10.266 3.893Zm5.112 30.764a13.9 13.9 0 1 0 15.444-23.114 13.9 13.9 0 0 0-15.444 23.114ZM38.55 46.33a28.002 28.002 0 0 0 7.78-7.78L64 56.22 56.22 64 38.55 46.33Z">
-            </path>
-        </svg>
-
-        <!-- Search input -->
-        <input type="text" placeholder="Search your game" class="focus:outline-none " />
-
-        <!-- Close button -->
-        <button class="ml-3 text-gray-500 hover:text-white"  (click)="closeDropdown()">
-            <svg fill="currentColor" viewBox="0 0 64 64" class="svg-icon "  >
-                <title></title>
-                <path
-                    d="m54.827 16.187-7.014-7.014L32 24.987 16.187 9.173l-7.014 7.014L24.987 32 9.173 47.813l7.014 7.014L32 39.013l15.813 15.814 7.014-7.014L39.013 32l15.814-15.813Z">
-                </path>
-            </svg>
-        </button>
-    </div>
-</div>
-
-<!-- Search validation message -->
-<div class="result">
-    <div class="results-wrapper">
-        <div class="exception-wrap">
-            Search requires at least 3 characters.
-        </div>
-    </div>
-</div>
-
-</div>
