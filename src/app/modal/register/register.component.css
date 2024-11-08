@@ -57,7 +57,7 @@
   @apply flex-col-reverse items-start w-full inline-flex touch-auto relative;
 }
 .input-wrap {
-  @apply w-full flex flex-shrink-0  border rounded-[0.25rem] touch-auto;
+  @apply w-full flex flex-shrink-0   rounded-[0.25rem] touch-auto;
   box-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.2), 0 1px 2px 0 rgba(0, 0, 0, 0.12);
 }
 .input-content {
@@ -72,7 +72,7 @@
   transform: translateY(-50%);
 }
 .input-spacing {
-  @apply p-[7px] w-full appearance-none text-sm shadow-none text-[#fff] !bg-[#0f212e] border-[2px] border-[#2f4553] border-solid font-semibold outline-none touch-auto;
+  @apply p-[7px] w-full hover:border-[#557086] appearance-none text-sm shadow-none text-[#fff] !bg-[#0f212e] border-[2px] border-[#2f4553] border-solid font-semibold outline-none touch-auto;
 }
 .input-button-wrap {
   @apply inline-flex touch-auto;

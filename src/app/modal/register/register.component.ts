@@ -12,6 +12,7 @@ import {FormBuilder, FormGroup, FormsModule, ReactiveFormsModule, Validators} fr
 export class RegisterComponent {
   registerForm: FormGroup;
   currentStep = 1;
+  passwordVisible: boolean = false;
   selectedLanguage = 'en';
   isChecked = false;
 
@@ -30,7 +31,9 @@ export class RegisterComponent {
       dob: ['', Validators.required]
     });
   }
-
+  togglePasswordVisibility() {
+    this.passwordVisible = !this.passwordVisible;
+  }
   nextStep() {
     this.currentStep++;
   }
