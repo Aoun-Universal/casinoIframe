@@ -1,4 +1,5 @@
 import { Routes } from '@angular/router';
+import { RegisterComponent } from './modal/register/register.component';
 
 export const routes: Routes = [
   {
@@ -27,6 +28,10 @@ export const routes: Routes = [
         loadComponent: () => import('./pages/sports-markets/sports-markets.component').then(c=>c.SportsMarketsComponent)
       }
     ]
+  },
+  {
+    path: 'login',
+    component: RegisterComponent
   },
   {
     path: '**',

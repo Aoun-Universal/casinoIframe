@@ -16,7 +16,7 @@
   @apply bg-[#0f212e] flex flex-col sticky top-0 z-[1] gap-2 touch-auto pt-2;
 }
 .stack {
-  @apply p-0 gap-1 items-start justify-stretch [grid-auto-flow:column] grid touch-auto;
+  @apply p-0 gap-1 items-start justify-stretch [grid-auto-flow:column] grid touch-auto bg-[#1a2c38];
   grid-template-columns: repeat(3, minmax(0px, 1fr));
 }
 .step-active {
@@ -57,7 +57,7 @@
   @apply flex-col-reverse items-start w-full inline-flex touch-auto relative;
 }
 .input-wrap {
-  @apply w-full flex flex-shrink-0  border rounded-[0.25rem] touch-auto;
+  @apply w-full flex flex-shrink-0   rounded-[0.25rem] touch-auto;
   box-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.2), 0 1px 2px 0 rgba(0, 0, 0, 0.12);
 }
 .input-content {
@@ -72,7 +72,7 @@
   transform: translateY(-50%);
 }
 .input-spacing {
-  @apply p-[7px] w-full appearance-none text-sm shadow-none text-[#fff] !bg-[#0f212e] border-[2px] border-[#2f4553] border-solid font-semibold outline-none touch-auto;
+  @apply p-[7px] w-full hover:border-[#557086] appearance-none text-sm shadow-none text-[#fff] !bg-[#0f212e] border-[2px] border-[#2f4553] border-solid font-semibold outline-none touch-auto;
 }
 .input-button-wrap {
   @apply inline-flex touch-auto;
@@ -189,7 +189,7 @@
 }
 
 .contenttop {
-  @apply h-full  pr-[1rem] pl-[1rem] flex flex-col pb-[1rem] gap-[1rem] touch-auto;
+  @apply h-full  bg-[rgb(15,33,46)] pr-[1rem] pl-[1rem] flex flex-col  pb-[1rem] gap-[1rem] touch-auto;
 }
 .term-div {
     @apply max-h-[372px] touch-auto text-left p-4 bg-[rgb(33,55,67)] rounded-lg  [scrollbar-color:#b1bad3] [scrollbar-width:thin]  overflow-y-auto overflow-x-hidden min-h-0

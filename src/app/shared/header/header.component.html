@@ -23,7 +23,7 @@
                                 <div class="dropdown">
                                     <button type="button" class="OpenDropdown-btn">
                                         <div class="wrap">
-                                            <div class="currency svelte" role="presentation">
+                                            <div class="currency  svelte" role="presentation">
                                                 <span class="content svelte">
                                                     <span class="nmric-num">0.00000000</span>
                                                 </span>
@@ -86,7 +86,7 @@
                         <button type="button" class="wallet"><span>Wallet</span></button>
                     </div>
                     <section>
-                        <div class="stack x-flex-end svelte-right">
+                        <div class="stack x-flex-end svelte-right right-stack">
                             <button type="button" class="search-btn" (click)="toggleDropdown('seachbutton')">
                                 <img src="/assets/header/search.png" class="svg-icon ">
                                 <span>Search</span>
@@ -117,7 +117,7 @@
                             <div class="notifications-widget  svelte-6gfkw4" style="z-index: 901;" *ngIf="bellDropOpen">
                                 <div class="notifications-header svelte-12heyz0">
                                     <div class="title svelte-12heyz0">
-                                        <img src="/assets/header/bell.png" class="svg-icon">
+                                        <svg fill="#B1BAD3" viewBox="0 0 64 64" class="svg-icon "> <title></title> <path fill="#B1BAD3" d="M56.213 38.053v10.374H7.787V38.053h6.906v-15.84c.038-8.3 5.912-15.216 13.728-16.86l.112-.02V3.467a3.466 3.466 0 0 1 6.932 0v1.866c7.954 1.668 13.84 8.624 13.84 16.956v15.844l6.908-.08ZM32 63.999c5.73 0 10.374-4.644 10.374-10.374H21.627c0 5.73 4.644 10.374 10.374 10.374H32Z"></path></svg>
                                         <span class="font-semibold">Notifications</span>
                                     </div>
                                     <div class="hoverable svelte-bbyuql">
@@ -133,7 +133,7 @@
                                             <div class="large-icon svelte-1qm952x">
                                                 <img src="/assets/header/notificatin.png" alt="notificatin" class="svg">
 
-                                            </div> <span class="font-semibold !text-white">No
+                                            </div> <span class="font-semibold !text-white pt-4">No
                                                 Notifications Available</span> <span class="font-normal">Your
                                                 interactions will be visible here</span>
                                         </div>
@@ -177,7 +177,7 @@
 
     <div *ngIf="seachbutton" class="search-overlay">
         <!-- Container for search bar -->
-        <div class="w-[1084.91px] ml-10 mt-2" >
+        <div class="w-[1084.91px] ml-10 mt-2 pt-[55px]" >
             <!-- Search bar -->
             <div class="input-wrap ">
                 <!-- Dropdown button -->
@@ -235,11 +235,11 @@
 <!-- mobile view -->
 <div class="md:hidden lg:hidden">
     <div style="--header-zIndex: 100; padding-right: 6px;" class="navigation svelte-1nt2705 mobile">
-        <div class="group variant-undefined svelte-ntdiml"
+        <div class="group variant-undefined svelte-ntdiml pr-1.5"
             style="height: 100%;justify-content:center;position:relative;">
             <div class="ctainer svelte-ntdiml">
                 <div class="navigation-mobile svelte-1nt2705 authenticated">
-                    <div class="stack x-flex-start y-center gap-smaller">
+                    <div class="stack x-flex-start y-center gap-smaller ml-1">
                         <div class="mobile">
                             <div class="image-focus svelte-1bax0ph">
                                 <a data-test="home-button"
@@ -259,7 +259,7 @@
                         </div>
                     </div>
                     <div class="balance-toggle svelte-51jofe" data-test="balance-toggle">
-                        <div class="coin-toggle svelte-1hjozqf">
+                        <div class="coin-toggle svelte-1hjozqf mbl-coin-toggle">
                             <div class="wrapper currency-view-compact svelte-1hjozqf">
                                 <div class="dropdown">
                                     <button type="button" class="OpenDropdown-btn">
@@ -335,7 +335,7 @@
                     </div>
                     <section>
                         <div
-                            class="stack x-flex-end y-center gap-none padding-none direction-horizontal padding-left-auto padding-top-auto padding-bottom-auto padding-right-auto svelte-1cd1boi">
+                            class="stack stack-right y-center gap-none padding-none direction-horizontal padding-left-auto padding-top-auto padding-bottom-auto padding-right-auto svelte-1cd1boi">
                             <div class="dropdown svelte-1iau4lg transparent">
                                 <button type="button" class="porfile-iocn" (click)="toggleDropdown('porfileDropOpen')">
                                     <img src="/assets/header/porfile.png" class="svg-icon ">
