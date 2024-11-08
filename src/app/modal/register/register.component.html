@@ -1,23 +1,18 @@
 <!-- first step================================================ -->
-
-
-<!-- <div id="svelte" class="">
+<div *ngIf="currentStep === 1">
   <div class="Modal-container">
     <div class="svelte-syudie"></div>
     <div class="card-svelte">
       <div class="ctainer-div">
         <div>
           <div class="wrap-normal">
-            <img class="wrap-normal-svg" src="/login/white.png" />
+            <img class="wrap-normal-svg" src="/login/white.png"/>
           </div>
         </div>
         <button
-          type="button"
-          tabindex="0"
+          (click)="exit()"
           class="inline-flex relative items-center gap-2 justify-center font-semibold whitespace-nowrap ring-offset-background transition disabled:pointer-events-none disabled:opacity-50 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 active:scale-[0.98] bg-transparent text-white betterhover:hover:bg-grey-900 betterhover:hover:text-white focus-visible:outline-white text-xs leading-none [&amp;_svg]:text-grey-200 [&amp;:hover>svg]:text-white py-[0.75rem] px-[0.75rem] rounded-full"
-          data-test="exit-registration"
-          data-analytics="exit-registration"
-          data-button-root=""
+          type="button"
         >
           Exit
         </button>
@@ -28,50 +23,42 @@
           <div class="contenttop">
             <div
               class="ctainer "
-
             >
               <div
                 class="stack "
-
-
               >
                 <div
                   class="step-active"
-
                 ></div>
-                <div class="step-svelte" ></div>
-                <div class="step-svelte" ></div>
+                <div class="step-svelte"></div>
+                <div class="step-svelte"></div>
               </div>
               <div
                 class="firt-step"
-
-
               >
                 <span
                   class="step-text"
 
-                  >Step 1 / 3</span
+                >Step 1 / 3</span
                 >
               </div>
             </div>
             <h2
               class="select-language"
-
             >
               Select your preferred language
             </h2>
             <span
               class="select-language-span"
-
-              >Stake is available is several languages. Feel free to personalise
+            >Stake is available is several languages. Feel free to personalise
               your language across our site from the options below.</span
             >
             <label class="labelstacked">
-              <div class="select-wrap" >
-                <div class="select-content" >
+              <div class="select-wrap">
+                <div class="select-content">
                   <select
+                    [(ngModel)]="selectedLanguage"
                     class="select-spacing"
-                    data-test="select-language"
                   >
                     <option value="en">English</option>
                     <option value="es">Español</option>
@@ -92,12 +79,11 @@
                   </select>
                   <div
                     class="dropdown-icon-wrap"
-
                   >
                     <svg
+                      class="svg-icon-dropdown"
                       fill="currentColor"
                       viewBox="0 0 64 64"
-                      class="svg-icon-dropdown"
 
                     >
                       <title></title>
@@ -109,19 +95,14 @@
                 </div>
               </div>
             </label>
-            <div class="flex flex-col justify-end h-full" >
+            <div class="flex flex-col justify-end h-full">
               <button
-                type="button"
-                tabindex="0"
+                (click)="nextStep()"
                 class="inline-flex relative items-center gap-2 justify-center rounded-sm font-semibold whitespace-nowrap ring-offset-background transition disabled:pointer-events-none disabled:opacity-50 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 active:scale-[0.98] bg-blue-500 text-white betterhover:hover:bg-blue-600 betterhover:hover:text-white focus-visible:outline-white text-base leading-none shadow-md py-[1.125rem] px-[1.75rem]"
-                data-analytics="register-language-confirm-button"
-                data-test="register-language"
-                data-button-root=""
+                type="button"
               >
                 <div
-                  data-loader-content=""
                   class="contents"
-
                 >
                   Confirm
                 </div>
@@ -135,12 +116,10 @@
               <span
                 class=" text-[#b1bad3]  text-center font-normal text-sm touch-auto"
 
-                >Already have an account?
+              >Already have an account?
                 <button
-                  type="button"
-                  tabindex="0"
                   class="inline-flex relative items-center gap-2 justify-center rounded-sm font-semibold whitespace-nowrap ring-offset-background transition disabled:pointer-events-none disabled:opacity-50 focus-visible:outline-2 focus-visible:outline-offset-2 active:scale-[0.98] bg-transparent text-white betterhover:hover:bg-transparent betterhover:hover:text-white focus-visible:outline-none text-sm leading-none [&amp;_svg]:text-grey-200 [&amp;:hover>svg]:text-white"
-                  data-button-root=""
+                  type="button"
                 >
                   Sign In
                 </button></span
@@ -151,11 +130,11 @@
       </div>
     </div>
   </div>
-</div> -->
+</div>
 
 
 <!-- 2nd Step======================================================= -->
-<div class="" id="svelte">
+<div *ngIf="currentStep === 2">
   <div class="Modal-container">
     <div class="svelte-syudie"></div>
     <div class="card-svelte">
@@ -169,10 +148,6 @@
         <!-- Exit Btn -->
         <button
           class="inline-flex relative items-center gap-2 justify-center font-semibold whitespace-nowrap ring-offset-background transition disabled:pointer-events-none disabled:opacity-50 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 active:scale-[0.98] bg-transparent text-white betterhover:hover:bg-grey-900 betterhover:hover:text-white focus-visible:outline-white text-xs leading-none [&amp;_svg]:text-grey-200 [&amp;:hover>svg]:text-white py-[0.75rem] px-[0.75rem] rounded-full"
-          data-analytics="exit-registration"
-          data-button-root=""
-          data-test="exit-registration"
-          tabindex="0"
           type="button"
         >
           Exit
@@ -191,11 +166,8 @@
               <!-- Back Arrow svg Button -->
               <div class="stack-padding">
                 <button
+                  (click)="prevStep()"
                   class="inline-flex relative items-center gap-2 justify-center rounded-sm font-semibold whitespace-nowrap ring-offset-background transition disabled:pointer-events-none disabled:opacity-50 focus-visible:outline-2 focus-visible:outline-offset-2 active:scale-[0.98] bg-transparent text-grey-200 betterhover:hover:bg-transparent betterhover:hover:text-white focus-visible:text-white focus-visible:outline-none text-sm leading-none"
-                  data-analytics="registration-register-back"
-                  data-button-root=""
-                  data-test="steps-back"
-                  tabindex="0"
                   type="button"
                 >
                   <img alt="backArrow" class="svg-back-arrow" src="/src/app/modal/login/back-icon.png"/>
@@ -222,9 +194,7 @@
                     <input
                       autocomplete="on"
                       class="input-spacing"
-                      data-test="register-email"
                       formControlName="email"
-                      max="Infinity"
                       name="email"
                       type="email"
                     />
@@ -660,14 +630,9 @@
                           <div class="before-icon"></div>
                           <div class="after-icon"></div>
                           <input
-                            [(ngModel)]="phoneNumber"
                             aria-label="Phone number"
                             autocomplete="on"
                             class="input-spacing"
-                            data-dd-privacy="mask"
-                            data-test="phone-number"
-                            inputmode="numeric"
-                            max="Infinity"
                             name="phoneNumber"
                             placeholder="Phone number"
                             type="text"
@@ -735,14 +700,9 @@
               >
                 <button
                   class="inline-flex relative items-center gap-2 justify-center rounded-sm font-semibold whitespace-nowrap ring-offset-background transition disabled:pointer-events-none disabled:opacity-50 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 active:scale-[0.98] bg-blue-500 text-white betterhover:hover:bg-blue-600 betterhover:hover:text-white focus-visible:outline-white text-base leading-none shadow-md py-[1.125rem] px-[1.75rem] min-w-[12ch] w-full"
-                  data-analytics="register-create-account-continue-button"
-                  data-button-root=""
-                  data-test="button-register"
-                  data-testid="password-reset-button"
-                  tabindex="0"
                   type="submit"
                 >
-                  <div class="contents" data-loader-content="">Continue</div>
+                  <div class="contents">Continue</div>
                 </button>
               </div>
               <!-- OR text -->
@@ -757,9 +717,6 @@
                   <div class="provider-wrapper svelte-qhfv7k" data-content="">
                     <button
                       class="inline-flex bg-[rgb(47,69,83)] relative items-center gap-2 justify-center rounded-sm font-semibold whitespace-nowrap ring-offset-background transition disabled:pointer-events-none disabled:opacity-50 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 active:scale-[0.98] bg-grey-400 text-white betterhover:hover:bg-grey-300 betterhover:hover:text-white focus-visible:outline-white text-sm leading-none shadow-md py-[0.8125rem] px-[1rem]"
-                      data-analytics="provider-login-facebook"
-                      data-button-root=""
-                      tabindex="0"
                       type="button"
                     >
                       <!-- facebook svg -->
@@ -772,9 +729,6 @@
                   <div class="provider-wrapper svelte-qhfv7k" data-content="">
                     <button
                       class="inline-flex bg-[rgb(47,69,83)] relative items-center gap-2 justify-center rounded-sm font-semibold whitespace-nowrap ring-offset-background transition disabled:pointer-events-none disabled:opacity-50 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 active:scale-[0.98] bg-grey-400 text-white betterhover:hover:bg-grey-300 betterhover:hover:text-white focus-visible:outline-white text-sm leading-none shadow-md py-[0.8125rem] px-[1rem]"
-                      data-analytics="provider-login-facebook"
-                      data-button-root=""
-                      tabindex="0"
                       type="button"
                     >
                       <!-- google svg -->
@@ -832,23 +786,19 @@
 
 
 <!-- 3rd step============================================================================ -->
-<!-- <div id="svelte" class="">
+<div *ngIf="currentStep === 3">
   <div class="Modal-container">
     <div class="svelte-syudie"></div>
     <div class="card-svelte">
       <div class="ctainer-div">
         <div>
           <div class="wrap-normal">
-            <img class="wrap-normal-svg" src="/login/white.png" />
+            <img class="wrap-normal-svg" src="/login/white.png"/>
           </div>
         </div>
         <button
-          type="button"
-          tabindex="0"
           class="inline-flex relative items-center gap-2 justify-center font-semibold whitespace-nowrap ring-offset-background transition disabled:pointer-events-none disabled:opacity-50 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 active:scale-[0.98] bg-transparent text-white betterhover:hover:bg-grey-900 betterhover:hover:text-white focus-visible:outline-white text-xs leading-none [&amp;_svg]:text-grey-200 [&amp;:hover>svg]:text-white py-[0.75rem] px-[0.75rem] rounded-full"
-          data-test="exit-registration"
-          data-analytics="exit-registration"
-          data-button-root=""
+          type="button"
         >
           Exit
         </button>
@@ -865,15 +815,10 @@
               </div>
               <div class="stack-padding">
                 <button
-                  type="button"
-                  tabindex="0"
                   class="inline-flex relative items-center gap-2 justify-center rounded-sm font-semibold whitespace-nowrap ring-offset-background transition disabled:pointer-events-none disabled:opacity-50 focus-visible:outline-2 focus-visible:outline-offset-2 active:scale-[0.98] bg-transparent text-grey-200 betterhover:hover:bg-transparent betterhover:hover:text-white focus-visible:text-white focus-visible:outline-none text-sm leading-none"
-                  data-test="steps-back"
-                  data-analytics="registration-register-back"
-                  data-button-root=""
+                  type="button"
                 >
-                <img class="svg-back-arrow" src="/login/back-icon.png" />
-
+                  <img class="svg-back-arrow" src="/login/back-icon.png"/>
                   Back
                 </button>
                 <span class="step-text">Step 2 / 3</span>
@@ -883,15 +828,15 @@
               <h2 class="select-language">Create an account</h2>
             </div>
             <form
-              data-test-form-valid="true"
               class="flex-col justify-center touch-auto flex w-full h-full"
+              data-test-form-valid="true"
             >
               <div>
                 <div class="term-div">
                   <div class="content-block">
                     <h1 class="term-text">
                       <span id="Terms_and_Conditions"
-                        >Terms and Conditions
+                      >Terms and Conditions
                       </span>
                     </h1>
                     <p class="inline-text"><span class="span-text"></span></p>
@@ -900,7 +845,7 @@
                     </h3>
                     <p class="inline-text">
                       <span class="span-text"
-                        >1.1 Stake.com is owned and operated by Medium Rare,
+                      >1.1 Stake.com is owned and operated by Medium Rare,
                         N.V. (hereinafter "Stake", "We" or "Us"), a company with
                         head office at Korporaalweg 10, Willemstad, Curaçao.
                         Medium Rare N.V. is authorised to offer it’s services in
@@ -919,7 +864,7 @@
                     </h3>
                     <p class="inline-text">
                       <span class="span-text"
-                        >2.1 By registering on www.stake.com (the “Website”),
+                      >2.1 By registering on www.stake.com (the “Website”),
                         you enter into a contract with Medium Rare N.V., and
                         agree to be bound by (i) these Terms and Conditions;
                         (ii) our Privacy Policy; (iii) our Cookies Policy and
@@ -936,36 +881,30 @@
               <div class="stack-svelte">
                 <div class="text-left w-full">
                   <div>
-                    <label data-test="accept-terms" class="accept-term"
-                      ><input
-                        type="checkbox"
-                        data-test="accept-terms"
-                        class="tc-checkbox"
-                        value="undefined"
-                      />
+                    <label class="accept-term" data-test="accept-terms"
+                    ><input
+                      class="tc-checkbox"
+                      type="checkbox"
+                      value="undefined"
+                    />
                       <span class="indicator-variant"></span>
                       <span class="checkbox-text"
-                        ><span slot="label"
-                          ><span
-                            class="text-[#b1bad3] inline text-left text-sm font-normal touch-auto"
-                            >I have read and agree to the terms and
+                      ><span slot="label"
+                      ><span
+                        class="text-[#b1bad3] inline text-left text-sm font-normal touch-auto"
+                      >I have read and agree to the terms and
                             conditions</span
-                          ></span
-                        >
+                      ></span
+                      >
                       </span></label
                     >
                   </div>
                 </div>
                 <button
-                  type="submit"
-                  tabindex="0"
                   class="inline-flex relative items-center gap-2 justify-center rounded-sm font-semibold whitespace-nowrap ring-offset-background transition disabled:pointer-events-none disabled:opacity-50 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 active:scale-[0.98] bg-blue-500 text-white betterhover:hover:bg-blue-600 betterhover:hover:text-white focus-visible:outline-white text-base leading-none shadow-md py-[1.125rem] px-[1.75rem] min-w-[12ch] w-full"
-                  data-test="submit-terms"
-                  data-testid="password-reset-button"
-                  data-analytics="register-terms-submit-button"
-                  data-button-root=""
+                  type="submit"
                 >
-                  <div data-loader-content="" class="contents">
+                  <div class="contents" data-loader-content="">
                     Create an account
                   </div>
                 </button>
@@ -984,12 +923,12 @@
               <span
                 class="text-[#b1bad3] text-center text-sm font-normal touch-auto"
 
-                >Already have an account?
+              >Already have an account?
                 <button
-                  type="button"
-                  tabindex="0"
                   class="inline-flex relative items-center gap-2 justify-center rounded-sm font-semibold whitespace-nowrap ring-offset-background transition disabled:pointer-events-none disabled:opacity-50 focus-visible:outline-2 focus-visible:outline-offset-2 active:scale-[0.98] bg-transparent text-white betterhover:hover:bg-transparent betterhover:hover:text-white focus-visible:outline-none text-sm leading-none [&amp;_svg]:text-grey-200 [&amp;:hover>svg]:text-white"
                   data-button-root=""
+                  tabindex="0"
+                  type="button"
                 >
                   Sign In
                 </button></span
@@ -1000,8 +939,133 @@
       </div>
     </div>
   </div>
-</div> -->
+</div>
 
+<!--<div class="Modal-container">-->
+<!--  &lt;!&ndash; Header Section (Logo and Exit Button) &ndash;&gt;-->
+<!--  <div class="ctainer-div">-->
+<!--    <div>-->
+<!--      <div class="wrap-normal">-->
+<!--        <img alt="Logo" class="wrap-normal-svg" src="/login/white.png"/>-->
+<!--      </div>-->
+<!--    </div>-->
+<!--    <button-->
+<!--      (click)="exit()"-->
+<!--      class="inline-flex relative items-center gap-2 justify-center font-semibold whitespace-nowrap ring-offset-background transition disabled:pointer-events-none disabled:opacity-50 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 active:scale-[0.98] bg-transparent text-white betterhover:hover:bg-grey-900 betterhover:hover:text-white focus-visible:outline-white text-xs leading-none py-[0.75rem] px-[0.75rem] rounded-full"-->
+<!--      type="button"-->
+<!--    >-->
+<!--      Exit-->
+<!--    </button>-->
+<!--  </div>-->
+
+<!--  &lt;!&ndash; Step Progress Bar &ndash;&gt;-->
+<!--  <div class="content-svelte">-->
+<!--    <div class="modal-content">-->
+<!--      <div class="contenttop">-->
+<!--        <div class="ctainer">-->
+<!--          <div class="stack">-->
+<!--            <div class="step-active"></div>-->
+<!--            <div [ngClass]="{'step-svelte': currentStep !== 2}"></div>-->
+<!--            <div [ngClass]="{'step-svelte': currentStep !== 3}"></div>-->
+<!--          </div>-->
+<!--          <div *ngIf="currentStep > 1" class="stack-padding">-->
+<!--            <button-->
+<!--              (click)="prevStep()"-->
+<!--              class="inline-flex relative items-center gap-2 justify-center rounded-sm font-semibold whitespace-nowrap ring-offset-background transition disabled:pointer-events-none disabled:opacity-50 focus-visible:outline-2 focus-visible:outline-offset-2 active:scale-[0.98] bg-transparent text-grey-200 betterhover:hover:bg-transparent betterhover:hover:text-white focus-visible:text-white focus-visible:outline-none text-sm leading-none"-->
+<!--              type="button"-->
+<!--            >-->
+<!--              <img alt="Back" class="svg-back-arrow" src="/src/app/modal/login/back-icon.png"/>-->
+<!--              Back-->
+<!--            </button>-->
+<!--            <span class="step-text">Step {{ currentStep }} / 3</span>-->
+<!--          </div>-->
+<!--        </div>-->
+
+<!--        &lt;!&ndash; Step 1 &ndash;&gt;-->
+<!--        <div *ngIf="currentStep === 1">-->
+<!--          <h2>Select your preferred language</h2>-->
+<!--          <span>-->
+<!--            Stake is available in several languages. Feel free to personalise-->
+<!--            your language across our site from the options below.-->
+<!--          </span>-->
+<!--          <label class="labelstacked">-->
+<!--            <div class="select-wrap">-->
+<!--              <div class="select-content">-->
+<!--                <select [(ngModel)]="selectedLanguage" class="select-spacing">-->
+<!--                  <option value="en">English</option>-->
+<!--                  <option value="es">Español</option>-->
+<!--                  <option value="ja">日本語</option>-->
+<!--                  <option value="zh">中文</option>-->
+<!--                  <option value="pt">Português</option>-->
+<!--                  <option value="ru">Русский</option>-->
+<!--                  <option value="fr">Français</option>-->
+<!--                  <option value="de">Deutsch</option>-->
+<!--                  <option value="hi">हिंदी</option>-->
+<!--                  <option value="id">Bahasa Indonesia</option>-->
+<!--                  <option value="ko">한국어</option>-->
+<!--                  <option value="pl">Polski</option>-->
+<!--                  <option value="tr">Türkçe</option>-->
+<!--                  <option value="vi">Tiếng Việt</option>-->
+<!--                  <option value="fi">Suomen</option>-->
+<!--                  <option value="ar">اَلْعَرَبِيَّةُ</option>-->
+<!--                </select>-->
+<!--              </div>-->
+<!--            </div>-->
+<!--          </label>-->
+<!--          <button (click)="nextStep()" class="inline-flex btn-primary">Confirm</button>-->
+<!--        </div>-->
+
+<!--        &lt;!&ndash; Step 2 &ndash;&gt;-->
+<!--        <div *ngIf="currentStep === 2">-->
+<!--          <h2>Create an account</h2>-->
+<!--          <form [formGroup]="registerForm">-->
+<!--            <label class="labelstacked">-->
+<!--              <div *ngIf="registerForm.get('email')?.invalid && registerForm.get('email')?.touched">-->
+<!--                Please enter a valid email address.-->
+<!--              </div>-->
+<!--              <input class="input-spacing" formControlName="email" placeholder="Email" type="email"/>-->
+<!--            </label>-->
+
+<!--            <label class="labelstacked">-->
+<!--              <div *ngIf="registerForm.get('username')?.invalid && registerForm.get('username')?.touched">-->
+<!--                Your username must be at least 3 characters long.-->
+<!--              </div>-->
+<!--              <input class="input-spacing" formControlName="username" placeholder="Username" type="text"/>-->
+<!--            </label>-->
+
+<!--            <label class="labelstacked">-->
+<!--              <div *ngIf="registerForm.get('password')?.invalid && registerForm.get('password')?.touched">-->
+<!--                Password must be at least 8 characters with upper and lower case letters and a number.-->
+<!--              </div>-->
+<!--              <input class="input-spacing" formControlName="password" placeholder="Password" type="password"/>-->
+<!--            </label>-->
+
+<!--            <label class="labelstacked">-->
+<!--              <div *ngIf="registerForm.get('dob')?.invalid && registerForm.get('dob')?.touched">-->
+<!--                Please enter your date of birth.-->
+<!--              </div>-->
+<!--              <input class="input-spacing" formControlName="dob" placeholder="yyyy-mm-dd" type="date"/>-->
+<!--            </label>-->
+
+<!--            <button (click)="nextStep()" [disabled]="registerForm.invalid" class="btn-primary">-->
+<!--              Continue-->
+<!--            </button>-->
+<!--          </form>-->
+<!--        </div>-->
+
+<!--        &lt;!&ndash; Step 3 &ndash;&gt;-->
+<!--        <div *ngIf="currentStep === 3">-->
+<!--          <h2>Terms and Conditions</h2>-->
+<!--          <p>By creating an account, you agree to the terms and conditions.</p>-->
+<!--          <label>-->
+<!--            <input type="checkbox"/> I agree to the terms.-->
+<!--          </label>-->
+<!--          <button (click)="submit()" class="btn-primary">Create an Account</button>-->
+<!--        </div>-->
+<!--      </div>-->
+<!--    </div>-->
+<!--  </div>-->
+<!--</div>-->
 
 
 

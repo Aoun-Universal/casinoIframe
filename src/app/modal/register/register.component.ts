@@ -1,16 +1,19 @@
-import { CommonModule } from '@angular/common';
-import { Component } from '@angular/core';
-import { FormBuilder, FormGroup, FormsModule, NgModel, ReactiveFormsModule, Validators } from '@angular/forms';
+import {CommonModule} from '@angular/common';
+import {Component} from '@angular/core';
+import {FormBuilder, FormGroup, FormsModule, ReactiveFormsModule, Validators} from '@angular/forms';
 
 @Component({
   selector: 'app-register',
   standalone: true,
-  imports: [ReactiveFormsModule, CommonModule,FormsModule ],
+  imports: [ReactiveFormsModule, CommonModule, FormsModule],
   templateUrl: './register.component.html',
   styleUrl: './register.component.css'
 })
 export class RegisterComponent {
   registerForm: FormGroup;
+  currentStep = 1;
+  selectedLanguage = 'en';
+  isChecked = false;
 
   constructor(private fb: FormBuilder) {
     this.registerForm = this.fb.group({
@@ -21,21 +24,34 @@ export class RegisterComponent {
         [
           Validators.required,
           Validators.minLength(8),
-          Validators.pattern('^(?=.*[a-z])(?=.*[A-Z])(?=.*\\d).+$') 
+          Validators.pattern('^(?=.*[a-z])(?=.*[A-Z])(?=.*\\d).+$')
         ]
       ],
       dob: ['', Validators.required]
     });
   }
 
+  nextStep() {
+    this.currentStep++;
+  }
+
+  prevStep() {
+    this.currentStep--;
+  }
+
   onSubmit() {
     if (this.registerForm.valid) {
-     
       console.log(this.registerForm.value);
+      this.nextStep();
     }
   }
-  isChecked = false;
-  countryCode: string = '';
-  phoneNumber: string = '';
- 
+
+  createAccount() {
+    console.log('Account Created:', this.registerForm.value);
+  }
+
+  exit() {
+    console.log('Registration exited');
+  }
+
 }
