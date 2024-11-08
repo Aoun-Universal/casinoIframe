@@ -12,6 +12,10 @@ export const routes: Routes = [
       {
         path: 'home',
         loadComponent: () => import('./pages/home/home.component').then(c => c.HomeComponent),
+      },
+      {
+        path: 'drake',
+        loadComponent: () => import('./pages/drake/drake.component').then(c => c.DrakeComponent),
       }
     ]
   },
