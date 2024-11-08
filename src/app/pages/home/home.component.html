@@ -349,7 +349,7 @@
           <div class="fixture-wrapper">
             <div class="fixture-preview">
               <!-- Live -->
-              <div class="misc">
+              <div class="misc order-1">
                 <div class="misc-wrapper">
                   <div class="fixture-details">
                     <div class="live-badge">Live</div>
@@ -360,15 +360,31 @@
                   </div>
                 </div>
               </div>
-              <!-- Line -->
-              <div class="line line1"></div>
+              <!-- Line --hidden on sm -->
+              <div class="line order-2 line1"></div>
+
+              <!-- Market-count & options-wrapper----- only on sm -->
+               <div class="market-widget order-2 flex md:hidden">
+                <!-- Button -->
+                <button class="arrows-btn option-btn sm-option-btn">
+                  <svg fill="currentColor" viewBox="0 0 64 64" class="svg-icon ">
+                    <title></title>
+                    <path fill-rule="evenodd" clip-rule="evenodd"
+                      d="M33.013 19.707 64 0v12.64L30.987 33.627 18.133 18.853 0 30.693V17.947L20.107 4.853l12.906 14.854ZM16 64H5.333V35.173L16 28.213V64Zm13.707-21.653-3.04-3.52V64h10.666V37.493l-2.773 1.76-4.853 3.094ZM58.667 64H48V30.72l10.667-6.8V64Z">
+                    </path>
+                  </svg></button>
+                  <!-- Market count -->
+                  <div class="market-count ml-3">
+                    +3
+                  </div>
+               </div>
               <!-- Market name -->
-              <div class="market-name">
+              <div class="market-name order-4 md:order-3">
                 <span class="description-wrapper">1x2</span>
               </div>
-              <div class="line line2"></div>
+              <div class="line order-4 line2"></div>
               <!-- Teams -->
-              <div class="teams stacked svelte-1ykwt0t"><a class="teams-tag arrows-btn">
+              <div class="teams stacked svelte-1ykwt0t order-3 md:order-5"><a class="teams-tag arrows-btn">
                   <span>Pohkseh</span>
                 </a>
                 <a class="arrows-btn teams-tag">
@@ -376,7 +392,7 @@
                 </a>
               </div>
               <!-- FixtureScore -->
-              <div class="fixture-score mr-2 ">
+              <div class="fixture-score mr-2 hidden md:flex order-6">
                 <div class="fixture-score-wrapper ">
                   <div class="score-wrapper live svelte-qyo8l9">
                     <span class="font-semibold description-wrapper !text-[#ff9d00]">2</span>
@@ -397,7 +413,7 @@
               </div>
 
               <!-- Outcomes -->
-              <div class="outcomes">
+              <div class="outcomes order-7">
                 <!-- 1 -->
                 <div class="outcome-btn">
                   <div class="outcome-content">
@@ -423,7 +439,7 @@
                 <!-- 3 -->
                 <div class="outcome-btn">
                   <div class="outcome-content">
-                    <span>Ilbirs Bishkek FC</span>
+                    <span>Ilbirs</span>
                     <div class=" relative">
                       <div class="relative">
                         <span class="outcome-odd">2.75</span>
@@ -433,7 +449,7 @@
                 </div>
               </div>
               <!-- MarketCount -->
-              <div class="market-count">
+              <div class="market-count hidden md:flex order-8">
                 +3
               </div>
             </div>
@@ -491,7 +507,7 @@
           <div class="fixture-wrapper">
             <div class="fixture-preview">
               <!-- Live -->
-              <div class="misc">
+              <div class="misc order-1">
                 <div class="misc-wrapper">
                   <div class="fixture-details">
                     <span>Thu, Nov 07 5:30 PM</span>
@@ -499,14 +515,30 @@
                 </div>
               </div>
               <!-- Line -->
-              <div class="line line1"></div>
+              <div class="line order-2 line1"></div>
+
+                <!-- Market-count & options-wrapper----- only on sm -->
+                <div class="market-widget order-2 flex md:hidden">
+                  <!-- Button -->
+                  <button class="arrows-btn option-btn sm-option-btn">
+                    <svg fill="currentColor" viewBox="0 0 64 64" class="svg-icon ">
+                      <title></title>
+                      <path fill-rule="evenodd" clip-rule="evenodd"
+                        d="M33.013 19.707 64 0v12.64L30.987 33.627 18.133 18.853 0 30.693V17.947L20.107 4.853l12.906 14.854ZM16 64H5.333V35.173L16 28.213V64Zm13.707-21.653-3.04-3.52V64h10.666V37.493l-2.773 1.76-4.853 3.094ZM58.667 64H48V30.72l10.667-6.8V64Z">
+                      </path>
+                    </svg></button>
+                    <!-- Market count -->
+                    <div class="market-count ml-3">
+                      +21
+                    </div>
+                 </div>
               <!-- Market name -->
-              <div class="market-name">
+              <div class="market-name order-4 md:order-3">
                 <span class="description-wrapper">Winner</span>
               </div>
-              <div class="line line2"></div>
+              <div class="line line2 order-4"></div>
               <!-- Teams -->
-              <div class="teams stacked svelte-1ykwt0t"><a class="teams-tag arrows-btn">
+              <div class="teams stacked svelte-1ykwt0t order-3 md:order-5"><a class="teams-tag arrows-btn">
                   <span>Swiatek, Iga</span>
                 </a>
                 <a class="arrows-btn teams-tag">
@@ -514,7 +546,7 @@
                 </a>
               </div>
               <!-- FixtureScore -->
-              <div class="fixture-score mr-2 ">
+              <div class="fixture-score mr-2 hidden md:block order-6">
                 <div class="options-wrapper stacked">
                   <div class="hoverable">
                     <button class="arrows-btn option-btn">
@@ -529,7 +561,7 @@
               </div>
 
               <!-- Outcomes -->
-              <div class="outcomes">
+              <div class="outcomes order-7">
                 <!-- 1 -->
                 <div class="outcome-btn">
                   <div class="outcome-content">
@@ -554,7 +586,7 @@
                 </div>
               </div>
               <!-- MarketCount -->
-              <div class="market-count">
+              <div class="market-count hidden md:block order-8">
                 +21
               </div>
             </div>
