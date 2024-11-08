@@ -52,7 +52,7 @@
 }
 
 .sidebar-content-wrapper {
-  @apply p-4;
+  @apply p-4 flex flex-col gap-y-[.5rem];
 }
 
 .dropdown-container {
@@ -60,7 +60,7 @@
 }
 
 .nav-item {
-  @apply flex items-center justify-between p-[13px_16px] max-h-[40px];
+  @apply flex items-center justify-between p-[13px_16px] max-h-[40px] hover:bg-[rgba(47,69,83)] hover:rounded cursor-pointer;
 }
 
 .title-wrapper {
