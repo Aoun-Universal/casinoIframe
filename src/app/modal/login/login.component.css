@@ -6,7 +6,7 @@
 }
 
 .card-svelte {
-  @apply max-w-[630px] h-full max-h-[716px] border  rounded-lg [background-position:center] relative w-full min-w-[200px]  flex flex-col bg-[#1a2c38]  text-[#b1bad3]  overflow-hidden;
+  @apply max-w-[630px] h-full max-h-[716px] border border-[rgb(26,44,56)]  rounded-lg [background-position:center] relative w-full min-w-[200px]  flex flex-col bg-[#1a2c38]  text-[#b1bad3]  overflow-hidden;
 }
 .ctainer {
   @apply flex  bg-[#1a2c38] justify-between items-center min-h-[60px] py-0 px-4;
@@ -28,7 +28,7 @@
 }
 
 .contenttop {
-  @apply h-full pt-[1rem] pr-[1rem] pl-[1rem] flex flex-col pb-[1rem] gap-[1rem] touch-auto;
+  @apply h-full  pr-[1rem] pl-[1rem] flex flex-col pb-[1rem] gap-[1rem] touch-auto;
 }
 .formsvelte {
   @apply flex-col justify-center touch-auto flex w-full h-full;
@@ -68,7 +68,8 @@
 
 
 .input-wrap {
-  @apply w-full flex flex-shrink-0 shadow border rounded-[0.25rem] touch-auto;
+  @apply w-full flex flex-shrink-0  rounded-[0.25rem] touch-auto;
+  box-shadow: 0 1px 3px 0 rgba(0, 0, 0, .2), 0 1px 2px 0 rgba(0, 0, 0, .12)
 }
 .label-contnt {
   @apply w-full inline-flex items-center font-semibold  text-sm text-[#b1bad3] pb-[0.25rem] justify-between touch-auto;
@@ -85,7 +86,7 @@
   transform: translateY(-50%);
 }
 .input-spacing {
-  @apply p-[7px] w-full appearance-none text-sm shadow-none text-[#fff] !bg-[#0f212e] border-[2px] border-[#2f4553] border-solid font-semibold outline-none touch-auto;
+  @apply p-[7px] w-full hover:border-[#557086]  appearance-none text-sm shadow-none  !bg-[#0f212e] border-[2px] border-[#2f4553] border-solid font-semibold outline-0 cursor-pointer touch-auto;
 }
 .input-button-wrap {
   @apply inline-flex touch-auto;
