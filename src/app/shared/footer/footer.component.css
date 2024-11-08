@@ -1,5 +1,5 @@
 .footer{
-    @apply p-10
+    @apply px-10 py-9
 }
 .custom-classes{
     @apply flex flex-col md:flex-row md:justify-between md:items-center gap-3 md:gap-0
@@ -8,7 +8,7 @@
     @apply w-[67px] h-[34px] text-white mb-2
 }
 .text{
-    @apply text-white 
+    @apply text-gray-400 text-[14px] font-semibold 
 }
 .list-item{
     @apply inline-flex relative items-center gap-2 justify-center rounded-sm font-semibold whitespace-nowrap  transition disabled:pointer-events-none disabled:opacity-50 focus-visible:outline-2 focus-visible:outline-offset-2 active:scale-[0.98] bg-transparent text-gray-200  focus-visible:text-white focus-visible:outline-none text-sm leading-none
@@ -17,13 +17,13 @@
     @apply border-solid border-t-2 border-t-gray-700 border-opacity-[0.90] my-8
 }
 .footer-grid{
-    @apply  flex flex-wrap justify-between gap-3 md:gap-10 w-full m-auto break-words hyphens-auto 
+    @apply  flex flex-wrap justify-between gap-3 md:gap-7 w-full m-auto break-words hyphens-auto 
 }
 /* .grid-items{
     @apply col-span-2
 } */
 .list2{
-    @apply flex flex-col 
+    @apply flex flex-col gap-1
 }
 .links{
     @apply inline-flex relative items-center gap-2 justify-center rounded-sm font-semibold transition disabled:pointer-events-none disabled:opacity-50 focus-visible:outline-2 focus-visible:outline-offset-2 active:scale-[0.98] bg-transparent text-gray-400 focus-visible:text-white focus-visible:outline-none text-sm whitespace-break-spaces leading-[120%] 
@@ -32,16 +32,21 @@
     @apply text-white  block font-[600] text-[1rem]
 }
 .svg-icon{
-    @apply text-gray-400 w-[14px] h-[14px]
+    @apply text-white w-6 md:w-4 h-auto 
 }
 .btn{
-    @apply inline-flex relative items-center gap-2 rounded-sm font-semibold whitespace-nowrap  transition disabled:pointer-events-none disabled:opacity-50 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 active:scale-[0.98] text-white hover:bg-gray-300 hover:text-white focus-visible:outline-white text-sm leading-none shadow-md px-[1.25rem] w-full justify-between bg-gray-500 bg-opacity-[0.40] py-[17px] mb-3 md:mb-0 hover:bg-opacity-[0.40]
+    @apply inline-flex relative items-center gap-2 rounded-sm font-semibold whitespace-nowrap  transition disabled:pointer-events-none disabled:opacity-50 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 active:scale-[0.98] text-white hover:bg-gray-300 hover:text-white focus-visible:outline-white text-sm leading-none shadow-md px-[1.25rem] w-full justify-between bg-gray-500 bg-opacity-[0.40] py-[17px] mb-3 md:mb-0 hover:bg-opacity-[0.40] 
+}
+.btn-group{
+    @apply flex flex-col gap-y-3
 }
 .btn2{
-    @apply flex justify-between w-[100%]
+    @apply flex justify-between w-[100%] items-center }
+.dropdown{
+    @apply w-[154px] h-[48px] font-[600]
 }
 .convert{
-    @apply text-inherit font-semibold text-right text-gray-400
+    @apply text-[14px] font-[500] text-right text-gray-300
 }
 .logo-wrapper{
     @apply flex flex-wrap justify-around items-center gap-[2rem]
@@ -77,18 +82,20 @@
 .contact-emails{
     @apply text-center text-gray-400 text-[0.875rem] tracking-[1.5] leading-[150%] font-[400] block mb-10
 }
-.img2{
-    @apply w-[32px] h-[18px]
+.foot-end{
+    @apply flex justify-center items-center gap-8
 }
-.last-img{
-    @apply w-36 h-[22px]
+.end-logo{
+    @apply w-[32px] h-[18px] cursor-pointer
 }
-.image-focus{
-    @apply flex 
+.end-logo2{
+    @apply w-[32px] h-[32px]
+    cursor-pointer
 }
-.seal{
-    @apply flex
+.text3{
+    @apply text-white
 }
+
 
 @media(max-width: 715px) {
     .site-badges{
