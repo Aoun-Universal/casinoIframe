@@ -160,7 +160,7 @@ svg.svelte-md2ju7 {
     @apply absolute top-0 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-2 h-2 bg-white rotate-45 border-l border-t border-gray-200
 }
 .serch-input{
-    @apply w-full pl-[35px] pr-[7px] py-[7px] text-sm placeholder:text-[#2f4553] placeholder:font-semibold bg-white  border-[#d5dceb] border-[2px] focus:outline-none focus:border-gray-400 shadow rounded-[.25rem]
+    @apply w-full pl-[35px] pr-[7px] py-[7px] text-[rgb(47_69_83)] text-sm placeholder:text-[#2f4553] placeholder:font-semibold bg-white  border-[#d5dceb] border-[2px] focus:outline-none focus:border-gray-400 shadow rounded-[.25rem]
 }
 .search-svg{
 @apply absolute inset-y-0 left-0 flex items-center pl-3 pointer-events-none
@@ -191,11 +191,11 @@ svg.svelte-md2ju7 {
     @apply overflow-y-auto overflow-x-hidden min-h-0 ;
 }
 .porfile-list{
-    @apply inline-flex relative items-center gap-2 font-semibold whitespace-nowrap  transition disabled:pointer-events-none disabled:opacity-50 focus-visible:outline focus-visible:outline-2 hover:bg-[#B1BAD3] 
+    @apply  inline-flex relative items-center gap-2 font-semibold whitespace-nowrap  text-[rgb(47_69_83)] transition disabled:pointer-events-none disabled:opacity-50 focus-visible:outline focus-visible:outline-2 hover:bg-[#B1BAD3] 
     focus-visible:outline-offset-2 active:scale-[0.98] bg-transparent text-sm leading-none  px-3 py-3 rounded-none justify-start
 }
 .massage-dropdown{
-    @apply absolute left-[-30px] right-0 z-[100] top-[60px] py-1  bg-white rounded-[.25rem] shadow-lg  w-[94px] 
+    @apply absolute text-[rgb(47_69_83)]  left-[-30px] right-0 z-[100] top-[60px] py-1  bg-white rounded-[.25rem] shadow-lg  w-[94px] 
 }
 .dropdown-scroll{
     @apply hover:bg-[#B1BAD3] inline-flex relative items-center gap-2 font-semibold whitespace-nowrap transition disabled:pointer-events-none disabled:opacity-50 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 active:scale-[0.98] bg-transparent   text-sm leading-none px-3 py-3 rounded-none w-full justify-start
@@ -205,7 +205,8 @@ svg.svelte-md2ju7 {
     @apply flex flex-col absolute top-[calc(60px+5rem)] right-[1.5rem] w-full max-w-[375px] max-h-[400px] bg-[#0f212e] p-[0_1rem_1rem] rounded-[.5rem] shadow-[0,10px,15px,-3px_rgba(0,0,0,2),0,4px,6px,2px_rgba(0,0,0,.1)]
 } 
 .svelte-6gfkw4 {
-    @apply flex flex-col absolute top-[calc(60px+2rem)] right-[1.5rem] w-full max-w-[375px] max-h-[400px] bg-[#0f212e] p-[0_1rem_1rem] rounded-[.5rem] shadow-[0,10px,15px,-3px_rgba(0,0,0,2),0,4px,6px,2px_rgba(0,0,0,.1)]
+    @apply flex flex-col absolute top-[calc(60px+2rem)] right-[1.5rem]   w-full max-w-[375px] max-h-[400px]    bg-[#0f212e] p-[0_1rem_1rem] rounded-[.5rem] shadow-[0,10px,15px,-3px_rgba(0,0,0,2),0,4px,6px,2px_rgba(0,0,0,.1)];
+   
 } 
 .notifications-header{
     @apply bg-[#0f212e] flex justify-between items-center relative touch-none p-[.25rem_0] m-[calc(.25rem*-1)]
@@ -228,7 +229,7 @@ svg.svelte-md2ju7 {
   
 }
 .empty-list.svelte-1qm952x {
-    @apply !p-[1rem] text-[#b1bad3] flex-col m-[0_auto] flex items-center text-[.875rem]
+    @apply !p-[1rem] text-[#b1bad3] flex-col m-[0_auto] flex items-center text-[.875rem] 
    
 }
 .arge-icon.svelte-1qm952x {
@@ -249,7 +250,42 @@ svg.svelte-md2ju7 {
     transform: rotate(90deg);
 }
 .close-icon{
-    @apply inline-flex relative items-center gap-2 justify-center rounded-sm font-semibold whitespace-nowrap  transition disabled:pointer-events-none disabled:opacity-50 focus-visible:outline-2 focus-visible:outline-offset-2 active:scale-[0.98] bg-transparent text-white hover:bg-transparent hover:text-white focus-visible:outline-none text-base leading-none py-4 px-5
+    @apply  inline-flex relative items-center gap-2 justify-center rounded-sm font-semibold whitespace-nowrap  transition disabled:pointer-events-none disabled:opacity-50 focus-visible:outline-2 focus-visible:outline-offset-2 active:scale-[0.98] bg-transparent text-white hover:bg-transparent hover:text-white focus-visible:outline-none text-base leading-none py-4 px-5
 }
 
+@media (max-width:650px) {
+    .svelte-6gfkw4 {
+        @apply max-w-none w-[100vw] max-h-none h-[calc(100vh-68px-60px)] left-[-3vw] bottom-0 top-[60px] rounded-none
+        
+    }
+    
+}
 
+.results-wrapper {
+    @apply w-full bg-[#0f212e] rounded-[.25rem] max-h-[400px] text-[#fff] p-[1rem] flex flex-col gap-[2rem]
+}
+
+.exception-wrap {
+    @apply flex items-center justify-center flex-col p-[.5rem] gap-[.5rem]
+}
+.result{
+    @apply z-[1450] inset-[0px_uto_auto_0px] m-0 max-w-[1018.91px] mx-auto;
+}
+input {
+    @apply w-full outline-none bg-[#0f212e] text-[#fff] cursor-text p-[.5rem] appearance-none
+}
+.input-wrap {
+@apply w-full text-[#fff] bg-[#0f212e] shadow-[0_1px_3px_0_rgba(0,0,0,2),0_1px_2px_0_rgba(0,0,0,.12)] leading-[0px] font-semibold outline-none m-0 cursor-text
+text-[.875rem] flex items-center appearance-none rounded-[20px] p-[0_1rem]
+
+}
+.casion-btn{
+    @apply flex items-center text-white text-sm font-medium pr-4 py-2 gap-[.5rem] mr-[1rem] rounded-full bg-gray-800 
+}
+.casion-dropdown{
+    @apply absolute text-[rgb(47_69_83)]  justify-center   z-[100] top-[120px] py-1  bg-white rounded-[.25rem] shadow-lg  w-[94px] 
+}
+
+.navigation-mobile{
+    @apply grid grid-cols-[1fr_auto_1fr]  relative h-[60px]  w-full items-center   
+    }
