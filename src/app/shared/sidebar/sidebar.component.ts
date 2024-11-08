@@ -2,6 +2,7 @@ import { CommonModule } from '@angular/common';
 import { Component, OnInit } from '@angular/core';
 import { NavigationEnd, Router } from '@angular/router';
 import { filter } from 'rxjs';
+import { ToggleService } from '../../services/toggle.service';
 
 @Component({
   selector: 'app-sidebar',
@@ -12,8 +13,9 @@ import { filter } from 'rxjs';
 })
 export class SidebarComponent implements OnInit {
   openBar: any;
+  isSidebar = false
   routerPath:any
-  constructor(private router:Router){}
+  constructor(private router:Router, private toggle:ToggleService){}
   toggleOpen(name: string) {
   
     if (this.openBar === name) {
@@ -31,8 +33,7 @@ export class SidebarComponent implements OnInit {
         this.routerPath = event.url;
          
       });
-
-
     this.routerPath = this.router.url;
+
   }
 }
