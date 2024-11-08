@@ -144,7 +144,7 @@ section {
 }
 
 .tab-slider {
-    @apply bg-[#0f212e] flex rounded-[3rem] p-[5px] flex-shrink-0
+    @apply bg-[#0f212e] flex rounded-[3rem] p-[5px] flex-shrink-0 
 }
 
 .tab-item {
@@ -215,7 +215,24 @@ section {
 }
 
 .event-dropdown {
-    @apply bg-[#0f212e] rounded-[4px]
+    @apply bg-[#0f212e] rounded-[4px] relative
+}
+
+.profile-dropdown{
+    @apply absolute right-0 z-[100] top-[70px] py-1  bg-white rounded-[.25rem] shadow-lg  w-[90px]
+}
+
+.dropdown-arrow{
+    @apply absolute top-0 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-2 h-2 bg-white rotate-45 border-l border-t border-gray-200
+}
+
+.dropdown-scroll-content {
+    @apply flex flex-col p-[.25rem_0] [max-height:inherit]
+}
+
+.profile-list{
+    @apply  inline-flex relative items-center gap-2 font-semibold whitespace-nowrap  text-[rgb(47_69_83)] transition disabled:pointer-events-none disabled:opacity-50 focus-visible:outline focus-visible:outline-2 hover:bg-[#B1BAD3] 
+    focus-visible:outline-offset-2 active:scale-[0.98] bg-transparent text-sm leading-none  px-3 py-3 rounded-none justify-start
 }
 
 /* Sport Menu List */
@@ -398,7 +415,7 @@ animation: ScaleUp .2s ease-out;
 
 /* Select Wrap */
 .select-wrap{
-    @apply flex flex-row justify-self-end items-center gap-2
+    @apply hidden md:flex flex-row justify-self-end items-center gap-2
 }
 
 .mode-btn{

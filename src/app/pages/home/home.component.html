@@ -192,7 +192,8 @@
   </div>
 
   <!--------------------------------- Live Events ---------------------->
-  <div class="top-sports-header events-header">
+  <div class="top-sports-header events-header relative
+  ">
     <!-- left -->
     <span>
       <span>
@@ -217,16 +218,33 @@
         </svg>
       </button>
 
-      <button class="arrows-btn event-icon event-dropdown">
+      <button class="arrows-btn event-icon event-dropdown" (click)="toggleDropdown()">
         <span>Winner</span>
-        <svg fill="currentColor" viewBox="0 0 64 64" class="svg-icon !my-auto" style="transform: rotate(0deg);
-   ">
+        <svg fill="currentColor" viewBox="0 0 64 64" class="svg-icon !my-auto" style="transform: rotate(0deg);">
           <title></title>
           <path fill="#b1bad3"
             d="M32.271 49.763 9.201 26.692l6.928-6.93 16.145 16.145 16.144-16.144 6.93 6.929-23.072 23.07h-.005Z">
           </path>
         </svg>
       </button>
+
+      <div class="profile-dropdown" *ngIf="WinnerDropdown">
+        <!-- Arrow -->
+        <div class="dropdown-arrow"></div>
+        <div class="dropdown-scroll-content ">
+          <div>
+            <button type="button" class="profile-list">
+              <span>Total</span>
+            </button>
+            <button type="button" class="profile-list">
+              <span>Winner</span>
+            </button>
+            <button type="button" class="profile-list">
+              <span>Handicaps</span>
+            </button>
+          </div>
+        </div>
+      </div>
 
     </div>
   </div>
@@ -315,17 +333,18 @@
         <div class="market-title">
           <span>Republic of Korea / KBL</span>
         </div>
-        <div class="arrow svelte-69p9vw" ><svg fill="currentColor" viewBox="0 0 64 64"
-            class="svg-icon " style="transform: rotate(0deg);
+        <div class="arrow svelte-69p9vw"  (click)="toggleMarket()"  [ngClass]="{'rotate-90': !isMarketOpen}">
+          <svg  fill="currentColor" viewBox="0 0 64 64" class="svg-icon " style="transform: rotate(0deg);
           ">
             <title></title>
             <path d="M32.271 49.763 9.201 26.692l6.928-6.93 16.145 16.145 16.144-16.144 6.93 6.929-23.072 23.07h-.005Z">
             </path>
-          </svg></div>
+          </svg>
+        </div>
       </div>
 
       <!-- Market Content -->
-      <div class="market-content">
+      <div class="market-content" *ngIf="isMarketOpen">
         <div class="stack">
           <div class="fixture-wrapper">
             <div class="fixture-preview">
@@ -455,7 +474,7 @@
         <div class="market-title">
           <span>UEFA Champion League</span>
         </div>
-        <div class="arrow svelte-69p9vw">
+        <div class="arrow svelte-69p9vw" (click)="toggleMarket2()" [ngClass]="{'rotate-90': !isMarketOpen2}">
           <svg fill="currentColor" viewBox="0 0 64 64" class="svg-icon" fill="#b1bad3" style="transform: rotate(0deg);
           ">
             <title></title>
@@ -467,7 +486,7 @@
       </div>
 
       <!-- Market Content -->
-      <div class="market-content">
+      <div class="market-content" *ngIf="isMarketOpen2">
         <div class="stack">
           <div class="fixture-wrapper">
             <div class="fixture-preview">
@@ -591,17 +610,15 @@
 
       <!-- Select Label -->
       <label class="stacked">
-        <div class="select-wrap" >
-          <div class="select-content" ><select
-              class="select spacing-expanded">
+        <div class="select-wrap">
+          <div class="select-content"><select class="select spacing-expanded">
               <option value="0">0 </option>
               <option value="10">10 </option>
               <option value="20">20 </option>
               <option value="30">30 </option>
               <option value="40">40 </option>
             </select>
-            <div class="dropdown-icon-wrap" ><svg fill="currentColor"
-                viewBox="0 0 64 64" class="svg-icon ">
+            <div class="dropdown-icon-wrap"><svg fill="currentColor" viewBox="0 0 64 64" class="svg-icon ">
                 <title></title>
                 <path
                   d="M32.271 49.763 9.201 26.692l6.928-6.93 16.145 16.145 16.144-16.144 6.93 6.929-23.072 23.07h-.005Z">
@@ -620,9 +637,9 @@
       <thead>
         <tr>
           <th class="text-start">Event</th>
-          <th>User</th>
-          <th>Time</th>
-          <th class="text-end"> Odds</th>
+          <th >User</th>
+          <th >Time</th>
+          <th > Odds</th>
           <th class="text-end">Bet Amount</th>
         </tr>
       </thead>
@@ -637,7 +654,7 @@
             </svg>
             <span class="ml-2">Multi(13)</span>
           </td>
-          <td class=" table-btn text-center gap-2">
+          <td class=" table-btn text-center gap-2 ">
             <svg fill="currentColor" viewBox="0 0 64 64" class="svg-icon ">
               <title></title>
               <path fill-rule="evenodd" clip-rule="evenodd"
