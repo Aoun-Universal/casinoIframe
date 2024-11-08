@@ -16,7 +16,12 @@ export const routes: Routes = [
       {
         path: 'drake',
         loadComponent: () => import('./pages/drake/drake.component').then(c => c.DrakeComponent),
-      }
+      },
+
+      {
+        path: 'responsible-gambling',
+        loadComponent: () => import('./pages/responsible-gambling/responsible-gambling.component').then(c => c.ResponsibleGamblingComponent),
+      },
     ]
   },
   {

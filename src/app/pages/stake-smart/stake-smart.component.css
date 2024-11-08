@@ -1,0 +1,27 @@
+.gambling-wrapper {
+  @apply bg-[#0f212e] w-full text-[#d5dceb] p-[1.5rem] rounded-[.5rem] overflow-hidden relative;
+}
+
+.stake-title {
+  @apply text-[.875rem] mb-[.5rem] text-white leading-[132%] font-[600] mt-[24px] ;
+}
+
+.second-heading{
+    @apply text-[18px] text-white mt-[24px] mb-[.5rem]
+}
+
+.inline-text {
+  @apply text-[#b1bad3] leading-[150%] mt-[.75rem];
+}
+
+.is-inline {
+  @apply text-[1.5rem] text-white font-bold pt-[1.5rem] pb-[.5rem];
+}
+
+ul {
+  @apply ml-8 mb-4 list-disc;
+}
+
+li {
+  @apply text-[#b1bad3];
+}

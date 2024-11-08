@@ -1,20 +1,18 @@
-<div id="svelte" class="">
+<!-- first step================================================ -->
+<div *ngIf="currentStep === 1">
   <div class="Modal-container">
     <div class="svelte-syudie"></div>
     <div class="card-svelte">
       <div class="ctainer-div">
         <div>
           <div class="wrap-normal">
-            <img class="wrap-normal-svg" src="/login/white.png" />
+            <img class="wrap-normal-svg" src="/login/white.png"/>
           </div>
         </div>
         <button
-          type="button"
-          tabindex="0"
+          (click)="exit()"
           class="inline-flex relative items-center gap-2 justify-center font-semibold whitespace-nowrap ring-offset-background transition disabled:pointer-events-none disabled:opacity-50 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 active:scale-[0.98] bg-transparent text-white betterhover:hover:bg-grey-900 betterhover:hover:text-white focus-visible:outline-white text-xs leading-none [&amp;_svg]:text-grey-200 [&amp;:hover>svg]:text-white py-[0.75rem] px-[0.75rem] rounded-full"
-          data-test="exit-registration"
-          data-analytics="exit-registration"
-          data-button-root=""
+          type="button"
         >
           Exit
         </button>
@@ -25,50 +23,42 @@
           <div class="contenttop">
             <div
               class="ctainer "
-              
             >
               <div
                 class="stack "
-                
-               
               >
                 <div
                   class="step-active"
-                  
                 ></div>
-                <div class="step-svelte" ></div>
-                <div class="step-svelte" ></div>
+                <div class="step-svelte"></div>
+                <div class="step-svelte"></div>
               </div>
               <div
-                class="stack-padding"
-                
-             
+                class="firt-step"
               >
                 <span
                   class="step-text"
-                 
-                  >Step 1 / 3</span
+
+                >Step 1 / 3</span
                 >
               </div>
             </div>
             <h2
               class="select-language"
-             
             >
               Select your preferred language
             </h2>
             <span
               class="select-language-span"
-        
-              >Stake is available is several languages. Feel free to personalise
+            >Stake is available is several languages. Feel free to personalise
               your language across our site from the options below.</span
             >
             <label class="labelstacked">
-              <div class="select-wrap" >
-                <div class="select-content" >
+              <div class="select-wrap">
+                <div class="select-content">
                   <select
+                    [(ngModel)]="selectedLanguage"
                     class="select-spacing"
-                    data-test="select-language"
                   >
                     <option value="en">English</option>
                     <option value="es">Español</option>
@@ -89,13 +79,12 @@
                   </select>
                   <div
                     class="dropdown-icon-wrap"
-                    
                   >
                     <svg
+                      class="svg-icon-dropdown"
                       fill="currentColor"
                       viewBox="0 0 64 64"
-                      class="svg-icon-dropdown"
-                     
+
                     >
                       <title></title>
                       <path
@@ -106,19 +95,14 @@
                 </div>
               </div>
             </label>
-            <div class="flex flex-col justify-end h-full" >
+            <div class="flex flex-col justify-end h-full">
               <button
-                type="button"
-                tabindex="0"
+                (click)="nextStep()"
                 class="inline-flex relative items-center gap-2 justify-center rounded-sm font-semibold whitespace-nowrap ring-offset-background transition disabled:pointer-events-none disabled:opacity-50 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 active:scale-[0.98] bg-blue-500 text-white betterhover:hover:bg-blue-600 betterhover:hover:text-white focus-visible:outline-white text-base leading-none shadow-md py-[1.125rem] px-[1.75rem]"
-                data-analytics="register-language-confirm-button"
-                data-test="register-language"
-                data-button-root=""
+                type="button"
               >
                 <div
-                  data-loader-content=""
                   class="contents"
-                  
                 >
                   Confirm
                 </div>
@@ -127,17 +111,15 @@
             <div
               class="flex flex-col justify-end gap-3"
               data-content=""
-              
+
             >
               <span
                 class=" text-[#b1bad3]  text-center font-normal text-sm touch-auto"
-               
-                >Already have an account?
+
+              >Already have an account?
                 <button
-                  type="button"
-                  tabindex="0"
                   class="inline-flex relative items-center gap-2 justify-center rounded-sm font-semibold whitespace-nowrap ring-offset-background transition disabled:pointer-events-none disabled:opacity-50 focus-visible:outline-2 focus-visible:outline-offset-2 active:scale-[0.98] bg-transparent text-white betterhover:hover:bg-transparent betterhover:hover:text-white focus-visible:outline-none text-sm leading-none [&amp;_svg]:text-grey-200 [&amp;:hover>svg]:text-white"
-                  data-button-root=""
+                  type="button"
                 >
                   Sign In
                 </button></span
@@ -149,3 +131,943 @@
     </div>
   </div>
 </div>
+
+
+<!-- 2nd Step======================================================= -->
+<div *ngIf="currentStep === 2">
+  <div class="Modal-container">
+    <div class="svelte-syudie"></div>
+    <div class="card-svelte">
+      <div class="ctainer-div">
+        <div>
+          <!-- Stake logo -->
+          <div class="wrap-normal">
+            <img alt="Stake-logo" class="wrap-normal-svg" src="/src/app/modal/login/white.png"/>
+          </div>
+        </div>
+        <!-- Exit Btn -->
+        <button
+          class="inline-flex relative items-center gap-2 justify-center font-semibold whitespace-nowrap ring-offset-background transition disabled:pointer-events-none disabled:opacity-50 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 active:scale-[0.98] bg-transparent text-white betterhover:hover:bg-grey-900 betterhover:hover:text-white focus-visible:outline-white text-xs leading-none [&amp;_svg]:text-grey-200 [&amp;:hover>svg]:text-white py-[0.75rem] px-[0.75rem] rounded-full"
+          type="button"
+        >
+          Exit
+        </button>
+      </div>
+      <!-- Progress bar -->
+      <div class="content-svelte">
+        <div class="modal-content">
+          <div class="contenttop">
+            <div class="ctainer">
+              <div class="stack">
+                <div class="step-active"></div>
+                <div class="step-svelte"></div>
+                <div class="step-svelte"></div>
+              </div>
+              <!-- Back Arrow svg Button -->
+              <div class="stack-padding">
+                <button
+                  (click)="prevStep()"
+                  class="inline-flex relative items-center gap-2 justify-center rounded-sm font-semibold whitespace-nowrap ring-offset-background transition disabled:pointer-events-none disabled:opacity-50 focus-visible:outline-2 focus-visible:outline-offset-2 active:scale-[0.98] bg-transparent text-grey-200 betterhover:hover:bg-transparent betterhover:hover:text-white focus-visible:text-white focus-visible:outline-none text-sm leading-none"
+                  type="button"
+                >
+                  <img alt="backArrow" class="svg-back-arrow" src="/src/app/modal/login/back-icon.png"/>
+                  Back
+                </button>
+                <span class="step-text">Step 2 / 3</span>
+              </div>
+            </div>
+            <!-- Title -->
+            <div class="self-start mb-1">
+              <h2 class="select-language">Create an account</h2>
+            </div>
+            <form (ngSubmit)="onSubmit()" [formGroup]="registerForm" class="formsvelte">
+              <!-- Email input feild -->
+              <label class="labelstacked">
+                <div *ngIf="registerForm.get('email')?.invalid && registerForm.get('email')?.touched"
+                     class="text-[#f2708a] text-xs pt-2 pb-1  flex ">
+                  Please enter a valid email address.
+                </div>
+                <div class="input-wrap">
+                  <div class="input-content">
+                    <div class="before-icon"></div>
+                    <div class="after-icon"></div>
+                    <input
+                      autocomplete="on"
+                      class="input-spacing"
+                      formControlName="email"
+                      name="email"
+                      type="email"
+                    />
+                  </div>
+                  <div class="input-button-wrap"></div>
+
+                </div>
+                <span class="label-content"
+                ><div class="inline-flex w-full touch-auto">
+                    <span slot="label">Email</span>
+                    <div class="ml-[.25rem] touch-auto">
+                      <span class="asterick">*</span>
+                    </div>
+                  </div>
+                </span>
+
+              </label
+              >
+              <!-- Username input feild -->
+              <label class="labelstacked mt-[1rem]"
+              >
+                <div *ngIf="registerForm.get('username')?.invalid && registerForm.get('username')?.touched"
+                     class="text-[#f2708a] text-xs pt-2 pb-1  flex ">
+                  Your username must be at least 3 characters long.
+                </div>
+                <!-- <span class="pt-2 pb-1 text-[0.5rem] align-baseline"
+                  >Your username must be 3-14 characters long.</span
+                > -->
+
+                <div class="input-wrap">
+                  <div class="input-content">
+                    <div class="before-icon"></div>
+                    <div class="after-icon"></div>
+                    <input
+                      autocomplete="on"
+                      class="input-spacing"
+                      data-test="register-name"
+                      formControlName="username"
+                      max="Infinity"
+                      name="name"
+                      type="text"
+                    />
+                  </div>
+
+                  <div class="input-button-wrap"></div>
+                </div>
+                <span class="label-content"
+                ><div class="inline-flex w-full touch-auto">
+                    <span slot="label">Username</span>
+                    <div class="ml-[.25rem] touch-auto">
+                      <span class="asterick">*</span>
+                    </div>
+                  </div>
+                </span>
+
+              </label
+              >
+              <!-- Password input feild -->
+              <label class="labelstacked mt-[1rem]">
+                <div *ngIf="registerForm.get('password')?.invalid && registerForm.get('password')?.touched"
+                     class="text-[#f2708a] text-xs pt-2 pb-1 flex ">
+                  Your password must be at least 8 characters long, including upper and lower case letters and at least
+                  one number.
+                </div>
+                <div class="input-wrap">
+                  <div class="input-content">
+                    <div class="before-icon"></div>
+                    <div class="after-icon"></div>
+                    <input
+                      autocomplete="on"
+                      class="input-spacing"
+                      data-test="register-password"
+                      formControlName="password"
+                      max="Infinity"
+                      name="password"
+                      type="password"
+                    />
+
+                    <div class="flex absolute right-0 top-0 h-full touch-auto">
+                      <button
+                        aria-label="Reveal password"
+                        class="font-[1.125rem] py-2 px-4 flex items-center touch-auto outline-none border-0"
+                        type="button"
+                      >
+                        <!-- pasword icon svg -->
+                        <img alt="eye-icon" class="svg-icon-password" src="/src/app/modal/login/eye.png"/>
+                      </button>
+                    </div>
+
+                  </div>
+
+                  <div class="input-button-wrap svelte-1nbx5re"></div>
+
+                </div>
+
+                <span class="label-content"
+                >
+                  <div class="inline-flex w-full touch-auto">
+                    <span slot="label">Password</span>
+                    <div class="ml-[.25rem] touch-auto">
+                      <span class="asterick">*</span>
+                    </div>
+                  </div>
+                </span>
+
+
+              </label
+              >
+
+              <!-- Date of Birth input feild -->
+              <label class="labelstacked mt-[1rem]">
+                <div *ngIf="registerForm.get('dob')?.invalid && registerForm.get('dob')?.touched"
+                     class="text-[#f2708a] text-xs pt-2 pb-1  flex ">
+                  Please enter your date of birth.
+                </div>
+                <div class="input-wrap">
+                  <div class="input-content">
+                    <div class="before-icon"></div>
+                    <div class="after-icon"></div>
+                    <input
+                      autocomplete="on"
+                      class="input-spacing"
+                      data-test="register-dob"
+                      formControlName="dob"
+                      max="Infinity"
+                      name="dob"
+                      pattern="\d4-\d2-\d2"
+                      placeholder="yyyy-mm-dd"
+                      type="date"
+                    />
+                  </div>
+                  <div class="input-button-wrap"></div>
+                </div>
+                <span class="label-content"
+                ><div class="inline-flex w-full touch-auto">
+                    <span slot="label">Date of Birth</span>
+                    <div class="ml-[.25rem] touch-auto">
+                      <span class="asterick">*</span>
+                    </div>
+                  </div>
+                </span>
+
+              </label
+              >
+
+              <div class="tc-wrapper">
+                <fieldset>
+                  <!-- Phone checkbox -->
+                  <div>
+                    <label class="tc-label"
+                    ><input
+                      class="tc-checkbox"
+                      type="checkbox"
+                      value="undefined"
+
+                    />
+                      <span class="indicator-variant"></span>
+                      <span class="checkbox-text"
+                      ><span slot="label">Phone (Optional)</span>
+                      </span></label
+                    >
+                  </div>
+                  <div
+                    class="flex gap-2 [&amp;>:first-child]:w-[calc((100%-var(--space-4))/3)] [&amp;>:last-child]:flex-1"
+                  >
+                    <label class="tc-wrapper-label">
+                      <div class="select-wrap">
+                        <div class="select-content">
+                          <!-- Select Country code -->
+                          <select
+                            aria-label="Country code"
+                            class="select-spacing"
+                            data-dd-privacy="mask"
+                            data-test="country-code"
+
+                          >
+
+                            <option
+                              class="select-placeholder"
+                              disabled=""
+                              value=""
+                            >
+                              Country code
+                            </option>
+                            <option value="+1">+1</option>
+                            <option value="+7">+7</option>
+                            <option value="+20">+20</option>
+                            <option value="+27">+27</option>
+                            <option value="+30">+30</option>
+                            <option value="+31">+31</option>
+                            <option value="+32">+32</option>
+                            <option value="+33">+33</option>
+                            <option value="+34">+34</option>
+                            <option value="+36">+36</option>
+                            <option value="+39">+39</option>
+                            <option value="+40">+40</option>
+                            <option value="+41">+41</option>
+                            <option value="+43">+43</option>
+                            <option value="+44">+44</option>
+                            <option value="+45">+45</option>
+                            <option value="+46">+46</option>
+                            <option value="+47">+47</option>
+                            <option value="+48">+48</option>
+                            <option value="+49">+49</option>
+                            <option value="+51">+51</option>
+                            <option value="+52">+52</option>
+                            <option value="+53">+53</option>
+                            <option value="+54">+54</option>
+                            <option value="+55">+55</option>
+                            <option value="+56">+56</option>
+                            <option value="+57">+57</option>
+                            <option value="+58">+58</option>
+                            <option value="+60">+60</option>
+                            <option value="+61">+61</option>
+                            <option value="+62">+62</option>
+                            <option value="+63">+63</option>
+                            <option value="+64">+64</option>
+                            <option value="+65">+65</option>
+                            <option value="+66">+66</option>
+                            <option value="+81">+81</option>
+                            <option value="+82">+82</option>
+                            <option value="+84">+84</option>
+                            <option value="+86">+86</option>
+                            <option value="+90">+90</option>
+                            <option value="+91">+91</option>
+                            <option value="+92">+92</option>
+                            <option value="+93">+93</option>
+                            <option value="+94">+94</option>
+                            <option value="+95">+95</option>
+                            <option value="+98">+98</option>
+                            <option value="+211">+211</option>
+                            <option value="+212">+212</option>
+                            <option value="+213">+213</option>
+                            <option value="+216">+216</option>
+                            <option value="+218">+218</option>
+                            <option value="+220">+220</option>
+                            <option value="+221">+221</option>
+                            <option value="+222">+222</option>
+                            <option value="+223">+223</option>
+                            <option value="+224">+224</option>
+                            <option value="+225">+225</option>
+                            <option value="+226">+226</option>
+                            <option value="+227">+227</option>
+                            <option value="+228">+228</option>
+                            <option value="+229">+229</option>
+                            <option value="+230">+230</option>
+                            <option value="+231">+231</option>
+                            <option value="+232">+232</option>
+                            <option value="+233">+233</option>
+                            <option value="+234">+234</option>
+                            <option value="+235">+235</option>
+                            <option value="+236">+236</option>
+                            <option value="+237">+237</option>
+                            <option value="+238">+238</option>
+                            <option value="+239">+239</option>
+                            <option value="+240">+240</option>
+                            <option value="+241">+241</option>
+                            <option value="+242">+242</option>
+                            <option value="+243">+243</option>
+                            <option value="+244">+244</option>
+                            <option value="+245">+245</option>
+                            <option value="+246">+246</option>
+                            <option value="+248">+248</option>
+                            <option value="+249">+249</option>
+                            <option value="+250">+250</option>
+                            <option value="+251">+251</option>
+                            <option value="+252">+252</option>
+                            <option value="+253">+253</option>
+                            <option value="+254">+254</option>
+                            <option value="+255">+255</option>
+                            <option value="+256">+256</option>
+                            <option value="+257">+257</option>
+                            <option value="+258">+258</option>
+                            <option value="+260">+260</option>
+                            <option value="+261">+261</option>
+                            <option value="+262">+262</option>
+                            <option value="+263">+263</option>
+                            <option value="+264">+264</option>
+                            <option value="+265">+265</option>
+                            <option value="+266">+266</option>
+                            <option value="+267">+267</option>
+                            <option value="+268">+268</option>
+                            <option value="+269">+269</option>
+                            <option value="+290">+290</option>
+                            <option value="+291">+291</option>
+                            <option value="+297">+297</option>
+                            <option value="+298">+298</option>
+                            <option value="+299">+299</option>
+                            <option value="+350">+350</option>
+                            <option value="+351">+351</option>
+                            <option value="+352">+352</option>
+                            <option value="+353">+353</option>
+                            <option value="+354">+354</option>
+                            <option value="+355">+355</option>
+                            <option value="+356">+356</option>
+                            <option value="+357">+357</option>
+                            <option value="+358">+358</option>
+                            <option value="+359">+359</option>
+                            <option value="+370">+370</option>
+                            <option value="+371">+371</option>
+                            <option value="+372">+372</option>
+                            <option value="+373">+373</option>
+                            <option value="+374">+374</option>
+                            <option value="+375">+375</option>
+                            <option value="+376">+376</option>
+                            <option value="+377">+377</option>
+                            <option value="+378">+378</option>
+                            <option value="+379">+379</option>
+                            <option value="+380">+380</option>
+                            <option value="+381">+381</option>
+                            <option value="+382">+382</option>
+                            <option value="+383">+383</option>
+                            <option value="+385">+385</option>
+                            <option value="+386">+386</option>
+                            <option value="+387">+387</option>
+                            <option value="+389">+389</option>
+                            <option value="+420">+420</option>
+                            <option value="+421">+421</option>
+                            <option value="+423">+423</option>
+                            <option value="+500">+500</option>
+                            <option value="+501">+501</option>
+                            <option value="+502">+502</option>
+                            <option value="+503">+503</option>
+                            <option value="+504">+504</option>
+                            <option value="+505">+505</option>
+                            <option value="+506">+506</option>
+                            <option value="+507">+507</option>
+                            <option value="+508">+508</option>
+                            <option value="+509">+509</option>
+                            <option value="+590">+590</option>
+                            <option value="+591">+591</option>
+                            <option value="+592">+592</option>
+                            <option value="+593">+593</option>
+                            <option value="+594">+594</option>
+                            <option value="+595">+595</option>
+                            <option value="+596">+596</option>
+                            <option value="+597">+597</option>
+                            <option value="+598">+598</option>
+                            <option value="+599">+599</option>
+                            <option value="+670">+670</option>
+                            <option value="+672">+672</option>
+                            <option value="+673">+673</option>
+                            <option value="+674">+674</option>
+                            <option value="+675">+675</option>
+                            <option value="+676">+676</option>
+                            <option value="+677">+677</option>
+                            <option value="+678">+678</option>
+                            <option value="+679">+679</option>
+                            <option value="+680">+680</option>
+                            <option value="+681">+681</option>
+                            <option value="+682">+682</option>
+                            <option value="+683">+683</option>
+                            <option value="+685">+685</option>
+                            <option value="+686">+686</option>
+                            <option value="+687">+687</option>
+                            <option value="+688">+688</option>
+                            <option value="+689">+689</option>
+                            <option value="+690">+690</option>
+                            <option value="+691">+691</option>
+                            <option value="+692">+692</option>
+                            <option value="+850">+850</option>
+                            <option value="+852">+852</option>
+                            <option value="+853">+853</option>
+                            <option value="+855">+855</option>
+                            <option value="+856">+856</option>
+                            <option value="+880">+880</option>
+                            <option value="+886">+886</option>
+                            <option value="+960">+960</option>
+                            <option value="+961">+961</option>
+                            <option value="+962">+962</option>
+                            <option value="+963">+963</option>
+                            <option value="+964">+964</option>
+                            <option value="+965">+965</option>
+                            <option value="+966">+966</option>
+                            <option value="+967">+967</option>
+                            <option value="+968">+968</option>
+                            <option value="+970">+970</option>
+                            <option value="+971">+971</option>
+                            <option value="+972">+972</option>
+                            <option value="+973">+973</option>
+                            <option value="+974">+974</option>
+                            <option value="+975">+975</option>
+                            <option value="+976">+976</option>
+                            <option value="+977">+977</option>
+                            <option value="+992">+992</option>
+                            <option value="+993">+993</option>
+                            <option value="+994">+994</option>
+                            <option value="+995">+995</option>
+                            <option value="+996">+996</option>
+                            <option value="+998">+998</option>
+                            <option value="+1242">+1242</option>
+                            <option value="+1246">+1246</option>
+                            <option value="+1264">+1264</option>
+                            <option value="+1268">+1268</option>
+                            <option value="+1284">+1284</option>
+                            <option value="+1345">+1345</option>
+                            <option value="+1441">+1441</option>
+                            <option value="+1473">+1473</option>
+                            <option value="+1649">+1649</option>
+                            <option value="+1664">+1664</option>
+                            <option value="+1670">+1670</option>
+                            <option value="+1671">+1671</option>
+                            <option value="+1684">+1684</option>
+                            <option value="+1721">+1721</option>
+                            <option value="+1758">+1758</option>
+                            <option value="+1767">+1767</option>
+                            <option value="+1784">+1784</option>
+                            <option value="+1787">+1787</option>
+                            <option value="+1809">+1809</option>
+                            <option value="+1868">+1868</option>
+                            <option value="+1869">+1869</option>
+                            <option value="+1876">+1876</option>
+                            <option value="+4779">+4779</option>
+                            <option value="+5997">+5997</option>
+                          </select>
+                          <!-- Dropdown svg -->
+
+                          <div class="dropdown-icon-wrap">
+                            <img
+                              alt="dropdown"
+                              class="svg-icon-dropdown" src="/src/app/modal/login/dropdownArrow.png"
+                            />
+
+                          </div>
+                        </div>
+                      </div>
+                      <span class="select-wrap-label"> </span
+                      ></label>
+                    <!-- Select Phone Number -->
+                    <label class="number-label">
+                      <div class="input-wrap">
+                        <div class="input-content">
+                          <div class="before-icon"></div>
+                          <div class="after-icon"></div>
+                          <input
+                            aria-label="Phone number"
+                            autocomplete="on"
+                            class="input-spacing"
+                            name="phoneNumber"
+                            placeholder="Phone number"
+                            type="text"
+                          />
+                        </div>
+                        <div class="input-button-wrap"></div>
+                      </div>
+                      <span class="label-content"
+                      ><div class="inline-flex w-full"></div> </span
+                      ></label>
+                  </div>
+
+                  <div class="flex mt-1">
+                    <span
+                      class="text-[#b1bad3] text-left justify-start text-xs font-normal inline-flex items-center"
+                    >By submitting your phone number, you are opting-in to
+                      receive marketing communications &amp; offers via SMS from
+                      Stake.</span
+                    >
+                  </div>
+                </fieldset>
+              </div>
+              <div class="tc-wrapper">
+                <label
+                  class="flex-col-reverse items-start text-left inline-flex touch-auto relative"
+                >
+                  <!-- Select code label -->
+                  <div class="input-wrap">
+                    <div class="input-content">
+                      <div class="before-icon"></div>
+                      <div class="after-icon"></div>
+                      <input
+                        autocomplete="on"
+                        class="input-spacing"
+                        max="Infinity"
+                        name="signupCode"
+                        type="text"
+                      />
+                    </div>
+                    <div class="input-button-wrap"></div>
+                  </div>
+                  <span
+                    class="w-full inline-flex items-center font-semibold text-[0.875rem] text-[#b1bad3] justify-between touch-auto"
+                  ><div>
+                      <label class="tc-label"
+                      ><input
+                        class="tc-checkbox"
+                        type="checkbox"
+                        value="undefined"
+                      />
+                        <span class="indicator-variant"></span>
+                        <span class="checkbox-text"
+                        ><span slot="label"
+                        ><span slot="label">Code (Optional)</span></span
+                        >
+                        </span></label
+                      >
+                    </div></span
+                  ></label
+                >
+              </div>
+              <!-- Continue btn -->
+              <div
+                class="flex flex-col mt-4 w-full items-end justify-end flex-1"
+              >
+                <button
+                  class="inline-flex relative items-center gap-2 justify-center rounded-sm font-semibold whitespace-nowrap ring-offset-background transition disabled:pointer-events-none disabled:opacity-50 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 active:scale-[0.98] bg-blue-500 text-white betterhover:hover:bg-blue-600 betterhover:hover:text-white focus-visible:outline-white text-base leading-none shadow-md py-[1.125rem] px-[1.75rem] min-w-[12ch] w-full"
+                  type="submit"
+                >
+                  <div class="contents">Continue</div>
+                </button>
+              </div>
+              <!-- OR text -->
+              <div class="wrap-svelte">
+                <div class="or-svelte" data-content="">
+                  <span
+                    class="text-[#b1bad3] text-center justify-center text-sm px-2 inline-flex items-center font-normal"
+                  >OR</span
+                  >
+                </div>
+                <div class="oauth-svelte">
+                  <div class="provider-wrapper svelte-qhfv7k" data-content="">
+                    <button
+                      class="inline-flex bg-[rgb(47,69,83)] relative items-center gap-2 justify-center rounded-sm font-semibold whitespace-nowrap ring-offset-background transition disabled:pointer-events-none disabled:opacity-50 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 active:scale-[0.98] bg-grey-400 text-white betterhover:hover:bg-grey-300 betterhover:hover:text-white focus-visible:outline-white text-sm leading-none shadow-md py-[0.8125rem] px-[1rem]"
+                      type="button"
+                    >
+                      <!-- facebook svg -->
+                      <img
+                        alt="facebook-logo"
+                        class="svg-icon-password" src="/src/app/modal/login/Facebook.png"
+                      />
+                    </button>
+                  </div>
+                  <div class="provider-wrapper svelte-qhfv7k" data-content="">
+                    <button
+                      class="inline-flex bg-[rgb(47,69,83)] relative items-center gap-2 justify-center rounded-sm font-semibold whitespace-nowrap ring-offset-background transition disabled:pointer-events-none disabled:opacity-50 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 active:scale-[0.98] bg-grey-400 text-white betterhover:hover:bg-grey-300 betterhover:hover:text-white focus-visible:outline-white text-sm leading-none shadow-md py-[0.8125rem] px-[1rem]"
+                      type="button"
+                    >
+                      <!-- google svg -->
+                      <img alt="google-icon" class="svg-icon" src="/src/app/modal/login/Google.png"/>
+                    </button>
+                  </div>
+                  <div class="provider-wrapper svelte-qhfv7k" data-content="">
+                    <button
+                      class="inline-flex relative bg-[rgb(47,69,83)] items-center gap-2 justify-center rounded-sm font-semibold whitespace-nowrap ring-offset-background transition disabled:pointer-events-none disabled:opacity-50 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 active:scale-[0.98] bg-grey-400 text-white betterhover:hover:bg-grey-300 betterhover:hover:text-white focus-visible:outline-white text-sm leading-none shadow-md py-[0.8125rem] px-[1rem]"
+                      data-analytics="provider-login-line"
+                      data-button-root=""
+                      tabindex="0"
+                      type="button"
+                    >
+                      <!-- provider-login-line svg -->
+                      <img alt="line-icon" class="svg-icon-password" src="/src/app/modal/login/Line.png"/>
+                    </button>
+                  </div>
+                  <div class="provider-wrapper svelte-qhfv7k" data-content="">
+                    <button
+                      [disabled]="registerForm.invalid"
+                      class="inline-flex relative bg-[rgb(47,69,83)] items-center gap-2 justify-center rounded-sm font-semibold whitespace-nowrap ring-offset-background transition disabled:pointer-events-none disabled:opacity-50 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 active:scale-[0.98] bg-grey-400 text-white betterhover:hover:bg-grey-300 betterhover:hover:text-white focus-visible:outline-white text-sm leading-none shadow-md py-[0.8125rem] px-[1rem]  "
+                      data-analytics="provider-login-twitch"
+                      data-button-root=""
+                      tabindex="0"
+                      type="button"
+                    >
+                      <!-- login-twitch svg -->
+                      <img alt="twitch-icon" class="svg-icon-password" src="/src/app/modal/login/Comment.png"/>
+                    </button>
+                  </div>
+                </div>
+              </div>
+            </form>
+            <div class="flex flex-col justify-end gap-3" data-content="">
+              <span
+                class="text-[#b1bad3] text-center text-sm font-normal touch-auto"
+              >Already have an account?
+                <button
+                  class="inline-flex relative items-center gap-2 justify-center rounded-sm font-semibold whitespace-nowrap ring-offset-background transition disabled:pointer-events-none disabled:opacity-50 focus-visible:outline-2 focus-visible:outline-offset-2 active:scale-[0.98] bg-transparent text-white betterhover:hover:bg-transparent betterhover:hover:text-white focus-visible:outline-none text-sm leading-none [&amp;_svg]:text-grey-200 [&amp;:hover>svg]:text-white"
+                  data-button-root=""
+                  tabindex="0"
+                  type="button"
+                >
+                  Sign In
+                </button></span
+              >
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+<!-- 3rd step============================================================================ -->
+<div *ngIf="currentStep === 3">
+  <div class="Modal-container">
+    <div class="svelte-syudie"></div>
+    <div class="card-svelte">
+      <div class="ctainer-div">
+        <div>
+          <div class="wrap-normal">
+            <img class="wrap-normal-svg" src="/login/white.png"/>
+          </div>
+        </div>
+        <button
+          class="inline-flex relative items-center gap-2 justify-center font-semibold whitespace-nowrap ring-offset-background transition disabled:pointer-events-none disabled:opacity-50 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 active:scale-[0.98] bg-transparent text-white betterhover:hover:bg-grey-900 betterhover:hover:text-white focus-visible:outline-white text-xs leading-none [&amp;_svg]:text-grey-200 [&amp;:hover>svg]:text-white py-[0.75rem] px-[0.75rem] rounded-full"
+          type="button"
+        >
+          Exit
+        </button>
+      </div>
+
+      <div class="content-svelte">
+        <div class="modal-content">
+          <div class="contenttop">
+            <div class="ctainer">
+              <div class="stack">
+                <div class="step-active"></div>
+                <div class="step-svelte"></div>
+                <div class="step-svelte"></div>
+              </div>
+              <div class="stack-padding">
+                <button
+                  class="inline-flex relative items-center gap-2 justify-center rounded-sm font-semibold whitespace-nowrap ring-offset-background transition disabled:pointer-events-none disabled:opacity-50 focus-visible:outline-2 focus-visible:outline-offset-2 active:scale-[0.98] bg-transparent text-grey-200 betterhover:hover:bg-transparent betterhover:hover:text-white focus-visible:text-white focus-visible:outline-none text-sm leading-none"
+                  type="button"
+                >
+                  <img class="svg-back-arrow" src="/login/back-icon.png"/>
+                  Back
+                </button>
+                <span class="step-text">Step 2 / 3</span>
+              </div>
+            </div>
+            <div class="self-start mb-1">
+              <h2 class="select-language">Create an account</h2>
+            </div>
+            <form
+              class="flex-col justify-center touch-auto flex w-full h-full"
+              data-test-form-valid="true"
+            >
+              <div>
+                <div class="term-div">
+                  <div class="content-block">
+                    <h1 class="term-text">
+                      <span id="Terms_and_Conditions"
+                      >Terms and Conditions
+                      </span>
+                    </h1>
+                    <p class="inline-text"><span class="span-text"></span></p>
+                    <h3 class="stake-text">
+                      <span id="1._STAKE.COM">1. STAKE.COM </span>
+                    </h3>
+                    <p class="inline-text">
+                      <span class="span-text"
+                      >1.1 Stake.com is owned and operated by Medium Rare,
+                        N.V. (hereinafter "Stake", "We" or "Us"), a company with
+                        head office at Korporaalweg 10, Willemstad, Curaçao.
+                        Medium Rare N.V. is authorised to offer it’s services in
+                        accordance with the Certificate of Operation
+                        (Application no. OGL/2024/1451/0918) issued by the
+                        Curaçao Gaming Control Board. Some credit card payment
+                        processing are handled by its wholly owned subsidiary,
+                        Medium Rare Limited.</span
+                      >
+                    </p>
+                    <p class="inline-text mt-3">
+                      <span class="span-text"></span>
+                    </p>
+                    <h3 class="stake-text">
+                      <span id="2._IMPORTANT_NOTICE">2. IMPORTANT NOTICE </span>
+                    </h3>
+                    <p class="inline-text">
+                      <span class="span-text"
+                      >2.1 By registering on www.stake.com (the “Website”),
+                        you enter into a contract with Medium Rare N.V., and
+                        agree to be bound by (i) these Terms and Conditions;
+                        (ii) our Privacy Policy; (iii) our Cookies Policy and
+                        (iv) the rules applicable to our betting or gaming
+                        products as further referenced in these Terms and
+                        Conditions (“Terms and Conditions” or “Agreement”), and
+                        the betting and/or gaming specific rules, and are deemed
+                        to have accepted and understood all the terms.</span
+                      >
+                    </p>
+                  </div>
+                </div>
+              </div>
+              <div class="stack-svelte">
+                <div class="text-left w-full">
+                  <div>
+                    <label class="accept-term" data-test="accept-terms"
+                    ><input
+                      class="tc-checkbox"
+                      type="checkbox"
+                      value="undefined"
+                    />
+                      <span class="indicator-variant"></span>
+                      <span class="checkbox-text"
+                      ><span slot="label"
+                      ><span
+                        class="text-[#b1bad3] inline text-left text-sm font-normal touch-auto"
+                      >I have read and agree to the terms and
+                            conditions</span
+                      ></span
+                      >
+                      </span></label
+                    >
+                  </div>
+                </div>
+                <button
+                  class="inline-flex relative items-center gap-2 justify-center rounded-sm font-semibold whitespace-nowrap ring-offset-background transition disabled:pointer-events-none disabled:opacity-50 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 active:scale-[0.98] bg-blue-500 text-white betterhover:hover:bg-blue-600 betterhover:hover:text-white focus-visible:outline-white text-base leading-none shadow-md py-[1.125rem] px-[1.75rem] min-w-[12ch] w-full"
+                  type="submit"
+                >
+                  <div class="contents" data-loader-content="">
+                    Create an account
+                  </div>
+                </button>
+              </div>
+            </form>
+            <div
+              id="_turnstile"
+              style="display: none"
+
+            ></div>
+            <div
+              class="flex flex-col justify-end gap-3"
+              data-content=""
+
+            >
+              <span
+                class="text-[#b1bad3] text-center text-sm font-normal touch-auto"
+
+              >Already have an account?
+                <button
+                  class="inline-flex relative items-center gap-2 justify-center rounded-sm font-semibold whitespace-nowrap ring-offset-background transition disabled:pointer-events-none disabled:opacity-50 focus-visible:outline-2 focus-visible:outline-offset-2 active:scale-[0.98] bg-transparent text-white betterhover:hover:bg-transparent betterhover:hover:text-white focus-visible:outline-none text-sm leading-none [&amp;_svg]:text-grey-200 [&amp;:hover>svg]:text-white"
+                  data-button-root=""
+                  tabindex="0"
+                  type="button"
+                >
+                  Sign In
+                </button></span
+              >
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!--<div class="Modal-container">-->
+<!--  &lt;!&ndash; Header Section (Logo and Exit Button) &ndash;&gt;-->
+<!--  <div class="ctainer-div">-->
+<!--    <div>-->
+<!--      <div class="wrap-normal">-->
+<!--        <img alt="Logo" class="wrap-normal-svg" src="/login/white.png"/>-->
+<!--      </div>-->
+<!--    </div>-->
+<!--    <button-->
+<!--      (click)="exit()"-->
+<!--      class="inline-flex relative items-center gap-2 justify-center font-semibold whitespace-nowrap ring-offset-background transition disabled:pointer-events-none disabled:opacity-50 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 active:scale-[0.98] bg-transparent text-white betterhover:hover:bg-grey-900 betterhover:hover:text-white focus-visible:outline-white text-xs leading-none py-[0.75rem] px-[0.75rem] rounded-full"-->
+<!--      type="button"-->
+<!--    >-->
+<!--      Exit-->
+<!--    </button>-->
+<!--  </div>-->
+
+<!--  &lt;!&ndash; Step Progress Bar &ndash;&gt;-->
+<!--  <div class="content-svelte">-->
+<!--    <div class="modal-content">-->
+<!--      <div class="contenttop">-->
+<!--        <div class="ctainer">-->
+<!--          <div class="stack">-->
+<!--            <div class="step-active"></div>-->
+<!--            <div [ngClass]="{'step-svelte': currentStep !== 2}"></div>-->
+<!--            <div [ngClass]="{'step-svelte': currentStep !== 3}"></div>-->
+<!--          </div>-->
+<!--          <div *ngIf="currentStep > 1" class="stack-padding">-->
+<!--            <button-->
+<!--              (click)="prevStep()"-->
+<!--              class="inline-flex relative items-center gap-2 justify-center rounded-sm font-semibold whitespace-nowrap ring-offset-background transition disabled:pointer-events-none disabled:opacity-50 focus-visible:outline-2 focus-visible:outline-offset-2 active:scale-[0.98] bg-transparent text-grey-200 betterhover:hover:bg-transparent betterhover:hover:text-white focus-visible:text-white focus-visible:outline-none text-sm leading-none"-->
+<!--              type="button"-->
+<!--            >-->
+<!--              <img alt="Back" class="svg-back-arrow" src="/src/app/modal/login/back-icon.png"/>-->
+<!--              Back-->
+<!--            </button>-->
+<!--            <span class="step-text">Step {{ currentStep }} / 3</span>-->
+<!--          </div>-->
+<!--        </div>-->
+
+<!--        &lt;!&ndash; Step 1 &ndash;&gt;-->
+<!--        <div *ngIf="currentStep === 1">-->
+<!--          <h2>Select your preferred language</h2>-->
+<!--          <span>-->
+<!--            Stake is available in several languages. Feel free to personalise-->
+<!--            your language across our site from the options below.-->
+<!--          </span>-->
+<!--          <label class="labelstacked">-->
+<!--            <div class="select-wrap">-->
+<!--              <div class="select-content">-->
+<!--                <select [(ngModel)]="selectedLanguage" class="select-spacing">-->
+<!--                  <option value="en">English</option>-->
+<!--                  <option value="es">Español</option>-->
+<!--                  <option value="ja">日本語</option>-->
+<!--                  <option value="zh">中文</option>-->
+<!--                  <option value="pt">Português</option>-->
+<!--                  <option value="ru">Русский</option>-->
+<!--                  <option value="fr">Français</option>-->
+<!--                  <option value="de">Deutsch</option>-->
+<!--                  <option value="hi">हिंदी</option>-->
+<!--                  <option value="id">Bahasa Indonesia</option>-->
+<!--                  <option value="ko">한국어</option>-->
+<!--                  <option value="pl">Polski</option>-->
+<!--                  <option value="tr">Türkçe</option>-->
+<!--                  <option value="vi">Tiếng Việt</option>-->
+<!--                  <option value="fi">Suomen</option>-->
+<!--                  <option value="ar">اَلْعَرَبِيَّةُ</option>-->
+<!--                </select>-->
+<!--              </div>-->
+<!--            </div>-->
+<!--          </label>-->
+<!--          <button (click)="nextStep()" class="inline-flex btn-primary">Confirm</button>-->
+<!--        </div>-->
+
+<!--        &lt;!&ndash; Step 2 &ndash;&gt;-->
+<!--        <div *ngIf="currentStep === 2">-->
+<!--          <h2>Create an account</h2>-->
+<!--          <form [formGroup]="registerForm">-->
+<!--            <label class="labelstacked">-->
+<!--              <div *ngIf="registerForm.get('email')?.invalid && registerForm.get('email')?.touched">-->
+<!--                Please enter a valid email address.-->
+<!--              </div>-->
+<!--              <input class="input-spacing" formControlName="email" placeholder="Email" type="email"/>-->
+<!--            </label>-->
+
+<!--            <label class="labelstacked">-->
+<!--              <div *ngIf="registerForm.get('username')?.invalid && registerForm.get('username')?.touched">-->
+<!--                Your username must be at least 3 characters long.-->
+<!--              </div>-->
+<!--              <input class="input-spacing" formControlName="username" placeholder="Username" type="text"/>-->
+<!--            </label>-->
+
+<!--            <label class="labelstacked">-->
+<!--              <div *ngIf="registerForm.get('password')?.invalid && registerForm.get('password')?.touched">-->
+<!--                Password must be at least 8 characters with upper and lower case letters and a number.-->
+<!--              </div>-->
+<!--              <input class="input-spacing" formControlName="password" placeholder="Password" type="password"/>-->
+<!--            </label>-->
+
+<!--            <label class="labelstacked">-->
+<!--              <div *ngIf="registerForm.get('dob')?.invalid && registerForm.get('dob')?.touched">-->
+<!--                Please enter your date of birth.-->
+<!--              </div>-->
+<!--              <input class="input-spacing" formControlName="dob" placeholder="yyyy-mm-dd" type="date"/>-->
+<!--            </label>-->
+
+<!--            <button (click)="nextStep()" [disabled]="registerForm.invalid" class="btn-primary">-->
+<!--              Continue-->
+<!--            </button>-->
+<!--          </form>-->
+<!--        </div>-->
+
+<!--        &lt;!&ndash; Step 3 &ndash;&gt;-->
+<!--        <div *ngIf="currentStep === 3">-->
+<!--          <h2>Terms and Conditions</h2>-->
+<!--          <p>By creating an account, you agree to the terms and conditions.</p>-->
+<!--          <label>-->
+<!--            <input type="checkbox"/> I agree to the terms.-->
+<!--          </label>-->
+<!--          <button (click)="submit()" class="btn-primary">Create an Account</button>-->
+<!--        </div>-->
+<!--      </div>-->
+<!--    </div>-->
+<!--  </div>-->
+<!--</div>-->
+
+
+
+
+
