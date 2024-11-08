@@ -333,6 +333,10 @@
         <div class="market-title">
           <span>Republic of Korea / KBL</span>
         </div>
+        <div class="flex ">
+          <div class="flex mr-4" *ngIf="!isMarketOpen">
+            <div class="market-badge">1</div>
+          </div>
         <div class="arrow svelte-69p9vw"  (click)="toggleMarket()"  [ngClass]="{'rotate-90': !isMarketOpen}">
           <svg  fill="currentColor" viewBox="0 0 64 64" class="svg-icon " style="transform: rotate(0deg);
           ">
@@ -341,6 +345,7 @@
             </path>
           </svg>
         </div>
+      </div>
       </div>
 
       <!-- Market Content -->
@@ -490,15 +495,19 @@
         <div class="market-title">
           <span>UEFA Champion League</span>
         </div>
-        <div class="arrow svelte-69p9vw" (click)="toggleMarket2()" [ngClass]="{'rotate-90': !isMarketOpen2}">
-          <svg fill="currentColor" viewBox="0 0 64 64" class="svg-icon" fill="#b1bad3" style="transform: rotate(0deg);
+        <div class="flex ">
+          <div class="flex mr-4" *ngIf="!isMarketOpen2">
+            <div class="market-badge">1</div>
+          </div>
+        <div class="arrow svelte-69p9vw"  (click)="toggleMarket2()"  [ngClass]="{'rotate-90': !isMarketOpen2}">
+          <svg  fill="currentColor" viewBox="0 0 64 64" class="svg-icon " style="transform: rotate(0deg);
           ">
             <title></title>
-            <path fill="#b1bad3"
-              d="M32.271 49.763 9.201 26.692l6.928-6.93 16.145 16.145 16.144-16.144 6.93 6.929-23.072 23.07h-.005Z">
+            <path d="M32.271 49.763 9.201 26.692l6.928-6.93 16.145 16.145 16.144-16.144 6.93 6.929-23.072 23.07h-.005Z">
             </path>
           </svg>
         </div>
+      </div>
       </div>
 
       <!-- Market Content -->
