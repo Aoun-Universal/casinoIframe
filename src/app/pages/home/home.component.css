@@ -194,7 +194,7 @@ section {
 
 /* Top sports slider */
 .sports-img {
-    @apply w-[157px] max-w-[167px]
+    @apply w-[157px] max-w-[167px] rounded-lg
 }
 
 .ribbon {
@@ -241,7 +241,7 @@ section {
 }
 
 .main-list {
-    @apply px-2 pt-8 py-[18px]
+    @apply px-2 pt-8 py-[18px] flex flex-nowrap
 }
 
 .sport-btn {
@@ -467,5 +467,9 @@ tr:hover {
 }
 .bet-amount img {
     @apply w-5 h-5 ml-2;
+}
+
+.lg-row{
+    @apply max-[768px]:hidden
 }
 
