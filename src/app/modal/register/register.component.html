@@ -28,41 +28,41 @@
           <div class="contenttop">
             <div
               class="ctainer "
-              
+
             >
               <div
                 class="stack "
-                
-               
+
+
               >
                 <div
                   class="step-active"
-                  
+
                 ></div>
                 <div class="step-svelte" ></div>
                 <div class="step-svelte" ></div>
               </div>
               <div
                 class="firt-step"
-                
-             
+
+
               >
                 <span
                   class="step-text"
-                 
+
                   >Step 1 / 3</span
                 >
               </div>
             </div>
             <h2
               class="select-language"
-             
+
             >
               Select your preferred language
             </h2>
             <span
               class="select-language-span"
-        
+
               >Stake is available is several languages. Feel free to personalise
               your language across our site from the options below.</span
             >
@@ -92,13 +92,13 @@
                   </select>
                   <div
                     class="dropdown-icon-wrap"
-                    
+
                   >
                     <svg
                       fill="currentColor"
                       viewBox="0 0 64 64"
                       class="svg-icon-dropdown"
-                     
+
                     >
                       <title></title>
                       <path
@@ -121,7 +121,7 @@
                 <div
                   data-loader-content=""
                   class="contents"
-                  
+
                 >
                   Confirm
                 </div>
@@ -130,11 +130,11 @@
             <div
               class="flex flex-col justify-end gap-3"
               data-content=""
-              
+
             >
               <span
                 class=" text-[#b1bad3]  text-center font-normal text-sm touch-auto"
-               
+
                 >Already have an account?
                 <button
                   type="button"
@@ -154,70 +154,8 @@
 </div> -->
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 <!-- 2nd Step======================================================= -->
-<div id="svelte" class="">
+<div class="" id="svelte">
   <div class="Modal-container">
     <div class="svelte-syudie"></div>
     <div class="card-svelte">
@@ -225,22 +163,22 @@
         <div>
           <!-- Stake logo -->
           <div class="wrap-normal">
-            <img class="wrap-normal-svg" src="/login/white.png" alt="Stake-logo" />
+            <img alt="Stake-logo" class="wrap-normal-svg" src="/src/app/modal/login/white.png"/>
           </div>
         </div>
         <!-- Exit Btn -->
         <button
-          type="button"
-          tabindex="0"
           class="inline-flex relative items-center gap-2 justify-center font-semibold whitespace-nowrap ring-offset-background transition disabled:pointer-events-none disabled:opacity-50 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 active:scale-[0.98] bg-transparent text-white betterhover:hover:bg-grey-900 betterhover:hover:text-white focus-visible:outline-white text-xs leading-none [&amp;_svg]:text-grey-200 [&amp;:hover>svg]:text-white py-[0.75rem] px-[0.75rem] rounded-full"
-          data-test="exit-registration"
           data-analytics="exit-registration"
           data-button-root=""
+          data-test="exit-registration"
+          tabindex="0"
+          type="button"
         >
           Exit
         </button>
       </div>
-<!-- Progress bar -->
+      <!-- Progress bar -->
       <div class="content-svelte">
         <div class="modal-content">
           <div class="contenttop">
@@ -253,27 +191,28 @@
               <!-- Back Arrow svg Button -->
               <div class="stack-padding">
                 <button
-                  type="button"
-                  tabindex="0"
                   class="inline-flex relative items-center gap-2 justify-center rounded-sm font-semibold whitespace-nowrap ring-offset-background transition disabled:pointer-events-none disabled:opacity-50 focus-visible:outline-2 focus-visible:outline-offset-2 active:scale-[0.98] bg-transparent text-grey-200 betterhover:hover:bg-transparent betterhover:hover:text-white focus-visible:text-white focus-visible:outline-none text-sm leading-none"
-                  data-test="steps-back"
                   data-analytics="registration-register-back"
                   data-button-root=""
+                  data-test="steps-back"
+                  tabindex="0"
+                  type="button"
                 >
-                <img class="svg-back-arrow" src="/login/back-icon.png" alt="backArrow" />
+                  <img alt="backArrow" class="svg-back-arrow" src="/src/app/modal/login/back-icon.png"/>
                   Back
                 </button>
                 <span class="step-text">Step 2 / 3</span>
               </div>
             </div>
-          <!-- Title -->
+            <!-- Title -->
             <div class="self-start mb-1">
               <h2 class="select-language">Create an account</h2>
             </div>
-            <form [formGroup]="registerForm" (ngSubmit)="onSubmit()" class="formsvelte">
+            <form (ngSubmit)="onSubmit()" [formGroup]="registerForm" class="formsvelte">
               <!-- Email input feild -->
               <label class="labelstacked">
-                <div *ngIf="registerForm.get('email')?.invalid && registerForm.get('email')?.touched" class="text-[#f2708a] text-xs pt-2 pb-1  flex ">
+                <div *ngIf="registerForm.get('email')?.invalid && registerForm.get('email')?.touched"
+                     class="text-[#f2708a] text-xs pt-2 pb-1  flex ">
                   Please enter a valid email address.
                 </div>
                 <div class="input-wrap">
@@ -281,105 +220,108 @@
                     <div class="before-icon"></div>
                     <div class="after-icon"></div>
                     <input
-                    formControlName="email"
                       autocomplete="on"
                       class="input-spacing"
-                      type="email"
-                      name="email"
-                      max="Infinity"
                       data-test="register-email"
+                      formControlName="email"
+                      max="Infinity"
+                      name="email"
+                      type="email"
                     />
                   </div>
                   <div class="input-button-wrap"></div>
-                  
+
                 </div>
                 <span class="label-content"
-                  ><div class="inline-flex w-full touch-auto">
+                ><div class="inline-flex w-full touch-auto">
                     <span slot="label">Email</span>
                     <div class="ml-[.25rem] touch-auto">
                       <span class="asterick">*</span>
                     </div>
                   </div>
                 </span>
-                
-                </label
+
+              </label
               >
               <!-- Username input feild -->
               <label class="labelstacked mt-[1rem]"
-                >
-                <div *ngIf="registerForm.get('username')?.invalid && registerForm.get('username')?.touched" class="text-[#f2708a] text-xs pt-2 pb-1  flex ">
+              >
+                <div *ngIf="registerForm.get('username')?.invalid && registerForm.get('username')?.touched"
+                     class="text-[#f2708a] text-xs pt-2 pb-1  flex ">
                   Your username must be at least 3 characters long.
                 </div>
                 <!-- <span class="pt-2 pb-1 text-[0.5rem] align-baseline"
                   >Your username must be 3-14 characters long.</span
                 > -->
-              
+
                 <div class="input-wrap">
                   <div class="input-content">
                     <div class="before-icon"></div>
                     <div class="after-icon"></div>
                     <input
-                    formControlName="username"
                       autocomplete="on"
                       class="input-spacing"
-                      type="text"
-                      name="name"
-                      max="Infinity"
                       data-test="register-name"
+                      formControlName="username"
+                      max="Infinity"
+                      name="name"
+                      type="text"
                     />
                   </div>
-                  
+
                   <div class="input-button-wrap"></div>
                 </div>
                 <span class="label-content"
-                  ><div class="inline-flex w-full touch-auto">
+                ><div class="inline-flex w-full touch-auto">
                     <span slot="label">Username</span>
                     <div class="ml-[.25rem] touch-auto">
                       <span class="asterick">*</span>
                     </div>
                   </div>
                 </span>
-            
-                </label
+
+              </label
               >
               <!-- Password input feild -->
               <label class="labelstacked mt-[1rem]">
-                <div *ngIf="registerForm.get('password')?.invalid && registerForm.get('password')?.touched" class="text-[#f2708a] text-xs pt-2 pb-1 flex ">
-                  Your password must be at least 8 characters long, including upper and lower case letters and at least one number.
+                <div *ngIf="registerForm.get('password')?.invalid && registerForm.get('password')?.touched"
+                     class="text-[#f2708a] text-xs pt-2 pb-1 flex ">
+                  Your password must be at least 8 characters long, including upper and lower case letters and at least
+                  one number.
                 </div>
                 <div class="input-wrap">
                   <div class="input-content">
                     <div class="before-icon"></div>
                     <div class="after-icon"></div>
                     <input
-                    formControlName="password"
                       autocomplete="on"
                       class="input-spacing"
-                      type="password"
-                      name="password"
-                      max="Infinity"
                       data-test="register-password"
+                      formControlName="password"
+                      max="Infinity"
+                      name="password"
+                      type="password"
                     />
-                    
+
                     <div class="flex absolute right-0 top-0 h-full touch-auto">
                       <button
-                        type="button"
                         aria-label="Reveal password"
                         class="font-[1.125rem] py-2 px-4 flex items-center touch-auto outline-none border-0"
+                        type="button"
                       >
                         <!-- pasword icon svg -->
-                        <img class="svg-icon-password" src="/login/eye.png" alt="eye-icon" />
+                        <img alt="eye-icon" class="svg-icon-password" src="/src/app/modal/login/eye.png"/>
                       </button>
                     </div>
-                   
+
                   </div>
-                 
+
                   <div class="input-button-wrap svelte-1nbx5re"></div>
-                 
+
                 </div>
-               
+
                 <span class="label-content"
-                  >
+                >
                   <div class="inline-flex w-full touch-auto">
                     <span slot="label">Password</span>
                     <div class="ml-[.25rem] touch-auto">
@@ -387,14 +329,15 @@
                     </div>
                   </div>
                 </span>
-               
-              
-                </label
+
+
+              </label
               >
 
               <!-- Date of Birth input feild -->
               <label class="labelstacked mt-[1rem]">
-                <div *ngIf="registerForm.get('dob')?.invalid && registerForm.get('dob')?.touched" class="text-[#f2708a] text-xs pt-2 pb-1  flex ">
+                <div *ngIf="registerForm.get('dob')?.invalid && registerForm.get('dob')?.touched"
+                     class="text-[#f2708a] text-xs pt-2 pb-1  flex ">
                   Please enter your date of birth.
                 </div>
                 <div class="input-wrap">
@@ -402,49 +345,49 @@
                     <div class="before-icon"></div>
                     <div class="after-icon"></div>
                     <input
-                    formControlName="dob"
                       autocomplete="on"
                       class="input-spacing"
-                      type="date"
-                      name="dob"
-                      max="Infinity"
                       data-test="register-dob"
-                      placeholder="yyyy-mm-dd"
+                      formControlName="dob"
+                      max="Infinity"
+                      name="dob"
                       pattern="\d4-\d2-\d2"
+                      placeholder="yyyy-mm-dd"
+                      type="date"
                     />
                   </div>
                   <div class="input-button-wrap"></div>
                 </div>
                 <span class="label-content"
-                  ><div class="inline-flex w-full touch-auto">
+                ><div class="inline-flex w-full touch-auto">
                     <span slot="label">Date of Birth</span>
                     <div class="ml-[.25rem] touch-auto">
                       <span class="asterick">*</span>
                     </div>
                   </div>
                 </span>
-              
-                </label
+
+              </label
               >
-              
+
               <div class="tc-wrapper">
                 <fieldset>
                   <!-- Phone checkbox -->
                   <div>
                     <label class="tc-label"
-                      ><input
-                        type="checkbox"
-                        class="tc-checkbox"
-                        value="undefined"
-                       
-                      />
+                    ><input
+                      class="tc-checkbox"
+                      type="checkbox"
+                      value="undefined"
+
+                    />
                       <span class="indicator-variant"></span>
                       <span class="checkbox-text"
-                        ><span slot="label">Phone (Optional)</span>
+                      ><span slot="label">Phone (Optional)</span>
                       </span></label
                     >
                   </div>
-                  <div 
+                  <div
                     class="flex gap-2 [&amp;>:first-child]:w-[calc((100%-var(--space-4))/3)] [&amp;>:last-child]:flex-1"
                   >
                     <label class="tc-wrapper-label">
@@ -452,17 +395,17 @@
                         <div class="select-content">
                           <!-- Select Country code -->
                           <select
-                            class="select-spacing"
                             aria-label="Country code"
-                            data-test="country-code"
+                            class="select-spacing"
                             data-dd-privacy="mask"
-                            
+                            data-test="country-code"
+
                           >
-                        
+
                             <option
                               class="select-placeholder"
-                              value=""
                               disabled=""
+                              value=""
                             >
                               Country code
                             </option>
@@ -701,15 +644,15 @@
 
                           <div class="dropdown-icon-wrap">
                             <img
-                            class="svg-icon-dropdown"
-                            src="/login/dropdownArrow.png" alt="dropdown"
-                          />
-                          
+                              alt="dropdown"
+                              class="svg-icon-dropdown" src="/src/app/modal/login/dropdownArrow.png"
+                            />
+
                           </div>
                         </div>
                       </div>
                       <span class="select-wrap-label"> </span
-                    ></label>
+                      ></label>
                     <!-- Select Phone Number -->
                     <label class="number-label">
                       <div class="input-wrap">
@@ -717,30 +660,30 @@
                           <div class="before-icon"></div>
                           <div class="after-icon"></div>
                           <input
+                            [(ngModel)]="phoneNumber"
+                            aria-label="Phone number"
                             autocomplete="on"
                             class="input-spacing"
-                            type="text"
-                            name="phoneNumber"
-                            max="Infinity"
-                             [(ngModel)]="phoneNumber"
-                            placeholder="Phone number"
-                            aria-label="Phone number"
+                            data-dd-privacy="mask"
                             data-test="phone-number"
                             inputmode="numeric"
-                            data-dd-privacy="mask"
+                            max="Infinity"
+                            name="phoneNumber"
+                            placeholder="Phone number"
+                            type="text"
                           />
                         </div>
                         <div class="input-button-wrap"></div>
                       </div>
                       <span class="label-content"
-                        ><div class="inline-flex w-full"></div> </span
-                    ></label>
+                      ><div class="inline-flex w-full"></div> </span
+                      ></label>
                   </div>
 
                   <div class="flex mt-1">
                     <span
                       class="text-[#b1bad3] text-left justify-start text-xs font-normal inline-flex items-center"
-                      >By submitting your phone number, you are opting-in to
+                    >By submitting your phone number, you are opting-in to
                       receive marketing communications &amp; offers via SMS from
                       Stake.</span
                     >
@@ -751,7 +694,7 @@
                 <label
                   class="flex-col-reverse items-start text-left inline-flex touch-auto relative"
                 >
-                <!-- Select code label -->
+                  <!-- Select code label -->
                   <div class="input-wrap">
                     <div class="input-content">
                       <div class="before-icon"></div>
@@ -759,47 +702,47 @@
                       <input
                         autocomplete="on"
                         class="input-spacing"
-                        type="text"
-                        name="signupCode"
                         max="Infinity"
+                        name="signupCode"
+                        type="text"
                       />
                     </div>
                     <div class="input-button-wrap"></div>
                   </div>
                   <span
                     class="w-full inline-flex items-center font-semibold text-[0.875rem] text-[#b1bad3] justify-between touch-auto"
-                    ><div>
+                  ><div>
                       <label class="tc-label"
-                        ><input
-                          type="checkbox"
-                          class="tc-checkbox"
-                          value="undefined"
-                        />
+                      ><input
+                        class="tc-checkbox"
+                        type="checkbox"
+                        value="undefined"
+                      />
                         <span class="indicator-variant"></span>
                         <span class="checkbox-text"
-                          ><span slot="label"
-                            ><span slot="label">Code (Optional)</span></span
-                          >
+                        ><span slot="label"
+                        ><span slot="label">Code (Optional)</span></span
+                        >
                         </span></label
                       >
                     </div></span
                   ></label
                 >
               </div>
-<!-- Continue btn -->
+              <!-- Continue btn -->
               <div
                 class="flex flex-col mt-4 w-full items-end justify-end flex-1"
               >
                 <button
-                  type="submit"
-                  tabindex="0"
                   class="inline-flex relative items-center gap-2 justify-center rounded-sm font-semibold whitespace-nowrap ring-offset-background transition disabled:pointer-events-none disabled:opacity-50 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 active:scale-[0.98] bg-blue-500 text-white betterhover:hover:bg-blue-600 betterhover:hover:text-white focus-visible:outline-white text-base leading-none shadow-md py-[1.125rem] px-[1.75rem] min-w-[12ch] w-full"
-                  data-test="button-register"
-                  data-testid="password-reset-button"
                   data-analytics="register-create-account-continue-button"
                   data-button-root=""
+                  data-test="button-register"
+                  data-testid="password-reset-button"
+                  tabindex="0"
+                  type="submit"
                 >
-                  <div data-loader-content="" class="contents">Continue</div>
+                  <div class="contents" data-loader-content="">Continue</div>
                 </button>
               </div>
               <!-- OR text -->
@@ -807,59 +750,60 @@
                 <div class="or-svelte" data-content="">
                   <span
                     class="text-[#b1bad3] text-center justify-center text-sm px-2 inline-flex items-center font-normal"
-                    >OR</span
+                  >OR</span
                   >
                 </div>
                 <div class="oauth-svelte">
                   <div class="provider-wrapper svelte-qhfv7k" data-content="">
                     <button
-                      type="button"
-                      tabindex="0"
                       class="inline-flex bg-[rgb(47,69,83)] relative items-center gap-2 justify-center rounded-sm font-semibold whitespace-nowrap ring-offset-background transition disabled:pointer-events-none disabled:opacity-50 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 active:scale-[0.98] bg-grey-400 text-white betterhover:hover:bg-grey-300 betterhover:hover:text-white focus-visible:outline-white text-sm leading-none shadow-md py-[0.8125rem] px-[1rem]"
                       data-analytics="provider-login-facebook"
                       data-button-root=""
+                      tabindex="0"
+                      type="button"
                     >
                       <!-- facebook svg -->
                       <img
-                        class="svg-icon-password"
-                        src="/login/Facebook.png" alt="facebook-logo"
+                        alt="facebook-logo"
+                        class="svg-icon-password" src="/src/app/modal/login/Facebook.png"
                       />
                     </button>
                   </div>
                   <div class="provider-wrapper svelte-qhfv7k" data-content="">
                     <button
-                      type="button"
-                      tabindex="0"
                       class="inline-flex bg-[rgb(47,69,83)] relative items-center gap-2 justify-center rounded-sm font-semibold whitespace-nowrap ring-offset-background transition disabled:pointer-events-none disabled:opacity-50 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 active:scale-[0.98] bg-grey-400 text-white betterhover:hover:bg-grey-300 betterhover:hover:text-white focus-visible:outline-white text-sm leading-none shadow-md py-[0.8125rem] px-[1rem]"
                       data-analytics="provider-login-facebook"
                       data-button-root=""
+                      tabindex="0"
+                      type="button"
                     >
                       <!-- google svg -->
-                      <img class="svg-icon" alt="google-icon" src="/login/Google.png" />
+                      <img alt="google-icon" class="svg-icon" src="/src/app/modal/login/Google.png"/>
                     </button>
                   </div>
                   <div class="provider-wrapper svelte-qhfv7k" data-content="">
                     <button
-                      type="button"
-                      tabindex="0"
                       class="inline-flex relative bg-[rgb(47,69,83)] items-center gap-2 justify-center rounded-sm font-semibold whitespace-nowrap ring-offset-background transition disabled:pointer-events-none disabled:opacity-50 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 active:scale-[0.98] bg-grey-400 text-white betterhover:hover:bg-grey-300 betterhover:hover:text-white focus-visible:outline-white text-sm leading-none shadow-md py-[0.8125rem] px-[1rem]"
                       data-analytics="provider-login-line"
                       data-button-root=""
+                      tabindex="0"
+                      type="button"
                     >
                       <!-- provider-login-line svg -->
-                      <img class="svg-icon-password" src="/login/Line.png" alt="line-icon" />
+                      <img alt="line-icon" class="svg-icon-password" src="/src/app/modal/login/Line.png"/>
                     </button>
                   </div>
                   <div class="provider-wrapper svelte-qhfv7k" data-content="">
                     <button
-                      type="button"
-                      tabindex="0"
-                      class="inline-flex relative bg-[rgb(47,69,83)] items-center gap-2 justify-center rounded-sm font-semibold whitespace-nowrap ring-offset-background transition disabled:pointer-events-none disabled:opacity-50 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 active:scale-[0.98] bg-grey-400 text-white betterhover:hover:bg-grey-300 betterhover:hover:text-white focus-visible:outline-white text-sm leading-none shadow-md py-[0.8125rem] px-[1rem]  " [disabled]="registerForm.invalid"
+                      [disabled]="registerForm.invalid"
+                      class="inline-flex relative bg-[rgb(47,69,83)] items-center gap-2 justify-center rounded-sm font-semibold whitespace-nowrap ring-offset-background transition disabled:pointer-events-none disabled:opacity-50 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 active:scale-[0.98] bg-grey-400 text-white betterhover:hover:bg-grey-300 betterhover:hover:text-white focus-visible:outline-white text-sm leading-none shadow-md py-[0.8125rem] px-[1rem]  "
                       data-analytics="provider-login-twitch"
                       data-button-root=""
+                      tabindex="0"
+                      type="button"
                     >
                       <!-- login-twitch svg -->
-                      <img class="svg-icon-password" alt="twitch-icon" src="/login/Comment.png" />
+                      <img alt="twitch-icon" class="svg-icon-password" src="/src/app/modal/login/Comment.png"/>
                     </button>
                   </div>
                 </div>
@@ -868,12 +812,12 @@
             <div class="flex flex-col justify-end gap-3" data-content="">
               <span
                 class="text-[#b1bad3] text-center text-sm font-normal touch-auto"
-                >Already have an account?
+              >Already have an account?
                 <button
-                  type="button"
-                  tabindex="0"
                   class="inline-flex relative items-center gap-2 justify-center rounded-sm font-semibold whitespace-nowrap ring-offset-background transition disabled:pointer-events-none disabled:opacity-50 focus-visible:outline-2 focus-visible:outline-offset-2 active:scale-[0.98] bg-transparent text-white betterhover:hover:bg-transparent betterhover:hover:text-white focus-visible:outline-none text-sm leading-none [&amp;_svg]:text-grey-200 [&amp;:hover>svg]:text-white"
                   data-button-root=""
+                  tabindex="0"
+                  type="button"
                 >
                   Sign In
                 </button></span
@@ -885,8 +829,6 @@
     </div>
   </div>
 </div>
-
-
 
 
 <!-- 3rd step============================================================================ -->
@@ -931,7 +873,7 @@
                   data-button-root=""
                 >
                 <img class="svg-back-arrow" src="/login/back-icon.png" />
-                 
+
                   Back
                 </button>
                 <span class="step-text">Step 2 / 3</span>
@@ -1032,16 +974,16 @@
             <div
               id="_turnstile"
               style="display: none"
-              
+
             ></div>
             <div
               class="flex flex-col justify-end gap-3"
               data-content=""
-              
+
             >
               <span
                 class="text-[#b1bad3] text-center text-sm font-normal touch-auto"
-                
+
                 >Already have an account?
                 <button
                   type="button"
