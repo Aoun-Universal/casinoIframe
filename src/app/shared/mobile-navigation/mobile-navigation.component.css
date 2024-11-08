@@ -9,7 +9,7 @@
 
 .button-inner-wrap {
   @apply inline-flex relative items-center gap-2 justify-center rounded-sm font-semibold whitespace-nowrap transition disabled:pointer-events-none disabled:opacity-50 focus-visible:outline-2 focus-visible:outline-offset-2 active:scale-[0.98] bg-transparent text-white focus-visible:outline-none text-xs leading-none;
-  @layer ring-offset-background
+  
 }
 
 .content {

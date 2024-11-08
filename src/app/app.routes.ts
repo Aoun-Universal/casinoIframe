@@ -22,6 +22,10 @@ export const routes: Routes = [
         path: 'responsible-gambling',
         loadComponent: () => import('./pages/responsible-gambling/responsible-gambling.component').then(c => c.ResponsibleGamblingComponent),
       },
+      {
+        path:'sport-market',
+        loadComponent: () => import('./pages/sports-markets/sports-markets.component').then(c=>c.SportsMarketsComponent)
+      }
     ]
   },
   {
