@@ -3,7 +3,7 @@
 }
 
 .sidebar {
-  @apply w-[240px] h-screen ;
+  @apply md:w-[240px] w-screen pb-[65px] pt-[60px] md:pt-0 md:pb-[0px] h-[calc(100vw-125px)] md:h-screen;
 }
 
 .main-container {
