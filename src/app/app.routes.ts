@@ -1,4 +1,5 @@
 import { Routes } from '@angular/router';
+import { VaultComponent } from './modal/vault/vault.component';
 
 export const routes: Routes = [
   {
@@ -14,6 +15,10 @@ export const routes: Routes = [
         loadComponent: () => import('./pages/home/home.component').then(c => c.HomeComponent),
       }
     ]
+  },
+  {
+    path:'valut',
+    component:VaultComponent
   },
   {
     path: '**',
