@@ -1,5 +1,5 @@
 .navigation {
-    @apply w-full z-[100] pr-[6px] bg-[#1a2c38] flex items-center flex-col shadow-[#0003_0_4px_6px_-1px,#0000001f_0_2px_px_-1px] touch-none
+    @apply w-full z-[100] pr-[6px] bg-[#1a2c38] flex items-center flex-col !shadow-[#0003_0_4px_6px_-1px,#0000001f_0_2px_4px_-1px] touch-none
 }
 .group-container{
     @apply w-full px-[3vw] flex items-center flex-col h-full justify-center relative;
@@ -12,6 +12,11 @@
 .balance-toggle {
     @apply flex rounded-[.25rem]
 }
+
+.stack-right{
+    justify-content: end !important;
+}
+
 .stack
 {
 @apply  items-center  justify-start grid-flow-col grid;
@@ -21,7 +26,7 @@
     @apply inline-flex relative items-center gap-2 justify-center rounded-sm font-semibold whitespace-nowrap  transition disabled:pointer-events-none disabled:opacity-50 focus-visible:outline-2 focus-visible:outline-offset-2 active:scale-[0.98] bg-transparent text-white hover:bg-transparent hover:text-white focus-visible:outline-none text-sm leading-none;
 }
 .coin-toggle {
-    @apply flex flex-col items-center justify-center
+    @apply flex flex-col items-center justify-center bg-[rgb(15,33,46)] rounded-[4px]
 }
 .svelte-1hjozqf {
     @apply flex flex-col items-center justify-center
@@ -33,10 +38,10 @@
     @apply relative
 }
 .OpenDropdown-btn{
-    @apply inline-flex relative items-center gap-2 justify-center font-semibold whitespace-nowrap  transition disabled:pointer-events-none disabled:opacity-50 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 active:scale-[0.98]  text-white  hover:text-white focus-visible:outline-white text-sm leading-none py-[0.8125rem] px-[1rem] rounded-sm
+    @apply inline-flex relative w-[152.77px] items-center gap-2 justify-end !rounded-l-[8px] font-semibold whitespace-nowrap  transition disabled:pointer-events-none disabled:opacity-50 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 active:scale-[0.98]  text-white  hover:text-white focus-visible:outline-white text-sm leading-none py-[0.8125rem] px-[1rem] 
 }
 .wrap {
-    @apply relative w-full 
+    @apply relative w-full mt-1
     
 }
 .svelte-lnje3m {
@@ -77,7 +82,7 @@
     @apply inline-flex relative items-center gap-2 justify-center font-semibold whitespace-nowrap transition disabled:pointer-events-none disabled:opacity-50 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 active:scale-[0.98]  text-white   focus-visible:outline-white text-sm leading-none py-[0.8125rem] px-[1rem] rounded-sm;
 }
 .wallet{
-    @apply h-[47px] text-[14px] inline-flex relative items-center gap-2 justify-center font-semibold whitespace-nowrap  transition disabled:pointer-events-none disabled:opacity-50 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 active:scale-[0.98] bg-blue-500 text-white hover:bg-blue-600 hover:text-white focus-visible:outline-white text-sm leading-none shadow-md py-[0.8125rem] px-[1rem] rounded-tr-[.25rem] rounded-br-[.25rem]
+    @apply h-[47px] text-[14px] inline-flex relative items-center gap-2 justify-center font-semibold whitespace-nowrap  transition disabled:pointer-events-none disabled:opacity-50 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 active:scale-[0.98] bg-[#1475E1] text-white hover:bg-blue-600 hover:text-white focus-visible:outline-white text-sm leading-none shadow-md py-[0.8125rem] px-[1rem] rounded-tr-[.25rem] rounded-br-[.25rem]
 }
 .wallet-btn{
     @apply  rounded-tr-[.25rem] rounded-br-[.25rem] 
@@ -154,7 +159,7 @@ svg.svelte-md2ju7 {
 }
 /* dropdown  */
 .dropdown-continer{
-    @apply absolute left-[2%] z-[100] top-[60px] py-1  bg-white rounded-[.25rem] shadow-lg w-[231px]
+    @apply absolute left-[2%] z-[100] top-[60px] py-1  bg-white rounded-[.25rem] shadow-lg w-[223px]
 }
 .arrow{
     @apply absolute top-0 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-2 h-2 bg-white rotate-45 border-l border-t border-gray-200
@@ -182,7 +187,7 @@ svg.svelte-md2ju7 {
 }
 
 .porfile-dropdown{
-    @apply absolute right-0 left-[-38px] z-[100] top-[60px] py-1  bg-white rounded-[.25rem] shadow-lg  w-[124px]
+    @apply absolute right-0 left-[-38px] z-[100] top-[50px] py-1  bg-white rounded-[.25rem] shadow-lg  w-[124px]
 }
 .dropdown-scroll-content.svelte-yjqf2g {
     @apply flex flex-col p-[.25rem_0] max-w-[100vw]
@@ -195,7 +200,7 @@ svg.svelte-md2ju7 {
     focus-visible:outline-offset-2 active:scale-[0.98] bg-transparent text-sm leading-none  px-3 py-3 rounded-none justify-start
 }
 .massage-dropdown{
-    @apply absolute text-[rgb(47_69_83)]  left-[-30px] right-0 z-[100] top-[60px] py-1  bg-white rounded-[.25rem] shadow-lg  w-[94px] 
+    @apply absolute text-[rgb(47_69_83)]  left-[-30px] right-0 z-[100] top-[48px] py-1  bg-white rounded-[.25rem] shadow-lg  w-[94px] 
 }
 .dropdown-scroll{
     @apply hover:bg-[#B1BAD3] inline-flex relative items-center gap-2 font-semibold whitespace-nowrap transition disabled:pointer-events-none disabled:opacity-50 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 active:scale-[0.98] bg-transparent   text-sm leading-none px-3 py-3 rounded-none w-full justify-start
@@ -205,7 +210,7 @@ svg.svelte-md2ju7 {
     @apply flex flex-col absolute top-[calc(60px+5rem)] right-[1.5rem] w-full max-w-[375px] max-h-[400px] bg-[#0f212e] p-[0_1rem_1rem] rounded-[.5rem] shadow-[0,10px,15px,-3px_rgba(0,0,0,2),0,4px,6px,2px_rgba(0,0,0,.1)]
 } 
 .svelte-6gfkw4 {
-    @apply flex flex-col absolute top-[calc(60px+2rem)] right-[1.5rem]   w-full max-w-[375px] max-h-[400px]    bg-[#0f212e] p-[0_1rem_1rem] rounded-[.5rem] shadow-[0,10px,15px,-3px_rgba(0,0,0,2),0,4px,6px,2px_rgba(0,0,0,.1)];
+    @apply flex flex-col absolute top-[calc(40px+2rem)] right-[1.5rem]   w-full max-w-[375px] max-h-[400px]    bg-[#0f212e] p-[0_1rem_1rem] rounded-[.5rem] shadow-[0,10px,15px,-3px_rgba(0,0,0,2),0,4px,6px,2px_rgba(0,0,0,.1)];
    
 } 
 .notifications-header{
@@ -241,6 +246,8 @@ svg.svelte-md2ju7 {
 
 }
 
+
+
 .empty-list.spacing-compact.svelte-1qm952x>*+* {
     @apply mt-[.25rem] leading-[120%]
    
@@ -255,7 +262,7 @@ svg.svelte-md2ju7 {
 
 @media (max-width:650px) {
     .svelte-6gfkw4 {
-        @apply max-w-none w-[100vw] max-h-none h-[calc(100vh-68px-60px)] left-[-3vw] bottom-0 top-[60px] rounded-none
+        @apply max-w-none w-[100vw] max-h-none h-[calc(100vh-68px-60px)] left-[3vw] bottom-0 top-[60px] rounded-none
         
     }
     
@@ -275,19 +282,30 @@ input {
     @apply w-full outline-none bg-[#0f212e] text-[#fff] cursor-text p-[.5rem] appearance-none
 }
 .input-wrap {
-@apply  text-[#fff] bg-[#0f212e] shadow-[0_1px_3px_0_rgba(0,0,0,2),0_1px_2px_0_rgba(0,0,0,.12)] leading-[0px] font-semibold outline-none m-0 cursor-text
-text-[.875rem] flex items-center appearance-none rounded-[20px] p-[0_1rem]
-
+@apply  text-[#fff] bg-[#0f212e] shadow-[0_1px_3px_0_rgba(0,0,0,2),0_1px_2px_0_rgba(0,0,0,.12)] border-[2px] border-solid border-[#2f4553] focus:!outline-none   leading-[0px] font-semibold  m-0 cursor-text
+text-[.875rem] flex items-center  rounded-[20px] p-[0_1rem]
 }
+
+.input-wrap:focus-within {
+    @apply border-[#557086];
+  }
+
+
 .casion-btn{
-    @apply flex items-center  text-white text-sm font-medium pr-4 py-2 gap-[.5rem] mr-[1rem] rounded-full 
+    @apply flex items-center  text-white text-sm font-medium pr-5 py-2 gap-[.5rem] mr-[1rem] rounded-full border-r-[2px] border-solid border-[#2f4553] rounded-r-none
 }
 .casion-dropdown{
-    @apply absolute text-[rgb(47_69_83)]  justify-center   z-[2000] top-[60px] py-1  bg-white rounded-[.25rem] shadow-lg  w-[67px] 
+    @apply absolute text-[rgb(47_69_83)]  justify-center   z-[2000] top-[100px] py-1  bg-white rounded-[.25rem] shadow-lg  w-[67px] 
 }
 
 .navigation-mobile{
-    @apply grid grid-cols-[1fr_auto_1fr]  relative h-[60px]  w-full items-center   
+    @apply grid grid-cols-[1fr_auto_1fr]  relative h-[60px]  w-[100vw] items-center  p-[0_3vw]  
+    }
+
+    .title.svelte-12heyz0 {
+        display: inline-flex;
+        align-items: center;
+        gap: .5rem;
     }
 
     .search-overlay{
@@ -296,6 +314,7 @@ text-[.875rem] flex items-center appearance-none rounded-[20px] p-[0_1rem]
         background: #1a2e38b3;
         position: fixed; 
         z-index: 1450;
+        top: 0;
     }
     .search-wrap.svelte-12b0zpm {
         position: relative;
@@ -321,4 +340,25 @@ text-[.875rem] flex items-center appearance-none rounded-[20px] p-[0_1rem]
         color: #557086;
         font-size:1.25rem;
         margin-bottom: -3px;
+    }
+
+    @media screen and (max-width:376px){
+.navigation-mobile{
+    grid-template-columns: 1fr 8fr 3fr;
+}
+
+.mbl-coin-toggle{
+    @apply ml-6
+}
+    }
+
+    @media screen and (max-width:350px){
+        .OpenDropdown-btn{
+            @apply w-[120px] 
+        }
+    }
+    
+
+    .currency{
+        transform: translateY(-2px);
     }
