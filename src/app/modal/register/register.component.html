@@ -98,7 +98,7 @@
             </div>
             <div
               class="flex flex-col justify-end gap-3"
-              data-content=""
+              
 
             >
               <span
@@ -140,7 +140,7 @@
         <div class="before-icon"></div>
         <div class="after-icon"></div>
         <input
-          autocomplete="on"
+        
           class="input-spacing"
           formControlName="email"
           name="email"
@@ -212,7 +212,7 @@
         <div class="before-icon"></div>
         <div class="after-icon"></div>
         <input
-          
+          [type]="passwordVisible ? 'text' : 'password'"
           class="input-spacing"
           
           formControlName="password"
@@ -223,12 +223,22 @@
 
         <div class="flex absolute right-0 top-0 h-full touch-auto">
           <button
-            aria-label="Reveal password"
+         (click)="togglePasswordVisibility()"
             class="font-[1.125rem] py-2 px-4 flex items-center touch-auto outline-none border-0"
             type="button"
           >
             <!-- pasword icon svg -->
-            <img alt="eye-icon" class="svg-icon-password" src="/src/app/modal/login/eye.png"/>
+               <!-- pasword icon svg -->
+               <img
+               *ngIf="!passwordVisible"
+                alt="eye-icon"
+                class="svg-icon-password" src="/login/eye.png"
+              />
+              <img
+              *ngIf="passwordVisible"
+               alt="eye-icon"
+               class="svg-icon-password" src="/login/password-hide.png"
+             />
           </button>
         </div>
 
@@ -653,14 +663,14 @@
   </div>
   <!-- OR text -->
   <div class="wrap-svelte">
-    <div class="or-svelte" data-content="">
+    <div class="or-svelte" >
       <span
         class="text-[#b1bad3] text-center justify-center text-sm px-2 inline-flex items-center font-normal"
       >OR</span
       >
     </div>
     <div class="oauth-svelte">
-      <div class="" data-content="">
+      <div class="" >
         <button
           class="inline-flex bg-[rgb(47,69,83)] relative items-center gap-2 justify-center rounded-sm font-semibold whitespace-nowrap ring-offset-background transition disabled:pointer-events-none disabled:opacity-50 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 active:scale-[0.98] bg-grey-400 text-white betterhover:hover:bg-grey-300 betterhover:hover:text-white focus-visible:outline-white text-sm leading-none shadow-md py-[0.8125rem] px-[1rem]"
           type="button"
@@ -672,7 +682,7 @@
           />
         </button>
       </div>
-      <div class="" data-content="">
+      <div class="" >
         <button
           class="inline-flex bg-[rgb(47,69,83)] relative items-center gap-2 justify-center rounded-sm font-semibold whitespace-nowrap ring-offset-background transition disabled:pointer-events-none disabled:opacity-50 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 active:scale-[0.98] bg-grey-400 text-white betterhover:hover:bg-grey-300 betterhover:hover:text-white focus-visible:outline-white text-sm leading-none shadow-md py-[0.8125rem] px-[1rem]"
           type="button"
@@ -681,7 +691,7 @@
           <img alt="google-icon" class="svg-icon" src="/login/Google.png"/>
         </button>
       </div>
-      <div class="" data-content="">
+      <div class="" >
         <button
           class="inline-flex relative bg-[rgb(47,69,83)] items-center gap-2 justify-center rounded-sm font-semibold whitespace-nowrap ring-offset-background transition disabled:pointer-events-none disabled:opacity-50 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 active:scale-[0.98] bg-grey-400 text-white betterhover:hover:bg-grey-300 betterhover:hover:text-white focus-visible:outline-white text-sm leading-none shadow-md py-[0.8125rem] px-[1rem]"
          
@@ -691,7 +701,7 @@
           <img alt="line-icon" class="svg-icon-password" src="/login/Line.png"/>
         </button>
       </div>
-      <div class="provider-wrapper svelte-qhfv7k" data-content="">
+      <div class="provider-wrapper svelte-qhfv7k" >
         <button
           [disabled]="registerForm.invalid"
           class="inline-flex relative bg-[rgb(47,69,83)] items-center gap-2 justify-center rounded-sm font-semibold whitespace-nowrap ring-offset-background transition disabled:pointer-events-none disabled:opacity-50 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 active:scale-[0.98] bg-grey-400 text-white betterhover:hover:bg-grey-300 betterhover:hover:text-white focus-visible:outline-white text-sm leading-none shadow-md py-[0.8125rem] px-[1rem]  "
@@ -964,7 +974,7 @@
             ></div>
             <div
               class="flex flex-col justify-end gap-3"
-              data-content=""
+              
 
             >
               <span
