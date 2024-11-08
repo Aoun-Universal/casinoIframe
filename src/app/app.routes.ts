@@ -1,4 +1,5 @@
 import { Routes } from '@angular/router';
+import { RegisterComponent } from './modal/register/register.component';
 
 export const routes: Routes = [
   {
@@ -18,6 +19,10 @@ export const routes: Routes = [
         loadComponent: () => import('./pages/drake/drake.component').then(c => c.DrakeComponent),
       }
     ]
+  },
+  {
+    path: 'login',
+    component: RegisterComponent
   },
   {
     path: '**',
