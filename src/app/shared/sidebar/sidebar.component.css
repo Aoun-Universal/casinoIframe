@@ -50,9 +50,11 @@
 .casino {
   background-image: url("/assets/sidebar/casino-poker-cards-en.webp");
 }
-
+.main-container-content {
+  @apply p-4;
+}
 .sidebar-content-wrapper {
-  @apply p-4 flex flex-col gap-y-[.5rem];
+  @apply flex flex-col gap-y-[0.5rem];
 }
 
 .dropdown-container {
