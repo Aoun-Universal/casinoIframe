@@ -11,6 +11,7 @@ import { FormBuilder, FormGroup, ReactiveFormsModule, Validators } from '@angula
 })
 export class LoginComponent {
   loginForm: FormGroup;
+  passwordVisible: boolean = false;
 
   constructor(private fb: FormBuilder) {
     this.loginForm = this.fb.group({
@@ -31,7 +32,9 @@ export class LoginComponent {
       console.log(this.loginForm.value);
     }
   }
-
+  togglePasswordVisibility() {
+    this.passwordVisible = !this.passwordVisible;
+  }
 
 
 

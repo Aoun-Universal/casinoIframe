@@ -189,7 +189,7 @@
 }
 
 .contenttop {
-  @apply h-full pt-[1rem] pr-[1rem] pl-[1rem] flex flex-col pb-[1rem] gap-[1rem] touch-auto;
+  @apply h-full  pr-[1rem] pl-[1rem] flex flex-col pb-[1rem] gap-[1rem] touch-auto;
 }
 .term-div {
     @apply max-h-[372px] touch-auto text-left p-4 bg-[rgb(33,55,67)] rounded-lg  [scrollbar-color:#b1bad3] [scrollbar-width:thin]  overflow-y-auto overflow-x-hidden min-h-0

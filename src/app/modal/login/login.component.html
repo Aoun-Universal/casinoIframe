@@ -15,10 +15,7 @@
         <!-- Exit btn -->
         <button
           class="inline-flex relative items-center gap-2 justify-center font-semibold whitespace-nowrap ring-offset-background transition disabled:pointer-events-none disabled:opacity-50 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 active:scale-[0.98] bg-transparent text-white betterhover:hover:bg-grey-900 betterhover:hover:text-white focus-visible:outline-white text-xs leading-none [&amp;_svg]:text-grey-200 [&amp;:hover>svg]:text-white py-[0.75rem] px-[0.75rem] rounded-full"
-          data-analytics="exit-registration"
-          data-button-root=""
-          data-test="exit-registration"
-          tabindex="0"
+          
           type="button"
         >
           Exit
@@ -44,10 +41,9 @@
                       <div class="before-icon"></div>
                       <div class="after-icon"></div>
                       <input
-                        autocomplete="on"
+                       
                         class="input-spacing !placeholder:bg-[#0f212e]"
-                        data-test="login-name"
-                        max="Infinity"
+                        
                         name="emailOrName"
                         placeholder="Email or Username"
                         type="text"
@@ -69,7 +65,7 @@
                 <!-- password input feild -->
                 <label class="labelstacked mt-[1rem]">
                       <span *ngIf="loginForm.get('password')?.invalid && loginForm.get('password')?.touched"
-                            class="text-red-500">
+                            class="text-red-500 ">
                         <div *ngIf="loginForm.get('password')?.errors?.['required']">This field is required.</div>
                         <div
                           *ngIf="loginForm.get('password')?.errors?.['minlength']">Minimum character length is 6.</div>
@@ -80,27 +76,36 @@
                       <div class="before-icon"></div>
                       <div class="after-icon"></div>
                       <input
-                        autocomplete="on"
-                        class="py-[7px] pl-[7px] pr-[48px] w-full text-[#fff] bg-[#0f212e] border-[2px] border-[#2f4553] border-solid font-semibold outline-none touch-auto cursor-text shadow-none appearance-none text-sm"
-                        data-test="login-password"
-                        formControlName="password"
-                        max="Infinity"
-                        name="password"
-                        type="password"
-                      />
+                      [type]="passwordVisible ? 'text' : 'password'"
+                      
+                      class="py-[7px] pl-[7px]   hover:border-[#557086] pr-[48px] w-full text-[#fff] bg-[#0f212e] border-[2px] border-[#2f4553] border-solid font-semibold outline-none touch-auto cursor-text shadow-none appearance-none text-sm"
+                      
+                      formControlName="password"
+                      
+                      type="password"
+                    />
+
                       <div
                         class="flex absolute right-0 top-0 h-full touch-auto"
                       >
                         <button
+                       (click)="togglePasswordVisibility()"
                           aria-label="Reveal password"
                           class="font-[1.125rem] py-2 px-4 flex items-center touch-auto outline-none border-0"
                           type="button"
                         >
                           <!-- pasword icon svg -->
                           <img
+                           *ngIf="!passwordVisible"
                             alt="eye-icon"
                             class="svg-icon-password" src="/login/eye.png"
                           />
+                          <img
+                          *ngIf="passwordVisible"
+                           alt="eye-icon"
+                           class="svg-icon-password" src="/login/password-hide.png"
+                         />
+
 
                         </button>
                       </div>
@@ -126,10 +131,7 @@
                   <button
                     [disabled]="loginForm.invalid"
                     class="inline-flex relative items-center gap-2 justify-center rounded-sm font-semibold whitespace-nowrap ring-offset-background transition disabled:pointer-events-none disabled:opacity-50 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 active:scale-[0.98] bg-blue-500 text-white betterhover:hover:bg-blue-600 betterhover:hover:text-white focus-visible:outline-white text-base leading-none shadow-md py-[1.125rem] px-[1.75rem] min-w-[12ch] w-full"
-                    data-button-root=""
-                    data-test="button-login"
-                    data-testid="password-reset-button"
-                    tabindex="0"
+                    
                     type="submit"
                   >
                     <div
@@ -155,9 +157,7 @@
                 <div class="provider-wrapper svelte-qhfv7k" data-content="">
                   <button
                     class="inline-flex bg-[rgb(47,69,83)] relative items-center gap-2 justify-center rounded-sm font-semibold whitespace-nowrap ring-offset-background transition disabled:pointer-events-none disabled:opacity-50 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 active:scale-[0.98] bg-grey-400 text-white betterhover:hover:bg-grey-300 betterhover:hover:text-white focus-visible:outline-white text-sm leading-none shadow-md py-[0.8125rem] px-[1rem]"
-                    data-analytics="provider-login-facebook"
-                    data-button-root=""
-                    tabindex="0"
+                    
                     type="button"
                   >
                     <!-- facebook svg -->
@@ -171,9 +171,7 @@
                 <div class="provider-wrapper svelte-qhfv7k" data-content="">
                   <button
                     class="inline-flex bg-[rgb(47,69,83)] relative items-center gap-2 justify-center rounded-sm font-semibold whitespace-nowrap ring-offset-background transition disabled:pointer-events-none disabled:opacity-50 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 active:scale-[0.98] bg-grey-400 text-white betterhover:hover:bg-grey-300 betterhover:hover:text-white focus-visible:outline-white text-sm leading-none shadow-md py-[0.8125rem] px-[1rem]"
-                    data-analytics="provider-login-facebook"
-                    data-button-root=""
-                    tabindex="0"
+                    
                     type="button"
                   >
                     <!-- google svg -->
@@ -185,9 +183,7 @@
                 <div class="provider-wrapper svelte-qhfv7k" data-content="">
                   <button
                     class="inline-flex relative bg-[rgb(47,69,83)] items-center gap-2 justify-center rounded-sm font-semibold whitespace-nowrap ring-offset-background transition disabled:pointer-events-none disabled:opacity-50 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 active:scale-[0.98] bg-grey-400 text-white betterhover:hover:bg-grey-300 betterhover:hover:text-white focus-visible:outline-white text-sm leading-none shadow-md py-[0.8125rem] px-[1rem]"
-                    data-analytics="provider-login-line"
-                    data-button-root=""
-                    tabindex="0"
+                    
                     type="button"
                   >
                     <!-- provider-login-line svg -->
@@ -198,9 +194,7 @@
                 <div class="provider-wrapper svelte-qhfv7k" data-content="">
                   <button
                     class="inline-flex relative bg-[rgb(47,69,83)] items-center gap-2 justify-center rounded-sm font-semibold whitespace-nowrap ring-offset-background transition disabled:pointer-events-none disabled:opacity-50 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 active:scale-[0.98] bg-grey-400 text-white betterhover:hover:bg-grey-300 betterhover:hover:text-white focus-visible:outline-white text-sm leading-none shadow-md py-[0.8125rem] px-[1rem]"
-                    data-analytics="provider-login-twitch"
-                    data-button-root=""
-                    tabindex="0"
+                   
                     type="button"
                   >
                     <!-- login-twitch svg -->
@@ -216,8 +210,7 @@
 
             <button
               class="inline-flex text-center relative items-center gap-2 justify-center rounded-sm font-semibold whitespace-nowrap ring-offset-background transition disabled:pointer-events-none disabled:opacity-50 focus-visible:outline-2 focus-visible:outline-offset-2 active:scale-[0.98] bg-transparent text-white betterhover:hover:bg-transparent betterhover:hover:text-white focus-visible:outline-none text-sm leading-none [&amp;_svg]:text-grey-200 [&amp;:hover>svg]:text-white"
-              data-button-root=""
-              tabindex="0"
+              
               type="button"
             >
               Forgot Password
@@ -228,8 +221,7 @@
                   >Don’t have an account?
                     <button
                       class="inline-flex relative items-center gap-2 justify-center rounded-sm font-semibold whitespace-nowrap ring-offset-background transition disabled:pointer-events-none disabled:opacity-50 focus-visible:outline-2 focus-visible:outline-offset-2 active:scale-[0.98] bg-transparent text-white betterhover:hover:bg-transparent betterhover:hover:text-white focus-visible:outline-none text-sm leading-none [&amp;_svg]:text-grey-200 [&amp;:hover>svg]:text-white"
-                      data-button-root=""
-                      tabindex="0"
+                      
                       type="button"
                     >
                       Register an Account
