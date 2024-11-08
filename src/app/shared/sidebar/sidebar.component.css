@@ -50,40 +50,23 @@
 .casino {
   background-image: url("/assets/sidebar/casino-poker-cards-en.webp");
 }
-.content {
-  @apply flex flex-col gap-[.5rem];
+
+.sidebar-content-wrapper {
+  @apply p-4;
 }
-.inner-content {
-  @apply flex flex-col gap-[.5rem] p-4;
+
+.dropdown-container {
+  @apply flex flex-col max-w-full bg-[#1a2c38] rounded;
 }
-.section-wrapper {
-  @apply flex flex-col max-w-full bg-[#1a2c38] rounded-[.25rem];
+
+.nav-item {
+  @apply flex items-center justify-between p-[13px_16px] max-h-[40px];
 }
-.sidebar-accordian {
-  @apply touch-none;
+
+.title-wrapper {
+  @apply inline-flex items-center gap-[.5rem] text-[14px];
 }
-.accordion {
-  @apply flex flex-col w-full relative z-0 rounded-[.25rem];
-}
-.header {
-  @apply z-[4] flex justify-between items-center;
-}
-.sidebar-btn {
-  @apply font-[600] text-[.875rem] py-[10px] px-[1rem] whitespace-nowrap gap-[.5rem] justify-between items-center flex  w-[100%];
-}
-.icon-wrapper {
-  background-color: rgba(85, 112, 134, 0.5);
-  @apply flex-shrink-0 flex w-4 h-4 -my-1 rounded-full items-center justify-center text-xs bg-opacity-50;
-}
-.sidebar-btn-s {
-  @apply font-[600] text-[.875rem] py-[7px] px-[1rem] whitespace-nowrap gap-[.5rem] justify-between items-center flex  w-[100%];
-}
-.icon-title {
-  @apply text-white text-nowrap mb-[2px];
-}
-.svg-wrapper {
-  @apply flex items-center gap-2;
-}
-.bottom-line {
-  @apply h-[2px] bg-[#2f4553] w-full;
+
+.svg-container {
+  @apply bg-[#374F5F] text-white flex-shrink-0 flex w-4 h-4 -my-1 rounded-full items-center justify-center text-xs  bg-opacity-50;
 }
