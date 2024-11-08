@@ -58,7 +58,7 @@
 
 
 section {
-    @apply max-w-[1200px] m-[0_auto] relative max-[1680px]:p-[0px_30px]
+    @apply max-w-[1200px] m-[0_auto] relative max-[1680px]:p-[0px_3vw]
 }
 
 .slide {
@@ -293,12 +293,12 @@ section {
 
 
 .fixture-preview {
-    @apply py-2 px-4 grid items-center w-full [grid-template-rows:repeat(3,auto)] [grid-template-columns:repeat(12,1fr)] text-[#b1bad3] [row-gap:.5rem] [grid-column-gap:.5rem];
+    @apply py-2 px-4 grid items-center w-full grid-cols-6 md:grid-cols-12 [grid-template-rows:1fr_auto] md:[grid-template-rows:repeat(3,auto)] text-[#b1bad3] [row-gap:.5rem] [grid-column-gap:.5rem];
 }
 
 /* Market rows */
 .misc {
-    @apply [grid-column:1/span_2] flex relative text-xs
+    @apply [grid-column:1/span_3] md:[grid-column:1/span_2] flex relative text-xs
 }
 
 .misc-wrapper {
@@ -329,7 +329,7 @@ section {
 
 /* line */
 .line {
-    @apply w-full h-[2px]
+    @apply w-full h-[2px] hidden md:block
 }
 
 .line1 {
@@ -338,7 +338,7 @@ section {
 
 /* Market name */
 .market-name{
-    @apply px-2 w-full [grid-column:7/span_4] relative items-center text-center bg-[#213743]
+    @apply px-2 w-full [grid-column:1/span_12] md:[grid-column:7/span_4] relative items-center text-center bg-[#213743]
 }
 
 .market-name span{
@@ -350,7 +350,7 @@ section {
 }
 
 .teams {
-    @apply [grid-column:1/span_3] whitespace-nowrap overflow-hidden grid gap-2 self-center
+    @apply [grid-column:1/span_12] md:[grid-column:1/span_3] whitespace-nowrap overflow-hidden grid gap-2 self-center
 }
 
 .teams-tag{
@@ -359,7 +359,7 @@ section {
 
 /* FixtureScore */
 .fixture-score {
-    @apply [grid-column:4/span_2] flex justify-end
+    @apply [grid-column:4/span_2] hidden md:flex justify-end 
 }
 
 .fixture-score-wrapper{
@@ -379,7 +379,7 @@ section {
 }
 
 .outcomes{
-    @apply [grid-column:6/span_6] self-stretch place-items-center w-full grid [grid-gap:.5rem] [grid-template-columns:repeat(auto-fit,minmax(50px,1fr))] [grid-template-rows:1fr]
+    @apply  [grid-column:1/span_12] md:[grid-column:6/span_6] self-stretch place-items-center w-full grid [grid-gap:.5rem] [grid-template-columns:repeat(auto-fit,minmax(50px,1fr))] [grid-template-rows:1fr]
 }
 
 .outcome-btn{
@@ -395,8 +395,22 @@ section {
 }
 
 .market-count{
-    @apply [grid-column:12/span_1] justify-self-center
+    @apply [grid-column:12/span_1]  justify-self-center
 }
+
+/* Mobile view styling */
+.market-widget{
+   @apply [grid-column:7/span_6]  justify-center items-center justify-self-end
+}
+
+.sm-option-btn{
+    @apply pr-3 !border-r-[2px] !border-solid !border-[#557086] !border-l-0 border-t-0 border-b-0 !rounded-none
+}
+
+.market-badge{
+    @apply text-[#d5dceb] bg-[#2f4553] px-1.5 min-w-[1.8em] inline-flex rounded-[2em] text-xs items-center justify-center leading-normal whitespace-nowrap
+}
+
 
 /* Table topbar */
 .bubble-wrap{
