@@ -26,6 +26,9 @@ export class SidebarComponent implements OnInit {
     } else {
       this.openBar = name;
     }
+    if(!this.isSidebar){
+      this.toggle.toggleSidebar()
+    }
   }
   @HostListener('window:resize')
   setSidebar() {
@@ -53,6 +56,7 @@ export class SidebarComponent implements OnInit {
     this.setSidebar()
     this.toggle.sidebarState$.subscribe((state)=>{
       this.isSidebar=state
+      console.log(this.isSidebar)
     })
     
   }

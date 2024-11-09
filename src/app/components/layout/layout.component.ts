@@ -24,13 +24,11 @@ export class LayoutComponent implements OnInit{
       filter(event => event instanceof NavigationEnd)
     ).subscribe((event: NavigationEnd) => {
       this.currentRoute = event.urlAfterRedirects;
-      console.log(this.currentRoute);
     });
   }
   ngOnInit(): void {
     this.toggle.getSidebar().subscribe((state)=>{
       this.sidebarOpen=state
-      console.log(this.sidebarOpen)
     })
   }
 }
