@@ -1,5 +1,9 @@
 .sidebar-wrapper {
-  @apply w-[240px] h-full bg-[#0f212e] max-md:fixed z-[999]  md:overflow-y-auto max-md:w-[100vw];
+  @apply w-[240px] h-full bg-[#0f212e] max-md:fixed z-[999]  md:overflow-y-auto max-md:w-[100vw] -bottom-full duration-300;
+}
+
+.mobile-view-show{
+  @apply !bottom-auto duration-300
 }
 
 .sidebar-header {

@@ -34,6 +34,11 @@ export class SidebarComponent implements OnInit {
          
       });
     this.routerPath = this.router.url;
-
+     this.toggle.getSidebar().subscribe((value:boolean)=>{
+       this.isSidebar = value
+     })
+  }
+  toggleSidebar(){
+    this.toggle.setSidebar(!this.isSidebar)
   }
 }
