@@ -1,4 +1,4 @@
-import {Component} from '@angular/core';
+import {Component, OnInit} from '@angular/core';
 import {NgForOf} from "@angular/common";
 import { ToggleService } from '../../services/toggle.service';
 import { Router } from '@angular/router';
@@ -14,7 +14,7 @@ import { Router } from '@angular/router';
 })
 
 export class MobileNavigationComponent implements OnInit {
-  constructor(private toggleService:ToggleService){}
+  constructor(private toggle:ToggleService){}
   isSidebar = false
   buttons = [
     {
@@ -44,7 +44,6 @@ export class MobileNavigationComponent implements OnInit {
       this.isSidebar = value
     })
   }
-  constructor(private router: Router, private toggle: ToggleService) { }
 
   toggleSidebar() {
     this.toggle.setSidebar(!this.isSidebar)
