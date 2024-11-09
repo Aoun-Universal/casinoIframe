@@ -1,6 +1,8 @@
 import { Routes } from '@angular/router';
 import { RegisterComponent } from './modal/register/register.component';
 import { StakeSmartComponent } from './pages/stake-smart/stake-smart.component';
+import { LogoutComponent } from './modal/logout/logout.component';
+import { ResponsibleGamblingFaqsComponent } from './pages/responsible-gambling-faqs/responsible-gambling-faqs.component';
 
 export const routes: Routes = [
   {
@@ -27,6 +29,10 @@ export const routes: Routes = [
           {
             path:'stake-smart',
             component:StakeSmartComponent
+          },
+          {
+            path:'responsible-gambling-faqs',
+            component:ResponsibleGamblingFaqsComponent
           }
         ]
       },
