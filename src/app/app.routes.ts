@@ -12,6 +12,10 @@ export const routes: Routes = [
       {
         path: 'home',
         loadComponent: () => import('./pages/home/home.component').then(c => c.HomeComponent),
+      },
+      {
+        path: 'vip-cloud',
+        loadComponent: () => import('./pages/vip-cloud/vip-cloud.component').then(c => c.VipCloudComponent),
       }
     ]
   },
