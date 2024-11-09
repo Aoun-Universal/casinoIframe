@@ -1,3 +1,334 @@
-<section class="bg-red-400 h-screen w-full">
+<section class="soccer_container">
+    <div class="w-full">
+        <div class="flex_row text-white">
+            <a class=" soccer_left_arrow  bg_primary  flex_row">
+                <img class="w-[15px] h-[15px]" src="/assets/soccer/left-arrow.svg" alt="back">
+            </a>
+            <div class="bg_primary soccer_btn_wrapper flex_row ">
+                <a class="mr-2 leading-normal mx-2  ">
+                    Soccer
+                </a>
+            </div>
+        </div>
+        <div class="w-full  h-full">
+            <div class="mt-6  bar_wrapper ">
+                <div class="p-[5px] bar_sub_wrapper  bg_primary  ">
+                    <div class="flex_start gap-3">
+                        <a [ngClass]="[activeTab ==='live&Upcoming' ? 'bg-[#2F4553]' : '']"
+                            (click)="setActiveTab('live&Upcoming')" class=" bar_btns">
+                            Live & Upcoming
+                        </a>
+                        <a [ngClass]="[activeTab ==='outrights' ? 'bg-[#2F4553]' : '']"
+                            (click)="setActiveTab('outrights')" class=" bar_btns">
+                            Outrights
+                        </a>
+                        <a [ngClass]="[activeTab === 'allSoccer' ? 'bg-[#2F4553]' : '']"
+                            (click)="setActiveTab('allSoccer')" class=" bar_btns">
+                            All Soccer
+                        </a>
+                    </div>
+                </div>
+            </div>
+            <div class="mt-[24px] flex_start w-full">
+                <button (click)="toggleStandardView()" class="py-[13px] px-4">
+                    @if (standardView) {
+                    <img class="w-[14px]  h-[15px]" src="/assets/soccer/two-bar.svg" alt="standard-view">
+                    } @else {
+                    <img class="w-[14px]  h-[15px]" src="/assets/soccer/bar-dots.svg" alt="three-way-view">
+                    }
+                </button>
+                <div class="relative">
+                    <button (click)="toggleCatDropDown()" [disabled]="standardView"
+                        [ngClass]="[standardView ? 'opacity-50' : 'opacity-100']"
+                        class="bg_primary border-0 rounded py-[13px] px-4 max-w-[98.55px] max-h-10 cursor-pointer flex justify-center items-center gap-2">
+                        <div>
+                            {{catDropdownSelectedVal}}
+                        </div>
+                        <img [ngClass]="[catDropdownState ? 'rotate-180' : 'rotate-0']" class="w-[14px] h-[15px]"
+                            src="/assets/soccer/arrow-down.svg" alt="open_dropdown">
 
+                    </button>
+                    @if (catDropdownState) {
+                    <div style="width: 0;
+                        height: 0;
+                        border-left: 15px solid transparent;
+                        border-right: 15px solid transparent;
+                        border-bottom: 15px solid white;
+                        display: inline-block;" class="absolute top-[110%] left-[34px]  z-40">
+
+                    </div>
+                    <div
+                        class="absolute top-[125%] left-[7px] w-[83.66px] h-[122px] z-50 bg-white text-[#2F4553] border-0 rounded ">
+                        <button [ngClass]="[catDropdownSelectedVal==='Total'? '!text-[#1475E1]' : '']"
+                            (click)="selectCatDropdownVal('Total')" class="cat_dropdowns_btns">
+                            Total
+                        </button>
+                        <button [ngClass]="[catDropdownSelectedVal==='Handicap'? '!text-[#1475E1]' : '']"
+                            (click)="selectCatDropdownVal('Handicap')" class="cat_dropdowns_btns ">
+                            Handicap
+                        </button>
+                        <button [ngClass]="[catDropdownSelectedVal==='Winner'? '!text-[#1475E1]' : '']"
+                            (click)="selectCatDropdownVal('Winner')" class="cat_dropdowns_btns ">
+                            Winner
+                        </button>
+                    </div>
+                    }
+
+                </div>
+            </div>
+        </div>
+        <div class="mt-6 h-full">
+            <div class="flex_start gap-2">
+                <img class="w-[18px] h-[18px]" src="/assets/soccer/fire.svg" alt="sports">
+                <h3 class="text-[18px] text-white">Popular Soccer</h3>
+            </div>
+            <div class="mt-3 h-full">
+                <div (click)="toggleEventDropdown()"
+                    class="bg-[#081E2A] cursor-pointer px-4 py-3 border-0 rounded-t text-white h-[45px] flex flex-row justify-between items-center w-full">
+                    <div class="flex_row gap-2">
+                        <img class="w-4 h-4" src="/assets/soccer/uk-flag.svg" alt="uk">
+                        <h3 class="text-sm text-white">England</h3>
+                    </div>
+                    <div class="flex_row gap-4">
+                        @if (!eventDropdownState) {
+                        <button
+                            class="bg-[#2f4553] text-[#d5dceb] text-[12px] px-1.5 min-w-[1.8em] rounded-[2em] leading-[1.5] whitespace-nowrap font-semibold">
+                            10
+                        </button>
+                        }
+
+                        <img [ngClass]="[eventDropdownState ? 'rotate-0' : 'rotate-90']" class="w-[16px] h-[16px]"
+                            src="/assets/soccer/arrow-down.svg" alt="open_dropdown">
+                    </div>
+                </div>
+                @if (eventDropdownState) {
+                <div
+                    class="border-t-2 border border-[#172834] border-solid border-t-[#071d2a] bg-[#1a2c38] w-full rounded-b ">
+                    <div class="p-2">
+                        <div class="flex flex-row justify-between items-center px-2">
+                            <div>
+                                <h3 class="text-[20px] text-white">Everton</h3>
+                                <h4 class="text-[#b1bad3] text-[16px]">Main Partner</h4>
+                            </div>
+                            <div>
+                                <img class="w-auto h-10" src="/assets/soccer/everton-stake.svg" alt="everton">
+                            </div>
+                        </div>
+                        <div>
+
+                        </div>
+                        <div (click)="toggleSubEventDropdown()"
+                            class="bg-[#213743] mt-3 [box-shadow:_0_1px_3px_0_rgba(0,_0,_0,_.2),_0_1px_2px_0_rgba(0,_0,_0,_.12)]  px-4 py-3 border-0 rounded text-white h-[45px] flex flex-row justify-between items-center w-full">
+                            <div class="">
+                                <h3 class="text-[14px] text-[#d5dceB]">Premier League</h3>
+                            </div>
+                            <div class="flex_row gap-4">
+                                @if (!subEventDropdown) {
+                                <button
+                                    class="bg-[#2f4553] text-[#d5dceb] text-[12px] px-1.5 min-w-[1.8em] rounded-[2em] leading-[1.5] whitespace-nowrap font-semibold">
+                                    10
+                                </button>
+                                }
+
+                                <img [ngClass]="[subEventDropdown ? 'rotate-0' : 'rotate-90']" class="w-[16px] h-[16px]"
+                                    src="/assets/soccer/arrow-down.svg" alt="open_dropdown">
+                            </div>
+                        </div>
+                        @if (subEventDropdown) {
+                        <div class="border-t-2 border-b-2 border-solid border-[#2f4553] bg-[#213743] rounded-b w-full">
+                            <div class="py-3 px-5">
+                                <div>
+                                    <div class="py-2 grid grid-cols-6 gap-3">
+                                        <div class="col-span-6 grid grid-cols-4">
+                                            <div class="col-span-3">
+                                                @if (isLive) {
+                                                <div class="flex_row gap-2">
+                                                    <button
+                                                        class="bg-[#e9113c] text-white text-[12px]  border-0 rounded px-1">Live</button>
+                                                    <div class="flex_row">
+                                                        <h3 class="text-[14px]">35</h3>
+                                                        <p class="blinking-dash  text-[14px]">'</p>
+                                                    </div>
+                                                    <div class="text-[#b1bad3] text-[12px]">1st Half</div>
+                                                </div>
+
+                                                } @else {
+                                                <h6 class="text-[#b1Bad3] text-[12px]">Sat,Nov 09 8:00 PM</h6>
+                                                }
+                                            </div>
+                                            <div class="col-span-1 flex_row ">
+                                                <img class="w-[14px] h-[14px] mr-3" src="/assets/soccer/4bars.svg"
+                                                    alt="menu">
+                                                <div class="border-l border-solid border-[#2f4553]">
+                                                    <h3 class="text-[14px] ml-3 text-[#b1bad3] leading-[1]">+64</h3>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="col-span-6 grid grid-cols-2 ">
+                                            <div
+                                                class="text-[14px] leading-none  flex flex-col justify-start items-start gap-2 col-span-1">
+                                                <h3>Crystal Palace FC</h3>
+                                                <h3>Fulham FC</h3>
+                                            </div>
+                                            <div
+                                                class="flex flex-col justify-start items-start gap-2 col-span-1 ml-auto">
+                                                <div
+                                                    class="text-[#ff9d00] leading-normal text-center justify-center text-[12px] font-semibold">
+                                                    0
+                                                </div>
+                                                <div
+                                                    class="text-[#ff9d00] leading-normal text-center justify-center text-[12px] font-semibold">
+                                                    0
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="col-span-6 px-2 flex flex-row justify-center items-center w-full">
+                                            <div class="text-[#b1bad3] text-[12px]">1x2</div>
+                                        </div>
+                                        <div class="col-span-6 grid grid-cols-6  gap-2">
+                                            <div class="col-span-2 flex flex-col items-center justify-start">
+                                                <button
+                                                    class="py-[0.5em] px-[0.75em] border-0 rounded text-[14px] text-white h-[56px] bg-[rgba(7,_24,_36,1)] w-full flex flex-col justify-center items-start gap-0.5">
+                                                    <h3 class="truncate max-w-full text-white">Crystal palace FC</h3>
+                                                    <div class="text-[#4391e7] text-[14px] leading-normal font-bold">
+                                                        3.65
+                                                    </div>
+                                                </button>
+                                            </div>
+                                            <div class="col-span-2 flex flex-col items-center justify-start">
+                                                <button
+                                                    class="py-[0.5em] px-[0.75em] border-0 rounded text-[14px] text-white h-[56px] bg-[rgba(7,_24,_36,1)] w-full flex flex-col justify-center items-start gap-0.5">
+                                                    <h3 class="truncate max-w-full text-white">Draw</h3>
+                                                    <div class="text-[#4391e7] text-[14px] leading-normal font-bold">
+                                                        2.85
+                                                    </div>
+                                                </button>
+                                            </div>
+                                            <div class="col-span-2 flex flex-col items-center justify-start">
+                                                <button
+                                                    class="py-[0.5em] px-[0.75em] border-0 rounded text-[14px] text-white h-[56px] bg-[rgba(7,_24,_36,1)] w-full flex flex-col justify-center items-start gap-0.5">
+                                                    <h3 class="truncate max-w-full text-white">Fulham FC</h3>
+                                                    <div class="text-[#4391e7] text-[14px] leading-normal font-bold">
+                                                        3.65
+                                                    </div>
+                                                </button>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        }
+                        @if (subEventDropdown) {
+                        <div class="border-t-2 border-b-2 border-solid border-[#2f4553] bg-[#213743] rounded-b w-full">
+                            <div class="py-3 px-5">
+                                <div>
+                                    <div class="py-2 grid grid-cols-6 gap-3">
+                                        <div class="col-span-6 grid grid-cols-4">
+                                            <div class="col-span-3">
+                                                @if (!isLive) {
+                                                <div class="flex_row gap-2">
+                                                    <button
+                                                        class="bg-[#e9113c] text-white text-[12px]  border-0 rounded px-1">Live</button>
+                                                    <div class="flex_row">
+                                                        <h3 class="text-[14px]">35</h3>
+                                                        <p class="blinking-dash  text-[14px]">'</p>
+                                                    </div>
+                                                    <div class="text-[#b1bad3] text-[12px]">1st Half</div>
+                                                </div>
+
+                                                } @else {
+                                                <h6 class="text-[#b1Bad3] text-[12px]">Sat,Nov 09 8:00 PM</h6>
+                                                }
+                                            </div>
+                                            <div class="col-span-1 flex_row ">
+                                                <img class="w-[14px] h-[14px] mr-3" src="/assets/soccer/4bars.svg"
+                                                    alt="menu">
+                                                <div class="border-l border-solid border-[#2f4553]">
+                                                    <h3 class="text-[14px] ml-3 text-[#b1bad3] leading-[1]">+64</h3>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="col-span-6 grid grid-cols-2 ">
+                                            <div
+                                                class="text-[14px] leading-none  flex flex-col justify-start items-start gap-2 col-span-1">
+                                                <h3>Crystal Palace FC</h3>
+                                                <h3>Fulham FC</h3>
+                                            </div>
+                                            <div
+                                                class="flex flex-col justify-start items-start gap-2 col-span-1 ml-auto">
+                                                <div
+                                                    class="text-[#ff9d00] leading-normal text-center justify-center text-[12px] font-semibold">
+                                                    0
+                                                </div>
+                                                <div
+                                                    class="text-[#ff9d00] leading-normal text-center justify-center text-[12px] font-semibold">
+                                                    0
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="col-span-6 px-2 flex flex-row justify-center items-center w-full">
+                                            <div class="text-[#b1bad3] text-[12px]">1x2</div>
+                                        </div>
+                                        <div class="col-span-6 grid grid-cols-6  gap-2">
+                                            <div class="col-span-2 flex flex-col items-center justify-start">
+                                                <button
+                                                    class="py-[0.5em] px-[0.75em] border-0 rounded text-[14px] text-white h-[56px] bg-[rgba(7,_24,_36,1)] w-full flex flex-col justify-center items-start gap-0.5">
+                                                    <h3 class="truncate max-w-full text-white">Crystal palace FC</h3>
+                                                    <div class="text-[#4391e7] text-[14px] leading-normal font-bold">
+                                                        3.65
+                                                    </div>
+                                                </button>
+                                            </div>
+                                            <div class="col-span-2 flex flex-col items-center justify-start">
+                                                <button
+                                                    class="py-[0.5em] px-[0.75em] border-0 rounded text-[14px] text-white h-[56px] bg-[rgba(7,_24,_36,1)] w-full flex flex-col justify-center items-start gap-0.5">
+                                                    <h3 class="truncate max-w-full text-white">Draw</h3>
+                                                    <div class="text-[#4391e7] text-[14px] leading-normal font-bold">
+                                                        2.85
+                                                    </div>
+                                                </button>
+                                            </div>
+                                            <div class="col-span-2 flex flex-col items-center justify-start">
+                                                <button
+                                                    class="py-[0.5em] px-[0.75em] border-0 rounded text-[14px] text-white h-[56px] bg-[rgba(7,_24,_36,1)] w-full flex flex-col justify-center items-start gap-0.5">
+                                                    <h3 class="truncate max-w-full text-white">Fulham FC</h3>
+                                                    <div class="text-[#4391e7] text-[14px] leading-normal font-bold">
+                                                        3.65
+                                                    </div>
+                                                </button>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        }
+                    </div>
+                </div>
+                }
+            </div>
+        </div>
+
+    </div>
+    <div>
+        <div class="mt-6  bar_wrapper ">
+            <div class="p-[5px] bar_sub_wrapper  bg_primary  ">
+                <div class="flex_start gap-3">
+                    <a [ngClass]="[activeTab ==='live&Upcoming' ? 'bg-[#2F4553]' : '']"
+                        (click)="setActiveTab('live&Upcoming')" class=" bar_btns">
+                        Live & Upcoming
+                    </a>
+                    <a [ngClass]="[activeTab ==='outrights' ? 'bg-[#2F4553]' : '']" (click)="setActiveTab('outrights')"
+                        class=" bar_btns">
+                        Outrights
+                    </a>
+                    <a [ngClass]="[activeTab === 'allSoccer' ? 'bg-[#2F4553]' : '']" (click)="setActiveTab('allSoccer')"
+                        class=" bar_btns">
+                        All Soccer
+                    </a>
+                </div>
+            </div>
+        </div>
+    </div>
 </section>

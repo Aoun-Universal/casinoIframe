@@ -1,0 +1,50 @@
+@tailwind utilities;
+
+@layer utilities {
+  .soccer_container {
+    @apply w-full h-full mb-52 mt-[6px] bg-[#1A2C38] px-[9.6px];
+  }
+  .flex_row {
+    @apply flex flex-row justify-start items-center;
+  }
+  .bg_primary {
+    @apply bg-[#0f212E];
+  }
+  .soccer_btn_wrapper {
+    @apply border-0 rounded px-5 py-4 max-h-11 max-w-[98.91px] text-[14px];
+  }
+  .soccer_left_arrow {
+    @apply max-h-11 max-w-[54px] py-[15px] px-5 border-0 rounded mr-3;
+  }
+  .bar_wrapper {
+    @apply overflow-x-auto overflow-y-hidden;
+  }
+
+  .bar_sub_wrapper {
+    @apply border-0 rounded-[3rem] h-[54px] w-fit  flex justify-start items-center;
+  }
+  .flex_start {
+    @apply flex flex-row justify-start items-center;
+  }
+  .bar_btns {
+    @apply border-0 rounded-full h-[44px] whitespace-nowrap leading-normal text-[14px] py-[14px] px-5;
+  }
+  .cat_dropdowns_btns {
+    @apply px-3 py-2.5 cursor-pointer text-sm w-full  text-start;
+  }
+
+  .blinking-dash {
+    animation: blink 2s infinite linear;
+  }
+
+  @keyframes blink {
+    0%,
+    to {
+      opacity: 0;
+    }
+
+    50% {
+      opacity: 1;
+    }
+  }
+}
