@@ -23,14 +23,15 @@
           <div class="contenttop">
             <div class="ctainer">
               <div class="stack">
-                <div class="step-active"></div>
-                <div   class="step-active" [ngClass]="{'step-svelte': currentStep !== 2}"></div>
-                <div   class="step-active" [ngClass]="{'step-svelte': currentStep !== 3}"></div>
+                <div class="step-active" [ngClass]="{'step-svelte': currentStep !== 1 && currentStep !== 2 && currentStep !== 3}"></div>
+                <div   class="step-active" [ngClass]="{'step-svelte': currentStep !== 2 && currentStep !== 3}"></div>
+                <div class="step-active" [ngClass]="{'step-svelte': currentStep !== 3}"></div>
               </div>
               <div class="stack-padding" *ngIf="currentStep > 1">
                 <button
                   class="inline-flex relative items-center gap-2 justify-center rounded-sm font-semibold whitespace-nowrap ring-offset-background transition disabled:pointer-events-none disabled:opacity-50 focus-visible:outline-2 focus-visible:outline-offset-2 active:scale-[0.98] bg-transparent text-grey-200 betterhover:hover:bg-transparent betterhover:hover:text-white focus-visible:text-white focus-visible:outline-none text-sm leading-none"
                   type="button"
+                  (click)="prevStep()"
                 >
                   <img class="svg-back-arrow" src="/login/back-icon.png"/>
                   Back
@@ -38,17 +39,15 @@
                 <span class="step-text">Step {{ currentStep }} / 3</span>
               </div>
             </div>
-            <h2
-              class="select-language"
-            >
+            <h2 class="select-language" *ngIf="currentStep === 1">
               Select your preferred language
             </h2>
             <span
-              class="select-language-span"
+              class="select-language-span"  *ngIf="currentStep === 1"
             >Stake is available is several languages. Feel free to personalise
               your language across our site from the options below.</span
             >
-            <label class="labelstacked">
+            <label class="labelstacked"  *ngIf="currentStep === 1">
               <div class="select-wrap">
                 <div class="select-content">
                   <select
@@ -83,13 +82,13 @@
                 </div>
               </div>
             </label>
-            <div class="flex flex-col justify-end h-full">
+            <div class="flex flex-col justify-end h-full" *ngIf="currentStep === 1">
               <button
                 (click)="nextStep()"
                 class="inline-flex relative items-center gap-2 justify-center rounded-sm font-semibold whitespace-nowrap ring-offset-background transition disabled:pointer-events-none disabled:opacity-50 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 active:scale-[0.98] bg-blue-500 text-white betterhover:hover:bg-blue-600 betterhover:hover:text-white focus-visible:outline-white text-base leading-none shadow-md py-[1.125rem] px-[1.75rem]"
                 type="button"
               >
-                <div
+                <div 
                   class="contents"
                 >
                   Confirm
