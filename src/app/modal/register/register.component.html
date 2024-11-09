@@ -225,9 +225,10 @@
 
                     <div>
                       <label class="tc-label inline-flex items-center cursor-pointer">
-                        <input type="checkbox" class="tc-checkbox hidden" />
+                        <input type="checkbox" class="tc-checkbox hidden">
                         <span
-                          class="indicator-variant inline-flex items-center justify-center h-[21px] w-[21px] bg-gray-800 border-2 border-gray-600 rounded-sm">
+                          class="indicator-variant inline-flex items-center justify-center h-[21px] w-[21px] bg-gray-800 border-2 border-gray-600 rounded-sm"
+                          (click)="togglePhone()">
                           <!-- Thicker checkmark icon -->
                           <svg class="checkmark w-[14px] h-[14px] text-white opacity-0 transition-opacity duration-300"
                             xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"
@@ -240,7 +241,7 @@
                     </div>
 
 
-                    <div
+                    <div *ngIf="isPhone"
                       class="flex gap-2 [&amp;>:first-child]:w-[calc((100%-var(--space-4))/3)] [&amp;>:last-child]:flex-1">
                       <label class="tc-wrapper-label">
                         <div class="select-wrap">
@@ -521,7 +522,7 @@
                 <div class="tc-wrapper">
                   <label class="flex-col-reverse items-start text-left inline-flex touch-auto relative">
                     <!-- Select code label -->
-                    <div class="input-wrap">
+                    <div class="input-wrap" *ngIf="isCode">
                       <div class="input-content">
                         <div class="before-icon"></div>
                         <div class="after-icon"></div>
@@ -529,16 +530,22 @@
                       </div>
                       <div class="input-button-wrap"></div>
                     </div>
-                    <span
-                      class="w-full inline-flex items-center font-semibold text-[0.875rem] text-[#b1bad3] justify-between touch-auto">
-                      <div>
-                        <label class="tc-label"><input class="tc-checkbox" type="checkbox" value="undefined" />
-                          <span class="indicator-variant"></span>
-                          <span class="checkbox-text"><span slot="label"><span slot="label">Code
-                                (Optional)</span></span>
-                          </span></label>
-                      </div>
-                    </span>
+                    <div>
+                      <label class="tc-label inline-flex items-center cursor-pointer">
+                        <input type="checkbox" class="tc-checkbox hidden">
+                        <span
+                          class="indicator-variant inline-flex items-center justify-center mb-1 h-[21px] w-[21px] bg-gray-800 border-2 border-gray-600 rounded-sm"
+                          (click)="toggleCode()">
+                          <!-- Thicker checkmark icon -->
+                          <svg class="checkmark w-[14px] h-[14px] text-white opacity-0 transition-opacity duration-300"
+                            xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                            stroke-width="3" stroke-linecap="round" stroke-linejoin="round">
+                            <polyline points="20 6 9 17 4 12" />
+                          </svg>
+                        </span>
+                        <span class="checkbox-text ml-2 text-gray-300">Code (Optional)</span>
+                      </label>
+                    </div>
                   </label>
                 </div>
                 <!-- Continue btn -->
@@ -642,15 +649,23 @@
                 </div>
                 <div class="stack-svelte">
                   <div class="text-left w-full">
+                   
                     <div>
-                      <label class="accept-term" data-test="accept-terms"><input class="tc-checkbox" type="checkbox"
-                          value="undefined" />
-                        <span class="indicator-variant"></span>
-                        <span class="checkbox-text"><span slot="label"><span
-                              class="text-[#b1bad3] inline text-left text-sm font-normal touch-auto">I have read and
-                              agree to the terms and
-                              conditions</span></span>
-                        </span></label>
+                      <label class="tc-label inline-flex items-center cursor-pointer">
+                        <input type="checkbox" class="tc-checkbox hidden">
+                        <span
+                          class="indicator-variant inline-flex items-center justify-center mb-1 h-[21px] w-[21px] bg-gray-800 border-2 border-gray-600 rounded-sm"
+                          (click)="toggleCode()">
+                          <!-- Thicker checkmark icon -->
+                          <svg class="checkmark w-[14px] h-[14px] text-white opacity-0 transition-opacity duration-300"
+                            xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"
+                            stroke-linecap="round" stroke-linejoin="round">
+                            <polyline points="20 6 9 17 4 12" />
+                          </svg>
+                        </span>
+                        <span class="checkbox-text ml-2 text-gray-300">agree to the terms and
+                        conditions</span>
+                      </label>
                     </div>
                   </div>
                   <button
