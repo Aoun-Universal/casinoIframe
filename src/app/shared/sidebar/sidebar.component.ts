@@ -2,25 +2,25 @@ import { CommonModule } from '@angular/common';
 import { Component, OnInit } from '@angular/core';
 import { NavigationEnd, Router, RouterLink } from '@angular/router';
 import { filter } from 'rxjs';
+import { ToggleService } from '../../services/toggle.service';
 
 @Component({
   selector: 'app-sidebar',
   standalone: true,
-  imports: [CommonModule,RouterLink],
+  imports: [CommonModule, RouterLink],
   templateUrl: './sidebar.component.html',
   styleUrl: './sidebar.component.css'
 })
 export class SidebarComponent implements OnInit {
   openBar: any;
+  isSidebar = false
   routerPath:any
-  constructor(private router:Router){}
+  constructor(private router:Router, private toggle:ToggleService){}
   toggleOpen(name: string) {
-    // Check if the bar is already open with the same name
+  
     if (this.openBar === name) {
-      // If it is, close it by resetting openBar to an empty string
       this.openBar = '';
     } else {
-      // If it's not, open the bar by setting openBar to the new name
       this.openBar = name;
     }
   }
@@ -33,8 +33,12 @@ export class SidebarComponent implements OnInit {
         this.routerPath = event.url;
          
       });
-
-
     this.routerPath = this.router.url;
+     this.toggle.getSidebar().subscribe((value:boolean)=>{
+       this.isSidebar = value
+     })
+  }
+  toggleSidebar(){
+    this.toggle.setSidebar(!this.isSidebar)
   }
 }

@@ -585,3 +585,29 @@
   @apply flex items-center justify-between p-[.75rem_1rem];
 }
 
+.dropdown-title {
+  @apply text-[.875rem] text-white font-bold block leading-[1.5];
+}
+
+.svg-icon {
+  pointer-events: none;
+  stroke-width: 0;
+  stroke: currentColor;
+  fill: currentColor;
+  flex-shrink: 0;
+  display: inline-block;
+  width: 1em;
+  height: 1em;
+  transform: rotate(90deg);
+}
+
+.dropdown-content-container{
+  @apply flex flex-col w-full 
+}
+.main-content-wrapper{
+  @apply border-t-2 border-[#2f4553]
+}
+
+.dropdown-content{
+  @apply text-base text-[#b1bad3]
+}

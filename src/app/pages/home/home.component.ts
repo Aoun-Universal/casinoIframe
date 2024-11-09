@@ -1,4 +1,4 @@
-import { NgFor } from '@angular/common';
+import { NgClass, NgFor, NgIf } from '@angular/common';
 import { Component } from '@angular/core';
 import { SlickCarouselModule } from 'ngx-slick-carousel';
 
@@ -6,7 +6,7 @@ import { SlickCarouselModule } from 'ngx-slick-carousel';
 @Component({
   selector: 'app-home',
   standalone: true,
-  imports: [NgFor, SlickCarouselModule],
+  imports: [NgFor, SlickCarouselModule,NgIf,NgClass],
   templateUrl: './home.component.html',
   styleUrl: './home.component.css'
 })
@@ -14,6 +14,23 @@ export class HomeComponent {
 
   currentSlideIndex = 0;
   slideCount = 0;
+  // Winner Dropdown
+  WinnerDropdown=false;
+  toggleDropdown() {
+    this.WinnerDropdown = !this.WinnerDropdown;
+  }
+
+  // Market 1
+  isMarketOpen = true;
+  isMarketOpen2 = true;
+
+  toggleMarket() {
+    this.isMarketOpen = !this.isMarketOpen;
+  }
+  
+  toggleMarket2() {
+    this.isMarketOpen2 = !this.isMarketOpen2;
+  }
 
   // slideConfig = {
   //   slidesToScroll: 1,
@@ -50,42 +67,42 @@ export class HomeComponent {
 
   slides = [
     {
-      img: "https://cdn.sanity.io/images/tdrhge4k/production/3857967ca2a288a6a783a74592fb574951c4c623-2160x2160.jpg?w=220&h=220&fit=min&auto=format",
+      img: "/assets/home/1.avif",
       badge: "Promo",
       title: "Industry-Best Election Odds",
       description: "Bet With Stake Today.",
       buttonText: "View Market"
     },
     {
-      img: "https://cdn.sanity.io/images/tdrhge4k/production/e497846781c96a9b533477e74699d82f9c61a0aa-2160x2160.jpg?w=220&h=220&fit=min&auto=format",
+      img: "/assets/home/2.avif",
       badge: "Politics",
       title: "Live Betting During Election",
       description: "Plus Bingo Markets & More.",
       buttonText: "Bet Now"
     },
     {
-      img: "https://cdn.sanity.io/images/tdrhge4k/production/4b088da82589978fcebd55a66b848ddee56b5a10-1080x1080.png?w=220&h=220&fit=min&auto=format",
+      img: "/assets/home/3.webp",
       badge: "Promo",
       title: "Champions League",
       description: "Early Goal Payout.",
       buttonText: "Bet Now"
     },
     {
-      img: "https://cdn.sanity.io/images/tdrhge4k/production/71ee0bfddc41611121888ae696f05657a4bae511-1080x1080.png?w=220&h=220&fit=min&auto=format",
+      img: "/assets/home/4.webp",
       badge: "Promo",
       title: "NBA - 3rd Quarter Payout",
       description: "Insurance For Bad Beats",
       buttonText: "View Matches"
     },
     {
-      img: "https://cdn.sanity.io/images/tdrhge4k/production/5d441a7e0aa33ee43a3ae393d5b0bb16345c487a-2160x2160.jpg?w=220&h=220&fit=min&auto=format",
+      img: "/assets/home/5.webp",
       badge: "Promo",
       title: "WTA Finals ",
       description: "Final Set Tiebreaker Payout.",
       buttonText: "Bet Now"
     },
     {
-      img: "https://cdn.sanity.io/images/tdrhge4k/production/a592a85977632ebe4d3702d8efd37f9ad1e1c330-1080x1080.png?w=220&h=220&fit=min&auto=format",
+      img: "/assets/home/6.webp",
       badge: "Promo",
       title: "NHL",
       description: "2+ Lead Payout",

@@ -26,9 +26,6 @@
 .title{
     @apply text-center
 }
-.svg-icon{
-    @apply w-[3rem] h-[3rem]
-}
 .card-wrapper{
     @apply flex flex-col
 }
@@ -36,23 +33,119 @@
     @apply flex 
 }
 .slider-wrapper{
-    @apply grid grid-cols-4 gap-[1rem] w-full
+    @apply flex flex-row gap-4 w-[100%] overflow-x-auto  mb-8
+}
+.slider-wrapper::-webkit-scrollbar {
+    display: none;
 }
 .card{
-    @apply bg-[#213743] w-full flex flex-col gap-4 p-5 h-full rounded-[8px]
+    @apply bg-[#213743] w-full flex flex-col flex-nowrap  gap-3 p-5 h-full rounded-[8px]
 }
 .card-wrapper{
-    @apply col-span-1
+    @apply col-span-1 flex max-w-[286px] min-w-[250px] flex-col gap-8 
 }
 .card-label{
     @apply w-[52px] h-[21px] p-[4px] flex justify-center items-center text-[14px] rounded-[4px]
 }
 .card-amount{
-    @apply flex flex-col
+    @apply flex flex-col mb-4 relative 
 }
 .amount{
-    @apply text-2xl font-bold
+    @apply text-2xl font-bold relative
 }
 .wager{
-    @apply text-[16px]
+    @apply text-[13px] text-[#b1bad3] absolute top-6 font-[500]
+}
+.bonus{
+    @apply flex gap-2 items-center
+}
+.bonus-icon{
+    @apply w-[1rem] h-[1rem] relative rounded-full p-[2px] flex justify-center items-center bg-[#c69c6d]
+}
+.svg-icon2{
+    @apply  text-black
+}
+.text2{
+    @apply text-[14px]
+}
+.bonus-icon2{
+    @apply w-[1rem] h-[1rem] relative rounded-full p-[2px] flex justify-center items-center bg-[#b2cccc]
+}
+.bonus-icon3{
+    @apply w-[1rem] h-[1rem] relative rounded-full p-[2px] flex justify-center items-center bg-[#fed100]
+}
+.bonus-icon4{
+    @apply w-[1rem] h-[1rem] relative rounded-full p-[2px] flex justify-center items-center bg-[#6fdde7]
+}
+.text3{
+    @apply text-black
+}
+.card-label2{
+    @apply w-[90px] h-[21px] p-[4px] flex justify-center items-center text-[14px] rounded-[4px] bg-[#6fdde7]
+}
+.card-header-icon{
+    @apply flex items-center gap-4 justify-center
+}
+.sec-2{
+    @apply flex flex-col gap-10
+}
+.icon{
+    @apply p-2 bg-[#213743] rounded-full text-center
+}
+.line{
+    @apply w-full min-h-[5px] bg-[#213743] rounded-full
+}
+.card-bonus-list{
+    @apply flex flex-col gap-1
+}
+.svg-icon{
+    @apply w-[28px] h-[28px]
+}
+.header{
+    @apply my-10
+}
+.wrapper2{
+    @apply grid grid-cols-2 gap-6
+}
+.wrapper-item{
+    @apply bg-[#213743] rounded-[8px] p-4 flex items-center gap-6
+}
+.img-wrapper{
+    @apply min-w-[74px] h-[74px]
+}
+.content{
+    @apply flex flex-col
+}
+.text4{
+    @apply font-[600] text-[16px]
+}
+.content-p{
+    @apply text-[0.875rem] text-[#b1bad3]
+}
+.sub-header{
+    @apply text-center
+}
+.sub-head{
+    @apply  text-[#b1bad3]
+}
+.card2{
+    @apply flex  gap-6
+}
+.wrapper-btn{
+    @apply flex flex-col bg-[#0F212E] rounded-[8px]
+}
+/* .accordian-wrap{
+    @apply bg-[#0F212E]
+} */
+.accordian-wrap3{
+    @apply flex flex-col gap-2
+}
+.acc{
+    @apply bg-[#0F212E] w-full
+}
+.first-acc{
+    @apply flex justify-between items-center bg-[#213743] py-2 px-4 font-bold text-[14px]
+}
+.svg-icon4{
+    @apply w-[16px] h-[16px]
 }

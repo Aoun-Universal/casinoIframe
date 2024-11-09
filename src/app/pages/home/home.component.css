@@ -58,7 +58,7 @@
 
 
 section {
-    @apply max-w-[1200px] m-[0_auto] relative max-[1680px]:p-[0px_30px]
+    @apply max-w-[1200px] m-[0_auto] relative max-[1680px]:p-[0px_3vw]
 }
 
 .slide {
@@ -144,7 +144,7 @@ section {
 }
 
 .tab-slider {
-    @apply bg-[#0f212e] flex rounded-[3rem] p-[5px] flex-shrink-0
+    @apply bg-[#0f212e] flex rounded-[3rem] p-[5px] flex-shrink-0 
 }
 
 .tab-item {
@@ -194,7 +194,7 @@ section {
 
 /* Top sports slider */
 .sports-img {
-    @apply w-[157px] max-w-[167px]
+    @apply w-[157px] max-w-[167px] rounded-lg
 }
 
 .ribbon {
@@ -215,7 +215,24 @@ section {
 }
 
 .event-dropdown {
-    @apply bg-[#0f212e] rounded-[4px]
+    @apply bg-[#0f212e] rounded-[4px] relative
+}
+
+.profile-dropdown{
+    @apply absolute right-0 z-[100] top-[70px] py-1  bg-white rounded-[.25rem] shadow-lg  w-[90px]
+}
+
+.dropdown-arrow{
+    @apply absolute top-0 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-2 h-2 bg-white rotate-45 border-l border-t border-gray-200
+}
+
+.dropdown-scroll-content {
+    @apply flex flex-col p-[.25rem_0] [max-height:inherit]
+}
+
+.profile-list{
+    @apply  inline-flex relative items-center gap-2 font-semibold whitespace-nowrap  text-[rgb(47_69_83)] transition disabled:pointer-events-none disabled:opacity-50 focus-visible:outline focus-visible:outline-2 hover:bg-[#B1BAD3] 
+    focus-visible:outline-offset-2 active:scale-[0.98] bg-transparent text-sm leading-none  px-3 py-3 rounded-none justify-start
 }
 
 /* Sport Menu List */
@@ -224,7 +241,7 @@ section {
 }
 
 .main-list {
-    @apply px-2 pt-8 py-[18px]
+    @apply px-2 pt-8 py-[18px] flex flex-nowrap
 }
 
 .sport-btn {
@@ -272,5 +289,201 @@ section {
 
 .stack {
     @apply py-2 grid [grid-auto-flow:row] items-center justify-stretch w-full gap-0
+}
+
+
+.fixture-preview {
+    @apply py-2 px-4 grid items-center w-full grid-cols-6 md:grid-cols-12 [grid-template-rows:1fr_auto] md:[grid-template-rows:repeat(3,auto)] text-[#b1bad3] [row-gap:.5rem] [grid-column-gap:.5rem];
+}
+
+/* Market rows */
+.misc {
+    @apply [grid-column:1/span_3] md:[grid-column:1/span_2] flex relative text-xs
+}
+
+.misc-wrapper {
+    @apply flex items-center capitalize justify-between w-full leading-[1.3]
+}
+
+.fixture-details {
+    @apply flex items-center gap-2
+}
+
+.live-badge {
+    @apply px-1 bg-[#e9113c] text-white inline-flex text-xs font-semibold items-center justify-center rounded-[3px] whitespace-nowrap leading-[1.5]
+}
+
+.blinking-dash {
+    animation: blink 2s infinite linear;
+}
+
+@keyframes blink {
+    0%, 100% {
+        opacity: 0;
+    }
+
+    50% {
+        opacity: 1;
+    }
+}
+
+/* line */
+.line {
+    @apply w-full h-[2px] hidden md:block
+}
+
+.line1 {
+    @apply [grid-column:3/span_4]
+}
+
+/* Market name */
+.market-name{
+    @apply px-2 w-full [grid-column:1/span_12] md:[grid-column:7/span_4] relative items-center text-center bg-[#213743]
+}
+
+.market-name span{
+    @apply !text-center max-w-full
+}
+
+.line2 {
+    @apply [grid-column:10/span_2]
+}
+
+.teams {
+    @apply [grid-column:1/span_12] md:[grid-column:1/span_3] whitespace-nowrap overflow-hidden grid gap-2 self-center
+}
+
+.teams-tag{
+    @apply !border-none !justify-start
+}
+
+/* FixtureScore */
+.fixture-score {
+    @apply [grid-column:4/span_2] hidden md:flex justify-end 
+}
+
+.fixture-score-wrapper{
+    @apply font-semibold flex justify-end
+}
+
+.score-wrapper{
+    @apply flex flex-col justify-between items-center w-[2ch] pt-[1px] gap-3
+}
+
+.options-wrapper{
+    @apply ml-4 flex items-center flex-col justify-between gap-3
+}
+
+.option-btn{
+    @apply !text-[#b1bad3]
+}
+
+.outcomes{
+    @apply  [grid-column:1/span_12] md:[grid-column:6/span_6] self-stretch place-items-center w-full grid [grid-gap:.5rem] [grid-template-columns:repeat(auto-fit,minmax(50px,1fr))] [grid-template-rows:1fr]
+}
+
+.outcome-btn{
+    @apply px-[10.5px] py-[7px]  bg-[#071824] flex rounded-[.25rem] relative text-sm text-white items-start min-w-0 [transition:background_.1s] justify-center w-full
+}
+
+.outcome-content{
+    @apply flex flex-col items-start justify-between w-full self-center justify-items-start
+}
+
+.outcome-odd{
+    @apply font-bold text-[rgb(67,145,231)]
+}
+
+.market-count{
+    @apply [grid-column:12/span_1]  justify-self-center
+}
+
+/* Mobile view styling */
+.market-widget{
+   @apply [grid-column:7/span_6]  justify-center items-center justify-self-end
+}
+
+.sm-option-btn{
+    @apply pr-3 !border-r-[2px] !border-solid !border-[#557086] !border-l-0 border-t-0 border-b-0 !rounded-none
+}
+
+.market-badge{
+    @apply text-[#d5dceb] bg-[#2f4553] px-1.5 min-w-[1.8em] inline-flex rounded-[2em] text-xs items-center justify-center leading-normal whitespace-nowrap
+}
+
+
+/* Table topbar */
+.bubble-wrap{
+    @apply mt-[1px]
+}
+.scale-up{
+@apply absolute size-2 rounded-[50%] bg-[#1fff20] [transform:translate(-50%,-50%)scale(1)];
+animation: ScaleUp .2s ease-out; 
+}
+
+@keyframes ScaleUp{
+    0%{
+        transform: translate(-50%,-50%) scale(0);
+    }
+}
+
+/* Select Wrap */
+.select-wrap{
+    @apply hidden md:flex flex-row justify-self-end items-center gap-2
+}
+
+.mode-btn{
+    @apply py-[13px] px-4 !shadow-md !rounded-[4px] !bg-[rgb(47,69,83)]
+}
+
+label{
+    @apply inline-flex items-start relative flex-col-reverse
+}
+
+.select-content{
+    @apply relative [flex-grow:1] w-full flex 
+}
+
+select{
+    @apply py-[7px] pl-[7px] pr-[28px] text-sm w-full text-white bg-[#0f212e] outline-none m-0 cursor-pointer appearance-none rounded-[.25rem] [transition:all_.25s] font-semibold border-[2px] border-solid border-[#2f4553] shadow-[0_1px_3px_0_rgba(0,0,0,.2),0_1px_2px_0_rgba(0,0,0,.12)];
+}
+
+.dropdown-icon-wrap{
+    @apply absolute top-[52%] right-[.5em] text-[#b1bad3] [transform:translateY(-50%)] pointer-events-none cursor-pointer
+}
+
+
+
+/* Table */
+.table-container {
+    @apply !w-full  rounded-lg p-5 shadow-lg
+}
+table{
+    @apply w-full
+}
+th, td {
+    @apply w-1/5 p-4  align-middle text-[#b1bad3] text-sm whitespace-nowrap rounded-tl rounded-bl ;
+}
+th {
+    @apply  font-normal !bg-[#1A2C38];
+}
+tr:nth-child(odd) {
+    @apply bg-[#213743];
+}
+tr:hover {
+    @apply bg-[#3b4c5e];
+}
+.icon {
+    @apply mr-2 inline-block align-middle;
+}
+.bet-amount {
+    @apply flex items-center !justify-end text-end float-right;
+}
+.bet-amount img {
+    @apply w-5 h-5 ml-2;
+}
+
+.lg-row{
+    @apply max-[768px]:hidden
 }
 

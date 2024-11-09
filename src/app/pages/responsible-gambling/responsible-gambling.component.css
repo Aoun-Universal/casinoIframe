@@ -1,0 +1,75 @@
+.content-wrapper {
+  @apply relative;
+}
+
+.parent:not(.reset) {
+  @apply w-full flex flex-col items-center p-[0_3vw];
+}
+
+.ctainer:not(.reset) {
+  @apply w-full max-w-[1200px] items-center;
+}
+
+.layout-spacing:not(.reset) {
+  @apply pb-8 flex flex-col w-full;
+}
+
+.stack-wrapper {
+  @apply p-0 gap-[1.5rem] grid [grid-auto-flow:row] justify-stretch items-center;
+}
+
+.wrap {
+  @apply w-full grid [place-items:flex-start] pt-[1.5rem];
+}
+
+.stack {
+  @apply grid [grid-auto-flow:column] justify-between items-center w-full gap-[.75rem] p-0;
+}
+
+.stack-child {
+  @apply p-0 gap-[.75rem] items-center justify-start [grid-auto-flow:column] grid;
+}
+
+.gambling-title {
+  @apply text-[18px] font-[600] justify-start leading-[1.5] inline-flex items-center gap-[.5rem];
+}
+
+.svg-icon {
+  pointer-events: none;
+  stroke-width: 0;
+  stroke: currentColor;
+  fill: currentColor;
+  flex-shrink: 0;
+  display: inline-block;
+  width: 1em;
+  height: 1em;
+  color: #b1bad3;
+}
+
+.active-route {
+  @apply sticky max-w-full min-w-[180px] top-[2em];
+}
+
+.variant-default {
+  @apply bg-[#0f212e] text-[#d5dceb] rounded-[0.5rem];
+}
+
+.outer-wrapper {
+  @apply p-[.5rem_0];
+}
+
+.wrapper {
+  @apply relative;
+}
+
+.nav-item {
+  @apply truncate hover:bg-[rgba(7,24,36)] rounded-none relative items-center gap-2 font-semibold whitespace-nowrap  transition disabled:pointer-events-none disabled:opacity-50 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 active:scale-[0.98] bg-transparent text-white  focus-visible:outline-white text-sm leading-none  py-[0.9375rem] px-[1.25rem]  w-full justify-start block;
+}
+
+.active-border {
+  @apply border-l-[3px] border-[#1375E1] bg-[rgba(7,24,36)];
+}
+
+.content-container {
+  @apply gap-[1.5rem] grid [grid-auto-flow:column] items-start justify-start;
+}

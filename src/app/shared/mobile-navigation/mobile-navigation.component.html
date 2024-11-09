@@ -1,0 +1,19 @@
+
+<div class="navigation-wrapper" id="mobile-footer">
+  <ng-container *ngFor="let button of buttons">
+    <div class="button-wrap">
+      <button class="button-inner-wrap" type="button">
+        <div class="content">
+          <div class="mobile-icon-style">
+            <svg class="svg-icon" fill="currentColor" viewBox="0 0 64 64">
+              <title></title>
+              <path [attr.d]="button.svgPath" clip-rule="evenodd" fill-rule="evenodd"></path>
+            </svg>
+          </div>
+          <span>{{ button.text }}</span>
+        </div>
+      </button>
+    </div>
+  </ng-container>
+</div>
+

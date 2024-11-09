@@ -1,123 +1,230 @@
-.Modal-container{
-    @apply  block fixed top-0 left-0 z-[1055] w-full h-full overflow-x-hidden overflow-y-auto outline-0;
-   
-   
-    transition: opacity .15s linear;
+.Modal-container {
+  @apply fixed left-0 z-[1500] top-0 bottom-0 right-0  p-[1rem] justify-center flex items-center text-sm;
 }
-    
-    .modal-dialog {
-        @apply transform-none max-w-[500px]  m-2  relative w-auto pointer-events-none ;
-        transition: transform .3s ease-out;
-    
-    }
-    
-    @media (min-width: 576px) {
-        .modal-dialog {
-            @apply min-h-[calc(100%-3.5rem)] my-7 mx-auto
-            /* min-height: calc(100% - 3.5rem); */
-        }
-    }
-    @media (min-width: 576px) {
-        .modal-dialog-centered {
-            min-height: calc(100% - 3.5rem);
-        }
-    }
-    
-    .modal-dialog-centered {
-        @apply flex items-center min-h-[calc(100%-1rem)]
-      
-    }
 
+input[type="date"]::-webkit-calendar-picker-indicator {
+    filter: invert(100%) brightness(2);
+}
+
+.svelte-syudie {
+  @apply absolute  left-0 top-0 bottom-0 right-0  touch-none bg-[rgba(0,0,0,0.75)];
+}
+.ctainer-div {
+  @apply flex  bg-[#1a2c38] justify-between items-center min-h-[60px] py-0 px-4;
+  box-shadow: #0003 0 4px 6px -1px, #0000001f 0 2px 4px -1px;
+}
+
+.card-svelte {
+  @apply max-w-[630px] border-[rgb(26,44,56)] h-full max-h-[716px] border  rounded-lg [background-position:center] relative w-full min-w-[200px]  flex flex-col bg-[#1a2c38]  text-[#b1bad3]  overflow-hidden;
+}
+.ctainer {
+  @apply bg-[#0f212e] flex flex-col sticky top-0 z-[1] gap-2 touch-auto pt-2;
+}
+.stack {
+  @apply p-0 gap-1 items-start justify-stretch [grid-auto-flow:column] grid touch-auto bg-[#1a2c38];
+  grid-template-columns: repeat(3, minmax(0px, 1fr));
+}
+.step-active {
+  @apply bg-[#00e701] h-1 touch-auto;
+}
+.step-svelte {
+  @apply h-1 bg-[#2f4553]  touch-auto;
+}
+.stack-padding {
+  @apply h-6 p-0 gap-2 items-center justify-between [grid-auto-flow:column] grid touch-auto;
+}
+.svg-back-arrow {
+  pointer-events: none;
+  stroke-width: 0;
+  stroke: currentColor;
+  fill: currentColor;
+  flex-shrink: 0;
+  display: inline-block;
+  width: 1em;
+  height: 1em;
+}
+.step-text {
+  @apply text-[#b1bad3] text-left justify-start text-xs font-normal touch-auto inline-flex items-center;
+}
+.firt-step {
+    @apply h-6 p-0 gap-2 items-center justify-end [grid-auto-flow:column] grid touch-auto;
+  }
+.select-language {
+  @apply text-[#fff] text-left justify-start text-[1.5rem] font-bold touch-auto inline-flex items-center;
+}
+.formsvelte {
+  @apply flex-col justify-center touch-auto flex overflow-y-auto w-full h-full;
+}
+.select-language-span {
+  @apply text-[#b1bad3] text-left justify-start text-sm font-normal touch-auto inline-flex items-center;
+}
+.labelstacked {
+  @apply flex-col-reverse items-start w-full inline-flex touch-auto relative;
+}
+.input-wrap {
+  @apply w-full flex flex-shrink-0   rounded-[0.25rem] touch-auto;
+  box-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.2), 0 1px 2px 0 rgba(0, 0, 0, 0.12);
+}
+.input-content {
+  @apply relative flex-grow w-full flex touch-auto;
+}
+.before-icon {
+  @apply cursor-text  touch-auto left-[0.75em] absolute flex top-[50%] pointer-events-none text-[#b1bad3] z-[2];
+  transform: translateY(-50%);
+}
+.after-icon {
+  @apply cursor-text touch-auto absolute flex right-[0.75em]  top-[50%] pointer-events-none text-[#b1bad3] z-[2];
+  transform: translateY(-50%);
+}
+.input-spacing {
+  @apply p-[7px] w-full hover:border-[#557086] appearance-none text-sm shadow-none text-[#fff] !bg-[#0f212e] border-[2px] border-[#2f4553] border-solid font-semibold outline-none touch-auto;
+}
+.input-button-wrap {
+  @apply inline-flex touch-auto;
+}
+.label-content {
+  @apply w-full inline-flex items-center font-semibold text-[0.875rem] text-[#b1bad3] pb-[4px] justify-between touch-auto;
+}
+.asterick {
+  @apply text-[#ed4163] text-left justify-start text-[0.875rem] font-normal touch-auto inline-flex items-center;
+}
+.svg-icon-password {
+  pointer-events: none;
+  stroke-width: 0;
+  stroke: currentColor;
+  fill: currentColor;
+  flex-shrink: 0;
+  display: inline-block;
+  width: 1em;
+  height: 1em;
+}
+.tc-wrapper {
+  @apply mt-4 w-full flex flex-col gap-4 text-left;
+}
+.tc-label {
+  @apply cursor-pointer flex-row text-left inline-flex items-center relative;
+}
+/* .tc-checkbox {
+  @apply absolute left-0 opacity-0 z-[-1] appearance-none cursor-pointer;
+} */
+
+.tc-checkbox:checked + .indicator-variant .checkmark {
+  opacity: 1; /* Makes the checkmark visible */
+}
+
+
+/* Visible checkbox styling */
+/* .indicator-variant {
+  @apply inline-block w-4 h-4 bg-gray-200 border-2 border-gray-400 rounded;
+  transition: background-color 0.3s ease;
+} */
+
+/* Style when the checkbox is checked */
+/* .tc-checkbox:checked + .indicator-variant {
+  @apply bg-blue-500 border-blue-500;
+} */
+.indicator-variant-div {
+  @apply bg-[#2f4553] border border-solid  [background-size:75%] border-[#2f4553] outline-none w-[1.5em] h-[1.5em] flex-shrink-0  cursor-pointer [background-position:center] bg-no-repeat rounded-[3px];
+  box-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.2), 0 1px 2px 0 rgba(0, 0, 0, 0.12);
+}
+.tc-wrapper-label {
+  @apply flex-col-reverse text-left w-[calc((100%-1rem)/3)] inline-flex relative;
+}
+.select-wrap {
+  @apply w-full flex  shrink-0 touch-auto;
+}
+.select-content {
+  @apply relative flex-grow w-full flex touch-auto;
+}
+
+.select-spacing {
+  @apply py-[7px] pl-[7px] pr-[28px] w-full text-[#fff] bg-[#0f212e]  border-[2px] rounded-[0.25rem] font-semibold outline-none border-[rgb(47,69,83)]  cursor-pointer appearance-none text-sm touch-auto;
+  box-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.2), 0 1px 2px 0 rgba(0, 0, 0, 0.12);
+}
+.number-label {
+  @apply flex-col-reverse items-start text-left flex-1 inline-flex relative;
+}
+.wrap-svelte {
+  @apply flex mt-4 w-full flex-col justify-center items-center gap-[1rem] touch-auto;
+}
+.or-svelte {
+  @apply max-w-[200px] w-full flex items-center touch-auto;
+}
+.or-svelte:before {
+  content: "";
+  display: inline-flex;
+  height: 1px;
+  background: #2f4553;
+  flex: 1;
+}
+.span-variant {
+  @apply text-[#b1bad3] text-center justify-center text-[0.875rem] font-normal inline-flex items-center;
+}
+.or-svelte:after {
+  content: "";
+  display: inline-flex;
+  height: 1px;
+  background: #2f4553;
+  flex: 1;
+}
+.oauth-svelte {
+  @apply flex gap-[1rem] justify-center touch-auto;
+}
+
+.dropdown-icon-wrap {
+  @apply absolute top-[52%] right-[0.5em] text-[#b1bad3]  pointer-events-none cursor-pointer [transform:translateY(-50%)] touch-auto;
+}
+.svg-icon-dropdown {
+  pointer-events: none;
+  stroke-width: 0;
+  stroke: currentColor;
+  fill: currentColor;
+  flex-shrink: 0;
+  display: inline-block;
+  width: 1em;
+  height: 1em;
+}
+.select-wrap-label {
+  @apply w-full justify-start inline-flex items-center font-semibold text-sm pb-1;
+}
+
+.wrap-normal {
+  @apply max-w-[66.95px] inline-flex items-center justify-center w-full;
+}
+
+.wrap-normal-svg {
+  @apply w-full !text-[#fff];
+}
+.content-svelte {
+  @apply flex flex-col flex-grow [overscroll-behavior:none] [scrollbar-color:#2f4553] overflow-y-auto overflow-x-hidden;
+}
 .modal-content {
-    @apply bg-[#1a2c38] rounded-lg overflow-hidden border-none relative flex flex-col w-full pointer-events-auto outline-0;
-    background-clip: padding-box; 
-   
+  @apply flex-1 flex-col relative touch-auto bg-[#0f212e];
 }
-.modal-body {
-    @apply p-0  relative flex-auto
-}
-.row2 {
-    @apply flex flex-wrap relative flex-auto mx-[calc(-.5*(1.5rem))]
-}
-.col12 {
-    @apply flex-auto w-full max-w-full px-[calc((0).5)] mt-0
-  
-}
- .form_block_right {
-    @apply !p-[2rem]
-  
-} 
-.header_block {
-    @apply  flex items-center justify-between mb-6 relative 
-  
-}
-.header_text {
-    @apply     font-semibold text-lg text-[#fff] m-0 flex-1 text-center
-  
-}
-.btn-close {
-    @apply   w-[32px] h-[32px] rounded-lg p-[6px] opacity-100 bg-none flex items-center justify-center absolute right-0 cursor-pointer  border-none transform-none m-0 text-gray-400
-  
-}
-.btn-close svg {
-    width: 20px;
-    height: 20px;
-    fill: #9ca3af;
-}
-.step_text {
-    @apply text-[1rem] text-center font-semibold text-[#b1bad3]
- 
-}
-.input_block {
-    @apply mb-4
-   
-}
-.form-label {
-    @apply text-[15px] text-[#b1bad3] font-semibold block mb-[5px]
-   
-}
-.form-label-span {
-@apply text-[rgb(255,0,0)] ml-[3px]
-    
-}
-.form-control{
-    @apply h-10 text-sm  !bg-[#1A2C38] rounded-[0.25rem] border-[2px] w-full py-[6px] px-3 font-normal border-solid border-[#2F4553] appearance-none ;
-    transition: border-color .15s ease-in-out, box-shadow .15s ease-in-out;
-}
-.eye_icon {
-    @apply absolute top-[50%] right-[15px] text-[#b1bad3] underline ;
-    transform: translateY(-50%);
 
+.contenttop {
+  @apply h-full  bg-[rgb(15,33,46)] pr-[1rem] pl-[1rem] flex flex-col  pb-[1rem] gap-[1rem] touch-auto;
+}
+.term-div {
+    @apply max-h-[372px] touch-auto text-left p-4 bg-[rgb(33,55,67)] rounded-lg  [scrollbar-color:#b1bad3] [scrollbar-width:thin]  overflow-y-auto overflow-x-hidden min-h-0
+  }
+.content-block {
+    @apply flex flex-col w-full touch-auto }
+.term-text{
+    @apply text-lg mt-0 w-full text-[#fff] text-left font-semibold align-baseline mb-2
+}
+
+    .span-text{
+        @apply text-sm mt-0 w-full text-[#b1bad3] text-left inline font-normal touch-auto
+    }
+
+.stake-text{
+    @apply text-lg  w-full text-[#fff] inline touch-auto mt-6 mb-2
+}
+.stack-svelte {
+    @apply p-0 gap-1 items-center flex-row justify-stretch [grid-auto-flow:row] w-full mt-4 grid touch-auto;
     
-}
-.eye_icon-svg {
-    @apply h-5 w-5 fill-[#b1bad3]
- 
-}
-.btn-primary {
-    @apply w-full font-semibold text-[1rem] text-center text-[#05080a] border rounded-[5px] mt-[8px] h-[52px] bg-[#00e701] py-[6px] px-3  transform-none cursor-pointer no-underline  align-middle select-none ;
-    transition: color .15s ease-in-out, background-color .15s ease-in-out, border-color .15s ease-in-out, box-shadow .15s ease-in-out;
- }
- .or_block {
-    @apply text-[#b1bad3] max-w-[200px] w-full flex items-center m-auto mt-[10px]
-  
-}
-.or_block::before{ 
-    @apply h-[1px] bg-[#2f4553] flex-1;
-    content: "";
-    display: inline-flex;
-    
-}
-.or_block::after {
-    content: "";
-    display: inline-flex;
-    height: 1px;
-    background: #2f4553;
-    flex: 1;
-}
-.forgot_link {
-    @apply block text-[.875rem] text-[#fff] no-underline text-center font-semibold my-4 mx-0
-}
-.distext {
-    @apply text-[#b1bad3] font-light text-[.875rem] text-center mt-3
-}
+  }
+  .accept-term{
+    @apply  inline-flex flex-row touch-auto items-center relative cursor-pointer
+}  

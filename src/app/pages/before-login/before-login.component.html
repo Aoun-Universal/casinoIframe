@@ -506,14 +506,235 @@
         </h2>
         <a class="signup-btn">Read our guides</a>
       </div>
-        <div class="dropdowns-main-container">
-            <div class="dropdowns-container">
-               <div class="dropdown-header">
-                   <div class="dropdown-tiltle">Who is Stake?</div>
-               </div>
+      <div class="dropdowns-main-container">
+        <div class="dropdowns-container">
+          <div class="dropdown-header" (click)="dropdown('stake')">
+            <div class="dropdown-tiltle">Who is Stake?</div>
+            <svg fill="currentColor" viewBox="0 0 64 64" class="svg-icon " [ngClass]="{'!rotate-0':dropdownState ==='stake'}">
+              <title></title>
+              <path
+                d="M32.271 49.763 9.201 26.692l6.928-6.93 16.145 16.145 16.144-16.144 6.93 6.929-23.072 23.07h-.005Z">
+              </path>
+            </svg>
+          </div>
+          @if (dropdownState === 'stake') {
+          <div class="main-content-wrapper">
+            <div class="p-4">
+
+              <div class="dropdown-content-container">
+                <p class="dropdown-content">
+                  Leading the online gambling industry since 2017, Stake.com offers a wide variety of online casino and
+                  sports betting
+                  options, operating globally in 15 different languages.
+                </p>
+                <p class="dropdown-content mt-[.75rem]">
+                  With a reputable and secure platform, Stake Casino is home to worldwide local currencies and crypto
+                  betting options for
+                  online slot games, Stake Originals and live casino games. Stake Sportsbook offers unbeatable odds on
+                  all major sporting
+                  events including a range of eSport leagues.
+                </p>
+                <p class="dropdown-content mt-[.75rem]">
+                  We host regular bet bonuses and promotions and offer an exclusive VIP Club experience - all with a
+                  simple-to-use deposit
+                  process on our licensed platform.
+                </p>
+              </div>
             </div>
+          </div>
+          }
         </div>
-    
+        <div class="dropdowns-container">
+          <div class="dropdown-header" (click)="dropdown('licensed')">
+            <div class="dropdown-tiltle">Is Stake licensed?</div>
+            <svg fill="currentColor" viewBox="0 0 64 64" class="svg-icon " [ngClass]="{'!rotate-0':dropdownState ==='licensed'}">
+              <title></title>
+              <path
+                d="M32.271 49.763 9.201 26.692l6.928-6.93 16.145 16.145 16.144-16.144 6.93 6.929-23.072 23.07h-.005Z">
+              </path>
+            </svg>
+          </div>
+          @if (dropdownState === 'licensed') {
+          <div class="main-content-wrapper">
+            <div class="p-4">
+              <div class="dropdown-content-container">
+                <p class="dropdown-content">
+                  Stake.com is licensed by gaming authorities in Curacao, providing a safe and secure betting platform.
+                  Stake is operated
+                  by Medium Rare N.V. under the Certificate of Operation (Application no. OGL/2024/1451/0918) issued by
+                  the Curaçao Gaming
+                  Control Board, which is authorised and regulated by the Government of Curaçao.
+                </p>
+                <p class="dropdown-content mt-[.75rem]">
+                  Stake is a Crypto Gambling Foundation verified operator with strong policies around Anti-Money
+                  Laundering. Stake
+                  promotes responsible gambling with a robust self-exclusion policy and various Stake Smart resources.
+                </p>
+              </div>
+            </div>
+          </div>
+          }
+
+        </div>
+
+        <div class="dropdowns-container">
+          <div class="dropdown-header" (click)="dropdown('betting')">
+            <div class="dropdown-tiltle">Is betting on Stake safe?</div>
+            <svg fill="currentColor" viewBox="0 0 64 64" class="svg-icon " [ngClass]="{'!rotate-0':dropdownState ==='betting'}">
+              <title></title>
+              <path
+                d="M32.271 49.763 9.201 26.692l6.928-6.93 16.145 16.145 16.144-16.144 6.93 6.929-23.072 23.07h-.005Z">
+              </path>
+            </svg>
+          </div>
+          @if (dropdownState === 'betting') {
+          <div class="main-content-wrapper">
+            <div class="p-4">
+              <div class="dropdown-content-container">
+                <p class="dropdown-content">
+                  Stake is committed to providing a safe environment for our community. We pride ourselves in offering
+                  the most up to date
+                  and accessible smarter gambling resources. Our responsible gambling guidelines paired with our monthly
+                  budget calculator
+                  have been developed to help our players set appropriate betting limits.
+                </p>
+                <p class="dropdown-content mt-[.75rem]">
+                  When betting with local and crypto currencies, players can be sure their funds are securely stored
+                  using our Stake Vault
+                  feature.
+                </p>
+              </div>
+            </div>
+          </div>
+          }
+
+        </div>
+
+        <div class="dropdowns-container">
+          <div class="dropdown-header" (click)="dropdown('currencies')">
+            <div class="dropdown-tiltle">What currencies can I bet with?</div>
+            <svg fill="currentColor" viewBox="0 0 64 64" class="svg-icon " [ngClass]="{'!rotate-0':dropdownState ==='currencies'}">
+              <title></title>
+              <path
+                d="M32.271 49.763 9.201 26.692l6.928-6.93 16.145 16.145 16.144-16.144 6.93 6.929-23.072 23.07h-.005Z">
+              </path>
+            </svg>
+          </div>
+          @if (dropdownState === 'currencies') {
+              <div class="main-content-wrapper">
+                <div class="p-4">
+                  <div class="dropdown-content-container">
+                    <p class="dropdown-content">
+                      Alongside supporting local currencies, Stake.com is the world’s leading cryptocurrency casino and
+                      sportsbook, supporting
+                      20 cryptocurrencies from Bitcoin (BTC) to Polygon (MATIC). Discover the complete list of supported
+                      crypto at Stake.com
+                      for more details.
+                    </p>
+                  </div>
+                </div>
+              </div>
+          }
+       
+        </div>
+
+
+        <div class="dropdowns-container">
+          <div class="dropdown-header" (click)="dropdown('casino')">
+            <div class="dropdown-tiltle">What types of casino games can I play?</div>
+            <svg fill="currentColor" viewBox="0 0 64 64" class="svg-icon " [ngClass]="{'!rotate-0':dropdownState ==='casino'}">
+              <title></title>
+              <path
+                d="M32.271 49.763 9.201 26.692l6.928-6.93 16.145 16.145 16.144-16.144 6.93 6.929-23.072 23.07h-.005Z">
+              </path>
+            </svg>
+          </div>
+          @if (dropdownState === 'casino') {
+            <div class="main-content-wrapper">
+              <div class="p-4">
+                <div class="dropdown-content-container">
+                  <p class="dropdown-content">
+                    Browse our wide variety of popular casino games and enjoy a fair and fun online gaming experience.
+                    Stake's online casino
+                    platform features a range of game categories including slot games, live casino games, Stake Originals
+                    and many classics
+                    like Blackjack, Roulette, Poker, and Baccarat, right from your browser. Stake brings you the best
+                    gameplay from esteemed
+                    iGaming providers like Pragmatic Play, Hacksaw Gaming, Twist Gaming and Evolution Gaming.
+                  </p>
+                </div>
+              </div>
+            </div>
+          }
+          
+        </div>
+
+        <div class="dropdowns-container">
+          <div class="dropdown-header" (click)="dropdown('sports')">
+            <div class="dropdown-tiltle">What sports can I bet on?</div>
+            <svg fill="currentColor" viewBox="0 0 64 64" class="svg-icon " [ngClass]="{'!rotate-0':dropdownState ==='sports'}">
+              <title></title>
+              <path
+                d="M32.271 49.763 9.201 26.692l6.928-6.93 16.145 16.145 16.144-16.144 6.93 6.929-23.072 23.07h-.005Z">
+              </path>
+            </svg>
+          </div>
+          @if (dropdownState === 'sports') {
+            <div class="main-content-wrapper">
+              <div class="p-4">
+                <div class="dropdown-content-container">
+                  <p class="dropdown-content">
+                    From major football and basketball leagues to Dota 2 and CS:GO action, we cover all bases for sports
+                    and eSports
+                    markets. We offer industry leading odds and tailored betting resources including expert picks and
+                    predictions on our
+                    Stake News Blog.
+                  </p>
+                  <p class="dropdown-content mt-[.75rem]">
+                    You can bet on all major upcoming sporting events, place live bets and live stream all the biggest
+                    sporting events for
+                    free on Stake Sportsbook.
+                  </p>
+                </div>
+              </div>
+            </div>
+          }
+         
+        </div>
+
+        <div class="dropdowns-container">
+          <div class="dropdown-header" (click)="dropdown('streams')">
+            <div class="dropdown-tiltle">How do I watch live streams?</div>
+            <svg fill="currentColor" viewBox="0 0 64 64" class="svg-icon " [ngClass]="{'!rotate-0':dropdownState ==='streams'}">
+              <title></title>
+              <path
+                d="M32.271 49.763 9.201 26.692l6.928-6.93 16.145 16.145 16.144-16.144 6.93 6.929-23.072 23.07h-.005Z">
+              </path>
+            </svg>
+          </div>
+          @if (dropdownState === 'streams') {
+            <div class="main-content-wrapper">
+              <div class="p-4">
+                <div class="dropdown-content-container">
+                  <p class="dropdown-content">
+                    Stake.com is the perfect place for official sports streams, with comprehensive coverage of most
+                    popular sporting events
+                    and major tournaments, from tennis matches to MMA fights.
+                  </p>
+                  <p class="dropdown-content mt-[.75rem]">
+                    To live stream the latest sporting events, click on the live stream icon next to the event on Stake
+                    Sportsbook. For full
+                    details, check out our comprehensive guide to live streaming your favourite sports on Stake.com.
+                  </p>
+                </div>
+              </div>
+            </div>
+          }
+          
+        </div>
+
+      </div>
+
 
     </div>
   </div>

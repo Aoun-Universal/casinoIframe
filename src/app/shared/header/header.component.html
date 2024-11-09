@@ -1,137 +1,395 @@
 <!-- Header -->
-<div class="navigation">
-    <div class="group-container">
-        <div class="ctainer">
-            <div class="navigation-container">
-                <div class="stack">
-                    <div>
-                        <div class="image-focus">
-                            <a  class="home-button">
-                                <div class="wrap">
-                                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 396.11 197.92"
-                                        class="svelte-md2ju7">
-                                        <g id="Layer_5" data-name="Layer 5">
-                                            <path fill="currentColor"
-                                                d="M25.68,56.89c-.1-26.47,16.84-41.15,47.94-41.26C96,15.55,100,30.19,100,35.51c0,10.19-14.42,21-14.42,21s.8,6.35,13.18,6.3,24.44-8.22,24.37-28.67C123.07,10.65,98.46-.09,74.13,0,53.78.07-.19,2.93,0,56.51c.18,47.59,90,51.79,90.07,82.26.12,33.09-37,42-49.56,42S22.84,171.88,22.82,167c-.09-26.8,26.58-34.26,26.58-34.26,0-2-1.56-10.91-11.89-10.87C10.9,121.92.3,144.8.38,167.14c.07,19,13.5,30.86,33.78,30.78,38.78-.14,82.51-19.06,82.35-61.08C116.37,97.54,25.79,87.28,25.68,56.89Z">
-                                            </path>
-                                            <path fill="currentColor"
-                                                d="M395.37,162.18c-.31-.75-1.18-.57-2.33.38-4.4,3.63-14.46,13.91-38,14-42.92.16-50.37-70.58-50.37-70.58s32.71-24.42,37.82-34.27-11.15-12-11.15-12-22.88,27.84-39.1,36C294,83.6,306,56,306.69,40.13s-19.11-12-22.27-10.48c0,6.93-17.49,69.84-23.86,104.42-3.75,6-9.11,12.86-13.91,12.87-2.78,0-3.8-5.15-3.83-12.53,0-10.24,5.64-26.65,5.6-36.62,0-6.9-3.17-7.31-5.9-7.3-.59,0-3.87.09-4.47.09-7,0-4.7-6-11-5.94-19.28.07-43.84,21.12-44.91,52.89-6.51,4.31-15.62,9.74-20.27,9.76-4.88,0-6.09-4.51-6.1-8.41,0-6.85,11.08-47.55,11.08-47.55s14.11-3.62,20.27-4.81c4.66-.91,6-1.25,7.81-3.5s5.35-6.9,8.21-11.08.05-7.41-5.24-7.39c-6.94,0-25.51,4.4-25.51,4.4s8.92-38.46,8.91-39.24-1-1.19-2.51-1.18c-3.38,0-9.41,1.82-13.27,3.2-5.91,2.11-10.72,9.35-11.69,12.72s-7.65,29.76-7.65,29.76-35.77,12.35-40.66,14.2a.74.74,0,0,0-.5.7c0,.32,4.09,16,12.48,15.94,6,0,23.63-7.22,23.63-7.22s-9.06,36-9,48c0,7.7,3.63,16.72,18.67,16.67,14,0,26.25-7.23,33.11-12.26,3.75,9.49,12.61,12.09,18.66,12.07,13.56,0,24-10.82,25.34-12.27,1.76,4.16,5.91,12.15,15.39,12.12,5.36,0,10.91-6,15-11.82a23.38,23.38,0,0,0,.05,3.63c1.64,14.92,23.79,6.15,25,4.07.75-10.79.28-32.85,4.59-46.47,5.72,46.46,27.42,77.71,66.43,77.57,21.81-.08,33-6.35,37.63-11.52A15.9,15.9,0,0,0,395.37,162.18ZM208.2,146.86c-18.73.07,5.73-48.48,21.71-48.54C229.93,104.58,229.58,146.79,208.2,146.86Z">
-                                            </path>
-                                            <path fill="currentColor"
-                                                d="M360.26,161.74c16.91-.06,30-11.19,32.4-14.81,3.1-4.71-3.6-11.82-5.73-11.7-5.34,5.11-10.92,11.29-23.45,11.33-14.75.06-11.41-16.17-11.41-16.17s28.39,3.67,39.8-16.74c3.65-6.53,3.8-15.56,2.33-19.45s-9.73-11.09-22.87-10c-16.14,1.36-36.48,18.19-40.95,38.4C326.79,138.86,333.58,161.84,360.26,161.74Zm18-68.1c2.66-.09,2.42,4.29,1.71,8.87-1,6.21-9.53,22-25.81,21.38C355.29,114.7,367.4,94,378.29,93.64Z">
-                                            </path>
-                                        </g>
-                                    </svg>
-                                </div>
-                            </a>
-                        </div>
-                    </div>
-                </div>
-                <div class="balance-toggle">
-                    <div class="coin-toggle">
-                        <div class="wrapper">
-                            <div class="dropdown">
-                                <button type="button"  class="OpenDropdown-btn">
+<div class="hidden md:block lg:block">
+
+
+    <div class="navigation">
+        <div class="group-container">
+            <div class="ctainer">
+                <div class="navigation-container">
+                    <div class="stack">
+                        <div>
+                            <div class="image-focus">
+                                <a class="home-button">
                                     <div class="wrap">
-                                        <div class="currency svelte" role="presentation"> 
-                                            <span class="content svelte">
-                                                <span class="nmric-num">0.00000000</span>
-                                            </span>
-                                        <span class="nmric-num" title="btc">
-                                                <svg fill="none"
-                                                    viewBox="0 0 96 96" class="svg-icon ">
-                                                    <title></title>
-                                                    <path
-                                                        d="M95.895 48.105C95.895 74.557 74.451 96 48 96 21.548 96 .105 74.556.105 48.105.105 21.653 21.548.21 48 .21c26.451 0 47.895 21.443 47.895 47.895Z"
-                                                        fill="#F7931A"></path>
-                                                    <path
-                                                        d="M69.525 42.18c.93-6.27-3.84-9.645-10.38-11.895l2.115-8.505-5.16-1.29-2.1 8.28c-1.365-.345-2.76-.66-4.14-.975l2.1-8.295-5.175-1.29-2.115 8.49c-1.125-.255-2.235-.51-3.3-.78l-7.14-1.785-1.365 5.52s3.84.885 3.75.93a2.763 2.763 0 0 1 2.414 3.011l.001-.01-2.415 9.69c.213.049.394.106.568.174l-.028-.01-.54-.135-3.39 13.5a1.879 1.879 0 0 1-2.383 1.226l.013.004-3.765-.93L24.525 63l6.735 1.665 3.69.96-2.145 8.595 5.175 1.29 2.115-8.505c1.41.375 2.775.735 4.125 1.065l-2.115 8.475 5.175 1.29 2.13-8.58c8.835 1.665 15.465.99 18.255-6.99 2.25-6.42-.105-10.125-4.755-12.54 3.39-.72 5.925-2.955 6.615-7.545ZM57.69 58.755c-1.59 6.435-12.405 3-15.915 2.085L44.61 49.5c3.51.825 14.76 2.565 13.08 9.255Zm1.605-16.665c-1.5 5.85-10.5 2.865-13.38 2.145l2.58-10.32c2.91.72 12.315 2.085 10.8 8.175Z"
-                                                        fill="#fff"></path>
-                                                </svg>
-                                            </span>
-                                        </div>
-                                    </div> 
-                                    <span class="dropdown-icon">
-                                        <svg fill="currentColor"
-                                            viewBox="0 0 64 64" class="svg-icon " style="transform: rotate(0deg);
-   ">
-                                            <title></title>
-                                            <path
-                                                d="M32.271 49.763 9.201 26.692l6.928-6.93 16.145 16.145 16.144-16.144 6.93 6.929-23.072 23.07h-.005Z">
-                                            </path>
-                                        </svg>
-                                    </span>
-                                </button>
+                                        <img src="/assets/header/stack.png" alt="logo">
+                                    </div>
+                                </a>
                             </div>
                         </div>
-                    </div> 
-                    <button type="button" tabindex="0"
-                        class="wallet"><span>Wallet</span></button>
+                    </div>
+                    <div class="balance-toggle">
+                        <div class="coin-toggle">
+                            <div class="wrapper">
+                                <div class="dropdown">
+                                    <button type="button" class="OpenDropdown-btn">
+                                        <div class="wrap">
+                                            <div class="currency  svelte" role="presentation">
+                                                <span class="content svelte">
+                                                    <span class="nmric-num">0.00000000</span>
+                                                </span>
+                                                <span class="nmric-num" title="btc">
+                                                    <svg fill="none" viewBox="0 0 96 96" class="svg-icon ">
+                                                        <title></title>
+                                                        <path
+                                                            d="M95.895 48.105C95.895 74.557 74.451 96 48 96 21.548 96 .105 74.556.105 48.105.105 21.653 21.548.21 48 .21c26.451 0 47.895 21.443 47.895 47.895Z"
+                                                            fill="#F7931A"></path>
+                                                        <path
+                                                            d="M69.525 42.18c.93-6.27-3.84-9.645-10.38-11.895l2.115-8.505-5.16-1.29-2.1 8.28c-1.365-.345-2.76-.66-4.14-.975l2.1-8.295-5.175-1.29-2.115 8.49c-1.125-.255-2.235-.51-3.3-.78l-7.14-1.785-1.365 5.52s3.84.885 3.75.93a2.763 2.763 0 0 1 2.414 3.011l.001-.01-2.415 9.69c.213.049.394.106.568.174l-.028-.01-.54-.135-3.39 13.5a1.879 1.879 0 0 1-2.383 1.226l.013.004-3.765-.93L24.525 63l6.735 1.665 3.69.96-2.145 8.595 5.175 1.29 2.115-8.505c1.41.375 2.775.735 4.125 1.065l-2.115 8.475 5.175 1.29 2.13-8.58c8.835 1.665 15.465.99 18.255-6.99 2.25-6.42-.105-10.125-4.755-12.54 3.39-.72 5.925-2.955 6.615-7.545ZM57.69 58.755c-1.59 6.435-12.405 3-15.915 2.085L44.61 49.5c3.51.825 14.76 2.565 13.08 9.255Zm1.605-16.665c-1.5 5.85-10.5 2.865-13.38 2.145l2.58-10.32c2.91.72 12.315 2.085 10.8 8.175Z"
+                                                            fill="#fff"></path>
+                                                    </svg>
+                                                </span>
+                                            </div>
+                                        </div>
+                                        <span class="dropdown-icon ml-4" (click)="toggleDropdown('isDropdownOpen')">
+                                            <img src="/assets/header/down.png" [class.rotate-180]="isDropdownOpen"
+                                                class="svg-icon ">
+                                        </span>
+
+                                    </button>
+                                    <!-- Dropdown Menu -->
+                                    <div class="dropdown-continer " *ngIf="isDropdownOpen">
+                                        <!-- Arrow -->
+                                        <div class="arrow"></div>
+                                        <!-- Search Bar -->
+                                        <div class="px-3 pb-3 pt-1">
+                                            <div class="relative">
+                                                <input type="text" placeholder="Search Currencies"
+                                                    class="serch-input" />
+                                                <div class="search-svg">
+                                                    <img src="/assets/header/seache.png" class="svg-icon">
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <!-- Currency List -->
+                                        <ul class=" currency-continer ">
+                                            <li class="currency-list" *ngFor="let currency of currencies">
+                                                <span class="w-[16ch]">{{ currency.value }}</span>
+                                                <span class="flex items-center space-x-2">
+                                                    <img [src]="currency.imageUrl" [alt]="currency.symbol"
+                                                        class="w-4 h-4" />
+                                                    <span>{{ currency.symbol }}</span>
+                                                </span>
+                                            </li>
+                                        </ul>
+
+                                        <!-- Wallet Settings -->
+                                        <div class="Wallet-continer">
+                                            <button class="wallet-setting">
+                                                <img src="/assets/header/wellet.png" class="wallet-setting-img ">
+                                                Wallet Settings
+                                            </button>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <button type="button" class="wallet"><span>Wallet</span></button>
+                    </div>
+                    <section>
+                        <div class="stack x-flex-end svelte-right right-stack">
+                            <button type="button" class="search-btn" (click)="toggleDropdown('seachbutton')">
+                                <img src="/assets/header/search.png" class="svg-icon ">
+                                <span>Search</span>
+                            </button>
+                            <div class="dropdown">
+                                <button type="button" class="porfile-iocn" (click)="toggleDropdown('porfileDropOpen')">
+                                    <img src="/assets/header/porfile.png" class="svg-icon ">
+                                </button>
+                                <!-- porfile  Menu -->
+                                <div class="porfile-dropdown" *ngIf="porfileDropOpen">
+                                    <!-- Arrow -->
+                                    <div class="arrow"></div>
+                                    <div class="dropdown-scroll-content " style="max-height: inherit;">
+                                        <ng-container *ngFor="let option of profileOptions">
+                                            <button *ngIf="option.type === 'button'" type="button"
+                                                class="porfile-list w-full">
+                                                <img [src]="option.icon" [alt]="option.label" class="svg-icon">
+                                                <span>{{ option.label }}</span>
+                                            </button>
+                                        </ng-container>
+                                    </div>
+                                </div>
+
+                            </div>
+                            <button type="button" class="bell-icon" (click)="toggleDropdown('bellDropOpen')">
+                                <img src="/assets/header/bell.png" class="svg-icon ">
+                            </button>
+                            <div class="notifications-widget  svelte-6gfkw4" style="z-index: 901;" *ngIf="bellDropOpen">
+                                <div class="notifications-header svelte-12heyz0">
+                                    <div class="title svelte-12heyz0">
+                                        <svg fill="#B1BAD3" viewBox="0 0 64 64" class="svg-icon "> <title></title> <path fill="#B1BAD3" d="M56.213 38.053v10.374H7.787V38.053h6.906v-15.84c.038-8.3 5.912-15.216 13.728-16.86l.112-.02V3.467a3.466 3.466 0 0 1 6.932 0v1.866c7.954 1.668 13.84 8.624 13.84 16.956v15.844l6.908-.08ZM32 63.999c5.73 0 10.374-4.644 10.374-10.374H21.627c0 5.73 4.644 10.374 10.374 10.374H32Z"></path></svg>
+                                        <span class="font-semibold">Notifications</span>
+                                    </div>
+                                    <div class="hoverable svelte-bbyuql">
+                                        <button type="button" tabindex="0" (click)="closeDropdown()" class="close-icon">
+
+                                            <img src="/assets/header/close.png" class="svg-icon">
+                                        </button>
+                                    </div>
+                                </div>
+                                <div class="scrollY notification-list-scroll">
+                                    <div class="empty-notifications svelte-w18c7z">
+                                        <div class="empty-list spacing-compact svelte-1qm952x">
+                                            <div class="large-icon svelte-1qm952x">
+                                                <img src="/assets/header/notificatin.png" alt="notificatin" class="svg">
+
+                                            </div> <span class="font-semibold !text-white pt-4">No
+                                                Notifications Available</span> <span class="font-normal">Your
+                                                interactions will be visible here</span>
+                                        </div>
+                                    </div>
+                                    <div></div>
+                                </div>
+                            </div>
+                            <div class="dropdown">
+                                <button type="button" class="massage-icon" (click)="toggleDropdown('massageDropOpen')">
+                                    <img src="/assets/header/massage.png" class="svg-icon ">
+                                </button>
+                                <!-- massge manu -->
+                                <div class="massage-dropdown" *ngIf="massageDropOpen">
+                                    <!-- Arrow -->
+                                    <div class="arrow"></div>
+                                    <div style="max-height: inherit;">
+                                        <button type="button" tabindex="0" class="dropdown-scroll">
+                                            <img src="/assets/header/massg.png" class="svg-icon ">
+                                            <span>Chat</span></button> <button type="button" tabindex="0"
+                                            class="dropdown-scroll">
+                                            <img src="/assets/header/My Bets.png" class="svg-icon ">
+                                            <span>Bet Slip</span></button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </section>
+                    <section class="hidden">
+                        <div class="stack x-flex-end  svelte-right">
+                            <button type="button" class="sign-in" data-analytics="global-navbar-signin-button">Sign
+                                In</button> <button type="button" class="Register">Register</button>
+                        </div>
+                    </section>
+                </div>
+            </div>
+        </div>
+
+
+
+    </div>
+
+    <div *ngIf="seachbutton" class="search-overlay">
+        <!-- Container for search bar -->
+        <div class="w-[1084.91px] ml-10 mt-2 pt-[55px]" >
+            <!-- Search bar -->
+            <div class="input-wrap ">
+                <!-- Dropdown button -->
+                <button class="casion-btn z-[2000]" (click)="CosinDropdown()">
+                    Casino
+                    <img src="/assets/header/down.png" class="svg-icon" [class.rotate-180]="cosinoDropOpen">
+                </button>
+                <div class="casion-dropdown" *ngIf="cosinoDropOpen">
+                    <!-- Arrow -->
+                    <div class="arrow"></div>
+                    <div style="max-height: inherit;">
+                        <button type="button" tabindex="0" class="dropdown-scroll">
+                            <span>Casino</span></button> <button type="button" tabindex="0" class="dropdown-scroll">
+                            <span>Sports</span></button>
+                    </div>
                 </div>
 
-                <section>
-                    <div
-                        class="stack x-flex-end svelte-right">
+                <!-- Search icon -->
+                <svg fill="currentColor" viewBox="0 0 64 64" class="svg-icon  search-icon" >
+                    <title></title>
+                    <path fill-rule="evenodd" clip-rule="evenodd"
+                        d="M10.266 3.893a23.1 23.1 0 1 1 25.668 38.414A23.1 23.1 0 0 1 10.266 3.893Zm5.112 30.764a13.9 13.9 0 1 0 15.444-23.114 13.9 13.9 0 0 0-15.444 23.114ZM38.55 46.33a28.002 28.002 0 0 0 7.78-7.78L64 56.22 56.22 64 38.55 46.33Z">
+                    </path>
+                </svg>
+
+                <!-- Search input -->
+                <input type="text" placeholder="Search your game" class="focus:outline-none placeholder:text-[#53646F] " />
+
+                <!-- Close button -->
+                <button class="ml-3 text-gray-500 hover:text-white" (click)="closeDropdown()">
+                    <svg fill="currentColor" viewBox="0 0 64 64" class="svg-icon ">
+                        <title></title>
+                        <path
+                            d="m54.827 16.187-7.014-7.014L32 24.987 16.187 9.173l-7.014 7.014L24.987 32 9.173 47.813l7.014 7.014L32 39.013l15.813 15.814 7.014-7.014L39.013 32l15.814-15.813Z">
+                        </path>
+                    </svg>
+                </button>
+            </div>
+        </div>
+
+        <!-- Search validation message -->
+        <div data-popper-placement="bottom"
+            style="z-index: 1450; position: fixed; inset: 0px auto auto 0px; margin: 0px; transform: translate3d(282.5px, 115.5px, 0px); width: 1084.69px;">
+            <div class="results-wrapper scrollY svelte-15c4jgu" >
+                <div class="exception-wrap svelte-4te59m"><span
+                        class="font-semibold text-[#b1bad3] text-[.875rem] svelte-17v69ua"
+                        >Search requires at least 3 characters.</span></div>
+            </div>
+        </div>
+
+    </div>
+</div>
+
+
+<!-- mobile view -->
+<div class="md:hidden lg:hidden">
+    <div style="--header-zIndex: 100; padding-right: 6px;" class="navigation svelte-1nt2705 mobile">
+        <div class="group variant-undefined svelte-ntdiml pr-1.5"
+            style="height: 100%;justify-content:center;position:relative;">
+            <div class="ctainer svelte-ntdiml">
+                <div class="navigation-mobile svelte-1nt2705 authenticated">
+                    <div class="stack x-flex-start y-center gap-smaller ml-1">
+                        <div class="mobile">
+                            <div class="image-focus svelte-1bax0ph">
+                                <a data-test="home-button"
+                                    class="inline-flex relative items-center gap-2 justify-center rounded-sm font-semibold whitespace-nowrap ring-offset-background transition disabled:pointer-events-none disabled:opacity-50 focus-visible:outline-2 focus-visible:outline-offset-2 active:scale-[0.98] bg-transparent text-white betterhover:hover:bg-transparent betterhover:hover:text-white focus-visible:outline-none text-sm leading-none [&amp;_svg]:text-grey-200 [&amp;:hover>svg]:text-white !bg-transparent !text-white [&amp;_svg]:!text-white"
+                                    href="/" data-sveltekit-reload="off" data-sveltekit-preload-data="off"
+                                    data-sveltekit-noscroll="off" aria-label="Home">
+                                    <div class="wrap normal svelte-1y9pixq" data-content=""><svg
+                                            xmlns="http://www.w3.org/2000/svg" width="16" height="25"
+                                            class="svelte-md2ju7">
+                                            <title>Logo</title>
+                                            <path
+                                                d="M3.1361,6.9505 C3.1241,3.7165 5.1921,1.9235 8.9901,1.9095 C11.7261,1.8995 12.2131,3.6885 12.2161,4.3385 C12.2201,5.5835 10.4541,6.9045 10.4541,6.9045 C10.4541,6.9045 10.5521,7.6795 12.0641,7.6735 C13.5751,7.6685 15.0481,6.6695 15.0391,4.1715 C15.0281,1.3015 12.0241,-0.0105 9.0521,0.0005 C6.5671,0.0095 -0.0239,0.3585 0.0001,6.9035 C0.0211,12.7185 10.9851,13.2305 10.9981,16.9535 C11.0131,20.9955 6.4751,22.0845 4.9471,22.0905 C3.4191,22.0965 2.7891,20.9985 2.7871,20.3965 C2.7751,17.1225 6.0321,16.2105 6.0321,16.2105 C6.0311,15.9695 5.8411,14.8785 4.5801,14.8835 C1.3311,14.8945 0.0361,17.6895 0.0461,20.4195 C0.0541,22.7395 1.6951,24.1895 4.1721,24.1795 C8.9071,24.1635 14.2471,21.8505 14.2281,16.7175 C14.2111,11.9175 3.1501,10.6625 3.1361,6.9505"
+                                                fill="currentColor"></path>
+                                        </svg></div>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="balance-toggle svelte-51jofe" data-test="balance-toggle">
+                        <div class="coin-toggle svelte-1hjozqf mbl-coin-toggle">
+                            <div class="wrapper currency-view-compact svelte-1hjozqf">
+                                <div class="dropdown">
+                                    <button type="button" class="OpenDropdown-btn">
+                                        <div class="wrap">
+                                            <div class="currency svelte" role="presentation">
+                                                <span class="content svelte">
+                                                    <span class="nmric-num">0.00000000</span>
+                                                </span>
+                                                <span class="nmric-num" title="btc">
+                                                    <svg fill="none" viewBox="0 0 96 96" class="svg-icon ">
+                                                        <title></title>
+                                                        <path
+                                                            d="M95.895 48.105C95.895 74.557 74.451 96 48 96 21.548 96 .105 74.556.105 48.105.105 21.653 21.548.21 48 .21c26.451 0 47.895 21.443 47.895 47.895Z"
+                                                            fill="#F7931A"></path>
+                                                        <path
+                                                            d="M69.525 42.18c.93-6.27-3.84-9.645-10.38-11.895l2.115-8.505-5.16-1.29-2.1 8.28c-1.365-.345-2.76-.66-4.14-.975l2.1-8.295-5.175-1.29-2.115 8.49c-1.125-.255-2.235-.51-3.3-.78l-7.14-1.785-1.365 5.52s3.84.885 3.75.93a2.763 2.763 0 0 1 2.414 3.011l.001-.01-2.415 9.69c.213.049.394.106.568.174l-.028-.01-.54-.135-3.39 13.5a1.879 1.879 0 0 1-2.383 1.226l.013.004-3.765-.93L24.525 63l6.735 1.665 3.69.96-2.145 8.595 5.175 1.29 2.115-8.505c1.41.375 2.775.735 4.125 1.065l-2.115 8.475 5.175 1.29 2.13-8.58c8.835 1.665 15.465.99 18.255-6.99 2.25-6.42-.105-10.125-4.755-12.54 3.39-.72 5.925-2.955 6.615-7.545ZM57.69 58.755c-1.59 6.435-12.405 3-15.915 2.085L44.61 49.5c3.51.825 14.76 2.565 13.08 9.255Zm1.605-16.665c-1.5 5.85-10.5 2.865-13.38 2.145l2.58-10.32c2.91.72 12.315 2.085 10.8 8.175Z"
+                                                            fill="#fff"></path>
+                                                    </svg>
+                                                </span>
+                                            </div>
+                                        </div>
+                                        <span class="dropdown-icon ml-4" (click)="toggleDropdown('isDropdownOpen')">
+                                            <img src="/assets/header/down.png" [class.rotate-180]="isDropdownOpen"
+                                                class="svg-icon ">
+                                        </span>
+
+                                    </button>
+                                    <!-- Dropdown Menu -->
+                                    <div class="dropdown-continer " *ngIf="isDropdownOpen">
+                                        <!-- Arrow -->
+                                        <div class="arrow"></div>
+                                        <!-- Search Bar -->
+                                        <div class="px-3 pb-3 pt-1">
+                                            <div class="relative">
+                                                <input type="text" placeholder="Search Currencies"
+                                                    class="serch-input" />
+                                                <div class="search-svg">
+                                                    <img src="/assets/header/seache.png" class="svg-icon">
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <!-- Currency List -->
+                                        <ul class=" currency-continer ">
+                                            <li class="currency-list" *ngFor="let currency of currencies">
+                                                <span class="w-[16ch]">{{ currency.value }}</span>
+                                                <span class="flex items-center space-x-2">
+                                                    <img [src]="currency.imageUrl" [alt]="currency.symbol"
+                                                        class="w-4 h-4" />
+                                                    <span>{{ currency.symbol }}</span>
+                                                </span>
+                                            </li>
+                                        </ul>
+
+                                        <!-- Wallet Settings -->
+                                        <div class="Wallet-continer">
+                                            <button class="wallet-setting">
+                                                <img src="/assets/header/wellet.png" class="wallet-setting-img ">
+                                                Wallet Settings
+                                            </button>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
                         <button type="button" tabindex="0"
-                            class="search-btn">
+                            class="inline-flex relative rounded-tr-[.25rem] rounded-br-[.25rem] items-center gap-2 justify-center rounded-sm font-semibold whitespace-nowrap ring-offset-background transition disabled:pointer-events-none disabled:opacity-50 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 active:scale-[0.98] bg-blue-500 text-white betterhover:hover:bg-blue-600 betterhover:hover:text-white focus-visible:outline-white text-sm leading-none shadow-md py-[0.8125rem] px-[1rem]">
                             <svg fill="currentColor" viewBox="0 0 64 64" class="svg-icon ">
                                 <title></title>
                                 <path fill-rule="evenodd" clip-rule="evenodd"
-                                    d="M10.266 3.893a23.1 23.1 0 1 1 25.668 38.414A23.1 23.1 0 0 1 10.266 3.893Zm5.112 30.764a13.9 13.9 0 1 0 15.444-23.114 13.9 13.9 0 0 0-15.444 23.114ZM38.55 46.33a28.002 28.002 0 0 0 7.78-7.78L64 56.22 56.22 64 38.55 46.33Z">
+                                    d="M45.71 13.349v.024c0 4.316-2.076 8.146-5.32 10.57H24.61l-.034-.024a13.19 13.19 0 0 1-5.286-10.57c0-7.296 5.914-13.21 13.21-13.21 7.296 0 13.21 5.914 13.21 13.21Zm4.806 22.844H62.23v-3.19a5.31 5.31 0 0 0-5.3-5.31H10.14a5.624 5.624 0 0 1-5.24-5.608v-.014a4.914 4.914 0 0 1 0-.522v.012a5.546 5.546 0 0 1 5.51-5.11h3.85a17.489 17.489 0 0 1-.26-2.88v-.01H7.06A7.07 7.07 0 0 0 0 20.63v37.1a6.14 6.14 0 0 0 6.13 6.13h50.79a5.31 5.31 0 0 0 5.31-5.31v-3.19H50.5c-.092.004-.2.006-.31.006-5.296 0-9.59-4.294-9.59-9.59s4.294-9.59 9.59-9.59c.108 0 .218.002.326.006Zm4.733-22.63v2.89h-4.516a18.36 18.36 0 0 0 .267-2.89h4.25Zm-4.516 2.89-.02.11.017-.11h.003ZM8.66 21.983c0-.98.792-1.774 1.77-1.78h4.91l.044.122a17.843 17.843 0 0 0 1.956 3.618h-6.91a1.77 1.77 0 0 1-1.77-1.77v-.19ZM64 39.943v11.67l-13.488-.002a5.84 5.84 0 0 1-6.094-5.834 5.84 5.84 0 0 1 6.082-5.834H64Zm-13.06 8.5a2.67 2.67 0 0 0 2.67-2.66v-.01a2.67 2.67 0 1 0-2.67 2.67Zm-1.26-28.24a18.188 18.188 0 0 1-1.998 3.74h-.002l-.038.058.04-.058H58v-3.74h-8.32Z">
                                 </path>
-                            </svg> 
-                       <span>Search</span>
-                        </button>
-                        <div class="dropdown">
-                            <button type="button" tabindex="0"
-                                class="porfile-iocn">
-                                <svg fill="currentColor" viewBox="0 0 64 64" class="svg-icon ">
-                                    <title></title>
-
-                                    <path fill-rule="evenodd" clip-rule="evenodd"
-                                        d="M48.322 30.536A19.63 19.63 0 0 0 51.63 19.63 19.619 19.619 0 0 0 32 0a19.63 19.63 0 1 0 16.322 30.536ZM42.197 43.97a26.63 26.63 0 0 0 8.643-5.78A19.84 19.84 0 0 1 64 56.86V64H0v-7.14a19.84 19.84 0 0 1 13.16-18.67 26.63 26.63 0 0 0 29.037 5.78Z">
-                                    </path>
-                                </svg>
-
-                            </button>
-                        </div>
-                        <button type="button" tabindex="0"
-                            class="bell-icon">
-                            <svg fill="currentColor" viewBox="0 0 64 64" class="svg-icon ">
-                                <title></title>
-                                <path
-                                    d="M56.213 38.053v10.374H7.787V38.053h6.906v-15.84c.038-8.3 5.912-15.216 13.728-16.86l.112-.02V3.467a3.466 3.466 0 0 1 6.932 0v1.866c7.954 1.668 13.84 8.624 13.84 16.956v15.844l6.908-.08ZM32 63.999c5.73 0 10.374-4.644 10.374-10.374H21.627c0 5.73 4.644 10.374 10.374 10.374H32Z">
-                                </path>
-                            </svg>
-                        </button>
-                        <div class="dropdown">
-                            <button type="button" tabindex="0"
-                                class="massage-icon"
-                                aria-label="Open Dropdown" data-button-root="">
-                                <svg fill="currentColor" viewBox="0 0 64 64" class="svg-icon " style="">
-                                    <title></title>
-                                    <path fill-rule="evenodd" clip-rule="evenodd"
-                                        d="M2.998.025h38.97a2.998 2.998 0 0 1 2.997 2.998v32.974a2.998 2.998 0 0 1-2.998 2.998H20.484L3.997 49.986V38.995h-1A2.998 2.998 0 0 1 0 35.997V3.023A2.998 2.998 0 0 1 2.998.025ZM51.96 8.02h8.993A2.998 2.998 0 0 1 64 11.017v52.958h-4.996a5.885 5.885 0 0 0-5.535-4.996 5.886 5.886 0 0 0-5.506 4.996h-7.994a5.886 5.886 0 0 0-5.485-4.996 5.896 5.896 0 0 0-5.506 4.996h-4.996V45.99h20.254a7.724 7.724 0 0 0 7.724-7.723V8.019Z">
-                                    </path>
-                                </svg>
-                            </button> 
-                        </div>
+                            </svg></button>
                     </div>
-                </section>
-                <section  class="hidden">
-                    <div
-                        class="stack x-flex-end  svelte-right">
-                        <button type="button" tabindex="0"
-                            class="sign-in"
-                            data-testid="login-link" data-test="login-link" data-analytics="global-navbar-signin-button"
-                            data-button-root="">Sign In</button> <button type="button" tabindex="0"
-                            class="Register"
-                            data-testid="register-link" data-test="register-link"
-                            data-analytics="global-navbar-register-button" data-content=""
-                            data-button-root="">Register</button>
+                    <section>
+                        <div
+                            class="stack stack-right y-center gap-none padding-none direction-horizontal padding-left-auto padding-top-auto padding-bottom-auto padding-right-auto svelte-1cd1boi">
+                            <div class="dropdown svelte-1iau4lg transparent">
+                                <button type="button" class="porfile-iocn" (click)="toggleDropdown('porfileDropOpen')">
+                                    <img src="/assets/header/porfile.png" class="svg-icon ">
+                                </button>
+                                <!-- porfile  Menu -->
+                                <div class="porfile-dropdown" *ngIf="porfileDropOpen">
+                                    <!-- Arrow -->
+                                    <div class="arrow"></div>
+                                    <div class="dropdown-scroll-content " style="max-height: inherit;">
+                                        <ng-container *ngFor="let option of profileOptions">
+                                            <button *ngIf="option.type === 'button'" type="button"
+                                                class="porfile-list w-full">
+                                                <img [src]="option.icon" [alt]="option.label" class="svg-icon">
+                                                <span>{{ option.label }}</span>
+                                            </button>
+                                        </ng-container>
+                                    </div>
+                                </div>
+                            </div>
+                            <button type="button" class="bell-icon" (click)="toggleDropdown('bellDropOpen')">
+                                <img src="/assets/header/bell.png" class="svg-icon ">
+                            </button>
+                            <div class="notifications-widget  svelte-6gfkw4" style="z-index: 901;" *ngIf="bellDropOpen">
+                                <div class="notifications-header svelte-12heyz0">
+                                    <div class="title svelte-12heyz0">
+                                        <img src="/assets/header/bell.png" class="svg-icon">
+                                        <span class="font-semibold">Notifications</span>
+                                    </div>
+                                    <div class="hoverable svelte-bbyuql">
+                                        <button type="button" tabindex="0" (click)="closeDropdown()" class="close-icon">
+
+                                            <img src="/assets/header/close.png" class="svg-icon">
+                                        </button>
+                                    </div>
+                                </div>
+                                <div class="scrollY notification-list-scroll">
+                                    <div class="empty-notifications svelte-w18c7z">
+                                        <div class="empty-list spacing-compact svelte-1qm952x">
+                                            <div class="large-icon svelte-1qm952x">
+                                                <img src="/assets/header/notificatin.png" alt="notificatin" class="svg">
+
+                                            </div> <span class="font-semibold">No
+                                                Notifications Available</span> <span class="font-normal">Your
+                                                interactions will be visible here</span>
+                                        </div>
+                                    </div>
+                                    <div></div>
+                                </div>
+                            </div>
                         </div>
-                </section>
+                    </section>
+                </div>
             </div>
         </div>
     </div>
 </div>
+

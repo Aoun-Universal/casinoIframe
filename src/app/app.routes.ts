@@ -1,4 +1,5 @@
 import { Routes } from '@angular/router';
+import { RegisterComponent } from './modal/register/register.component';
 
 export const routes: Routes = [
   {
@@ -14,10 +15,23 @@ export const routes: Routes = [
         loadComponent: () => import('./pages/home/home.component').then(c => c.HomeComponent),
       },
       {
-        path: 'vip-cloud',
-        loadComponent: () => import('./pages/vip-cloud/vip-cloud.component').then(c => c.VipCloudComponent),
+        path: 'drake',
+        loadComponent: () => import('./pages/drake/drake.component').then(c => c.DrakeComponent),
+      },
+
+      {
+        path: 'responsible-gambling',
+        loadComponent: () => import('./pages/responsible-gambling/responsible-gambling.component').then(c => c.ResponsibleGamblingComponent),
+      },
+      {
+        path:'sport-market',
+        loadComponent: () => import('./pages/sports-markets/sports-markets.component').then(c=>c.SportsMarketsComponent)
       }
     ]
+  },
+  {
+    path: 'login',
+    component: RegisterComponent
   },
   {
     path: '**',

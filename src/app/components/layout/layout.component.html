@@ -1,11 +1,15 @@
 <div class="main-container">
-    <div class="sidebar"><app-sidebar></app-sidebar></div>
+  <div class="sidebar">
+    <app-sidebar></app-sidebar>
+  </div>
 
-    <div class="content-container">
-        <app-header></app-header>
-        <main class="page-wrapper" [ngClass]="{'!pt-0 !h-[calc(100vh-60px)]':currentRoute === '/'}">
-            <app-content></app-content>
-            <app-footer></app-footer>
-        </main>
-    </div>
+  <div class="content-container">
+    <app-header></app-header>
+    <main [ngClass]="{'!pt-0 !h-[calc(100vh-60px)]':currentRoute === '/' || currentRoute === '/drake' }"
+          class="page-wrapper">
+      <app-content></app-content>
+      <app-mobile-navigation></app-mobile-navigation>
+      <app-footer></app-footer>
+    </main>
+  </div>
 </div>
