@@ -1,5 +1,5 @@
-import { CommonModule } from '@angular/common';
-import { Component, OnInit } from '@angular/core';
+import { CommonModule, DOCUMENT } from '@angular/common';
+import { Component, HostListener, Inject, OnInit } from '@angular/core';
 import { NavigationEnd, Router, RouterLink } from '@angular/router';
 import { filter } from 'rxjs';
 import { ToggleService } from '../../services/toggle.service';
@@ -13,15 +13,31 @@ import { ToggleService } from '../../services/toggle.service';
 })
 export class SidebarComponent implements OnInit {
   openBar: any;
-  isSidebar = false
+  isSidebar = true
+  isMobileSidebar=false;
   routerPath:any
-  constructor(private router:Router, private toggle:ToggleService){}
+  smScreen:boolean=false;
+  xlScreen:boolean=true;
+
+  constructor(private router:Router, private toggle:ToggleService, @Inject(DOCUMENT) private document: Document){}
   toggleOpen(name: string) {
-  
     if (this.openBar === name) {
       this.openBar = '';
     } else {
       this.openBar = name;
+    }
+  }
+  @HostListener('window:resize')
+  setSidebar() {
+    const windowRef = this.document.defaultView;
+    if (windowRef) {
+      if (windowRef.innerWidth > 768) {
+        this.smScreen = false;
+        this.xlScreen = true;
+      } else {
+        this.smScreen = true;
+        this.xlScreen = false;
+      }
     }
   }
   ngOnInit(): void {
@@ -34,11 +50,14 @@ export class SidebarComponent implements OnInit {
          
       });
     this.routerPath = this.router.url;
-     this.toggle.getSidebar().subscribe((value:boolean)=>{
-       this.isSidebar = value
-     })
+    this.setSidebar()
+    this.toggle.sidebarState$.subscribe((state)=>{
+      this.isSidebar=state
+    })
+    
   }
   toggleSidebar(){
-    this.toggle.setSidebar(!this.isSidebar)
-  }
+   this.toggle.toggleSidebar()
+
+}
 }

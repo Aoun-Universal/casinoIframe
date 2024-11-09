@@ -1,14 +1,15 @@
-<div class="sidebar-wrapper" [ngClass]="{'mobile-view-show':isSidebar}">
-  <div class="sidebar-header">
-    <button class="menu-button">
+
+<div class="sidebar-wrapper" [ngClass]="{'!w-[60px] transition-all duration-200':!isSidebar}">
+  <div class="sidebar-header" [ngClass]="{'flex-col':!isSidebar}">
+    <button class="menu-button" (click)="toggleSidebar()">
       <svg class="svg-icon" fill="white" height="64" viewBox="0 0 64 64" width="64">
         <path clip-rule="evenodd" d="M0 0h64v13H0V0Zm0 25.5h64v13H0v-13ZM64 51H0v13h64V51Z" fill-rule="evenodd"></path>
       </svg>
     </button>
-    <div class="link-wrap">
-      <a class="header-button casino"><span class="text-[14px]">CASINO</span></a>
+    <div class="link-wrap" [ngClass]="{'flex-col !items-end':!isSidebar}">
+      <a class="header-button casino" [ngClass]="{'casino-btn-mobile':!isSidebar}"><span class="text-[14px]" *ngIf="isSidebar">CASINO</span></a>
       <div class="image-loader"></div>
-      <a class="header-button sports" routerLink="sport-market"><span class="text-[14px]">SPORTS</span></a>
+      <a class="header-button sports" [ngClass]="{'sport-btn-mobile':!isSidebar}" routerLink="sport-market"><span class="text-[14px]" *ngIf="isSidebar">SPORTS</span></a>
       <div class="image-loader"></div>
     </div>
   </div>
@@ -36,7 +37,7 @@
   </div>
 
 
-  <div class="main-container-content">
+  <div class="main-container-content" [ngClass]="{'!p-2':!isSidebar}">
     <!-- profile start  -->
     <div class="sidebar-content-wrapper">
 
@@ -261,7 +262,7 @@
 
       <div class="dropdown-container">
         <div>
-          <div class="nav-item" (click)="toggleOpen('profile')" [ngClass]="{'dropdown-item':openBar === 'profile'}">
+          <div data-tooltip-target="tooltip-default" class="nav-item" (click)="toggleOpen('profile')" [ngClass]="{'dropdown-item':openBar === 'profile'}">
             <div class="title-wrapper">
               <svg fill="currentColor" viewBox="0 0 64 64" class="svg-icon ">
                 <title></title>
@@ -269,17 +270,22 @@
                   d="M48.322 30.536A19.63 19.63 0 0 0 51.63 19.63 19.619 19.619 0 0 0 32 0a19.63 19.63 0 1 0 16.322 30.536ZM42.197 43.97a26.63 26.63 0 0 0 8.643-5.78A19.84 19.84 0 0 1 64 56.86V64H0v-7.14a19.84 19.84 0 0 1 13.16-18.67 26.63 26.63 0 0 0 29.037 5.78Z">
                 </path>
               </svg>
-              <div>Profile</div>
+              <div *ngIf="isSidebar">Profile</div>
             </div>
-            <div class="svg-container" [ngClass]="{'active-svg':openBar === 'profile'}">
-              <svg fill="#fff" viewBox="0 0 64 64" class="svg-icon" style="transform: rotate(270deg); ">
+            <div *ngIf="isSidebar" class="svg-container" [ngClass]="{'active-svg':openBar === 'profile'}">
+              <svg  fill="#fff" viewBox="0 0 64 64" class="svg-icon" style="transform: rotate(270deg); ">
                 <title></title>
                 <path
                   d="M32.271 49.763 9.201 26.692l6.928-6.93 16.145 16.145 16.144-16.144 6.93 6.929-23.072 23.07h-.005Z">
                 </path>
               </svg>
             </div>
+            <svg *ngIf="!isSidebar" fill="currentColor" viewBox="0 0 64 64" class="svg-icon " style="height: 0.625rem;"> <title></title> <path d="m26.307 53.995 20.998-20.997L26.307 12 20 18.306 34.694 33 20.001 47.694 26.307 54v-.005Z"></path></svg>
           </div>
+          <div *ngIf="!isSidebar" id="tooltip-default" role="tooltip" class="absolute z-10 invisible inline-block px-3 py-2 text-sm font-medium text-white transition-opacity duration-300 bg-gray-900 rounded-lg shadow-sm opacity-0 tooltip dark:bg-gray-700">
+            Tooltip content
+            <div class="tooltip-arrow" data-popper-arrow></div>
+        </div>
           <!-- dropdown inner content -->
           <div class="inner-content" [ngClass]="{'active-dropdown':openBar === 'profile'}">
             <div class="hr-border"></div>
@@ -376,16 +382,17 @@
                   d="M28.651 60.5H11.883c-1.85 0-3.347-1.5-3.347-3.348V37.036c-1.85 0-3.348-1.5-3.348-3.348v-6.722c0-1.85 1.5-3.348 3.348-3.348h20.116V60.5Zm26.813-36.884H35.347V60.5h16.768c1.85 0 3.349-1.5 3.349-3.348V37.036c1.85 0 3.348-1.5 3.348-3.348v-6.722c0-1.85-1.5-3.348-3.348-3.348v-.002ZM45.416 3.5C38.005 3.5 32 9.508 32 16.918h13.418c1.85 0 3.349-1.5 3.349-3.348V6.848c0-1.85-1.5-3.348-3.349-3.348Zm-26.836 0c-1.85 0-3.348 1.5-3.348 3.348v6.722c0 1.85 1.5 3.348 3.348 3.348H32C32 9.506 25.99 3.5 18.58 3.5Z">
                 </path>
               </svg>
-              <div>Promotions</div>
+              <div *ngIf="isSidebar">Promotions</div>
             </div>
-            <div class="svg-container" [ngClass]="{'active-svg':openBar === 'promotions'}">
-              <svg fill="#fff" viewBox="0 0 64 64" class="svg-icon" style="transform: rotate(270deg); ">
+            <div *ngIf="isSidebar" class="svg-container" [ngClass]="{'active-svg':openBar === 'profile'}">
+              <svg  fill="#fff" viewBox="0 0 64 64" class="svg-icon" style="transform: rotate(270deg); ">
                 <title></title>
                 <path
                   d="M32.271 49.763 9.201 26.692l6.928-6.93 16.145 16.145 16.144-16.144 6.93 6.929-23.072 23.07h-.005Z">
                 </path>
               </svg>
             </div>
+            <svg *ngIf="!isSidebar" fill="currentColor" viewBox="0 0 64 64" class="svg-icon " style="height: 0.625rem;"> <title></title> <path d="m26.307 53.995 20.998-20.997L26.307 12 20 18.306 34.694 33 20.001 47.694 26.307 54v-.005Z"></path></svg>
           </div>
           <!-- dropdown inner content -->
           <div class="inner-content" [ngClass]="{'active-dropdown':openBar === 'promotions'}">
@@ -437,7 +444,7 @@
                 d="M55.543 19.096a8.353 8.353 0 0 0-8.296 7.437l-.004.038-6.464 1.73a8.172 8.172 0 0 0-3.56-2.641l-.057-.018v-7.05c3.127-1.262 5.293-4.272 5.293-7.79 0-4.628-3.75-8.38-8.38-8.38a8.378 8.378 0 0 0-8.378 8.38 8.383 8.383 0 0 0 5.237 7.771l.055.02v6.837a7.744 7.744 0 0 0-1.959 1.103l.018-.014-12.29-6.703a6.611 6.611 0 0 0 0-.736v.018c0-4.629-3.75-8.38-8.379-8.38A8.378 8.378 0 0 0 0 19.098a8.378 8.378 0 0 0 8.38 8.379 8.183 8.183 0 0 0 5.538-2.16l-.006.005 11.916 6.57a7.87 7.87 0 0 0 .002 1.415l-.002-.03a8.528 8.528 0 0 0 .66 3.276l-.021-.056-9.311 9.043a8.107 8.107 0 0 0-3.43-.772h-.002l-.16-.002a8.405 8.405 0 0 0-8.405 8.406 8.405 8.405 0 0 0 8.405 8.405 8.405 8.405 0 0 0 8.406-8.405 7.947 7.947 0 0 0-.63-3.35l.02.052 9.31-9.044a8.057 8.057 0 0 0 3.414.744h.02a7.938 7.938 0 0 0 2.318-.36l-.056.015 2.66 4.124a8.25 8.25 0 0 0-1.49 4.734v.026a8.405 8.405 0 0 0 8.405 8.405 8.405 8.405 0 0 0 8.405-8.405 8.405 8.405 0 0 0-8.405-8.405 7.84 7.84 0 0 0-1.836.223l.054-.012-2.927-4.443a7.84 7.84 0 0 0 1.114-3.262l.003-.035 6.49-1.73A8.378 8.378 0 0 0 64 27.527a8.377 8.377 0 0 0-8.378-8.38h-.082.004v-.051Z">
               </path>
             </svg>
-            <div>Affiliate</div>
+            <div *ngIf="isSidebar">Affiliate</div>
           </div>
         </div>
 
@@ -449,7 +456,7 @@
                 d="M64.688 54.312c37.121-4.57 30.353-38.63 30.353-38.63H78.354c.628-4.697.991-10.138 1.005-15.665V0H16.64c.014 5.54.377 10.982 1.073 16.32l-.068-.641H.958S-5.807 49.69 31.31 54.309c2.62 3.87 5.51 7.244 8.743 10.254l.034.031c-.411 5.579-2.65 21.624-15.59 21.624h-7.861V96h62.719v-9.782l-10.88-.367C58.192 83.52 56.272 69.67 55.905 64.594a59.158 59.158 0 0 0 8.647-10.08l.13-.205.007.003ZM75.43 30.267l2.194-5.44h8.503c-.33 4.638-1.995 8.831-4.611 12.26l.04-.055a22.158 22.158 0 0 1-10.542 6.682l-.158.038c1.735-3.789 3.302-8.283 4.457-12.94l.117-.548v.003Zm-60.984 6.765a22.653 22.653 0 0 1-4.567-12.134l-.003-.072h8.41l2.287 5.441c1.395 5.322 3.051 9.882 5.064 14.246l-.22-.531c-4.409-1.235-8.143-3.665-10.947-6.92l-.024-.027v-.003Zm40.78 3.977-6.402-3.11a1.712 1.712 0 0 0-.823-.205c-.301 0-.586.075-.833.212l.01-.003-6.4 3.11a1.604 1.604 0 0 1-2.243-1.656v.006l1.005-7.176a1.547 1.547 0 0 0-.411-1.282l-4.846-5.256a1.56 1.56 0 0 1 .813-2.606h.01l7.176-1.326c.498-.055.916-.35 1.139-.768l.003-.007 3.429-6.401a1.555 1.555 0 0 1 2.74-.007l.003.007 3.428 6.4c.216.416.617.71 1.09.776h.007l7.176 1.326a1.555 1.555 0 0 1 .823 2.606l-5.03 5.256a1.548 1.548 0 0 0-.425 1.07c0 .075.007.147.014.22v-.008l1.005 7.176a1.6 1.6 0 0 1-2.475 1.646l.006.004.01-.004Z">
               </path>
             </svg>
-            <div>VIP Club</div>
+            <div *ngIf="isSidebar">VIP Club</div>
           </div>
         </div>
 
@@ -461,7 +468,7 @@
                 d="M16 2.666v48c0 1.6-1.066 2.666-2.666 2.666-1.6 0-2.666-1.066-2.666-2.666V8h-8v45.334c0 4.534 3.466 8 8 8h50.666V2.668H16v-.002ZM34.666 48H24V26.666h10.666V48Zm18.668 0H40v-8h13.334v8Zm0-13.334H40v-8h13.334v8Zm0-13.332H24v-8h29.334v8Z">
               </path>
             </svg>
-            <div>Blog</div>
+            <div *ngIf="isSidebar">Blog</div>
           </div>
         </div>
 
@@ -473,7 +480,7 @@
                 d="M32 1.916c-.288-.01-.628-.016-.97-.016C14.254 1.9.586 15.206.002 31.84L0 31.894A28.655 28.655 0 0 0 7.476 51.15l-.02-.024c-.688 4.028-1.89 7.636-3.552 10.974l.102-.228c4.634-.396 8.878-1.73 12.654-3.81l-.164.082c4.474 2.35 9.774 3.728 15.398 3.728h.112H32c.3.01.654.016 1.008.016 16.768 0 30.428-13.31 30.99-29.942l.002-.052C63.414 15.206 49.746 1.902 32.97 1.902c-.342 0-.68.006-1.018.016l.05-.002H32ZM16.138 37.604a5.948 5.948 0 1 1 0-11.896 5.948 5.948 0 0 1 0 11.896Zm15.862 0a5.948 5.948 0 1 1 0-11.896 5.948 5.948 0 0 1 0 11.896Zm15.862 0a5.948 5.948 0 1 1 0-11.896 5.948 5.948 0 0 1 0 11.896Z">
               </path>
             </svg>
-            <div>Forum</div>
+            <div *ngIf="isSidebar">Forum</div>
           </div>
         </div>
 
@@ -492,16 +499,17 @@
                   d="M13.081 3.816 0 24.548l4.958 3.129 13.08-20.733-4.957-3.128Zm11.17 4.493h15.987l17.587 25.314-27.446-17.586-5.596 8.793c-1.332 2.398-4.263 2.931-6.395 1.599-1.599-1.066-2.398-3.198-2.132-5.063 0-.533.267-1.066.533-1.599L24.25 8.31Zm-3.465 22.65c-1.6 0-3.198-.533-4.53-1.333-1.332-.799-2.398-1.865-2.931-3.197L9.86 32.025c.266 0 6.661.266 8.526 5.062 1.6 0 2.932 0 4.53 1.066 1.333.8 2.665 2.398 3.198 3.997 1.599 0 3.198.533 4.53 1.333 4.263 2.398 5.596 7.994 2.931 11.99l-.533 1.066 4.796 2.931c2.132 1.333 5.063.8 6.396-1.598a4.861 4.861 0 0 0-.8-5.863l2.132 1.333c2.132 1.332 5.063.533 6.395-1.6 1.332-2.13.533-5.062-1.599-6.394l1.333.8c2.131 1.331 5.062.799 6.395-1.6 1.332-2.131.8-5.062-1.6-6.395L30.646 22.165l-2.931 4.797c-1.066 2.398-3.997 3.997-6.928 3.997Zm8.26 15.721c-2.422-1.453-5.283-.265-6.385.964 1.214-1.865.387-4.53-1.61-6.026-.799-.534-1.598-.8-2.664-.8-1.573 0-3.145.774-3.957 2.067 1.281-2.126.738-5.014-1.372-6.597-.8-.533-1.599-.8-2.665-.8-1.599 0-3.197.8-3.997 2.133l-.8 1.065-2.131 3.464c-1.332 2.132-.8 5.063 1.599 6.662.8.533 1.599.8 2.664.8 1.399 0 2.797-.612 3.66-1.657-.115.218-.195.445-.195.59-1.066 2.665 0 5.33 2.398 6.396 2.197.976 4.841.163 6.089-1.824-.92 2.059-.284 4.628 1.905 6.087.799.533 1.598.8 2.664.8 1.6 0 3.198-.8 3.997-2.132l2.665-4.53c1.332-2.398.266-5.33-1.865-6.662ZM45.819 7.006l4.958-3.128L64 24.835l-4.958 3.128L45.82 7.006Z">
                 </path>
               </svg>
-              <div>Sponsorships</div>
+              <div *ngIf="isSidebar">Sponsorships</div>
             </div>
-            <div class="svg-container" [ngClass]="{'active-svg':openBar === 'sponsorships'}">
-              <svg fill="#fff" viewBox="0 0 64 64" class="svg-icon" style="transform: rotate(270deg); ">
+            <div *ngIf="isSidebar" class="svg-container" [ngClass]="{'active-svg':openBar === 'profile'}">
+              <svg  fill="#fff" viewBox="0 0 64 64" class="svg-icon" style="transform: rotate(270deg); ">
                 <title></title>
                 <path
                   d="M32.271 49.763 9.201 26.692l6.928-6.93 16.145 16.145 16.144-16.144 6.93 6.929-23.072 23.07h-.005Z">
                 </path>
               </svg>
             </div>
+            <svg *ngIf="!isSidebar" fill="currentColor" viewBox="0 0 64 64" class="svg-icon " style="height: 0.625rem;"> <title></title> <path d="m26.307 53.995 20.998-20.997L26.307 12 20 18.306 34.694 33 20.001 47.694 26.307 54v-.005Z"></path></svg>
           </div>
           <!-- dropdown inner content -->
           <div class="inner-content" [ngClass]="{'active-dropdown':openBar === 'sponsorships'}">
@@ -646,7 +654,7 @@
                 d="M32 0 5.654 11.306C5.654 52.692 32 64 32 64s26.346-11.306 26.346-52.694L32 0Zm3.546 33.014v13.2h-7.12v-13.2c-3.174-1.41-5.346-4.532-5.346-8.164a8.907 8.907 0 1 1 12.522 8.142l-.056.022Z">
               </path>
             </svg>
-            <div>Responsible Gambling</div>
+            <div *ngIf="isSidebar">Responsible Gambling</div>
           </div>
         </div>
 
@@ -658,7 +666,7 @@
                 d="M32-.001h-.084C17.056-.001 5.01 12.045 5.01 26.905c0 .178.002.356.006.534v-.026 22.374h17.386V30.613h-8.186v-3.2a17.59 17.59 0 0 1-.01-.588c0-9.734 7.892-17.626 17.626-17.626h.178H32h.17c9.734 0 17.626 7.892 17.626 17.626 0 .206-.004.412-.01.618v-.03 3.2H41.6v19.174h7.546c-1.734 4.134-7.28 5.014-17.146 5.014v9.2c8.774 0 26.986 0 26.986-17.386v-19.2c.004-.15.004-.328.004-.506C58.99 12.049 46.944.003 32.084.003h-.09.004L32-.001Z">
               </path>
             </svg>
-            <div>Live Support</div>
+            <div *ngIf="isSidebar">Live Support</div>
           </div>
         </div>
         <div>
@@ -671,16 +679,17 @@
                   d="M32 0C14.336 0 0 14.336 0 32s14.336 32 32 32 32-14.336 32-32S49.664 0 32 0Zm25.408 28.8H46.336c-.352-8.096-2.08-15.328-4.672-20.512 8.416 3.424 14.592 11.2 15.744 20.512ZM6.592 35.2h11.072c.352 8.096 2.08 15.328 4.672 20.512A25.655 25.655 0 0 1 6.592 35.2Zm11.072-6.4H6.592c1.152-9.312 7.328-17.088 15.744-20.512-2.592 5.184-4.288 12.416-4.672 20.512ZM36.352 52c-1.088 2.4-2.208 3.968-3.136 4.832-.448.416-.768.608-.96.704-.16.064-.224.064-.256.064s-.096 0-.256-.064c-.192-.096-.512-.288-.96-.704-.928-.864-2.048-2.432-3.136-4.832-1.856-4.16-3.232-10.016-3.584-16.8h15.84c-.32 6.784-1.696 12.64-3.552 16.8ZM24.064 28.8c.32-6.784 1.696-12.64 3.584-16.8 1.088-2.4 2.208-3.968 3.136-4.832.448-.416.768-.608.96-.704.16-.064.224-.064.256-.064s.096 0 .256.064c.192.096.512.288.96.704.928.864 2.048 2.432 3.136 4.832 1.856 4.16 3.232 10.016 3.584 16.8H24.064Zm17.6 26.912c2.56-5.184 4.288-12.416 4.672-20.512h11.072c-1.152 9.312-7.328 17.088-15.744 20.512Z">
                 </path>
               </svg>
-              <div>Language: English</div>
+              <div *ngIf="isSidebar">Language: English</div>
             </div>
-            <div class="svg-container" [ngClass]="{'active-svg':openBar === 'language'}">
-              <svg fill="#fff" viewBox="0 0 64 64" class="svg-icon" style="transform: rotate(270deg); ">
+            <div *ngIf="isSidebar" class="svg-container" [ngClass]="{'active-svg':openBar === 'profile'}">
+              <svg  fill="#fff" viewBox="0 0 64 64" class="svg-icon" style="transform: rotate(270deg); ">
                 <title></title>
                 <path
                   d="M32.271 49.763 9.201 26.692l6.928-6.93 16.145 16.145 16.144-16.144 6.93 6.929-23.072 23.07h-.005Z">
                 </path>
               </svg>
             </div>
+            <svg *ngIf="!isSidebar" fill="currentColor" viewBox="0 0 64 64" class="svg-icon " style="height: 0.625rem;"> <title></title> <path d="m26.307 53.995 20.998-20.997L26.307 12 20 18.306 34.694 33 20.001 47.694 26.307 54v-.005Z"></path></svg>
           </div>
 
           <!-- dropdown inner content -->
@@ -752,26 +761,27 @@
 
       <!-- top sports container -->
       <div class="flex flex-col max-w-full bg-[#1a2c38] rounded-[0.5em]" *ngIf="routerPath==='/sport-market'">
-        <div class="flex flex-col py-[0.75em] px-[1em]">
+        <div *ngIf="isSidebar" class="flex flex-col py-[0.75em] px-[1em]">
           <span class="max-w-full text-white flex justify-start text-left font-semibold text-[0.825em]">
             Top Sports
           </span>
           </div>
-          <div class="line-wrapper"><hr class="svelte-1sfce85"></div>
+          <div *ngIf="isSidebar" class="line-wrapper"><hr class="svelte-1sfce85"></div>
           <div>
             <div class="nav-item" (click)="toggleOpen('soccer')" [ngClass]="{'dropdown-item':openBar === 'soccer'}">
               <div class="title-wrapper">
                 <svg fill="currentColor" viewBox="0 0 96 96" class="svg-icon " style=""> <title></title> <path d="M95.994 53.946a11.297 11.297 0 0 0-4.743-1.029c-1.718 0-3.349.38-4.814 1.059l.07-.03c.313-1.146.494-2.46.494-3.814 0-5.252-2.702-9.874-6.787-12.551l-.057-.037c6.913-.642 10.53-12.58 10.53-12.58-4.555-8.412-11.233-15.168-19.328-19.69l-.247-.127S59.454 3.54 55.956 7.236C51.615.202 39.275.202 39.275.202c-9.79 1.878-18.28 6.503-24.888 13.03l.006-.005a12.326 12.326 0 0 0 4.637 9.629l.024.018c-6.15 1.447-12.542 10.09-11.496 13.588a6.71 6.71 0 0 0-5.378-2.695c-.06 0-.118 0-.178.003h.009C.745 37.897.009 42.64 0 47.554v.009c0 5.303.868 10.401 2.47 15.165l-.097-.335a15.818 15.818 0 0 0 4.95-6.925l.033-.109c3.048 2.011 6.79 3.205 10.809 3.205 1.977 0 3.889-.29 5.695-.829l-.142.036c-1.266 2.56-2.008 5.572-2.008 8.759 0 4 1.17 7.727 3.184 10.856l-.048-.078a16.443 16.443 0 0 0-9.838 5.173l-.012.013c8.632 8.23 20.344 13.298 33.242 13.304 4.1-.009 8.077-.537 11.867-1.52l-.329.073c-2.24-5.189-6.32-9.229-11.396-11.363l-.142-.051c5.629-.323 11.176-8.563 12.06-14.191 4.043 1.839 8.77 2.909 13.748 2.909a33.93 33.93 0 0 0 3.605-.19l-.147.012c-.863 2.12-1.363 4.58-1.363 7.154 0 2.575.5 5.035 1.41 7.287l-.044-.13c9.876-7.609 16.678-18.794 18.463-31.583l.03-.253-.006-.006ZM59.131 62.67c-6.15-8.683-23.757-13.869-33.004-8.722 5.306-13.025 3.458-21.506-3.136-30.511 12.06 1.124 26.372-5.146 32.16-13.184 1.65 8.722 11.255 23.275 20.1 26.208-14.39 6.551-16.039 16.883-16.12 26.209Z"></path></svg>
-                <div>Soccer</div>
+                <div *ngIf="isSidebar">Soccer</div>
               </div>
-              <div class="svg-container" [ngClass]="{'active-svg':openBar === 'soccer'}">
-                <svg fill="#fff" viewBox="0 0 64 64" class="svg-icon" style="transform: rotate(270deg); ">
+              <div *ngIf="isSidebar" class="svg-container" [ngClass]="{'active-svg':openBar === 'profile'}">
+                <svg  fill="#fff" viewBox="0 0 64 64" class="svg-icon" style="transform: rotate(270deg); ">
                   <title></title>
                   <path
                     d="M32.271 49.763 9.201 26.692l6.928-6.93 16.145 16.145 16.144-16.144 6.93 6.929-23.072 23.07h-.005Z">
                   </path>
                 </svg>
               </div>
+              <svg *ngIf="!isSidebar" fill="currentColor" viewBox="0 0 64 64" class="svg-icon " style="height: 0.625rem;"> <title></title> <path d="m26.307 53.995 20.998-20.997L26.307 12 20 18.306 34.694 33 20.001 47.694 26.307 54v-.005Z"></path></svg>
             </div>
             <!-- dropdown inner content -->
             <div class="inner-content" [ngClass]="{'active-dropdown':openBar === 'soccer'}">
@@ -801,16 +811,17 @@
             <div class="nav-item" (click)="toggleOpen('cricket')" [ngClass]="{'dropdown-item':openBar === 'cricket'}">
               <div class="title-wrapper">
                 <svg fill="currentColor" viewBox="0 0 96 96" class="svg-icon undefined" style=""> <title></title> <path d="M12.006 16.43c.84-.96 1.719-1.92 2.64-2.798 16.314.813 31.113 6.708 42.996 16.119l-.156-.12c13.839 11.589 24.615 26.385 31.23 43.272l.252.729a42.603 42.603 0 0 1-2.514 3.663l.075-.102c-6.846-16.476-16.95-30.378-29.592-41.451l-.129-.111a83.254 83.254 0 0 0-44.415-19.164l-.387-.036Zm-6.279 8.8c17.289.786 32.922 7.29 45.192 17.652l-.111-.093c12.516 11.1 22.29 25.014 28.359 40.764l.243.714C71.043 91.539 60.039 95.97 48 95.97c-26.511 0-48-21.49-48-48a47.804 47.804 0 0 1 5.856-22.995l-.126.252-.003.003ZM25.725 5.51C32.184 2.059 39.855.03 48 .03c26.511 0 48 21.489 48 48 0 4.98-.759 9.786-2.166 14.3l.09-.338C86.553 46.056 76.101 32.685 63.24 22.149l-.195-.156C52.626 13.785 39.948 7.968 26.097 5.583l-.492-.07.12-.002Z"></path></svg>
-                <div>Cricket</div>
+                <div *ngIf="isSidebar">Cricket</div>
               </div>
-              <div class="svg-container" [ngClass]="{'active-svg':openBar === 'cricket'}">
-                <svg fill="#fff" viewBox="0 0 64 64" class="svg-icon" style="transform: rotate(270deg); ">
+              <div *ngIf="isSidebar" class="svg-container" [ngClass]="{'active-svg':openBar === 'profile'}">
+                <svg  fill="#fff" viewBox="0 0 64 64" class="svg-icon" style="transform: rotate(270deg); ">
                   <title></title>
                   <path
                     d="M32.271 49.763 9.201 26.692l6.928-6.93 16.145 16.145 16.144-16.144 6.93 6.929-23.072 23.07h-.005Z">
                   </path>
                 </svg>
               </div>
+              <svg *ngIf="!isSidebar" fill="currentColor" viewBox="0 0 64 64" class="svg-icon " style="height: 0.625rem;"> <title></title> <path d="m26.307 53.995 20.998-20.997L26.307 12 20 18.306 34.694 33 20.001 47.694 26.307 54v-.005Z"></path></svg>
             </div>
             <!-- dropdown inner content -->
             <div class="inner-content" [ngClass]="{'active-dropdown':openBar === 'cricket'}">
@@ -840,16 +851,17 @@
             <div class="nav-item" (click)="toggleOpen('tennis')" [ngClass]="{'dropdown-item':openBar === 'tennis'}">
               <div class="title-wrapper">
                 <svg fill="currentColor" viewBox="0 0 96 96" class="svg-icon undefined" style=""> <title></title> <path fill-rule="evenodd" clip-rule="evenodd" d="M48.021.012c13.221 0 25.191 5.346 33.87 13.99l.003-.004C90.609 22.69 96 34.71 96 47.988c0 26.511-21.489 48-48 48S0 74.5 0 47.988c0-4.275.561-8.42 1.533-12.03l4.119 4 .006.005c4.62 4.533 8.1 10.224 10.035 16.875l.054.234c2.109 7.62 6.873 14.136 13.344 18.567l-.123-.078a33.326 33.326 0 0 0 18.549 5.604c18.489 0 33.48-14.99 33.48-33.48a33.356 33.356 0 0 0-9.386-23.246c-3.927-3.887-8.801-6.82-14.482-8.482l-.285-.075A40.24 40.24 0 0 1 39.93 5.56l-3.999-4-.336.075A48.082 48.082 0 0 1 48.021.012ZM11.291 34.32l-6.76-6.759.006.003.12-.288C9.304 17.355 17.327 9.33 27.535 4.563l6.639 6.92c5.591 5.546 12.56 9.703 20.68 12.001l.18.045c10.553 3.144 18.248 12.921 18.248 24.498 0 .834-.042 1.662-.11 2.373l-.01.111c-.8 7.773-5.06 14.517-11.31 18.729l.09-.057a25.28 25.28 0 0 1-14.136 4.293c-11.664 0-21.492-7.863-24.516-18.756l-.08-.327A46.449 46.449 0 0 0 11.29 34.32Z"></path></svg>
-                <div>Tennis</div>
+                <div *ngIf="isSidebar">Tennis</div>
               </div>
-              <div class="svg-container" [ngClass]="{'active-svg':openBar === 'tennis'}">
-                <svg fill="#fff" viewBox="0 0 64 64" class="svg-icon" style="transform: rotate(270deg); ">
+              <div *ngIf="isSidebar" class="svg-container" [ngClass]="{'active-svg':openBar === 'profile'}">
+                <svg  fill="#fff" viewBox="0 0 64 64" class="svg-icon" style="transform: rotate(270deg); ">
                   <title></title>
                   <path
                     d="M32.271 49.763 9.201 26.692l6.928-6.93 16.145 16.145 16.144-16.144 6.93 6.929-23.072 23.07h-.005Z">
                   </path>
                 </svg>
               </div>
+              <svg *ngIf="!isSidebar" fill="currentColor" viewBox="0 0 64 64" class="svg-icon " style="height: 0.625rem;"> <title></title> <path d="m26.307 53.995 20.998-20.997L26.307 12 20 18.306 34.694 33 20.001 47.694 26.307 54v-.005Z"></path></svg>
             </div>
             <!-- dropdown inner content -->
             <div class="inner-content" [ngClass]="{'active-dropdown':openBar === 'tennis'}">
@@ -882,16 +894,17 @@
         <div class="nav-item" (click)="toggleOpen('all-sports')" [ngClass]="{'dropdown-item':openBar === 'all-sports'}">
           <div class="title-wrapper">
             <svg fill="currentColor" viewBox="0 0 96 96" class="svg-icon " style=""> <title></title> <path fill-rule="evenodd" clip-rule="evenodd" d="M14.287 13.917c16.599 6.854 30.869 15.965 43.231 27.143l-.001.002.126.11-.125-.112C64.262 31 65.501 17.31 60.63 1.865 56.773.739 52.34.092 47.758.092c-13.046 0-24.87 5.249-33.47 13.748v.077Zm79.997 46.514a46.803 46.803 0 0 1-7.907 15.996v-.003c-2.275-3.87-4.709-7.622-7.185-11.295l-.137.08c4.463-2.823 9.63-4.63 15.307-5.11l-.078.332ZM80.986 82.734c-4.75 4.553-10.46 8.116-17.124 10.458h-.003l.006-.108a38.977 38.977 0 0 1 9.137-22.842l-.281-.41c2.838 3.924 5.478 8.005 8.265 12.902Zm0 0 .016-.014-.015.015ZM12.017 64.772a83.99 83.99 0 0 0 9.697.599h.003l-.117-.006c.832.039 1.674.06 2.518.06 12.98 0 24.848-4.766 33.883-12.589a132.455 132.455 0 0 1 9.859 11.137 47.738 47.738 0 0 0-11.975 31.216l.284-.042c-2.68.49-5.44.751-8.269.76-21.022-.012-38.88-13.566-45.416-32.75 3.102.685 6.287 1.224 9.931 1.654l-.398-.039Zm-9.533-1.614c-.226-.05-.45-.1-.675-.152l.667.129.008.023Zm65.376.815.045-.051-.045.05ZM58 52.836l-.009-.009.01.01Zm-5.59-5.706A140.354 140.354 0 0 0 9.776 20.677l-.952-.332C3.305 28.021 0 37.61 0 47.97v.038c.018 2.3.192 4.539.512 6.733l-.033-.266c3.542.97 7.889 1.823 12.325 2.386l.488.05c16.526 1.797 30.138-1.637 39.12-9.78Zm21.58 11.182a149.73 149.73 0 0 0-10.601-11.7c7.864-10.897 10.059-25.19 6.466-41.155l.267.126C85.46 13.537 95.953 29.542 96 48.007c0 .604-.048 1.247-.097 1.904-.051.688-.104 1.393-.104 2.087h-.042c-8.002.159-15.445 2.596-21.552 6.586l-.215-.272Zm-10.601-11.7-.003-.003.003.003Z"></path></svg>
-            <div>All Sports</div>
+            <div *ngIf="isSidebar">All Sports</div>
           </div>
-          <div class="svg-container" [ngClass]="{'active-svg':openBar === 'all-sports'}">
-            <svg fill="#fff" viewBox="0 0 64 64" class="svg-icon" style="transform: rotate(270deg); ">
+          <div *ngIf="isSidebar" class="svg-container" [ngClass]="{'active-svg':openBar === 'profile'}">
+            <svg  fill="#fff" viewBox="0 0 64 64" class="svg-icon" style="transform: rotate(270deg); ">
               <title></title>
               <path
                 d="M32.271 49.763 9.201 26.692l6.928-6.93 16.145 16.145 16.144-16.144 6.93 6.929-23.072 23.07h-.005Z">
               </path>
             </svg>
           </div>
+          <svg *ngIf="!isSidebar" fill="currentColor" viewBox="0 0 64 64" class="svg-icon " style="height: 0.625rem;"> <title></title> <path d="m26.307 53.995 20.998-20.997L26.307 12 20 18.306 34.694 33 20.001 47.694 26.307 54v-.005Z"></path></svg>
         </div>
         <!-- dropdown inner content -->
         <div class="inner-content" [ngClass]="{'active-dropdown':openBar === 'all-sports'}">
@@ -1238,16 +1251,17 @@
         <div class="nav-item" (click)="toggleOpen('all-esport')" [ngClass]="{'dropdown-item':openBar === 'all-esport'}">
           <div class="title-wrapper">
             <svg fill="currentColor" viewBox="0 0 96 96" class="svg-icon " style=""> <title></title> <path fill-rule="evenodd" clip-rule="evenodd" d="M14.287 13.917c16.599 6.854 30.869 15.965 43.231 27.143l-.001.002.126.11-.125-.112C64.262 31 65.501 17.31 60.63 1.865 56.773.739 52.34.092 47.758.092c-13.046 0-24.87 5.249-33.47 13.748v.077Zm79.997 46.514a46.803 46.803 0 0 1-7.907 15.996v-.003c-2.275-3.87-4.709-7.622-7.185-11.295l-.137.08c4.463-2.823 9.63-4.63 15.307-5.11l-.078.332ZM80.986 82.734c-4.75 4.553-10.46 8.116-17.124 10.458h-.003l.006-.108a38.977 38.977 0 0 1 9.137-22.842l-.281-.41c2.838 3.924 5.478 8.005 8.265 12.902Zm0 0 .016-.014-.015.015ZM12.017 64.772a83.99 83.99 0 0 0 9.697.599h.003l-.117-.006c.832.039 1.674.06 2.518.06 12.98 0 24.848-4.766 33.883-12.589a132.455 132.455 0 0 1 9.859 11.137 47.738 47.738 0 0 0-11.975 31.216l.284-.042c-2.68.49-5.44.751-8.269.76-21.022-.012-38.88-13.566-45.416-32.75 3.102.685 6.287 1.224 9.931 1.654l-.398-.039Zm-9.533-1.614c-.226-.05-.45-.1-.675-.152l.667.129.008.023Zm65.376.815.045-.051-.045.05ZM58 52.836l-.009-.009.01.01Zm-5.59-5.706A140.354 140.354 0 0 0 9.776 20.677l-.952-.332C3.305 28.021 0 37.61 0 47.97v.038c.018 2.3.192 4.539.512 6.733l-.033-.266c3.542.97 7.889 1.823 12.325 2.386l.488.05c16.526 1.797 30.138-1.637 39.12-9.78Zm21.58 11.182a149.73 149.73 0 0 0-10.601-11.7c7.864-10.897 10.059-25.19 6.466-41.155l.267.126C85.46 13.537 95.953 29.542 96 48.007c0 .604-.048 1.247-.097 1.904-.051.688-.104 1.393-.104 2.087h-.042c-8.002.159-15.445 2.596-21.552 6.586l-.215-.272Zm-10.601-11.7-.003-.003.003.003Z"></path></svg>
-            <div>All E-sports</div>
+            <div *ngIf="isSidebar">All E-sports</div>
           </div>
-          <div class="svg-container" [ngClass]="{'active-svg':openBar === 'all-esport'}">
-            <svg fill="#fff" viewBox="0 0 64 64" class="svg-icon" style="transform: rotate(270deg); ">
+          <div *ngIf="isSidebar" class="svg-container" [ngClass]="{'active-svg':openBar === 'profile'}">
+            <svg  fill="#fff" viewBox="0 0 64 64" class="svg-icon" style="transform: rotate(270deg); ">
               <title></title>
               <path
                 d="M32.271 49.763 9.201 26.692l6.928-6.93 16.145 16.145 16.144-16.144 6.93 6.929-23.072 23.07h-.005Z">
               </path>
             </svg>
           </div>
+          <svg *ngIf="!isSidebar" fill="currentColor" viewBox="0 0 64 64" class="svg-icon " style="height: 0.625rem;"> <title></title> <path d="m26.307 53.995 20.998-20.997L26.307 12 20 18.306 34.694 33 20.001 47.694 26.307 54v-.005Z"></path></svg>
         </div>
         <!-- dropdown inner content -->
         <div class="inner-content" [ngClass]="{'active-dropdown':openBar === 'all-esport'}">
@@ -1398,16 +1412,17 @@
         <div class="nav-item" (click)="toggleOpen('odds')" [ngClass]="{'dropdown-item':openBar === 'odds'}">
           <div class="title-wrapper">
             <svg fill="currentColor" viewBox="0 0 96 96" class="svg-icon " style=""> <title></title> <path fill-rule="evenodd" clip-rule="evenodd" d="M14.287 13.917c16.599 6.854 30.869 15.965 43.231 27.143l-.001.002.126.11-.125-.112C64.262 31 65.501 17.31 60.63 1.865 56.773.739 52.34.092 47.758.092c-13.046 0-24.87 5.249-33.47 13.748v.077Zm79.997 46.514a46.803 46.803 0 0 1-7.907 15.996v-.003c-2.275-3.87-4.709-7.622-7.185-11.295l-.137.08c4.463-2.823 9.63-4.63 15.307-5.11l-.078.332ZM80.986 82.734c-4.75 4.553-10.46 8.116-17.124 10.458h-.003l.006-.108a38.977 38.977 0 0 1 9.137-22.842l-.281-.41c2.838 3.924 5.478 8.005 8.265 12.902Zm0 0 .016-.014-.015.015ZM12.017 64.772a83.99 83.99 0 0 0 9.697.599h.003l-.117-.006c.832.039 1.674.06 2.518.06 12.98 0 24.848-4.766 33.883-12.589a132.455 132.455 0 0 1 9.859 11.137 47.738 47.738 0 0 0-11.975 31.216l.284-.042c-2.68.49-5.44.751-8.269.76-21.022-.012-38.88-13.566-45.416-32.75 3.102.685 6.287 1.224 9.931 1.654l-.398-.039Zm-9.533-1.614c-.226-.05-.45-.1-.675-.152l.667.129.008.023Zm65.376.815.045-.051-.045.05ZM58 52.836l-.009-.009.01.01Zm-5.59-5.706A140.354 140.354 0 0 0 9.776 20.677l-.952-.332C3.305 28.021 0 37.61 0 47.97v.038c.018 2.3.192 4.539.512 6.733l-.033-.266c3.542.97 7.889 1.823 12.325 2.386l.488.05c16.526 1.797 30.138-1.637 39.12-9.78Zm21.58 11.182a149.73 149.73 0 0 0-10.601-11.7c7.864-10.897 10.059-25.19 6.466-41.155l.267.126C85.46 13.537 95.953 29.542 96 48.007c0 .604-.048 1.247-.097 1.904-.051.688-.104 1.393-.104 2.087h-.042c-8.002.159-15.445 2.596-21.552 6.586l-.215-.272Zm-10.601-11.7-.003-.003.003.003Z"></path></svg>
-            <div>Odds: Decimal</div>
+            <div *ngIf="isSidebar">Odds: Decimal</div>
           </div>
-          <div class="svg-container" [ngClass]="{'active-svg':openBar === 'odds'}">
-            <svg fill="#fff" viewBox="0 0 64 64" class="svg-icon" style="transform: rotate(270deg); ">
+          <div *ngIf="isSidebar" class="svg-container" [ngClass]="{'active-svg':openBar === 'profile'}">
+            <svg  fill="#fff" viewBox="0 0 64 64" class="svg-icon" style="transform: rotate(270deg); ">
               <title></title>
               <path
                 d="M32.271 49.763 9.201 26.692l6.928-6.93 16.145 16.145 16.144-16.144 6.93 6.929-23.072 23.07h-.005Z">
               </path>
             </svg>
           </div>
+          <svg *ngIf="!isSidebar" fill="currentColor" viewBox="0 0 64 64" class="svg-icon " style="height: 0.625rem;"> <title></title> <path d="m26.307 53.995 20.998-20.997L26.307 12 20 18.306 34.694 33 20.001 47.694 26.307 54v-.005Z"></path></svg>
         </div>
         <!-- dropdown inner content -->
         <div class="inner-content" [ngClass]="{'active-dropdown':openBar === 'odds'}">
