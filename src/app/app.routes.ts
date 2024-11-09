@@ -13,17 +13,9 @@ export const routes: Routes = [
       import('./components/layout/layout.component').then(
         (c) => c.LayoutComponent
       ),
-    loadComponent: () =>
-      import('./components/layout/layout.component').then(
-        (c) => c.LayoutComponent
-      ),
     children: [
       {
         path: '',
-        loadComponent: () =>
-          import('./pages/before-login/before-login.component').then(
-            (c) => c.BeforeLoginComponent
-          ),
         loadComponent: () =>
           import('./pages/before-login/before-login.component').then(
             (c) => c.BeforeLoginComponent
@@ -33,13 +25,9 @@ export const routes: Routes = [
         path: 'home',
         loadComponent: () =>
           import('./pages/home/home.component').then((c) => c.HomeComponent),
-        loadComponent: () =>
-          import('./pages/home/home.component').then((c) => c.HomeComponent),
       },
       {
         path: 'drake',
-        loadComponent: () =>
-          import('./pages/drake/drake.component').then((c) => c.DrakeComponent),
         loadComponent: () =>
           import('./pages/drake/drake.component').then((c) => c.DrakeComponent),
       },
@@ -96,6 +84,5 @@ export const routes: Routes = [
   {
     path: '**',
     redirectTo: '',
-  },
   },
 ];
