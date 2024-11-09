@@ -1,5 +1,6 @@
 import { Routes } from '@angular/router';
 import { VaultComponent } from './modal/vault/vault.component';
+import { VipComponent } from './modal/vip/vip.component';
 
 export const routes: Routes = [
   {
@@ -19,6 +20,10 @@ export const routes: Routes = [
   {
     path:'valut',
     component:VaultComponent
+  },
+  {
+    path:'vip',
+    component:VipComponent
   },
   {
     path: '**',
