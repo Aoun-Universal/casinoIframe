@@ -1,0 +1,49 @@
+<div class="" id="svelte">
+  <!-- Modal container -->
+  <div class="Modal-container">
+    <div class="svelte-syudie"></div>
+    <div class="card">
+      <!-- Title -->
+      <div class="header">
+        <h2 class="header-text">
+          <!-- logout svg -->
+          <img
+            class="svg-icon mr-2 text-[#b1bad3]"
+            alt="logout-icon"
+            src="/assets/login/logout.png"
+          />
+
+          <span>Logout</span>
+        </h2>
+        <!-- close Btn -->
+        <button
+          type="button"
+          class="inline-flex relative items-center gap-2 justify-center rounded-sm font-semibold whitespace-nowrap ring-offset-background transition disabled:pointer-events-none disabled:opacity-50 focus-visible:outline-2 focus-visible:outline-offset-2 active:scale-[0.98] bg-transparent text-grey-200 betterhover:hover:bg-transparent betterhover:hover:text-white focus-visible:text-white focus-visible:outline-none text-base leading-none"
+        >
+          <!-- close svg -->
+          <img
+            class="svg-icon"
+            alt="close-icon"
+            src="/assets/login/close.png"
+          />
+        </button>
+      </div>
+      <div class="content-svelte">
+        <div class="Modal-content">
+          <div class="ctainer">
+            <p class="term">
+              Are you sure you want to end your session and log out?
+            </p>
+            <!-- Logout button -->
+            <button
+              type="button"
+              class="inline-flex relative items-center gap-2 justify-center rounded-sm font-semibold whitespace-nowrap ring-offset-background transition disabled:pointer-events-none disabled:opacity-50 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 active:scale-[0.98] bg-red-500 text-white betterhover:hover:bg-red-600 betterhover:hover:text-white focus-visible:outline-white text-base leading-none shadow-md py-4 px-5"
+            >
+              Log out
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

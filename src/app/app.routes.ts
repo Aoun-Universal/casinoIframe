@@ -1,5 +1,6 @@
 import { Routes } from '@angular/router';
 import { RegisterComponent } from './modal/register/register.component';
+import { LogoutComponent } from './modal/logout/logout.component';
 
 export const routes: Routes = [
   {
@@ -32,6 +33,10 @@ export const routes: Routes = [
   {
     path: 'login',
     component: RegisterComponent
+  },
+  {
+    path: 'logout',
+    component: LogoutComponent
   },
   {
     path: '**',
