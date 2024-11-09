@@ -1,6 +1,6 @@
-import {CommonModule} from '@angular/common';
-import {Component} from '@angular/core';
-import {FormBuilder, FormGroup, FormsModule, ReactiveFormsModule, Validators} from '@angular/forms';
+import { CommonModule } from '@angular/common';
+import { Component } from '@angular/core';
+import { FormBuilder, FormGroup, FormsModule, ReactiveFormsModule, Validators } from '@angular/forms';
 
 @Component({
   selector: 'app-register',
@@ -35,9 +35,7 @@ export class RegisterComponent {
     this.passwordVisible = !this.passwordVisible;
   }
   nextStep() {
-    if (this.currentStep < 3){
-      this.currentStep++;
-    }
+    this.currentStep++;
   }
 
   prevStep() {
