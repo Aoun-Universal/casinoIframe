@@ -1,4 +1,6 @@
 import { Routes } from '@angular/router';
+import { VaultComponent } from './modal/vault/vault.component';
+import { VipComponent } from './modal/vip/vip.component';
 import { RegisterComponent } from './modal/register/register.component';
 import { StakeSmartComponent } from './pages/stake-smart/stake-smart.component';
 import { LogoutComponent } from './modal/logout/logout.component';
@@ -43,6 +45,14 @@ export const routes: Routes = [
     ]
   },
   {
+    path:'valut',
+    component:VaultComponent
+  },
+  {
+    path:'vip',
+    component:VipComponent
+  },
+    {
     path: 'login',
     component: RegisterComponent
   },

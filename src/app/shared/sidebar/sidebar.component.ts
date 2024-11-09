@@ -2,14 +2,14 @@ import { CommonModule, DOCUMENT } from '@angular/common';
 import { Component, HostListener, Inject, OnInit } from '@angular/core';
 import { NavigationEnd, Router, RouterLink } from '@angular/router';
 import { filter } from 'rxjs';
+import { VaultComponent } from "../../modal/vault/vault.component";
 import { ToggleService } from '../../services/toggle.service';
-
 @Component({
   selector: 'app-sidebar',
   standalone: true,
-  imports: [CommonModule, RouterLink],
+  imports: [CommonModule, VaultComponent,RouterLink],
   templateUrl: './sidebar.component.html',
-  styleUrl: './sidebar.component.css'
+  styleUrls: ['./sidebar.component.css'] // Corrected from styleUrl to styleUrls
 })
 export class SidebarComponent implements OnInit {
   openBar: any;
@@ -41,13 +41,13 @@ export class SidebarComponent implements OnInit {
     }
   }
   ngOnInit(): void {
+    // Subscribe to router events to track navigation end
     this.router.events
       .pipe(
         filter(event => event instanceof NavigationEnd)
       )
       .subscribe((event: NavigationEnd) => {
-        this.routerPath = event.url;
-         
+        this.routerPath = event.url; // Update the current path on navigation
       });
     this.routerPath = this.router.url;
     this.setSidebar()
