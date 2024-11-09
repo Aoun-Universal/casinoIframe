@@ -4,10 +4,17 @@
 
 /* @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap'); */
 
-
 body {
   background: #071e2a;
   color: white;
-  font-family: 'Montserrat', sans-serif;
+  font-family: "Montserrat", sans-serif;
   cursor: default;
+}
+
+.dropdown-content {
+  @apply text-base text-[#b1bad3];
+}
+
+::-webkit-scrollbar {
+  display: none;
 }
