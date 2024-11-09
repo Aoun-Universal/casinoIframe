@@ -35,7 +35,9 @@ export class RegisterComponent {
     this.passwordVisible = !this.passwordVisible;
   }
   nextStep() {
-    this.currentStep++;
+    if (this.currentStep < 3){
+      this.currentStep++;
+    }
   }
 
   prevStep() {
