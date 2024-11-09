@@ -1,76 +1,32 @@
-@tailwind components;
-
-.slick-arrow {
-    position: absolute !important;
-    top: 50% !important;
-    transform: translateY(-50%) !important;
-    border: none !important;
-    font-size: 4rem !important;
-    z-index: 10 !important;
-    cursor: pointer !important;
-    background-color: white !important;
-    border-radius: 9999px !important;
-    padding: 6px !important;
-    box-shadow: 0 0 80px #29262133 !important;
-}
-
-.nav-btn:hover {
-    background-color: #efede9;
-}
-
-.prev-slide {
-    left: 5px !important;
-}
-
-.next-slide {
-    right: 5px !important;
-}
-
-
-::ng-deep .carousel {
-    display: flex;
-}
-
-::ng-deep .slick-track {
-    transform: none !important;
-    display: flex;
-    flex-direction: row;
-    width: fit-content !important;
-    overflow-x: auto !important;
-}
-
-/* ::ng-deep .slick-arrow{
-    display: none !important;
-} */
-
-
-::ng-deep .slick-slide {
-    width: 100% !important;
-}
-
-::ng-deep .slide-track:last-child {
-    margin-right: 0px !important;
-}
-
 ::-webkit-scrollbar {
     display: none;
 }
-
-
 section {
     @apply max-w-[1200px] m-[0_auto] relative max-[1680px]:p-[0px_3vw]
 }
 
 .slide {
-    @apply mr-[31px] rounded-[10px]
+    @apply  rounded-[10px]
 }
+
+.swiper{
+    width: max-content !important;
+}
+
+  .swiper-slide-main{
+    @apply !w-[360px] mr-5
+  }
+  
+  .swiper-slide-sports{
+    @apply mr-5 !w-[150px]
+  }
 
 .slide img {
     @apply max-w-[357.667px] w-[357.667px]
 }
 
 .hero-card {
-    @apply overflow-hidden flex flex-col relative text-white bg-[#213743] rounded-[.5rem] min-w-[325px] md:min-w-[311px] lg:min-w-[360px] cursor-pointer
+    @apply overflow-hidden flex flex-col relative text-white bg-[#213743] rounded-[.5rem] cursor-pointer
 }
 
 .card-wrapper {
