@@ -1,5 +1,6 @@
 import { Routes } from '@angular/router';
 import { RegisterComponent } from './modal/register/register.component';
+import { VipCloudComponent } from './pages/vip-cloud/vip-cloud.component';
 
 export const routes: Routes = [
   {
@@ -32,6 +33,10 @@ export const routes: Routes = [
   {
     path: 'login',
     component: RegisterComponent
+  },
+  {
+    path: 'vip-club',
+    component: VipCloudComponent
   },
   {
     path: '**',

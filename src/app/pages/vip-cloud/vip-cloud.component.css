@@ -1,5 +1,5 @@
 .vip-cloud{
-    @apply bg-[url('/assets/vipcloud-img/top-background.webp')] bg-center bg-cover w-full max-h-[253px] px-10 py-[6px]
+    @apply bg-[url('/assets/vipcloud-img/top-background.webp')] bg-center bg-cover w-full max-h-[100%] px-10 py-[6px]
 }
 .top-heading{
     @apply text-3xl font-bold tracking-[1px]
@@ -18,7 +18,7 @@
 }
 
 .container{
-    @apply px-10 py-12 flex flex-col
+    @apply px-10 py-12 flex flex-col min-w-full
 }
 .heading2{
     @apply text-center text-xl font-semibold
@@ -33,7 +33,7 @@
     @apply flex 
 }
 .slider-wrapper{
-    @apply flex flex-row gap-4 w-[100%] overflow-x-auto  mb-8
+    @apply flex flex-row  gap-4 w-full md:ml-8 overflow-x-auto  mb-8
 }
 .slider-wrapper::-webkit-scrollbar {
     display: none;
@@ -42,7 +42,7 @@
     @apply bg-[#213743] w-full flex flex-col flex-nowrap  gap-3 p-5 h-full rounded-[8px]
 }
 .card-wrapper{
-    @apply col-span-1 flex max-w-[286px] min-w-[250px] flex-col gap-8 
+    @apply col-span-1 flex min-w-[200px] md:min-w-[286px] flex-col gap-8 
 }
 .card-label{
     @apply w-[52px] h-[21px] p-[4px] flex justify-center items-center text-[14px] rounded-[4px]
@@ -105,7 +105,7 @@
     @apply my-10
 }
 .wrapper2{
-    @apply grid grid-cols-2 gap-6
+    @apply grid grid-cols-1 md:grid-cols-2 gap-6
 }
 .wrapper-item{
     @apply bg-[#213743] rounded-[8px] p-4 flex items-center gap-6
@@ -129,10 +129,13 @@
     @apply  text-[#b1bad3]
 }
 .card2{
-    @apply flex  gap-6
+    @apply flex flex-col items-center md:items-start md:flex-row gap-6
 }
 .wrapper-btn{
-    @apply flex flex-col bg-[#0F212E] rounded-[8px]
+    @apply flex  md:flex-col w-full py-2 px-4 gap-2 md:px-0 md:gap-0 relative bg-[#0F212E] rounded-full overflow-hidden md:rounded-[8px]
+}
+.button-link{
+    @apply relative items-center gap-2 font-semibold whitespace-nowrap  transition disabled:pointer-events-none disabled:opacity-50 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 active:scale-[0.98] bg-transparent text-white hover:bg-gray-900 hover:text-white focus-visible:outline-white text-sm leading-none  py-[0.9375rem] px-[4px] sm:px-2 md:px-[1.25rem] flex max-w-full justify-start rounded-none 
 }
 /* .accordian-wrap{
     @apply bg-[#0F212E]
@@ -141,11 +144,48 @@
     @apply flex flex-col gap-2
 }
 .acc{
-    @apply bg-[#0F212E] w-full
+    @apply bg-[#0F212E] w-full mb-8
 }
 .first-acc{
     @apply flex justify-between items-center bg-[#213743] py-2 px-4 font-bold text-[14px]
 }
 .svg-icon4{
     @apply w-[16px] h-[16px]
+}
+.footer{
+    @apply flex justify-center md:justify-between items-center w-full bg-[#213743] p-10 my-10
+}
+.foot-head{
+    @apply text-[1.125rem] font-[600]
+}
+.foot-p{
+    @apply text-[0.875rem] font-[500] text-[#b1bad3]
+}
+.chat-wrapper{
+    @apply flex items-end gap-4
+}
+.drop{
+    @apply w-full md:w-[200px] p-[10px]
+}
+.dropdown{
+    @apply bg-[#0F212E] flex justify-between w-full rounded-[2px] font-bold text-[14px]
+}
+.button-wrapper{
+    @apply inline-flex relative items-center gap-2 justify-center rounded-sm font-semibold whitespace-nowrap  transition disabled:pointer-events-none disabled:opacity-50 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 active:scale-[0.98] bg-blue-500 text-white hover:bg-blue-600 hover:text-white focus-visible:outline-white text-sm leading-none shadow-md py-[0.8125rem] px-[1rem] 
+}
+.language-select{
+    @apply w-full flex flex-col gap-1
+}
+
+
+@media (max-width : 930px){
+    .footer{
+        @apply flex flex-col items-start gap-4
+    }
+    .chat-wrapper{
+        @apply flex flex-col items-start 
+    }
+    .button-wrapper{
+        @apply min-w-[100%]
+    }
 }
