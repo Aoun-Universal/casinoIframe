@@ -1,4 +1,4 @@
-import { NgClass, NgFor, NgIf } from '@angular/common';
+import { NgClass, NgFor, NgIf, NgStyle } from '@angular/common';
 import { Component } from '@angular/core';
 import { SlickCarouselModule } from 'ngx-slick-carousel';
 
@@ -6,7 +6,7 @@ import { SlickCarouselModule } from 'ngx-slick-carousel';
 @Component({
   selector: 'app-home',
   standalone: true,
-  imports: [NgFor, SlickCarouselModule,NgIf,NgClass],
+  imports: [NgFor, SlickCarouselModule,NgIf,NgClass,NgStyle],
   templateUrl: './home.component.html',
   styleUrl: './home.component.css'
 })
@@ -14,6 +14,11 @@ export class HomeComponent {
 
   currentSlideIndex = 0;
   slideCount = 0;
+  isMarketOpen = true;
+  isMarketOpen2 = true;
+  activeTab: number = 1;
+  LiveTab = 'basketball'; 
+  TableTab: number = 1;
   // Winner Dropdown
   WinnerDropdown=false;
   toggleDropdown() {
@@ -21,9 +26,6 @@ export class HomeComponent {
   }
 
   // Market 1
-  isMarketOpen = true;
-  isMarketOpen2 = true;
-
   toggleMarket() {
     this.isMarketOpen = !this.isMarketOpen;
   }
@@ -31,6 +33,24 @@ export class HomeComponent {
   toggleMarket2() {
     this.isMarketOpen2 = !this.isMarketOpen2;
   }
+
+  // Tabs
+  setActiveTab(tabIndex: number): void {
+    this.activeTab = tabIndex;
+  }
+
+    // Tabs
+    setActiveTableTab(tabIndex: number): void {
+      this.TableTab = tabIndex;
+    }
+
+   // Table Tabs
+   setLiveTabActive(tab: string) {
+    this.LiveTab = tab;
+  }
+
+
+
 
   // slideConfig = {
   //   slidesToScroll: 1,

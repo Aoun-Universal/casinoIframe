@@ -62,5 +62,6 @@ export class SidebarComponent implements OnInit {
   }
   toggleSidebar(){
    this.toggle.toggleSidebar()
-  }
+
+}
 }

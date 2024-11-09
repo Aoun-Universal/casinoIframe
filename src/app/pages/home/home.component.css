@@ -70,9 +70,7 @@ section {
 }
 
 .hero-card {
-    @apply overflow-hidden flex flex-col relative text-white bg-[#213743] rounded-[.5rem] w-[360px]
-    /* container-type: inline-size;
-    container-name: card-size; */
+    @apply overflow-hidden flex flex-col relative text-white bg-[#213743] rounded-[.5rem] min-w-[325px] md:min-w-[311px] lg:min-w-[360px] cursor-pointer
 }
 
 .card-wrapper {
@@ -123,8 +121,12 @@ section {
 }
 
 .search-wrap-input {
-    @apply w-full text-white bg-[#0f212e] flex items-center px-4 outline-none m-0 cursor-text text-[.875rem] appearance-none font-semibold shadow-[0_1px_3px_0_rgba(0,0,0,.2),0_1px_2px_0_rgba(0,0,0,.12)] border-[2px] border-solid border-[#2f4553] rounded-[20px]
+    @apply w-full text-white bg-[#0f212e] flex items-center px-4 hover:border-[#557086] outline-none m-0 cursor-text text-[.875rem] appearance-none font-semibold shadow-[0_1px_3px_0_rgba(0,0,0,.2),0_1px_2px_0_rgba(0,0,0,.12)] border-[2px] border-solid border-[#2f4553] rounded-[20px]
 }
+
+.search-wrap-input:focus-within {
+    @apply border-[#557086];
+  }
 
 .search-icon {
     @apply text-[#557086] text-[1.25rem]
@@ -135,7 +137,11 @@ section {
 }
 
 .svg-icon {
-    @apply mt-[-4px] pointer-events-none [stroke-width:0] fill-current stroke-current flex-shrink-0 inline-block size-[1em]
+    @apply mt-[-3px] pointer-events-none [stroke-width:0] fill-current stroke-current flex-shrink-0 inline-block size-[1em]
+}
+
+.svg-icon:hover{
+    fill: white !important;
 }
 
 /* Tabs */
@@ -148,8 +154,9 @@ section {
 }
 
 .tab-item {
-    @apply inline-flex relative items-center gap-2 justify-center whitespace-nowrap ml-[5px] px-4 py-[15px] font-semibold text-[.875rem] rounded-full bg-[rgb(47,69,83)] transition disabled:pointer-events-none disabled:opacity-50 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 active:scale-[0.98] bg-transparent focus-visible:outline-white text-sm leading-none [&:hover>svg]:text-white [&_svg]:!text-gray-200
+    @apply inline-flex cursor-pointer relative items-center gap-2 justify-center whitespace-nowrap ml-[5px] px-4 py-[15px] font-semibold text-[.875rem] rounded-full bg-[rgb(47,69,83)] transition disabled:pointer-events-none disabled:opacity-50 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 active:scale-[0.98] bg-transparent focus-visible:outline-white text-sm leading-none [&:hover>svg]:text-white [&_svg]:!text-gray-200
 }
+
 
 .tab-item span {
     @apply text-white
@@ -173,7 +180,7 @@ section {
 }
 
 .arrows-btn {
-    @apply inline-flex relative items-center rounded-[2rem] gap-2 justify-center border border-solid border-[#2f4553] font-semibold text-[.875rem] whitespace-nowrap transition disabled:pointer-events-none disabled:opacity-50 focus-visible:outline-2 focus-visible:outline-offset-2 active:scale-[0.98] bg-transparent text-white focus-visible:outline-none text-sm leading-none [&:hover>svg]:text-white
+    @apply inline-flex relative cursor-pointer items-center rounded-[2rem] gap-2 justify-center border border-solid border-[#2f4553] font-semibold text-[.875rem] whitespace-nowrap transition disabled:pointer-events-none disabled:opacity-50 focus-visible:outline-2 focus-visible:outline-offset-2 active:scale-[0.98] bg-transparent text-white focus-visible:outline-none text-sm leading-none [&:hover>svg]:text-white
 }
 
 .left-arrow {
@@ -194,7 +201,11 @@ section {
 
 /* Top sports slider */
 .sports-img {
-    @apply w-[157px] max-w-[167px] rounded-lg
+    @apply w-[157px] max-w-[167px] rounded-lg 
+}
+
+.sports-card{
+    @apply hover:translate-y-[-5px]
 }
 
 .ribbon {
@@ -383,7 +394,7 @@ section {
 }
 
 .outcome-btn{
-    @apply px-[10.5px] py-[7px]  bg-[#071824] flex rounded-[.25rem] relative text-sm text-white items-start min-w-0 [transition:background_.1s] justify-center w-full
+    @apply px-[10.5px] py-[7px]  bg-[#071824] hover:bg-blue-900 flex rounded-[.25rem] relative text-sm text-white items-start min-w-0 [transition:background_.1s] justify-center w-full
 }
 
 .outcome-content{
@@ -395,7 +406,7 @@ section {
 }
 
 .market-count{
-    @apply [grid-column:12/span_1]  justify-self-center
+    @apply [grid-column:12/span_1]  justify-self-center hover:!text-white
 }
 
 /* Mobile view styling */
@@ -487,3 +498,8 @@ tr:hover {
     @apply max-[768px]:hidden
 }
 
+
+.tab-item.active , .tab-item:hover{
+    @apply bg-[#2f4553] text-white
+  }
+  
