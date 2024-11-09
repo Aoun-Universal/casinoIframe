@@ -1,10 +1,14 @@
 <!-- Home starts -->
 <section>
   <!------------------------------ Hero Slider ---------------------->
-  <ngx-slick-carousel class="carousel overflow-y-hidden" #slickModal="slick-carousel" [config]="slideConfig"
-    (init)="slickInit($event)" (afterChange)="afterChange($event)">
-    <div *ngFor="let slide of slides" ngxSlickItem class="slide">
-      <div class="hero-card mt-6">
+  <swiper-container   appSwiper
+  #swiper
+  [config]="swiperConfig"
+  thumbs-swiper=".mySwiper2"
+  (slidechange)="slideChange($event)">
+    <swiper-slide *ngFor="let slide of slides" class="relative swiper-slide-main">
+      <!-- Card content instead of an image -->
+      <div class="hero-card">
         <a>
           <div class="card-wrapper">
             <div class="content-wrapper">
@@ -29,8 +33,8 @@
                 </div>
               </div>
             </div>
-            <!-- Image -->
-            <div class="relative">
+             <!-- Image -->
+             <div class="relative">
               <div class="img-inner">
                 <img class="!object-contain" [src]="slide.img" [alt]="slide.title" loading="lazy" decoding="async"
                   style="object-fit: cover; max-width: 220px; max-height: 220px; aspect-ratio: 1 / 1; width: 100%;" />
@@ -39,10 +43,30 @@
           </div>
         </a>
       </div>
-    </div>
-  </ngx-slick-carousel>
+    </swiper-slide>
+  </swiper-container>
 
+  <button
+  class="group absolute left-[5px] top-[5%] z-10  text-white"
+  (click)="swipePrev()"
+>
+  <span
+      class="inline-block translate-y-3 opacity-50 transition-all duration-200 group-hover:opacity-100"
+  >
+  <svg fill="currentColor" viewBox="0 0 64 64" class="svg-icon text-[24px]"> <title></title> <path d="M36.998 53.995 16 32.998 36.998 12l6.306 6.306L28.61 33l14.694 14.694L36.998 54v-.005Z"></path></svg></span>
+</button>
+<button
+  class="group absolute right-[5px] top-[5%] z-10   text-white"
+  (click)="swipeNext()"
+>
+  <span
+      class="inline-block  text-white translate-y-3  opacity-50 transition-all duration-200 group-hover:opacity-100"
+  >
+  <svg fill="currentColor" viewBox="0 0 64 64" class="svg-icon text-[24px]"> <title></title> <path d="m26.307 53.995 20.998-20.997L26.307 12 20 18.306 34.694 33 20.001 47.694 26.307 54v-.005Z"></path></svg>
+</span>
+</button>
 
+  
   <!------------------------------ Search Wrap --------------------->
 
   <div class="search-wrap">
@@ -65,13 +89,13 @@
 
   <!------------------------------- Tabs Wrapper ------------------->
   <div class="tabs-wrapper">
-    <div class="tab-slider">
+    <div class="tab-slider max-w-[90vw] overflow-x-auto">
       <div class="flex">
         <!-- Tab item 1 -->
-        <a class="tab-item tab-item1">
+        <a class="tab-item tab-item1" [class.active]="activeTab === 1" (click)="setActiveTab(1)">
           <svg fill="currentColor" viewBox="0 0 96 96" class="svg-icon">
             <title></title>
-            <path fill-rule="evenodd" clip-rule="evenodd"
+            <path fill-rule="evenodd" clip-rule="evenodd" [ngStyle]="{ fill: activeTab === 1 ? '#fff' : '#b1bad3' }" 
               d="M14.287 13.917c16.599 6.854 30.869 15.965 43.231 27.143l-.001.002.126.11-.125-.112C64.262 31 65.501 17.31 60.63 1.865 56.773.739 52.34.092 47.758.092c-13.046 0-24.87 5.249-33.47 13.748v.077Zm79.997 46.514a46.803 46.803 0 0 1-7.907 15.996v-.003c-2.275-3.87-4.709-7.622-7.185-11.295l-.137.08c4.463-2.823 9.63-4.63 15.307-5.11l-.078.332ZM80.986 82.734c-4.75 4.553-10.46 8.116-17.124 10.458h-.003l.006-.108a38.977 38.977 0 0 1 9.137-22.842l-.281-.41c2.838 3.924 5.478 8.005 8.265 12.902Zm0 0 .016-.014-.015.015ZM12.017 64.772a83.99 83.99 0 0 0 9.697.599h.003l-.117-.006c.832.039 1.674.06 2.518.06 12.98 0 24.848-4.766 33.883-12.589a132.455 132.455 0 0 1 9.859 11.137 47.738 47.738 0 0 0-11.975 31.216l.284-.042c-2.68.49-5.44.751-8.269.76-21.022-.012-38.88-13.566-45.416-32.75 3.102.685 6.287 1.224 9.931 1.654l-.398-.039Zm-9.533-1.614c-.226-.05-.45-.1-.675-.152l.667.129.008.023Zm65.376.815.045-.051-.045.05ZM58 52.836l-.009-.009.01.01Zm-5.59-5.706A140.354 140.354 0 0 0 9.776 20.677l-.952-.332C3.305 28.021 0 37.61 0 47.97v.038c.018 2.3.192 4.539.512 6.733l-.033-.266c3.542.97 7.889 1.823 12.325 2.386l.488.05c16.526 1.797 30.138-1.637 39.12-9.78Zm21.58 11.182a149.73 149.73 0 0 0-10.601-11.7c7.864-10.897 10.059-25.19 6.466-41.155l.267.126C85.46 13.537 95.953 29.542 96 48.007c0 .604-.048 1.247-.097 1.904-.051.688-.104 1.393-.104 2.087h-.042c-8.002.159-15.445 2.596-21.552 6.586l-.215-.272Zm-10.601-11.7-.003-.003.003.003Z">
             </path>
           </svg>
@@ -80,11 +104,11 @@
         </a>
 
         <!-- Tab item 2 -->
-        <a class="tab-item">
-          <svg fill="currentColor" viewBox="0 0 96 96" class="svg-icon">
+        <a class="tab-item" [class.active]="activeTab === 2" (click)="setActiveTab(2)">
+          <svg fill="currentColor" viewBox="0 0 64 64" class="svg-icon ">
             <title></title>
-            <path fill-rule="evenodd" clip-rule="evenodd"
-              d="M14.287 13.917c16.599 6.854 30.869 15.965 43.231 27.143l-.001.002.126.11-.125-.112C64.262 31 65.501 17.31 60.63 1.865 56.773.739 52.34.092 47.758.092c-13.046 0-24.87 5.249-33.47 13.748v.077Zm79.997 46.514a46.803 46.803 0 0 1-7.907 15.996v-.003c-2.275-3.87-4.709-7.622-7.185-11.295l-.137.08c4.463-2.823 9.63-4.63 15.307-5.11l-.078.332ZM80.986 82.734c-4.75 4.553-10.46 8.116-17.124 10.458h-.003l.006-.108a38.977 38.977 0 0 1 9.137-22.842l-.281-.41c2.838 3.924 5.478 8.005 8.265 12.902Zm0 0 .016-.014-.015.015ZM12.017 64.772a83.99 83.99 0 0 0 9.697.599h.003l-.117-.006c.832.039 1.674.06 2.518.06 12.98 0 24.848-4.766 33.883-12.589a132.455 132.455 0 0 1 9.859 11.137 47.738 47.738 0 0 0-11.975 31.216l.284-.042c-2.68.49-5.44.751-8.269.76-21.022-.012-38.88-13.566-45.416-32.75 3.102.685 6.287 1.224 9.931 1.654l-.398-.039Zm-9.533-1.614c-.226-.05-.45-.1-.675-.152l.667.129.008.023Zm65.376.815.045-.051-.045.05ZM58 52.836l-.009-.009.01.01Zm-5.59-5.706A140.354 140.354 0 0 0 9.776 20.677l-.952-.332C3.305 28.021 0 37.61 0 47.97v.038c.018 2.3.192 4.539.512 6.733l-.033-.266c3.542.97 7.889 1.823 12.325 2.386l.488.05c16.526 1.797 30.138-1.637 39.12-9.78Zm21.58 11.182a149.73 149.73 0 0 0-10.601-11.7c7.864-10.897 10.059-25.19 6.466-41.155l.267.126C85.46 13.537 95.953 29.542 96 48.007c0 .604-.048 1.247-.097 1.904-.051.688-.104 1.393-.104 2.087h-.042c-8.002.159-15.445 2.596-21.552 6.586l-.215-.272Zm-10.601-11.7-.003-.003.003.003Z">
+            <path [ngStyle]="{ fill: activeTab === 2 ? '#fff' : '#b1bad3' }"
+              d="M.001 3.549v7.12h7.12v49.786h6.214c.778-3.122 3.556-5.398 6.866-5.398a7.07 7.07 0 0 1 6.856 5.348l.01.048h9.974c.778-3.122 3.556-5.398 6.866-5.398a7.07 7.07 0 0 1 6.856 5.348l.01.048h6.16V10.665h7.066v-7.12L.001 3.549Zm35.546 37.334h-17.76v-5.334h17.76v5.334Zm10.668-14.214H17.789v-5.334h28.426v5.334Z">
             </path>
           </svg>
 
@@ -92,23 +116,22 @@
         </a>
 
         <!-- Tab item 3 -->
-        <a class="tab-item">
-          <svg fill="currentColor" viewBox="0 0 96 96" class="svg-icon">
+        <a class="tab-item" [class.active]="activeTab === 3" (click)="setActiveTab(3)">
+          <svg fill="currentColor" viewBox="0 0 64 64" class="svg-icon ">
             <title></title>
-            <path fill-rule="evenodd" clip-rule="evenodd"
-              d="M14.287 13.917c16.599 6.854 30.869 15.965 43.231 27.143l-.001.002.126.11-.125-.112C64.262 31 65.501 17.31 60.63 1.865 56.773.739 52.34.092 47.758.092c-13.046 0-24.87 5.249-33.47 13.748v.077Zm79.997 46.514a46.803 46.803 0 0 1-7.907 15.996v-.003c-2.275-3.87-4.709-7.622-7.185-11.295l-.137.08c4.463-2.823 9.63-4.63 15.307-5.11l-.078.332ZM80.986 82.734c-4.75 4.553-10.46 8.116-17.124 10.458h-.003l.006-.108a38.977 38.977 0 0 1 9.137-22.842l-.281-.41c2.838 3.924 5.478 8.005 8.265 12.902Zm0 0 .016-.014-.015.015ZM12.017 64.772a83.99 83.99 0 0 0 9.697.599h.003l-.117-.006c.832.039 1.674.06 2.518.06 12.98 0 24.848-4.766 33.883-12.589a132.455 132.455 0 0 1 9.859 11.137 47.738 47.738 0 0 0-11.975 31.216l.284-.042c-2.68.49-5.44.751-8.269.76-21.022-.012-38.88-13.566-45.416-32.75 3.102.685 6.287 1.224 9.931 1.654l-.398-.039Zm-9.533-1.614c-.226-.05-.45-.1-.675-.152l.667.129.008.023Zm65.376.815.045-.051-.045.05ZM58 52.836l-.009-.009.01.01Zm-5.59-5.706A140.354 140.354 0 0 0 9.776 20.677l-.952-.332C3.305 28.021 0 37.61 0 47.97v.038c.018 2.3.192 4.539.512 6.733l-.033-.266c3.542.97 7.889 1.823 12.325 2.386l.488.05c16.526 1.797 30.138-1.637 39.12-9.78Zm21.58 11.182a149.73 149.73 0 0 0-10.601-11.7c7.864-10.897 10.059-25.19 6.466-41.155l.267.126C85.46 13.537 95.953 29.542 96 48.007c0 .604-.048 1.247-.097 1.904-.051.688-.104 1.393-.104 2.087h-.042c-8.002.159-15.445 2.596-21.552 6.586l-.215-.272Zm-10.601-11.7-.003-.003.003.003Z">
+            <path [ngStyle]="{ fill: activeTab === 3 ? '#fff' : '#b1bad3' }"
+              d="m30.157 55.327-14.181 6.89a3.472 3.472 0 0 1-5.046-3.543l-.002.018 2.19-16.024a3.381 3.381 0 0 0-.91-2.858l.002.002L.967 27.98a3.474 3.474 0 0 1 1.875-5.819l.022-.004 16.024-2.884a3.405 3.405 0 0 0 2.422-1.745l.008-.018 7.691-14.287a3.453 3.453 0 0 1 3.045-1.833c1.312 0 2.454.735 3.035 1.815l.01.018 7.585 14.287a3.405 3.405 0 0 0 2.41 1.761l.02.002 16.024 2.884A3.477 3.477 0 0 1 64 25.574a3.47 3.47 0 0 1-.967 2.406l.002-.002-11.243 11.724a3.381 3.381 0 0 0-.906 2.984l-.004-.02 2.19 16.024a3.472 3.472 0 0 1-5.066 3.515l-14.243-6.88a4.174 4.174 0 0 0-1.803-.403c-.655 0-1.274.149-1.829.413l.026-.012v.004Z">
             </path>
           </svg>
-
           <span>Favorites</span>
         </a>
 
         <!-- Tab item 4 -->
-        <a class="tab-item">
-          <svg fill="#b1bad3" viewBox="0 0 96 96" class="svg-icon">
+        <a class="tab-item" [class.active]="activeTab === 4" (click)="setActiveTab(4)">
+          <svg fill="currentColor" viewBox="0 0 64 64" class="svg-icon ">
             <title></title>
-            <path fill-rule="evenodd" clip-rule="evenodd"
-              d="M14.287 13.917c16.599 6.854 30.869 15.965 43.231 27.143l-.001.002.126.11-.125-.112C64.262 31 65.501 17.31 60.63 1.865 56.773.739 52.34.092 47.758.092c-13.046 0-24.87 5.249-33.47 13.748v.077Zm79.997 46.514a46.803 46.803 0 0 1-7.907 15.996v-.003c-2.275-3.87-4.709-7.622-7.185-11.295l-.137.08c4.463-2.823 9.63-4.63 15.307-5.11l-.078.332ZM80.986 82.734c-4.75 4.553-10.46 8.116-17.124 10.458h-.003l.006-.108a38.977 38.977 0 0 1 9.137-22.842l-.281-.41c2.838 3.924 5.478 8.005 8.265 12.902Zm0 0 .016-.014-.015.015ZM12.017 64.772a83.99 83.99 0 0 0 9.697.599h.003l-.117-.006c.832.039 1.674.06 2.518.06 12.98 0 24.848-4.766 33.883-12.589a132.455 132.455 0 0 1 9.859 11.137 47.738 47.738 0 0 0-11.975 31.216l.284-.042c-2.68.49-5.44.751-8.269.76-21.022-.012-38.88-13.566-45.416-32.75 3.102.685 6.287 1.224 9.931 1.654l-.398-.039Zm-9.533-1.614c-.226-.05-.45-.1-.675-.152l.667.129.008.023Zm65.376.815.045-.051-.045.05ZM58 52.836l-.009-.009.01.01Zm-5.59-5.706A140.354 140.354 0 0 0 9.776 20.677l-.952-.332C3.305 28.021 0 37.61 0 47.97v.038c.018 2.3.192 4.539.512 6.733l-.033-.266c3.542.97 7.889 1.823 12.325 2.386l.488.05c16.526 1.797 30.138-1.637 39.12-9.78Zm21.58 11.182a149.73 149.73 0 0 0-10.601-11.7c7.864-10.897 10.059-25.19 6.466-41.155l.267.126C85.46 13.537 95.953 29.542 96 48.007c0 .604-.048 1.247-.097 1.904-.051.688-.104 1.393-.104 2.087h-.042c-8.002.159-15.445 2.596-21.552 6.586l-.215-.272Zm-10.601-11.7-.003-.003.003.003Z">
+            <path [ngStyle]="{ fill: activeTab === 4 ? '#fff' : '#b1bad3' }"
+              d="M24.694.006h14.64v7.306h-14.64V.006Zm26.4 21.334 3.786-4.346-5.52-4.8-3.866 4.48C41.664 14.246 37 12.806 32 12.806s-9.664 1.44-13.598 3.93l.104-.062-3.866-4.426-5.52 4.8 3.786 4.294A25.484 25.484 0 0 0 6.4 38.396c0 14.138 11.462 25.6 25.6 25.6 14.138 0 25.6-11.462 25.6-25.6a25.506 25.506 0 0 0-6.528-17.078l.022.022ZM32 38.406 20.24 50.112a16.538 16.538 0 0 1-4.836-11.706c0-9.16 7.426-16.586 16.586-16.586H32v16.586Z">
             </path>
           </svg>
 
@@ -138,8 +161,8 @@
       </span>
 
       <!-- Right -->
-      <div class="flex">
-        <button class="left-arrow arrows-btn">
+      <div class="flex cursor-pointer">
+        <button class="left-arrow arrows-btn" (click)="swipePrevTopSports()">
           <div class="arrow-inner">
             <svg fill="currentColor" viewBox="0 0 64 64" class="svg-icon ">
               <title></title>
@@ -150,7 +173,7 @@
           </div>
         </button>
 
-        <button class="right-arrow arrows-btn">
+        <button class="right-arrow arrows-btn" (click)="swipeNextTopSports()">
           <div class="arrow-inner">
             <svg fill="currentColor" viewBox="0 0 64 64" class="svg-icon ">
               <title></title>
@@ -167,18 +190,21 @@
     </div>
 
     <!-- Sports Slider Content -->
-    <div class="mt-6">
-      <ngx-slick-carousel class="carousel overflow-y-hidden" #slickModal="slick-carousel" [config]="slideConfig"
-        (init)="slickInit($event)" (afterChange)="afterChange($event)">
-        <div *ngFor="let slide of sports" ngxSlickItem class="px-2 relative">
-          <div class="grid relative">
-            <img loading="lazy" [src]="slide.img" alt="Slide Image" class="sports-img" height="223" draggable="false" />
-          </div>
-          <div class="ribbon">
-            <div class="tag-count">{{ slide.count }}</div>
-          </div>
+    <div class="mt-3">
+      <swiper-container   appSwiper
+      #topSportsSwiper [config]="topSportsSwiperConfig"
+      thumbs-swiper=".mySwiper"
+      (slidechange)="slideChange($event)">
+      <swiper-slide *ngFor="let slide of sports" class="px-2 relative swiper-slide-sports">
+        <div class="grid relative sports-card">
+          <img loading="lazy" [src]="slide.img" alt="Slide Image" class="sports-img" height="223" draggable="false" />
         </div>
-      </ngx-slick-carousel>
+        <div class="ribbon">
+          <div class="tag-count">{{ slide.count }}</div>
+        </div>
+      </swiper-slide>
+      </swiper-container>
+
     </div>
 
     <!-- <div class="px-2 relative">
@@ -192,7 +218,8 @@
   </div>
 
   <!--------------------------------- Live Events ---------------------->
-  <div class="top-sports-header events-header">
+  <div class="top-sports-header events-header relative
+  ">
     <!-- left -->
     <span>
       <span>
@@ -217,10 +244,9 @@
         </svg>
       </button>
 
-      <button class="arrows-btn event-icon event-dropdown">
+      <button class="arrows-btn event-icon event-dropdown" (click)="toggleDropdown()">
         <span>Winner</span>
-        <svg fill="currentColor" viewBox="0 0 64 64" class="svg-icon !my-auto" style="transform: rotate(0deg);
-   ">
+        <svg fill="currentColor" viewBox="0 0 64 64" class="svg-icon !my-auto" style="transform: rotate(0deg);">
           <title></title>
           <path fill="#b1bad3"
             d="M32.271 49.763 9.201 26.692l6.928-6.93 16.145 16.145 16.144-16.144 6.93 6.929-23.072 23.07h-.005Z">
@@ -228,80 +254,106 @@
         </svg>
       </button>
 
+      <div class="profile-dropdown" *ngIf="WinnerDropdown">
+        <!-- Arrow -->
+        <div class="dropdown-arrow"></div>
+        <div class="dropdown-scroll-content ">
+          <div>
+            <button type="button" class="profile-list">
+              <span>Total</span>
+            </button>
+            <button type="button" class="profile-list">
+              <span>Winner</span>
+            </button>
+            <button type="button" class="profile-list">
+              <span>Handicaps</span>
+            </button>
+          </div>
+        </div>
+      </div>
+
     </div>
   </div>
 
   <!------------------------------ Sports menu List --------------------->
-  <div class="sports-menu-list">
+  <div class="sports-menu-list max-w-[90vw] overflow-x-auto">
     <ul class="main-list">
       <!-- 1 -->
-      <button class="sport-btn arrows-btn">
+      <button class="sport-btn arrows-btn" (click)="setLiveTabActive('basketball')">
         <div class="menu-content">
           <!-- active dot -->
-          <div class="dot"></div>
+          <div class="dot" *ngIf="LiveTab === 'basketball'"></div>
           <!-- svg -->
           <svg fill="currentColor" viewBox="0 0 96 96" class="svg-icon text-[28px]">
             <title></title>
             <path fill-rule="evenodd" clip-rule="evenodd"
+              [ngStyle]="{ fill: LiveTab === 'basketball' ? '#fff' : '#b1bad3' }"
               d="M14.287 13.917c16.599 6.854 30.869 15.965 43.231 27.143l-.001.002.126.11-.125-.112C64.262 31 65.501 17.31 60.63 1.865 56.773.739 52.34.092 47.758.092c-13.046 0-24.87 5.249-33.47 13.748v.077Zm79.997 46.514a46.803 46.803 0 0 1-7.907 15.996v-.003c-2.275-3.87-4.709-7.622-7.185-11.295l-.137.08c4.463-2.823 9.63-4.63 15.307-5.11l-.078.332ZM80.986 82.734c-4.75 4.553-10.46 8.116-17.124 10.458h-.003l.006-.108a38.977 38.977 0 0 1 9.137-22.842l-.281-.41c2.838 3.924 5.478 8.005 8.265 12.902Zm0 0 .016-.014-.015.015ZM12.017 64.772a83.99 83.99 0 0 0 9.697.599h.003l-.117-.006c.832.039 1.674.06 2.518.06 12.98 0 24.848-4.766 33.883-12.589a132.455 132.455 0 0 1 9.859 11.137 47.738 47.738 0 0 0-11.975 31.216l.284-.042c-2.68.49-5.44.751-8.269.76-21.022-.012-38.88-13.566-45.416-32.75 3.102.685 6.287 1.224 9.931 1.654l-.398-.039Zm-9.533-1.614c-.226-.05-.45-.1-.675-.152l.667.129.008.023Zm65.376.815.045-.051-.045.05ZM58 52.836l-.009-.009.01.01Zm-5.59-5.706A140.354 140.354 0 0 0 9.776 20.677l-.952-.332C3.305 28.021 0 37.61 0 47.97v.038c.018 2.3.192 4.539.512 6.733l-.033-.266c3.542.97 7.889 1.823 12.325 2.386l.488.05c16.526 1.797 30.138-1.637 39.12-9.78Zm21.58 11.182a149.73 149.73 0 0 0-10.601-11.7c7.864-10.897 10.059-25.19 6.466-41.155l.267.126C85.46 13.537 95.953 29.542 96 48.007c0 .604-.048 1.247-.097 1.904-.051.688-.104 1.393-.104 2.087h-.042c-8.002.159-15.445 2.596-21.552 6.586l-.215-.272Zm-10.601-11.7-.003-.003.003.003Z">
             </path>
           </svg>
           <!-- title -->
-          <span class="truncate max-w-[6.5ch] text-xs">Basketball</span>
+          <span class="truncate max-w-[6.5ch] text-xs hover:text-white"
+            [ngClass]="{'!text-white': LiveTab === 'basketball', '!text-[#b1bad3]': LiveTab !== 'basketball'}">Basketball</span>
           <!-- Badge -->
           <div class="sports-badge">
-            <div class="s-badge s-badge-active">
+            <div class="s-badge" [ngClass]="{'s-badge-active': LiveTab === 'basketball'}">
               4
             </div>
           </div>
         </div>
       </button>
+
       <!-- 2 -->
-      <button class="sport-btn arrows-btn">
+      <button class="sport-btn arrows-btn" (click)="setLiveTabActive('tennis')">
         <div class="menu-content">
           <!-- active dot -->
-          <!-- <div class="dot"></div> -->
+          <div class="dot" *ngIf="LiveTab === 'tennis'"></div>
           <!-- svg -->
           <svg fill="currentColor" viewBox="0 0 96 96" class="svg-icon text-[28px]">
             <title></title>
-            <path fill-rule="evenodd" fill="#b1bad3" clip-rule="evenodd"
+            <path fill-rule="evenodd" clip-rule="evenodd"
+              [ngStyle]="{ fill: LiveTab === 'tennis' ? '#fff' : '#b1bad3' }"
               d="M48.021.012c13.221 0 25.191 5.346 33.87 13.99l.003-.004C90.609 22.69 96 34.71 96 47.988c0 26.511-21.489 48-48 48S0 74.5 0 47.988c0-4.275.561-8.42 1.533-12.03l4.119 4 .006.005c4.62 4.533 8.1 10.224 10.035 16.875l.054.234c2.109 7.62 6.873 14.136 13.344 18.567l-.123-.078a33.326 33.326 0 0 0 18.549 5.604c18.489 0 33.48-14.99 33.48-33.48a33.356 33.356 0 0 0-9.386-23.246c-3.927-3.887-8.801-6.82-14.482-8.482l-.285-.075A40.24 40.24 0 0 1 39.93 5.56l-3.999-4-.336.075A48.082 48.082 0 0 1 48.021.012ZM11.291 34.32l-6.76-6.759.006.003.12-.288C9.304 17.355 17.327 9.33 27.535 4.563l6.639 6.92c5.591 5.546 12.56 9.703 20.68 12.001l.18.045c10.553 3.144 18.248 12.921 18.248 24.498 0 .834-.042 1.662-.11 2.373l-.01.111c-.8 7.773-5.06 14.517-11.31 18.729l.09-.057a25.28 25.28 0 0 1-14.136 4.293c-11.664 0-21.492-7.863-24.516-18.756l-.08-.327A46.449 46.449 0 0 0 11.29 34.32Z">
             </path>
           </svg>
           <!-- title -->
-          <span class="truncate max-w-[6.5ch] text-xs">Tennis</span>
+          <span class="truncate max-w-[6.5ch] text-xs hover:text-white"
+            [ngClass]="{'!text-white': LiveTab === 'tennis', '!text-[#b1bad3]': LiveTab !== 'tennis'}">Tennis</span>
           <!-- Badge -->
           <div class="sports-badge">
-            <div class="s-badge">
-              26
+            <div class="s-badge" [ngClass]="{'s-badge-active': LiveTab === 'tennis'}">
+              6
             </div>
           </div>
         </div>
       </button>
 
+
       <!-- 3 -->
-      <!-- 2 -->
-      <button class="sport-btn arrows-btn">
+      <button class="sport-btn arrows-btn" (click)="setLiveTabActive('soccer')">
         <div class="menu-content">
           <!-- active dot -->
-          <!-- <div class="dot"></div> -->
+          <div class="dot" *ngIf="LiveTab === 'soccer'"></div>
           <!-- svg -->
           <svg fill="currentColor" viewBox="0 0 96 96" class="svg-icon text-[28px]">
             <title></title>
-            <path fill="#b1bad3"
+            <path [ngStyle]="{ fill: LiveTab === 'soccer' ? '#fff' : '#b1bad3' }"
               d="M95.994 53.946a11.297 11.297 0 0 0-4.743-1.029c-1.718 0-3.349.38-4.814 1.059l.07-.03c.313-1.146.494-2.46.494-3.814 0-5.252-2.702-9.874-6.787-12.551l-.057-.037c6.913-.642 10.53-12.58 10.53-12.58-4.555-8.412-11.233-15.168-19.328-19.69l-.247-.127S59.454 3.54 55.956 7.236C51.615.202 39.275.202 39.275.202c-9.79 1.878-18.28 6.503-24.888 13.03l.006-.005a12.326 12.326 0 0 0 4.637 9.629l.024.018c-6.15 1.447-12.542 10.09-11.496 13.588a6.71 6.71 0 0 0-5.378-2.695c-.06 0-.118 0-.178.003h.009C.745 37.897.009 42.64 0 47.554v.009c0 5.303.868 10.401 2.47 15.165l-.097-.335a15.818 15.818 0 0 0 4.95-6.925l.033-.109c3.048 2.011 6.79 3.205 10.809 3.205 1.977 0 3.889-.29 5.695-.829l-.142.036c-1.266 2.56-2.008 5.572-2.008 8.759 0 4 1.17 7.727 3.184 10.856l-.048-.078a16.443 16.443 0 0 0-9.838 5.173l-.012.013c8.632 8.23 20.344 13.298 33.242 13.304 4.1-.009 8.077-.537 11.867-1.52l-.329.073c-2.24-5.189-6.32-9.229-11.396-11.363l-.142-.051c5.629-.323 11.176-8.563 12.06-14.191 4.043 1.839 8.77 2.909 13.748 2.909a33.93 33.93 0 0 0 3.605-.19l-.147.012c-.863 2.12-1.363 4.58-1.363 7.154 0 2.575.5 5.035 1.41 7.287l-.044-.13c9.876-7.609 16.678-18.794 18.463-31.583l.03-.253-.006-.006ZM59.131 62.67c-6.15-8.683-23.757-13.869-33.004-8.722 5.306-13.025 3.458-21.506-3.136-30.511 12.06 1.124 26.372-5.146 32.16-13.184 1.65 8.722 11.255 23.275 20.1 26.208-14.39 6.551-16.039 16.883-16.12 26.209Z">
             </path>
           </svg>
           <!-- title -->
-          <span class="truncate max-w-[6.5ch] text-xs">Soccer</span>
+          <span class="truncate max-w-[6.5ch] text-xs "
+            [ngClass]="{'!text-white': LiveTab === 'soccer', '!text-[#b1bad3]': LiveTab !== 'soccer'}">Soccer</span>
           <!-- Badge -->
           <div class="sports-badge">
-            <div class="s-badge">
-              8
+            <div class="s-badge" [ngClass]="{'s-badge-active': LiveTab === 'soccer'}">
+              11
             </div>
           </div>
         </div>
       </button>
+
+
     </ul>
 
   </div>
@@ -315,22 +367,29 @@
         <div class="market-title">
           <span>Republic of Korea / KBL</span>
         </div>
-        <div class="arrow svelte-69p9vw" ><svg fill="currentColor" viewBox="0 0 64 64"
-            class="svg-icon " style="transform: rotate(0deg);
+        <div class="flex ">
+          <div class="flex mr-4" *ngIf="!isMarketOpen">
+            <div class="market-badge">1</div>
+          </div>
+          <div class="arrow svelte-69p9vw" (click)="toggleMarket()" [ngClass]="{'rotate-90': !isMarketOpen}">
+            <svg fill="currentColor" viewBox="0 0 64 64" class="svg-icon " style="transform: rotate(0deg);
           ">
-            <title></title>
-            <path d="M32.271 49.763 9.201 26.692l6.928-6.93 16.145 16.145 16.144-16.144 6.93 6.929-23.072 23.07h-.005Z">
-            </path>
-          </svg></div>
+              <title></title>
+              <path
+                d="M32.271 49.763 9.201 26.692l6.928-6.93 16.145 16.145 16.144-16.144 6.93 6.929-23.072 23.07h-.005Z">
+              </path>
+            </svg>
+          </div>
+        </div>
       </div>
 
       <!-- Market Content -->
-      <div class="market-content">
+      <div class="market-content" *ngIf="isMarketOpen">
         <div class="stack">
           <div class="fixture-wrapper">
             <div class="fixture-preview">
               <!-- Live -->
-              <div class="misc">
+              <div class="misc order-1">
                 <div class="misc-wrapper">
                   <div class="fixture-details">
                     <div class="live-badge">Live</div>
@@ -341,15 +400,31 @@
                   </div>
                 </div>
               </div>
-              <!-- Line -->
-              <div class="line line1"></div>
+              <!-- Line --hidden on sm -->
+              <div class="line order-2 line1"></div>
+
+              <!-- Market-count & options-wrapper----- only on sm -->
+              <div class="market-widget order-2 flex md:hidden">
+                <!-- Button -->
+                <button class="arrows-btn option-btn sm-option-btn">
+                  <svg fill="currentColor" viewBox="0 0 64 64" class="svg-icon ">
+                    <title></title>
+                    <path fill-rule="evenodd" clip-rule="evenodd"
+                      d="M33.013 19.707 64 0v12.64L30.987 33.627 18.133 18.853 0 30.693V17.947L20.107 4.853l12.906 14.854ZM16 64H5.333V35.173L16 28.213V64Zm13.707-21.653-3.04-3.52V64h10.666V37.493l-2.773 1.76-4.853 3.094ZM58.667 64H48V30.72l10.667-6.8V64Z">
+                    </path>
+                  </svg></button>
+                <!-- Market count -->
+                <div class="market-count ml-3">
+                  +3
+                </div>
+              </div>
               <!-- Market name -->
-              <div class="market-name">
+              <div class="market-name order-4 md:order-3">
                 <span class="description-wrapper">1x2</span>
               </div>
-              <div class="line line2"></div>
+              <div class="line order-4 line2"></div>
               <!-- Teams -->
-              <div class="teams stacked svelte-1ykwt0t"><a class="teams-tag arrows-btn">
+              <div class="teams stacked svelte-1ykwt0t order-3 md:order-5"><a class="teams-tag arrows-btn">
                   <span>Pohkseh</span>
                 </a>
                 <a class="arrows-btn teams-tag">
@@ -357,7 +432,7 @@
                 </a>
               </div>
               <!-- FixtureScore -->
-              <div class="fixture-score mr-2 ">
+              <div class="fixture-score mr-2 hidden md:flex order-6">
                 <div class="fixture-score-wrapper ">
                   <div class="score-wrapper live svelte-qyo8l9">
                     <span class="font-semibold description-wrapper !text-[#ff9d00]">2</span>
@@ -378,7 +453,7 @@
               </div>
 
               <!-- Outcomes -->
-              <div class="outcomes">
+              <div class="outcomes order-7">
                 <!-- 1 -->
                 <div class="outcome-btn">
                   <div class="outcome-content">
@@ -404,7 +479,7 @@
                 <!-- 3 -->
                 <div class="outcome-btn">
                   <div class="outcome-content">
-                    <span>Ilbirs Bishkek FC</span>
+                    <span>Ilbirs</span>
                     <div class=" relative">
                       <div class="relative">
                         <span class="outcome-odd">2.75</span>
@@ -414,7 +489,7 @@
                 </div>
               </div>
               <!-- MarketCount -->
-              <div class="market-count">
+              <div class="market-count hidden md:flex order-8">
                 +3
               </div>
             </div>
@@ -455,24 +530,29 @@
         <div class="market-title">
           <span>UEFA Champion League</span>
         </div>
-        <div class="arrow svelte-69p9vw">
-          <svg fill="currentColor" viewBox="0 0 64 64" class="svg-icon" fill="#b1bad3" style="transform: rotate(0deg);
+        <div class="flex ">
+          <div class="flex mr-4" *ngIf="!isMarketOpen2">
+            <div class="market-badge">1</div>
+          </div>
+          <div class="arrow svelte-69p9vw" (click)="toggleMarket2()" [ngClass]="{'rotate-90': !isMarketOpen2}">
+            <svg fill="currentColor" viewBox="0 0 64 64" class="svg-icon " style="transform: rotate(0deg);
           ">
-            <title></title>
-            <path fill="#b1bad3"
-              d="M32.271 49.763 9.201 26.692l6.928-6.93 16.145 16.145 16.144-16.144 6.93 6.929-23.072 23.07h-.005Z">
-            </path>
-          </svg>
+              <title></title>
+              <path
+                d="M32.271 49.763 9.201 26.692l6.928-6.93 16.145 16.145 16.144-16.144 6.93 6.929-23.072 23.07h-.005Z">
+              </path>
+            </svg>
+          </div>
         </div>
       </div>
 
       <!-- Market Content -->
-      <div class="market-content">
+      <div class="market-content" *ngIf="isMarketOpen2">
         <div class="stack">
           <div class="fixture-wrapper">
             <div class="fixture-preview">
               <!-- Live -->
-              <div class="misc">
+              <div class="misc order-1">
                 <div class="misc-wrapper">
                   <div class="fixture-details">
                     <span>Thu, Nov 07 5:30 PM</span>
@@ -480,14 +560,30 @@
                 </div>
               </div>
               <!-- Line -->
-              <div class="line line1"></div>
+              <div class="line order-2 line1"></div>
+
+              <!-- Market-count & options-wrapper----- only on sm -->
+              <div class="market-widget order-2 flex md:hidden">
+                <!-- Button -->
+                <button class="arrows-btn option-btn sm-option-btn">
+                  <svg fill="currentColor" viewBox="0 0 64 64" class="svg-icon ">
+                    <title></title>
+                    <path fill-rule="evenodd" clip-rule="evenodd"
+                      d="M33.013 19.707 64 0v12.64L30.987 33.627 18.133 18.853 0 30.693V17.947L20.107 4.853l12.906 14.854ZM16 64H5.333V35.173L16 28.213V64Zm13.707-21.653-3.04-3.52V64h10.666V37.493l-2.773 1.76-4.853 3.094ZM58.667 64H48V30.72l10.667-6.8V64Z">
+                    </path>
+                  </svg></button>
+                <!-- Market count -->
+                <div class="market-count ml-3">
+                  +21
+                </div>
+              </div>
               <!-- Market name -->
-              <div class="market-name">
+              <div class="market-name order-4 md:order-3">
                 <span class="description-wrapper">Winner</span>
               </div>
-              <div class="line line2"></div>
+              <div class="line line2 order-4"></div>
               <!-- Teams -->
-              <div class="teams stacked svelte-1ykwt0t"><a class="teams-tag arrows-btn">
+              <div class="teams stacked svelte-1ykwt0t order-3 md:order-5"><a class="teams-tag arrows-btn">
                   <span>Swiatek, Iga</span>
                 </a>
                 <a class="arrows-btn teams-tag">
@@ -495,7 +591,7 @@
                 </a>
               </div>
               <!-- FixtureScore -->
-              <div class="fixture-score mr-2 ">
+              <div class="fixture-score mr-2 hidden md:block order-6">
                 <div class="options-wrapper stacked">
                   <div class="hoverable">
                     <button class="arrows-btn option-btn">
@@ -510,7 +606,7 @@
               </div>
 
               <!-- Outcomes -->
-              <div class="outcomes">
+              <div class="outcomes order-7">
                 <!-- 1 -->
                 <div class="outcome-btn">
                   <div class="outcome-content">
@@ -535,7 +631,7 @@
                 </div>
               </div>
               <!-- MarketCount -->
-              <div class="market-count">
+              <div class="market-count hidden md:block order-8">
                 +21
               </div>
             </div>
@@ -551,20 +647,20 @@
   <!-- --------------------------Table Topbar ------------------>
   <div class="top-sports-header events-header">
     <!-- left tab slider -->
-    <div class="tab-slider">
+    <div class="tab-slider max-w-[90vw] md:max-w-[50vw] overflow-x-auto">
       <div class="flex">
         <!-- Tab item 1 -->
-        <a class="tab-item tab-item1">
+        <a class="tab-item tab-item1" [class.active]="TableTab === 1" (click)="setActiveTableTab(1)">
           <span>All Bets</span>
         </a>
 
         <!-- Tab item 2 -->
-        <a class="tab-item">
+        <a class="tab-item" [class.active]="TableTab === 2" (click)="setActiveTableTab(2)">
           <span>High Rollers</span>
         </a>
 
         <!-- Tab item 3 -->
-        <a class="tab-item">
+        <a class="tab-item" [class.active]="TableTab === 3" (click)="setActiveTableTab(3)">
           <span>Race Leaderboard</span>
           <div class="bubble-wrap">
             <div class="scale-up"></div>
@@ -591,17 +687,15 @@
 
       <!-- Select Label -->
       <label class="stacked">
-        <div class="select-wrap" >
-          <div class="select-content" ><select
-              class="select spacing-expanded">
+        <div class="select-wrap">
+          <div class="select-content"><select class="select spacing-expanded">
               <option value="0">0 </option>
               <option value="10">10 </option>
               <option value="20">20 </option>
               <option value="30">30 </option>
               <option value="40">40 </option>
             </select>
-            <div class="dropdown-icon-wrap" ><svg fill="currentColor"
-                viewBox="0 0 64 64" class="svg-icon ">
+            <div class="dropdown-icon-wrap"><svg fill="currentColor" viewBox="0 0 64 64" class="svg-icon ">
                 <title></title>
                 <path
                   d="M32.271 49.763 9.201 26.692l6.928-6.93 16.145 16.145 16.144-16.144 6.93 6.929-23.072 23.07h-.005Z">
@@ -615,14 +709,14 @@
   </div>
 
   <!-- Table -->
-  <div class="table-container mt-6">
+  <div class="table-container">
     <table>
       <thead>
         <tr>
           <th class="text-start">Event</th>
-          <th>User</th>
-          <th>Time</th>
-          <th class="text-end"> Odds</th>
+          <th class="lg-row">User</th>
+          <th class="lg-row">Time</th>
+          <th class="lg-row"> Odds</th>
           <th class="text-end">Bet Amount</th>
         </tr>
       </thead>
@@ -637,7 +731,7 @@
             </svg>
             <span class="ml-2">Multi(13)</span>
           </td>
-          <td class=" table-btn text-center gap-2">
+          <td class=" table-btn text-center gap-2 lg-row">
             <svg fill="currentColor" viewBox="0 0 64 64" class="svg-icon ">
               <title></title>
               <path fill-rule="evenodd" clip-rule="evenodd"
@@ -646,8 +740,8 @@
             </svg>
             <span> Hidden </span>
           </td>
-          <td class="text-center">3:11 PM</td>
-          <td class="text-end">10.55</td>
+          <td class="text-center lg-row">3:11 PM</td>
+          <td class="text-end lg-row">10.55</td>
           <td class="bet-amount gap-1">
             <span>9761.39394799999 </span>
             <svg fill="none" viewBox="0 0 96 96" class="svg-icon ">

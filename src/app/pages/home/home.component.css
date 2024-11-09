@@ -1,78 +1,32 @@
-@tailwind components;
-
-.slick-arrow {
-    position: absolute !important;
-    top: 50% !important;
-    transform: translateY(-50%) !important;
-    border: none !important;
-    font-size: 4rem !important;
-    z-index: 10 !important;
-    cursor: pointer !important;
-    background-color: white !important;
-    border-radius: 9999px !important;
-    padding: 6px !important;
-    box-shadow: 0 0 80px #29262133 !important;
-}
-
-.nav-btn:hover {
-    background-color: #efede9;
-}
-
-.prev-slide {
-    left: 5px !important;
-}
-
-.next-slide {
-    right: 5px !important;
-}
-
-
-::ng-deep .carousel {
-    display: flex;
-}
-
-::ng-deep .slick-track {
-    transform: none !important;
-    display: flex;
-    flex-direction: row;
-    width: fit-content !important;
-    overflow-x: auto !important;
-}
-
-/* ::ng-deep .slick-arrow{
-    display: none !important;
-} */
-
-
-::ng-deep .slick-slide {
-    width: 100% !important;
-}
-
-::ng-deep .slide-track:last-child {
-    margin-right: 0px !important;
-}
-
 ::-webkit-scrollbar {
     display: none;
 }
-
-
 section {
-    @apply max-w-[1200px] m-[0_auto] relative max-[1680px]:p-[0px_30px]
+    @apply max-w-[1200px] m-[0_auto] relative max-[1680px]:p-[0px_3vw]
 }
 
 .slide {
-    @apply mr-[31px] rounded-[10px]
+    @apply  rounded-[10px]
 }
+
+.swiper{
+    width: max-content !important;
+}
+
+  .swiper-slide-main{
+    @apply !w-[360px] mr-5
+  }
+  
+  .swiper-slide-sports{
+    @apply mr-5 !w-[150px]
+  }
 
 .slide img {
     @apply max-w-[357.667px] w-[357.667px]
 }
 
 .hero-card {
-    @apply overflow-hidden flex flex-col relative text-white bg-[#213743] rounded-[.5rem] w-[360px]
-    /* container-type: inline-size;
-    container-name: card-size; */
+    @apply overflow-hidden flex flex-col relative text-white bg-[#213743] rounded-[.5rem] cursor-pointer
 }
 
 .card-wrapper {
@@ -123,8 +77,12 @@ section {
 }
 
 .search-wrap-input {
-    @apply w-full text-white bg-[#0f212e] flex items-center px-4 outline-none m-0 cursor-text text-[.875rem] appearance-none font-semibold shadow-[0_1px_3px_0_rgba(0,0,0,.2),0_1px_2px_0_rgba(0,0,0,.12)] border-[2px] border-solid border-[#2f4553] rounded-[20px]
+    @apply w-full text-white bg-[#0f212e] flex items-center px-4 hover:border-[#557086] outline-none m-0 cursor-text text-[.875rem] appearance-none font-semibold shadow-[0_1px_3px_0_rgba(0,0,0,.2),0_1px_2px_0_rgba(0,0,0,.12)] border-[2px] border-solid border-[#2f4553] rounded-[20px]
 }
+
+.search-wrap-input:focus-within {
+    @apply border-[#557086];
+  }
 
 .search-icon {
     @apply text-[#557086] text-[1.25rem]
@@ -135,7 +93,11 @@ section {
 }
 
 .svg-icon {
-    @apply mt-[-4px] pointer-events-none [stroke-width:0] fill-current stroke-current flex-shrink-0 inline-block size-[1em]
+    @apply mt-[-3px] pointer-events-none [stroke-width:0] fill-current stroke-current flex-shrink-0 inline-block size-[1em]
+}
+
+.svg-icon:hover{
+    fill: white !important;
 }
 
 /* Tabs */
@@ -144,12 +106,13 @@ section {
 }
 
 .tab-slider {
-    @apply bg-[#0f212e] flex rounded-[3rem] p-[5px] flex-shrink-0
+    @apply bg-[#0f212e] flex rounded-[3rem] p-[5px] flex-shrink-0 
 }
 
 .tab-item {
-    @apply inline-flex relative items-center gap-2 justify-center whitespace-nowrap ml-[5px] px-4 py-[15px] font-semibold text-[.875rem] rounded-full bg-[rgb(47,69,83)] transition disabled:pointer-events-none disabled:opacity-50 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 active:scale-[0.98] bg-transparent focus-visible:outline-white text-sm leading-none [&:hover>svg]:text-white [&_svg]:!text-gray-200
+    @apply inline-flex cursor-pointer relative items-center gap-2 justify-center whitespace-nowrap ml-[5px] px-4 py-[15px] font-semibold text-[.875rem] rounded-full bg-[rgb(47,69,83)] transition disabled:pointer-events-none disabled:opacity-50 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 active:scale-[0.98] bg-transparent focus-visible:outline-white text-sm leading-none [&:hover>svg]:text-white [&_svg]:!text-gray-200
 }
+
 
 .tab-item span {
     @apply text-white
@@ -173,7 +136,7 @@ section {
 }
 
 .arrows-btn {
-    @apply inline-flex relative items-center rounded-[2rem] gap-2 justify-center border border-solid border-[#2f4553] font-semibold text-[.875rem] whitespace-nowrap transition disabled:pointer-events-none disabled:opacity-50 focus-visible:outline-2 focus-visible:outline-offset-2 active:scale-[0.98] bg-transparent text-white focus-visible:outline-none text-sm leading-none [&:hover>svg]:text-white
+    @apply inline-flex relative cursor-pointer items-center rounded-[2rem] gap-2 justify-center border border-solid border-[#2f4553] font-semibold text-[.875rem] whitespace-nowrap transition disabled:pointer-events-none disabled:opacity-50 focus-visible:outline-2 focus-visible:outline-offset-2 active:scale-[0.98] bg-transparent text-white focus-visible:outline-none text-sm leading-none [&:hover>svg]:text-white
 }
 
 .left-arrow {
@@ -194,7 +157,11 @@ section {
 
 /* Top sports slider */
 .sports-img {
-    @apply w-[157px] max-w-[167px]
+    @apply w-[157px] max-w-[167px] rounded-lg 
+}
+
+.sports-card{
+    @apply hover:translate-y-[-5px]
 }
 
 .ribbon {
@@ -215,7 +182,24 @@ section {
 }
 
 .event-dropdown {
-    @apply bg-[#0f212e] rounded-[4px]
+    @apply bg-[#0f212e] rounded-[4px] relative
+}
+
+.profile-dropdown{
+    @apply absolute right-0 z-[100] top-[70px] py-1  bg-white rounded-[.25rem] shadow-lg  w-[90px]
+}
+
+.dropdown-arrow{
+    @apply absolute top-0 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-2 h-2 bg-white rotate-45 border-l border-t border-gray-200
+}
+
+.dropdown-scroll-content {
+    @apply flex flex-col p-[.25rem_0] [max-height:inherit]
+}
+
+.profile-list{
+    @apply  inline-flex relative items-center gap-2 font-semibold whitespace-nowrap  text-[rgb(47_69_83)] transition disabled:pointer-events-none disabled:opacity-50 focus-visible:outline focus-visible:outline-2 hover:bg-[#B1BAD3] 
+    focus-visible:outline-offset-2 active:scale-[0.98] bg-transparent text-sm leading-none  px-3 py-3 rounded-none justify-start
 }
 
 /* Sport Menu List */
@@ -224,7 +208,7 @@ section {
 }
 
 .main-list {
-    @apply px-2 pt-8 py-[18px]
+    @apply px-2 pt-8 py-[18px] flex flex-nowrap
 }
 
 .sport-btn {
@@ -276,12 +260,12 @@ section {
 
 
 .fixture-preview {
-    @apply py-2 px-4 grid items-center w-full [grid-template-rows:repeat(3,auto)] [grid-template-columns:repeat(12,1fr)] text-[#b1bad3] [row-gap:.5rem] [grid-column-gap:.5rem];
+    @apply py-2 px-4 grid items-center w-full grid-cols-6 md:grid-cols-12 [grid-template-rows:1fr_auto] md:[grid-template-rows:repeat(3,auto)] text-[#b1bad3] [row-gap:.5rem] [grid-column-gap:.5rem];
 }
 
 /* Market rows */
 .misc {
-    @apply [grid-column:1/span_2] flex relative text-xs
+    @apply [grid-column:1/span_3] md:[grid-column:1/span_2] flex relative text-xs
 }
 
 .misc-wrapper {
@@ -312,7 +296,7 @@ section {
 
 /* line */
 .line {
-    @apply w-full h-[2px]
+    @apply w-full h-[2px] hidden md:block
 }
 
 .line1 {
@@ -321,7 +305,7 @@ section {
 
 /* Market name */
 .market-name{
-    @apply px-2 w-full [grid-column:7/span_4] relative items-center text-center bg-[#213743]
+    @apply px-2 w-full [grid-column:1/span_12] md:[grid-column:7/span_4] relative items-center text-center bg-[#213743]
 }
 
 .market-name span{
@@ -333,7 +317,7 @@ section {
 }
 
 .teams {
-    @apply [grid-column:1/span_3] whitespace-nowrap overflow-hidden grid gap-2 self-center
+    @apply [grid-column:1/span_12] md:[grid-column:1/span_3] whitespace-nowrap overflow-hidden grid gap-2 self-center
 }
 
 .teams-tag{
@@ -342,7 +326,7 @@ section {
 
 /* FixtureScore */
 .fixture-score {
-    @apply [grid-column:4/span_2] flex justify-end
+    @apply [grid-column:4/span_2] hidden md:flex justify-end 
 }
 
 .fixture-score-wrapper{
@@ -362,11 +346,11 @@ section {
 }
 
 .outcomes{
-    @apply [grid-column:6/span_6] self-stretch place-items-center w-full grid [grid-gap:.5rem] [grid-template-columns:repeat(auto-fit,minmax(50px,1fr))] [grid-template-rows:1fr]
+    @apply  [grid-column:1/span_12] md:[grid-column:6/span_6] self-stretch place-items-center w-full grid [grid-gap:.5rem] [grid-template-columns:repeat(auto-fit,minmax(50px,1fr))] [grid-template-rows:1fr]
 }
 
 .outcome-btn{
-    @apply px-[10.5px] py-[7px]  bg-[#071824] flex rounded-[.25rem] relative text-sm text-white items-start min-w-0 [transition:background_.1s] justify-center w-full
+    @apply px-[10.5px] py-[7px]  bg-[#071824] hover:bg-blue-900 flex rounded-[.25rem] relative text-sm text-white items-start min-w-0 [transition:background_.1s] justify-center w-full
 }
 
 .outcome-content{
@@ -378,8 +362,22 @@ section {
 }
 
 .market-count{
-    @apply [grid-column:12/span_1] justify-self-center
+    @apply [grid-column:12/span_1]  justify-self-center hover:!text-white
 }
+
+/* Mobile view styling */
+.market-widget{
+   @apply [grid-column:7/span_6]  justify-center items-center justify-self-end
+}
+
+.sm-option-btn{
+    @apply pr-3 !border-r-[2px] !border-solid !border-[#557086] !border-l-0 border-t-0 border-b-0 !rounded-none
+}
+
+.market-badge{
+    @apply text-[#d5dceb] bg-[#2f4553] px-1.5 min-w-[1.8em] inline-flex rounded-[2em] text-xs items-center justify-center leading-normal whitespace-nowrap
+}
+
 
 /* Table topbar */
 .bubble-wrap{
@@ -398,7 +396,7 @@ animation: ScaleUp .2s ease-out;
 
 /* Select Wrap */
 .select-wrap{
-    @apply flex flex-row justify-self-end items-center gap-2
+    @apply hidden md:flex flex-row justify-self-end items-center gap-2
 }
 
 .mode-btn{
@@ -452,3 +450,12 @@ tr:hover {
     @apply w-5 h-5 ml-2;
 }
 
+.lg-row{
+    @apply max-[768px]:hidden
+}
+
+
+.tab-item.active , .tab-item:hover{
+    @apply bg-[#2f4553] text-white
+  }
+  

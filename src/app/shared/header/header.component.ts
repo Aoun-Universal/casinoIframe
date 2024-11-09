@@ -13,9 +13,14 @@ export class HeaderComponent {
   porfileDropOpen=false;
   massageDropOpen=false;
   bellDropOpen=false;
+  seachbutton=false;
+  cosinoDropOpen=false;
   closeDropdown() {
     this.bellDropOpen = false;
+   this.seachbutton=false;
+
   }
+
   toggleDropdown(dropdownType: string) {
     if (dropdownType === 'isDropdownOpen' && this.isDropdownOpen) {
       this.isDropdownOpen = false;
@@ -26,14 +31,23 @@ export class HeaderComponent {
     } else if (dropdownType === 'bellDropOpen' && this.bellDropOpen) {
       this.bellDropOpen = false;
     } 
+    else if (dropdownType === 'seachbutton' && this.seachbutton) {
+      this.seachbutton = false;
+    } 
+   
     else {
       this.isDropdownOpen = dropdownType === 'isDropdownOpen';
       this.porfileDropOpen = dropdownType === 'porfileDropOpen';
       this.massageDropOpen = dropdownType === 'massageDropOpen';
       this.bellDropOpen = dropdownType === 'bellDropOpen';
+      this.seachbutton = dropdownType === 'seachbutton';
+
+
     }
   }
-
+CosinDropdown(){
+  this.cosinoDropOpen=!this.cosinoDropOpen;
+}
   
   currencies = [
     { value: '0.00000000', symbol: 'BTC', imageUrl: '/assets/header/bit.png' },

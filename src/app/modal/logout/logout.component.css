@@ -1,0 +1,41 @@
+.Modal-container {
+  @apply fixed align-baseline left-0 z-[1500] top-0 bottom-0 right-0  p-[1rem] justify-center flex items-center text-sm;
+}
+.svelte-syudie {
+  @apply absolute  left-0 top-0 bottom-0 right-0  touch-none bg-[rgba(0,0,0,0.75)];
+}
+.card {
+  @apply rounded-[0.5rem] [background-position:center] relative w-full min-w-[200px] max-w-[500px] max-h-[calc(100%-4em)] flex flex-col bg-[#1a2c38] text-[#b1bad3] overflow-hidden;
+}
+
+.header {
+  @apply flex justify-between p-4 touch-none;
+}
+.header-text {
+  @apply text-[#fff] text-left justify-start text-base font-semibold inline-flex items-center;
+}
+.header-icon {
+  @apply mr-2 text-[#b1bad3];
+}
+.svg-icon {
+  pointer-events: none;
+  stroke-width: 0;
+  stroke: currentColor;
+  fill: currentColor;
+  flex-shrink: 0;
+  display: inline-block;
+  width: 1em;
+  height: 1em;
+}
+.content-svelte {
+  @apply [overscroll-behavior:contain] [scrollbar-color:#2f4553] overflow-y-auto overflow-x-hidden  [scrollbar-width:thin];
+}
+.Modal-content {
+  @apply flex flex-col relative touch-auto;
+}
+.ctainer {
+  @apply px-4 pb-4 flex flex-col gap-4 touch-auto;
+}
+.term {
+  @apply text-[#b1bad3]  text-sm font-normal touch-auto block m-0 p-0;
+}
