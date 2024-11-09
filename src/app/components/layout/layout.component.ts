@@ -8,11 +8,12 @@ import {HeaderComponent} from "../../shared/header/header.component";
 import {filter} from 'rxjs';
 import {MobileNavigationComponent} from "../../shared/mobile-navigation/mobile-navigation.component";
 import { ToggleService } from '../../services/toggle.service';
+import { BetSlipComponent } from '../../shared/bet-slip/bet-slip.component';
 
 @Component({
   selector: 'app-layout',
   standalone: true,
-  imports: [ContentComponent, SidebarComponent, FooterComponent, CommonModule, HeaderComponent, MobileNavigationComponent],
+  imports: [ContentComponent, SidebarComponent, FooterComponent, CommonModule, HeaderComponent, MobileNavigationComponent, BetSlipComponent],
   templateUrl: './layout.component.html',
   styleUrls: ['./layout.component.css']
 })
