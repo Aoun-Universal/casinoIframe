@@ -41,6 +41,10 @@ export const routes: Routes = [
     component: RegisterComponent
   },
   {
+    path: 'logout',
+    component: LogoutComponent
+  },
+  {
     path: '**',
     redirectTo: '',
   }
