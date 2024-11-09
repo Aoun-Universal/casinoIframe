@@ -1,5 +1,9 @@
 .sidebar-wrapper {
-  @apply w-[240px] h-full bg-[#0f212e] max-md:fixed z-[999]  md:overflow-y-auto max-md:w-[100vw];
+  @apply w-[240px] h-full bg-[#0f212e] max-md:fixed z-[999]  md:overflow-y-auto max-md:w-[100vw] max-md:translate-y-full duration-300;
+}
+
+.mobile-view-show {
+  @apply max-md:!translate-y-0 duration-300;
 }
 
 .sidebar-header {
@@ -164,19 +168,19 @@
 
   min-height: 70.57px;
 }
-.option{
-  @apply cursor-pointer flex justify-between w-full leading-[1.5rem]
+.option {
+  @apply cursor-pointer flex justify-between w-full leading-[1.5rem];
 }
-.indicator{
+.indicator {
   background-size: 75%;
-  @apply bg-[#2f4553]
+  @apply bg-[#2f4553];
 }
-.stacked{
-  @apply inline-flex items-center relative
+.stacked {
+  @apply inline-flex items-center relative;
 }
-.label-on-right{
-  @apply pr-[0.5rem] absolute left-0
+.label-on-right {
+  @apply pr-[0.5rem] absolute left-0;
 }
-.sports:hover{
-  background-image: url('/assets/sidebar/sports-ball-orange.avif');
+.sports:hover {
+  background-image: url("/assets/sidebar/sports-ball-orange.avif");
 }

@@ -1,6 +1,11 @@
 .Modal-container {
   @apply fixed left-0 z-[1500] top-0 bottom-0 right-0  p-[1rem] justify-center flex items-center text-sm;
 }
+
+input[type="date"]::-webkit-calendar-picker-indicator {
+    filter: invert(100%) brightness(2);
+}
+
 .svelte-syudie {
   @apply absolute  left-0 top-0 bottom-0 right-0  touch-none bg-[rgba(0,0,0,0.75)];
 }
@@ -99,16 +104,25 @@
 .tc-label {
   @apply cursor-pointer flex-row text-left inline-flex items-center relative;
 }
-.tc-checkbox {
-  @apply absolute left-0 opacity-0 z-[-1]  appearance-none cursor-pointer;
+/* .tc-checkbox {
+  @apply absolute left-0 opacity-0 z-[-1] appearance-none cursor-pointer;
+} */
+
+.tc-checkbox:checked + .indicator-variant .checkmark {
+  opacity: 1; /* Makes the checkmark visible */
 }
-.indicator-variant {
-  @apply border border-solid  [background-size:75%] border-[#2f4553] outline-none w-[1.5em] h-[1.5em] flex-shrink-0  cursor-pointer [background-position:center] bg-no-repeat rounded-[3px];
-  box-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.2), 0 1px 2px 0 rgba(0, 0, 0, 0.12);
-}
-.checkbox-text {
-  @apply pt-[6px] ml-[8px] w-full inline-flex items-center font-semibold text-sm text-[#b1bad3] pb-1 justify-between;
-}
+
+
+/* Visible checkbox styling */
+/* .indicator-variant {
+  @apply inline-block w-4 h-4 bg-gray-200 border-2 border-gray-400 rounded;
+  transition: background-color 0.3s ease;
+} */
+
+/* Style when the checkbox is checked */
+/* .tc-checkbox:checked + .indicator-variant {
+  @apply bg-blue-500 border-blue-500;
+} */
 .indicator-variant-div {
   @apply bg-[#2f4553] border border-solid  [background-size:75%] border-[#2f4553] outline-none w-[1.5em] h-[1.5em] flex-shrink-0  cursor-pointer [background-position:center] bg-no-repeat rounded-[3px];
   box-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.2), 0 1px 2px 0 rgba(0, 0, 0, 0.12);

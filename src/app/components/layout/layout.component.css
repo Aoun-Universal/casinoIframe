@@ -11,7 +11,7 @@
 }
 
 .content-container {
-  @apply lg:w-[calc(100%-240px)] w-full;
+  @apply lg:lg:min-w-[calc(100%-610px)] w-full;
 }
 
 .page-wrapper {

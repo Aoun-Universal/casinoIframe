@@ -1,15 +1,17 @@
-import {CommonModule} from '@angular/common';
-import {Component} from '@angular/core';
-import {FormBuilder, FormGroup, FormsModule, ReactiveFormsModule, Validators} from '@angular/forms';
+import { CommonModule } from '@angular/common';
+import { Component } from '@angular/core';
+import { FormBuilder, FormGroup, FormsModule, ReactiveFormsModule, Validators } from '@angular/forms';
 
 @Component({
   selector: 'app-register',
   standalone: true,
-  imports: [ReactiveFormsModule, CommonModule, FormsModule],
+  imports: [ReactiveFormsModule, CommonModule, FormsModule, FormsModule],
   templateUrl: './register.component.html',
   styleUrl: './register.component.css'
 })
 export class RegisterComponent {
+  isPhone = true
+  isCode = true
   registerForm: FormGroup;
   currentStep = 1;
   passwordVisible: boolean = false;
@@ -35,9 +37,7 @@ export class RegisterComponent {
     this.passwordVisible = !this.passwordVisible;
   }
   nextStep() {
-    if (this.currentStep < 3){
-      this.currentStep++;
-    }
+    this.currentStep++;
   }
 
   prevStep() {
@@ -53,6 +53,14 @@ export class RegisterComponent {
 
   createAccount() {
     console.log('Account Created:', this.registerForm.value);
+  }
+
+  togglePhone() {
+    this.isPhone = !this.isPhone
+  }
+
+  toggleCode(){
+    this.isCode = !this.isCode
   }
 
   exit() {
