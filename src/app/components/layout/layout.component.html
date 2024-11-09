@@ -1,9 +1,9 @@
 <div class="main-container">
-  <div class="sidebar">
+  <div class="sidebar" [ngClass]="{'md:!w-[60px] transition-all duration-200':!sidebarOpen}">
     <app-sidebar></app-sidebar>
   </div>
 
-  <div class="content-container">
+  <div class="content-container" [ngClass]="{'lg:!w-[calc(100vw-60px)] transition-all duration-200':!sidebarOpen}">
     <app-header></app-header>
     <main [ngClass]="{'!pt-0 !h-[calc(100vh-60px)]':currentRoute === '/' || currentRoute === '/drake' }"
           class="page-wrapper">

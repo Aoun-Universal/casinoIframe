@@ -40,7 +40,7 @@
 .header-button {
   text-shadow: 0px 1px 2px rgba(0, 0, 0, 0.12), 0px 1px 3px rgba(0, 0, 0, 0.2);
 
-  @apply relative flex  flex-1 items-center justify-center bg-cover text-white text-[.875rem] !h-[2.25rem] rounded-[.25rem] bg-no-repeat  font-bold select-none;
+  @apply relative flex  items-center justify-center bg-cover text-white text-[.875rem] !h-[2.25rem] rounded-[.25rem] bg-no-repeat  font-bold select-none;
 }
 .sports {
   background-image: url("/assets/sidebar/sports-balls-en.webp");
@@ -49,6 +49,7 @@
 }
 .casino {
   background-image: url("/assets/sidebar/casino-poker-cards-en.webp");
+
 }
 .main-container-content {
   @apply p-4 max-md:mb-10 max-md:h-[calc(100vh-280px)] max-md:!overflow-y-auto;
@@ -179,4 +180,20 @@
 }
 .sports:hover{
   background-image: url('/assets/sidebar/sports-ball-orange.avif');
+}
+.sport-btn-mobile{
+  width: 2.75rem !important;
+  height: 2.75rem !important;
+  background-image: url('/assets/sidebar/sports-balls-small-en.avif');
+}
+.casino-btn-mobile{
+  width: 2.75rem !important;
+  height: 2.75rem !important;
+  background-image: url('/assets/sidebar/casino-poker-cards-small-en.avif');
+}
+.casino-btn-mobile:hover{
+  background-image: url('/assets/sidebar/casino-poker-cards-small-green-en.avif');
+}
+.sport-btn-mobile:hover{
+  background-image: url('/assets/sidebar/sports-balls-small-orange-en.avif');
 }

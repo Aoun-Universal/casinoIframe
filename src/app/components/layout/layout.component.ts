@@ -1,4 +1,4 @@
-import {Component} from '@angular/core';
+import {Component, OnInit} from '@angular/core';
 import {NavigationEnd, Router} from '@angular/router';
 import {ContentComponent} from '../content/content.component';
 import {SidebarComponent} from '../../shared/sidebar/sidebar.component';
@@ -7,6 +7,7 @@ import {CommonModule} from '@angular/common';
 import {HeaderComponent} from "../../shared/header/header.component";
 import {filter} from 'rxjs';
 import {MobileNavigationComponent} from "../../shared/mobile-navigation/mobile-navigation.component";
+import { ToggleService } from '../../services/toggle.service';
 
 @Component({
   selector: 'app-layout',
@@ -15,10 +16,10 @@ import {MobileNavigationComponent} from "../../shared/mobile-navigation/mobile-n
   templateUrl: './layout.component.html',
   styleUrls: ['./layout.component.css']
 })
-export class LayoutComponent {
+export class LayoutComponent implements OnInit{
   currentRoute: string = '';
-
-  constructor(private router: Router) {
+  sidebarOpen:boolean=true;
+  constructor(private router: Router, private toggle:ToggleService) {
     this.router.events.pipe(
       filter(event => event instanceof NavigationEnd)
     ).subscribe((event: NavigationEnd) => {
@@ -26,5 +27,10 @@ export class LayoutComponent {
       console.log(this.currentRoute);
     });
   }
-
+  ngOnInit(): void {
+    this.toggle.getSidebar().subscribe((state)=>{
+      this.sidebarOpen=state
+      console.log(this.sidebarOpen)
+    })
+  }
 }
