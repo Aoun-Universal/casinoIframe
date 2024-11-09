@@ -1,9 +1,9 @@
 .sidebar-wrapper {
-  @apply w-[240px] h-full bg-[#0f212e] max-md:fixed z-[999]  md:overflow-y-auto max-md:w-[100vw] max-md:-bottom-full duration-300;
+  @apply w-[240px] h-full bg-[#0f212e] max-md:fixed z-[999]  md:overflow-y-auto max-md:w-[100vw] max-md:translate-y-full duration-300;
 }
 
 .mobile-view-show {
-  @apply max-md:!bottom-auto duration-300;
+  @apply max-md:!translate-y-0 duration-300;
 }
 
 .sidebar-header {
