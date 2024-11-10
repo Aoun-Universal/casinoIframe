@@ -1,0 +1,82 @@
+section {
+  @apply px-[3vw] pt-[7px];
+}
+
+.svg-main {
+  @apply py-[15px] px-[20px] bg-[#0f212e] rounded-sm;
+}
+.svg-main svg {
+  @apply w-[14.2px];
+}
+
+.bread-crumb-main {
+  @apply flex items-center space-x-3;
+}
+
+.text-main {
+  @apply px-5 text-sm bg-[#0f212e] rounded-sm leading-[44px] flex items-center;
+}
+.text-main span {
+  @apply mx-2;
+}
+
+.chart-svg {
+  @apply w-full bg-[#0F212E];
+}
+.chart-svg svg {
+  @apply h-[56px];
+}
+
+.arrow-down {
+  @apply w-full bg-[#0F212E] flex justify-center;
+}
+.arrow-down svg {
+  @apply h-[20px] w-[12px];
+}
+.switch-btn {
+  @apply p-[5px] bg-[#0F212E] rounded-[3rem] flex overflow-x-auto space-x-[5px];
+}
+.switch-btn button {
+  @apply text-[14px] leading-[14px] py-[15px] px-[20px] text-inherit text-nowrap;
+}
+
+.activeTab {
+  @apply bg-[#2f4553] rounded-full;
+}
+
+.x2-main {
+  @apply shadow-[0_1px_3px_0_rgba(0,_0,_0,_.2),_0_1px_2px_0_rgba(0,_0,_0,_.12),_inset_0_1px_rgba(255,255,255,.04)] rounded bg-[#213743];
+}
+
+.x2-isOpen {
+  @apply py-[7px] px-[10.5px] bg-[#071824] w-full flex items-center justify-between text-[14px] leading-[21px] rounded;
+}
+
+.slash {
+  transform: skew(-20deg);
+  @apply hidden lg:inline-flex w-0.5 h-[3.2em] !m-[-.75rem_1rem] bg-[#1a2c38];
+}
+
+.main-flex-lg {
+  @apply lg:grid [grid-template-columns:_minmax(0,_1fr)_360px] gap-4 [grid-auto-rows:_auto];
+}
+
+.main-match {
+  background-image: url("/assets/pal-ful/bg-head.jpg");
+  @apply w-full max-h-[200px] p-8 hidden lg:flex items-center justify-center;
+}
+
+.img-bg {
+  display: grid;
+  grid-template-areas:
+    "competitor_title competitor_title corners_title yellowCards_title redCards_title period_title_0 period_title_1 matchScore_title"
+    "competitor_home competitor_home corners_home yellowCards_home redCards_home period_home_0 period_home_1 matchScore_home"
+    "competitor_away competitor_away corners_away yellowCards_away redCards_away period_away_0 period_away_1 matchScore_away";
+}
+
+.match-main-2 {
+  min-width: 250px;
+  max-width: calc(100% - var(--space-8));
+  border-radius: var(--radius-base);
+  width: auto;
+}
