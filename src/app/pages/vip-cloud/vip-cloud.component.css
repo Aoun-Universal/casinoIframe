@@ -129,10 +129,10 @@
     @apply  text-[#b1bad3]
 }
 .card2{
-    @apply flex flex-col items-center md:items-start md:flex-row gap-6
+    @apply flex flex-col items-center md:items-start h-full md:flex-row gap-6
 }
 .variant-default{
-    @apply sticky top-0 h-full
+    @apply sticky top-0 mb-[2rem]
 }
 .wrapper-btn{
     @apply flex  md:flex-col sm:w-[300px]  md:w-[200px] py-2 px-4 gap-2 md:px-0 md:gap-0  bg-[#0F212E] rounded-full overflow-hidden md:rounded-[8px] sticky top-[2rem] 
@@ -171,7 +171,7 @@
     @apply w-full md:w-[200px] p-[10px]
 }
 .dropdown{
-    @apply bg-[#0F212E] flex justify-between w-full rounded-[2px] font-bold text-[14px]
+    @apply bg-[#0F212E] flex justify-between w-full rounded-[2px] font-bold text-[14px] border-none outline-none
 }
 .button-wrapper{
     @apply inline-flex relative items-center gap-2 justify-center rounded-sm font-semibold whitespace-nowrap  transition disabled:pointer-events-none disabled:opacity-50 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 active:scale-[0.98] bg-blue-500 text-white hover:bg-blue-600 hover:text-white focus-visible:outline-white text-sm leading-none shadow-md py-[0.8125rem] px-[1rem] 
