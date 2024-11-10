@@ -16,10 +16,7 @@ export const routes: Routes = [
     children: [
       {
         path: '',
-        loadComponent: () =>
-          import('./pages/before-login/before-login.component').then(
-            (c) => c.BeforeLoginComponent
-          ),
+        loadComponent: () => import('./pages/before-login/before-login.component').then(c => c.BeforeLoginComponent),
       },
       {
         path: 'home',
@@ -41,14 +38,15 @@ export const routes: Routes = [
         children: [
           {
             path: 'stake-smart',
-            component: StakeSmartComponent,
+            component: StakeSmartComponent
           },
           {
             path: 'responsible-gambling-faqs',
-            component: ResponsibleGamblingFaqsComponent,
-          },
-        ],
+            component: ResponsibleGamblingFaqsComponent
+          }
+        ]
       },
+
       {
         path: 'sport-market',
         loadComponent: () =>
@@ -65,13 +63,18 @@ export const routes: Routes = [
       },
     ],
   },
+      {
+        path: 'pal-ful',
+        loadComponent: () => import('./pages/pal-ful/pal-ful.component').then(c => c.PalFulComponent)
+      },
+    ]
   {
     path: 'valut',
-    component: VaultComponent,
+    component: VaultComponent
   },
   {
     path: 'vip',
-    component: VipComponent,
+    component: VipComponent
   },
   {
     path: 'login',
