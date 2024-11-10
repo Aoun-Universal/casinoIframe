@@ -1,7 +1,10 @@
-import {Routes} from '@angular/router';
-import {RegisterComponent} from './modal/register/register.component';
-import {StakeSmartComponent} from './pages/stake-smart/stake-smart.component';
-import {LogoutComponent} from './modal/logout/logout.component';
+import { Routes } from '@angular/router';
+import { VaultComponent } from './modal/vault/vault.component';
+import { VipComponent } from './modal/vip/vip.component';
+import { RegisterComponent } from './modal/register/register.component';
+import { StakeSmartComponent } from './pages/stake-smart/stake-smart.component';
+import { LogoutComponent } from './modal/logout/logout.component';
+import { ResponsibleGamblingFaqsComponent } from './pages/responsible-gambling-faqs/responsible-gambling-faqs.component';
 
 export const routes: Routes = [
   {
@@ -26,8 +29,12 @@ export const routes: Routes = [
         loadComponent: () => import('./pages/responsible-gambling/responsible-gambling.component').then(c => c.ResponsibleGamblingComponent),
         children: [
           {
-            path: 'stake-smart',
-            component: StakeSmartComponent
+            path:'stake-smart',
+            component:StakeSmartComponent
+          },
+          {
+            path:'responsible-gambling-faqs',
+            component:ResponsibleGamblingFaqsComponent
           }
         ]
       },
@@ -38,6 +45,14 @@ export const routes: Routes = [
     ]
   },
   {
+    path:'valut',
+    component:VaultComponent
+  },
+  {
+    path:'vip',
+    component:VipComponent
+  },
+    {
     path: 'login',
     component: RegisterComponent
   },
