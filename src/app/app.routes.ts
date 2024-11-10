@@ -9,7 +9,10 @@ import { ResponsibleGamblingFaqsComponent } from './pages/responsible-gambling-f
 export const routes: Routes = [
   {
     path: '',
-    loadComponent: () => import('./components/layout/layout.component').then(c => c.LayoutComponent),
+    loadComponent: () =>
+      import('./components/layout/layout.component').then(
+        (c) => c.LayoutComponent
+      ),
     children: [
       {
         path: '',
@@ -17,16 +20,21 @@ export const routes: Routes = [
       },
       {
         path: 'home',
-        loadComponent: () => import('./pages/home/home.component').then(c => c.HomeComponent),
+        loadComponent: () =>
+          import('./pages/home/home.component').then((c) => c.HomeComponent),
       },
       {
         path: 'drake',
-        loadComponent: () => import('./pages/drake/drake.component').then(c => c.DrakeComponent),
+        loadComponent: () =>
+          import('./pages/drake/drake.component').then((c) => c.DrakeComponent),
       },
 
       {
         path: 'responsible-gambling',
-        loadComponent: () => import('./pages/responsible-gambling/responsible-gambling.component').then(c => c.ResponsibleGamblingComponent),
+        loadComponent: () =>
+          import(
+            './pages/responsible-gambling/responsible-gambling.component'
+          ).then((c) => c.ResponsibleGamblingComponent),
         children: [
           {
             path: 'stake-smart',
@@ -41,14 +49,25 @@ export const routes: Routes = [
 
       {
         path: 'sport-market',
-        loadComponent: () => import('./pages/sports-markets/sports-markets.component').then(c => c.SportsMarketsComponent)
+        loadComponent: () =>
+          import('./pages/sports-markets/sports-markets.component').then(
+            (c) => c.SportsMarketsComponent
+          ),
       },
+      {
+        path: 'soccer',
+        loadComponent: () =>
+          import('./pages/soccer/soccer.component').then(
+            (c) => c.SoccerComponent
+          ),
+      },
+    ],
+  },
       {
         path: 'pal-ful',
         loadComponent: () => import('./pages/pal-ful/pal-ful.component').then(c => c.PalFulComponent)
       },
     ]
-  },
   {
     path: 'valut',
     component: VaultComponent
@@ -59,14 +78,14 @@ export const routes: Routes = [
   },
   {
     path: 'login',
-    component: RegisterComponent
+    component: RegisterComponent,
   },
   {
     path: 'logout',
-    component: LogoutComponent
+    component: LogoutComponent,
   },
   {
     path: '**',
     redirectTo: '',
-  }
+  },
 ];
