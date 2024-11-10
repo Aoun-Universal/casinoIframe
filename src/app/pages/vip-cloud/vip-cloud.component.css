@@ -131,8 +131,11 @@
 .card2{
     @apply flex flex-col items-center md:items-start md:flex-row gap-6
 }
+.variant-default{
+    @apply sticky top-0 h-full
+}
 .wrapper-btn{
-    @apply flex  md:flex-col w-full py-2 px-4 gap-2 md:px-0 md:gap-0 relative bg-[#0F212E] rounded-full overflow-hidden md:rounded-[8px]
+    @apply flex  md:flex-col sm:w-[300px]  md:w-[200px] py-2 px-4 gap-2 md:px-0 md:gap-0  bg-[#0F212E] rounded-full overflow-hidden md:rounded-[8px] sticky top-[2rem] 
 }
 .button-link{
     @apply relative items-center gap-2 font-semibold whitespace-nowrap  transition disabled:pointer-events-none disabled:opacity-50 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 active:scale-[0.98] bg-transparent text-white hover:bg-gray-900 hover:text-white focus-visible:outline-white text-sm leading-none  py-[0.9375rem] px-[4px] sm:px-2 md:px-[1.25rem] flex max-w-full justify-start rounded-none 
@@ -144,7 +147,7 @@
     @apply flex flex-col gap-2
 }
 .acc{
-    @apply bg-[#0F212E] w-full mb-8
+    @apply bg-[#0F212E] w-full mb-8 p-6 rounded-[8px]
 }
 .first-acc{
     @apply flex justify-between items-center bg-[#213743] py-2 px-4 font-bold text-[14px]
