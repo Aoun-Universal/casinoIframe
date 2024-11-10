@@ -1,10 +1,10 @@
-import { Routes } from '@angular/router';
-import { VaultComponent } from './modal/vault/vault.component';
-import { VipComponent } from './modal/vip/vip.component';
-import { RegisterComponent } from './modal/register/register.component';
-import { StakeSmartComponent } from './pages/stake-smart/stake-smart.component';
-import { LogoutComponent } from './modal/logout/logout.component';
-import { ResponsibleGamblingFaqsComponent } from './pages/responsible-gambling-faqs/responsible-gambling-faqs.component';
+import {Routes} from '@angular/router';
+import {VaultComponent} from './modal/vault/vault.component';
+import {VipComponent} from './modal/vip/vip.component';
+import {RegisterComponent} from './modal/register/register.component';
+import {StakeSmartComponent} from './pages/stake-smart/stake-smart.component';
+import {LogoutComponent} from './modal/logout/logout.component';
+import {ResponsibleGamblingFaqsComponent} from './pages/responsible-gambling-faqs/responsible-gambling-faqs.component';
 
 export const routes: Routes = [
   {
@@ -16,7 +16,10 @@ export const routes: Routes = [
     children: [
       {
         path: '',
-        loadComponent: () => import('./pages/before-login/before-login.component').then(c => c.BeforeLoginComponent),
+        loadComponent: () =>
+          import('./pages/before-login/before-login.component').then(
+            (c) => c.BeforeLoginComponent
+          ),
       },
       {
         path: 'home',
@@ -28,25 +31,23 @@ export const routes: Routes = [
         loadComponent: () =>
           import('./pages/drake/drake.component').then((c) => c.DrakeComponent),
       },
-
       {
         path: 'responsible-gambling',
         loadComponent: () =>
           import(
             './pages/responsible-gambling/responsible-gambling.component'
-          ).then((c) => c.ResponsibleGamblingComponent),
+            ).then((c) => c.ResponsibleGamblingComponent),
         children: [
           {
             path: 'stake-smart',
-            component: StakeSmartComponent
+            component: StakeSmartComponent,
           },
           {
             path: 'responsible-gambling-faqs',
-            component: ResponsibleGamblingFaqsComponent
-          }
-        ]
+            component: ResponsibleGamblingFaqsComponent,
+          },
+        ],
       },
-
       {
         path: 'sport-market',
         loadComponent: () =>
@@ -57,24 +58,22 @@ export const routes: Routes = [
       {
         path: 'soccer',
         loadComponent: () =>
-          import('./pages/soccer/soccer.component').then(
-            (c) => c.SoccerComponent
-          ),
+          import('./pages/soccer/soccer.component').then((c) => c.SoccerComponent),
+      },
+      {
+        path: 'pal-ful',
+        loadComponent: () =>
+          import('./pages/pal-ful/pal-ful.component').then((c) => c.PalFulComponent),
       },
     ],
   },
-      {
-        path: 'pal-ful',
-        loadComponent: () => import('./pages/pal-ful/pal-ful.component').then(c => c.PalFulComponent)
-      },
-    ]
   {
-    path: 'valut',
-    component: VaultComponent
+    path: 'vault',
+    component: VaultComponent, // Fixed typo
   },
   {
     path: 'vip',
-    component: VipComponent
+    component: VipComponent,
   },
   {
     path: 'login',
