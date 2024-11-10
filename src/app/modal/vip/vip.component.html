@@ -1,5 +1,5 @@
 
-<div
+<div *ngIf="closeIt"
   data-test="modal-vip"
   data-layout=""
   class="modal svelte-cq3ecl"
@@ -34,6 +34,7 @@
         data-testid="close-modal"
         data-test="close-modal"
         data-button-root=""
+        (click)="closeModal()"
       >
         <svg
           fill="currentColor"
@@ -73,11 +74,12 @@
                   (click)="toggletab('progress')"
                     type="button"
                     tabindex="0"
-                    class="inline-flex relative items-center gap-2 justify-center font-semibold whitespace-nowrap ring-offset-background transition disabled:pointer-events-none disabled:opacity-50 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 active:scale-[0.98] bg-transparent text-white betterhover:hover:bg-grey-400 betterhover:hover:text-white focus-visible:outline-white text-sm leading-none [&amp;_svg]:text-grey-200 [&amp;:hover>svg]:text-white py-[0.8125rem] px-[1rem] rounded-full !bg-grey-400 !text-white [&amp;_svg]:!text-white"
+                    class="inline-flex relative items-center gap-2 justify-center font-semibold whitespace-nowrap ring-offset-background transition disabled:pointer-events-none disabled:opacity-50 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 active:scale-[0.98] bg-transparent       betterhover:hover:bg-grey-400 betterhover:hover:text-white focus-visible:outline-white text-sm leading-none [&amp;_svg]:text-grey-200 [&amp;:hover>svg]:text-white py-[0.8125rem] px-[1rem] rounded-full  !text-white [&amp;_svg]:!text-white"
                     data-dd-action-name="vip-progress-tab"
                     data-analytics="vip-progress-tab"
                     data-test="progress-tab"
                     data-button-root=""
+                    [ngClass]="{'!bg-grey-400':tab==='progress'}"
                   >
                     Progress</button
                   ><button
@@ -89,6 +91,7 @@
                     data-analytics="vip-benefits-tab"
                     data-test="benefits-tab"
                     data-button-root=""
+                    [ngClass]="{'!bg-grey-400':tab==='benefit'}"
                   >
                     Benefits
                   </button>
@@ -365,7 +368,8 @@
       <span
         class="weight-semibold line-height-default align-left size-default text-size-default variant-highlighted with-icon-space svelte-17v69ua"
         style=""
-        ><svg fill="none" viewBox="0 0 96 96" class="svg-icon rotate-0" [ngClass]="{'rotate-90':dropdownState==='Bronze'}">
+        ><svg fill="none" viewBox="0 0 96 96" class="svg-icon rotate-90" 
+      >
           <title></title>
           <path
             d="m48.002 14.603 8.48 15.757c1.97 3.693 5.495 6.336 9.677 7.068l.08.012 17.64 3.2L71.48 53.56a13.835 13.835 0 0 0-3.884 9.63c0 .653.045 1.292.132 1.922l-.01-.072 2.44 17.758L54.52 75.24c-1.908-.934-4.15-1.48-6.52-1.48s-4.613.546-6.608 1.518l.09-.039-15.637 7.56 2.438-17.759c.078-.555.123-1.197.123-1.85 0-3.741-1.482-7.137-3.887-9.633l.003.003-12.518-12.92 17.638-3.2a13.642 13.642 0 0 0 9.842-7.008l.036-.072L48 14.603Zm0-12.521h-.01a5.194 5.194 0 0 0-4.577 2.733l-.015.027L32 26.28a5.298 5.298 0 0 1-3.648 2.675l-.033.006-23.997 4.32C1.853 33.717 0 35.847 0 38.406a5.19 5.19 0 0 0 1.443 3.596L1.44 42l16.837 17.558a5.057 5.057 0 0 1 1.473 3.578c0 .306-.027.603-.078.894l.006-.03L16.4 87.997a5.199 5.199 0 0 0 5.148 5.918h.012c.045.003.102.003.156.003.834 0 1.623-.207 2.31-.576l-.027.013 21.397-10.32a6.209 6.209 0 0 1 2.76-.638c1.004 0 1.952.236 2.795.653l-.036-.014 21.08 10.319a4.73 4.73 0 0 0 2.249.56h.033-.003c.051.003.111.003.171.003a5.199 5.199 0 0 0 5.144-5.948l.004.027-3.28-23.998a5.055 5.055 0 0 1 1.4-4.32l16.84-17.557a5.177 5.177 0 0 0 1.448-3.6c0-2.55-1.836-4.67-4.257-5.114l-.033-.006-23.997-4.32a5.301 5.301 0 0 1-3.705-2.768l-.015-.03-11.399-21.44a5.204 5.204 0 0 0-4.593-2.759h-.008L48 2.082Z"
@@ -378,8 +382,8 @@
         <svg
           fill="currentColor"
           viewBox="0 0 64 64"
-          class="svg-icon rotate-0"
-          [ngClass]="{'rotate-90':dropdownState==='Bronze'}"
+          class="svg-icon rotate-90"
+          [ngClass]="{'rotate-0':dropdownState==='Bronze'}"
         >
           <title></title>
           <path
@@ -432,8 +436,8 @@
         <svg
           fill="currentColor"
           viewBox="0 0 64 64"
-          class="svg-icon rotate-0"
-          [ngClass]="{'rotate-90':dropdownState==='Silver'}"
+          class="svg-icon rotate-90"
+          [ngClass]="{'rotate-0':dropdownState==='Silver'}"
         >
           <title></title>
           <path
@@ -483,8 +487,8 @@
         <svg
           fill="currentColor"
           viewBox="0 0 64 64"
-          class="svg-icon rotate-0"
-         [ngClass]="{'rotate-90':dropdownState==='Gold'}"
+          class="svg-icon rotate-90"
+         [ngClass]="{'rotate-0':dropdownState==='Gold'}"
         >
           <title></title>
           <path
@@ -535,8 +539,8 @@
         <svg
           fill="currentColor"
           viewBox="0 0 64 64"
-          class="svg-icon"
-          [ngClass]="{'rotate-90':dropdownState==='Platinum I'}"
+          class="svg-icon rotate-90"
+          [ngClass]="{'rotate-0':dropdownState==='Platinum I'}"
         >
           <title></title>
           <path
@@ -665,7 +669,7 @@
         <svg
           fill="currentColor"
           viewBox="0 0 64 64"
-          class="svg-icon"
+          class="svg-icon rotate-90"
           [ngClass]="{'rotate-0':dropdownState==='Diamond'}"
         >
           <title></title>

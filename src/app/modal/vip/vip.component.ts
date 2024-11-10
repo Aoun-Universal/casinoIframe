@@ -10,6 +10,7 @@ import { Component } from '@angular/core';
 })
 export class VipComponent {
 tab:any='progress'
+closeIt=true
 
 toggletab(tabname:any){
 this.tab=tabname
@@ -23,5 +24,8 @@ dropdownState: string = ''
       this.dropdownState = name
     }
    
+  }
+  closeModal(){
+this.closeIt=false
   }
 }
