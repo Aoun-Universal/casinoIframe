@@ -12,56 +12,79 @@ import { SettingsComponent } from './modal/settings-modals/settings/settings.com
 export const routes: Routes = [
   {
     path: '',
-    loadComponent: () => import('./components/layout/layout.component').then(c => c.LayoutComponent),
+    loadComponent: () =>
+      import('./components/layout/layout.component').then(
+        (c) => c.LayoutComponent
+      ),
     children: [
       {
         path: '',
-        loadComponent: () => import ('./pages/before-login/before-login.component').then(c => c.BeforeLoginComponent),
+        loadComponent: () =>
+          import('./pages/before-login/before-login.component').then(
+            (c) => c.BeforeLoginComponent
+          ),
       },
       {
         path: 'home',
-        loadComponent: () => import('./pages/home/home.component').then(c => c.HomeComponent),
+        loadComponent: () =>
+          import('./pages/home/home.component').then((c) => c.HomeComponent),
       },
       {
         path: 'drake',
-        loadComponent: () => import('./pages/drake/drake.component').then(c => c.DrakeComponent),
+        loadComponent: () =>
+          import('./pages/drake/drake.component').then((c) => c.DrakeComponent),
       },
-
       {
         path: 'responsible-gambling',
-        loadComponent: () => import('./pages/responsible-gambling/responsible-gambling.component').then(c => c.ResponsibleGamblingComponent),
+        loadComponent: () =>
+          import(
+            './pages/responsible-gambling/responsible-gambling.component'
+            ).then((c) => c.ResponsibleGamblingComponent),
         children: [
           {
-            path:'stake-smart',
-            component:StakeSmartComponent
+            path: 'stake-smart',
+            component: StakeSmartComponent,
           },
           {
-            path:'responsible-gambling-faqs',
-            component:ResponsibleGamblingFaqsComponent
-          }
-        ]
+            path: 'responsible-gambling-faqs',
+            component: ResponsibleGamblingFaqsComponent,
+          },
+        ],
       },
       {
         path: 'sport-market',
-        loadComponent: () => import('./pages/sports-markets/sports-markets.component').then(c => c.SportsMarketsComponent)
-      }
-    ]
+        loadComponent: () =>
+          import('./pages/sports-markets/sports-markets.component').then(
+            (c) => c.SportsMarketsComponent
+          ),
+      },
+      {
+        path: 'soccer',
+        loadComponent: () =>
+          import('./pages/soccer/soccer.component').then((c) => c.SoccerComponent),
+      },
+      {
+        path: 'pal-ful',
+        loadComponent: () =>
+          import('./pages/pal-ful/pal-ful.component').then((c) => c.PalFulComponent),
+      },
+    ],
   },
   {
-    path:'valut',
-    component:VaultComponent
+    path: 'vault',
+    component: VaultComponent, // Fixed typo
   },
   {
-    path:'vip',
-    component:VipComponent
+    path: 'vip',
+    component: VipComponent,
   },
-    {
+  {
     path: 'login',
-    component: RegisterComponent
+    component: RegisterComponent,
   },
   {
     path: 'logout',
-    component: LogoutComponent
+    component: LogoutComponent,
   },
   {
     path:'statistics',
@@ -78,5 +101,5 @@ export const routes: Routes = [
   {
     path: '**',
     redirectTo: '',
-  }
+  },
 ];

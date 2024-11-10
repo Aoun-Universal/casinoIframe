@@ -14,6 +14,8 @@ import {Router} from '@angular/router';
 })
 
 export class MobileNavigationComponent implements OnInit {
+ constructor(private router: Router, private toggle: ToggleService) {
+  }
   isSidebar = false
   buttons = [
     {
@@ -38,15 +40,12 @@ export class MobileNavigationComponent implements OnInit {
     },
   ];
 
-  constructor(private router: Router, private toggle: ToggleService) {
-  }
 
   ngOnInit(): void {
     this.toggle.getSidebar().subscribe((value: boolean) => {
       this.isSidebar = value
     })
   }
-
 
   toggleSidebar() {
     this.toggle.setSidebar(!this.isSidebar)
