@@ -97,6 +97,7 @@ export const routes: Routes = [
     path: 'logout',
     component: LogoutComponent,
   },
+
   {
     path: 'statistics',
     component: StatisticsComponent
