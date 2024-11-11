@@ -135,100 +135,128 @@
                             </div>
                         </div>
                         @if (subEventDropdown) {
-                        <div class="border-t-2 border-b-2 border-solid border-[#2f4553] bg-[#213743] rounded-b w-full">
-                            <div class="py-3 px-5">
-                                <div>
-                                    <div class="py-2 grid grid-cols-6 gap-3">
-                                        <div class="col-span-6 grid grid-cols-4">
-                                            <div class="col-span-3 lg:col-span-4">
-                                                @if (isLive) {
-                                                <div class="flex_row gap-2">
-                                                    <button
-                                                        class="bg-[#e9113c] text-white text-[12px]  border-0 rounded px-1">Live</button>
-                                                    <div class="flex_row">
-                                                        <h3 class="text-[14px]">35</h3>
-                                                        <p class="blinking-dash  text-[14px]">'</p>
-                                                    </div>
-                                                    <div class="text-[#b1bad3] text-[12px]">1st Half</div>
-                                                </div>
 
-                                                } @else {
-                                                <h6 class="text-[#b1Bad3] text-[12px]">Sat,Nov 09 8:00 PM</h6>
-                                                }
+
+                        <!-- Market Content -->
+                        <div class="market-content">
+                            <div class="stack">
+                                <div class="fixture-wrapper">
+                                    <div class="fixture-preview">
+                                        <!-- Live -->
+                                        <div class="misc order-1">
+                                            <div class="misc-wrapper">
+                                                <div class="fixture-details">
+                                                    <div class="live-badge">Live</div>
+                                                    <span class="description-wrapper flex">37
+                                                        <span class="blinking-dash blink">'</span>
+                                                    </span>
+                                                    <span class="whitespace-nowrap">1st Half</span>
+                                                </div>
                                             </div>
-                                            <div class="col-span-1 flex_row lg:hidden ">
-                                                <img class="w-[14px] h-[14px] mr-3" src="/assets/soccer/4bars.svg"
-                                                    alt="menu">
-                                                <div class="border-l border-solid border-[#2f4553]">
-                                                    <h3 class="text-[14px] ml-3 text-[#b1bad3] leading-[1]">+64</h3>
+                                        </div>
+                                        <!-- Line --hidden on sm -->
+                                        <div class="line order-2 line1"></div>
+
+                                        <!-- Market-count & options-wrapper----- only on sm -->
+                                        <div class="market-widget order-2 flex md:hidden">
+                                            <!-- Button -->
+                                            <button class="arrows-btn option-btn sm-option-btn">
+                                                <svg fill="currentColor" viewBox="0 0 64 64" class="svg-icon ">
+                                                    <title></title>
+                                                    <path fill-rule="evenodd" clip-rule="evenodd"
+                                                        d="M33.013 19.707 64 0v12.64L30.987 33.627 18.133 18.853 0 30.693V17.947L20.107 4.853l12.906 14.854ZM16 64H5.333V35.173L16 28.213V64Zm13.707-21.653-3.04-3.52V64h10.666V37.493l-2.773 1.76-4.853 3.094ZM58.667 64H48V30.72l10.667-6.8V64Z">
+                                                    </path>
+                                                </svg></button>
+                                            <!-- Market count -->
+                                            <div class="market-count ml-3">
+                                                +3
+                                            </div>
+                                        </div>
+                                        <!-- Market name -->
+                                        <div class="market-name-soccer order-4 md:order-3">
+                                            <span class="description-wrapper">1x2</span>
+                                        </div>
+                                        <div class="line order-4 line2"></div>
+                                        <!-- Teams -->
+                                        <div class="teams stacked svelte-1ykwt0t order-3 md:order-5"><a
+                                                class="teams-tag arrows-btn">
+                                                <span>Pohkseh</span>
+                                            </a>
+                                            <a class="arrows-btn teams-tag">
+                                                <span>Umphyrnai SC</span>
+                                            </a>
+                                        </div>
+                                        <!-- FixtureScore -->
+                                        <div class="fixture-score mr-2 hidden md:flex order-6">
+                                            <div class="fixture-score-wrapper ">
+                                                <div class="score-wrapper live svelte-qyo8l9">
+                                                    <span
+                                                        class="font-semibold description-wrapper !text-[#ff9d00]">2</span>
+                                                    <span
+                                                        class="font-semibold description-wrapper !text-[#ff9d00]">0</span>
+                                                </div>
+                                            </div>
+                                            <div class="options-wrapper stacked">
+                                                <div class="hoverable">
+                                                    <button class="arrows-btn option-btn">
+                                                        <svg fill="currentColor" viewBox="0 0 64 64" class="svg-icon ">
+                                                            <title></title>
+                                                            <path fill-rule="evenodd" clip-rule="evenodd"
+                                                                d="M33.013 19.707 64 0v12.64L30.987 33.627 18.133 18.853 0 30.693V17.947L20.107 4.853l12.906 14.854ZM16 64H5.333V35.173L16 28.213V64Zm13.707-21.653-3.04-3.52V64h10.666V37.493l-2.773 1.76-4.853 3.094ZM58.667 64H48V30.72l10.667-6.8V64Z">
+                                                            </path>
+                                                        </svg></button>
                                                 </div>
                                             </div>
                                         </div>
 
-                                        <div class="col-span-6 lg:col-span-2  grid grid-cols-2 ">
-                                            <div
-                                                class="text-[14px] leading-none  flex flex-col justify-start items-start gap-2 col-span-1">
-                                                <h3>Crystal Palace FC</h3>
-                                                <h3>Fulham FC</h3>
-                                            </div>
-                                            <div
-                                                class="flex flex-col justify-start items-start gap-2 col-span-1 ml-auto lg:hidden">
-                                                <div
-                                                    class="text-[#ff9d00] leading-normal text-center justify-center text-[12px] font-semibold">
-                                                    0
+                                        <!-- Outcomes -->
+                                        <div class="outcomes order-7">
+                                            <!-- 1 -->
+                                            <div class="outcome-btn">
+                                                <div class="outcome-content">
+                                                    <span class="whitespace-nowrap">FC Talent</span>
+                                                    <div class=" relative">
+                                                        <div class="relative">
+                                                            <span class="outcome-odd">3.10</span>
+                                                        </div>
+                                                    </div>
                                                 </div>
-                                                <div
-                                                    class="text-[#ff9d00] leading-normal text-center justify-center text-[12px] font-semibold">
-                                                    0
+                                            </div>
+                                            <!-- 2 -->
+                                            <div class="outcome-btn">
+                                                <div class="outcome-content">
+                                                    <span>Draw</span>
+                                                    <div class=" relative">
+                                                        <div class="relative">
+                                                            <span class="outcome-odd">2.25</span>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <!-- 3 -->
+                                            <div class="outcome-btn">
+                                                <div class="outcome-content">
+                                                    <span>Ilbirs</span>
+                                                    <div class=" relative">
+                                                        <div class="relative">
+                                                            <span class="outcome-odd">2.75</span>
+                                                        </div>
+                                                    </div>
                                                 </div>
                                             </div>
                                         </div>
-                                        <div
-                                            class="col-span-6  px-2 flex flex-row justify-center items-center w-full lg:hidden">
-                                            <div class="text-[#b1bad3] text-[12px]">1x2</div>
-                                        </div>
-                                        <div class="col-span-6 lg:col-span-3 grid grid-cols-6   gap-2 ">
-                                            <div class="col-span-2  relative  flex flex-col items-center justify-start">
-                                                <button
-                                                    class="py-[0.5em] px-[0.75em]  border-0 rounded text-[14px] text-white h-[56px] bg-[rgba(7,_24,_36,1)] w-full flex flex-col justify-center items-start gap-0.5">
-                                                    <h3 class="truncate max-w-full text-white">Crystal palace FC</h3>
-                                                    <div class="text-[#4391e7] text-[14px] leading-normal font-bold">
-                                                        3.65
-                                                    </div>
-                                                </button>
-                                                <div class="max-lg:hidden lg:col-span-1 absolute -left-8 top-5 ">
-                                                    <img class="w-[14px] h-[14px] mr-3" src="/assets/soccer/4bars.svg"
-                                                        alt="menu">
-                                                </div>
-                                            </div>
-                                            <div class="col-span-2  flex flex-col  items-center justify-start">
-                                                <button
-                                                    class="py-[0.5em] px-[0.75em]  border-0 rounded text-[14px] text-white h-[56px] bg-[rgba(7,_24,_36,1)] w-full flex flex-col justify-center items-start gap-0.5">
-                                                    <h3 class="truncate max-w-full text-white">Draw</h3>
-                                                    <div class="text-[#4391e7] text-[14px] leading-normal font-bold">
-                                                        2.85
-                                                    </div>
-                                                </button>
-                                            </div>
-                                            <div class="col-span-2 relative flex   flex-col items-center justify-start">
-                                                <button
-                                                    class="py-[0.5em] px-[0.75em]  border-0 rounded text-[14px] text-white h-[56px] bg-[rgba(7,_24,_36,1)] w-full flex flex-col justify-center items-start gap-0.5">
-                                                    <h3 class="truncate max-w-full text-white">Fulham FC</h3>
-                                                    <div class="text-[#4391e7] text-[14px] leading-normal font-bold">
-                                                        3.65
-                                                    </div>
-                                                </button>
-                                                <div
-                                                    class="max-lg:hidden absolute -right-16 top-5  border-b border-solid border-[#2f4553]">
-                                                    <h3 class="text-[14px] ml-3 text-[#b1bad3] leading-[1]">+64</h3>
-                                                </div>
-                                            </div>
-
+                                        <!-- MarketCount -->
+                                        <div class="market-count hidden md:flex order-8">
+                                            +3
                                         </div>
                                     </div>
                                 </div>
                             </div>
+
                         </div>
+
+
+
                         }
 
                     </div>
@@ -264,50 +292,58 @@
                 </div>
             </div>
         </div>
-        <div class="w-full">
-            <Table class="w-full">
-                <thead class="w-full">
-                    <tr
-                        class=" text-[#b1bad3] whitespace-nowrap *:p-4 *:text-[14px] font-normal grid grid-cols-2 w-full">
-                        <th class="col-span-1  text-left">Event</th>
-                        <th class="col-span-1  text-right">Bet Amount</th>
+
+
+        <div class="table-container">
+            <table>
+                <thead>
+                    <tr>
+                        <th class="text-start">Event</th>
+                        <th class="lg-row">User</th>
+                        <th class="lg-row">Time</th>
+                        <th class="lg-row !text-end"> Odds</th>
+                        <th class="text-end">Bet Amount</th>
                     </tr>
                 </thead>
                 <tbody>
-                    <tr
-                        class="bg-[#213743] text-[#b1bad3] whitespace-nowrap *:p-4 text-center *:text-[14px] grid grid-cols-2">
-                        <td class="col-span-1  text-left flex_row gap-2">
-                            <img class="w-[14px] h-[14px]" src="/assets/soccer/multi.svg" alt="multi">
-                            <div class="flex_row gap-1 text-white text-[14px] font-bold">
-                                <h3>Multi</h3>
-                                <h3>(5)</h3>
-                            </div>
+                    <tr>
+                        <td class=" table-btn text-left">
+                            <svg fill="currentColor" viewBox="0 0 64 64" class="svg-icon ">
+                                <title></title>
+                                <path
+                                    d="m51.12 44.48 8.506 3.894a1.629 1.629 0 0 1 .01 2.956l-.01.004L32 64 4.374 51.334a1.629 1.629 0 0 1-.01-2.956l.01-.004 8.506-3.894 16.454 7.546L32 53.332l2.666-1.226L51.12 44.48Zm8.506-28.854a1.629 1.629 0 0 0 .01-2.956l-.01-.004L32 0 4.374 12.666a1.629 1.629 0 0 0-.01 2.956l.01.004L32 28.292l27.626-12.666ZM34.694 34.294l-2.666 1.254-2.666-1.254-16.48-7.626-8.506 3.866a1.625 1.625 0 0 0-.01 2.928l.01.004 27.626 12.666 27.626-12.666a1.625 1.625 0 0 0 .01-2.928l-.01-.004-8.506-3.866-16.428 7.626Z">
+                                </path>
+                            </svg>
+                            <span class="ml-2">Multi(13)</span>
                         </td>
-                        <td class="col-span-1  text-right flex flex-row justify-end items-center gap-1">
-                            <h3 class="text-[#b1bad3] text-[14px]">
-                                CA$20.00
-                            </h3>
-                            <img class="w-[14px] h-[14px]" src="/assets/soccer/dollar.svg" alt="multi">
+                        <td class=" table-btn text-center gap-2 lg-row">
+                            <svg fill="currentColor" viewBox="0 0 64 64" class="svg-icon ">
+                                <title></title>
+                                <path fill-rule="evenodd" clip-rule="evenodd"
+                                    d="M42.05 8.613c2.815 0 5.192 1.879 5.955 4.494l3.64 12.792H12.253l3.64-12.792.01-.044a6.197 6.197 0 0 1 5.944-4.45H42.05ZM61.488 30.77H2.461a2.461 2.461 0 0 0 0 4.921c8.873 1.271 19.12 1.997 29.539 1.997s20.664-.726 30.696-2.131l-.598.068a2.461 2.461 0 0 0-.56-4.858l-.05.003ZM33.484 43.074h-3.05c-6.335-1.515-13.677-1.22-21.547 0v2.501l3.05.58s0 9.233 9.233 9.233c6.223 0 8.247-5.583 8.908-9.233h3.721c.661 3.65 2.685 9.233 8.908 9.233 9.233 0 9.233-9.233 9.233-9.233l3.05-.58v-2.501c-7.718-1.24-15.008-1.485-21.506 0Z">
+                                </path>
+                            </svg>
+                            <span> Hidden </span>
                         </td>
-                    </tr>
-                    <tr class=" text-[#b1bad3] whitespace-nowrap *:p-4 text-center *:text-[14px] grid grid-cols-2">
-                        <td class="col-span-1  text-left flex_row gap-2">
-                            <img class="w-[14px] h-[14px]" src="/assets/soccer/multi.svg" alt="multi">
-                            <div class="flex_row gap-1 text-white text-[14px] font-bold">
-                                <h3>Multi</h3>
-                                <h3>(3)</h3>
-                            </div>
-                        </td>
-                        <td class="col-span-1  text-right flex flex-row justify-end items-center gap-1">
-                            <h3 class="text-[#b1bad3] text-[14px]">
-                                R$40.00
-                            </h3>
-                            <img class="w-[14px] h-[14px]" src="/assets/soccer/dollar.svg" alt="multi">
+                        <td class="text-center lg-row">3:11 PM</td>
+                        <td class="text-end lg-row ">10.55</td>
+                        <td class="bet-amount gap-1">
+                            <span> R$40.00 </span>
+                            <svg fill="none" viewBox="0 0 96 96" class="svg-icon ">
+                                <title></title>
+                                <path
+                                    d="M95.895 48.105C95.895 74.557 74.451 96 48 96 21.548 96 .105 74.556.105 48.105.105 21.653 21.548.21 48 .21c26.451 0 47.895 21.443 47.895 47.895Z"
+                                    fill="#5E5E5E"></path>
+                                <path
+                                    d="m69.72 74.295-7.5-7.41-6.84-6.78a11.11 11.11 0 0 0-7.905-3.289 11.11 11.11 0 0 0-7.904 3.288v.001l-14.326 14.19h-9l1.305-1.35 4.5-4.5 10.305-10.2c1.23-1.215 2.43-2.475 3.735-3.6a16.52 16.52 0 0 1 9.057-4.058l.078-.007a16.705 16.705 0 0 1 2.358-.162 17.15 17.15 0 0 1 11.371 4.289l-.019-.017c1.065.915 2.01 1.935 3 2.91L74.16 69.69l4.305 4.275c.081.074.15.157.207.25l.003.005-8.955.075ZM25.395 22.5l5.1 5.07c2.34 2.31 4.65 4.62 6.99 6.915a41.505 41.505 0 0 0 3.162 2.948l.063.052a10.998 10.998 0 0 0 6.803 2.337c3.062 0 5.833-1.243 7.837-3.252 3.27-3.27 6.57-6.51 9.87-9.78l4.38-4.29h9l-1.02 1.08L68.025 33l-8.31 8.22a16.752 16.752 0 0 1-9.604 4.746l-.086.01a16.57 16.57 0 0 1-2.65.206 17 17 0 0 1-11.772-4.713l.007.006c-1.665-1.5-3.225-3.15-4.83-4.74L16.62 22.71c-.075-.075-.135-.165-.21-.255l8.985.045Z"
+                                    fill="#fff"></path>
+                            </svg>
                         </td>
                     </tr>
                 </tbody>
-            </Table>
+            </table>
         </div>
+
     </div>
     <div class="mt-6 relative w-full  ">
         <div class="p-4   bg-[#0f212e] border-0 rounded-md w-full overflow-x-hidden"
@@ -318,8 +354,8 @@
                 See More
             </button>
             }
-            <div>
-                <div class=" text-[#b1bad3] text-base leading-[150%]">
+            <div class="flex flex-col justify-center items-center lg:flex-row lg:justify-start lg:items-start">
+                <div class=" text-[#b1bad3] text-base leading-[150%] lg:w-1/2">
                     <h1 class="text-[24px] text-white leading-[132%] font-semibold">
                         Soccer Betting Online -
                         Best Football Betting Odds Online
@@ -516,6 +552,10 @@
                                     on. Special bets are listed to provide maximum availability of odds for the type
                                     of match that could happen on the pitch for you to place a bet on!</span></p>
                         </li>
+                    </ul>
+                </div>
+                <div class=" text-[#b1bad3] text-base leading-[150%] lg:w-1/2">
+                    <ul class="pl-8 pr-4 ">
                         <li class="mb-[1.5em]  list-disc">
                             <p class="inline-text"><span>Minute
                                     Markets: </span><span>For
