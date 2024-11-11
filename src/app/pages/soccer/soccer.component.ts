@@ -1,10 +1,10 @@
-import { NgClass } from '@angular/common';
+import { NgClass, NgIf } from '@angular/common';
 import { Component } from '@angular/core';
 
 @Component({
   selector: 'app-soccer',
   standalone: true,
-  imports: [NgClass],
+  imports: [NgClass, NgIf],
   templateUrl: './soccer.component.html',
   styleUrl: './soccer.component.css',
 })
@@ -18,7 +18,12 @@ export class SoccerComponent {
   subEventDropdown: boolean = true;
   isLive: boolean = true;
   soccerBettingOddsState: boolean = false;
+  isMarketOpen = true;
+  isMarketOpen2 = true;
 
+  toggleMarket() {
+    this.isMarketOpen = !this.isMarketOpen;
+  }
   setActiveTab(val: string) {
     this.activeTab = val;
   }
