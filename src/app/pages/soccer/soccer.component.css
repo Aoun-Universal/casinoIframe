@@ -2,14 +2,16 @@
 
 @layer utilities {
   .soccer_container {
-    @apply w-full h-full mb-52 mt-[6px] bg-[#1A2C38] px-[9.6px];
+    @apply w-full h-full pb-8 mt-[6px] bg-[#1A2C38] px-[9.6px] md:px-[23.04px] lg:px-[43.02px] overflow-y-auto;
   }
   .flex_row {
     @apply flex flex-row justify-start items-center;
   }
+
   .bg_primary {
     @apply bg-[#0f212E];
   }
+
   .soccer_btn_wrapper {
     @apply border-0 rounded px-5 py-4 max-h-11 max-w-[98.91px] text-[14px];
   }
@@ -36,7 +38,37 @@
   .blinking-dash {
     animation: blink 2s infinite linear;
   }
+  .text_container::before {
+    background: linear-gradient(0deg, #0f212e 0%, rgba(15, 33, 46, 0) 100%);
+    position: absolute;
+    z-index: 1;
+    top: 0;
+    left: 0;
+    content: "";
+    width: 100%;
+    height: 100%;
+  }
 
+  .gradient_jackpot {
+    background: linear-gradient(
+      180deg,
+      #00000000 0%,
+      #00000004 9.22%,
+      #0000000e 18.76%,
+      #0000001e 28.48%,
+      #00000033 38.19%,
+      #0000004a 47.75%,
+      #00000064 56.99%,
+      #00000080 65.75%,
+      #0000009b 73.87%,
+      #000000b5 81.18%,
+      #000000cc 87.52%,
+      #000000e1 92.74%,
+      #000000f1 96.66%,
+      #000000fb 99.14%,
+      #000000 100%
+    ) !important;
+  }
   @keyframes blink {
     0%,
     to {

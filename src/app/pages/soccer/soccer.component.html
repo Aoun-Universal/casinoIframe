@@ -10,7 +10,7 @@
                 </a>
             </div>
         </div>
-        <div class="w-full  h-full">
+        <div class="w-full  h-full lg:flex lg:flex-row lg:justify-between lg:items-center ">
             <div class="mt-6  bar_wrapper ">
                 <div class="p-[5px] bar_sub_wrapper  bg_primary  ">
                     <div class="flex_start gap-3">
@@ -29,7 +29,7 @@
                     </div>
                 </div>
             </div>
-            <div class="mt-[24px] flex_start w-full">
+            <div class="mt-[24px] flex_start lg:justify-end  w-full">
                 <button (click)="toggleStandardView()" class="py-[13px] px-4">
                     @if (standardView) {
                     <img class="w-[14px]  h-[15px]" src="/assets/soccer/two-bar.svg" alt="standard-view">
@@ -140,7 +140,7 @@
                                 <div>
                                     <div class="py-2 grid grid-cols-6 gap-3">
                                         <div class="col-span-6 grid grid-cols-4">
-                                            <div class="col-span-3">
+                                            <div class="col-span-3 lg:col-span-4">
                                                 @if (isLive) {
                                                 <div class="flex_row gap-2">
                                                     <button
@@ -156,7 +156,7 @@
                                                 <h6 class="text-[#b1Bad3] text-[12px]">Sat,Nov 09 8:00 PM</h6>
                                                 }
                                             </div>
-                                            <div class="col-span-1 flex_row ">
+                                            <div class="col-span-1 flex_row lg:hidden ">
                                                 <img class="w-[14px] h-[14px] mr-3" src="/assets/soccer/4bars.svg"
                                                     alt="menu">
                                                 <div class="border-l border-solid border-[#2f4553]">
@@ -164,99 +164,15 @@
                                                 </div>
                                             </div>
                                         </div>
-                                        <div class="col-span-6 grid grid-cols-2 ">
-                                            <div
-                                                class="text-[14px] leading-none  flex flex-col justify-start items-start gap-2 col-span-1">
-                                                <h3>Crystal Palace FC</h3>
-                                                <h3>Fulham FC</h3>
-                                            </div>
-                                            <div
-                                                class="flex flex-col justify-start items-start gap-2 col-span-1 ml-auto">
-                                                <div
-                                                    class="text-[#ff9d00] leading-normal text-center justify-center text-[12px] font-semibold">
-                                                    0
-                                                </div>
-                                                <div
-                                                    class="text-[#ff9d00] leading-normal text-center justify-center text-[12px] font-semibold">
-                                                    0
-                                                </div>
-                                            </div>
-                                        </div>
-                                        <div class="col-span-6 px-2 flex flex-row justify-center items-center w-full">
-                                            <div class="text-[#b1bad3] text-[12px]">1x2</div>
-                                        </div>
-                                        <div class="col-span-6 grid grid-cols-6  gap-2">
-                                            <div class="col-span-2 flex flex-col items-center justify-start">
-                                                <button
-                                                    class="py-[0.5em] px-[0.75em] border-0 rounded text-[14px] text-white h-[56px] bg-[rgba(7,_24,_36,1)] w-full flex flex-col justify-center items-start gap-0.5">
-                                                    <h3 class="truncate max-w-full text-white">Crystal palace FC</h3>
-                                                    <div class="text-[#4391e7] text-[14px] leading-normal font-bold">
-                                                        3.65
-                                                    </div>
-                                                </button>
-                                            </div>
-                                            <div class="col-span-2 flex flex-col items-center justify-start">
-                                                <button
-                                                    class="py-[0.5em] px-[0.75em] border-0 rounded text-[14px] text-white h-[56px] bg-[rgba(7,_24,_36,1)] w-full flex flex-col justify-center items-start gap-0.5">
-                                                    <h3 class="truncate max-w-full text-white">Draw</h3>
-                                                    <div class="text-[#4391e7] text-[14px] leading-normal font-bold">
-                                                        2.85
-                                                    </div>
-                                                </button>
-                                            </div>
-                                            <div class="col-span-2 flex flex-col items-center justify-start">
-                                                <button
-                                                    class="py-[0.5em] px-[0.75em] border-0 rounded text-[14px] text-white h-[56px] bg-[rgba(7,_24,_36,1)] w-full flex flex-col justify-center items-start gap-0.5">
-                                                    <h3 class="truncate max-w-full text-white">Fulham FC</h3>
-                                                    <div class="text-[#4391e7] text-[14px] leading-normal font-bold">
-                                                        3.65
-                                                    </div>
-                                                </button>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        }
-                        @if (subEventDropdown) {
-                        <div class="border-t-2 border-b-2 border-solid border-[#2f4553] bg-[#213743] rounded-b w-full">
-                            <div class="py-3 px-5">
-                                <div>
-                                    <div class="py-2 grid grid-cols-6 gap-3">
-                                        <div class="col-span-6 grid grid-cols-4">
-                                            <div class="col-span-3">
-                                                @if (!isLive) {
-                                                <div class="flex_row gap-2">
-                                                    <button
-                                                        class="bg-[#e9113c] text-white text-[12px]  border-0 rounded px-1">Live</button>
-                                                    <div class="flex_row">
-                                                        <h3 class="text-[14px]">35</h3>
-                                                        <p class="blinking-dash  text-[14px]">'</p>
-                                                    </div>
-                                                    <div class="text-[#b1bad3] text-[12px]">1st Half</div>
-                                                </div>
 
-                                                } @else {
-                                                <h6 class="text-[#b1Bad3] text-[12px]">Sat,Nov 09 8:00 PM</h6>
-                                                }
-                                            </div>
-                                            <div class="col-span-1 flex_row ">
-                                                <img class="w-[14px] h-[14px] mr-3" src="/assets/soccer/4bars.svg"
-                                                    alt="menu">
-                                                <div class="border-l border-solid border-[#2f4553]">
-                                                    <h3 class="text-[14px] ml-3 text-[#b1bad3] leading-[1]">+64</h3>
-                                                </div>
-                                            </div>
-                                        </div>
-                                        <div class="col-span-6 grid grid-cols-2 ">
+                                        <div class="col-span-6 lg:col-span-2  grid grid-cols-2 ">
                                             <div
                                                 class="text-[14px] leading-none  flex flex-col justify-start items-start gap-2 col-span-1">
                                                 <h3>Crystal Palace FC</h3>
                                                 <h3>Fulham FC</h3>
                                             </div>
                                             <div
-                                                class="flex flex-col justify-start items-start gap-2 col-span-1 ml-auto">
+                                                class="flex flex-col justify-start items-start gap-2 col-span-1 ml-auto lg:hidden">
                                                 <div
                                                     class="text-[#ff9d00] leading-normal text-center justify-center text-[12px] font-semibold">
                                                     0
@@ -267,43 +183,54 @@
                                                 </div>
                                             </div>
                                         </div>
-                                        <div class="col-span-6 px-2 flex flex-row justify-center items-center w-full">
+                                        <div
+                                            class="col-span-6  px-2 flex flex-row justify-center items-center w-full lg:hidden">
                                             <div class="text-[#b1bad3] text-[12px]">1x2</div>
                                         </div>
-                                        <div class="col-span-6 grid grid-cols-6  gap-2">
-                                            <div class="col-span-2 flex flex-col items-center justify-start">
+                                        <div class="col-span-6 lg:col-span-3 grid grid-cols-6   gap-2 ">
+                                            <div class="col-span-2  relative  flex flex-col items-center justify-start">
                                                 <button
-                                                    class="py-[0.5em] px-[0.75em] border-0 rounded text-[14px] text-white h-[56px] bg-[rgba(7,_24,_36,1)] w-full flex flex-col justify-center items-start gap-0.5">
+                                                    class="py-[0.5em] px-[0.75em]  border-0 rounded text-[14px] text-white h-[56px] bg-[rgba(7,_24,_36,1)] w-full flex flex-col justify-center items-start gap-0.5">
                                                     <h3 class="truncate max-w-full text-white">Crystal palace FC</h3>
                                                     <div class="text-[#4391e7] text-[14px] leading-normal font-bold">
                                                         3.65
                                                     </div>
                                                 </button>
+                                                <div class="max-lg:hidden lg:col-span-1 absolute -left-8 top-5 ">
+                                                    <img class="w-[14px] h-[14px] mr-3" src="/assets/soccer/4bars.svg"
+                                                        alt="menu">
+                                                </div>
                                             </div>
-                                            <div class="col-span-2 flex flex-col items-center justify-start">
+                                            <div class="col-span-2  flex flex-col  items-center justify-start">
                                                 <button
-                                                    class="py-[0.5em] px-[0.75em] border-0 rounded text-[14px] text-white h-[56px] bg-[rgba(7,_24,_36,1)] w-full flex flex-col justify-center items-start gap-0.5">
+                                                    class="py-[0.5em] px-[0.75em]  border-0 rounded text-[14px] text-white h-[56px] bg-[rgba(7,_24,_36,1)] w-full flex flex-col justify-center items-start gap-0.5">
                                                     <h3 class="truncate max-w-full text-white">Draw</h3>
                                                     <div class="text-[#4391e7] text-[14px] leading-normal font-bold">
                                                         2.85
                                                     </div>
                                                 </button>
                                             </div>
-                                            <div class="col-span-2 flex flex-col items-center justify-start">
+                                            <div class="col-span-2 relative flex   flex-col items-center justify-start">
                                                 <button
-                                                    class="py-[0.5em] px-[0.75em] border-0 rounded text-[14px] text-white h-[56px] bg-[rgba(7,_24,_36,1)] w-full flex flex-col justify-center items-start gap-0.5">
+                                                    class="py-[0.5em] px-[0.75em]  border-0 rounded text-[14px] text-white h-[56px] bg-[rgba(7,_24,_36,1)] w-full flex flex-col justify-center items-start gap-0.5">
                                                     <h3 class="truncate max-w-full text-white">Fulham FC</h3>
                                                     <div class="text-[#4391e7] text-[14px] leading-normal font-bold">
                                                         3.65
                                                     </div>
                                                 </button>
+                                                <div
+                                                    class="max-lg:hidden absolute -right-16 top-5  border-b border-solid border-[#2f4553]">
+                                                    <h3 class="text-[14px] ml-3 text-[#b1bad3] leading-[1]">+64</h3>
+                                                </div>
                                             </div>
+
                                         </div>
                                     </div>
                                 </div>
                             </div>
                         </div>
                         }
+
                     </div>
                 </div>
                 }
@@ -315,20 +242,487 @@
         <div class="mt-6  bar_wrapper ">
             <div class="p-[5px] bar_sub_wrapper  bg_primary  ">
                 <div class="flex_start gap-3">
-                    <a [ngClass]="[activeTab ==='live&Upcoming' ? 'bg-[#2F4553]' : '']"
-                        (click)="setActiveTab('live&Upcoming')" class=" bar_btns">
-                        Live & Upcoming
-                    </a>
-                    <a [ngClass]="[activeTab ==='outrights' ? 'bg-[#2F4553]' : '']" (click)="setActiveTab('outrights')"
+                    <a [ngClass]="[activeTab2 ==='allBets' ? 'bg-[#2F4553]' : '']" (click)="setActiveTab2('allBets')"
                         class=" bar_btns">
-                        Outrights
+                        All Bets
                     </a>
-                    <a [ngClass]="[activeTab === 'allSoccer' ? 'bg-[#2F4553]' : '']" (click)="setActiveTab('allSoccer')"
-                        class=" bar_btns">
-                        All Soccer
+                    <a [ngClass]="[activeTab2 ==='highRollers' ? 'bg-[#2F4553]' : '']"
+                        (click)="setActiveTab2('highRollers')" class=" bar_btns">
+                        High Rollers
+                    </a>
+                    <a [ngClass]="[activeTab2 === 'raceLeaderboard' ? 'bg-[#2F4553]' : '']"
+                        (click)="setActiveTab2('raceLeaderboard')"
+                        class=" bar_btns flex flex-row justify-center items-center gap-1">
+                        <div>
+                            Race Leaderboard
+                        </div>
+                        <div class="w-2 h-2 border-0 rounded-[50%] bg-[#1fff20]">
+
+                        </div>
+
                     </a>
                 </div>
             </div>
         </div>
+        <div class="w-full">
+            <Table class="w-full">
+                <thead class="w-full">
+                    <tr
+                        class=" text-[#b1bad3] whitespace-nowrap *:p-4 *:text-[14px] font-normal grid grid-cols-2 w-full">
+                        <th class="col-span-1  text-left">Event</th>
+                        <th class="col-span-1  text-right">Bet Amount</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr
+                        class="bg-[#213743] text-[#b1bad3] whitespace-nowrap *:p-4 text-center *:text-[14px] grid grid-cols-2">
+                        <td class="col-span-1  text-left flex_row gap-2">
+                            <img class="w-[14px] h-[14px]" src="/assets/soccer/multi.svg" alt="multi">
+                            <div class="flex_row gap-1 text-white text-[14px] font-bold">
+                                <h3>Multi</h3>
+                                <h3>(5)</h3>
+                            </div>
+                        </td>
+                        <td class="col-span-1  text-right flex flex-row justify-end items-center gap-1">
+                            <h3 class="text-[#b1bad3] text-[14px]">
+                                CA$20.00
+                            </h3>
+                            <img class="w-[14px] h-[14px]" src="/assets/soccer/dollar.svg" alt="multi">
+                        </td>
+                    </tr>
+                    <tr class=" text-[#b1bad3] whitespace-nowrap *:p-4 text-center *:text-[14px] grid grid-cols-2">
+                        <td class="col-span-1  text-left flex_row gap-2">
+                            <img class="w-[14px] h-[14px]" src="/assets/soccer/multi.svg" alt="multi">
+                            <div class="flex_row gap-1 text-white text-[14px] font-bold">
+                                <h3>Multi</h3>
+                                <h3>(3)</h3>
+                            </div>
+                        </td>
+                        <td class="col-span-1  text-right flex flex-row justify-end items-center gap-1">
+                            <h3 class="text-[#b1bad3] text-[14px]">
+                                R$40.00
+                            </h3>
+                            <img class="w-[14px] h-[14px]" src="/assets/soccer/dollar.svg" alt="multi">
+                        </td>
+                    </tr>
+                </tbody>
+            </Table>
+        </div>
+    </div>
+    <div class="mt-6 relative w-full  ">
+        <div class="p-4   bg-[#0f212e] border-0 rounded-md w-full overflow-x-hidden"
+            [ngClass]="[!soccerBettingOddsState ? 'max-h-[250px] min-h-[250px] overflow-hidden text_container' : 'max-h-full']">
+            @if (!soccerBettingOddsState) {
+            <button (click)="toggleSoccerBettingOddState()"
+                class="absolute z-10 bottom-6 left-[33%]  whitespace-nowrap border-0 rounded text-[14px] max-h-10 max-w-[91.88px] cursor-pointer shadow-md  text-white leading-none font-semibold px-4 py-[13px] bg-[#2f4553]">
+                See More
+            </button>
+            }
+            <div>
+                <div class=" text-[#b1bad3] text-base leading-[150%]">
+                    <h1 class="text-[24px] text-white leading-[132%] font-semibold">
+                        Soccer Betting Online -
+                        Best Football Betting Odds Online
+                    </h1>
+                    <p class="inline-text mb-[1.5em] "><span>We
+                            are soccer enthusiasts here at Stake and know how exciting the world's game can be. Soccer
+                            (also known as football in many parts of the world) is one of the most popular sports
+                            gambled on the Stake sportsbook and there are a variety of soccer betting markets available
+                            on our platform.</span></p>
+                    <p class=" inline-text mb-[1.5em] "><span class="  ">You
+                            can join us for free and bet on matches of your favourite soccer teams with fast
+                            deposits
+                            and instant withdrawals in Bitcoin, </span><a
+                            class="relative items-center gap-2 justify-center rounded-sm font-semibold whitespace-nowrap ring-offset-background transition disabled:pointer-events-none disabled:opacity-50 focus-visible:outline-2 focus-visible:outline-offset-2 active:scale-[0.98] bg-transparent text-grey-200 hover:bg-transparent hover:text-white focus-visible:text-white focus-visible:outline-none inline"><span>variety
+                                of other cryptocurrencies</span> </a><span class="  ">
+                            and local currencies - making your sports betting experience quick and seamless.</span>
+                    </p>
+                    <p class=" inline-text mb-[1.5em] ">
+                        Stake's popular sportsbook has been around since 2020 and has become a destination for betting
+                        on soccer matches and football games around the globe including the English Premier League
+                        (EPL), Major League Soccer (MLS), Spanish La Liga, Italian Serie A, German Bundesliga and more.
+                    </p>
+                    <p class=" inline-text mb-[1.5em] ">
+                        All you need is an internet connection and a willingness to bet and you are set to bet on soccer
+                        - whether you are a first-timer or a seasoned pro you will find a way to win big betting soccer
+                        on <a class="cursor-pointer"> Stake online sportsbook </a>
+                    </p>
+                    <h2 class="text-[20px] text-white my-2.5">
+                        Soccer Betting for the Top Football Leagues Worldwide
+                    </h2>
+                    <p class=" inline-text mb-[1.5em] ">
+                        Support your favourite team across the best professional football leagues worldwide on Stake's
+                        sportsbook where the best in international soccer matches are available for the betting
+                        enthusiast.
+                    </p>
+                    <p class="inline-text mb-[1.5em] ">In
+                        <a>England
+                        </a>,
+                        you have the prestigious <a>English
+                            Premier League (EPL)
+                        </a>
+                        which is active from August to May every year and features top clubs Manchester United,
+                        Chelsea, Arsenal, Liverpool, Manchester City, Everton and Watford FC - which Stake is the
+                        main sponsor for. In addition to the top tier action in the EPL, Stake also takes betting
+                        action on the <a>FA
+                            Cup </a>,
+                        <a>EFL
+                            League One </a>,
+                        <a>League Two </a>
+                        and a variety of other games happening in the birthplace of modern football.
+                    </p>
+                    <p class="inline-text mb-[1.5em] ">Over
+                        in <a>Spain </a>,
+                        the highest level of competition happens in <a>La
+                            Liga </a>,
+                        where the beautiful game feature some of the world's greatest clubs such as Real Madrid, FC
+                        Barcelona, Atletico Madrid, FC Valencia and many more mighty teams in Spain. Spain is also
+                        host to the <a>Copa
+                            Del Rey </a>
+                        as well as <a>LaLiga 2 </a>,
+                        <a>Primera División (Women) </a>
+                        and more.
+                    </p>
+                    <p class="inline-text mb-[1.5em] ">In
+                        <a>Italy </a>,
+                        the highest league in all the land is<a>Serie
+                            A </a>,
+                        where the classic defensive Italian brand of football is king featuring historical clubs
+                        like AC Milan, Inter Milan, Juventus, A.S Roma and more. The best Italian soccer teams also
+                        compete each year in<a>Coppa
+                            Italia </a>,
+                        whilst other leagues in Italy include<a>Serie
+                            B </a>,
+                        <a>Campionato Primavera </a>
+                        and more, with some of the top European teams in football history.
+                    </p>
+                    <p class="inline-text mb-[1.5em] ">There
+                        is a wide range of leagues available on Stake, including <a>German
+                            Bundesliga </a>,
+                        <a>UEFA
+                            Champions League </a>,
+                        <a>Europa League </a>
+                        and outside of Europe exciting local national leagues like <a>Brasileiro Série
+                            A </a>,
+                        <a>Indian Super League </a>,
+                        <a>Australian A-League </a>,
+                        <a>Japanese J League </a>
+                        and many more leagues and tournaments from across the world!
+                    </p>
+                    <h2 class="text-[20px] text-white my-2.5">
+                        How to Bet Soccer with Best Betting Odds, Moneyline & Types of Bets
+                    </h2>
+                    <P class="inline-text mb-[1.5em] ">
+                        Soccer is one of the most popular sports to bet on, with variable soccer betting odds and
+                        different styles of betting for matches as well as outcomes of leagues, tournaments and soccer
+                        players.
+                    </P>
+                    <P class="inline-text mb-[1.5em] ">
+                        Here are some of the popular types of ways you can bet on soccer and international football
+                        events on Stake's sportsbook:
+                    </P>
+                    <ul class="pl-8 pr-4 ">
+                        <li class="mb-[1.5em] list-disc ">
+                            <p class="inline-text"><span>3-way
+                                    Moneyline Wager:</span><span>
+                                    The most common way to bet on the outcome for a match with three outcomes of the
+                                    match available - either team winning or draw. Odds are weight-based on how
+                                    likely one team will defeat another based on betting activity or if the outcome
+                                    ends in a draw. In three-way Moneyline bets, this does not include extra time,
+                                    but many </span><a><span>player props</span> </a><span>
+                                    do.</span></p>
+                        </li>
+                        <li class="mb-[1.5em] list-disc">
+                            <p class="inline-text"><span>2-way
+                                    Moneyline Wager (Double Chance Bet):</span><span>
+                                    A two-way moneyline involves betting on a specific team to win or for the game
+                                    to draw, or for either team to win. Read our </span><a><span>moneyline betting
+                                        guide</span> </a><span>
+                                    to learn more.</span></p>
+                        </li>
+                        <li class="mb-[1.5em] list-disc ">
+                            <p class="inline-text"><span>Futures
+                                    and Outrights: </span><span>Pick
+                                    the winner of the league, top 4 placement of your favourite team, tournament
+                                    winners, relegated clubs and more with betting futures and outrights for soccer.
+                                    For more information, check out our </span><a><span>outright betting guide</span>
+                                </a><span>.</span>
+                            </p>
+                        </li>
+                        <li class="mb-[1.5em]  list-disc">
+                            <p class="inline-text"><span>Goals:
+                                </span><span>Pick
+                                    the team to score the first goal, the last goal, if both teams score, no goals
+                                    scored, if the match will have even or odd goals scored, exact goals by a team
+                                    and a flurry of goals margin bets. If you love guessing the correct score, this
+                                    is the type of bet for you.</span></p>
+                        </li>
+                        <li class="mb-[1.5em]  list-disc">
+                            <p class="inline-text"><span>Half:
+                                </span><span>As
+                                    a sport of two halves, punters can bet on the state of play at half-time,
+                                    including win or draw as well as a myriad of betting types and handicap wagering
+                                    available to you.</span></p>
+                        </li>
+                        <li class="mb-[1.5em]  list-disc">
+                            <p class="inline-text"><span>European
+                                    Handicap: </span><span>Also
+                                    known as a 3-way handicap allows you to bet on the outcome of: a home team
+                                    victory, draw or how well the away team performs. This is achieved by applying a
+                                    handicap of a 'conditional starting score' ranging from 0:1, 0:2, 1:0, 2:0
+                                    applied to the final result. Betting on a team starting from a 0:1 deficit is
+                                    referred to as EH(-1) whilst starting from 2:0 would be referred to as EH(+2) in
+                                    the European format of the 3-way handicap.
+                                    Once exposed to this type of handicapping it allows for a better payout for a
+                                    favoured team dominating or help increase certainty for an underdog that can
+                                    keep it close. </span><a
+                                    class="relative items-center gap-2 justify-center rounded-sm font-semibold whitespace-nowrap ring-offset-background transition disabled:pointer-events-none disabled:opacity-50 focus-visible:outline-2 focus-visible:outline-offset-2 active:scale-[0.98] bg-transparent text-grey-200 betterhover:hover:bg-transparent betterhover:hover:text-white focus-visible:text-white focus-visible:outline-none inline"><span>Learn
+                                        More about the European Handicap</span> </a><span>.</span>
+                            </p>
+                        </li>
+                        <li class="mb-[1.5em] list-disc ">
+                            <p class="inline-text"><span>Asian
+                                    Handicap:</span><span>
+                                    Also known as the 'Asian Line' form of </span><a
+                                    class="relative items-center gap-2 justify-center rounded-sm font-semibold whitespace-nowrap ring-offset-background transition disabled:pointer-events-none disabled:opacity-50 focus-visible:outline-2 focus-visible:outline-offset-2 active:scale-[0.98] bg-transparent text-grey-200 betterhover:hover:bg-transparent betterhover:hover:text-white focus-visible:text-white focus-visible:outline-none inline"><span>spread
+                                        betting</span> </a><span>
+                                    in which the favoured team must win by a higher goal margin to meet the handicap
+                                    odds. A feature of this type of bet is that you receive 50% of your bet back if
+                                    you 'half-win' or 'half-lose'. </span><a
+                                    class="relative items-center gap-2 justify-center rounded-sm font-semibold whitespace-nowrap ring-offset-background transition disabled:pointer-events-none disabled:opacity-50 focus-visible:outline-2 focus-visible:outline-offset-2 active:scale-[0.98] bg-transparent text-grey-200 betterhover:hover:bg-transparent betterhover:hover:text-white focus-visible:text-white focus-visible:outline-none inline"><span>Learn
+                                        more about the Asian Handicap here</span> </a><span>.</span>
+                            </p>
+                        </li>
+                        <li class="mb-[1.5em]  list-disc">
+                            <p class="inline-text"><span>Corners:
+                                </span><span>Corner
+                                    kicks are a foundation component of the game of soccer. Teams that press forward
+                                    and dominate the pace of play are often rewarded with the set-piece advantage in
+                                    regards to corner kicks. Many punters view corner kick dominance as a more
+                                    consistent bet reflecting the quality of play as opposed to the final score -
+                                    since anything can happen! Whether it is total corners, first corner, last
+                                    corner, handicap, odd/even corners and more, you are covered! You can read our
+                                </span><a
+                                    class="relative items-center gap-2 justify-center rounded-sm font-semibold whitespace-nowrap ring-offset-background transition disabled:pointer-events-none disabled:opacity-50 focus-visible:outline-2 focus-visible:outline-offset-2 active:scale-[0.98] bg-transparent text-grey-200 betterhover:hover:bg-transparent betterhover:hover:text-white focus-visible:text-white focus-visible:outline-none inline"><span>guide
+                                        to corner betting</span> </a><span>
+                                    for more information. </span></p>
+                        </li>
+                        <li class="mb-[1.5em]  list-disc">
+                            <p class="inline-text"><span>Specials:
+                                </span><span>Handicaps,
+                                    both teams to score, exact score, last goal, winning margin, team to win both
+                                    halves, either half, team win to nil, draw or both teams to score, team win or
+                                    clean sheet and many other soccer match scenarios are available to you to bet
+                                    on. Special bets are listed to provide maximum availability of odds for the type
+                                    of match that could happen on the pitch for you to place a bet on!</span></p>
+                        </li>
+                        <li class="mb-[1.5em]  list-disc">
+                            <p class="inline-text"><span>Minute
+                                    Markets: </span><span>For
+                                    the full 90 minutes of gameplay (120 minutes) the game can flow in many
+                                    different ways. If you think a team starts fast or have a gut feeling on when
+                                    the key goal will come, you can place bets on the first goal, if your team is
+                                    winning or score tied in 10 or 15-minute intervals!</span></p>
+                        </li>
+                        <li class="mb-[1.5em] list-disc">
+                            <p class="inline-text"><span>Goal
+                                    Scorers: </span><span>Star
+                                    striker on fire? Have a killer super sub? Being marked by a world-class
+                                    defender? Betting on individual players or goalscorers is a great way to support
+                                    your favourite players if they score the first goal, last goal or any goal
+                                    during a soccer match for you to cash in on a big bet! You can also learn about
+                                </span><a
+                                    class="relative items-center gap-2 justify-center rounded-sm font-semibold whitespace-nowrap ring-offset-background transition disabled:pointer-events-none disabled:opacity-50 focus-visible:outline-2 focus-visible:outline-offset-2 active:scale-[0.98] bg-transparent text-grey-200 betterhover:hover:bg-transparent betterhover:hover:text-white focus-visible:text-white focus-visible:outline-none inline"><span>correct/exact
+                                        score betting</span> </a><span>
+                                    with our helpful guide. You can also read more about </span><a
+                                    class="relative items-center gap-2 justify-center rounded-sm font-semibold whitespace-nowrap ring-offset-background transition disabled:pointer-events-none disabled:opacity-50 focus-visible:outline-2 focus-visible:outline-offset-2 active:scale-[0.98] bg-transparent text-grey-200 betterhover:hover:bg-transparent betterhover:hover:text-white focus-visible:text-white focus-visible:outline-none inline"><span>double
+                                        chance betting</span> </a><span>
+                                    to spice up your soccer bets.</span></p>
+                        </li>
+                        <li class="mb-[1.5em] list-disc">
+                            <p class="inline-text"><span>Betting
+                                    Options: </span><span>The
+                                    Stake sportsbook platform allows for multiple betting options for single and
+                                </span><a
+                                    class="relative items-center gap-2 justify-center rounded-sm font-semibold whitespace-nowrap ring-offset-background transition disabled:pointer-events-none disabled:opacity-50 focus-visible:outline-2 focus-visible:outline-offset-2 active:scale-[0.98] bg-transparent text-grey-200 betterhover:hover:bg-transparent betterhover:hover:text-white focus-visible:text-white focus-visible:outline-none inline"><span>parlays</span>
+                                </a><span>
+                                    and </span><a
+                                    class="relative items-center gap-2 justify-center rounded-sm font-semibold whitespace-nowrap ring-offset-background transition disabled:pointer-events-none disabled:opacity-50 focus-visible:outline-2 focus-visible:outline-offset-2 active:scale-[0.98] bg-transparent text-grey-200 betterhover:hover:bg-transparent betterhover:hover:text-white focus-visible:text-white focus-visible:outline-none inline"><span>same
+                                        game multi bets</span> </a><span>
+                                    for the creative and ambitious punt to mix and match ways to bet on a single
+                                    betting slip! We also recommend getting acquainted with </span><a
+                                    class="relative items-center gap-2 justify-center rounded-sm font-semibold whitespace-nowrap ring-offset-background transition disabled:pointer-events-none disabled:opacity-50 focus-visible:outline-2 focus-visible:outline-offset-2 active:scale-[0.98] bg-transparent text-grey-200 betterhover:hover:bg-transparent betterhover:hover:text-white focus-visible:text-white focus-visible:outline-none inline"><span>common
+                                        sports betting slang</span> </a><span>
+                                    before placing a bet. </span></p>
+                        </li>
+                    </ul>
+                    <p class="inline-text mb-[1.5em]"><span>Soccer
+                            is the most popular sport in the world and as a result, the ways to bet on the sport are
+                            innovative, creative and fun! Whether you are a serial football punter or a casual bettor
+                            there are many options available to you to bet soccer on the Stake online betting site! For
+                            more tips and tricks, learn more with our </span><a
+                            class="relative items-center gap-2 justify-center rounded-sm font-semibold whitespace-nowrap ring-offset-background transition disabled:pointer-events-none disabled:opacity-50 focus-visible:outline-2 focus-visible:outline-offset-2 active:scale-[0.98] bg-transparent text-grey-200 betterhover:hover:bg-transparent betterhover:hover:text-white focus-visible:text-white focus-visible:outline-none inline"><span>soccer
+                                betting guide</span> </a><span>.</span>
+                    </p>
+
+                    <h2 class="text-[20px] text-white my-2.5">
+                        Live Soccer Betting & Pre-Match Soccer Betting Lines
+                    </h2>
+
+                    <p class="inline-text mb-[1.5em]">Stake
+                        offers a wide variety of <a>live
+                            soccer betting </a>
+                        for many real-time fixtures as well as <a>upcoming fixtures </a>
+                        with real-time odds for the latest soccer matches all around the world.
+                    </p>
+                    <p class="inline-text mb-[1.5em]">Never
+                        miss the chance to punt on a big match or tournament with all the latest soccer matches
+                        available to bet on. Live soccer betting is perfect for the punter looking for value in
+                        real-time based on the pace of play and where they think the match is going - taking advantage
+                        of favourable odds based on the current state of play to potentially win big with the best odds
+                        or have an easy cash-out.</p>
+                    <p class="inline-text mb-[1.5em]">Learn
+                        more about the differences between <a class="block font-semibold cursor-pointer">live
+                            betting vs. pre-match betting </a>
+                        and how to devise the best betting strategy to win at Stake.</p>
+
+                    <h2 class="text-[20px] text-white my-2.5">
+                        Live Streaming Soccer on Stake
+                    </h2>
+                    <p class="inline-text mb-[1.5em]"><span>You
+                            can </span><a
+                            class="relative items-center gap-2 justify-center rounded-sm font-semibold whitespace-nowrap ring-offset-background transition disabled:pointer-events-none disabled:opacity-50 focus-visible:outline-2 focus-visible:outline-offset-2 active:scale-[0.98] bg-transparent text-grey-200 betterhover:hover:bg-transparent betterhover:hover:text-white focus-visible:text-white focus-visible:outline-none inline"><span>live
+                                stream</span> </a><span>
+                            all major soccer events, completely free, on Stake Sportsbook. Simply log in to your account
+                            and live stream sports directly from your account dashboard. Select the streaming icon next
+                            to the match to start watching.</span></p>
+                    <p class="inline-text"><span>Check
+                            out our guide to </span><a><span>live
+                                streaming sports on Stake</span> </a><span>
+                            for more information. </span></p>
+
+                    <h2 class="text-[20px] text-white my-2.5">
+                        Soccer Betting Tips & Strategies
+                    </h2>
+                    <p class=" inline-text  mb-[1.5em]">
+                        Whether you're a soccer fan, or a casual sports bettor, online sports betting on soccer is a fun
+                        way to enjoy this world-renowned sport. Before placing your bets on outright markets and live
+                        matches, it's important to adopt a betting strategy to improve your chances of winning. At
+                        Stake's betting platform, we have the ultimate
+                        <a>sports betting strategies</a>
+                        online, as well as the following tips to help you place your soccer bets:
+                    </p>
+                    <ul class="pl-8 pr-4">
+                        <li class="my-1 list-disc">
+                            Research player and team statistics:
+                            Studying the form, performance and player stats will help you as you plan your selections in
+                            the latest soccer markets. Look for players on hot streaks and teams that perform well
+                            against certain opponents for improved value before placing your initial deposits.
+                        </li>
+                        <li class="my-1 list-disc">
+                            Don't just bet on the popular leagues:
+                            Betting on the major soccer leagues is great, but you don't need to wait for the biggest
+                            international competitions before placing your bets. Consider betting on soccer throughout
+                            the season on tournaments and games individual games including
+                            <a>UEFA Europa League,</a> <a>La Liga</a> , and even <a>Simulated Reality Leagues</a> !
+                        </li>
+                        <li>
+                            Consider soccer player injuries:
+                            Injuries play a big part in a team's success throughout the season and can have an impact on
+                            the latest soccer odds. Make sure you check each team's updated injury list before placing a
+                            bet. If a key player is out for a particular game week, it will negatively affect a team's
+                            chance of success for the upcoming match!
+                        </li>
+                        <li>
+                            Take advantage of sports betting bonuses:
+                            As a leading online sports betting site, Stake has new and ongoing
+                            sports betting promos and bonuses
+                            where you will have the opportunity to win big cash prizes every single week! Learn about
+                            the using our guide. Take things up a notch by becoming a Stake VIP , gaining you access to
+                            more exclusive benefits .
+                        </li>
+
+                        <p class="inline-text"><span
+                                class="weight-normal line-height-150pct is-inline align-left size-base text-size-base responsive-type-scale variant-subtle with-icon-space svelte-17v69ua">Learn
+                                more with our </span><a
+                                class="relative items-center gap-2 justify-center rounded-sm font-semibold whitespace-nowrap ring-offset-background transition disabled:pointer-events-none disabled:opacity-50 focus-visible:outline-2 focus-visible:outline-offset-2 active:scale-[0.98] bg-transparent text-grey-200 betterhover:hover:bg-transparent betterhover:hover:text-white focus-visible:text-white focus-visible:outline-none inline"
+                                href="/blog/sports-betting-guide" data-sveltekit-reload="off"
+                                data-sveltekit-preload-data="off" data-sveltekit-noscroll="off"
+                                external="false"><span>ultimate guide to sports betting</span> </a><span
+                                class="weight-normal line-height-150pct is-inline align-left size-base text-size-base responsive-type-scale variant-subtle with-icon-space svelte-17v69ua">
+                                and get all the knowledge you need to place your bets!</span></p>
+
+                    </ul>
+
+                    <h2 class="text-[20px] text-white my-2.5">
+                        Fast Deposits & Instant Withdrawals for Soccer Betting
+                    </h2>
+                    <p class="inline-text mb-[1.5em]">
+                        class="weight-normal line-height-150pct is-inline align-left size-base text-size-base
+                        responsive-type-scale variant-subtle with-icon-space svelte-17v69ua">Betting
+                        soccer on Stake's sportsbook with your local currency or the cryptocurrency of your choice
+                        is easy. You can deposit funds into your Stake.com account by following these simple steps
+                        listed below:</p>
+                    <ul class="pl-8 pr-4">
+                        <li class="mb-[1.5em] list-disc">
+                            <p class="inline-text"><span>Step
+                                    1</span><span>
+                                    - Retrieve your deposit address, located in Wallet &gt; Deposit.</span></p>
+                        </li>
+                        <li class="mb-[1.5em] list-disc">
+                            <p class="inline-text"><span>Step
+                                    2 </span><span>-
+                                    Choose the method which suits your needs. We offer many supported currencies
+                                    including Bitcoin (BTC), Ethereum (ETH), Dogecoin (Doge), Litecoin (LTC) and
+                                    more.</span></p>
+                        </li>
+                        <li class="mb-[1.5em] list-disc">
+                            <p class="inline-text"><span>Step
+                                    3 - </span><span>Use
+                                    your deposit address as the 'Send to' location for your crypto wallet or
+                                    exchange.</span></p>
+                        </li>
+                        <li class="mb-[1.5em] list-disc">
+                            <p class="inline-text"><span>Step
+                                    4 (Optional) - </span><span>If
+                                    you need to make a deposit via fiat currency, you can buy </span><a
+                                    class="relative items-center gap-2 justify-center rounded-sm font-semibold whitespace-nowrap ring-offset-background transition disabled:pointer-events-none disabled:opacity-50 focus-visible:outline-2 focus-visible:outline-offset-2 active:scale-[0.98] bg-transparent text-grey-200 betterhover:hover:bg-transparent betterhover:hover:text-white focus-visible:text-white focus-visible:outline-none inline"><span>crypto
+                                        for Stake via
+                                        Moonpay</span> </a><span>.</span>
+                            </p>
+                        </li>
+                    </ul>
+                    <p class="inline-text mb-[1.5em]">Deposits
+                        and withdrawals on Stake are instant and in your <a>available
+                            cryptocurrency of your choice </a>
+                        or <a>local
+                            currency </a>
+                        - suitable for the active soccer gambler interested in betting on their favourite matches
+                        and leagues.</p>
+
+                    <p class="inline-text mb-[1.5em]"><span>Learn
+                            more about deposit and withdrawal methods for betting, with our </span><a><span>online
+                                payment methods guide</span> </a><span>
+                            at Stake.com.</span></p>
+                    <p class="inline-text mb-[1.5em]"><span>Moonpay
+                            has </span><a><span>many supported
+                                payment options</span> </a><span>
+                            including Visa, MasterCard, Apple Pay, Google Pay and more to deposit cryptocurrency for
+                            soccer betting and more. For a full list of supported payment options in your market, please
+                            refer to the Moonpay documentation.</span></p>
+                </div>
+            </div>
+            @if (soccerBettingOddsState) {
+            <div class="flex justify-center items-center w-full">
+                <button (click)="toggleSoccerBettingOddState()"
+                    class=" whitespace-nowrap border-0 rounded text-[14px] max-h-10 max-w-[91.88px] cursor-pointer shadow-md  text-white leading-none font-semibold px-4 py-[13px] bg-[#2f4553]">
+                    See Less
+                </button>
+            </div>
+
+            }
+
+        </div>
+
     </div>
 </section>
