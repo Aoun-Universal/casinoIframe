@@ -1,0 +1,47 @@
+.main-wrapper{
+    @apply md:h-[200px] w-[100%] lg:flex-row h-[280px] md:flex-row px-[30px] md:px-[3vw] flex-col flex bg-[#0F212E]
+}
+.header-section{
+    @apply  w-[50%] flex justify-center flex-col h-[200px]
+}
+.heading-text{
+    @apply text-[20px] md:text-[1.5rem] text-[#B0B9D2] text-nowrap
+}
+.right-child{
+    @apply md:w-[50%] w-[100%] flex md:justify-end h-[150px]
+}
+.header-img{
+    @apply h-[200px] pb-[50px] md:pb-0 text-end md:ml-[40px] md:w-[370px]  
+}
+.heading{
+    @apply text-[28px] md:text-[2rem] font-[500] text-nowrap
+}
+.section {
+    @apply flex md:flex-row justify-center gap-y-4 flex-col;
+  }
+  .content-block {
+    @apply flex flex-col  w-full
+  }
+
+
+  .dropdown-content {
+    @apply text-[14px] text-[#b1bad3];
+  }
+  .drake-title {
+    @apply inline-flex items-center md:text-[1.5rem] text-[20px] leading-[132%] font-[600];
+  }
+  .first-wrapper{
+    @apply md:!flex-row !flex-col-reverse pt-[32px] mx-auto max-w-[1200px]
+  }
+  .title-bottom{
+    @apply  pt-[24px] pb-[8px]
+  }
+  .bottom-section{
+    @apply !flex-col-reverse md:!flex-row-reverse pt-[32px]  mx-auto max-w-[1200px]
+  }
+  .vedio-wrapper{
+    @apply overflow-hidden pt-[56.25%]
+  }
+  .vedio-parent{
+    @apply  mx-auto max-w-[1200px] pt-[32px]
+  }
