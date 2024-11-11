@@ -9,7 +9,9 @@ import {NotificationComponent} from './modal/notification/notification.component
 import {StatisticsComponent} from './modal/statistics/statistics.component';
 import {SettingsComponent} from './modal/settings-modals/settings/settings.component';
 import { TeamF1Component } from './pages/stake-team/team-f1/team-f1.component';
-import { AffiliateComponent } from './pages/affiliate/affiliate.component';
+import { VipCloudComponent } from './pages/vip-cloud/vip-cloud.component';
+import { BlogPageComponent } from './pages/blog-page/blog-page.component';
+import {AffiliateComponent} from './pages/affiliate/affiliate.component';
 
 
 export const routes: Routes = [
@@ -42,8 +44,8 @@ export const routes: Routes = [
           import('./pages/drake/drake.component').then((c) => c.DrakeComponent),
       },
       {
-        path:'team-f1',
-        component:TeamF1Component
+        path: 'team-f1',
+        component: TeamF1Component
       },
       {
         path: 'responsible-gambling',
@@ -97,6 +99,7 @@ export const routes: Routes = [
     path: 'logout',
     component: LogoutComponent,
   },
+
   {
     path: 'statistics',
     component: StatisticsComponent
@@ -109,7 +112,15 @@ export const routes: Routes = [
     path: 'setting',
     component: SettingsComponent
   },
- 
+
+  {
+    path: 'vip-club',
+    component: VipCloudComponent
+  },
+  {
+    path: 'blog-page',
+    component: BlogPageComponent
+  },
   {
     path: '**',
     redirectTo: '',

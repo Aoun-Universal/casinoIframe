@@ -19,6 +19,7 @@ import { BetSlipComponent } from '../../shared/bet-slip/bet-slip.component';
 })
 export class LayoutComponent implements OnInit{
   currentRoute: string = '';
+  showBetslip: boolean = false;
   sidebarOpen:boolean=true;
   constructor(private router: Router, private toggle:ToggleService) {
     this.router.events.pipe(
@@ -30,6 +31,10 @@ export class LayoutComponent implements OnInit{
   ngOnInit(): void {
     this.toggle.getSidebar().subscribe((state)=>{
       this.sidebarOpen=state
+    });
+    this.toggle.getBetslipState().subscribe((state)=>{
+      this.showBetslip=state
     })
+  
   }
 }
