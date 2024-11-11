@@ -1,0 +1,82 @@
+.parent{
+    @apply bg-[#1A2C38]
+}
+.banner{
+    @apply flex justify-between items-center bg-[#213743] px-[3vw] w-full mb-8
+}
+.top-img{
+    @apply w-[149px] h-[80px] md:w-[214px] md:h-[115px]
+}
+.tittle{
+    @apply text-[24px]
+} 
+
+.thumbnail{
+    @apply max-h-[343px] w-full col-span-2 rounded-[4px]  group-hover:translate-y-[-4px] duration-[0.2s]
+}
+.sec1{
+    @apply grid grid-cols-1 lg:grid-cols-3 gap-4 lg:gap-10
+}
+.highlighted-article{
+    @apply w-full px-[3vw] mb-8 
+}
+.text{
+    @apply text-[1.25rem] leading-[132%] font-[600] mt-[8px] text-[#FFFFFF]
+}
+.p-text{
+    @apply font-[400] text-[13px] mt-[8px] text-[#b1bad3]
+}
+.categories{
+    @apply px-[3vw] grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 mb-8
+}
+.thumbnail2{
+    @apply w-[6rem] h-[6rem]
+}
+.first{
+    @apply   flex justify-between items-center bg-[#213743] col-span-1 rounded-[4px] overflow-hidden hover:bg-[#2F4553]
+}
+.inner-content{
+    @apply flex items-center gap-4
+}
+.card-head{
+    @apply text-[1.125rem] leading-[132%] font-[600]
+}
+.svg-icon{
+    @apply w-[20px] h-[20px] mr-[2rem]
+}
+.article-preview-list{
+    @apply grid grid-cols-3 px-[3vw] gap-8
+}
+.thumbnail3{
+    @apply max-h-[193px] w-full rounded-[4px] group-hover:translate-y-[-4px] duration-[0.2s]
+}
+.text2{
+    @apply text-[20px] font-[600]
+}
+.card{
+    @apply flex flex-col gap-4
+}
+.card-content{
+    @apply flex flex-col
+}
+.btn{
+    @apply flex justify-center items-center mt-8 pb-8 gap-6
+}
+.btn1{
+    @apply inline-flex relative items-center gap-2 justify-center rounded-sm font-semibold whitespace-nowrap  transition disabled:pointer-events-none disabled:opacity-50 focus-visible:outline-2 focus-visible:outline-offset-2 active:scale-[0.98] bg-transparent text-white hover:bg-transparent hover:text-white focus-visible:outline-none text-sm leading-none 
+}
+.btn2{
+    @apply inline-flex relative items-center gap-2 justify-center rounded-sm font-semibold whitespace-nowrap  transition disabled:pointer-events-none disabled:opacity-50 focus-visible:outline-2 focus-visible:outline-offset-2 active:scale-[0.98] bg-transparent text-white hover:bg-transparent hover:text-white focus-visible:outline-none text-sm leading-none
+}
+
+
+@media(max-width: 1073px){
+    .article-preview-list{
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+@media(max-width: 663px){
+    .article-preview-list{
+        grid-template-columns: repeat(1, 1fr);
+    }
+}
