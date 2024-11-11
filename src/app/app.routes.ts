@@ -1,13 +1,13 @@
-import { Routes } from '@angular/router';
-import { VaultComponent } from './modal/vault/vault.component';
-import { VipComponent } from './modal/vip/vip.component';
-import { RegisterComponent } from './modal/register/register.component';
-import { StakeSmartComponent } from './pages/stake-smart/stake-smart.component';
-import { LogoutComponent } from './modal/logout/logout.component';
-import { ResponsibleGamblingFaqsComponent } from './pages/responsible-gambling-faqs/responsible-gambling-faqs.component';
-import { NotificationComponent } from './modal/notification/notification.component';
-import { StatisticsComponent } from './modal/statistics/statistics.component';
-import { SettingsComponent } from './modal/settings-modals/settings/settings.component';
+import {Routes} from '@angular/router';
+import {VaultComponent} from './modal/vault/vault.component';
+import {VipComponent} from './modal/vip/vip.component';
+import {RegisterComponent} from './modal/register/register.component';
+import {StakeSmartComponent} from './pages/stake-smart/stake-smart.component';
+import {LogoutComponent} from './modal/logout/logout.component';
+import {ResponsibleGamblingFaqsComponent} from './pages/responsible-gambling-faqs/responsible-gambling-faqs.component';
+import {NotificationComponent} from './modal/notification/notification.component';
+import {StatisticsComponent} from './modal/statistics/statistics.component';
+import {SettingsComponent} from './modal/settings-modals/settings/settings.component';
 
 export const routes: Routes = [
   {
@@ -72,7 +72,7 @@ export const routes: Routes = [
   },
   {
     path: 'vault',
-    component: VaultComponent, // Fixed typo
+    component: VaultComponent,
   },
   {
     path: 'vip',
@@ -87,16 +87,16 @@ export const routes: Routes = [
     component: LogoutComponent,
   },
   {
-    path:'statistics',
-    component:StatisticsComponent
+    path: 'statistics',
+    component: StatisticsComponent
   },
   {
-    path:'notification',
-    component:NotificationComponent
+    path: 'notification',
+    component: NotificationComponent
   },
   {
-    path:'setting',
-    component:SettingsComponent
+    path: 'setting',
+    component: SettingsComponent
   },
   {
     path: '**',
