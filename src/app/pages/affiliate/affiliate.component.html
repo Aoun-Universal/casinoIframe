@@ -1,6 +1,6 @@
 <div class="good-varient">
   <div class="ctainer">
-    <div class="flex gap-4 py-2 justify-between items-center">
+    <div class="flex gap-4 py-2 flex-col md:flex-row md:justify-between items-center">
       <div class="flex gap-2 items-center">
         <span class="span-text"
           ><span class="mr-3"
@@ -14,7 +14,7 @@
           ></span
         >
       </div>
-      <div class="flex gap-6 justify-end">
+      <div class="flex gap-6 w-full md:justify-end">
         <button
           type="button"
           class="inline-flex relative items-center gap-2 justify-center rounded-sm font-semibold whitespace-nowrap ring-offset-background transition disabled:pointer-events-none disabled:opacity-50 focus-visible:outline-2 focus-visible:outline-offset-2 active:scale-[0.98] bg-transparent text-white betterhover:hover:bg-transparent betterhover:hover:text-white focus-visible:outline-none text-sm leading-none [&amp;_svg]:text-grey-200 [&amp;:hover>svg]:text-white w-full"
@@ -64,13 +64,97 @@
                       </div>
                     </div>
                     <div class="main-wrapper">
-                      <div class="card">
+                      <div
+                        class="p-0 gap-[0.5rem] items-center justify-start [grid-auto-flow:column] grid   md:hidden"
+                        
+                      >
+                        <div
+                          class="menu-nav svelte-1bssz56"
+                          
+                        >
+                          <a
+                            class="inline-flex relative bg-[rgb(15,33,46)] items-center gap-2 justify-center font-semibold whitespace-nowrap ring-offset-background transition disabled:pointer-events-none disabled:opacity-50 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 active:scale-[0.98] bg-grey-700 text-white betterhover:hover:bg-grey-900 betterhover:hover:text-white focus-visible:outline-white text-sm leading-none py-[0.9375rem] px-[1.25rem] rounded-sm"
+                            href="/affiliate"
+                          
+                            ><svg
+                              fill="currentColor"
+                              viewBox="0 0 64 64"
+                              class="svg-icon"
+                             
+                            >
+                              <title></title>
+                              <path
+                                d="M36.998 53.995 16 32.998 36.998 12l6.306 6.306L28.61 33l14.694 14.694L36.998 54v-.005Z"
+                              ></path></svg></a>
+                        </div>
+                        <div
+                          class="dropdown svelte-1iau4lg"
+                          
+                        >
+                          <button
+                          (click)="toggleDropdown()"
+                            type="button"
+                           
+                            class="inline-flex bg-[rgb(15,33,46)] relative items-center gap-2 justify-center font-semibold whitespace-nowrap ring-offset-background transition disabled:pointer-events-none disabled:opacity-50 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 active:scale-[0.98] bg-grey-700 text-white betterhover:hover:bg-grey-900 betterhover:hover:text-white focus-visible:outline-white text-sm leading-none [&amp;_svg]:text-grey-200 [&amp;:hover>svg]:text-white py-[0.9375rem] px-[1.25rem] rounded-sm"
+                            aria-label="Open Dropdown"
+                          
+                          >
+                            <span>Commission</span>
+                            <svg
+                              fill="currentColor"
+                              viewBox="0 0 64 64"
+                              class="svg-icon"
+                              style="transform: rotate(180deg)"
+                            >
+                              <title></title>
+                              <path
+                                d="M32.271 49.763 9.201 26.692l6.928-6.93 16.145 16.145 16.144-16.144 6.93 6.929-23.072 23.07h-.005Z"
+                              ></path>
+                            </svg>
+                          </button>
+                          <div
+                          class="profile-dropdown"
+                          *ngIf="WinnerDropdown"
+                        >
+                          <!-- Arrow -->
+                          <div class="dropdown-arrow"></div>
+                          <div class="dropdown-scroll-content">
+                            <div>
+                              <button type="button" class="profile-list text-[#1475e1]">
+                                <span>Overview</span>
+                                
+                              </button>
+                              <button type="button" class="profile-list text-[rgb(47_69_83)]">
+                                <span>Retention Program</span>
+                              </button>
+                              <button type="button" class="profile-list text-[rgb(47_69_83)]">
+                                <span>Commission</span>
+                              </button>
+                              <button type="button" class="profile-list text-[rgb(47_69_83)]">
+                                <span>Funds</span>
+                              </button>
+                              <button type="button" class="profile-list text-[rgb(47_69_83)]">
+                                <span>Referred Users</span>
+                              </button>
+                              <button type="button" class="profile-list text-[rgb(47_69_83)]">
+                                <span>Campaigns</span>
+                              </button>
+                            </div>
+                          </div>
+                        </div>
+                          <div style="display: none" ></div>
+                        </div>
+                      </div>
+                      <div class="card md:block hidden">
                         <div class="outer-wraper">
                           <div class="wraper-svelte">
                             <a
-                              class="outer-div bg-[rgb(7,24,36)] relative items-center gap-2 font-semibold whitespace-nowrap ring-offset-background transition disabled:pointer-events-none disabled:opacity-50 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 active:scale-[0.98] bg-transparent text-white betterhover:hover:bg-grey-900 betterhover:hover:text-white focus-visible:outline-white text-sm leading-none [&amp;_svg]:text-grey-200 [&amp;:hover>svg]:text-white py-[0.9375rem] px-[1.25rem] rounded-full !bg-grey-900 !text-white [&amp;_svg]:!text-white w-full justify-start block"
-                              ><span>Overview</span> </a
-                            ><a
+                             
+                              class="outer-div bg-[rgb(7,24,36)] relative items-center gap-2 font-semibold whitespace-nowrap ring-offset-background transition disabled:pointer-events-none disabled:opacity-50 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 active:scale-[0.98] bg-transparent betterhover:hover:bg-grey-900 betterhover:hover:text-white focus-visible:outline-white text-sm leading-none [&amp;_svg]:text-grey-200 [&amp;:hover>svg]:text-white py-[0.9375rem] px-[1.25rem] rounded-full !bg-grey-900 !text-white [&amp;_svg]:!text-white w-full justify-start block"
+                              ><span>Overview</span>
+                            </a>
+                          
+                            <a
                               class="outer-div relative items-center gap-2 font-semibold whitespace-nowrap ring-offset-background transition disabled:pointer-events-none disabled:opacity-50 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 active:scale-[0.98] bg-transparent text-white betterhover:hover:bg-grey-900 betterhover:hover:text-white focus-visible:outline-white text-sm leading-none [&amp;_svg]:text-grey-200 [&amp;:hover>svg]:text-white py-[0.9375rem] px-[1.25rem] rounded-full w-full justify-start block"
                               ><span>Retention Program</span> </a
                             ><a
