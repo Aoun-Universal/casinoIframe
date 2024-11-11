@@ -3,12 +3,14 @@ import { Component ,CUSTOM_ELEMENTS_SCHEMA, ElementRef, ViewChild } from '@angul
 import { SlickCarouselModule } from 'ngx-slick-carousel';
 import { SwiperContainer } from 'swiper/element';
 import { SwiperOptions } from 'swiper/types';
+import { ToggleService } from '../../services/toggle.service';
+import { BetSlipComponent } from '../../shared/bet-slip/bet-slip.component';
 
 
 @Component({
   selector: 'app-home',
   standalone: true,
-  imports: [NgFor, SlickCarouselModule,NgIf,NgClass,NgStyle],
+  imports: [NgFor, SlickCarouselModule,NgIf,NgClass,NgStyle,BetSlipComponent],
   templateUrl: './home.component.html',
   styleUrl: './home.component.css',
   schemas:[CUSTOM_ELEMENTS_SCHEMA]
@@ -16,6 +18,13 @@ import { SwiperOptions } from 'swiper/types';
 export class HomeComponent {
   @ViewChild('swiper') swiper!: ElementRef<SwiperContainer>;
   @ViewChild('topSportsSwiper') topSportsSwiper!: ElementRef<SwiperContainer>;
+
+  // Betslip
+  constructor(private toggleService: ToggleService) {}
+
+  openModal() {
+    this.toggleService.setBetslipstate(true);
+  }
 
   isMarketOpen = true;
   isMarketOpen2 = true;
