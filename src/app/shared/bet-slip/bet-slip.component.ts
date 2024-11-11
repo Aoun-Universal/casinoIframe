@@ -11,6 +11,8 @@ import { ToggleService } from '../../services/toggle.service';
 })
 export class BetSlipComponent {
   WinnerDropdown=false;
+  activeTab: number = 1;
+
   toggleDropdown() {
     this.WinnerDropdown = !this.WinnerDropdown;
   }
@@ -19,6 +21,11 @@ export class BetSlipComponent {
   OddsDropdown=false;
   toggleOddsDropdown() {
     this.OddsDropdown = !this.OddsDropdown;
+  }
+
+   //  Switch Tabs
+   setActiveTab(tabIndex: number): void {
+    this.activeTab = tabIndex;
   }
 
   // Close Betslip

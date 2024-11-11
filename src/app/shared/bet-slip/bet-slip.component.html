@@ -59,7 +59,7 @@
             <div class="slider">
                 <div class="flex">
                     <!-- 1 -->
-                    <button class="main-btn close-btn tab-active">
+                    <button class="main-btn close-btn tab-item" [class.active]="activeTab === 1" (click)="setActiveTab(1)">
                         <svg fill="currentColor" viewBox="0 0 64 64" class="svg-icon">
                             <title></title>
                             <path fill="#b1bad3"
@@ -69,7 +69,7 @@
                         <span>Single</span>
                     </button>
                     <!-- 2 -->
-                    <button class="main-btn close-btn">
+                    <button class="main-btn close-btn tab-item" [class.active]="activeTab === 2" (click)="setActiveTab(2)">
                         <svg fill="currentColor" viewBox="0 0 64 64" class="svg-icon">
                             <title></title>
                             <path fill="#b1bad3"
