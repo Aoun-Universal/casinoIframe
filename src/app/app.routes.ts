@@ -8,6 +8,7 @@ import {ResponsibleGamblingFaqsComponent} from './pages/responsible-gambling-faq
 import {NotificationComponent} from './modal/notification/notification.component';
 import {StatisticsComponent} from './modal/statistics/statistics.component';
 import {SettingsComponent} from './modal/settings-modals/settings/settings.component';
+import { AffiliateComponent } from './pages/affiliate/affiliate.component';
 
 export const routes: Routes = [
   {
@@ -28,6 +29,10 @@ export const routes: Routes = [
         path: 'home',
         loadComponent: () =>
           import('./pages/home/home.component').then((c) => c.HomeComponent),
+      },
+      {
+        path: 'Affiliate',
+        component: AffiliateComponent,
       },
       {
         path: 'drake',
@@ -98,6 +103,7 @@ export const routes: Routes = [
     path: 'setting',
     component: SettingsComponent
   },
+ 
   {
     path: '**',
     redirectTo: '',
