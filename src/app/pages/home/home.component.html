@@ -455,7 +455,7 @@
               <!-- Outcomes -->
               <div class="outcomes order-7">
                 <!-- 1 -->
-                <div class="outcome-btn">
+                <div class="outcome-btn" (click)="openModal()">
                   <div class="outcome-content">
                     <span>FC Talent</span>
                     <div class=" relative">
@@ -466,7 +466,7 @@
                   </div>
                 </div>
                 <!-- 2 -->
-                <div class="outcome-btn">
+                <div class="outcome-btn" (click)="openModal()">
                   <div class="outcome-content">
                     <span>Draw</span>
                     <div class=" relative">
@@ -477,7 +477,7 @@
                   </div>
                 </div>
                 <!-- 3 -->
-                <div class="outcome-btn">
+                <div class="outcome-btn" (click)="openModal()">
                   <div class="outcome-content">
                     <span>Ilbirs</span>
                     <div class=" relative">
@@ -760,3 +760,6 @@
   </div>
 
 </section>
+
+
+<app-bet-slip></app-bet-slip>
