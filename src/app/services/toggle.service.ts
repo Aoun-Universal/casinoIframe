@@ -7,6 +7,8 @@ import { BehaviorSubject } from 'rxjs';
 })
 export class ToggleService {
   private sidebarState: BehaviorSubject<boolean> = new BehaviorSubject<boolean>(true);
+  private Betslip: BehaviorSubject<boolean> = new BehaviorSubject<boolean>(false);
+
   sidebarState$=this.sidebarState.asObservable()
   constructor(
   ) { 
@@ -20,5 +22,14 @@ export class ToggleService {
   }
   toggleSidebar(){
     this.sidebarState.next(!this.sidebarState.value)
+  }
+
+  // Betslip
+   // Loyalty Terms Modal
+   getBetslipState() {
+    return this.Betslip;
+  }
+  setBetslipstate(value: boolean) {
+    this.Betslip.next(value);
   }
 }

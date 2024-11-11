@@ -1,5 +1,6 @@
 import { NgIf } from '@angular/common';
 import { Component } from '@angular/core';
+import { ToggleService } from '../../services/toggle.service';
 
 @Component({
   selector: 'app-bet-slip',
@@ -18,5 +19,17 @@ export class BetSlipComponent {
   OddsDropdown=false;
   toggleOddsDropdown() {
     this.OddsDropdown = !this.OddsDropdown;
+  }
+
+  // Close Betslip
+  showModal: boolean = false;
+  constructor(private toggleService: ToggleService) {}
+  ngOnInit(): void {
+    this.toggleService.getBetslipState().subscribe(value => {
+      this.showModal = value;
+    });
+  }
+  closeModal() {
+    this.toggleService.setBetslipstate(false);
   }
 }
