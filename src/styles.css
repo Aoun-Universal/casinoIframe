@@ -9,6 +9,7 @@ body {
   color: white;
   font-family: "Montserrat", sans-serif;
   cursor: default;
+  overflow: hidden
 }
 
 .dropdown-content {

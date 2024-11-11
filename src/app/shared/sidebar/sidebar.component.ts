@@ -26,8 +26,8 @@ export class SidebarComponent implements OnInit {
     } else {
       this.openBar = name;
     }
-    if(!this.isSidebar){
-      this.toggle.toggleSidebar()
+    if (window.innerWidth >= 768) {
+      this.toggle.setSidebar(true)
     }
   }
 
@@ -56,8 +56,8 @@ export class SidebarComponent implements OnInit {
       });
     this.routerPath = this.router.url;
     this.setSidebar()
-    this.toggle.sidebarState$.subscribe((state)=>{
-      this.isSidebar=state
+    this.toggle.sidebarState$.subscribe((state) => {
+      this.isSidebar = state
       console.log(this.isSidebar)
     })
 
