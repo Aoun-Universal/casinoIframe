@@ -1,3 +1,11 @@
+.betslip-wrapper{
+    @apply md:w-[370px] w-full h-full  bg-[#0f212e] max-md:fixed z-[999]  md:overflow-y-auto max-md:w-[100vw] max-md:translate-y-full duration-300;
+}
+
+.mobile-view-show {
+    @apply max-md:!translate-y-0 duration-300;
+  }
+
 .nav-header{
     @apply bg-[#0f212e] w-full flex justify-between items-center h-[60px] relative touch-none shadow-[0_10px_15px_-3px_rgba(0,0,0,.2),0_4px_6px_-2px_rgba(0,0,0,.1)] pl-4 pr-1.5
 }
