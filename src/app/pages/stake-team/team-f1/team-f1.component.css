@@ -1,20 +1,20 @@
 .main-wrapper{
-    @apply md:h-[200px] w-[100%] lg:flex-row h-[280px] md:flex-row px-[30px] md:px-[3vw] flex-col flex bg-[#0F212E]
+    @apply md:h-[200px] mx-auto max-w-[1200px] lg:flex-row h-[280px] md:flex-row  flex-col flex bg-[#0F212E]
 }
 .header-section{
-    @apply  w-[50%] flex justify-center flex-col h-[200px]
+    @apply  w-[50%] flex justify-center flex-col h-[200px] md:ml-0 md:mb-0 ml-[40px]
 }
 .heading-text{
     @apply text-[20px] md:text-[1.5rem] text-[#B0B9D2] text-nowrap
 }
 .right-child{
-    @apply md:w-[50%] w-[100%] flex md:justify-end h-[150px]
+    @apply md:w-[50%] w-[100%] flex md:justify-end h-[150px] mb-4 md:mb-0
 }
 .header-img{
-    @apply h-[200px] pb-[50px] md:pb-0 text-end md:ml-[40px] md:w-[370px]  
+    @apply h-[210px] pb-[50px] md:pb-0 text-end md:ml-[40px] md:w-[370px]   ml-10
 }
 .heading{
-    @apply text-[28px] md:text-[2rem] font-[500] text-nowrap
+    @apply text-[28px] md:text-[30px] font-[600] text-nowrap
 }
 .section {
     @apply flex md:flex-row justify-center gap-y-4 flex-col;
