@@ -40,8 +40,11 @@
     @apply !flex-col-reverse md:!flex-row-reverse pt-[32px]  mx-auto max-w-[1200px]
   }
   .vedio-wrapper{
-    @apply overflow-hidden pt-[56.25%]
+    @apply overflow-hidden
   }
   .vedio-parent{
-    @apply  mx-auto max-w-[1200px] pt-[32px]
+    @apply  mx-auto max-w-[1200px] pt-[45px] pb-[30px]
+  }
+  .vedio-container{
+    @apply h-[400px] mx-auto w-[100%] max-w-[740px]
   }
