@@ -7,26 +7,30 @@ import { ToggleService } from '../../services/toggle.service';
 @Component({
   selector: 'app-sidebar',
   standalone: true,
-  imports: [CommonModule, VaultComponent,RouterLink],
+  imports: [CommonModule, VaultComponent, RouterLink],
   templateUrl: './sidebar.component.html',
   styleUrls: ['./sidebar.component.css'] // Corrected from styleUrl to styleUrls
 })
 export class SidebarComponent implements OnInit {
   openBar: any;
   isSidebar = true
-  isMobileSidebar=false;
-  routerPath:any
-  smScreen:boolean=false;
-  xlScreen:boolean=true;
+  isMobileSidebar = false;
+  routerPath: any
+  smScreen: boolean = false;
+  xlScreen: boolean = true;
 
-  constructor(private router:Router, private toggle:ToggleService, @Inject(DOCUMENT) private document: Document){}
+  constructor(private router: Router, private toggle: ToggleService, @Inject(DOCUMENT) private document: Document) { }
   toggleOpen(name: string) {
     if (this.openBar === name) {
       this.openBar = '';
     } else {
       this.openBar = name;
     }
+    if(!this.isSidebar){
+      this.toggle.toggleSidebar()
+    }
   }
+
   @HostListener('window:resize')
   setSidebar() {
     const windowRef = this.document.defaultView;
@@ -40,6 +44,7 @@ export class SidebarComponent implements OnInit {
       }
     }
   }
+
   ngOnInit(): void {
     // Subscribe to router events to track navigation end
     this.router.events
@@ -53,11 +58,13 @@ export class SidebarComponent implements OnInit {
     this.setSidebar()
     this.toggle.sidebarState$.subscribe((state)=>{
       this.isSidebar=state
+      console.log(this.isSidebar)
     })
-    
-  }
-  toggleSidebar(){
-   this.toggle.toggleSidebar()
 
-}
+  }
+
+  toggleSidebar() {
+    this.toggle.toggleSidebar()
+
+  }
 }
