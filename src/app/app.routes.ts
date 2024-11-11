@@ -9,6 +9,7 @@ import {NotificationComponent} from './modal/notification/notification.component
 import {StatisticsComponent} from './modal/statistics/statistics.component';
 import {SettingsComponent} from './modal/settings-modals/settings/settings.component';
 import { TeamF1Component } from './pages/stake-team/team-f1/team-f1.component';
+import { AffiliateComponent } from './pages/affiliate/affiliate.component';
 
 
 export const routes: Routes = [
