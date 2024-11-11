@@ -1,15 +1,10 @@
-import {Routes} from '@angular/router';
-import {VaultComponent} from './modal/vault/vault.component';
-import {VipComponent} from './modal/vip/vip.component';
-import {RegisterComponent} from './modal/register/register.component';
-import {StakeSmartComponent} from './pages/stake-smart/stake-smart.component';
-import {LogoutComponent} from './modal/logout/logout.component';
-import {ResponsibleGamblingFaqsComponent} from './pages/responsible-gambling-faqs/responsible-gambling-faqs.component';
-import {NotificationComponent} from './modal/notification/notification.component';
-import {StatisticsComponent} from './modal/statistics/statistics.component';
-import {SettingsComponent} from './modal/settings-modals/settings/settings.component';
-import { TeamF1Component } from './pages/stake-team/team-f1/team-f1.component';
-
+import { Routes } from '@angular/router';
+import { VaultComponent } from './modal/vault/vault.component';
+import { VipComponent } from './modal/vip/vip.component';
+import { RegisterComponent } from './modal/register/register.component';
+import { StakeSmartComponent } from './pages/stake-smart/stake-smart.component';
+import { LogoutComponent } from './modal/logout/logout.component';
+import { ResponsibleGamblingFaqsComponent } from './pages/responsible-gambling-faqs/responsible-gambling-faqs.component';
 
 export const routes: Routes = [
   {
@@ -36,16 +31,13 @@ export const routes: Routes = [
         loadComponent: () =>
           import('./pages/drake/drake.component').then((c) => c.DrakeComponent),
       },
-      {
-        path:'team-f1',
-        component:TeamF1Component
-      },
+
       {
         path: 'responsible-gambling',
         loadComponent: () =>
           import(
             './pages/responsible-gambling/responsible-gambling.component'
-            ).then((c) => c.ResponsibleGamblingComponent),
+          ).then((c) => c.ResponsibleGamblingComponent),
         children: [
           {
             path: 'stake-smart',
@@ -67,12 +59,16 @@ export const routes: Routes = [
       {
         path: 'soccer',
         loadComponent: () =>
-          import('./pages/soccer/soccer.component').then((c) => c.SoccerComponent),
+          import('./pages/soccer/soccer.component').then(
+            (c) => c.SoccerComponent
+          ),
       },
       {
         path: 'pal-ful',
         loadComponent: () =>
-          import('./pages/pal-ful/pal-ful.component').then((c) => c.PalFulComponent),
+          import('./pages/pal-ful/pal-ful.component').then(
+            (c) => c.PalFulComponent
+          ),
       },
     ],
   },
@@ -92,18 +88,7 @@ export const routes: Routes = [
     path: 'logout',
     component: LogoutComponent,
   },
-  {
-    path: 'statistics',
-    component: StatisticsComponent
-  },
-  {
-    path: 'notification',
-    component: NotificationComponent
-  },
-  {
-    path: 'setting',
-    component: SettingsComponent
-  },
+
   {
     path: '**',
     redirectTo: '',
