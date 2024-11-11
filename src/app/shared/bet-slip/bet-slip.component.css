@@ -43,7 +43,7 @@
     @apply bg-[#1a2c38] flex rounded-[3rem] p-[5px] [flex-shrink:0]
 }
 
-.tab-active{
+.tab-item.active{
     @apply bg-[rgb(47,69,83)] rounded-full
 }
 
