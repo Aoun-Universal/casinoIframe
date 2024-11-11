@@ -1,5 +1,7 @@
-import {Component} from '@angular/core';
+import {Component, OnInit} from '@angular/core';
 import {NgForOf} from "@angular/common";
+import {ToggleService} from '../../services/toggle.service';
+import {Router} from '@angular/router';
 
 @Component({
   selector: 'app-mobile-navigation',
@@ -10,7 +12,11 @@ import {NgForOf} from "@angular/common";
   templateUrl: './mobile-navigation.component.html',
   styleUrl: './mobile-navigation.component.css'
 })
-export class MobileNavigationComponent {
+
+export class MobileNavigationComponent implements OnInit {
+ constructor(private router: Router, private toggle: ToggleService) {
+  }
+  isSidebar = false
   buttons = [
     {
       text: 'Browse',
@@ -34,4 +40,15 @@ export class MobileNavigationComponent {
     },
   ];
 
+
+  ngOnInit(): void {
+    this.toggle.getSidebar().subscribe((value: boolean) => {
+      this.isSidebar = value
+    })
+  }
+
+  toggleSidebar() {
+    this.toggle.setSidebar(!this.isSidebar)
+    console.log(this.isSidebar);
+  }
 }

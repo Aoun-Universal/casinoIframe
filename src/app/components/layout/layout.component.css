@@ -3,7 +3,7 @@
 }
 
 .sidebar {
-  @apply md:w-[240px] w-screen pb-[65px] pt-[60px] md:pt-0 md:pb-[0px] h-[calc(100vw-125px)] md:h-screen;
+  @apply  pb-[65px] pt-[60px] md:pt-0 md:pb-[0px] h-[calc(100vw-125px)] md:h-screen;
 }
 
 .main-container {
@@ -11,7 +11,7 @@
 }
 
 .content-container {
-  @apply lg:w-[calc(100%-240px)] w-full;
+  @apply lg:lg:min-w-[calc(100%-610px)] w-full;
 }
 
 .page-wrapper {

@@ -5,11 +5,13 @@ import { FormBuilder, FormGroup, FormsModule, ReactiveFormsModule, Validators } 
 @Component({
   selector: 'app-register',
   standalone: true,
-  imports: [ReactiveFormsModule, CommonModule, FormsModule],
+  imports: [ReactiveFormsModule, CommonModule, FormsModule, FormsModule],
   templateUrl: './register.component.html',
   styleUrl: './register.component.css'
 })
 export class RegisterComponent {
+  isPhone = true
+  isCode = true
   registerForm: FormGroup;
   currentStep = 1;
   passwordVisible: boolean = false;
@@ -51,6 +53,14 @@ export class RegisterComponent {
 
   createAccount() {
     console.log('Account Created:', this.registerForm.value);
+  }
+
+  togglePhone() {
+    this.isPhone = !this.isPhone
+  }
+
+  toggleCode(){
+    this.isCode = !this.isCode
   }
 
   exit() {
