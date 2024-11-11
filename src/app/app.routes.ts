@@ -32,6 +32,10 @@ export const routes: Routes = [
           import('./pages/home/home.component').then((c) => c.HomeComponent),
       },
       {
+        path: 'Affiliate',
+        component: AffiliateComponent,
+      },
+      {
         path: 'drake',
         loadComponent: () =>
           import('./pages/drake/drake.component').then((c) => c.DrakeComponent),
@@ -104,6 +108,7 @@ export const routes: Routes = [
     path: 'setting',
     component: SettingsComponent
   },
+ 
   {
     path: '**',
     redirectTo: '',
