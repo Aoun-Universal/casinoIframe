@@ -49,5 +49,6 @@ export class MobileNavigationComponent implements OnInit {
 
   toggleSidebar() {
     this.toggle.setSidebar(!this.isSidebar)
+    console.log(this.isSidebar);
   }
 }

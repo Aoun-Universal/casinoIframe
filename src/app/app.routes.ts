@@ -8,6 +8,8 @@ import {ResponsibleGamblingFaqsComponent} from './pages/responsible-gambling-faq
 import {NotificationComponent} from './modal/notification/notification.component';
 import {StatisticsComponent} from './modal/statistics/statistics.component';
 import {SettingsComponent} from './modal/settings-modals/settings/settings.component';
+import { TeamF1Component } from './pages/stake-team/team-f1/team-f1.component';
+
 
 export const routes: Routes = [
   {
@@ -33,6 +35,10 @@ export const routes: Routes = [
         path: 'drake',
         loadComponent: () =>
           import('./pages/drake/drake.component').then((c) => c.DrakeComponent),
+      },
+      {
+        path:'team-f1',
+        component:TeamF1Component
       },
       {
         path: 'responsible-gambling',
