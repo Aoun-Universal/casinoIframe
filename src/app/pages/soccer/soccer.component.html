@@ -158,7 +158,8 @@
                                         <div class="line order-2 line1"></div>
 
                                         <!-- Market-count & options-wrapper----- only on sm -->
-                                        <div class="market-widget order-2 flex md:hidden ">
+                                        <div [ngClass]="{ 'md:hidden' : !standardView , 'lg:hidden ': standardView}"
+                                            class="market-widget order-2 flex ">
                                             <!-- Button -->
                                             <button class="arrows-btn option-btn sm-option-btn">
                                                 <svg fill="currentColor" viewBox="0 0 64 64" class="svg-icon ">
@@ -179,7 +180,7 @@
                                         </div>
                                         <div class="line order-4 line2"></div>
                                         <!-- Teams -->
-                                        <div [ngClass]="{'md:[grid-column:1/span_3]' : !standardView , 'md:[grid-column:1/span_12] lg:![grid-column:1/span_3]':standardView}"
+                                        <div [ngClass]="{'md:![grid-column:1/span_3]' : !standardView , 'md:[grid-column:1/span_12] lg:![grid-column:1/span_3]':standardView}"
                                             class="teams stacked svelte-1ykwt0t order-3 md:order-5"><a
                                                 class="teams-tag arrows-btn">
                                                 <span>Pohkseh</span>
@@ -189,8 +190,9 @@
                                             </a>
                                         </div>
                                         <!-- FixtureScore -->
-                                        <div class="fixture-score mr-2 hidden  order-6">
-                                            <div class="fixture-score-wrapper ">
+                                        <div [ngClass]="{'md:flex' : !standardView, 'md:hidden lg:flex' : standardView }"
+                                            class="fixture-score mr-2 hidden  order-6">
+                                            <div [ngClass]="{'lg:hidden': standardView}" class="fixture-score-wrapper ">
                                                 <div class="score-wrapper live svelte-qyo8l9">
                                                     <span
                                                         class="font-semibold description-wrapper !text-[#ff9d00]">2</span>
@@ -345,7 +347,8 @@
 
                                         }
                                         <!-- MarketCount -->
-                                        <div class="market-count hidden order-8">
+                                        <div [ngClass]="{'hidden lg:flex ': standardView , 'md:flex ': !standardView}"
+                                            class="market-count hidden order-8">
                                             +3
                                         </div>
                                     </div>
