@@ -9,12 +9,44 @@ body {
   color: white;
   font-family: "Montserrat", sans-serif;
   cursor: default;
+  overflow: hidden
 }
 
-.dropdown-content {
-  @apply text-base text-[#b1bad3];
+/* Table */
+.table-container {
+  @apply !w-full  rounded-lg p-5 shadow-lg;
+}
+table {
+  @apply w-full;
+}
+th,
+td {
+  @apply w-1/5 p-4  align-middle text-[#b1bad3] text-sm whitespace-nowrap rounded-tl rounded-bl;
+}
+th {
+  @apply font-normal !bg-[#1A2C38];
+}
+tr:nth-child(odd) {
+  @apply bg-[#213743];
+}
+tr:hover {
+  @apply bg-[#3b4c5e];
+}
+.icon {
+  @apply mr-2 inline-block align-middle;
+}
+.bet-amount {
+  @apply flex items-center !justify-end text-end float-right;
+}
+.bet-amount img {
+  @apply w-5 h-5 ml-2;
 }
 
-::-webkit-scrollbar {
-  display: none;
+.lg-row {
+  @apply max-[768px]:hidden;
+}
+
+.tab-item.active,
+.tab-item:hover {
+  @apply bg-[#2f4553] text-white;
 }
