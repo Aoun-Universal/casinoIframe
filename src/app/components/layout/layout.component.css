@@ -3,7 +3,7 @@
 }
 
 .sidebar {
-  @apply  pb-[65px] pt-[60px] md:pt-0 md:pb-[0px] h-[calc(100vw-125px)] md:h-screen;
+  @apply  pb-[65px] pt-[60px] md:pt-0 md:pb-[0px] h-[calc(100vw-125px)] md:h-screen overflow-visible;
 }
 
 .main-container {

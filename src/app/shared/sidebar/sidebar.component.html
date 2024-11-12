@@ -1,5 +1,5 @@
 <div class="sidebar-wrapper"
-  [ngClass]="{'md:!w-[60px] w-full transition-all duration-200 md:overflow-hidden':!isSidebar, 'mobile-view-show':!isSidebar}">
+  [ngClass]="{'md:!w-[60px] w-full transition-all duration-200':!isSidebar, 'mobile-view-show':!isSidebar}">
   <div class="sidebar-header" [ngClass]="{'flex-col':!isSidebar}">
     <button class="menu-button" (click)="toggleSidebar()">
       <svg class="svg-icon" fill="white" height="64" viewBox="0 0 64 64" width="64">
@@ -44,7 +44,7 @@
     <div class="sidebar-content-wrapper">
 
       <div class="dropdown-container">
-        <div class="nav-item">
+        <div class="nav-item group relative">
           <div class="title-wrapper">
             <svg fill="currentColor" viewBox="0 0 64 64" class="svg-icon ">
               <title></title>
@@ -53,10 +53,17 @@
               </path>
             </svg>
             <div [ngClass]="{'md:hidden':!isSidebar}">Favourites</div>
+
           </div>
+          @if (!isSidebar) {
+          <div
+            class="absolute bottom-full  left-0 transform -translate-x-1/2 mb-2 hidden group-hover:md:block bg-white text-black text-sm p-2 rounded shadow-lg">
+            Favourites
+          </div>
+          }
         </div>
-        <div class="nav-item">
-          <div class="title-wrapper">
+        <div class="nav-item group relative">
+          <div class="title-wrapper ">
             <svg fill="currentColor" viewBox="0 0 96 96" class="svg-icon ">
               <title></title>
               <path fill-rule="evenodd" clip-rule="evenodd"
@@ -65,8 +72,14 @@
             </svg>
             <div [ngClass]="{'md:hidden':!isSidebar}">Recent</div>
           </div>
+          @if (!isSidebar) {
+          <div
+            class="absolute bottom-full left-1/2 transform -translate-x-1/2 mb-2 hidden group-hover:md:block bg-white text-black text-sm p-2 rounded shadow-lg">
+            Recent
+          </div>
+          }
         </div>
-        <div class="nav-item">
+        <div class="nav-item relative group">
           <div class="title-wrapper">
             <svg fill="currentColor" viewBox="0 0 96 96" class="svg-icon ">
               <title></title>
@@ -76,9 +89,15 @@
             </svg>
             <div [ngClass]="{'md:hidden':!isSidebar}">Challenges</div>
           </div>
+          @if (!isSidebar) {
+          <div
+            class="absolute z-[999] bottom-full left-1/2 transform -translate-x-1/2 mb-2 hidden group-hover:md:block bg-white text-black text-sm p-2 rounded shadow-lg">
+            Challenges
+          </div>
+          }
         </div>
 
-        <div class="nav-item">
+        <div class="nav-item relative group">
           <div class="title-wrapper">
             <svg fill="currentColor" viewBox="0 0 64 64" class="svg-icon ">
               <title></title>
@@ -88,7 +107,14 @@
             </svg>
             <div [ngClass]="{'md:hidden':!isSidebar}">My Bets</div>
           </div>
+          @if (!isSidebar) {
+          <div
+            class="absolute text-nowrap bottom-full -left-2 transform  mb-2 hidden group-hover:md:block bg-white text-black text-sm p-2 rounded shadow-lg">
+            My Bets
+          </div>
+          }
         </div>
+
       </div>
 
 
@@ -101,7 +127,7 @@
           </div>
         </div>
         <div class="hr-border" [ngClass]="{'md:hidden':!isSidebar}"></div>
-        <div class="nav-item">
+        <div class="nav-item group relative">
           <div class="title-wrapper">
             <svg fill="currentColor" viewBox="0 0 64 64" class="svg-icon ">
               <title></title>
@@ -111,9 +137,15 @@
             </svg>
             <div [ngClass]="{'md:hidden':!isSidebar}">Stake Originals</div>
           </div>
+          @if (!isSidebar) {
+          <div
+            class="absolute !z-[9999] text-nowrap bottom-full left-0 transform  mb-2 hidden group-hover:md:block bg-white text-black text-sm p-2 rounded shadow-lg">
+            Stake Originals
+          </div>
+          }
         </div>
 
-        <div class="nav-item">
+        <div class="nav-item group relative">
           <div class="title-wrapper">
             <svg fill="currentColor" viewBox="0 0 96 96" class="svg-icon ">
               <title></title>
@@ -123,9 +155,15 @@
             </svg>
             <div [ngClass]="{'md:hidden':!isSidebar}">Stake Exclusives</div>
           </div>
+          @if (!isSidebar) {
+          <div
+            class="absolute text-nowrap bottom-full left-1/2 transform -translate-x-1/2 mb-2 hidden group-hover:md:block bg-white text-black text-sm p-2 rounded shadow-lg">
+            Stake Exclusives
+          </div>
+          }
         </div>
 
-        <div class="nav-item">
+        <div class="nav-item group relative">
           <div class="title-wrapper">
             <svg fill="currentColor" viewBox="0 0 96 96" class="svg-icon ">
               <title></title>
@@ -135,9 +173,15 @@
             </svg>
             <div [ngClass]="{'md:hidden':!isSidebar}">Slots</div>
           </div>
+          @if (!isSidebar) {
+          <div
+            class="absolute text-nowrap bottom-full left-1/2 transform -translate-x-1/2 mb-2 hidden group-hover:md:block bg-white text-black text-sm p-2 rounded shadow-lg">
+            Slots
+          </div>
+          }
         </div>
 
-        <div class="nav-item">
+        <div class="nav-item group relative">
           <div class="title-wrapper">
             <svg fill="currentColor" viewBox="0 0 96 96" class="svg-icon ">
               <title></title>
@@ -147,6 +191,12 @@
             </svg>
             <div [ngClass]="{'md:hidden':!isSidebar}">Live Casino</div>
           </div>
+          @if (!isSidebar) {
+          <div
+            class="absolute text-nowrap bottom-full left-1/2 transform -translate-x-1/2 mb-2 hidden group-hover:md:block bg-white text-black text-sm p-2 rounded shadow-lg">
+            Slots
+          </div>
+          }
         </div>
 
         <div class="nav-item">
@@ -265,7 +315,7 @@
 
       <div class="dropdown-container">
         <div>
-          <div data-tooltip-target="tooltip-default" class="nav-item" (click)="toggleOpen('profile')"
+          <div data-tooltip-target="tooltip-default" class="nav-item relative group" (click)="toggleOpen('profile')"
             [ngClass]="{'dropdown-item':openBar === 'profile'}">
             <div class="title-wrapper">
               <svg fill="currentColor" viewBox="0 0 64 64" class="svg-icon ">
@@ -291,12 +341,19 @@
               <path d="m26.307 53.995 20.998-20.997L26.307 12 20 18.306 34.694 33 20.001 47.694 26.307 54v-.005Z">
               </path>
             </svg>
+
+
+
+
+            @if (!isSidebar) {
+            <div
+              class="absolute bottom-full left-1/2 transform -translate-x-1/2 mb-2 hidden group-hover:md:block bg-white text-black text-sm p-2 rounded shadow-lg">
+              Profile
+            </div>
+            }
+
           </div>
-          <div *ngIf="!isSidebar" id="tooltip-default" role="tooltip"
-            class="absolute z-10 invisible inline-block px-3 py-2 text-sm font-medium text-white transition-opacity duration-300 bg-gray-900 rounded-lg shadow-sm opacity-0 tooltip dark:bg-gray-700">
-            Tooltip content
-            <div class="tooltip-arrow" data-popper-arrow></div>
-          </div>
+
           <!-- dropdown inner content -->
           <div class="inner-content" [ngClass]="{'active-dropdown':openBar === 'profile'}">
             <div class="hr-border"></div>
