@@ -49,7 +49,7 @@ section {
 }
 
 .x2-isOpen {
-  @apply py-[7px] px-[10.5px] bg-[#071824] w-full flex items-center justify-between text-[14px] leading-[21px] rounded;
+  @apply py-[7px] px-[10.5px] bg-[#071824] w-full flex items-center justify-between text-[14px] leading-[21px] rounded cursor-pointer hover:bg-[rgba(8,47,90,1)];
 }
 
 .slash {

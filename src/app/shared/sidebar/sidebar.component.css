@@ -1,10 +1,10 @@
 @tailwind utilities;
 .sidebar-wrapper {
-  @apply md:w-[240px] w-full h-full  bg-[#0f212e] max-md:fixed z-[999]  md:overflow-y-auto max-md:w-[100vw] max-md:translate-y-full duration-300;
+  @apply md:w-[240px] w-full h-full  bg-[#0f212e] fixed z-[999] overflow-x-visible min-[1200px]:!static  md:overflow-y-auto max-md:w-[100vw] max-md:translate-y-full duration-300;
 }
 
 .mobile-view-show {
-  @apply max-md:!translate-y-0 duration-300;
+  @apply max-md:!translate-y-0 duration-300 !static max-md:!fixed;
 }
 
 .sidebar-header {
@@ -42,10 +42,11 @@
 .link-wrap {
   @apply flex justify-center gap-[4px] w-[100%] items-center;
 }
+
 .header-button {
   text-shadow: 0px 1px 2px rgba(0, 0, 0, 0.12), 0px 1px 3px rgba(0, 0, 0, 0.2);
 
-  @apply relative flex  items-center justify-center bg-cover text-white text-[.875rem] !h-[2.25rem] rounded-[.25rem] bg-no-repeat  font-bold select-none;
+  @apply relative flex  items-center justify-center bg-cover text-white text-[.875rem] !h-[2.25rem] md:!w-[78px] rounded-[.25rem] bg-no-repeat  font-bold select-none;
 }
 .sports {
   background-image: url("/assets/sidebar/sports-balls-en.webp");
@@ -83,7 +84,7 @@
 }
 
 .inner-content {
-  @apply max-h-0 overflow-hidden transition-all duration-700 ease-in-out;
+  @apply max-h-0 overflow-hidden !overflow-x-visible transition-all duration-700 ease-in-out;
 }
 
 .active-dropdown {
