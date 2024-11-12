@@ -2,7 +2,7 @@
 <div class="navigation-wrapper" id="mobile-footer">
   <ng-container *ngFor="let button of buttons">
     <div class="button-wrap">
-      <button class="button-inner-wrap" type="button" (click)="toggleSidebar()">
+      <button class="button-inner-wrap" type="button" (click)="button.clickFunction()">
         <div class="content">
           <div class="mobile-icon-style">
             <svg class="svg-icon" fill="currentColor" viewBox="0 0 64 64">
