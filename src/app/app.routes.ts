@@ -9,6 +9,7 @@ import {NotificationComponent} from './modal/notification/notification.component
 import {StatisticsComponent} from './modal/statistics/statistics.component';
 import {SettingsComponent} from './modal/settings-modals/settings/settings.component';
 import { TeamF1Component } from './pages/stake-team/team-f1/team-f1.component';
+import { MyBetsComponent } from './pages/my-bets/my-bets.component';
 
 
 export const routes: Routes = [
@@ -30,6 +31,10 @@ export const routes: Routes = [
         path: 'home',
         loadComponent: () =>
           import('./pages/home/home.component').then((c) => c.HomeComponent),
+      },
+      {
+        path:'my-bets',
+        component:MyBetsComponent
       },
       {
         path: 'drake',
