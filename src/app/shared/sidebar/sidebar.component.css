@@ -1,6 +1,7 @@
+
 @tailwind utilities;
 .sidebar-wrapper {
-  @apply md:w-[240px] w-full h-full  bg-[#0f212e] fixed z-[999] overflow-x-visible min-[1200px]:!static  md:overflow-y-auto max-md:w-[100vw] max-md:translate-y-full duration-300;
+  @apply md:w-[240px] w-full h-full  bg-[#0f212e] fixed z-[999] overflow-x-visible min-[1200px]:!static  max-md:w-[100vw] max-md:translate-y-full duration-300;
 }
 
 .mobile-view-show {

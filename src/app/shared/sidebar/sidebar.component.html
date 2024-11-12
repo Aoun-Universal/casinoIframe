@@ -39,9 +39,10 @@
   </div>
 
 
-  <div class="main-container-content" [ngClass]="{'!p-2 md:max-h-[calc(100vh-120px)] overflow-y-auto':!isSidebar}">
+  <div class="main-container-content md:max-h-[calc(100vh-60px)] relative w-full overflow-x-visible overflow-y-scroll"
+    [ngClass]="{'!p-2 md:max-h-[calc(100vh-120px)]':!isSidebar}">
     <!-- profile start  -->
-    <div class="sidebar-content-wrapper">
+    <div class="sidebar-content-wrapper overflow-visible">
 
       <div class="dropdown-container">
         <div class="nav-item group relative">
