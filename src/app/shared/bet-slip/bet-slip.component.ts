@@ -1,11 +1,11 @@
-import { NgIf } from '@angular/common';
+import { NgClass, NgIf } from '@angular/common';
 import { Component } from '@angular/core';
 import { ToggleService } from '../../services/toggle.service';
 
 @Component({
   selector: 'app-bet-slip',
   standalone: true,
-  imports: [NgIf],
+  imports: [NgIf,NgClass],
   templateUrl: './bet-slip.component.html',
   styleUrl: './bet-slip.component.css'
 })
@@ -36,7 +36,10 @@ export class BetSlipComponent {
       this.showModal = value;
     });
   }
+  
   closeModal() {
     this.toggleService.setBetslipstate(false);
   }
+
+  
 }
