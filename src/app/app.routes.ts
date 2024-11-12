@@ -39,6 +39,10 @@ export const routes: Routes = [
         component: AffiliateComponent,
       },
       {
+        path: 'racing-market-detail',
+        component: RacingMarketDetailsComponent,
+      },
+      {
         path: 'drake',
         loadComponent: () =>
           import('./pages/drake/drake.component').then((c) => c.DrakeComponent),
