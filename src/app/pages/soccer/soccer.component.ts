@@ -1,24 +1,35 @@
-import { NgClass } from '@angular/common';
+import { NgClass, NgIf } from '@angular/common';
 import { Component } from '@angular/core';
 
 @Component({
   selector: 'app-soccer',
   standalone: true,
-  imports: [NgClass],
+  imports: [NgClass, NgIf],
   templateUrl: './soccer.component.html',
   styleUrl: './soccer.component.css',
 })
 export class SoccerComponent {
   activeTab: string = 'live&Upcoming';
+  activeTab2: string = 'allBets';
   standardView: boolean = true;
   catDropdownState: boolean = false;
   catDropdownSelectedVal: string = 'Winner';
   eventDropdownState: boolean = true;
   subEventDropdown: boolean = true;
   isLive: boolean = true;
+  soccerBettingOddsState: boolean = false;
+  isMarketOpen = true;
+  isMarketOpen2 = true;
 
+  toggleMarket() {
+    this.isMarketOpen = !this.isMarketOpen;
+  }
   setActiveTab(val: string) {
     this.activeTab = val;
+  }
+
+  setActiveTab2(val: string) {
+    this.activeTab2 = val;
   }
 
   toggleStandardView() {
@@ -41,5 +52,8 @@ export class SoccerComponent {
 
   toggleSubEventDropdown() {
     this.subEventDropdown = !this.subEventDropdown;
+  }
+  toggleSoccerBettingOddState() {
+    this.soccerBettingOddsState = !this.soccerBettingOddsState;
   }
 }
