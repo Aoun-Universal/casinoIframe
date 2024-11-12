@@ -200,10 +200,21 @@
   @apply py-[15px] px-5 !bg-[rgb(20,117,225)] rounded-[4px];
 }
 
-.arrows-odd {
-  animation-duration: 0.8s;
-  animation-iteration-count: 4;
+.arrow-odds{
+      animation: decreased 0.8s infinite linear;
 }
+
+@keyframes decreased{
+  0% , 20%{
+    transform: translateY(-20%);
+    opacity: 1;
+  }
+  100%{
+    transform: translateY(20%);
+    opacity: 0;
+  }
+}
+
 
 /* Dropdowns */
 .profile-dropdown {
