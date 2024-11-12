@@ -159,7 +159,7 @@ export class HomeComponent {
         spaceBetween: 25,
       },
       1024: {                   
-        slidesPerView: 3,
+        slidesPerView: 5,
         spaceBetween: 30,
       }
     }

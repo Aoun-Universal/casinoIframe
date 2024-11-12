@@ -9,6 +9,7 @@ import {NotificationComponent} from './modal/notification/notification.component
 import {StatisticsComponent} from './modal/statistics/statistics.component';
 import {SettingsComponent} from './modal/settings-modals/settings/settings.component';
 import { TeamF1Component } from './pages/stake-team/team-f1/team-f1.component';
+import { HorseRacingComponent } from './pages/horse-racing/horse-racing.component';
 
 
 export const routes: Routes = [
@@ -73,6 +74,10 @@ export const routes: Routes = [
         path: 'pal-ful',
         loadComponent: () =>
           import('./pages/pal-ful/pal-ful.component').then((c) => c.PalFulComponent),
+      },
+      {
+        path:'horse-racing',
+        component:HorseRacingComponent
       },
     ],
   },
