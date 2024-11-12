@@ -1,0 +1,3 @@
+.scrollable{
+    @apply flex flex-col w-full max-w-full h-full flex-1 pt-0 [scrollbar-color:#2f4553] overflow-y-auto overflow-x-hidden [scrollbar-width:thin]
+}

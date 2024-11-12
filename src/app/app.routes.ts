@@ -10,6 +10,7 @@ import {StatisticsComponent} from './modal/statistics/statistics.component';
 import {SettingsComponent} from './modal/settings-modals/settings/settings.component';
 import { TeamF1Component } from './pages/stake-team/team-f1/team-f1.component';
 import { AffiliateComponent } from './pages/affiliate/affiliate.component';
+import { RacingMarketDetailsComponent } from './pages/racing-market-details/racing-market-details.component';
 
 
 export const routes: Routes = [
@@ -35,6 +36,10 @@ export const routes: Routes = [
       {
         path: 'Affiliate',
         component: AffiliateComponent,
+      },
+      {
+        path: 'racing-market-detail',
+        component: RacingMarketDetailsComponent,
       },
       {
         path: 'drake',
