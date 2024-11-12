@@ -8,6 +8,7 @@ import {ResponsibleGamblingFaqsComponent} from './pages/responsible-gambling-faq
 import {NotificationComponent} from './modal/notification/notification.component';
 import {StatisticsComponent} from './modal/statistics/statistics.component';
 import {SettingsComponent} from './modal/settings-modals/settings/settings.component';
+import { HorseRacingComponent } from './pages/horse-racing/horse-racing.component';
 import {TeamF1Component} from './pages/stake-team/team-f1/team-f1.component';
 import {VipCloudComponent} from './pages/vip-cloud/vip-cloud.component';
 import {BlogPageComponent} from './pages/blog-page/blog-page.component';
@@ -85,6 +86,10 @@ export const routes: Routes = [
         path: 'pal-ful',
         loadComponent: () =>
           import('./pages/pal-ful/pal-ful.component').then((c) => c.PalFulComponent),
+      },
+      {
+        path:'horse-racing',
+        component:HorseRacingComponent
       },
     ],
   },

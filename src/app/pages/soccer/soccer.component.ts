@@ -18,12 +18,7 @@ export class SoccerComponent {
   subEventDropdown: boolean = true;
   isLive: boolean = true;
   soccerBettingOddsState: boolean = false;
-  isMarketOpen = true;
-  isMarketOpen2 = true;
 
-  toggleMarket() {
-    this.isMarketOpen = !this.isMarketOpen;
-  }
   setActiveTab(val: string) {
     this.activeTab = val;
   }
