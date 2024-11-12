@@ -8,10 +8,11 @@ import {ResponsibleGamblingFaqsComponent} from './pages/responsible-gambling-faq
 import {NotificationComponent} from './modal/notification/notification.component';
 import {StatisticsComponent} from './modal/statistics/statistics.component';
 import {SettingsComponent} from './modal/settings-modals/settings/settings.component';
-import { TeamF1Component } from './pages/stake-team/team-f1/team-f1.component';
-import { VipCloudComponent } from './pages/vip-cloud/vip-cloud.component';
-import { BlogPageComponent } from './pages/blog-page/blog-page.component';
+import {TeamF1Component} from './pages/stake-team/team-f1/team-f1.component';
+import {VipCloudComponent} from './pages/vip-cloud/vip-cloud.component';
+import {BlogPageComponent} from './pages/blog-page/blog-page.component';
 import {AffiliateComponent} from './pages/affiliate/affiliate.component';
+import {RacingMarketDetailsComponent} from './pages/racing-market-details/racing-market-details.component';
 
 
 export const routes: Routes = [
