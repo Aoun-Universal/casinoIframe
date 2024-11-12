@@ -342,7 +342,7 @@
 
   /* Market Content */
   .market-content {
-    @apply border-t border-solid border-[#2f4553] bg-[#21374] flex flex-col w-full rounded-[0_0_.25rem_.25rem];
+    @apply border-t border-solid border-[#2f4553] bg-[#213743] flex flex-col w-full rounded-[0_0_.25rem_.25rem];
   }
 
   .stack {
@@ -405,7 +405,7 @@
   }
 
   .teams {
-    @apply [grid-column:1/span_12] md:[grid-column:1/span_3] whitespace-nowrap overflow-hidden grid gap-2 self-center;
+    @apply [grid-column:1/span_12]  whitespace-nowrap overflow-hidden grid gap-2 self-center;
   }
 
   .teams-tag {
@@ -444,7 +444,12 @@
   .outcome-content {
     @apply flex flex-col items-start justify-between w-full self-center justify-items-start;
   }
-
+  .outcomes-secondary {
+    @apply [grid-column:1/span_12] md:flex md:flex-col md:justify-center md:items-start md:w-full self-stretch place-items-center w-full lg:[grid-column:1/span_2]  grid [grid-gap:.5rem] [grid-template-columns:repeat(auto-fit,minmax(50px,1fr))] [grid-template-rows:1fr];
+  }
+  .outcome-btn-secondary {
+    @apply px-[10.5px] py-[7px]  bg-[#071824] hover:bg-blue-900 flex rounded-[.25rem] relative text-sm text-white items-start min-w-0 [transition:background_.1s] justify-center md:justify-between  w-full;
+  }
   .outcome-odd {
     @apply font-bold text-[rgb(67,145,231)];
   }

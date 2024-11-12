@@ -12,7 +12,12 @@ import { ToggleService } from '../../services/toggle.service';
 export class BetSlipComponent implements OnInit {
   WinnerDropdown = false;
   activeTab: number = 1;
-  betSlip = false
+  betSlip = false;
+  BetslipContent = true;
+
+  clearBetslip() {
+    this.BetslipContent = false;
+  }
 
   toggleDropdown() {
     this.WinnerDropdown = !this.WinnerDropdown;
@@ -20,9 +25,15 @@ export class BetSlipComponent implements OnInit {
 
   // Odds dropdown
   OddsDropdown = false;
+  selectedOddsOption: string = "No Odds Changes Accepted";
   toggleOddsDropdown() {
     this.OddsDropdown = !this.OddsDropdown;
   }
+
+  selectOddsOption(option: string) {
+    this.selectedOddsOption = option;
+    this.OddsDropdown = false; 
+}
 
   //  Switch Tabs
   setActiveTab(tabIndex: number): void {
