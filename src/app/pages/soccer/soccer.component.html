@@ -158,8 +158,7 @@
                                         <div class="line order-2 line1"></div>
 
                                         <!-- Market-count & options-wrapper----- only on sm -->
-                                        <div [ngClass]="{ 'md:hidden' : !standardView , 'lg:hidden ': standardView}"
-                                            class="market-widget order-2 flex ">
+                                        <div class="market-widget order-2 flex md:hidden ">
                                             <!-- Button -->
                                             <button class="arrows-btn option-btn sm-option-btn">
                                                 <svg fill="currentColor" viewBox="0 0 64 64" class="svg-icon ">
@@ -174,14 +173,12 @@
                                             </div>
                                         </div>
                                         <!-- Market name -->
-                                        <div [ngClass]="{'hidden' :standardView}"
-                                            class="market-name-soccer order-4 md:order-3">
+                                        <div class="market-name-soccer order-4 md:order-3">
                                             <span class="description-wrapper">1x2</span>
                                         </div>
                                         <div class="line order-4 line2"></div>
                                         <!-- Teams -->
-                                        <div [ngClass]="{'md:[grid-column:1/span_3]' : !standardView , 'md:[grid-column:1/span_12] lg:![grid-column:1/span_3]':standardView}"
-                                            class="teams stacked svelte-1ykwt0t order-3 md:order-5"><a
+                                        <div class="teams stacked svelte-1ykwt0t order-3 md:order-5"><a
                                                 class="teams-tag arrows-btn">
                                                 <span>Pohkseh</span>
                                             </a>
@@ -190,9 +187,8 @@
                                             </a>
                                         </div>
                                         <!-- FixtureScore -->
-                                        <div [ngClass]="{'md:flex' : !standardView, 'md:hidden lg:flex' : standardView }"
-                                            class="fixture-score mr-2 hidden  order-6">
-                                            <div [ngClass]="{'lg:hidden': standardView}" class="fixture-score-wrapper ">
+                                        <div class="fixture-score mr-2 hidden  order-6">
+                                            <div class="fixture-score-wrapper ">
                                                 <div class="score-wrapper live svelte-qyo8l9">
                                                     <span
                                                         class="font-semibold description-wrapper !text-[#ff9d00]">2</span>
@@ -214,7 +210,6 @@
                                         </div>
 
                                         <!-- Outcomes -->
-                                        @if(!standardView){
                                         <div class="outcomes order-7">
                                             <!-- 1 -->
                                             <div class="outcome-btn">
@@ -250,105 +245,8 @@
                                                 </div>
                                             </div>
                                         </div>
-                                        }
-                                        @else {
-                                        <div class="order-7   outcomes-secondary">
-                                            <div class="w-full">
-                                                <div
-                                                    class="market-name-soccer order-4 md:order-3 w-full flex flex-row justify-center ">
-                                                    <span class="description-wrapper whitespace-nowrap">Asian
-                                                        Total</span>
-                                                </div>
-                                                <div class="w-full  outcomes-secondary">
-                                                    <button class="outcome-btn-secondary">
-                                                        <div>
-                                                            O 1.25
-                                                        </div>
-                                                        <div class="text-[#4391e7] font-bold">
-                                                            1.34
-                                                        </div>
-                                                    </button>
-                                                    <button class="outcome-btn-secondary">
-                                                        <div>
-                                                            O 1.25
-                                                        </div>
-                                                        <div class="text-[#4391e7] font-bold">
-                                                            1.34
-                                                        </div>
-                                                    </button>
-                                                </div>
-                                            </div>
-                                        </div>
-                                        <div class="order-7  outcomes-secondary">
-                                            <div class="w-full">
-                                                <div
-                                                    class="market-name-soccer order-4 md:order-3 w-full flex flex-row justify-center ">
-                                                    <span class="description-wrapper whitespace-nowrap">1x2</span>
-                                                </div>
-                                                <div class="w-full  outcomes-secondary">
-                                                    <button class="outcome-btn-secondary">
-                                                        <div>
-                                                            BAR
-                                                        </div>
-                                                        <div class="text-[#4391e7] font-bold">
-                                                            101
-                                                        </div>
-                                                    </button>
-                                                    <button class="outcome-btn-secondary">
-                                                        <div>
-                                                            Draw
-                                                        </div>
-                                                        <div class="text-[#4391e7] font-bold">
-                                                            30.00
-                                                        </div>
-                                                    </button>
-                                                    <button class="outcome-btn-secondary">
-                                                        <div>
-                                                            STP
-                                                        </div>
-                                                        <div class="text-[#4391e7] font-bold">
-                                                            30.00
-                                                        </div>
-                                                    </button>
-                                                </div>
-                                            </div>
-                                        </div>
-                                        <div class="order-7   outcomes-secondary">
-                                            <div class="w-full">
-                                                <div
-                                                    class="market-name-soccer order-4 md:order-3 w-full flex flex-row justify-center ">
-                                                    <span class="description-wrapper whitespace-nowrap">Asian
-                                                        Handicap</span>
-                                                </div>
-                                                <div class="w-full  outcomes-secondary">
-                                                    <button class="outcome-btn-secondary">
-                                                        <div>
-                                                            -4.75
-                                                        </div>
-                                                        <div class="text-[#4391e7] font-bold">
-                                                            1.57
-                                                        </div>
-                                                    </button>
-
-                                                    <button class="outcome-btn-secondary">
-                                                        <div>
-                                                            4.75
-                                                        </div>
-                                                        <div class="text-[#4391e7] font-bold">
-                                                            2.37
-                                                        </div>
-                                                    </button>
-                                                </div>
-                                            </div>
-                                        </div>
-
-
-
-
-                                        }
                                         <!-- MarketCount -->
-                                        <div [ngClass]="{'hidden lg:flex ': standardView , 'md:flex ': !standardView}"
-                                            class="market-count hidden order-8">
+                                        <div class="market-count hidden order-8">
                                             +3
                                         </div>
                                     </div>
