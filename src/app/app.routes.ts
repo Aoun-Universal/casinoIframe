@@ -43,7 +43,7 @@ export const routes: Routes = [
         component:MyBetsComponent,
       },
        {
-        path: 'Affiliate',
+        path: 'affiliate',
         component: AffiliateComponent,
       },
       {
