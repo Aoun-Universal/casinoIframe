@@ -4,10 +4,11 @@ import { NavigationEnd, Router, RouterLink } from '@angular/router';
 import { filter } from 'rxjs';
 import { VaultComponent } from "../../modal/vault/vault.component";
 import { ToggleService } from '../../services/toggle.service';
+import { TooltipComponent } from "../tooltip/tooltip.component";
 @Component({
   selector: 'app-sidebar',
   standalone: true,
-  imports: [CommonModule, VaultComponent, RouterLink],
+  imports: [CommonModule, VaultComponent, RouterLink, TooltipComponent],
   templateUrl: './sidebar.component.html',
   styleUrls: ['./sidebar.component.css'] // Corrected from styleUrl to styleUrls
 })
