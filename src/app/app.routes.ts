@@ -99,6 +99,11 @@ export const routes: Routes = [
           import('./pages/pal-ful/pal-ful.component').then((c) => c.PalFulComponent),
       },
       {
+        path: 'setting',
+        loadComponent: () =>
+          import('./modal/settings-modals/settings/settings.component').then((c) => c.SettingsComponent),
+      },
+      {
         path:'horse-racing',
         component:HorseRacingComponent
       },
@@ -129,11 +134,6 @@ export const routes: Routes = [
     path: 'notification',
     component: NotificationComponent
   },
-  {
-    path: 'setting',
-    component: SettingsComponent
-  },
-
   {
     path: 'vip-club',
     component: VipCloudComponent

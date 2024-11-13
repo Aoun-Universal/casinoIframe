@@ -1,12 +1,33 @@
-import { Component } from '@angular/core';
+import { CommonModule, NgIf } from '@angular/common';
+import { Component, ElementRef, ViewChild } from '@angular/core';
 
 @Component({
   selector: 'app-settings',
   standalone: true,
-  imports: [],
+  imports: [CommonModule],
   templateUrl: './settings.component.html',
-  styleUrl: './settings.component.css'
+  styleUrl: './settings.component.css',
 })
 export class SettingsComponent {
+  tab = '';
+  isopen = false;
+  toggledropdown() {
+    this.isopen = !this.isopen;
+  }
+  @ViewChild('inputField') inputField!: ElementRef;
+  tooltipVisible = false;
 
+  ngAfterViewInit() {}
+
+  showTooltip() {
+    if (this.inputField) {
+      const inputValue = this.inputField.nativeElement.value;
+      navigator.clipboard.writeText(inputValue).then(() => {
+        this.tooltipVisible = true;
+        setTimeout(() => {
+          this.tooltipVisible = false;
+        }, 5000);
+      });
+    }
+  }
 }
