@@ -85,7 +85,7 @@
           </app-tooltip>
         </div>
 
-        <div class="nav-item relative group">
+        <div class="nav-item relative group" routerLink="/my-bets">
 
           <app-tooltip [sidebarState]="isSidebar" text="My Bets ">
             <div class="title-wrapper">
@@ -357,7 +357,7 @@
               </div>
             </div>
 
-            <div class="nav-item dropdown-item" routerLink="/vip-club">
+            <div class="nav-item dropdown-item">
               <div class="title-wrapper">
                 <svg fill="currentColor" viewBox="0 0 96 96" class="svg-icon ">
                   <title></title>
@@ -369,7 +369,7 @@
               </div>
             </div>
 
-            <div class="nav-item dropdown-item">
+            <div class="nav-item dropdown-item" routerLink="/statistics">
               <div class="title-wrapper">
                 <svg fill="currentColor" viewBox="0 0 64 64" class="svg-icon ">
                   <title></title>
@@ -505,7 +505,7 @@
           </app-tooltip>
         </div>
 
-        <div class="nav-item">
+        <div class="nav-item" routerLink="/vip-club">
           <app-tooltip [sidebarState]="isSidebar" text="VIP Club">
             <div class="title-wrapper">
               <svg fill="currentColor" viewBox="0 0 96 96" class="svg-icon ">
@@ -517,10 +517,9 @@
               <div [ngClass]="{'md:hidden':!isSidebar}">VIP Club</div>
             </div>
           </app-tooltip>
-
         </div>
 
-        <div class="nav-item">
+        <div class="nav-item" routerLink="/blog">
           <app-tooltip [sidebarState]="isSidebar" text="Blog">
             <div class="title-wrapper">
               <svg fill="currentColor" viewBox="0 0 64 64" class="svg-icon ">
@@ -721,7 +720,7 @@
 
         <div class="nav-item" routerLink="/responsible-gambling">
           <app-tooltip [sidebarState]="isSidebar" text="Responsible Gambling">
-            <div class="title-wrapper" >
+            <div class="title-wrapper">
               <svg fill="currentColor" viewBox="0 0 64 64" class="svg-icon ">
                 <title></title>
                 <path
@@ -855,7 +854,7 @@
         <div>
           <div class="nav-item" (click)="toggleOpen('soccer')" [ngClass]="{'dropdown-item':openBar === 'soccer'}">
             <div class="title-wrapper">
-              <svg fill="currentColor" viewBox="0 0 96 96" class="svg-icon " style="">
+              <svg fill="currentColor" viewBox="0 0 96 96" class="svg-icon ">
                 <title></title>
                 <path
                   d="M95.994 53.946a11.297 11.297 0 0 0-4.743-1.029c-1.718 0-3.349.38-4.814 1.059l.07-.03c.313-1.146.494-2.46.494-3.814 0-5.252-2.702-9.874-6.787-12.551l-.057-.037c6.913-.642 10.53-12.58 10.53-12.58-4.555-8.412-11.233-15.168-19.328-19.69l-.247-.127S59.454 3.54 55.956 7.236C51.615.202 39.275.202 39.275.202c-9.79 1.878-18.28 6.503-24.888 13.03l.006-.005a12.326 12.326 0 0 0 4.637 9.629l.024.018c-6.15 1.447-12.542 10.09-11.496 13.588a6.71 6.71 0 0 0-5.378-2.695c-.06 0-.118 0-.178.003h.009C.745 37.897.009 42.64 0 47.554v.009c0 5.303.868 10.401 2.47 15.165l-.097-.335a15.818 15.818 0 0 0 4.95-6.925l.033-.109c3.048 2.011 6.79 3.205 10.809 3.205 1.977 0 3.889-.29 5.695-.829l-.142.036c-1.266 2.56-2.008 5.572-2.008 8.759 0 4 1.17 7.727 3.184 10.856l-.048-.078a16.443 16.443 0 0 0-9.838 5.173l-.012.013c8.632 8.23 20.344 13.298 33.242 13.304 4.1-.009 8.077-.537 11.867-1.52l-.329.073c-2.24-5.189-6.32-9.229-11.396-11.363l-.142-.051c5.629-.323 11.176-8.563 12.06-14.191 4.043 1.839 8.77 2.909 13.748 2.909a33.93 33.93 0 0 0 3.605-.19l-.147.012c-.863 2.12-1.363 4.58-1.363 7.154 0 2.575.5 5.035 1.41 7.287l-.044-.13c9.876-7.609 16.678-18.794 18.463-31.583l.03-.253-.006-.006ZM59.131 62.67c-6.15-8.683-23.757-13.869-33.004-8.722 5.306-13.025 3.458-21.506-3.136-30.511 12.06 1.124 26.372-5.146 32.16-13.184 1.65 8.722 11.255 23.275 20.1 26.208-14.39 6.551-16.039 16.883-16.12 26.209Z">
@@ -882,9 +881,9 @@
           <!-- dropdown inner content -->
           <div class="inner-content" [ngClass]="{'active-dropdown':openBar === 'soccer' }">
             <div class="hr-border"></div>
-            <div class="nav-item dropdown-item">
+            <div class="nav-item dropdown-item" routerLink="/soccer">
               <div class="title-wrapper">
-                <svg fill="currentColor" viewBox="0 0 64 64" class="svg-icon " style="">
+                <svg fill="currentColor" viewBox="0 0 64 64" class="svg-icon ">
                   <title></title>
                   <path
                     d="M32 0C14.326 0 0 14.326 0 32s14.326 32 32 32 32-14.326 32-32S49.674 0 32 0Zm-9 49V15l26 17-26 17Z">
@@ -895,7 +894,7 @@
             </div>
             <div class="nav-item dropdown-item">
               <div class="title-wrapper">
-                <svg fill="currentColor" viewBox="0 0 64 64" class="svg-icon " style="">
+                <svg fill="currentColor" viewBox="0 0 64 64" class="svg-icon ">
                   <title></title>
                   <path
                     d="M24.694.006h14.64v7.306h-14.64V.006Zm26.4 21.334 3.786-4.346-5.52-4.8-3.866 4.48C41.664 14.246 37 12.806 32 12.806s-9.664 1.44-13.598 3.93l.104-.062-3.866-4.426-5.52 4.8 3.786 4.294A25.484 25.484 0 0 0 6.4 38.396c0 14.138 11.462 25.6 25.6 25.6 14.138 0 25.6-11.462 25.6-25.6a25.506 25.506 0 0 0-6.528-17.078l.022.022ZM32 38.406 20.24 50.112a16.538 16.538 0 0 1-4.836-11.706c0-9.16 7.426-16.586 16.586-16.586H32v16.586Z">
@@ -907,7 +906,7 @@
 
             <div class="nav-item dropdown-item">
               <div class="title-wrapper">
-                <svg fill="none" viewBox="0 0 96 96" class="svg-icon " style="">
+                <svg fill="none" viewBox="0 0 96 96" class="svg-icon ">
                   <title></title>
                   <path
                     d="M0 48a47.897 47.897 0 0 0 2.986 16.696L48 68.87l45.014-4.174A47.897 47.897 0 0 0 96 48a47.897 47.897 0 0 0-2.986-16.696L48 27.131 2.986 31.303A47.897 47.897 0 0 0 0 48Z"
@@ -924,7 +923,7 @@
         <div>
           <div class="nav-item" (click)="toggleOpen('cricket')" [ngClass]="{'dropdown-item':openBar === 'cricket'}">
             <div class="title-wrapper">
-              <svg fill="currentColor" viewBox="0 0 96 96" class="svg-icon undefined" style="">
+              <svg fill="currentColor" viewBox="0 0 96 96" class="svg-icon undefined">
                 <title></title>
                 <path
                   d="M12.006 16.43c.84-.96 1.719-1.92 2.64-2.798 16.314.813 31.113 6.708 42.996 16.119l-.156-.12c13.839 11.589 24.615 26.385 31.23 43.272l.252.729a42.603 42.603 0 0 1-2.514 3.663l.075-.102c-6.846-16.476-16.95-30.378-29.592-41.451l-.129-.111a83.254 83.254 0 0 0-44.415-19.164l-.387-.036Zm-6.279 8.8c17.289.786 32.922 7.29 45.192 17.652l-.111-.093c12.516 11.1 22.29 25.014 28.359 40.764l.243.714C71.043 91.539 60.039 95.97 48 95.97c-26.511 0-48-21.49-48-48a47.804 47.804 0 0 1 5.856-22.995l-.126.252-.003.003ZM25.725 5.51C32.184 2.059 39.855.03 48 .03c26.511 0 48 21.489 48 48 0 4.98-.759 9.786-2.166 14.3l.09-.338C86.553 46.056 76.101 32.685 63.24 22.149l-.195-.156C52.626 13.785 39.948 7.968 26.097 5.583l-.492-.07.12-.002Z">
@@ -953,7 +952,7 @@
             <div class="hr-border"></div>
             <div class="nav-item dropdown-item">
               <div class="title-wrapper">
-                <svg fill="currentColor" viewBox="0 0 64 64" class="svg-icon " style="">
+                <svg fill="currentColor" viewBox="0 0 64 64" class="svg-icon ">
                   <title></title>
                   <path
                     d="M32 0C14.326 0 0 14.326 0 32s14.326 32 32 32 32-14.326 32-32S49.674 0 32 0Zm-9 49V15l26 17-26 17Z">
@@ -964,7 +963,7 @@
             </div>
             <div class="nav-item dropdown-item">
               <div class="title-wrapper">
-                <svg fill="currentColor" viewBox="0 0 64 64" class="svg-icon " style="">
+                <svg fill="currentColor" viewBox="0 0 64 64" class="svg-icon ">
                   <title></title>
                   <path
                     d="M24.694.006h14.64v7.306h-14.64V.006Zm26.4 21.334 3.786-4.346-5.52-4.8-3.866 4.48C41.664 14.246 37 12.806 32 12.806s-9.664 1.44-13.598 3.93l.104-.062-3.866-4.426-5.52 4.8 3.786 4.294A25.484 25.484 0 0 0 6.4 38.396c0 14.138 11.462 25.6 25.6 25.6 14.138 0 25.6-11.462 25.6-25.6a25.506 25.506 0 0 0-6.528-17.078l.022.022ZM32 38.406 20.24 50.112a16.538 16.538 0 0 1-4.836-11.706c0-9.16 7.426-16.586 16.586-16.586H32v16.586Z">
@@ -976,7 +975,7 @@
 
             <div class="nav-item dropdown-item">
               <div class="title-wrapper">
-                <svg fill="none" viewBox="0 0 96 96" class="svg-icon " style="">
+                <svg fill="none" viewBox="0 0 96 96" class="svg-icon ">
                   <title></title>
                   <path
                     d="M0 48a47.897 47.897 0 0 0 2.986 16.696L48 68.87l45.014-4.174A47.897 47.897 0 0 0 96 48a47.897 47.897 0 0 0-2.986-16.696L48 27.131 2.986 31.303A47.897 47.897 0 0 0 0 48Z"
@@ -993,7 +992,7 @@
         <div>
           <div class="nav-item" (click)="toggleOpen('tennis')" [ngClass]="{'dropdown-item':openBar === 'tennis'}">
             <div class="title-wrapper">
-              <svg fill="currentColor" viewBox="0 0 96 96" class="svg-icon undefined" style="">
+              <svg fill="currentColor" viewBox="0 0 96 96" class="svg-icon undefined">
                 <title></title>
                 <path fill-rule="evenodd" clip-rule="evenodd"
                   d="M48.021.012c13.221 0 25.191 5.346 33.87 13.99l.003-.004C90.609 22.69 96 34.71 96 47.988c0 26.511-21.489 48-48 48S0 74.5 0 47.988c0-4.275.561-8.42 1.533-12.03l4.119 4 .006.005c4.62 4.533 8.1 10.224 10.035 16.875l.054.234c2.109 7.62 6.873 14.136 13.344 18.567l-.123-.078a33.326 33.326 0 0 0 18.549 5.604c18.489 0 33.48-14.99 33.48-33.48a33.356 33.356 0 0 0-9.386-23.246c-3.927-3.887-8.801-6.82-14.482-8.482l-.285-.075A40.24 40.24 0 0 1 39.93 5.56l-3.999-4-.336.075A48.082 48.082 0 0 1 48.021.012ZM11.291 34.32l-6.76-6.759.006.003.12-.288C9.304 17.355 17.327 9.33 27.535 4.563l6.639 6.92c5.591 5.546 12.56 9.703 20.68 12.001l.18.045c10.553 3.144 18.248 12.921 18.248 24.498 0 .834-.042 1.662-.11 2.373l-.01.111c-.8 7.773-5.06 14.517-11.31 18.729l.09-.057a25.28 25.28 0 0 1-14.136 4.293c-11.664 0-21.492-7.863-24.516-18.756l-.08-.327A46.449 46.449 0 0 0 11.29 34.32Z">
@@ -1022,7 +1021,7 @@
             <div class="hr-border"></div>
             <div class="nav-item dropdown-item">
               <div class="title-wrapper">
-                <svg fill="currentColor" viewBox="0 0 64 64" class="svg-icon " style="">
+                <svg fill="currentColor" viewBox="0 0 64 64" class="svg-icon ">
                   <title></title>
                   <path
                     d="M32 0C14.326 0 0 14.326 0 32s14.326 32 32 32 32-14.326 32-32S49.674 0 32 0Zm-9 49V15l26 17-26 17Z">
@@ -1033,7 +1032,7 @@
             </div>
             <div class="nav-item dropdown-item">
               <div class="title-wrapper">
-                <svg fill="currentColor" viewBox="0 0 64 64" class="svg-icon " style="">
+                <svg fill="currentColor" viewBox="0 0 64 64" class="svg-icon ">
                   <title></title>
                   <path
                     d="M24.694.006h14.64v7.306h-14.64V.006Zm26.4 21.334 3.786-4.346-5.52-4.8-3.866 4.48C41.664 14.246 37 12.806 32 12.806s-9.664 1.44-13.598 3.93l.104-.062-3.866-4.426-5.52 4.8 3.786 4.294A25.484 25.484 0 0 0 6.4 38.396c0 14.138 11.462 25.6 25.6 25.6 14.138 0 25.6-11.462 25.6-25.6a25.506 25.506 0 0 0-6.528-17.078l.022.022ZM32 38.406 20.24 50.112a16.538 16.538 0 0 1-4.836-11.706c0-9.16 7.426-16.586 16.586-16.586H32v16.586Z">
@@ -1045,7 +1044,7 @@
 
             <div class="nav-item dropdown-item">
               <div class="title-wrapper">
-                <svg fill="none" viewBox="0 0 96 96" class="svg-icon " style="">
+                <svg fill="none" viewBox="0 0 96 96" class="svg-icon ">
                   <title></title>
                   <path
                     d="M0 48a47.897 47.897 0 0 0 2.986 16.696L48 68.87l45.014-4.174A47.897 47.897 0 0 0 96 48a47.897 47.897 0 0 0-2.986-16.696L48 27.131 2.986 31.303A47.897 47.897 0 0 0 0 48Z"
@@ -1861,6 +1860,84 @@
                 <span style="max-width: 100%; display: block" class="svelte-17o987 is-truncate">View All</span>
               </button>
             </a>
+          </div>
+        </div>
+      </div>
+
+      <div class="dropdown-container" *ngIf="routerPath==='/sport-market'">
+        <div class="nav-item" (click)="toggleOpen('racing')" [ngClass]="{'dropdown-item':openBar === 'racing'}">
+          <div class="title-wrapper">
+            <svg fill="currentColor" viewBox="0 0 96 96" class="svg-icon ">
+              <title></title>
+              <path fill-rule="evenodd" clip-rule="evenodd"
+                d="m89.6 14.32-2.4 4.56h.04L96.04 35l-4.88 4.36L84.88 35c-2.24-.72-3.08-3.64-3.08-3.64L74.6 48.2c-3.32 10.72-5.16 12.08-7.28 13.44L54.24 77.56l-13.88-4.48 1.68-2.72 9.6 2.36 4.68-12.56c-12.24-1.32-23.16-7.56-23.16-7.56-2.28 6.08-5.84 9.84-7.88 11.88l9.72 9.4-7.04 7.8-3.76-2.2 3.12-5-13.2-10.28c6.28-4.24 6.6-10.12 6.6-10.12-5.76-1.52-8.72-9.24-8.72-9.24-7.96 3.8-12 14.44-12 14.44V45.52C17.24 28.88 26.08 28.4 26.08 28.4c7.099-.671 10.416.253 14.047 1.265 2.424.676 4.989 1.391 8.913 1.695 9.8.76 13.68-2.72 13.68-2.72 9.96-9.68 15.56-11.6 15.56-11.6l11.32-2.72ZM74.158 70.04l-1.24-2.72c4.48-2.56 5.08-6.4 5.08-6.4l3.48 9.72-11.56 5.6-1.52-2.44 5.76-3.76Z">
+              </path>
+            </svg>
+            <div [ngClass]="{'md:hidden':!isSidebar}">ALL Racing</div>
+          </div>
+          <div [ngClass]="{'md:!hidden':!isSidebar}" class="svg-container"
+            [ngClass]="{'active-svg':openBar === 'racing'}">
+            <svg fill="#fff" viewBox="0 0 64 64" class="svg-icon" style="transform: rotate(270deg); ">
+              <title></title>
+              <path
+                d="M32.271 49.763 9.201 26.692l6.928-6.93 16.145 16.145 16.144-16.144 6.93 6.929-23.072 23.07h-.005Z">
+              </path>
+            </svg>
+          </div>
+          <svg [ngClass]="{'md:!block':!isSidebar}" fill="currentColor" viewBox="0 0 64 64" class="svg-icon !hidden"
+            style="height: 0.625rem;">
+            <title></title>
+            <path d="m26.307 53.995 20.998-20.997L26.307 12 20 18.306 34.694 33 20.001 47.694 26.307 54v-.005Z">
+            </path>
+          </svg>
+        </div>
+        <!-- dropdown inner content -->
+        <div class="inner-content" [ngClass]="{'active-dropdown':openBar === 'racing' }">
+          <div class="hr-border"></div>
+          <div class="sidebar-content" bis_skin_checked="1">
+            <a class="base-sidebar-anchor max-w-full svelte-1ih38ux"  routerLink="/horse-racing"
+              data-sveltekit-preload-data="off" href="/sports/counter-strike">
+              <button type="button" tabindex="0"
+                class="inline-flex relative items-center gap-2 font-semibold whitespace-nowrap ring-offset-background transition disabled:pointer-events-none disabled:opacity-50 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 active:scale-[0.98] bg-transparent text-white hover:bg-[#2f4553] focus-visible:outline-white text-sm leading-none [&amp;_svg]:text-grey-200 [&amp;:hover>svg]:text-white py-[0.8125rem] px-[1rem] w-full justify-start max-w-full rounded-none"
+                data-analytics="sidebar-e-sports-counter-strike-link" data-button-root="">
+                <svg fill="currentColor" viewBox="0 0 96 96" class="svg-icon ">
+                  <title></title>
+                  <path fill-rule="evenodd" clip-rule="evenodd"
+                    d="m89.6 14.32-2.4 4.56h.04L96.04 35l-4.88 4.36L84.88 35c-2.24-.72-3.08-3.64-3.08-3.64L74.6 48.2c-3.32 10.72-5.16 12.08-7.28 13.44L54.24 77.56l-13.88-4.48 1.68-2.72 9.6 2.36 4.68-12.56c-12.24-1.32-23.16-7.56-23.16-7.56-2.28 6.08-5.84 9.84-7.88 11.88l9.72 9.4-7.04 7.8-3.76-2.2 3.12-5-13.2-10.28c6.28-4.24 6.6-10.12 6.6-10.12-5.76-1.52-8.72-9.24-8.72-9.24-7.96 3.8-12 14.44-12 14.44V45.52C17.24 28.88 26.08 28.4 26.08 28.4c7.099-.671 10.416.253 14.047 1.265 2.424.676 4.989 1.391 8.913 1.695 9.8.76 13.68-2.72 13.68-2.72 9.96-9.68 15.56-11.6 15.56-11.6l11.32-2.72ZM74.158 70.04l-1.24-2.72c4.48-2.56 5.08-6.4 5.08-6.4l3.48 9.72-11.56 5.6-1.52-2.44 5.76-3.76Z">
+                  </path>
+                </svg>
+                <span style="max-width: 100%; display: block" class="svelte-17o987 is-truncate">Horse Racing</span>
+              </button>
+            </a>
+            <a class="base-sidebar-anchor max-w-full svelte-1ih38ux" 
+              data-sveltekit-preload-data="off" href="/sports/counter-strike-2-duels">
+              <button type="button" tabindex="0"
+                class="inline-flex relative items-center gap-2 font-semibold whitespace-nowrap ring-offset-background transition disabled:pointer-events-none disabled:opacity-50 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 active:scale-[0.98] bg-transparent text-white hover:bg-[#2f4553] focus-visible:outline-white text-sm leading-none [&amp;_svg]:text-grey-200 [&amp;:hover>svg]:text-white py-[0.8125rem] px-[1rem] w-full justify-start max-w-full rounded-none"
+                data-analytics="sidebar-e-sports-counter-strike-2-duels-link" data-button-root="">
+                <svg fill="currentColor" viewBox="0 0 96 96" class="svg-icon " >
+                  <title></title>
+                  <path
+                    d="M60.24 28.185c-.653 6.738-.28 16.661 5.448 23.815 1.77-2.261 3.213-4.846 3.819-7.892 1.21-5.908 13.178-12.785 16.764-9.693 3.586 3.093 9.733-1.984 9.733-1.984l-6.939-5.17-.14-4.061-8.289-5.308L69.134 16l-.978 3.092 3.26 3.093c-2.888 2.354-6.986 5.03-11.13 6h-.047Zm-29.963-.635c-8.096-4.72-20.472-13.445-28.102-1.621-7.63 11.824 7.305 26.509 7.305 26.509l-7.305 8.105c-.93 1.24-.93 2.956 0 4.243L13.155 84h4.793l-4.095-19.452s15.82-6.055 5.537-21.646c0 0 7.63 10.346 24.938 11.3 0 0-3.582-10.632 3.676-25.412-.14.095-9.724 3.432-17.727-1.24Zm29.546 28.272 2.676 12.017L74.39 79.534c7.73 0 9.613 4.466 9.613 4.466H72.756L53.084 70.417C46.246 61.071 46.642 52 52.291 52c5.65 0 7.582 3.822 7.582 3.822h-.05Z">
+                  </path>
+                </svg>
+                <span style="max-width: 100%; display: block" class="svelte-17o987 is-truncate">GreyHound Racing</span>
+              </button>
+            </a>
+            <a class="base-sidebar-anchor max-w-full svelte-1ih38ux" data-sveltekit-reload="off"
+              data-sveltekit-preload-data="off" href="/sports/dota-2">
+              <button type="button" tabindex="0"
+                class="inline-flex relative items-center gap-2 font-semibold whitespace-nowrap ring-offset-background transition disabled:pointer-events-none disabled:opacity-50 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 active:scale-[0.98] bg-transparent text-white hover:bg-[#2f4553] focus-visible:outline-white text-sm leading-none [&amp;_svg]:text-grey-200 [&amp;:hover>svg]:text-white py-[0.8125rem] px-[1rem] w-full justify-start max-w-full rounded-none"
+                data-analytics="sidebar-e-sports-dota-2-link" data-button-root="">
+                <svg fill="currentColor" viewBox="0 0 96 96" class="svg-icon undefined" >
+                  <title></title>
+                  <path fill-rule="evenodd" clip-rule="evenodd"
+                    d="M23 8.88c2.64 4.56 1.08 10.4-3.48 13.04-4.56 2.64-10.4 1.08-13.04-3.48C3.84 13.88 5.4 8.04 9.96 5.4 14.52 2.76 20.36 4.32 23 8.88Zm62.88 13.48c1.96 0 3.76 1.16 4.56 2.92l-.04-.12c.84 1.8.52 3.88-.76 5.36L62 62.44c2.36 3.08 3.84 6.88 3.84 11.08 0 10.08-8.2 18.28-18.28 18.28-10.08 0-18.28-8.2-18.28-18.28 0-10.08 8.16-18.28 18.28-18.28 2.24 0 4.4.44 6.4 1.2l3.32-3.8-8.88-5.12-8 3.96-8.72 4.32c-5.92 2.92-13.12.48-16.04-5.44l-4.92-9.92c-2.68-5.36-.44-11.88 4.92-14.52a10.84 10.84 0 0 1 13.56 3.36l13.64-6.44c.68-.32 1.4-.48 2.16-.48h40.88ZM51.08 37.6l12.88 7.44L64 45l11-12.68H46.16l-12.32 5.84 2.16 4.4 10.36-5.12c1.52-.72 3.28-.68 4.72.16Z">
+                  </path>
+                </svg>
+                <span style="max-width: 100%; display: block" class="svelte-17o987 is-truncate">Harness</span>
+              </button>
+            </a>
+
           </div>
         </div>
       </div>

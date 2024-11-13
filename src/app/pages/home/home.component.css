@@ -26,7 +26,7 @@ section {
 }
 
 .hero-card {
-    @apply overflow-hidden flex flex-col relative text-white bg-[#213743] rounded-[.5rem] cursor-pointer
+    @apply !w-[325px] md:!w-[360px] overflow-hidden flex flex-col relative text-white bg-[#213743] rounded-[.5rem] cursor-pointer mx-2
 }
 
 .card-wrapper {
