@@ -8,6 +8,16 @@ import {ResponsibleGamblingFaqsComponent} from './pages/responsible-gambling-faq
 import {NotificationComponent} from './modal/notification/notification.component';
 import {StatisticsComponent} from './modal/statistics/statistics.component';
 import {SettingsComponent} from './modal/settings-modals/settings/settings.component';
+import { MyBetsComponent } from './pages/my-bets/my-bets.component';
+import { HorseRacingComponent } from './pages/horse-racing/horse-racing.component';
+import {TeamF1Component} from './pages/stake-team/team-f1/team-f1.component';
+import {VipCloudComponent} from './pages/vip-cloud/vip-cloud.component';
+import {BlogPageComponent} from './pages/blog-page/blog-page.component';
+import {AffiliateComponent} from './pages/affiliate/affiliate.component';
+import {RacingMarketDetailsComponent} from './pages/racing-market-details/racing-market-details.component';
+import { MyBetsComponent } from './pages/my-bets/my-bets.component';
+
+
 
 export const routes: Routes = [
   {
@@ -30,9 +40,29 @@ export const routes: Routes = [
           import('./pages/home/home.component').then((c) => c.HomeComponent),
       },
       {
+        path:'my-bets',
+        component:MyBetsComponent,
+      },
+       {
+        path: 'affiliate',
+        component: AffiliateComponent,
+      },
+      {
+        path: 'racing-market-detail',
+        component: RacingMarketDetailsComponent,
+      },
+      {
+        path:'my-bets',
+        component:MyBetsComponent
+      },
+      {
         path: 'drake',
         loadComponent: () =>
           import('./pages/drake/drake.component').then((c) => c.DrakeComponent),
+      },
+      {
+        path: 'team-f1',
+        component: TeamF1Component
       },
       {
         path: 'responsible-gambling',
@@ -73,6 +103,10 @@ export const routes: Routes = [
         loadComponent: () =>
           import('./modal/settings-modals/settings/settings.component').then((c) => c.SettingsComponent),
       },
+      {
+        path:'horse-racing',
+        component:HorseRacingComponent
+      },
     ],
   },
   {
@@ -91,6 +125,7 @@ export const routes: Routes = [
     path: 'logout',
     component: LogoutComponent,
   },
+
   {
     path: 'statistics',
     component: StatisticsComponent
@@ -98,6 +133,14 @@ export const routes: Routes = [
   {
     path: 'notification',
     component: NotificationComponent
+  },
+  {
+    path: 'vip-club',
+    component: VipCloudComponent
+  },
+  {
+    path: 'blog-page',
+    component: BlogPageComponent
   },
   {
     path: '**',

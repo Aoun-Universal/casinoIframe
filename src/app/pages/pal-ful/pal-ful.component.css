@@ -37,7 +37,7 @@ section {
   @apply p-[5px] bg-[#0F212E] rounded-[3rem] flex overflow-x-auto space-x-[5px];
 }
 .switch-btn button {
-  @apply text-[14px] leading-[14px] py-[15px] px-[20px] text-inherit text-nowrap;
+  @apply text-[14px] leading-[14px] py-[15px] px-[20px] text-inherit text-nowrap rounded-full hover:bg-[#2f4553];
 }
 
 .activeTab {
@@ -49,7 +49,7 @@ section {
 }
 
 .x2-isOpen {
-  @apply py-[7px] px-[10.5px] bg-[#071824] w-full flex items-center justify-between text-[14px] leading-[21px] rounded;
+  @apply py-[7px] px-[10.5px] bg-[#071824] w-full flex items-center justify-between text-[14px] leading-[21px] rounded cursor-pointer hover:bg-[rgba(8,47,90,1)];
 }
 
 .slash {
@@ -63,9 +63,88 @@ section {
 
 .main-match {
   background-image: url("/assets/pal-ful/bg-head.jpg");
-  @apply w-full max-h-[200px] p-8 hidden lg:flex items-center justify-center;
+  @apply w-full max-h-[200px] p-8 hidden lg:flex items-center justify-center bg-cover bg-no-repeat;
 }
 
+.search-box-main {
+  @apply bg-[#0f212e] relative w-full rounded border-2 border-[#2F4553] mt-4 p-[7px_7px_7px_35px] h-[39px];
+}
+
+.search-box-inner {
+  @apply *:w-4 absolute left-3 top-[50%] translate-y-[-50%];
+}
+
+.search-input {
+  @apply bg-transparent w-full placeholder:text-[14px] placeholder:text-[#566671] focus:outline-none text-[14px];
+}
+
+.dropdown-head {
+  @apply py-3 px-4 flex justify-between items-center mt-4 text-[#d5dceb];
+}
+
+.x2-grid {
+  @apply grid grid-cols-1 md:grid-cols-3 gap-2 w-full items-center;
+}
+
+.draw-grid {
+  @apply grid grid-cols-1 md:grid-cols-2 gap-2 w-full items-center;
+}
+
+.range-slide {
+  @apply hidden grid-cols-1 md:grid-cols-3 items-center gap-2;
+}
+
+.tabs-all {
+  @apply flex justify-center text-[#b1bad3] text-[14px];
+}
+
+.ht-text {
+  @apply text-[10px] leading-[12px] absolute right-[50%] translate-x-[50%] top-2;
+}
+
+.ft-text {
+  @apply text-[10px] leading-[12px] absolute right-0 top-2;
+}
+
+.border-ft {
+  @apply border-[0.5px] border-[#2D3C48] absolute w-full top-[calc(50%_-_.5px)];
+}
+
+.graph-text {
+  @apply text-[10px] leading-[12px] absolute translate-x-[50%];
+}
+
+.scorr-img {
+  @apply bg-[radial-gradient(ellipse_closest-corner_at_50%_50%,transparent_0,rgba(0,0,0,.15)_100%)];
+}
+
+.scorr-slide {
+  @apply flex transition-transform duration-500 ease-in-out h-[178px] w-[288px];
+}
+
+.scor-slide-1 {
+  @apply flex items-center flex-col justify-center min-w-full bg-[#0F212E];
+}
+
+.slide-timer {
+  @apply flex items-center flex-col justify-center border-b border-b-[#2D3C48] pb-3;
+}
+
+.time-box {
+  @apply text-[20px] bg-white font-bold text-black h-[25px] min-w-[36px] flex items-center justify-center rounded;
+}
+
+.timer-bottom {
+  @apply flex gap-1 items-center text-[10px] opacity-80 mt-2 uppercase;
+}
+
+.slide-2nd-scorr {
+  @apply min-w-full items-center justify-center bg-[#0F212E];
+}
+
+.meeting-text {
+  @apply pt-2 w-full text-center text-[10px] uppercase border-t border-t-[#2D3C48];
+}
 .img-bg {
   display: grid;
   grid-template-areas:
