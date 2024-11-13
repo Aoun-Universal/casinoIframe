@@ -15,6 +15,8 @@ import {VipCloudComponent} from './pages/vip-cloud/vip-cloud.component';
 import {BlogPageComponent} from './pages/blog-page/blog-page.component';
 import {AffiliateComponent} from './pages/affiliate/affiliate.component';
 import { RacingMarketDetailsComponent } from './pages/racing-market-details/racing-market-details.component';
+import { RetentionProgramComponent } from './pages/retention-program/retention-program.component';
+import { AffiliateOverviewComponent } from './pages/affiliate-overview/affiliate-overview.component';
 
 
 export const routes: Routes = [
@@ -41,10 +43,10 @@ export const routes: Routes = [
         path:'my-bets',
         component:MyBetsComponent,
       },
-       {
-        path: 'affiliate',
-        component: AffiliateComponent,
-      },
+      //  {
+      //   path: 'affiliate',
+      //   component: AffiliateComponent,
+      // },
       {
         path: 'racing-market-detail',
         component: RacingMarketDetailsComponent,
@@ -77,6 +79,30 @@ export const routes: Routes = [
             path: 'responsible-gambling-faqs',
             component: ResponsibleGamblingFaqsComponent,
           },
+        ],
+      },
+      {
+        path: 'affiliate',
+        loadComponent: () =>
+          import(
+            './pages/affiliate/affiliate.component'
+            ).then((c) => c.AffiliateComponent),
+        children: [
+          {
+            path: '',
+            redirectTo: 'Overview',
+            pathMatch: 'full', 
+          },
+      
+          {
+            path: 'Overview',
+            component: AffiliateOverviewComponent,
+          },
+          {
+            path: 'retention',
+            component: RetentionProgramComponent,
+          },
+          
         ],
       },
       {
