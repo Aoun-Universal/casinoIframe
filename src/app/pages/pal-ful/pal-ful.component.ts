@@ -1,8 +1,6 @@
 import { NgClass, NgFor, NgIf, NgStyle } from '@angular/common';
-import { Component, ElementRef, OnInit, ViewChild } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { FormsModule } from '@angular/forms';
-import { SwiperContainer } from 'swiper/element';
-import { Swiper } from 'swiper/types';
 import { ToggleService } from '../../services/toggle.service';
 
 @Component({
@@ -13,7 +11,6 @@ import { ToggleService } from '../../services/toggle.service';
   styleUrl: './pal-ful.component.css'
 })
 export class PalFulComponent implements OnInit {
-  @ViewChild('swiper') swiper!: ElementRef<SwiperContainer>;
   currentTab = 'main';
   currentTabTable = 'table';
   currentTabSelect = 'select';
@@ -28,7 +25,7 @@ export class PalFulComponent implements OnInit {
   secondRangeValue = 1;
   displayRange = '';
   isChecked: boolean = false;
-  targetDate: Date = new Date('2024-11-12T23:59:59');
+  targetDate: Date = new Date('2024-12-12T23:59:59');
   days: number = 0;
   hours: number = 0;
   minutes: number = 0;

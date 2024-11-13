@@ -1,0 +1,21 @@
+.provider{
+    @apply w-full flex flex-col gap-8
+}
+.group-banner-wrap{
+    @apply w-full bg-[#213743] px-[3vw]
+}
+.banner{
+    @apply w-full flex justify-between items-center
+}
+.top-head{
+    @apply font-[600] text-[1.5rem]
+}
+.top-img{
+    @apply w-auto h-[100%]
+}
+.sec{
+    @apply px-[3vw]
+}
+.hero{
+    @apply grid grid-cols-7
+}

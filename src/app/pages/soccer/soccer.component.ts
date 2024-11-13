@@ -1,10 +1,11 @@
 import { NgClass, NgIf } from '@angular/common';
 import { Component } from '@angular/core';
+import { RouterLink, RouterLinkActive } from '@angular/router';
 
 @Component({
   selector: 'app-soccer',
   standalone: true,
-  imports: [NgClass, NgIf],
+  imports: [NgClass, NgIf, RouterLink],
   templateUrl: './soccer.component.html',
   styleUrl: './soccer.component.css',
 })
