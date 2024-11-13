@@ -287,15 +287,16 @@
 
 
     <!-- -------------------------------------------Bet Slip Content ------------------------>
+   @if (betSlip) {
     <div class="footer">
-
+    
         <!-- Multi tab additional row -->
-
+    
         <label class="label-stacked" *ngIf="activeTab === 2">
             <div class="input-wrap">
                 <div class="input-content">
                     <div class="after-icon">
-                        <svg fill="none" viewBox="0 0 96 96" class="svg-icon" >
+                        <svg fill="none" viewBox="0 0 96 96" class="svg-icon">
                             <title></title>
                             <path
                                 d="M95.895 48.105C95.895 74.557 74.451 96 48 96 21.548 96 .105 74.556.105 48.105.105 21.653 21.548.21 48 .21c26.451 0 47.895 21.443 47.895 47.895Z"
@@ -305,8 +306,8 @@
                                 fill="#fff"></path>
                         </svg>
                     </div>
-                    <input autocomplete="on" class="input-spacing" type="number" step="1e-8"
-                        data-test="input-bet-amount" data-bet-amount-active-currency="btc" value="0.00000000" min="0" />
+                    <input autocomplete="on" class="input-spacing" type="number" step="1e-8" data-test="input-bet-amount"
+                        data-bet-amount-active-currency="btc" value="0.00000000" min="0" />
                 </div>
             </div>
         </label>
@@ -331,13 +332,13 @@
                     </span>
                 </div>
             </div>
-
+    
             <!-- For Multi -->
             <div class="stack" *ngIf="activeTab === 2">
                 <span class="stake">Total Odds</span>
                 <span class="odds-text">1.90</span>
             </div>
-
+    
             <!-- 2 -->
             <div class="stack">
                 <span class="stake">ESL Payout</span>
@@ -357,7 +358,7 @@
                 </div>
             </div>
         </div>
-
+    
         <div class="message">
             <div class="system-message">
                 <svg fill="currentColor" viewBox="0 0 64 64" class="svg-icon ml-1 my-[3px]">
@@ -375,7 +376,8 @@
                 </div>
             </div>
         </div>
-
+    
         <button class="main-btn accept-btn">Accept New Odds</button>
     </div>
+   }
 </div>
