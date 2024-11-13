@@ -80,3 +80,6 @@ select{
     cursor: pointer;
     padding: .5em 2em .5em .5em;
 }
+ ::ng-deep .carousel .race-slide{
+    margin: 0 6px !important;
+}

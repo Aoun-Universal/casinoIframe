@@ -2,48 +2,71 @@ import { CommonModule } from '@angular/common';
 import { AfterViewInit, Component, CUSTOM_ELEMENTS_SCHEMA, ElementRef, HostListener, ViewChild } from '@angular/core';
 import { SwiperContainer } from 'swiper/element';
 import { Swiper, SwiperOptions } from 'swiper/types';
+import { SlickCarouselComponent, SlickCarouselModule } from 'ngx-slick-carousel';
 @Component({
   selector: 'app-horse-racing',
   standalone: true,
-  imports: [CommonModule],
+  imports: [CommonModule, SlickCarouselModule],
   templateUrl: './horse-racing.component.html',
   styleUrl: './horse-racing.component.css',
   schemas:[CUSTOM_ELEMENTS_SCHEMA]
 })
-export class HorseRacingComponent implements AfterViewInit {
-  @ViewChild('marketCards') horseRaceMarket!: ElementRef<SwiperContainer>;
+export class HorseRacingComponent {
+  
+@ViewChild('slickModal') slickModal!: SlickCarouselComponent;
   tabKey:string='friday'
   accIsOpen:boolean=true
   marketType='Horse Racing';
   marketSelection:boolean=false;
-  ngAfterViewInit(): void {
-    const swiper = new Swiper('.race-market-swiper', this.racingMarketConfig)
-    Object.assign(this.horseRaceMarket, this.racingMarketConfig)
-    // @ts-ignore
-    this.horseRaceMarket.nativeElement.initialize();
+  currentSlideIndex = 0;
+  slideCount = 0;
+
+   racingMarketConfig = {
+    slidesToShow: 3,
+    slidesToScroll: 3,
+    arrows:false,
+    infinite:false,
+    responsive: [
+      {
+        breakpoint: 1235,
+        settings: {
+          slidesToShow: 2,
+          slidesToScroll: 2
+        }
+      },
+      {
+        breakpoint: 640,
+        settings: {
+          slidesToShow: 1,
+          slidesToScroll: 1
+        }
+      }
+    ],
+  };
+
+  slickInit(e: any) {
+    this.slideCount = e.slick.slideCount;
+  }
+
+  afterChange(e: any) {
+    this.currentSlideIndex = e.currentSlide;
+  }
+
+  prev() {
+    
+    if(this.currentSlideIndex!==0){
+      this.slickModal.slickNext();
+    }
   }
   
-  public racingMarketConfig: SwiperOptions = {
-    autoplay:false,
-    loop:false,
-    slidesPerView: 2, 
-    spaceBetween: 50,
-    allowTouchMove: true,
-    breakpoints: {
-      320: {                  
-        slidesPerView: 1,
-        spaceBetween: 20,
-      },
-      768: {                
-        slidesPerView: 2,
-        spaceBetween: 25,
-      },
-      1024: {                   
-        slidesPerView: 3,
-        spaceBetween: 30,
-      }
+  next() {
+    
+    if(this.currentSlideIndex!==this.slideCount){
+      this.slickModal.slickPrev();
     }
-  };
+  }
+
+  carousel=[1,2,3,4,5,6,7,8]
 
   onTabClick(key:string){
     if(key){

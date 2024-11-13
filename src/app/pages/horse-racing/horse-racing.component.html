@@ -47,16 +47,16 @@
         <span class="font-semibold text-base">Next to Jump</span>
       </div>
       <div class="flex items-center">
-        <div class="prev-arrow-div">
-          <svg fill="" viewBox="0 0 64 64" class="arrow-icon" style="">
+        <div class="prev-arrow-div" (click)="prev()">
+          <svg fill="" viewBox="0 0 64 64" class="arrow-icon">
             <title></title>
             <path
               d="M56 37.486H25.091L35.335 47.73l-6.313 6.314L8 33.022 29.022 12l6.313 6.314-10.244 10.244H56v8.933-.005Z"
             ></path>
           </svg>
         </div>
-        <div class="next-arrow-div">
-          <svg fill="" viewBox="0 0 64 64" class="arrow-icon" style="">
+        <div class="next-arrow-div" (click)="next()">
+          <svg fill="" viewBox="0 0 64 64" class="arrow-icon">
             <title></title>
             <path
               d="M8 37.486h30.909L28.665 47.73l6.313 6.314L56 33.022 34.978 12l-6.313 6.314 10.244 10.244H8v8.933-.005Z"
@@ -66,497 +66,257 @@
       </div>
     </div>
     <!-- mobile carousel -->
-    <swiper-container class="race-market-swiper"
-      #marketCards
-      [config]="racingMarketConfig"
+    <ngx-slick-carousel class="carousel mt-6" 
+    #slickModal="slick-carousel" 
+    [config]="racingMarketConfig" 
+    (init)="slickInit($event)" (afterChange)="afterChange($event)"
     >
-      <swiper-slide>
-        <div
-          class="w-full bg-[#213743] rounded shadow-md gap-2 overflow-hidden mt-6"
-        >
-          <div class="flex flex-col">
-            <div class="flex flex-col gap-y-1 px-3 py-2">
-              <div class="flex justify-between items-center">
-                <div class="flex items-center gap-x-2">
-                  <div>
-                    <svg fill="" viewBox="0 0 96 96" class="horse-icon">
-                      <title></title>
-                      <path
-                        fill-rule="evenodd"
-                        clip-rule="evenodd"
-                        d="m89.6 14.32-2.4 4.56h.04L96.04 35l-4.88 4.36L84.88 35c-2.24-.72-3.08-3.64-3.08-3.64L74.6 48.2c-3.32 10.72-5.16 12.08-7.28 13.44L54.24 77.56l-13.88-4.48 1.68-2.72 9.6 2.36 4.68-12.56c-12.24-1.32-23.16-7.56-23.16-7.56-2.28 6.08-5.84 9.84-7.88 11.88l9.72 9.4-7.04 7.8-3.76-2.2 3.12-5-13.2-10.28c6.28-4.24 6.6-10.12 6.6-10.12-5.76-1.52-8.72-9.24-8.72-9.24-7.96 3.8-12 14.44-12 14.44V45.52C17.24 28.88 26.08 28.4 26.08 28.4c7.099-.671 10.416.253 14.047 1.265 2.424.676 4.989 1.391 8.913 1.695 9.8.76 13.68-2.72 13.68-2.72 9.96-9.68 15.56-11.6 15.56-11.6l11.32-2.72ZM74.158 70.04l-1.24-2.72c4.48-2.56 5.08-6.4 5.08-6.4l3.48 9.72-11.56 5.6-1.52-2.44 5.76-3.76Z"
-                      ></path>
-                    </svg>
-                  </div>
-                  <span class="text-xs font-semibold">R11 Kawasaki</span>
+    @for (item of carousel; track $index) {
+      <div ngxSlickItem
+        class="w-full bg-[#213743] rounded shadow-md gap-2 overflow-hidden mt-6 race-slide"
+      >
+        <div class="flex flex-col">
+          <div class="flex flex-col gap-y-1 px-3 py-2">
+            <div class="flex justify-between items-center">
+              <div class="flex items-center gap-x-2">
+                <div>
+                  <svg fill="" viewBox="0 0 96 96" class="horse-icon">
+                    <title></title>
+                    <path
+                      fill-rule="evenodd"
+                      clip-rule="evenodd"
+                      d="m89.6 14.32-2.4 4.56h.04L96.04 35l-4.88 4.36L84.88 35c-2.24-.72-3.08-3.64-3.08-3.64L74.6 48.2c-3.32 10.72-5.16 12.08-7.28 13.44L54.24 77.56l-13.88-4.48 1.68-2.72 9.6 2.36 4.68-12.56c-12.24-1.32-23.16-7.56-23.16-7.56-2.28 6.08-5.84 9.84-7.88 11.88l9.72 9.4-7.04 7.8-3.76-2.2 3.12-5-13.2-10.28c6.28-4.24 6.6-10.12 6.6-10.12-5.76-1.52-8.72-9.24-8.72-9.24-7.96 3.8-12 14.44-12 14.44V45.52C17.24 28.88 26.08 28.4 26.08 28.4c7.099-.671 10.416.253 14.047 1.265 2.424.676 4.989 1.391 8.913 1.695 9.8.76 13.68-2.72 13.68-2.72 9.96-9.68 15.56-11.6 15.56-11.6l11.32-2.72ZM74.158 70.04l-1.24-2.72c4.48-2.56 5.08-6.4 5.08-6.4l3.48 9.72-11.56 5.6-1.52-2.44 5.76-3.76Z"
+                    ></path>
+                  </svg>
                 </div>
-                <div class="flex items-center gap-x-2">
-                  <div>
-                    <svg fill="" viewBox="0 0 64 64" class="live-icon">
-                      <title></title>
-                      <path
-                        fill-rule="evenodd"
-                        clip-rule="evenodd"
-                        d="M0 49.36V0h64v49.36H0ZM23.013 9.893v29.574l23.68-14.8-23.68-14.774ZM10.667 56h42.666v8H10.667v-8Z"
-                      ></path>
-                    </svg>
-                  </div>
-                  <div>
-                    <span class="text-xs font-semibold">12m</span>
-                  </div>
-                </div>
+                <span class="text-xs font-semibold">R11 Kawasaki</span>
               </div>
-              <div class="flex justify-between items-center">
-                <div class="flex items-center gap-x-2">
-                  <div>
-                    <svg
-                      fill=""
-                      viewBox="0 0 96 96"
-                      class="race-distance-icon"
-                      style=""
-                    >
-                      <title></title>
-                      <path
-                        d="M48 96c26.51 0 48-21.49 48-48S74.51 0 48 0 0 21.49 0 48s21.49 48 48 48Z"
-                        fill="#F0F0F0"
-                      ></path>
-                      <path
-                        d="M48 68.87c11.526 0 20.87-9.344 20.87-20.87 0-11.526-9.344-20.87-20.87-20.87-11.526 0-20.87 9.344-20.87 20.87 0 11.526 9.344 20.87 20.87 20.87Z"
-                        fill="#D80027"
-                      ></path>
-                    </svg>
-                  </div>
-                  <span class="text-xs font-medium">1500m</span>
+              <div class="flex items-center gap-x-2">
+                <div>
+                  <svg fill="" viewBox="0 0 64 64" class="live-icon">
+                    <title></title>
+                    <path
+                      fill-rule="evenodd"
+                      clip-rule="evenodd"
+                      d="M0 49.36V0h64v49.36H0ZM23.013 9.893v29.574l23.68-14.8-23.68-14.774ZM10.667 56h42.666v8H10.667v-8Z"
+                    ></path>
+                  </svg>
                 </div>
-                <div class="flex items-center justify-center">
-                  <div class="text-[#b1bad3] text-xs font-semibold">Win</div>
+                <div>
+                  <span class="text-xs font-semibold">12m</span>
                 </div>
               </div>
             </div>
-            <!-- event markets -->
-            <div class="flex flex-col">
-              <div
-                class="flex flex-col border-t border-solid border-t-gray-400"
-              >
-                <div class="flex justify-between items-center py-2 px-3">
-                  <div class="flex items-center gap-x-3">
-                    <div class="player-icon-bg player-1-icon"></div>
-                    <div class="flex flex-col">
-                      <div class="text-white text-xs font-semibold">
-                        2. Greatrix (4)
+            <div class="flex justify-between items-center">
+              <div class="flex items-center gap-x-2">
+                <div>
+                  <svg
+                    fill=""
+                    viewBox="0 0 96 96"
+                    class="race-distance-icon"
+                    style=""
+                  >
+                    <title></title>
+                    <path
+                      d="M48 96c26.51 0 48-21.49 48-48S74.51 0 48 0 0 21.49 0 48s21.49 48 48 48Z"
+                      fill="#F0F0F0"
+                    ></path>
+                    <path
+                      d="M48 68.87c11.526 0 20.87-9.344 20.87-20.87 0-11.526-9.344-20.87-20.87-20.87-11.526 0-20.87 9.344-20.87 20.87 0 11.526 9.344 20.87 20.87 20.87Z"
+                      fill="#D80027"
+                    ></path>
+                  </svg>
+                </div>
+                <span class="text-xs font-medium">1500m</span>
+              </div>
+              <div class="flex items-center justify-center">
+                <div class="text-[#b1bad3] text-xs font-semibold">Win</div>
+              </div>
+            </div>
+          </div>
+          <!-- event markets -->
+          <div class="flex flex-col">
+            <div
+              class="flex flex-col border-t border-solid border-t-gray-400"
+            >
+              <div class="flex justify-between items-center py-2 px-3">
+                <div class="flex items-center gap-x-3">
+                  <div class="player-icon-bg player-1-icon"></div>
+                  <div class="flex flex-col">
+                    <div class="text-white text-xs font-semibold">
+                      2. Greatrix (4)
+                    </div>
+                    <div class="grid grid-cols-[6.5ch_auto] gap-y-2">
+                      <div class="flex items-center gap-x-1">
+                        <div
+                          class="text-white bg-[#2f4553] text-xs p-1 rounded-[3px]"
+                        >
+                          W
+                        </div>
+                        <span class="text-[#b1bad3] text-xs">58kg</span>
                       </div>
-                      <div class="grid grid-cols-[6.5ch_auto] gap-y-2">
-                        <div class="flex items-center gap-x-1">
-                          <div
-                            class="text-white bg-[#2f4553] text-xs p-1 rounded-[3px]"
-                          >
-                            W
-                          </div>
-                          <span class="text-[#b1bad3] text-xs">58kg</span>
+                      <div class="flex items-center gap-x-1">
+                        <div
+                          class="text-white bg-[#2f4553] text-xs p-1 rounded-[3px]"
+                        >
+                          J
                         </div>
-                        <div class="flex items-center gap-x-1">
-                          <div
-                            class="text-white bg-[#2f4553] text-xs p-1 rounded-[3px]"
-                          >
-                            J
-                          </div>
-                          <span class="text-[#b1bad3] text-xs">58kg</span>
+                        <span class="text-[#b1bad3] text-xs">58kg</span>
+                      </div>
+                      <div class="flex items-center gap-x-1">
+                        <div
+                          class="text-white bg-[#2f4553] text-xs p-1 rounded-[3px]"
+                        >
+                          F
                         </div>
-                        <div class="flex items-center gap-x-1">
-                          <div
-                            class="text-white bg-[#2f4553] text-xs p-1 rounded-[3px]"
-                          >
-                            F
-                          </div>
-                          <span class="text-[#b1bad3] text-xs">58kg</span>
+                        <span class="text-[#b1bad3] text-xs">58kg</span>
+                      </div>
+                      <div class="flex items-center gap-x-1">
+                        <div
+                          class="text-white bg-[#2f4553] text-xs p-1 rounded-[3px]"
+                        >
+                          T
                         </div>
-                        <div class="flex items-center gap-x-1">
-                          <div
-                            class="text-white bg-[#2f4553] text-xs p-1 rounded-[3px]"
-                          >
-                            T
-                          </div>
-                          <span class="text-[#b1bad3] text-xs">58kg</span>
-                        </div>
+                        <span class="text-[#b1bad3] text-xs">58kg</span>
                       </div>
                     </div>
-                  </div>
-                  <div
-                    class="flex rounded justify-center items-center bg-[#071824] h-[35px] px-6"
-                  >
-                    <svg fill="" viewBox="0 0 64 64" class="suspended-icon">
-                      <title></title>
-                      <path
-                        d="M53.998 31V21C53.874 9.382 44.432.01 32.8 0h-1.6C19.496.012 10.012 9.496 10 21.198V31H6.62v33h50.76V31h-3.382Zm-36-9.8c.006-7.288 5.912-13.194 13.2-13.2h1.6c7.288.006 13.194 5.912 13.2 13.2V31h-28v-9.8Zm17 29V55a3.001 3.001 0 0 1-6 0v-4.81c-1.806-1.056-3-2.988-3-5.196a6 6 0 1 1 9.028 5.18l-.028.016v.01Z"
-                      ></path>
-                    </svg>
                   </div>
                 </div>
-              </div>
-              <div
-                class="flex flex-col border-t border-solid border-t-gray-400"
-              >
-                <div class="flex justify-between items-center py-2 px-3">
-                  <div class="flex items-center gap-x-3">
-                    <div class="player-icon-bg player-2-icon"></div>
-                    <div class="flex flex-col">
-                      <div class="text-white text-xs font-semibold">
-                        2. Greatrix (4)
-                      </div>
-                      <div class="grid grid-cols-[6.5ch_auto] gap-y-2">
-                        <div class="flex items-center gap-x-1">
-                          <div
-                            class="text-white bg-[#2f4553] text-xs p-1 rounded-[3px]"
-                          >
-                            W
-                          </div>
-                          <span class="text-[#b1bad3] text-xs">58kg</span>
-                        </div>
-                        <div class="flex items-center gap-x-1">
-                          <div
-                            class="text-white bg-[#2f4553] text-xs p-1 rounded-[3px]"
-                          >
-                            J
-                          </div>
-                          <span class="text-[#b1bad3] text-xs">58kg</span>
-                        </div>
-                        <div class="flex items-center gap-x-1">
-                          <div
-                            class="text-white bg-[#2f4553] text-xs p-1 rounded-[3px]"
-                          >
-                            F
-                          </div>
-                          <span class="text-[#b1bad3] text-xs">58kg</span>
-                        </div>
-                        <div class="flex items-center gap-x-1">
-                          <div
-                            class="text-white bg-[#2f4553] text-xs p-1 rounded-[3px]"
-                          >
-                            T
-                          </div>
-                          <span class="text-[#b1bad3] text-xs">58kg</span>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-                  <div
-                    class="flex rounded justify-center items-center bg-[#071824] h-[35px] px-6"
-                  >
-                    <svg fill="" viewBox="0 0 64 64" class="suspended-icon">
-                      <title></title>
-                      <path
-                        d="M53.998 31V21C53.874 9.382 44.432.01 32.8 0h-1.6C19.496.012 10.012 9.496 10 21.198V31H6.62v33h50.76V31h-3.382Zm-36-9.8c.006-7.288 5.912-13.194 13.2-13.2h1.6c7.288.006 13.194 5.912 13.2 13.2V31h-28v-9.8Zm17 29V55a3.001 3.001 0 0 1-6 0v-4.81c-1.806-1.056-3-2.988-3-5.196a6 6 0 1 1 9.028 5.18l-.028.016v.01Z"
-                      ></path>
-                    </svg>
-                  </div>
+                <div
+                  class="flex rounded justify-center items-center bg-[#071824] h-[35px] px-6"
+                >
+                  <svg fill="" viewBox="0 0 64 64" class="suspended-icon">
+                    <title></title>
+                    <path
+                      d="M53.998 31V21C53.874 9.382 44.432.01 32.8 0h-1.6C19.496.012 10.012 9.496 10 21.198V31H6.62v33h50.76V31h-3.382Zm-36-9.8c.006-7.288 5.912-13.194 13.2-13.2h1.6c7.288.006 13.194 5.912 13.2 13.2V31h-28v-9.8Zm17 29V55a3.001 3.001 0 0 1-6 0v-4.81c-1.806-1.056-3-2.988-3-5.196a6 6 0 1 1 9.028 5.18l-.028.016v.01Z"
+                    ></path>
+                  </svg>
                 </div>
               </div>
-              <div
-                class="flex flex-col border-t border-solid border-t-gray-400"
-              >
-                <div class="flex justify-between items-center py-2 px-3">
-                  <div class="flex items-center gap-x-3">
-                    <div class="player-icon-bg player-3-icon"></div>
-                    <div class="flex flex-col">
-                      <div class="text-white text-xs font-semibold">
-                        2. Greatrix (4)
+            </div>
+            <div
+              class="flex flex-col border-t border-solid border-t-gray-400"
+            >
+              <div class="flex justify-between items-center py-2 px-3">
+                <div class="flex items-center gap-x-3">
+                  <div class="player-icon-bg player-2-icon"></div>
+                  <div class="flex flex-col">
+                    <div class="text-white text-xs font-semibold">
+                      2. Greatrix (4)
+                    </div>
+                    <div class="grid grid-cols-[6.5ch_auto] gap-y-2">
+                      <div class="flex items-center gap-x-1">
+                        <div
+                          class="text-white bg-[#2f4553] text-xs p-1 rounded-[3px]"
+                        >
+                          W
+                        </div>
+                        <span class="text-[#b1bad3] text-xs">58kg</span>
                       </div>
-                      <div class="grid grid-cols-[6.5ch_auto] gap-y-2">
-                        <div class="flex items-center gap-x-1">
-                          <div
-                            class="text-white bg-[#2f4553] text-xs p-1 rounded-[3px]"
-                          >
-                            W
-                          </div>
-                          <span class="text-[#b1bad3] text-xs">58kg</span>
+                      <div class="flex items-center gap-x-1">
+                        <div
+                          class="text-white bg-[#2f4553] text-xs p-1 rounded-[3px]"
+                        >
+                          J
                         </div>
-                        <div class="flex items-center gap-x-1">
-                          <div
-                            class="text-white bg-[#2f4553] text-xs p-1 rounded-[3px]"
-                          >
-                            J
-                          </div>
-                          <span class="text-[#b1bad3] text-xs">58kg</span>
+                        <span class="text-[#b1bad3] text-xs">58kg</span>
+                      </div>
+                      <div class="flex items-center gap-x-1">
+                        <div
+                          class="text-white bg-[#2f4553] text-xs p-1 rounded-[3px]"
+                        >
+                          F
                         </div>
-                        <div class="flex items-center gap-x-1">
-                          <div
-                            class="text-white bg-[#2f4553] text-xs p-1 rounded-[3px]"
-                          >
-                            F
-                          </div>
-                          <span class="text-[#b1bad3] text-xs">58kg</span>
+                        <span class="text-[#b1bad3] text-xs">58kg</span>
+                      </div>
+                      <div class="flex items-center gap-x-1">
+                        <div
+                          class="text-white bg-[#2f4553] text-xs p-1 rounded-[3px]"
+                        >
+                          T
                         </div>
-                        <div class="flex items-center gap-x-1">
-                          <div
-                            class="text-white bg-[#2f4553] text-xs p-1 rounded-[3px]"
-                          >
-                            T
-                          </div>
-                          <span class="text-[#b1bad3] text-xs">58kg</span>
-                        </div>
+                        <span class="text-[#b1bad3] text-xs">58kg</span>
                       </div>
                     </div>
                   </div>
-                  <div
-                    class="flex rounded justify-center items-center bg-[#071824] h-[35px] px-6"
-                  >
-                    <svg fill="" viewBox="0 0 64 64" class="suspended-icon">
-                      <title></title>
-                      <path
-                        d="M53.998 31V21C53.874 9.382 44.432.01 32.8 0h-1.6C19.496.012 10.012 9.496 10 21.198V31H6.62v33h50.76V31h-3.382Zm-36-9.8c.006-7.288 5.912-13.194 13.2-13.2h1.6c7.288.006 13.194 5.912 13.2 13.2V31h-28v-9.8Zm17 29V55a3.001 3.001 0 0 1-6 0v-4.81c-1.806-1.056-3-2.988-3-5.196a6 6 0 1 1 9.028 5.18l-.028.016v.01Z"
-                      ></path>
-                    </svg>
+                </div>
+                <div
+                  class="flex rounded justify-center items-center bg-[#071824] h-[35px] px-6"
+                >
+                  <svg fill="" viewBox="0 0 64 64" class="suspended-icon">
+                    <title></title>
+                    <path
+                      d="M53.998 31V21C53.874 9.382 44.432.01 32.8 0h-1.6C19.496.012 10.012 9.496 10 21.198V31H6.62v33h50.76V31h-3.382Zm-36-9.8c.006-7.288 5.912-13.194 13.2-13.2h1.6c7.288.006 13.194 5.912 13.2 13.2V31h-28v-9.8Zm17 29V55a3.001 3.001 0 0 1-6 0v-4.81c-1.806-1.056-3-2.988-3-5.196a6 6 0 1 1 9.028 5.18l-.028.016v.01Z"
+                    ></path>
+                  </svg>
+                </div>
+              </div>
+            </div>
+            <div
+              class="flex flex-col border-t border-solid border-t-gray-400"
+            >
+              <div class="flex justify-between items-center py-2 px-3">
+                <div class="flex items-center gap-x-3">
+                  <div class="player-icon-bg player-3-icon"></div>
+                  <div class="flex flex-col">
+                    <div class="text-white text-xs font-semibold">
+                      2. Greatrix (4)
+                    </div>
+                    <div class="grid grid-cols-[6.5ch_auto] gap-y-2">
+                      <div class="flex items-center gap-x-1">
+                        <div
+                          class="text-white bg-[#2f4553] text-xs p-1 rounded-[3px]"
+                        >
+                          W
+                        </div>
+                        <span class="text-[#b1bad3] text-xs">58kg</span>
+                      </div>
+                      <div class="flex items-center gap-x-1">
+                        <div
+                          class="text-white bg-[#2f4553] text-xs p-1 rounded-[3px]"
+                        >
+                          J
+                        </div>
+                        <span class="text-[#b1bad3] text-xs">58kg</span>
+                      </div>
+                      <div class="flex items-center gap-x-1">
+                        <div
+                          class="text-white bg-[#2f4553] text-xs p-1 rounded-[3px]"
+                        >
+                          F
+                        </div>
+                        <span class="text-[#b1bad3] text-xs">58kg</span>
+                      </div>
+                      <div class="flex items-center gap-x-1">
+                        <div
+                          class="text-white bg-[#2f4553] text-xs p-1 rounded-[3px]"
+                        >
+                          T
+                        </div>
+                        <span class="text-[#b1bad3] text-xs">58kg</span>
+                      </div>
+                    </div>
                   </div>
+                </div>
+                <div
+                  class="flex rounded justify-center items-center bg-[#071824] h-[35px] px-6"
+                >
+                  <svg fill="" viewBox="0 0 64 64" class="suspended-icon">
+                    <title></title>
+                    <path
+                      d="M53.998 31V21C53.874 9.382 44.432.01 32.8 0h-1.6C19.496.012 10.012 9.496 10 21.198V31H6.62v33h50.76V31h-3.382Zm-36-9.8c.006-7.288 5.912-13.194 13.2-13.2h1.6c7.288.006 13.194 5.912 13.2 13.2V31h-28v-9.8Zm17 29V55a3.001 3.001 0 0 1-6 0v-4.81c-1.806-1.056-3-2.988-3-5.196a6 6 0 1 1 9.028 5.18l-.028.016v.01Z"
+                    ></path>
+                  </svg>
                 </div>
               </div>
             </div>
           </div>
         </div>
-      </swiper-slide>
-      <swiper-slide>
-        <div
-          class="w-full bg-[#213743] rounded shadow-md gap-2 overflow-hidden mt-6"
-        >
-          <div class="flex flex-col">
-            <div class="flex flex-col gap-y-1 px-3 py-2">
-              <div class="flex justify-between items-center">
-                <div class="flex items-center gap-x-2">
-                  <div>
-                    <svg fill="" viewBox="0 0 96 96" class="horse-icon">
-                      <title></title>
-                      <path
-                        fill-rule="evenodd"
-                        clip-rule="evenodd"
-                        d="m89.6 14.32-2.4 4.56h.04L96.04 35l-4.88 4.36L84.88 35c-2.24-.72-3.08-3.64-3.08-3.64L74.6 48.2c-3.32 10.72-5.16 12.08-7.28 13.44L54.24 77.56l-13.88-4.48 1.68-2.72 9.6 2.36 4.68-12.56c-12.24-1.32-23.16-7.56-23.16-7.56-2.28 6.08-5.84 9.84-7.88 11.88l9.72 9.4-7.04 7.8-3.76-2.2 3.12-5-13.2-10.28c6.28-4.24 6.6-10.12 6.6-10.12-5.76-1.52-8.72-9.24-8.72-9.24-7.96 3.8-12 14.44-12 14.44V45.52C17.24 28.88 26.08 28.4 26.08 28.4c7.099-.671 10.416.253 14.047 1.265 2.424.676 4.989 1.391 8.913 1.695 9.8.76 13.68-2.72 13.68-2.72 9.96-9.68 15.56-11.6 15.56-11.6l11.32-2.72ZM74.158 70.04l-1.24-2.72c4.48-2.56 5.08-6.4 5.08-6.4l3.48 9.72-11.56 5.6-1.52-2.44 5.76-3.76Z"
-                      ></path>
-                    </svg>
-                  </div>
-                  <span class="text-xs font-semibold">R11 Kawasaki</span>
-                </div>
-                <div class="flex items-center gap-x-2">
-                  <div>
-                    <svg fill="" viewBox="0 0 64 64" class="live-icon">
-                      <title></title>
-                      <path
-                        fill-rule="evenodd"
-                        clip-rule="evenodd"
-                        d="M0 49.36V0h64v49.36H0ZM23.013 9.893v29.574l23.68-14.8-23.68-14.774ZM10.667 56h42.666v8H10.667v-8Z"
-                      ></path>
-                    </svg>
-                  </div>
-                  <div>
-                    <span class="text-xs font-semibold">12m</span>
-                  </div>
-                </div>
-              </div>
-              <div class="flex justify-between items-center">
-                <div class="flex items-center gap-x-2">
-                  <div>
-                    <svg
-                      fill=""
-                      viewBox="0 0 96 96"
-                      class="race-distance-icon"
-                      style=""
-                    >
-                      <title></title>
-                      <path
-                        d="M48 96c26.51 0 48-21.49 48-48S74.51 0 48 0 0 21.49 0 48s21.49 48 48 48Z"
-                        fill="#F0F0F0"
-                      ></path>
-                      <path
-                        d="M48 68.87c11.526 0 20.87-9.344 20.87-20.87 0-11.526-9.344-20.87-20.87-20.87-11.526 0-20.87 9.344-20.87 20.87 0 11.526 9.344 20.87 20.87 20.87Z"
-                        fill="#D80027"
-                      ></path>
-                    </svg>
-                  </div>
-                  <span class="text-xs font-medium">1500m</span>
-                </div>
-                <div class="flex items-center justify-center">
-                  <div class="text-[#b1bad3] text-xs font-semibold">Win</div>
-                </div>
-              </div>
-            </div>
-            <!-- event markets -->
-            <div class="flex flex-col">
-              <div
-                class="flex flex-col border-t border-solid border-t-gray-400"
-              >
-                <div class="flex justify-between items-center py-2 px-3">
-                  <div class="flex items-center gap-x-3">
-                    <div class="player-icon-bg player-1-icon"></div>
-                    <div class="flex flex-col">
-                      <div class="text-white text-xs font-semibold">
-                        2. Greatrix (4)
-                      </div>
-                      <div class="grid grid-cols-[6.5ch_auto] gap-y-2">
-                        <div class="flex items-center gap-x-1">
-                          <div
-                            class="text-white bg-[#2f4553] text-xs p-1 rounded-[3px]"
-                          >
-                            W
-                          </div>
-                          <span class="text-[#b1bad3] text-xs">58kg</span>
-                        </div>
-                        <div class="flex items-center gap-x-1">
-                          <div
-                            class="text-white bg-[#2f4553] text-xs p-1 rounded-[3px]"
-                          >
-                            J
-                          </div>
-                          <span class="text-[#b1bad3] text-xs">58kg</span>
-                        </div>
-                        <div class="flex items-center gap-x-1">
-                          <div
-                            class="text-white bg-[#2f4553] text-xs p-1 rounded-[3px]"
-                          >
-                            F
-                          </div>
-                          <span class="text-[#b1bad3] text-xs">58kg</span>
-                        </div>
-                        <div class="flex items-center gap-x-1">
-                          <div
-                            class="text-white bg-[#2f4553] text-xs p-1 rounded-[3px]"
-                          >
-                            T
-                          </div>
-                          <span class="text-[#b1bad3] text-xs">58kg</span>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-                  <div
-                    class="flex rounded justify-center items-center bg-[#071824] h-[35px] px-6"
-                  >
-                    <svg fill="" viewBox="0 0 64 64" class="suspended-icon">
-                      <title></title>
-                      <path
-                        d="M53.998 31V21C53.874 9.382 44.432.01 32.8 0h-1.6C19.496.012 10.012 9.496 10 21.198V31H6.62v33h50.76V31h-3.382Zm-36-9.8c.006-7.288 5.912-13.194 13.2-13.2h1.6c7.288.006 13.194 5.912 13.2 13.2V31h-28v-9.8Zm17 29V55a3.001 3.001 0 0 1-6 0v-4.81c-1.806-1.056-3-2.988-3-5.196a6 6 0 1 1 9.028 5.18l-.028.016v.01Z"
-                      ></path>
-                    </svg>
-                  </div>
-                </div>
-              </div>
-              <div
-                class="flex flex-col border-t border-solid border-t-gray-400"
-              >
-                <div class="flex justify-between items-center py-2 px-3">
-                  <div class="flex items-center gap-x-3">
-                    <div class="player-icon-bg player-2-icon"></div>
-                    <div class="flex flex-col">
-                      <div class="text-white text-xs font-semibold">
-                        2. Greatrix (4)
-                      </div>
-                      <div class="grid grid-cols-[6.5ch_auto] gap-y-2">
-                        <div class="flex items-center gap-x-1">
-                          <div
-                            class="text-white bg-[#2f4553] text-xs p-1 rounded-[3px]"
-                          >
-                            W
-                          </div>
-                          <span class="text-[#b1bad3] text-xs">58kg</span>
-                        </div>
-                        <div class="flex items-center gap-x-1">
-                          <div
-                            class="text-white bg-[#2f4553] text-xs p-1 rounded-[3px]"
-                          >
-                            J
-                          </div>
-                          <span class="text-[#b1bad3] text-xs">58kg</span>
-                        </div>
-                        <div class="flex items-center gap-x-1">
-                          <div
-                            class="text-white bg-[#2f4553] text-xs p-1 rounded-[3px]"
-                          >
-                            F
-                          </div>
-                          <span class="text-[#b1bad3] text-xs">58kg</span>
-                        </div>
-                        <div class="flex items-center gap-x-1">
-                          <div
-                            class="text-white bg-[#2f4553] text-xs p-1 rounded-[3px]"
-                          >
-                            T
-                          </div>
-                          <span class="text-[#b1bad3] text-xs">58kg</span>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-                  <div
-                    class="flex rounded justify-center items-center bg-[#071824] h-[35px] px-6"
-                  >
-                    <svg fill="" viewBox="0 0 64 64" class="suspended-icon">
-                      <title></title>
-                      <path
-                        d="M53.998 31V21C53.874 9.382 44.432.01 32.8 0h-1.6C19.496.012 10.012 9.496 10 21.198V31H6.62v33h50.76V31h-3.382Zm-36-9.8c.006-7.288 5.912-13.194 13.2-13.2h1.6c7.288.006 13.194 5.912 13.2 13.2V31h-28v-9.8Zm17 29V55a3.001 3.001 0 0 1-6 0v-4.81c-1.806-1.056-3-2.988-3-5.196a6 6 0 1 1 9.028 5.18l-.028.016v.01Z"
-                      ></path>
-                    </svg>
-                  </div>
-                </div>
-              </div>
-              <div
-                class="flex flex-col border-t border-solid border-t-gray-400"
-              >
-                <div class="flex justify-between items-center py-2 px-3">
-                  <div class="flex items-center gap-x-3">
-                    <div class="player-icon-bg player-3-icon"></div>
-                    <div class="flex flex-col">
-                      <div class="text-white text-xs font-semibold">
-                        2. Greatrix (4)
-                      </div>
-                      <div class="grid grid-cols-[6.5ch_auto] gap-y-2">
-                        <div class="flex items-center gap-x-1">
-                          <div
-                            class="text-white bg-[#2f4553] text-xs p-1 rounded-[3px]"
-                          >
-                            W
-                          </div>
-                          <span class="text-[#b1bad3] text-xs">58kg</span>
-                        </div>
-                        <div class="flex items-center gap-x-1">
-                          <div
-                            class="text-white bg-[#2f4553] text-xs p-1 rounded-[3px]"
-                          >
-                            J
-                          </div>
-                          <span class="text-[#b1bad3] text-xs">58kg</span>
-                        </div>
-                        <div class="flex items-center gap-x-1">
-                          <div
-                            class="text-white bg-[#2f4553] text-xs p-1 rounded-[3px]"
-                          >
-                            F
-                          </div>
-                          <span class="text-[#b1bad3] text-xs">58kg</span>
-                        </div>
-                        <div class="flex items-center gap-x-1">
-                          <div
-                            class="text-white bg-[#2f4553] text-xs p-1 rounded-[3px]"
-                          >
-                            T
-                          </div>
-                          <span class="text-[#b1bad3] text-xs">58kg</span>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-                  <div
-                    class="flex rounded justify-center items-center bg-[#071824] h-[35px] px-6"
-                  >
-                    <svg fill="" viewBox="0 0 64 64" class="suspended-icon">
-                      <title></title>
-                      <path
-                        d="M53.998 31V21C53.874 9.382 44.432.01 32.8 0h-1.6C19.496.012 10.012 9.496 10 21.198V31H6.62v33h50.76V31h-3.382Zm-36-9.8c.006-7.288 5.912-13.194 13.2-13.2h1.6c7.288.006 13.194 5.912 13.2 13.2V31h-28v-9.8Zm17 29V55a3.001 3.001 0 0 1-6 0v-4.81c-1.806-1.056-3-2.988-3-5.196a6 6 0 1 1 9.028 5.18l-.028.016v.01Z"
-                      ></path>
-                    </svg>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </swiper-slide>
-    </swiper-container>
+      </div>
+    }
+        
+</ngx-slick-carousel>
+    
   </div>
   <!-- All Races Markets -->
   <div class="flex flex-col mt-6">
