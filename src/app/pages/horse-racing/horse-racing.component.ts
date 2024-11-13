@@ -1,7 +1,5 @@
 import { CommonModule } from '@angular/common';
-import { AfterViewInit, Component, CUSTOM_ELEMENTS_SCHEMA, ElementRef, HostListener, ViewChild } from '@angular/core';
-import { SwiperContainer } from 'swiper/element';
-import { Swiper, SwiperOptions } from 'swiper/types';
+import { Component, CUSTOM_ELEMENTS_SCHEMA, HostListener, ViewChild } from '@angular/core';
 import { SlickCarouselComponent, SlickCarouselModule } from 'ngx-slick-carousel';
 @Component({
   selector: 'app-horse-racing',
@@ -12,7 +10,7 @@ import { SlickCarouselComponent, SlickCarouselModule } from 'ngx-slick-carousel'
   schemas:[CUSTOM_ELEMENTS_SCHEMA]
 })
 export class HorseRacingComponent {
-  
+
 @ViewChild('slickModal') slickModal!: SlickCarouselComponent;
   tabKey:string='friday'
   accIsOpen:boolean=true
@@ -53,14 +51,14 @@ export class HorseRacingComponent {
   }
 
   prev() {
-    
+
     if(this.currentSlideIndex!==0){
       this.slickModal.slickPrev();
     }
   }
-  
+
   next() {
-    
+
     if(this.currentSlideIndex!==this.slideCount){
       this.slickModal.slickNext();
     }

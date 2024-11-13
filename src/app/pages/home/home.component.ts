@@ -1,7 +1,5 @@
 import {NgClass, NgFor, NgIf, NgStyle} from '@angular/common';
-import {Component, CUSTOM_ELEMENTS_SCHEMA, ElementRef, ViewChild} from '@angular/core';
-import {SwiperContainer} from 'swiper/element';
-import {SwiperOptions} from 'swiper/types';
+import {Component, CUSTOM_ELEMENTS_SCHEMA, ViewChild} from '@angular/core';
 import {ToggleService} from '../../services/toggle.service';
 import {BetSlipComponent} from '../../shared/bet-slip/bet-slip.component';
 import { SlickCarouselComponent, SlickCarouselModule } from 'ngx-slick-carousel';
@@ -94,7 +92,7 @@ export class HomeComponent {
 
   ];
   index = 0;
-  
+
   heroSliderConfig = {
     slidesToShow: 2,
     slidesToScroll: 2,
@@ -111,7 +109,7 @@ export class HomeComponent {
         }
       },
     ],
-    
+
   };
 
   topSportsConfig = {
@@ -130,9 +128,9 @@ export class HomeComponent {
         }
       },
     ],
-    
+
   };
- 
+
 
   heroSlickInit(e: any) {
     this.heroSlideCount = e.slick.slideCount;
@@ -161,14 +159,14 @@ export class HomeComponent {
       this.sportsSlider.slickPrev();
     }
   }
-  
+
   heroNext() {
     if(this.heroCurrentSlideIndex!==this.heroSlideCount){
       this.heroSlider.slickNext();
     }
   }
   sportsNext() {
-    
+
     if(this.sportsCurrentSlideIndex!==this.sportsSlideCount){
       this.sportsSlider.slickNext();
     }
@@ -210,6 +208,6 @@ export class HomeComponent {
     this.LiveTab = tab;
   }
 
- 
+
 
 }
