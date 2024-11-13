@@ -1,3 +1,276 @@
 .scrollable{
     @apply flex flex-col w-full max-w-full h-full flex-1 pt-0 [scrollbar-color:#2f4553] overflow-y-auto overflow-x-hidden [scrollbar-width:thin]
 }
+.parent-svelte{
+    @apply  flex w-full flex-col items-center px-[3vw] py-0 
+}
+.ctainer{
+    @apply   w-full max-w-[1200px] self-center h-0
+}
+.ctainer-svelte{
+    @apply    w-full max-w-[1200px] self-center
+}
+.layout-spacing{
+    @apply    pb-[32px] flex flex-col w-full
+}
+
+.layout-spacing-varient{
+    @apply     [padding-bottom:unset] flex flex-col w-full
+}
+.mrt{
+    @apply   mt-[2rem]
+}
+.back-root{
+    @apply    flex gap-[0.75rem]
+}
+.back-arrow{
+    @apply     bg-[rgb(15,33,46)] rounded-[calc(0.5rem-4px)] select-none h-[11px] flex
+}
+.bread-crumb-main {
+    @apply flex  select-none bg-[rgb(15,33,46)] h-[44px] rounded-[0.25rem] overflow-hidden
+  } 
+  /* .svg-main {
+    @apply py-[15px] px-[20px] bg-[#0f212e] rounded-sm;
+  }
+  .svg-main svg {
+    @apply w-[14.2px];
+} */
+.svg-icon {
+    @apply pointer-events-none [stroke-width:0] fill-current stroke-current flex-shrink-0 inline-block size-[1em];
+  }
+
+.arrow-svg-icon {
+    @apply pointer-events-none [stroke-width:0] fill-current stroke-current flex-shrink-0 inline-block size-[1em];
+  }
+/* .text-main {
+    @apply px-5 text-sm bg-[#0f212e] rounded-sm leading-[44px] flex items-center;
+  }
+.text-main span {
+    @apply mx-2;
+} */
+.slash {
+    transform: skew(-20deg);
+    @apply hidden lg:inline-flex w-0.5 h-[3.2em]  bg-[#1a2c38];
+ }  
+ .Turf-text {
+    @apply text-[#fff] text-left justify-start text-sm font-semibold inline-flex items-center
+}
+.wrapper {
+    @apply mt-6 relative p-0 m-0 align-baseline
+}
+.scrollX {
+    @apply  [scrollbar-color:#2f4553] overflow-x-auto overflow-y-hidden  [scrollbar-width:thin] ;
+    transform: translateZ(0);
+    }
+.wrapper-text{
+        @apply text-xs text-[#b1bad3] font-semibold inline-flex items-center justify-start text-left
+ }
+ .tabs-wrapper {
+    @apply   mt-[1.5rem] [scrollbar-color:#2f4553] overflow-x-auto overflow-y-hidden  [scrollbar-width:thin] flex ;
+    transform: translateZ(0);
+ } 
+ .slider{
+    @apply  flex rounded-[3rem] p-[5px] shrink-0 bg-[rgb(15,33,46)]
+}  
+.truncate{
+    @apply  overflow-hidden text-ellipsis whitespace-nowrap
+}  
+.runners-text{
+    @apply text-sm text-[#fff] font-semibold inline-flex items-center justify-start text-left
+}
+.head-text{
+    @apply text-sm text-[#fff] font-semibold  inline text-left
+}
+.sub-text{
+    @apply text-sm text-[#fff] font-normal  inline text-left
+}
+.history-head{
+    @apply  w-full z-[4] flex justify-between items-center bg-none px-4 py-3 text-[#fff] cursor-pointer rounded-[0.25rem]
+}
+.history-list{
+    @apply flex flex-col w-full relative z-0  bg-[rgb(26,44,56)] rounded-[0.25rem];
+    box-shadow: 0 1px 3px 0 rgba(0, 0, 0, .2), 0 1px 2px 0 rgba(0, 0, 0, .12), inset 0 1px rgba(255, 255, 255, .04);
+
+}
+.jockey-text{
+    @apply  text-sm text-[#b1bad3] ml-1
+}
+
+
+
+
+
+.tab-item.active , .tab-item:hover{
+    @apply bg-[#2f4553] text-white
+  }
+
+
+
+
+
+
+/* 
+  sabahat */
+
+  .market-main{
+    @apply bg-[rgb(33_55_67)] rounded shadow-md gap-2 overflow-hidden mt-6
+   }
+   .market-sub{
+    @apply flex items-center justify-between min-h-[40px] px-3
+   }
+   .Runners{
+    @apply relative items-center justify-center rounded-[calc(var(.5rem)-4px)] font-semibold whitespace-nowrap
+    transition disabled:pointer-events-none disabled:opacity-50 focus-visible:outline-2 focus-visible:outline-offset-2 active:scale-[0.98] bg-transparent text-[rgb(177_186_211)] hover:bg-transparent hover:text-white focus-visible:text-white focus-visible:outline-none text-sm leading-none flex gap-1
+   }
+   
+   .flucs-container{
+    @apply  flex items-center gap-4
+   }
+   .flucs-text{
+    @apply flex cursor-pointer h-full pr-2 mt-[2px] text-sm font-semibold text-[rgb(177_186_211)]
+   }
+   
+   .win-contatiner{
+    @apply grid gap-2 max-w-full items-center grid-cols-2 w-36
+   }
+   .win-btn{
+    @apply relative items-center justify-center rounded-[calc(.5rem-4px)] font-semibold whitespace-nowrap  transition disabled:pointer-events-none disabled:opacity-50 focus-visible:outline-2 focus-visible:outline-offset-2 active:scale-[0.98] bg-transparent text-[rgb(177_186_211)] hover:bg-transparent hover:text-white focus-visible:text-white focus-visible:outline-none text-[.875rem] leading-none flex gap-1
+   }
+   .place-text{
+    @apply text-sm font-semibold text-center text-[rgb(177_186_211)]
+   }
+   
+   .divider-border{
+    @apply bg-[rgb(47_69_83)] h-[2px]
+   }
+   
+.layout-spacing:not(.reset).variant-normal.svelte-l4ghjo>{
+    @apply mt-[1.5rem]
+}
+
+span.line-height-default.svelte-17v69ua{
+    @apply leading-[1.5]
+}
+
+.runner-card {
+    grid-template-columns: min-content auto auto;
+    @apply grid cursor-pointer transition duration-200 w-full gap-x-2 py-2 px-3 items-center
+}
+.runner{
+    @apply flex flex-col items-center gap-1
+}
+.arrows {
+    @apply flex flex-col items-center text-[12px]
+  
+}
+.translate-y-\[3px\] {
+    --tw-translate-y: 3px;
+    transform: translate(var(--tw-translate-x), var(--tw-translate-y)) rotate(var(--tw-rotate)) skew(var(--tw-skew-x)) skewY(var(--tw-skew-y)) scaleX(var(--tw-scale-x)) scaleY(var(--tw-scale-y));
+}
+.svg-icon {
+    @apply pointer-events-none flex-shrink-0 inline-block w-[1em] h-[1em]
+   
+}
+.arrow svg {
+    @apply !text-[#557086] 
+}
+label.svelte.svelte {
+    @apply relative inline-flex items-center flex-row justify-start ;
+}
+label .svelte:not(:last-child) {
+    @apply mr-[1rem]
+}
+input.svelte {
+    @apply absolute left-0 opacity-0 z-[-1]
+}
+
+.slider.svelte {
+    @apply relative outline-none w-[2.5em]  h-[1.5em] border-[2px] border-solid border-[#2f4553] rounded-[1em] bg-[#2f4553] [background-size:100%] [background-image:none] [background-position:center] [background-repeat:no-repeat] transition-[.25s]
+}
+.toggle{
+    @apply relative w-[2.5em]  h-[1.5em]  bg-[#2f4553]  peer-focus:outline-none peer-focus:ring-1 peer-focus:ring-white dark:peer-focus:ring-white rounded-full  dark:bg-green-600 peer-checked:after:translate-x-[80%] rtl:peer-checked:after:-translate-x-full peer-checked:after:border-white after:content-[''] after:absolute after:top-[2px] after:start-[2px] after:bg-white after:border-gray-300 after:border after:rounded-full after:h-5 after:w-5 after:transition-all dark:border-gray-600 peer-checked:bg-green-600
+}
+    .indicator.svelte {
+        @apply absolute w-[calc(1.5em-4px)] h-[calc(1.5em-4px)] rounded-[calc(.75em-2px)] bg-[#fff] left-0 transition-transform
+
+    }
+    
+    .silk-wrapper.svelte-snmmmh {
+        @apply flex flex-col w-[32px] min-h-[40px]
+
+    }
+    .silk-icon.svelte-snmmmh {
+        @apply w-[40px] h-[40px] [background-size:cover] [background-repeat:no-repeat] m-[0_-4px]
+
+    }
+    .chevron.svelte-1cbx3va {
+        @apply flex justify-center text-[.75rem]
+      
+    }
+
+    .badge.variant-default {
+        @apply text-[#d5dceb] bg-[#2f4553] inline-flex text-[.625rem] min-w-[2.5ch] 
+      
+    }
+  
+    .badge{
+        @apply font-semibold items-center justify-center rounded-[3px] p-[0_.25rem] whitespace-nowrap leading-[1.5]
+      
+ }
+.luminous-continer{
+    @apply grid grid-flow-col overflow-hidden gap-1 w-fit
+}
+
+.luminous{
+    @apply truncate text-white font-bold text-sm leading-none
+}
+.luminous-num{
+    @apply text-white text-sm leading-none text-left
+}
+.w-content{
+    @apply grid grid-cols-[6.5ch_auto] gap-1
+}
+.alignment{
+    @apply flex items-center gap-1 overflow-hidden
+}
+.weight{
+    @apply truncate text-xs text-[rgb(177_186_211)]
+}
+.right-btn{
+    @apply flex gap-x-2 gap-y-1 min-w-max flex-row justify-end items-center
+}
+.right-btn-con{
+    @apply grid gap-2 max-w-full grid-cols-2 w-36
+}
+.button{
+    @apply flex justify-center items-center h-[35px] rounded-[calc(.5rem-4px)] text-sm font-bold bg-[rgb(7_24_36)] transition-colors duration-150 focus-visible:outline focus-visible:outline-2 focus-visible:outline-white focus-visible:outline-offset-2 
+}
+.btn-amount{
+    @apply leading-normal font-bold transition-colors text-[#B1BAD3] 
+}
+.tony-continer{
+    @apply grid grid-flow-col overflow-hidden gap-1 w-fit
+}
+.tony-sub-continer{
+    @apply truncate text-white font-bold text-sm leading-none
+}
+.tony-num{
+    @apply text-white text-sm leading-none text-left
+}
+.other-con{
+@apply  flex flex-col gap-2 px-4 py-3 justify-center
+}
+.other-text{
+    @apply font-semibold text-[#b1bad3] leading-[1.5] text-[.75rem] inline-flex items-center
+}
+.fluctuations.svelte-1o0p6vf {
+    @apply flex gap-[.5rem] ml-[.25rem] text-[#b1bad3]
+
+}
+
+.fluc.svelte-1o0p6vf {
+    @apply relative text-[.75rem] font-normal items-center flex
+}
+.direction.svelte-1o0p6vf {
+    @apply top-0
+}

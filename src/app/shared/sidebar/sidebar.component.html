@@ -345,7 +345,7 @@
                 <div [ngClass]="{'md:hidden':!isSidebar}">Wallet</div>
               </div>
             </div>
-            <div class="nav-item dropdown-item">
+            <div class="nav-item dropdown-item" routerLink="/vault">
               <div class="title-wrapper">
                 <svg fill="currentColor" viewBox="0 0 64 64" class="svg-icon ">
                   <title></title>
@@ -357,7 +357,7 @@
               </div>
             </div>
 
-            <div class="nav-item dropdown-item">
+            <div class="nav-item dropdown-item" routerLink="/vip-club">
               <div class="title-wrapper">
                 <svg fill="currentColor" viewBox="0 0 96 96" class="svg-icon ">
                   <title></title>
@@ -392,7 +392,7 @@
                 <div [ngClass]="{'md:hidden':!isSidebar}">Notification</div>
               </div>
             </div>
-            <div class="nav-item dropdown-item">
+            <div class="nav-item dropdown-item" routerLink="/setting">
               <div class="title-wrapper">
                 <svg fill="currentColor" viewBox="0 0 64 64" class="svg-icon ">
                   <title></title>
@@ -492,9 +492,8 @@
 
 
         <div class="nav-item">
-
           <app-tooltip [sidebarState]="isSidebar" text="Affiliate">
-            <div class="title-wrapper">
+            <div class="title-wrapper" routerLink="/affiliate">
               <svg fill="currentColor" viewBox="0 0 64 64" class="svg-icon ">
                 <title></title>
                 <path
@@ -588,7 +587,7 @@
           <!-- dropdown inner content -->
           <div class="inner-content" [ngClass]="{'active-dropdown':openBar === 'sponsorships' }">
             <div class="hr-border"></div>
-            <div class="nav-item dropdown-item">
+            <div class="nav-item dropdown-item" routerLink="/drake">
               <div class="title-wrapper">
                 <svg fill="currentColor" viewBox="0 0 96 96" class="svg-icon ">
                   <title></title>
@@ -600,7 +599,7 @@
               </div>
             </div>
 
-            <div class="nav-item dropdown-item">
+            <div class="nav-item dropdown-item" routerLink="/team-f1">
               <div class="title-wrapper">
                 <svg fill="currentColor" viewBox="0 0 96 96" class="svg-icon ">
                   <title></title>
@@ -720,9 +719,9 @@
 
 
 
-        <div class="nav-item">
+        <div class="nav-item" routerLink="/responsible-gambling">
           <app-tooltip [sidebarState]="isSidebar" text="Responsible Gambling">
-            <div class="title-wrapper">
+            <div class="title-wrapper" >
               <svg fill="currentColor" viewBox="0 0 64 64" class="svg-icon ">
                 <title></title>
                 <path
