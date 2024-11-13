@@ -28,7 +28,7 @@ export class PalFulComponent implements OnInit {
   secondRangeValue = 1;
   displayRange = '';
   isChecked: boolean = false;
-  targetDate: Date = new Date('2024-11-12T23:59:59');
+  targetDate: Date = new Date('2024-12-12T23:59:59');
   days: number = 0;
   hours: number = 0;
   minutes: number = 0;
