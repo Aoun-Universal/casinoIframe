@@ -144,6 +144,10 @@ export const routes: Routes = [
         loadComponent: () =>
           import('./pages/stake-offer/stake-offer.component').then((c) => c.StakeOfferComponent),
       },
+      {
+        path:'all-tennis',
+        loadComponent: ()=> import('./pages/all-tennis/all-tennis.component').then((c=>c.AllTennisComponent))
+      }
     ],
   },
 
