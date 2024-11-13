@@ -50,3 +50,7 @@ tr:hover {
 .tab-item:hover {
   @apply bg-[#2f4553] text-white;
 }
+
+::-webkit-scrollbar{
+  display: none;
+}
