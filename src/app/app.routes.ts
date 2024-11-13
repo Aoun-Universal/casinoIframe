@@ -102,8 +102,9 @@ export const routes: Routes = [
           import('./modal/settings-modals/settings/settings.component').then((c) => c.SettingsComponent),
       },
       {
-        path:'horse-racing',
-        component:HorseRacingComponent
+        path: 'providers',
+        loadComponent: () =>
+          import('./pages/providers/providers.component').then((c) => c.ProvidersComponent),
       },
     ],
   },
