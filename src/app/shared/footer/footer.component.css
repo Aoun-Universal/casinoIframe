@@ -1,5 +1,5 @@
 .footer{
-    @apply px-10 py-9 bg-[#071D2A]
+    @apply px-[3vw] py-9 bg-[#071D2A]
 }
 .custom-classes{
     @apply flex flex-col md:flex-row md:justify-between md:items-center gap-3 md:gap-0
@@ -20,7 +20,7 @@
     @apply flex flex-col md:flex md:flex-row  gap-3 md:gap-7 w-full m-auto justify-start;
 }
 .grid-items{
-    @apply w-full md:w-36 bg-gray-500 bg-opacity-[0.40] md:bg-[#071D2A]  flex justify-between md:justify-normal md:flex-col p-4 md:p-0
+    @apply w-full md:w-36 bg-gray-500 bg-opacity-[0.40] md:bg-[#071D2A]  flex justify-between md:justify-normal md:flex-col p-4 md:p-0 rounded-[4px]
 }
 .accordian{
     @apply md:hidden 
@@ -47,7 +47,7 @@
     @apply text-white outline-none text-[12px] border-none bg-gray-500 bg-opacity-0 w-full cursor-pointer md:w-[150px] h-[48px] font-[600]
 }
 .drop{
-    @apply p-[2px]  bg-gray-500 pr-4 md:pr-0 cursor-pointer md:pl-0 pl-3 bg-opacity-[0.40] w-full md:w-[160px] text-center md:rounded-[4px]  hover:bg-opacity-[0.80] 
+    @apply p-[2px]  bg-gray-500 pr-4 md:pr-0 cursor-pointer md:pl-0 pl-3 bg-opacity-[0.40] w-full md:w-[160px] text-center md:rounded-[4px]  hover:bg-opacity-[0.80] rounded-[4px]
 }
 .down-arrow{
     @apply mr-8 md:mr-8

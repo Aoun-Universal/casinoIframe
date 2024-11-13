@@ -1,5 +1,8 @@
+.section{
+    @apply max-w-[1200px] mx-auto
+}
 .vip-cloud{
-    @apply bg-[url('/assets/vipcloud-img/top-background.webp')] bg-center bg-cover w-full max-h-[100%] px-10 py-[6px]
+    @apply bg-[url('/assets/vipcloud-img/top-background.webp')] bg-center bg-cover w-full max-h-[100%] px-[3vw] py-[6px]
 }
 .top-heading{
     @apply text-3xl font-bold tracking-[1px]
@@ -18,7 +21,7 @@
 }
 
 .container{
-    @apply px-10 py-12 flex flex-col min-w-full bg-[#1A2C38]
+    @apply px-[3vw] py-12 flex flex-col min-w-full bg-[#1A2C38]
 }
 .heading2{
     @apply text-center text-xl font-semibold
