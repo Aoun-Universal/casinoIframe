@@ -1,76 +1,250 @@
-<div class="content-wrapper">
-    <div class="page-content" id="main-content">
-        <div class="parent ">
-            <div class="ctainer no-height ">
-                <div class="sizer"></div>
-            </div>
-            <div class="ctainer">
-                <div class="layout-spacing">
-                    <div>
-                        <div class="stack-wrapper">
-                            <div class="wrap">
-                                <div
-                                    class="stack x-space-between y-center gap-medium padding-none direction-horizontal padding-left-auto padding-top-auto padding-bottom-auto padding-right-auto stretch svelte-1cd1boi">
-                                    <div class="stack-child">
-                                        <h1 class="gambling-title"><svg fill="currentColor" viewBox="0 0 64 64"
-                                                class="svg-icon ">
-                                                <title></title>
-                                                <path
-                                                    d="M32 0 5.654 11.306C5.654 52.692 32 64 32 64s26.346-11.306 26.346-52.694L32 0Zm3.546 33.014v13.2h-7.12v-13.2c-3.174-1.41-5.346-4.532-5.346-8.164a8.907 8.907 0 1 1 12.522 8.142l-.056.022Z">
-                                                </path>
-                                            </svg>Responsible Gambling
-                                        </h1>
-                                    </div> <a
-                                        class="inline-flex relative items-center gap-2 justify-center rounded-sm font-semibold whitespace-nowrap ring-offset-background transition disabled:pointer-events-none disabled:opacity-50 focus-visible:outline-2 focus-visible:outline-offset-2 active:scale-[0.98] bg-transparent text-white betterhover:hover:bg-transparent betterhover:hover:text-white focus-visible:outline-none text-sm leading-none [&amp;_svg]:text-grey-200 [&amp;:hover>svg]:text-white"
-                                        href="/casino/home" data-sveltekit-reload="off"
-                                        data-sveltekit-preload-data="off" data-sveltekit-noscroll="off"
-                                        data-content=""><svg fill="currentColor" viewBox="0 0 64 64" class="svg-icon ">
-                                            <title></title>
-                                            <path
-                                                d="m54.827 16.187-7.014-7.014L32 24.987 16.187 9.173l-7.014 7.014L24.987 32 9.173 47.813l7.014 7.014L32 39.013l15.813 15.814 7.014-7.014L39.013 32l15.814-15.813Z">
-                                            </path>
-                                        </svg></a>
-                                </div>
-                            </div>
 
-                            <div class="content-container">
-                                <div class="card variant-default">
-                                    <div class="outer-wrapper svelte-tg1q9b">
-                                        <div class="wrapper svelte-tg1q9b"><a class="nav-item active-border"
-                                                routerLink="/responsible-gambling/stake-smart"
-                                                data-analytics="global-navbar-Stake Smart-tab"><span>Stake Smart</span>
-                                            </a><a class="nav-item"
-                                                routerLink="/responsible-gambling/responsible-gambling-faqs"
-                                                data-sveltekit-preload-data="hover" data-sveltekit-noscroll="off"
-                                                data-analytics="global-navbar-Responsible Gambling FAQ's-tab"><span>Responsible
-                                                    Gambling FAQ's</span> </a><a class="nav-item"
-                                                href="/responsible-gambling/signs"
-                                                data-analytics="global-navbar-Recognise the Signs-tab"><span>Recognise
-                                                    the
-                                                    Signs</span> </a><a class="nav-item"
-                                                href="/responsible-gambling/self-assessment"
-                                                data-analytics="global-navbar-Self-Assessment-tab"><span>Self-Assessment</span>
-                                            </a><a class="nav-item" href="/responsible-gambling/exclusion"
-                                                data-analytics="global-navbar-Self Exclusion-tab"><span>Self
-                                                    Exclusion</span> </a><a class="nav-item"
-                                                href="/responsible-gambling/gambling-limits"
-                                                data-analytics="global-navbar-Gambling Limits-tab"><span>Gambling
-                                                    Limits</span> </a><a class="nav-item"
-                                                href="/responsible-gambling/calculator"
-                                                data-analytics="global-navbar-Budget Calculator-tab"><span>Budget
-                                                    Calculator</span> </a>
-                                            <div class="dash svelte-tg1q9b"
-                                                style="height: 14.2857%; transform: translateY(0%);">
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                                 <router-outlet></router-outlet>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
+
+<div class="good-varient">
+  <div class="ctainer">
+    <div class="flex gap-4 py-2 flex-col md:flex-row md:justify-between items-center">
+      <div class="flex gap-2 items-center">
+        <span class="span-text"
+          ><span class="mr-3"
+            >Update to Level 2 verification so we can help secure your Stake
+            account.</span
+          >
+          <a
+            class="inline-flex relative items-center gap-2 justify-center rounded-sm font-semibold whitespace-nowrap ring-offset-background transition disabled:pointer-events-none disabled:opacity-50 focus-visible:outline-2 focus-visible:outline-offset-2 active:scale-[0.98] bg-transparent text-white betterhover:hover:bg-transparent betterhover:hover:text-white focus-visible:outline-none text-sm leading-none [&amp;_svg]:text-grey-200 [&amp;:hover>svg]:text-white underline"
+            target="_blank"
+            ><span class="read-more">Read more</span></a
+          ></span
+        >
+      </div>
+      <div class="flex gap-6 w-full md:justify-end">
+        <button
+          type="button"
+          class="inline-flex relative items-center gap-2 justify-center rounded-sm font-semibold whitespace-nowrap ring-offset-background transition disabled:pointer-events-none disabled:opacity-50 focus-visible:outline-2 focus-visible:outline-offset-2 active:scale-[0.98] bg-transparent text-white betterhover:hover:bg-transparent betterhover:hover:text-white focus-visible:outline-none text-sm leading-none [&amp;_svg]:text-grey-200 [&amp;:hover>svg]:text-white w-full"
+        >
+          Dismiss
+        </button>
+        <a
+          class="inline-flex relative items-center gap-2 justify-center rounded-sm font-semibold whitespace-nowrap ring-offset-background transition disabled:pointer-events-none disabled:opacity-50 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 active:scale-[0.98] bg-blue-500 text-white betterhover:hover:bg-blue-600 betterhover:hover:text-white focus-visible:outline-white text-sm leading-none shadow-md py-[0.8125rem] px-[1rem] w-full"
+          
+          >Update verification</a
+        >
+      </div>
     </div>
+  </div>
+</div>
+<div class="scrollable">
+  <div>
+    <div class="relative">
+      <div class="">
+        <div class="parent-svelte">
+          <div class="ctainer-svelte">
+            <div class="sizer"></div>
+          </div>
+          <div class="ctainer">
+            <div
+              class="layout-spacing"
+              
+            >
+              <div class="" >
+                <div
+                  class="stack "
+                  
+                >
+                  <div class="wrap" >
+                    <div
+                      class="stack-svelte"
+                      
+                    >
+                      <div
+                        class="gap-3 p-0 items-center justify-start [grid-auto-flow:column] grid "
+                        
+                      >
+                        <h1
+                          class="title"
+                          
+                        >
+                          <svg
+                            fill="currentColor"
+                            viewBox="0 0 64 64"
+                            class="svg-icon mr-2 text-[#b1bad3]"
+                           
+                          >
+                            <title></title>
+                            <path
+                              d="M32 0 5.654 11.306C5.654 52.692 32 64 32 64s26.346-11.306 26.346-52.694L32 0Zm3.546 33.014v13.2h-7.12v-13.2c-3.174-1.41-5.346-4.532-5.346-8.164a8.907 8.907 0 1 1 12.522 8.142l-.056.022Z"
+                            ></path></svg>Responsible Gambling
+                        </h1>
+                      </div>
+                      <a
+                        class="inline-flex relative items-center gap-2 justify-center rounded-sm font-semibold whitespace-nowrap ring-offset-background transition disabled:pointer-events-none disabled:opacity-50 focus-visible:outline-2 focus-visible:outline-offset-2 active:scale-[0.98] bg-transparent text-white betterhover:hover:bg-transparent betterhover:hover:text-white focus-visible:outline-none text-sm leading-none [&amp;_svg]:text-grey-200 [&amp;:hover>svg]:text-white"
+                       
+                        
+                        >
+                        <svg
+                          fill="currentColor"
+                          viewBox="0 0 64 64"
+                          class="svg-icon text-[rgb(177,186,211)]"
+                          
+                        >
+                          <title></title>
+                          <path
+                            d="m54.827 16.187-7.014-7.014L32 24.987 16.187 9.173l-7.014 7.014L24.987 32 9.173 47.813l7.014 7.014L32 39.013l15.813 15.814 7.014-7.014L39.013 32l15.814-15.813Z"
+                          ></path>
+                        </svg>
+                      </a>
+                    </div>
+                  </div>
+                  <div class="" [ngClass]="{' p-0  gap-3 items-start grid-auto-flow:row md:block  justify-start md:[grid-auto-flow:column] grid': routerPath !== '/responsible-gambling'}">
+                    <div
+                        class="p-0 gap-[0.5rem] items-center justify-start [grid-auto-flow:column] grid   md:hidden"
+                        
+                      >
+                        <div
+                          class="menu-nav svelte-1bssz56"
+                          
+                        >
+                          <a
+                            class="inline-flex relative bg-[rgb(15,33,46)] items-center gap-2 justify-center font-semibold whitespace-nowrap ring-offset-background transition disabled:pointer-events-none disabled:opacity-50 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 active:scale-[0.98] bg-grey-700 text-white betterhover:hover:bg-grey-900 betterhover:hover:text-white focus-visible:outline-white text-sm leading-none py-[0.9375rem] px-[1.25rem] rounded-sm"
+                           
+                          
+                            ><svg
+                              fill="currentColor"
+                              viewBox="0 0 64 64"
+                              class="svg-icon"
+                             
+                            >
+                              <title></title>
+                              <path
+                                d="M36.998 53.995 16 32.998 36.998 12l6.306 6.306L28.61 33l14.694 14.694L36.998 54v-.005Z"
+                              ></path></svg></a>
+                        </div>
+                        <div
+                          class="dropdown svelte-1iau4lg"
+                          
+                        >
+                          <button
+                          (click)="toggleDropdown()"
+                            type="button"
+                           
+                            class="inline-flex bg-[rgb(15,33,46)] relative items-center gap-2 justify-center font-semibold whitespace-nowrap ring-offset-background transition disabled:pointer-events-none disabled:opacity-50 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 active:scale-[0.98] bg-grey-700 text-white betterhover:hover:bg-grey-900 betterhover:hover:text-white focus-visible:outline-white text-sm leading-none [&amp;_svg]:text-grey-200 [&amp;:hover>svg]:text-white py-[0.9375rem] px-[1.25rem] rounded-sm"
+                            aria-label="Open Dropdown"
+                          
+                          >
+                            <span>Stake Smart</span>
+                            <div   [ngClass]="!WinnerDropdown ? 'rotate-[180deg]' : 'rotate-[360deg]'">
+                            <svg
+                              fill="currentColor"
+                              viewBox="0 0 64 64"
+                              class="svg-icon"
+                              style="transform: rotate(180deg)"
+                            >
+                              <title></title>
+                              <path
+                                d="M32.271 49.763 9.201 26.692l6.928-6.93 16.145 16.145 16.144-16.144 6.93 6.929-23.072 23.07h-.005Z"
+                              ></path>
+                            </svg>
+                            </div>
+                          </button>
+                          <div
+                          class="profile-dropdown"
+                          *ngIf="WinnerDropdown"
+                        >
+                          <!-- Arrow -->
+                          <div class="dropdown-arrow"></div>
+                          <div class="dropdown-scroll-content ">
+                            <div>
+                              <button routerLink="/responsible-gambling/stake-smart" type="button" class=" profile-list text-[#1475e1]">
+                                <span class="truncate" >Stake Smart</span>
+                                
+                              </button>
+                              <button   routerLink="/responsible-gambling/responsible-gambling-faqs" type="button" class=" profile-list text-[rgb(47_69_83)]">
+                                <span class="truncate" >Responsible Gambling FAQ's</span>
+                              </button>
+                              <button type="button" class=" profile-list text-[rgb(47_69_83)]">
+                                <span  class="">Recognise the Signs</span>
+                              </button>
+                              <button type="button" class=" profile-list text-[rgb(47_69_83)]">
+                                <span class="truncate">Self-Assessment</span>
+                              </button>
+                              <button type="button" class=" profile-list text-[rgb(47_69_83)]">
+                                <span class="truncate">Self Exclusion</span>
+                              </button>
+                              <button type="button" class=" profile-list text-[rgb(47_69_83)]">
+                                <span class="truncate">Gambling Limits</span>
+                              </button>
+                              <button type="button" class=" profile-list text-[rgb(47_69_83)]">
+                                <span class="truncate">Budget Calculator</span>
+                              </button>
+                            </div>
+                          </div>
+                        </div>
+                          <div style="display: none" ></div>
+                        </div>
+                      </div>
+                  <div
+                    class="card  md:block hidden" [ngClass]="{'active-route': routerPath !== '/responsible-gambling'}"
+                  
+                    
+                  >
+                    <div
+                      class="py-2 px-0"
+                      
+                    >
+                      <div class="relative m-0 p-0" >
+                        <a
+                          class=" transition-none  relative items-center gap-2 font-semibold whitespace-nowrap ring-offset-background transition disabled:pointer-events-none disabled:opacity-50 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 active:scale-[0.98] bg-transparent text-white betterhover:hover:bg-grey-900 betterhover:hover:text-white focus-visible:outline-white text-sm leading-none [&amp;_svg]:text-grey-200 [&amp;:hover>svg]:text-white py-[0.9375rem] px-[1.25rem] rounded-full w-full justify-start block"
+                          routerLink="/responsible-gambling/stake-smart"
+                          
+                          ><span >Stake Smart</span> </a
+                        ><a
+                          class="  truncate relative items-center gap-2 font-semibold whitespace-nowrap ring-offset-background transition disabled:pointer-events-none disabled:opacity-50 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 active:scale-[0.98] bg-transparent text-white betterhover:hover:bg-grey-900 betterhover:hover:text-white focus-visible:outline-white text-sm leading-none [&amp;_svg]:text-grey-200 [&amp;:hover>svg]:text-white py-[0.9375rem] px-[1.25rem] rounded-full w-full justify-start block"
+                           routerLink="/responsible-gambling/responsible-gambling-faqs"
+                         
+                          ><span class="truncate">Responsible Gambling FAQ's</span> </a
+                        ><a
+                          class=" truncate relative items-center gap-2 font-semibold whitespace-nowrap ring-offset-background transition disabled:pointer-events-none disabled:opacity-50 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 active:scale-[0.98] bg-transparent text-white betterhover:hover:bg-grey-900 betterhover:hover:text-white focus-visible:outline-white text-sm leading-none [&amp;_svg]:text-grey-200 [&amp;:hover>svg]:text-white py-[0.9375rem] px-[1.25rem] rounded-full w-full justify-start block"
+                          href="/responsible-gambling/signs"
+                        
+                          ><span>Recognise the Signs</span> </a
+                        ><a
+                          class=" truncate relative items-center gap-2 font-semibold whitespace-nowrap ring-offset-background transition disabled:pointer-events-none disabled:opacity-50 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 active:scale-[0.98] bg-transparent text-white betterhover:hover:bg-grey-900 betterhover:hover:text-white focus-visible:outline-white text-sm leading-none [&amp;_svg]:text-grey-200 [&amp;:hover>svg]:text-white py-[0.9375rem] px-[1.25rem] rounded-full w-full justify-start block"
+                          href="/responsible-gambling/self-assessment"
+                         
+                          ><span>Self-Assessment</span> </a
+                        ><a
+                          class=" truncate relative items-center gap-2 font-semibold whitespace-nowrap ring-offset-background transition disabled:pointer-events-none disabled:opacity-50 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 active:scale-[0.98] bg-transparent text-white betterhover:hover:bg-grey-900 betterhover:hover:text-white focus-visible:outline-white text-sm leading-none [&amp;_svg]:text-grey-200 [&amp;:hover>svg]:text-white py-[0.9375rem] px-[1.25rem] rounded-full w-full justify-start block"
+                          href="/responsible-gambling/exclusion"
+                        
+                          ><span>Self Exclusion</span> </a
+                        ><a
+                          class=" truncate relative items-center gap-2 font-semibold whitespace-nowrap ring-offset-background transition disabled:pointer-events-none disabled:opacity-50 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 active:scale-[0.98] bg-transparent text-white betterhover:hover:bg-grey-900 betterhover:hover:text-white focus-visible:outline-white text-sm leading-none [&amp;_svg]:text-grey-200 [&amp;:hover>svg]:text-white py-[0.9375rem] px-[1.25rem] rounded-full w-full justify-start block"
+                          href="/responsible-gambling/gambling-limits"
+                        
+                          ><span>Gambling Limits</span> </a
+                        ><a
+                          class=" truncate relative items-center gap-2 font-semibold whitespace-nowrap ring-offset-background transition disabled:pointer-events-none disabled:opacity-50 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 active:scale-[0.98] bg-transparent text-white betterhover:hover:bg-grey-900 betterhover:hover:text-white focus-visible:outline-white text-sm leading-none [&amp;_svg]:text-grey-200 [&amp;:hover>svg]:text-white py-[0.9375rem] px-[1.25rem] rounded-full w-full justify-start block"
+                          href="/responsible-gambling/calculator"
+                         
+                          ><span>Budget Calculator</span>
+                        </a>
+                        <div
+                          class="dash "
+                          
+                          
+                        >
+                      </div>
+                      </div>
+                    </div>
+                  </div>
+                  <router-outlet></router-outlet>
+                  </div>
+                
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
 </div>
