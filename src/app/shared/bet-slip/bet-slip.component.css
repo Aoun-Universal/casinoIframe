@@ -1,84 +1,268 @@
-.nav-header{
-    @apply bg-[#0f212e] w-full flex justify-between items-center h-[60px] relative touch-none shadow-[0_10px_15px_-3px_rgba(0,0,0,.2),0_4px_6px_-2px_rgba(0,0,0,.1)] pl-4 pr-1.5
+.betslip-wrapper {
+  @apply md:w-0   h-[calc(100vh-68px)]  bg-[#0f212e] max-md:fixed !z-[9999]  max-md:translate-y-full  overflow-hidden max-md:w-[100vw]  duration-300;
 }
 
-.dropdown{
-    @apply relative [touch-action:pan-x]
+.mobile-view-show {
+  @apply !top-0 duration-300 md:!w-[370px] max-md:translate-y-0 ;
 }
 
-.main-btn{
-    @apply inline-flex relative items-center gap-2 justify-center rounded-sm font-semibold whitespace-nowrap  transition disabled:pointer-events-none disabled:opacity-50 focus-visible:outline-2 focus-visible:outline-offset-2 active:scale-[0.98] bg-transparent text-white  focus-visible:outline-none text-sm leading-none  [&:hover>svg]:text-white
+.nav-header {
+  @apply bg-[#0f212e] w-full flex justify-between items-center h-[60px] relative touch-none shadow-[0_10px_15px_-3px_rgba(0,0,0,.2),0_4px_6px_-2px_rgba(0,0,0,.1)] pl-4 pr-1.5;
+}
+
+.dropdown {
+  @apply relative [touch-action:pan-x];
+}
+
+.main-btn {
+  @apply inline-flex relative items-center gap-2 justify-center rounded-sm font-semibold whitespace-nowrap  transition disabled:pointer-events-none disabled:opacity-50 focus-visible:outline-2 focus-visible:outline-offset-2 active:scale-[0.98] bg-transparent text-white  focus-visible:outline-none text-sm leading-none  [&:hover>svg]:text-white;
 }
 
 .svg-icon {
-    @apply  pointer-events-none [stroke-width:0] fill-current stroke-current flex-shrink-0 inline-block size-[1em]
+  @apply pointer-events-none [stroke-width:0] fill-current stroke-current flex-shrink-0 inline-block size-[1em];
 }
 
-.badge{
-    @apply bg-[#4391e7] text-[#04172d] px-[7px] min-w-[1.8em] rounded-[2em] inline-flex font-semibold items-center justify-center whitespace-nowrap leading-normal
+.badge {
+  @apply bg-[#4391e7] text-[#04172d] px-[7px] min-w-[1.8em] rounded-[2em] inline-flex font-semibold items-center justify-center whitespace-nowrap leading-normal;
 }
 
-.close-btn{
-    @apply py-[13px] px-4
+.close-btn {
+  @apply py-[13px] px-4;
 }
 
 /* ----- Tabs ----- */
-.tabs{
-    @apply p-2 border-b-[2px] border-solid border-[#213743] grid place-items-start gap-2 [grid-auto-flow:column]
+.tabs {
+  @apply p-2 border-b-[2px] border-solid border-[#213743] grid place-items-start gap-2 [grid-auto-flow:column];
 }
 
-.tabs-wrapper{
-    @apply flex [scrollbar-color:#2f4553] overflow-x-auto overflow-y-hidden [transform:translateZ(0)]
+.tabs-wrapper {
+  @apply flex [scrollbar-color:#2f4553] overflow-x-auto overflow-y-hidden [transform:translateZ(0)];
 }
 
-.slider{
-    @apply bg-[#1a2c38] flex rounded-[3rem] p-[5px] [flex-shrink:0]
+.slider {
+  @apply bg-[#1a2c38] flex rounded-[3rem] p-[5px] [flex-shrink:0];
 }
 
-.tab-active{
-    @apply bg-[rgb(47,69,83)] rounded-full
+.tab-item.active {
+  @apply bg-[rgb(47,69,83)] rounded-full;
 }
 
 /* Actions Row */
-.actions{
-    @apply flex justify-between items-center py-2 px-4
+.actions {
+  @apply flex justify-between items-center py-2 px-4;
 }
 
 /* --------------------- Betslip --------------------- */
-.betslip{
-    @apply w-full [flex-grow:1] flex flex-col justify-end overflow-hidden 
+.betslip {
+  @apply w-full [flex-grow:1] flex flex-col justify-end overflow-y-auto h-[calc(100vh-378px)];
 }
 
-.betslip-scroll{
-    @apply py-2 px-4 overflow-x-hidden flex flex-col [flex-grow:1] min-h-0 [scrollbar-color:#2f4553] [overscroll-behavior:contain]
+.betslip-scroll {
+  @apply pt-2 pb-4 px-4 overflow-x-hidden flex flex-col [flex-grow:1] min-h-0 [scrollbar-color:#2f4553] [overscroll-behavior:contain] [scrollbar-width:thin]  overflow-y-auto;
+}
+.betslip-bet {
+  @apply relative text-[#b1bad3] w-full flex flex-col bg-[#1a2c38] rounded-[0.25rem] text-sm touch-auto;
+}
+.betslip-header {
+  @apply rounded-[0.25rem] relative flex items-center justify-between bg-[#2f4553] touch-auto;
 }
 
+.market-header {
+  @apply px-3 py-2;
+}
+.fixture-name {
+  @apply w-full max-w-[calc(100%-3rem)] inline-flex items-center touch-auto;
+}
+.badge-live {
+  @apply bg-[#e9113c] text-[#fff] inline-flex text-xs font-semibold items-center justify-center rounded-[3px] [font-feature-settings:"tnum"] whitespace-nowrap  touch-auto leading-6 px-1;
+}
+.badge-name {
+  @apply whitespace-nowrap overflow-hidden text-ellipsis inline-block shrink max-w-full touch-auto ml-[0.5rem];
+}
+.content {
+  @apply w-full flex-shrink-0 grid grid-cols-2  items-end  [grid-auto-rows:auto] relative pt-2 px-3 pb-3 bg-[#213743];
 
+  box-shadow: 0 4px 6px -1px rgba(27, 23, 23, 0.2),
+    0 2px 4px -1px rgba(0, 0, 0, 0.12);
+}
+.market-text {
+  @apply text-[#b1bad3] text-left justify-start text-sm font-normal inline-flex items-center touch-auto;
+}
+.max-bet {
+  @apply flex flex-row justify-end touch-auto;
+}
+.outcome-grid {
+  @apply w-full flex-shrink-0 grid grid-cols-2 gap-4  items-end  [grid-auto-rows:auto] relative pt-2 px-3 pb-3 bg-[#213743] /* Defines a 2-column grid and centers items vertically */;
+}
+.outcome-name {
+  @apply font-semibold text-[#fff] transform capitalize items-baseline touch-auto;
+}
+.outcome-name-span {
+  @apply text-[#fff] text-left justify-start font-semibold touch-auto inline-flex items-center;
+}
+.odds {
+  @apply justify-end touch-auto flex;
+}
+.odds-svelte {
+  @apply [transition:color.3s] relative [font-feature-settings:"tnum"] touch-auto flex flex-row;
+}
+.odds-text {
+  @apply text-[#4391e7] text-left justify-start text-sm font-bold touch-auto inline-flex items-center;
+}
+
+.closed-svelte {
+  @apply justify-end  touch-auto;
+}
+.closed-svelte-span {
+  @apply text-[#ed4163] text-left  justify-start text-sm font-semibold touch-auto  inline-flex items-center;
+}
+.footer-div {
+  @apply mt-1 touch-auto;
+}
+.info-footer {
+  @apply flex touch-auto;
+}
+.label-stacked {
+  @apply items-start flex-col-reverse touch-auto inline-flex relative;
+}
+.input-wrap {
+  @apply w-full flex shrink rounded-[0.25rem] touch-auto;
+  box-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.2), 0 1px 2px 0 rgba(0, 0, 0, 0.12);
+}
+.input-content {
+  @apply relative flex-grow w-full flex touch-auto;
+}
+.after-icon {
+  @apply cursor-text right-[0.75em] absolute flex top-[50%] pointer-events-none text-[#b1bad3] z-[2] touch-auto;
+  transform: translateY(-50%);
+}
+.input-spacing {
+  @apply py-[7px] pl-[7px] pr-[28px] w-full text-[#fff] bg-[#0f212e] border-[2px] border-solid border-[#2f4553] rounded-[0.25rem] font-semibold outline-0 m-0 cursor-text appearance-none shadow-none text-sm touch-auto;
+}
+.estimated-label {
+  @apply justify-end self-start text-xs touch-auto flex;
+}
+.estimated-label-text {
+  @apply text-[#b1bad3] text-left justify-start  text-xs font-normal touch-auto inline-flex items-center;
+}
+.estimated-label-ammount {
+  @apply justify-end self-end touch-auto flex;
+}
+.currency {
+  @apply inline-flex items-center touch-auto;
+}
+.currency-svelte {
+  @apply inline-block overflow-hidden whitespace-nowrap [font-variant-numeric:tabular-nums];
+}
+.currency-text {
+  @apply max-w-[12ch] text-[#b1bad3] text-left text-sm font-normal whitespace-nowrap overflow-hidden text-ellipsis [font-variant-numeric:tabular-nums];
+}
+.subtle {
+  @apply max-w-[12ch] text-[#b1bad3] text-left justify-start text-sm font-normal whitespace-nowrap overflow-hidden text-ellipsis [font-variant-numeric:tabular-nums] ml-1;
+}
+.content::after {
+  @apply content-[''] absolute left-0 h-1.5 w-full -bottom-1;
+  background: radial-gradient(
+      circle,
+      transparent,
+      transparent 50%,
+      #213743 50%,
+      #213743 100%
+    )
+    0px 1px / 0.7rem 0.7rem repeat-x;
+}
 /* ---------------------- Betslip Footer ---------------- */
-.footer{
-    @apply grid p-4 [row-gap:.75rem] bg-[#213743] [grid-template-rows:auto] [grid-auto-flow:row]
+.footer {
+  @apply grid absolute bottom-0 p-4 [row-gap:.75rem] bg-[#213743] [grid-template-rows:auto] [grid-auto-flow:row];
 }
 
-.bet-calculation{
-    @apply flex flex-col text-sm leading-[1.25rem]
+.bet-calculation {
+  @apply flex flex-col text-sm leading-[1.25rem];
 }
 
-.stack{
-    @apply grid justify-between items-center gap-2 p-0 [grid-auto-flow:column]  
+.stack {
+  @apply grid justify-between items-center gap-2 p-0 [grid-auto-flow:column];
 }
 
-.stake{
-    @apply text-[#b1bad3] text-[.875rem]
+.stake {
+  @apply text-[#b1bad3] text-[.875rem];
 }
 
-.system-message{
-    @apply  text-[#ed4163] border-[2px] border-dashed border-[#ed4163] flex bg-[#0f212e] p-3 rounded-[.5rem] gap-3
+.system-message {
+  @apply text-[#ed4163] border-[2px] border-dashed border-[#ed4163] flex bg-[#0f212e] p-3 rounded-[.5rem] gap-3;
 }
 
-.content-container{
-    @apply [flex:1] flex justify-between items-center gap-3
+.content-container {
+  @apply [flex:1] flex justify-between items-center gap-3;
 }
 
-.accept-btn{
-    @apply py-[15px] px-5 !bg-[rgb(20,117,225)] rounded-[4px]
+.accept-btn {
+  @apply py-[15px] px-5 !bg-[rgb(20,117,225)] rounded-[4px];
 }
+
+.arrow-odds{
+      animation: decreased 0.8s infinite linear;
+}
+
+@keyframes decreased{
+  0% , 20%{
+    transform: translateY(-20%);
+    opacity: 1;
+  }
+  100%{
+    transform: translateY(20%);
+    opacity: 0;
+  }
+}
+
+
+/* Dropdowns */
+.profile-dropdown {
+  @apply absolute left-8 z-[100] top-[50px] py-1  bg-white rounded-[.25rem] shadow-lg  w-[105px];
+}
+
+.dropdown-arrow {
+  @apply absolute top-0 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-2 h-2 bg-white rotate-45 border-l border-t border-gray-200;
+}
+
+.dropdown-scroll-content {
+  @apply flex flex-col p-[.25rem_0] [max-height:inherit];
+}
+
+.profile-list {
+  @apply inline-flex w-full relative items-center gap-2 font-semibold whitespace-nowrap  text-[rgb(47_69_83)] transition disabled:pointer-events-none disabled:opacity-50 focus-visible:outline focus-visible:outline-2 hover:bg-[#B1BAD3] 
+    focus-visible:outline-offset-2 active:scale-[0.98] bg-transparent text-sm leading-none  px-3 py-3 rounded-none justify-start;
+}
+
+.odds-dropdown {
+  @apply absolute left-0 z-[100] top-[30px] py-1  bg-white rounded-[.25rem] shadow-lg  w-[220px];
+}
+
+/* Empty betslip */
+.empty-betslip{
+  @apply flex flex-col items-center h-full justify-center min-h-[150px] opacity-0;
+  animation-name: fadeIn;
+  animation-duration: .2s;
+  animation-fill-mode: forwards;
+  animation-iteration-count: 1;
+  animation-timing-function: linear;
+}
+
+@keyframes fadeIn {
+  0%{
+      opacity: 0;
+  }
+
+  100% {
+      opacity: 1;
+  }
+}
+
+.sports-icon-wrapper{
+  @apply text-[5.5rem] uppercase font-extrabold
+}
+
+.empty-text{
+  @apply text-sm text-[#b1bad3] mt-5
+}
+

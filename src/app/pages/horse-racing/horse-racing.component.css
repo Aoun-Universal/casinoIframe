@@ -1,0 +1,82 @@
+.svg-icon{
+    filter: invert(98%) sepia(8%) saturate(188%) hue-rotate(56deg) brightness(116%) contrast(100%);
+    transform: scale(1.25);
+    width: 16px;
+    color: white;
+}
+.arrow-icon, .ghost-icon{
+    filter: invert(98%) sepia(8%) saturate(188%) hue-rotate(56deg) brightness(116%) contrast(100%);
+    width: 14px;
+}
+.acc-arrow{
+    width: 12px;
+    filter: invert(98%) sepia(8%) saturate(188%) hue-rotate(56deg) brightness(116%) contrast(100%);
+}
+.horse-icon, .live-icon, .race-distance-icon, .suspended-icon, .market-icon, .ghost-icon{
+    filter: invert(98%) sepia(8%) saturate(188%) hue-rotate(56deg) brightness(116%) contrast(100%);
+    width: 14px;
+}
+.suspended-icon{
+    width: 16px;
+}
+.prev-arrow-div{
+    border-bottom-right-radius: 0 !important;
+    border-top-right-radius: 0 !important;
+    border-radius: 8rem;
+    border: 1px solid #2f4553;
+    cursor: pointer;
+    width: 3.5em;
+    height: 2.5em;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.next-arrow-div{
+    border-bottom-left-radius: 0 !important;
+    border-top-left-radius: 0 !important;
+    border-radius: 8rem;
+    border: 1px solid #2f4553;
+    cursor: pointer;
+    width: 3.5em;
+    height: 2.5em;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.player-icon-bg{
+    background-image: url('/assets/horse-racing/players-icon.png');
+    width: 40px;
+    height: 40px;
+}
+.player-1-icon{
+    background-position: 118px 0;
+}
+.player-2-icon{
+    background-position: 54px 0;
+}
+.player-3-icon{
+    background-position: -10px 0;
+}
+.all-races-tab-item{
+    @apply px-5 py-[15px] rounded-full font-semibold text-sm leading-none text-white whitespace-nowrap
+}
+.active-tab-color{
+    @apply bg-[#2f4553]
+}
+.market-bets-box{
+    @apply flex flex-col items-center justify-center gap-1 px-2 pt-2 pb-[6px] max-w-[100px] min-w-[100px] min-h-[54px] text-[#b1bad3] rounded
+}
+select{
+    width: 100%;
+    color: white;
+    background: #0f212e;
+    box-shadow: 0 1px 3px 0 rgba(0, 0, 0, .2), 0 1px 2px 0 rgba(0, 0, 0, .12);;
+    border: 2px solid #2f4553;
+    border-radius: 0.25rem;
+    font-weight: 600;
+    transition: all 0.25s;
+    outline: 0;
+    margin: 0;
+    cursor: pointer;
+    padding: .5em 2em .5em .5em;
+}

@@ -1,9 +1,11 @@
+
+@tailwind utilities;
 .sidebar-wrapper {
-  @apply w-[240px] h-full bg-[#0f212e] max-md:fixed z-[999]  md:overflow-y-auto max-md:w-[100vw] max-md:translate-y-full duration-300;
+  @apply md:w-[240px] w-full h-full  bg-[#0f212e] fixed z-[999] overflow-x-visible min-[1200px]:!static  max-md:w-[100vw] max-md:translate-y-full duration-300;
 }
 
 .mobile-view-show {
-  @apply max-md:!translate-y-0 duration-300;
+  @apply max-md:!translate-y-0 duration-300 !static max-md:!fixed;
 }
 
 .sidebar-header {
@@ -41,10 +43,11 @@
 .link-wrap {
   @apply flex justify-center gap-[4px] w-[100%] items-center;
 }
+
 .header-button {
   text-shadow: 0px 1px 2px rgba(0, 0, 0, 0.12), 0px 1px 3px rgba(0, 0, 0, 0.2);
 
-  @apply relative flex  items-center justify-center bg-cover text-white text-[.875rem] !h-[2.25rem] rounded-[.25rem] bg-no-repeat  font-bold select-none;
+  @apply relative flex  items-center justify-center bg-cover text-white text-[.875rem] !h-[2.25rem] md:!w-[78px] rounded-[.25rem] bg-no-repeat  font-bold select-none;
 }
 .sports {
   background-image: url("/assets/sidebar/sports-balls-en.webp");
@@ -53,10 +56,9 @@
 }
 .casino {
   background-image: url("/assets/sidebar/casino-poker-cards-en.webp");
-
 }
 .main-container-content {
-  @apply p-4 max-md:mb-10 max-md:h-[calc(100vh-280px)] max-md:!overflow-y-auto;
+  @apply p-4 max-md:mb-10 max-md:max-h-[calc(100vh-280px)] max-md:!overflow-y-auto;
 }
 .sidebar-content-wrapper {
   @apply flex flex-col gap-y-[0.5rem];
@@ -83,7 +85,7 @@
 }
 
 .inner-content {
-  @apply max-h-0 overflow-hidden transition-all duration-700 ease-in-out;
+  @apply max-h-0 overflow-hidden !overflow-x-visible transition-all duration-700 ease-in-out;
 }
 
 .active-dropdown {
@@ -185,19 +187,19 @@
 .sports:hover {
   background-image: url("/assets/sidebar/sports-ball-orange.avif");
 }
-.sport-btn-mobile{
+.sport-btn-mobile {
   width: 2.75rem !important;
   height: 2.75rem !important;
-  background-image: url('/assets/sidebar/sports-balls-small-en.avif');
+  background-image: url("/assets/sidebar/sports-balls-small-en.avif");
 }
-.casino-btn-mobile{
+.casino-btn-mobile {
   width: 2.75rem !important;
   height: 2.75rem !important;
-  background-image: url('/assets/sidebar/casino-poker-cards-small-en.avif');
+  background-image: url("/assets/sidebar/casino-poker-cards-small-en.avif");
 }
-.casino-btn-mobile:hover{
-  background-image: url('/assets/sidebar/casino-poker-cards-small-green-en.avif');
+.casino-btn-mobile:hover {
+  background-image: url("/assets/sidebar/casino-poker-cards-small-green-en.avif");
 }
-.sport-btn-mobile:hover{
-  background-image: url('/assets/sidebar/sports-balls-small-orange-en.avif');
+.sport-btn-mobile:hover {
+  background-image: url("/assets/sidebar/sports-balls-small-orange-en.avif");
 }
