@@ -1,5 +1,8 @@
-.main{
-    @apply w-full px-[3vw] flex flex-col gap-8
+.provider{
+    @apply w-full flex flex-col gap-8
+}
+.group-banner-wrap{
+    @apply w-full bg-[#213743] px-[3vw]
 }
 .banner{
     @apply w-full flex justify-between items-center
@@ -9,4 +12,10 @@
 }
 .top-img{
     @apply w-auto h-[100%]
+}
+.sec{
+    @apply px-[3vw]
+}
+.hero{
+    @apply grid grid-cols-7
 }

@@ -97,6 +97,11 @@ export const routes: Routes = [
           import('./pages/pal-ful/pal-ful.component').then((c) => c.PalFulComponent),
       },
       {
+        path: 'setting',
+        loadComponent: () =>
+          import('./modal/settings-modals/settings/settings.component').then((c) => c.SettingsComponent),
+      },
+      {
         path: 'providers',
         loadComponent: () =>
           import('./pages/providers/providers.component').then((c) => c.ProvidersComponent),
