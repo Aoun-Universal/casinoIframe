@@ -55,14 +55,14 @@ export class HorseRacingComponent {
   prev() {
     
     if(this.currentSlideIndex!==0){
-      this.slickModal.slickNext();
+      this.slickModal.slickPrev();
     }
   }
   
   next() {
     
     if(this.currentSlideIndex!==this.slideCount){
-      this.slickModal.slickPrev();
+      this.slickModal.slickNext();
     }
   }
 
