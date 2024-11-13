@@ -4,7 +4,7 @@
     width: 16px;
     color: white;
 }
-.arrow-icon{
+.arrow-icon, .ghost-icon{
     filter: invert(98%) sepia(8%) saturate(188%) hue-rotate(56deg) brightness(116%) contrast(100%);
     width: 14px;
 }
@@ -12,7 +12,7 @@
     width: 12px;
     filter: invert(98%) sepia(8%) saturate(188%) hue-rotate(56deg) brightness(116%) contrast(100%);
 }
-.horse-icon, .live-icon, .race-distance-icon, .suspended-icon, .market-icon{
+.horse-icon, .live-icon, .race-distance-icon, .suspended-icon, .market-icon, .ghost-icon{
     filter: invert(98%) sepia(8%) saturate(188%) hue-rotate(56deg) brightness(116%) contrast(100%);
     width: 14px;
 }
@@ -62,4 +62,21 @@
 }
 .active-tab-color{
     @apply bg-[#2f4553]
+}
+.market-bets-box{
+    @apply flex flex-col items-center justify-center gap-1 px-2 pt-2 pb-[6px] max-w-[100px] min-w-[100px] min-h-[54px] text-[#b1bad3] rounded
+}
+select{
+    width: 100%;
+    color: white;
+    background: #0f212e;
+    box-shadow: 0 1px 3px 0 rgba(0, 0, 0, .2), 0 1px 2px 0 rgba(0, 0, 0, .12);;
+    border: 2px solid #2f4553;
+    border-radius: 0.25rem;
+    font-weight: 600;
+    transition: all 0.25s;
+    outline: 0;
+    margin: 0;
+    cursor: pointer;
+    padding: .5em 2em .5em .5em;
 }

@@ -1,7 +1,7 @@
 import { CommonModule } from '@angular/common';
-import { AfterViewInit, Component, CUSTOM_ELEMENTS_SCHEMA, ElementRef, ViewChild } from '@angular/core';
+import { AfterViewInit, Component, CUSTOM_ELEMENTS_SCHEMA, ElementRef, HostListener, ViewChild } from '@angular/core';
 import { SwiperContainer } from 'swiper/element';
-import { SwiperOptions } from 'swiper/types';
+import { Swiper, SwiperOptions } from 'swiper/types';
 @Component({
   selector: 'app-horse-racing',
   standalone: true,
@@ -14,7 +14,10 @@ export class HorseRacingComponent implements AfterViewInit {
   @ViewChild('marketCards') horseRaceMarket!: ElementRef<SwiperContainer>;
   tabKey:string='friday'
   accIsOpen:boolean=true
+  marketType='Horse Racing';
+  marketSelection:boolean=false;
   ngAfterViewInit(): void {
+    const swiper = new Swiper('.race-market-swiper', this.racingMarketConfig)
     Object.assign(this.horseRaceMarket, this.racingMarketConfig)
     // @ts-ignore
     this.horseRaceMarket.nativeElement.initialize();
@@ -23,8 +26,8 @@ export class HorseRacingComponent implements AfterViewInit {
   public racingMarketConfig: SwiperOptions = {
     autoplay:false,
     loop:false,
-    slidesPerView: 1, 
-    spaceBetween: 30,
+    slidesPerView: 2, 
+    spaceBetween: 50,
     allowTouchMove: true,
     breakpoints: {
       320: {                  
@@ -50,16 +53,23 @@ export class HorseRacingComponent implements AfterViewInit {
   onAllRaceAccClick(){
     this.accIsOpen=!this.accIsOpen
   }
-  // allRacesMarketData=[
-  //   {
-  //     marketName:'Australia',
-  //     players:[
-  //       {
-  //         playerIcon:'',
-  //         playerName:'R12 Kasamatsu',
-  //         status:''
-  //       },
-  //     ]
-  //   }
-  // ]
+  toggleMarketType(){
+    this.marketSelection=!this.marketSelection
+  }
+  onMarketTypeSelect(key:string){
+    if(key){
+      this.marketType=key
+    }
+    this.marketSelection=!this.marketSelection
+  }
+
+  @HostListener("document:click", ["$event"])
+  clickOutside(event: Event) {
+    const targetElement = event.target as HTMLElement;
+    const clickedInside = targetElement.closest(".market-selection-container");
+
+    if (!clickedInside) {
+      this.marketSelection=false
+    }
+  }
 }
