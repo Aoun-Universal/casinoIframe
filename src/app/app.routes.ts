@@ -112,6 +112,10 @@ export const routes: Routes = [
         path: 'setting',
         loadComponent: () => import('./modal/settings-modals/settings/settings.component').then((c) => c.SettingsComponent)
       },
+      {
+        path:'all-tennis',
+        loadComponent: ()=> import('./pages/all-tennis/all-tennis.component').then((c=>c.AllTennisComponent))
+      }
     ],
   },
 
