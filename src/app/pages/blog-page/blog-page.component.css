@@ -5,7 +5,7 @@
     @apply bg-[#1A2C38] max-w-[1200px] mx-auto h-full
 }
 .banner{
-    @apply flex justify-between items-center bg-[#213743] px-[3vw] w-full  w-full mb-8
+    @apply flex justify-between items-center bg-[#213743] px-[3vw] w-full  mb-8
 }
 .top-img{
     @apply w-[149px] h-[80px] md:w-[214px] md:h-[115px]
