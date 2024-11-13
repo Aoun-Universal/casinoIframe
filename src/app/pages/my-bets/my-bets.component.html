@@ -1,5 +1,8 @@
-<div class="page-contant pb-6 px-[3vw] w-full">
-  <div class="layout pb-[32px] flex flex-col w-full">
+<!-- page-content -->
+<div class="page-contant">
+  <!-- start layout -->
+  <div class="layout">
+    <!-- top header section -->
     <div class="flex mt-[12px] items-center">
       <div class="">
         <svg fill="#B1BAD3" viewBox="0 0 64 64" class="h-[18px] w-[18px]">
@@ -9,24 +12,25 @@
           ></path>
         </svg>
       </div>
-      <span class="text-nowrap ml-2 text-[18px] font-[500]">My Bets</span>
+      <span class="bet-text">My Bets</span>
     </div>
     <div>
+      <!-- start sports and casino button here -->
       <div>
         <div class="flex justify-between items-center">
           <div
         
-            class="flex justify-center mt-6 items-center h-[54px] bg-[#0f212e] rounded-[3rem] p-[5px]"
+            class="buttons-wrapper"
           
             >
             <a
-              class="ml-0 flex justify-center cursor-pointer items-center text-white traking-[1] h-[44px] text-center font-[600] text-[13px] py-[.9375rem] px-[1.25rem]"
+              class="casino-btn"
              [ngClass]="{'bg-[#2F4553] rounded-[3rem]':activeTb==='casino'}"
               (click)="setActivTab('casino')"
               >Casino</a
             >
             <a
-              class="ml-[5px] mb-[2px] cursor-pointer flex justify-center items-center text-white traking-[1] h-[44px] bg-[#2F4553] rounded-[3rem] font-[600] text-[13px] py-[.9375rem] px-[1.25rem]"
+              class="sports-btn"
               [ngClass]="{'bg-[#2F4553] rounded-[3rem]':activeTb==='sports'}"
               (click)="setActivTab('sports')"
               >Sports</a
@@ -49,7 +53,7 @@
             </button>
           </div>
         </div>
-        <div class="w-[100%] flex justify-center mt-[2rem]">
+        <div class="main-icon">
           <svg
             viewBox="0 0 80 80"
             fill="none"
@@ -119,25 +123,26 @@
           </svg>
         </div>
         <div
-          class="w-[100%] flex justify-center text-[#b1bad3] text-[.875rem] font-[400] mt-[17px]"
+          class="active-scnd-btn"
         >
           No Active Bets
         </div>
-        <a class="w-[100%] flex justify-center text-[13px] font-[700] mt-0.5"
+        <a class="start-betting-btn"
           >Start Betting Now!</a
         >
-        <div class="flex gap-[1.5rem] justify-center mt-[27px] w-full">
-          <button class="text-[#8A939A] font-[600] text-[13px]">
+        <div class="betting-parent">
+          <button class="betting">
             Previous
           </button>
-          <button class="text-[#8A939A] font-[600] text-[13px]">Next</button>
+          <button class="betting">Next</button>
         </div>
       </div>
     </div>
   </div>
+  
   <div class="top-sports-header events-header">
     <!-- left tab slider -->
-    <div class="tab-slider max-w-[90vw] md:max-w-[50vw] overflow-x-auto">
+    <div class="wrapper-leftside">
       <div class="flex">
         <!-- Tab item 1 -->
         <a

@@ -334,7 +334,7 @@
                                                           <img alt="Runner silk" class="hidden"
                                                               src="https://silks.racingandsports.com.au/jockey/silks/12-nov-2024/381336/R1.png">
                                                       </div>
-                                                      <div class="chevron svelte-1cbx3va" (click)="toggleMarket()" [ngClass]="{'rotate-90': !isMarketOpen}">
+                                                      <div class="chevron svelte-1cbx3va" (click)="toggleMarket()"         [ngClass]="!isMarketOpen ? 'rotate-[180deg]' : 'rotate-[360deg]'" >
                                                           <svg fill="currentColor" viewBox="0 0 64 64" class="svg-icon ">
                                                               <title></title>
                                                               <path
@@ -411,290 +411,293 @@
                                                           </button></div>
                                                   </div>
                                               </div>
-                                              <div class="flex flex-col">
-                                                <div class=" divider-border"></div>
-                                                <div class="other-con">
-                                                    <span class="other-text variant-subtle  ">Other Rules: Three place dividends paid.</span> <span
-                                                        class="other-text  variant-subtle">JP-SP: Japanese-Starting Price is derived from a parimutuel
-                                                        dividend and announced
-                                                        post-race.</span>
+                                              <div class="divider-border"></div>
+                                              <div *ngIf="isMarketOpen">
+                                                <div class="flex flex-col gap-4 pb-4 px-3">
+                                                  <div
+                                                    class="h-[0.125rem] bg-[rgb(26,44,56)] m-0 p-0"
+                                                  >
+                                                  </div>
+                                                    <div
+                                                      class="flex flex-wrap gap-y-1 gap-x-10"
+                                                    >
+                                                      <div class="truncat">
+                                                        <span
+                                                          class="text-white text-sm font-semibold"
+                                                          >Jockey</span
+                                                        >
+                                                        <span class="jockey-text"
+                                                          >Gavin Lerena</span
+                                                        >
+                                                      </div>
+                                                      <div class="truncat text-[#b1bad3]">
+                                                        <span
+                                                          class="text-white text-sm font-semibold"
+                                                          >Trainer</span
+                                                        >
+                                                        <span class="jockey-text"
+                                                          >J A Janse Van Vuuren</span
+                                                        >
+                                                      </div>
+                                                      <div class="truncat ">
+                                                        <span
+                                                          class="text-white text-sm font-semibold"
+                                                          >Bio</span
+                                                        >
+                                                        <span class="jockey-text">5yo B M</span>
+                                                      </div>
+                                                      <span class="truncat"
+                                                        ><span
+                                                          class="text-white text-sm font-semibold"
+                                                          >Sire</span
+                                                        >
+                                                        <span class="jockey-text"
+                                                          >Time Thief (AUS)</span
+                                                        ></span
+                                                      >
+                                                      <div class="truncat">
+                                                        <span
+                                                          class="text-white text-sm font-semibold"
+                                                          >Form</span
+                                                        >
+                                                        <span class="jockey-text">11243x</span>
+                                                      </div>
+                                                      
+                                                    </div>
+                                                 
+                                                
+                                                    <div
+                                                    class="h-[0.125rem] bg-[rgb(26,44,56)] m-0 p-0"
+                                                  >
+                                                  </div>
+                                              <div class="flex gap-2 flex-col">
+                                                <span class="runners-text"
+                                                  >Runner Comments</span
+                                                >
+                                                <div
+                                                  class="bg-[rgb(26,44,56)] py-2 px-3 rounded"
+                                                >
+                                                  <div
+                                                    class="w-full h-fit line-clamp-3 text-left text-sm"
+                                                    aria-expanded="false"
+                                                  >
+                                                    <div>
+                                                      Mare returning from a spell and has won
+                                                      previously when first up. Finished off
+                                                      last preparation third of 7 at this
+                                                      track July 27 over 1100m, 2 len behind
+                                                      Exchange Student carrying 60kg at $1.70.
+                                                      First up last campaign fifth of 13 at
+                                                      Greyville September 17 2023 over 1400m,
+                                                      0.8 len behind Except Temptation
+                                                      carrying 56.5kg at $5. Expect a bold
+                                                      showing.
+                                                    </div>
+                                                  </div>
                                                 </div>
-                                            </div>
+                                              </div>
+                                              
+                                              <div
+                                                class="grid auto-cols-max gap-1 bg-[rgb(33_55_67)] [grid-template-columns:repeat(8,1fr)]"
+                                              >
+                                                <div
+                                                  class="flex flex-col !bg-[rgb(26,44,56)] rounded px-3 py-2"
+                                                >
+                                                  <span class="head-text">Last 10 Runs</span>
+                                                  <span class="sub-text">4371312444</span>
+                                                </div>
+                                                <div
+                                                  class="flex flex-col bg-[rgb(26,44,56)] rounded px-3 py-2"
+                                                >
+                                                  <span class="head-text">Career</span>
+                                                  <span class="sub-text">26: 3 2 2</span>
+                                                </div>
+                                                <div
+                                                  class="flex flex-col bg-[rgb(26,44,56)] rounded px-3 py-2"
+                                                >
+                                                  <span class="head-text">Prize (AUD)</span>
+                                                  <span class="sub-text">-</span>
+                                                </div>
+                                                <div
+                                                  class="flex flex-col bg-[rgb(26,44,56)] rounded px-3 py-2"
+                                                >
+                                                  <span class="head-text">Speed Map</span>
+                                                  <span class="sub-text">Leader</span>
+                                                </div>
+                                                <div
+                                                  class="flex flex-col bg-[rgb(26,44,56)] rounded px-3 py-2"
+                                                >
+                                                  <span class="head-text">Track</span>
+                                                  <span class="sub-text">2: 0 0 0</span>
+                                                </div>
+                                                <div
+                                                  class="flex flex-col bg-[rgb(26,44,56)] rounded px-3 py-2"
+                                                >
+                                                  <span class="head-text">Distance</span>
+                                                  <span class="sub-text">9: 2 1 2</span>
+                                                </div>
+                                                <div
+                                                  class="flex flex-col bg-[rgb(26,44,56)] rounded px-3 py-2"
+                                                >
+                                                  <span class="head-text"
+                                                    >Track / Distance</span
+                                                  >
+                                                  <span class="sub-text">0: 0 0 0</span>
+                                                </div>
+                                                <div
+                                                  class="flex flex-col bg-[rgb(26,44,56)] rounded px-3 py-2"
+                                                >
+                                                  <span class="head-text">Dirt</span>
+                                                  <span class="sub-text">0: 0 0 0</span>
+                                                </div>
+                                                <div
+                                                  class="flex flex-col bg-[rgb(26,44,56)] rounded px-3 py-2"
+                                                >
+                                                  <span class="head-text">Firm</span>
+                                                  <span class="sub-text">0: 0 0 0</span>
+                                                </div>
+                                                <div
+                                                  class="flex flex-col bg-[rgb(26,44,56)] rounded px-3 py-2"
+                                                >
+                                                  <span class="head-text">Good</span>
+                                                  <span class="sub-text">25: 3 2 2</span>
+                                                </div>
+                                                <div
+                                                  class="flex flex-col bg-[rgb(26,44,56)] rounded px-3 py-2"
+                                                >
+                                                  <span class="head-text">Soft</span>
+                                                  <span class="sub-text">0: 0 0 0</span>
+                                                </div>
+                                                <div
+                                                  class="flex flex-col bg-[rgb(26,44,56)] rounded px-3 py-2"
+                                                >
+                                                  <span class="head-text">Heavy</span>
+                                                  <span class="sub-text">0: 0 0 0</span>
+                                                </div>
+                                                <div
+                                                  class="flex flex-col bg-[rgb(26,44,56)] rounded px-3 py-2"
+                                                >
+                                                  <span class="head-text">Synthetic</span>
+                                                  <span class="sub-text">0: 0 0 0</span>
+                                                </div>
+                                                <div
+                                                  class="flex flex-col bg-[rgb(26,44,56)] rounded px-3 py-2"
+                                                >
+                                                  <span class="head-text">1st Up</span>
+                                                  <span class="sub-text">3: 0 0 0</span>
+                                                </div>
+                                                <div
+                                                  class="flex flex-col bg-[rgb(26,44,56)] rounded px-3 py-2"
+                                                >
+                                                  <span class="head-text">2nd Up</span>
+                                                  <span class="sub-text">3: 0 0 0</span>
+                                                </div>
+                                                <div
+                                                  class="flex flex-col bg-[rgb(26,44,56)] rounded px-3 py-2"
+                                                >
+                                                  <span class="head-text">3rd Up</span>
+                                                  <span class="sub-text">2: 0 0 0</span>
+                                                </div>
+                                              </div>
+                                              
+                                              <div
+                                                class="flex flex-col gap-2"
+                                                
+                                              >
+                                                <span
+                                                  class="runners-text"
+                                                  
+                                                  >Race History</span
+                                                >
+                                                <div
+                                                  class="history-list"
+                                                  
+                                                >
+                                                  <div
+                                                    class="history-head"
+                                                    
+                                                  >
+                                                    <div
+                                                      slot="header"
+                                                      class="flex flex-1 capitalize"
+                                                      
+                                                    >
+                                                      <span
+                                                        class=" basis-[10px] min-w-[40px] runners-text"
+                                                   
+                                                        >4/11</span
+                                                      >
+                                                      <span
+                                                        class="basis-[20px] min-w-[90px] runners-text"
+                                                        
+                                                        >Oct 31, 2024</span
+                                                      >
+                                                      <span
+                                                        class="basis-[20px]  runners-text"
+                                                        
+                                                        >Vaal</span
+                                                      >
+                                                      <span
+                                                        class="basis-[15px]  runners-text"
+                                                      
+                                                        >1100m</span
+                                                      >
+                                                      <span
+                                                        class="basis-[15px]  runners-text"
+                                                    
+                                                        >-</span
+                                                      >
+                                                    </div>
+                                                    <div
+                                                      class="flex items-center"
+                                                      
+                                                    >
+                                                      <svg
+                                                        fill="currentColor"
+                                                        viewBox="0 0 64 64"
+                                                        class="svg-icon"
+                                                        style="transform: rotate(90deg)"
+                                                      >
+                                                        <title></title>
+                                                        <path
+                                                          d="M32.271 49.763 9.201 26.692l6.928-6.93 16.145 16.145 16.144-16.144 6.93 6.929-23.072 23.07h-.005Z"
+                                                        ></path>
+                                                      </svg>
+                                                    </div>
+                                                  </div>
+                                                </div>
+                                                
+                                                <div
+                                                  class="flex w-full justify-center mt-3 mb-2"
+                                                  
+                                                >
+                                                  <button
+                                                    type="button"
+                                                    
+                                                    class="inline-flex relative items-center gap-2 justify-center rounded-sm font-semibold whitespace-nowrap ring-offset-background transition disabled:pointer-events-none disabled:opacity-50 focus-visible:outline-2 focus-visible:outline-offset-2 active:scale-[0.98] bg-transparent text-grey-200 betterhover:hover:bg-transparent betterhover:hover:text-white focus-visible:text-white focus-visible:outline-none text-sm leading-none"
+                                                  
+                                                  >
+                                                    Load More
+                                                  </button>
+                                                </div>
+                                                
+                                              </div>
+                                              </div>
+                                              </div>
+                                            
                                           </div>
+                                          <div class="flex flex-col">
+                                            <div class=" divider-border"></div>
+                                            <div class="other-con">
+                                                <span class="other-text variant-subtle  ">Other Rules: Three place dividends paid.</span> <span
+                                                    class="other-text  variant-subtle">JP-SP: Japanese-Starting Price is derived from a parimutuel
+                                                    dividend and announced
+                                                    post-race.</span>
+                                            </div>
+                                        </div>
 <!-- Add toggle==================================================== -->
 
-<div *ngIf="isMarketOpen">
-  <div class="flex flex-col gap-4 pb-4 px-3">
-    <div
-      class="h-[0.125rem] bg-[rgb(26,44,56)] m-0 p-0"
-    >
-    </div>
-      <div
-        class="flex flex-wrap gap-y-1 gap-x-10"
-      >
-        <div class="truncat">
-          <span
-            class="text-white text-sm font-semibold"
-            >Jockey</span
-          >
-          <span class="jockey-text"
-            >Gavin Lerena</span
-          >
-        </div>
-        <div class="truncat text-[#b1bad3]">
-          <span
-            class="text-white text-sm font-semibold"
-            >Trainer</span
-          >
-          <span class="jockey-text"
-            >J A Janse Van Vuuren</span
-          >
-        </div>
-        <div class="truncat ">
-          <span
-            class="text-white text-sm font-semibold"
-            >Bio</span
-          >
-          <span class="jockey-text">5yo B M</span>
-        </div>
-        <span class="truncat"
-          ><span
-            class="text-white text-sm font-semibold"
-            >Sire</span
-          >
-          <span class="jockey-text"
-            >Time Thief (AUS)</span
-          ></span
-        >
-        <div class="truncat">
-          <span
-            class="text-white text-sm font-semibold"
-            >Form</span
-          >
-          <span class="jockey-text">11243x</span>
-        </div>
-        
-      </div>
-   
-  
-      <div
-      class="h-[0.125rem] bg-[rgb(26,44,56)] m-0 p-0"
-    >
-    </div>
-<div class="flex gap-2 flex-col">
-  <span class="runners-text"
-    >Runner Comments</span
-  >
-  <div
-    class="bg-[rgb(26,44,56)] py-2 px-3 rounded"
-  >
-    <div
-      class="w-full h-fit line-clamp-3 text-left text-sm"
-      aria-expanded="false"
-    >
-      <div>
-        Mare returning from a spell and has won
-        previously when first up. Finished off
-        last preparation third of 7 at this
-        track July 27 over 1100m, 2 len behind
-        Exchange Student carrying 60kg at $1.70.
-        First up last campaign fifth of 13 at
-        Greyville September 17 2023 over 1400m,
-        0.8 len behind Except Temptation
-        carrying 56.5kg at $5. Expect a bold
-        showing.
-      </div>
-    </div>
-  </div>
-</div>
 
-<div
-  class="grid auto-cols-max gap-1 bg-[rgb(33_55_67)] [grid-template-columns:repeat(8,1fr)]"
->
-  <div
-    class="flex flex-col !bg-[rgb(26,44,56)] rounded px-3 py-2"
-  >
-    <span class="head-text">Last 10 Runs</span>
-    <span class="sub-text">4371312444</span>
-  </div>
-  <div
-    class="flex flex-col bg-[rgb(26,44,56)] rounded px-3 py-2"
-  >
-    <span class="head-text">Career</span>
-    <span class="sub-text">26: 3 2 2</span>
-  </div>
-  <div
-    class="flex flex-col bg-[rgb(26,44,56)] rounded px-3 py-2"
-  >
-    <span class="head-text">Prize (AUD)</span>
-    <span class="sub-text">-</span>
-  </div>
-  <div
-    class="flex flex-col bg-[rgb(26,44,56)] rounded px-3 py-2"
-  >
-    <span class="head-text">Speed Map</span>
-    <span class="sub-text">Leader</span>
-  </div>
-  <div
-    class="flex flex-col bg-[rgb(26,44,56)] rounded px-3 py-2"
-  >
-    <span class="head-text">Track</span>
-    <span class="sub-text">2: 0 0 0</span>
-  </div>
-  <div
-    class="flex flex-col bg-[rgb(26,44,56)] rounded px-3 py-2"
-  >
-    <span class="head-text">Distance</span>
-    <span class="sub-text">9: 2 1 2</span>
-  </div>
-  <div
-    class="flex flex-col bg-[rgb(26,44,56)] rounded px-3 py-2"
-  >
-    <span class="head-text"
-      >Track / Distance</span
-    >
-    <span class="sub-text">0: 0 0 0</span>
-  </div>
-  <div
-    class="flex flex-col bg-[rgb(26,44,56)] rounded px-3 py-2"
-  >
-    <span class="head-text">Dirt</span>
-    <span class="sub-text">0: 0 0 0</span>
-  </div>
-  <div
-    class="flex flex-col bg-[rgb(26,44,56)] rounded px-3 py-2"
-  >
-    <span class="head-text">Firm</span>
-    <span class="sub-text">0: 0 0 0</span>
-  </div>
-  <div
-    class="flex flex-col bg-[rgb(26,44,56)] rounded px-3 py-2"
-  >
-    <span class="head-text">Good</span>
-    <span class="sub-text">25: 3 2 2</span>
-  </div>
-  <div
-    class="flex flex-col bg-[rgb(26,44,56)] rounded px-3 py-2"
-  >
-    <span class="head-text">Soft</span>
-    <span class="sub-text">0: 0 0 0</span>
-  </div>
-  <div
-    class="flex flex-col bg-[rgb(26,44,56)] rounded px-3 py-2"
-  >
-    <span class="head-text">Heavy</span>
-    <span class="sub-text">0: 0 0 0</span>
-  </div>
-  <div
-    class="flex flex-col bg-[rgb(26,44,56)] rounded px-3 py-2"
-  >
-    <span class="head-text">Synthetic</span>
-    <span class="sub-text">0: 0 0 0</span>
-  </div>
-  <div
-    class="flex flex-col bg-[rgb(26,44,56)] rounded px-3 py-2"
-  >
-    <span class="head-text">1st Up</span>
-    <span class="sub-text">3: 0 0 0</span>
-  </div>
-  <div
-    class="flex flex-col bg-[rgb(26,44,56)] rounded px-3 py-2"
-  >
-    <span class="head-text">2nd Up</span>
-    <span class="sub-text">3: 0 0 0</span>
-  </div>
-  <div
-    class="flex flex-col bg-[rgb(26,44,56)] rounded px-3 py-2"
-  >
-    <span class="head-text">3rd Up</span>
-    <span class="sub-text">2: 0 0 0</span>
-  </div>
-</div>
-
-<div
-  class="flex flex-col gap-2"
-  
->
-  <span
-    class="runners-text"
-    
-    >Race History</span
-  >
-  <div
-    class="history-list"
-    
-  >
-    <div
-      class="history-head"
-      
-    >
-      <div
-        slot="header"
-        class="flex flex-1 capitalize"
-        
-      >
-        <span
-          class=" basis-[10px] min-w-[40px] runners-text"
-     
-          >4/11</span
-        >
-        <span
-          class="basis-[20px] min-w-[90px] runners-text"
-          
-          >Oct 31, 2024</span
-        >
-        <span
-          class="basis-[20px]  runners-text"
-          
-          >Vaal</span
-        >
-        <span
-          class="basis-[15px]  runners-text"
-        
-          >1100m</span
-        >
-        <span
-          class="basis-[15px]  runners-text"
-      
-          >-</span
-        >
-      </div>
-      <div
-        class="flex items-center"
-        
-      >
-        <svg
-          fill="currentColor"
-          viewBox="0 0 64 64"
-          class="svg-icon"
-          style="transform: rotate(90deg)"
-        >
-          <title></title>
-          <path
-            d="M32.271 49.763 9.201 26.692l6.928-6.93 16.145 16.145 16.144-16.144 6.93 6.929-23.072 23.07h-.005Z"
-          ></path>
-        </svg>
-      </div>
-    </div>
-  </div>
-  
-  <div
-    class="flex w-full justify-center mt-3 mb-2"
-    
-  >
-    <button
-      type="button"
-      
-      class="inline-flex relative items-center gap-2 justify-center rounded-sm font-semibold whitespace-nowrap ring-offset-background transition disabled:pointer-events-none disabled:opacity-50 focus-visible:outline-2 focus-visible:outline-offset-2 active:scale-[0.98] bg-transparent text-grey-200 betterhover:hover:bg-transparent betterhover:hover:text-white focus-visible:text-white focus-visible:outline-none text-sm leading-none"
-    
-    >
-      Load More
-    </button>
-  </div>
-  
-</div>
-</div>
-</div>
 </div>
 
 

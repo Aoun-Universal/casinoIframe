@@ -143,9 +143,9 @@
                                 <div class="fixture-wrapper">
                                     <div class="fixture-preview " [ngClass]="{'lg:flex':standardView}">
                                         <!-- Live -->
-                                        <div class="misc order-1 "  [ngClass]="{'w-[40%]':standardView}">
+                                        <div class="misc order-1 " [ngClass]="{'w-[40%]':standardView}">
                                             <div class="misc-wrapper">
-                                                <div  [ngClass]="{'lg:flex-col lg:flex lg:gap-3':standardView}">
+                                                <div [ngClass]="{'lg:flex-col lg:flex lg:gap-3':standardView}">
                                                     <div class="fixture-details">
                                                         <div class="live-badge">Live</div>
                                                         <span class="description-wrapper flex">37
@@ -156,7 +156,7 @@
 
                                                     <div class="hidden"
                                                         [ngClass]="{ '!hidden' : !standardView , 'lg:!block':standardView}"
-                                                        class="teams stacked svelte-1ykwt0t order-3 md:order-5"><a
+                                                        class="teams stacked svelte-1ykwt0t order-3 md:order-5" routerLink="/soccer-details"><a
                                                             class="teams-tag arrows-btn">
                                                             <span>Pohkseh</span>
                                                         </a>
@@ -196,8 +196,8 @@
                                         <div class="line order-4 line2 lg:hidden"></div>
                                         <!-- Teams -->
                                         <div [ngClass]="{'md:![grid-column:1/span_3]' : !standardView , 'md:[grid-column:1/span_12] lg:!hidden':standardView}"
-                                            class="teams  stacked svelte-1ykwt0t order-3 md:order-5"><a
-                                                class="teams-tag arrows-btn">
+                                            class="teams  stacked svelte-1ykwt0t order-3 md:order-5"
+                                            routerLink="/soccer-details"><a class="teams-tag arrows-btn">
                                                 <span>Pohkseh</span>
                                             </a>
                                             <a class="arrows-btn teams-tag">
@@ -267,7 +267,8 @@
                                         </div>
                                         }
                                         @else {
-                                        <div class="order-7   outcomes-secondary" [ngClass]="{'lg:max-w-[17.05%]':standardView}">
+                                        <div class="order-7   outcomes-secondary"
+                                            [ngClass]="{'lg:max-w-[17.05%]':standardView}">
                                             <div class="w-full">
                                                 <div
                                                     class="market-name-soccer order-4 md:order-3 w-full flex flex-row justify-center ">
@@ -296,7 +297,8 @@
                                                 </div>
                                             </div>
                                         </div>
-                                        <div class="order-7  outcomes-secondary" [ngClass]="{'lg:max-w-[17.05%]':standardView}">
+                                        <div class="order-7  outcomes-secondary"
+                                            [ngClass]="{'lg:max-w-[17.05%]':standardView}">
                                             <div class="w-full">
                                                 <div
                                                     class="market-name-soccer order-4 md:order-3 w-full flex flex-row justify-center ">
@@ -330,7 +332,8 @@
                                                 </div>
                                             </div>
                                         </div>
-                                        <div class="order-7   outcomes-secondary" [ngClass]="{'lg:max-w-[17.05%]':standardView}">
+                                        <div class="order-7   outcomes-secondary"
+                                            [ngClass]="{'lg:max-w-[17.05%]':standardView}">
                                             <div class="w-full">
                                                 <div
                                                     class="market-name-soccer order-4 md:order-3 w-full flex flex-row justify-center ">

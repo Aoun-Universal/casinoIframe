@@ -1,13 +1,13 @@
-import {Routes} from '@angular/router';
-import {VaultComponent} from './modal/vault/vault.component';
-import {VipComponent} from './modal/vip/vip.component';
-import {RegisterComponent} from './modal/register/register.component';
-import {StakeSmartComponent} from './pages/stake-smart/stake-smart.component';
-import {LogoutComponent} from './modal/logout/logout.component';
-import {ResponsibleGamblingFaqsComponent} from './pages/responsible-gambling-faqs/responsible-gambling-faqs.component';
-import {NotificationComponent} from './modal/notification/notification.component';
-import {StatisticsComponent} from './modal/statistics/statistics.component';
-import {SettingsComponent} from './modal/settings-modals/settings/settings.component';
+import { Routes } from '@angular/router';
+import { VaultComponent } from './modal/vault/vault.component';
+import { VipComponent } from './modal/vip/vip.component';
+import { RegisterComponent } from './modal/register/register.component';
+import { StakeSmartComponent } from './pages/stake-smart/stake-smart.component';
+import { LogoutComponent } from './modal/logout/logout.component';
+import { ResponsibleGamblingFaqsComponent } from './pages/responsible-gambling-faqs/responsible-gambling-faqs.component';
+import { NotificationComponent } from './modal/notification/notification.component';
+import { StatisticsComponent } from './modal/statistics/statistics.component';
+import { SettingsComponent } from './modal/settings-modals/settings/settings.component';
 import { MyBetsComponent } from './pages/my-bets/my-bets.component';
 import { HorseRacingComponent } from './pages/horse-racing/horse-racing.component';
 import {TeamF1Component} from './pages/stake-team/team-f1/team-f1.component';
@@ -40,20 +40,17 @@ export const routes: Routes = [
           import('./pages/home/home.component').then((c) => c.HomeComponent),
       },
       {
-        path:'my-bets',
-        component:MyBetsComponent,
+        path: 'my-bets',
+        loadComponent: () => import('./pages/my-bets/my-bets.component').then((c) => c.MyBetsComponent)
       },
-      //  {
-      //   path: 'affiliate',
-      //   component: AffiliateComponent,
-      // },
       {
         path: 'racing-market-detail',
-        component: RacingMarketDetailsComponent,
+        loadComponent: () => import('./pages/racing-market-details/racing-market-details.component').then((c) => c.RacingMarketDetailsComponent)
       },
       {
         path:'my-bets',
-        component:MyBetsComponent
+
+            loadComponent: () => import('./pages/my-bets/my-bets.component').then((c) => c.MyBetsComponent)
       },
       {
         path: 'drake',
@@ -62,14 +59,14 @@ export const routes: Routes = [
       },
       {
         path: 'team-f1',
-        component: TeamF1Component
+         loadComponent: () => import('./pages/stake-team/team-f1/team-f1.component').then((c)=> c.TeamF1Component)
       },
       {
         path: 'responsible-gambling',
         loadComponent: () =>
           import(
             './pages/responsible-gambling/responsible-gambling.component'
-            ).then((c) => c.ResponsibleGamblingComponent),
+          ).then((c) => c.ResponsibleGamblingComponent),
         children: [
           {
             path: 'stake-smart',
@@ -118,7 +115,7 @@ export const routes: Routes = [
           import('./pages/soccer/soccer.component').then((c) => c.SoccerComponent),
       },
       {
-        path: 'pal-ful',
+        path: 'soccer-details',
         loadComponent: () =>
           import('./pages/pal-ful/pal-ful.component').then((c) => c.PalFulComponent),
       },
@@ -128,11 +125,25 @@ export const routes: Routes = [
           import('./modal/settings-modals/settings/settings.component').then((c) => c.SettingsComponent),
       },
       {
-        path:'horse-racing',
-        component:HorseRacingComponent
+        path: 'horse-racing',
+        loadComponent: () => import('./pages/horse-racing/horse-racing.component').then((c) => c.HorseRacingComponent)
+      },
+      {
+        path: 'vip-club',
+        loadComponent: () => import('./pages/vip-cloud/vip-cloud.component').then((c) => c.VipCloudComponent)
+      },
+      {
+        path: 'blog',
+        loadComponent: () => import('./pages/blog-page/blog-page.component').then((c) => c.BlogPageComponent)
+
+      },
+      {
+        path: 'setting',
+        loadComponent: () => import('./modal/settings-modals/settings/settings.component').then((c) => c.SettingsComponent)
       },
     ],
   },
+
   {
     path: 'vault',
     component: VaultComponent,
@@ -146,25 +157,12 @@ export const routes: Routes = [
     component: RegisterComponent,
   },
   {
-    path: 'logout',
-    component: LogoutComponent,
-  },
-
-  {
     path: 'statistics',
     component: StatisticsComponent
   },
   {
     path: 'notification',
     component: NotificationComponent
-  },
-  {
-    path: 'vip-club',
-    component: VipCloudComponent
-  },
-  {
-    path: 'blog-page',
-    component: BlogPageComponent
   },
   {
     path: '**',
