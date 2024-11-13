@@ -73,3 +73,39 @@ tr:hover {
 .green-dot{
     @apply w-2 h-2  rounded-[50%] ml-[3px] bg-[#1FFF20]
 }
+.layout{
+    @apply pb-[32px] flex flex-col w-full
+}
+.page-contant{
+    @apply  pb-6 px-[3vw] w-full
+}
+.bet-text{
+    @apply text-nowrap ml-2 text-[18px] font-[500]
+}
+.casino-btn{
+    @apply ml-0 flex justify-center cursor-pointer items-center text-white h-[44px] text-center font-[600] text-[13px] py-[.9375rem] px-[1.25rem]
+}
+.sports-btn{
+    @apply ml-[5px] mb-[2px] cursor-pointer flex justify-center items-center text-white  h-[44px] bg-[#2F4553] rounded-[3rem] font-[600] text-[13px] py-[.9375rem] px-[1.25rem]
+}
+.main-icon{
+@apply w-[100%] flex justify-center mt-[2rem]
+}
+.betting{
+    @apply text-[#8A939A] font-[600] text-[13px]
+}
+.buttons-wrapper{
+    @apply flex justify-center mt-6 items-center h-[54px] bg-[#0f212e] rounded-[3rem] p-[5px]
+}
+.active-scnd-btn{
+@apply w-[100%] flex justify-center text-[#b1bad3] text-[.875rem] font-[400] mt-[17px]
+}
+.start-betting-btn{
+    @apply w-[100%] flex justify-center text-[13px] font-[700] mt-0.5
+}
+.betting-wrapper{
+    @apply flex gap-[1.5rem] justify-center mt-[27px] w-full
+}
+.wrapper-leftside{
+    @apply tab-slider max-w-[90vw] md:max-w-[50vw] overflow-x-auto
+}
