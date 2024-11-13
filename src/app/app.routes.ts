@@ -106,6 +106,16 @@ export const routes: Routes = [
         loadComponent: () =>
           import('./pages/providers/providers.component').then((c) => c.ProvidersComponent),
       },
+      {
+        path: 'blog-page',
+        loadComponent: () =>
+          import('./pages/blog-page/blog-page.component').then((c) => c.BlogPageComponent),
+      },
+      {
+        path: 'vip-club',
+        loadComponent: () =>
+          import('./pages/vip-cloud/vip-cloud.component').then((c) => c.VipCloudComponent),
+      },
     ],
   },
   {
@@ -136,10 +146,6 @@ export const routes: Routes = [
   {
     path: 'vip-club',
     component: VipCloudComponent
-  },
-  {
-    path: 'blog-page',
-    component: BlogPageComponent
   },
   {
     path: '**',
