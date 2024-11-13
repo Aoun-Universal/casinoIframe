@@ -9,7 +9,7 @@ import { Component, ElementRef, ViewChild } from '@angular/core';
   styleUrl: './settings.component.css',
 })
 export class SettingsComponent {
-  tab = '';
+  tab = 'General';
   isopen = false;
   toggledropdown() {
     this.isopen = !this.isopen;
@@ -29,5 +29,14 @@ export class SettingsComponent {
         }, 5000);
       });
     }
+  }
+  
+  openStates = {
+    tabone: false,
+    tabtwo:false,
+    tabthree:false
+  };
+  toggledropdownfunc(item: keyof typeof this.openStates){
+    this.openStates[item] = !this.openStates[item];
   }
 }
