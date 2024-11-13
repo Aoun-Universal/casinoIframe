@@ -15,6 +15,7 @@ import {VipCloudComponent} from './pages/vip-cloud/vip-cloud.component';
 import {BlogPageComponent} from './pages/blog-page/blog-page.component';
 import {AffiliateComponent} from './pages/affiliate/affiliate.component';
 import { RacingMarketDetailsComponent } from './pages/racing-market-details/racing-market-details.component';
+import { SelfExclusionComponent } from './pages/self-exclusion/self-exclusion.component';
 
 
 export const routes: Routes = [
@@ -76,6 +77,10 @@ export const routes: Routes = [
           {
             path: 'responsible-gambling-faqs',
             component: ResponsibleGamblingFaqsComponent,
+          },
+          {
+            path: 'self-exclusion',
+            component: SelfExclusionComponent,
           },
         ],
       },
