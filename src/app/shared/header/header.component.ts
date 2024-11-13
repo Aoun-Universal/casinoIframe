@@ -13,14 +13,16 @@ export class HeaderComponent {
   porfileDropOpen=false;
   massageDropOpen=false;
   bellDropOpen=false;
-  seachbutton=false;
+  searchbutton=false;
   cosinoDropOpen=false;
+
   closeDropdown() {
     this.bellDropOpen = false;
-   this.seachbutton=false;
+   this.searchbutton=false;
 
   }
 
+  // Toggle dropdown (one at a time)
   toggleDropdown(dropdownType: string) {
     if (dropdownType === 'isDropdownOpen' && this.isDropdownOpen) {
       this.isDropdownOpen = false;
@@ -31,8 +33,8 @@ export class HeaderComponent {
     } else if (dropdownType === 'bellDropOpen' && this.bellDropOpen) {
       this.bellDropOpen = false;
     } 
-    else if (dropdownType === 'seachbutton' && this.seachbutton) {
-      this.seachbutton = false;
+    else if (dropdownType === 'searchbutton' && this.searchbutton) {
+      this.searchbutton = false;
     } 
    
     else {
@@ -40,7 +42,7 @@ export class HeaderComponent {
       this.porfileDropOpen = dropdownType === 'porfileDropOpen';
       this.massageDropOpen = dropdownType === 'massageDropOpen';
       this.bellDropOpen = dropdownType === 'bellDropOpen';
-      this.seachbutton = dropdownType === 'seachbutton';
+      this.searchbutton = dropdownType === 'searchbutton';
 
 
     }

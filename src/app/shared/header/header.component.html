@@ -1,11 +1,12 @@
 <!-- Header -->
 <div class="hidden md:block lg:block">
 
-
+    <!-- Desktop View Header -->
     <div class="navigation">
         <div class="group-container">
             <div class="ctainer">
                 <div class="navigation-container">
+                    <!--Stake Logo -->
                     <div class="stack">
                         <div>
                             <div class="image-focus">
@@ -17,6 +18,7 @@
                             </div>
                         </div>
                     </div>
+                    <!-- Balance toggle button -->
                     <div class="balance-toggle">
                         <div class="coin-toggle">
                             <div class="wrapper">
@@ -24,9 +26,11 @@
                                     <button type="button" class="OpenDropdown-btn">
                                         <div class="wrap">
                                             <div class="currency  svelte" role="presentation">
+                                                <!-- Currency -->
                                                 <span class="content svelte">
                                                     <span class="nmric-num">0.00000000</span>
                                                 </span>
+                                                <!-- Bitcoin icon -->
                                                 <span class="nmric-num" title="btc">
                                                     <svg fill="none" viewBox="0 0 96 96" class="svg-icon ">
                                                         <title></title>
@@ -40,13 +44,13 @@
                                                 </span>
                                             </div>
                                         </div>
+                                        <!--  -->
                                         <span class="dropdown-icon ml-4" (click)="toggleDropdown('isDropdownOpen')">
                                             <img src="/assets/header/down.png" [class.rotate-180]="isDropdownOpen"
                                                 class="svg-icon ">
                                         </span>
-
                                     </button>
-                                    <!-- Dropdown Menu -->
+                                    <!-- Currency Dropdown Menu -->
                                     <div class="dropdown-continer " *ngIf="isDropdownOpen">
                                         <!-- Arrow -->
                                         <div class="arrow"></div>
@@ -83,19 +87,24 @@
                                 </div>
                             </div>
                         </div>
+                        <!-- Wallet button -->
                         <button type="button" class="wallet"><span>Wallet</span></button>
                     </div>
+                    <!-- Right Section for profile , search and notification -->
                     <section>
                         <div class="stack x-flex-end svelte-right right-stack">
-                            <button type="button" class="search-btn" (click)="toggleDropdown('seachbutton')">
+                            <!-- Search -->
+                            <button type="button" class="search-btn" (click)="toggleDropdown('searchbutton')">
                                 <img src="/assets/header/search.png" class="svg-icon ">
                                 <span>Search</span>
                             </button>
+
                             <div class="dropdown">
+                                <!-- Profile -->
                                 <button type="button" class="porfile-iocn" (click)="toggleDropdown('porfileDropOpen')">
                                     <img src="/assets/header/porfile.png" class="svg-icon ">
                                 </button>
-                                <!-- porfile  Menu -->
+                                <!-- profile Dropdown Menu -->
                                 <div class="porfile-dropdown" *ngIf="porfileDropOpen">
                                     <!-- Arrow -->
                                     <div class="arrow"></div>
@@ -109,15 +118,21 @@
                                         </ng-container>
                                     </div>
                                 </div>
-
                             </div>
+                            <!-- Notification button -->
                             <button type="button" class="bell-icon" (click)="toggleDropdown('bellDropOpen')">
                                 <img src="/assets/header/bell.png" class="svg-icon ">
                             </button>
+                            <!-- Notification modal -->
                             <div class="notifications-widget  svelte-6gfkw4" style="z-index: 901;" *ngIf="bellDropOpen">
                                 <div class="notifications-header svelte-12heyz0">
                                     <div class="title svelte-12heyz0">
-                                        <svg fill="#B1BAD3" viewBox="0 0 64 64" class="svg-icon "> <title></title> <path fill="#B1BAD3" d="M56.213 38.053v10.374H7.787V38.053h6.906v-15.84c.038-8.3 5.912-15.216 13.728-16.86l.112-.02V3.467a3.466 3.466 0 0 1 6.932 0v1.866c7.954 1.668 13.84 8.624 13.84 16.956v15.844l6.908-.08ZM32 63.999c5.73 0 10.374-4.644 10.374-10.374H21.627c0 5.73 4.644 10.374 10.374 10.374H32Z"></path></svg>
+                                        <svg fill="#B1BAD3" viewBox="0 0 64 64" class="svg-icon ">
+                                            <title></title>
+                                            <path fill="#B1BAD3"
+                                                d="M56.213 38.053v10.374H7.787V38.053h6.906v-15.84c.038-8.3 5.912-15.216 13.728-16.86l.112-.02V3.467a3.466 3.466 0 0 1 6.932 0v1.866c7.954 1.668 13.84 8.624 13.84 16.956v15.844l6.908-.08ZM32 63.999c5.73 0 10.374-4.644 10.374-10.374H21.627c0 5.73 4.644 10.374 10.374 10.374H32Z">
+                                            </path>
+                                        </svg>
                                         <span class="font-semibold">Notifications</span>
                                     </div>
                                     <div class="hoverable svelte-bbyuql">
@@ -145,7 +160,7 @@
                                 <button type="button" class="massage-icon" (click)="toggleDropdown('massageDropOpen')">
                                     <img src="/assets/header/massage.png" class="svg-icon ">
                                 </button>
-                                <!-- massge manu -->
+                                <!-- message menu -->
                                 <div class="massage-dropdown" *ngIf="massageDropOpen">
                                     <!-- Arrow -->
                                     <div class="arrow"></div>
@@ -174,10 +189,10 @@
 
 
     </div>
-
-    <div *ngIf="seachbutton" class="search-overlay">
+    <!-- Searchbar opens on clicking search button -->
+    <div *ngIf="searchbutton" class="search-overlay">
         <!-- Container for search bar -->
-        <div class="w-[1084.91px] ml-10 mt-2 pt-[55px]" >
+        <div class="w-[1084.91px] ml-10 mt-2 pt-[55px]">
             <!-- Search bar -->
             <div class="input-wrap ">
                 <!-- Dropdown button -->
@@ -196,7 +211,7 @@
                 </div>
 
                 <!-- Search icon -->
-                <svg fill="currentColor" viewBox="0 0 64 64" class="svg-icon  search-icon" >
+                <svg fill="currentColor" viewBox="0 0 64 64" class="svg-icon  search-icon">
                     <title></title>
                     <path fill-rule="evenodd" clip-rule="evenodd"
                         d="M10.266 3.893a23.1 23.1 0 1 1 25.668 38.414A23.1 23.1 0 0 1 10.266 3.893Zm5.112 30.764a13.9 13.9 0 1 0 15.444-23.114 13.9 13.9 0 0 0-15.444 23.114ZM38.55 46.33a28.002 28.002 0 0 0 7.78-7.78L64 56.22 56.22 64 38.55 46.33Z">
@@ -204,7 +219,8 @@
                 </svg>
 
                 <!-- Search input -->
-                <input type="text" placeholder="Search your game" class="focus:outline-none placeholder:text-[#53646F] " />
+                <input type="text" placeholder="Search your game"
+                    class="focus:outline-none placeholder:text-[#53646F] " />
 
                 <!-- Close button -->
                 <button class="ml-3 text-gray-500 hover:text-white" (click)="closeDropdown()">
@@ -221,10 +237,10 @@
         <!-- Search validation message -->
         <div data-popper-placement="bottom"
             style="z-index: 1450; position: fixed; inset: 0px auto auto 0px; margin: 0px; transform: translate3d(282.5px, 115.5px, 0px); width: 1084.69px;">
-            <div class="results-wrapper scrollY svelte-15c4jgu" >
+            <div class="results-wrapper scrollY svelte-15c4jgu">
                 <div class="exception-wrap svelte-4te59m"><span
-                        class="font-semibold text-[#b1bad3] text-[.875rem] svelte-17v69ua"
-                        >Search requires at least 3 characters.</span></div>
+                        class="font-semibold text-[#b1bad3] text-[.875rem] svelte-17v69ua">Search requires at least 3
+                        characters.</span></div>
             </div>
         </div>
 
@@ -232,19 +248,20 @@
 </div>
 
 
-<!-- mobile view -->
+<!-- mobile view Header -->
 <div class="md:hidden lg:hidden">
     <div style="--header-zIndex: 100; padding-right: 6px;" class="navigation svelte-1nt2705 mobile">
         <div class="group variant-undefined svelte-ntdiml pr-1.5"
             style="height: 100%;justify-content:center;position:relative;">
             <div class="ctainer svelte-ntdiml">
                 <div class="navigation-mobile svelte-1nt2705 authenticated">
+                    <!-- Stake Logo -->
                     <div class="stack x-flex-start y-center gap-smaller ml-1">
                         <div class="mobile">
                             <div class="image-focus svelte-1bax0ph">
                                 <a data-test="home-button"
                                     class="inline-flex relative items-center gap-2 justify-center rounded-sm font-semibold whitespace-nowrap ring-offset-background transition disabled:pointer-events-none disabled:opacity-50 focus-visible:outline-2 focus-visible:outline-offset-2 active:scale-[0.98] bg-transparent text-white betterhover:hover:bg-transparent betterhover:hover:text-white focus-visible:outline-none text-sm leading-none [&amp;_svg]:text-grey-200 [&amp;:hover>svg]:text-white !bg-transparent !text-white [&amp;_svg]:!text-white"
-                                    href="/" data-sveltekit-reload="off" data-sveltekit-preload-data="off"
+                                    data-sveltekit-reload="off" data-sveltekit-preload-data="off"
                                     data-sveltekit-noscroll="off" aria-label="Home">
                                     <div class="wrap normal svelte-1y9pixq" data-content=""><svg
                                             xmlns="http://www.w3.org/2000/svg" width="16" height="25"
@@ -258,6 +275,7 @@
                             </div>
                         </div>
                     </div>
+                    <!-- Balance Toggle -->
                     <div class="balance-toggle svelte-51jofe" data-test="balance-toggle">
                         <div class="coin-toggle svelte-1hjozqf mbl-coin-toggle">
                             <div class="wrapper currency-view-compact svelte-1hjozqf">
@@ -333,6 +351,7 @@
                                 </path>
                             </svg></button>
                     </div>
+                    <!-- Right buttons -->
                     <section>
                         <div
                             class="stack stack-right y-center gap-none padding-none direction-horizontal padding-left-auto padding-top-auto padding-bottom-auto padding-right-auto svelte-1cd1boi">
@@ -392,4 +411,3 @@
         </div>
     </div>
 </div>
-
