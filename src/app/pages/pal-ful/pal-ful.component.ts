@@ -1,8 +1,6 @@
 import { NgClass, NgFor, NgIf, NgStyle } from '@angular/common';
-import { Component, ElementRef, OnInit, ViewChild } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { FormsModule } from '@angular/forms';
-import { SwiperContainer } from 'swiper/element';
-import { Swiper } from 'swiper/types';
 import { ToggleService } from '../../services/toggle.service';
 
 @Component({
@@ -13,7 +11,6 @@ import { ToggleService } from '../../services/toggle.service';
   styleUrl: './pal-ful.component.css'
 })
 export class PalFulComponent implements OnInit {
-  @ViewChild('swiper') swiper!: ElementRef<SwiperContainer>;
   currentTab = 'main';
   currentTabTable = 'table';
   currentTabSelect = 'select';
