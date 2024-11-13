@@ -25,17 +25,7 @@ export class ToggleService {
     this.sidebarState.next(!this.sidebarState.value);
   }
 
-  openModal() {
-    this.modalState.next(true); 
-  }
-
-  closeModal() {
-    this.modalState.next(false);
-  }
-
-  toggleModal() {
-    this.modalState.next(!this.modalState.value);
-  }
+ 
 
   // Betslip
    // Loyalty Terms Modal
