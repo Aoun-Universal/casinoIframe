@@ -663,28 +663,7 @@
   <!-- --------------------------Table Topbar ------------------>
   <div class="top-sports-header events-header">
     <!-- left tab slider -->
-    <div class="tab-slider max-w-[90vw] md:max-w-[50vw] overflow-x-auto">
-      <div class="flex">
-        <!-- Tab item 1 -->
-        <a class="tab-item tab-item1" [class.active]="TableTab === 1" (click)="setActiveTableTab(1)">
-          <span>All Bets</span>
-        </a>
-
-        <!-- Tab item 2 -->
-        <a class="tab-item" [class.active]="TableTab === 2" (click)="setActiveTableTab(2)">
-          <span>High Rollers</span>
-        </a>
-
-        <!-- Tab item 3 -->
-        <a class="tab-item" [class.active]="TableTab === 3" (click)="setActiveTableTab(3)">
-          <span>Race Leaderboard</span>
-          <div class="bubble-wrap">
-            <div class="scale-up"></div>
-          </div>
-        </a>
-
-      </div>
-    </div>
+    <app-tab-slider [arrItem]="tabsItem"></app-tab-slider>
 
     <!-- Right -->
     <div class="select-wrap">
