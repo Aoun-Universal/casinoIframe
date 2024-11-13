@@ -2,7 +2,7 @@
     @apply flex flex-col w-full max-w-full h-full flex-1 pt-0 [scrollbar-color:#2f4553] overflow-y-auto overflow-x-hidden [scrollbar-width:thin]
 }
 .parent-svelte{
-    @apply  flex w-full flex-col items-center px-[3vw] py-0 
+    @apply  flex w-full flex-col items-center px-[3vw] py-0
 }
 .ctainer{
     @apply   w-full max-w-[1200px] self-center h-0
@@ -28,13 +28,7 @@
 }
 .bread-crumb-main {
     @apply flex  select-none bg-[rgb(15,33,46)] h-[44px] rounded-[0.25rem] overflow-hidden
-  } 
-  /* .svg-main {
-    @apply py-[15px] px-[20px] bg-[#0f212e] rounded-sm;
   }
-  .svg-main svg {
-    @apply w-[14.2px];
-} */
 .svg-icon {
     @apply pointer-events-none [stroke-width:0] fill-current stroke-current flex-shrink-0 inline-block size-[1em];
   }
@@ -42,16 +36,10 @@
 .arrow-svg-icon {
     @apply pointer-events-none [stroke-width:0] fill-current stroke-current flex-shrink-0 inline-block size-[1em];
   }
-/* .text-main {
-    @apply px-5 text-sm bg-[#0f212e] rounded-sm leading-[44px] flex items-center;
-  }
-.text-main span {
-    @apply mx-2;
-} */
 .slash {
     transform: skew(-20deg);
     @apply hidden lg:inline-flex w-0.5 h-[3.2em]  bg-[#1a2c38];
- }  
+ }
  .Turf-text {
     @apply text-[#fff] text-left justify-start text-sm font-semibold inline-flex items-center
 }
@@ -68,13 +56,13 @@
  .tabs-wrapper {
     @apply   mt-[1.5rem] [scrollbar-color:#2f4553] overflow-x-auto overflow-y-hidden  [scrollbar-width:thin] flex ;
     transform: translateZ(0);
- } 
+ }
  .slider{
     @apply  flex rounded-[3rem] p-[5px] shrink-0 bg-[rgb(15,33,46)]
-}  
+}
 .truncate{
     @apply  overflow-hidden text-ellipsis whitespace-nowrap
-}  
+}
 .runners-text{
     @apply text-sm text-[#fff] font-semibold inline-flex items-center justify-start text-left
 }
@@ -109,7 +97,7 @@
 
 
 
-/* 
+/*
   sabahat */
 
   .market-main{
@@ -122,14 +110,14 @@
     @apply relative items-center justify-center rounded-[calc(var(.5rem)-4px)] font-semibold whitespace-nowrap
     transition disabled:pointer-events-none disabled:opacity-50 focus-visible:outline-2 focus-visible:outline-offset-2 active:scale-[0.98] bg-transparent text-[rgb(177_186_211)] hover:bg-transparent hover:text-white focus-visible:text-white focus-visible:outline-none text-sm leading-none flex gap-1
    }
-   
+
    .flucs-container{
     @apply  flex items-center gap-4
    }
    .flucs-text{
     @apply flex cursor-pointer h-full pr-2 mt-[2px] text-sm font-semibold text-[rgb(177_186_211)]
    }
-   
+
    .win-contatiner{
     @apply grid gap-2 max-w-full items-center grid-cols-2 w-36
    }
@@ -139,12 +127,12 @@
    .place-text{
     @apply text-sm font-semibold text-center text-[rgb(177_186_211)]
    }
-   
+
    .divider-border{
     @apply bg-[rgb(47_69_83)] h-[2px]
    }
-   
-.layout-spacing:not(.reset).variant-normal.svelte-l4ghjo>{
+
+.layout-spacing:not(.reset).variant-normal.svelte-l4ghjo{
     @apply mt-[1.5rem]
 }
 
@@ -161,7 +149,7 @@ span.line-height-default.svelte-17v69ua{
 }
 .arrows {
     @apply flex flex-col items-center text-[12px]
-  
+
 }
 .translate-y-\[3px\] {
     --tw-translate-y: 3px;
@@ -169,10 +157,10 @@ span.line-height-default.svelte-17v69ua{
 }
 .svg-icon {
     @apply pointer-events-none flex-shrink-0 inline-block w-[1em] h-[1em]
-   
+
 }
 .arrow svg {
-    @apply !text-[#557086] 
+    @apply !text-[#557086]
 }
 label.svelte.svelte {
     @apply relative inline-flex items-center flex-row justify-start ;
@@ -194,7 +182,7 @@ input.svelte {
         @apply absolute w-[calc(1.5em-4px)] h-[calc(1.5em-4px)] rounded-[calc(.75em-2px)] bg-[#fff] left-0 transition-transform
 
     }
-    
+
     .silk-wrapper.svelte-snmmmh {
         @apply flex flex-col w-[32px] min-h-[40px]
 
@@ -205,17 +193,17 @@ input.svelte {
     }
     .chevron.svelte-1cbx3va {
         @apply flex justify-center text-[.75rem]
-      
+
     }
 
     .badge.variant-default {
-        @apply text-[#d5dceb] bg-[#2f4553] inline-flex text-[.625rem] min-w-[2.5ch] 
-      
+        @apply text-[#d5dceb] bg-[#2f4553] inline-flex text-[.625rem] min-w-[2.5ch]
+
     }
-  
+
     .badge{
         @apply font-semibold items-center justify-center rounded-[3px] p-[0_.25rem] whitespace-nowrap leading-[1.5]
-      
+
  }
 .luminous-continer{
     @apply grid grid-flow-col overflow-hidden gap-1 w-fit
@@ -243,10 +231,10 @@ input.svelte {
     @apply grid gap-2 max-w-full grid-cols-2 w-36
 }
 .button{
-    @apply flex justify-center items-center h-[35px] rounded-[calc(.5rem-4px)] text-sm font-bold bg-[rgb(7_24_36)] transition-colors duration-150 focus-visible:outline focus-visible:outline-2 focus-visible:outline-white focus-visible:outline-offset-2 
+    @apply flex justify-center items-center h-[35px] rounded-[calc(.5rem-4px)] text-sm font-bold bg-[rgb(7_24_36)] transition-colors duration-150 focus-visible:outline focus-visible:outline-2 focus-visible:outline-white focus-visible:outline-offset-2
 }
 .btn-amount{
-    @apply leading-normal font-bold transition-colors text-[#B1BAD3] 
+    @apply leading-normal font-bold transition-colors text-[#B1BAD3]
 }
 .tony-continer{
     @apply grid grid-flow-col overflow-hidden gap-1 w-fit
