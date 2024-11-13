@@ -141,6 +141,11 @@ export const routes: Routes = [
         path: 'setting',
         loadComponent: () => import('./modal/settings-modals/settings/settings.component').then((c) => c.SettingsComponent)
       },
+
+      {
+        path: 'stake-offer',
+        loadComponent: () => import('./pages/stake-offer/stake-offer.component').then((c) => c.StakeOfferComponent)
+      },
     ],
   },
 

@@ -1,4 +1,4 @@
-.provider{
+.provide{
     @apply w-full flex flex-col gap-8
 }
 .group-banner-wrap{
@@ -17,5 +17,20 @@
     @apply px-[3vw]
 }
 .hero{
-    @apply grid grid-cols-7
+    @apply grid grid-cols-7 gap-x-4 gap-y-8
+}
+.grid-item{
+    @apply inline-flex relative items-center gap-2 justify-center rounded-sm font-semibold whitespace-nowrap transition focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-none disabled:pointer-events-none disabled:opacity-50 active:scale-95 bg-transparent text-white hover:bg-transparent hover:text-white text-sm leading-none shadow-sm shadow-black
+}
+.wrap{
+    @apply hover:translate-y-[-2px] duration-[0.2s]
+}
+.img-wrap{
+    @apply relative overflow-hidden rounded-[8px]
+}
+.img1{
+    @apply absolute w-full h-full 
+}
+.img2{
+    @apply relative
 }
