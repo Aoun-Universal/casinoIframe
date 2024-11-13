@@ -97,13 +97,9 @@ export const routes: Routes = [
           import('./pages/pal-ful/pal-ful.component').then((c) => c.PalFulComponent),
       },
       {
-        path: 'setting',
+        path: 'providers',
         loadComponent: () =>
-          import('./modal/settings-modals/settings/settings.component').then((c) => c.SettingsComponent),
-      },
-      {
-        path:'horse-racing',
-        component:HorseRacingComponent
+          import('./pages/providers/providers.component').then((c) => c.ProvidersComponent),
       },
     ],
   },

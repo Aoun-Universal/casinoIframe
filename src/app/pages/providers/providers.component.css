@@ -1,0 +1,12 @@
+.main{
+    @apply w-full px-[3vw] flex flex-col gap-8
+}
+.banner{
+    @apply w-full flex justify-between items-center
+}
+.top-head{
+    @apply font-[600] text-[1.5rem]
+}
+.top-img{
+    @apply w-auto h-[100%]
+}
