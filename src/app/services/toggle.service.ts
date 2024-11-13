@@ -6,9 +6,8 @@ import { BehaviorSubject, Observable } from 'rxjs';
   providedIn: 'root',
 })
 export class ToggleService {
-  private sidebarState: BehaviorSubject<boolean> = new BehaviorSubject<boolean>(
-    true
-  );
+  private sidebarState: BehaviorSubject<boolean> = new BehaviorSubject<boolean>(true);
+  private Betslip: BehaviorSubject<boolean> = new BehaviorSubject<boolean>(false);
   private modalState: BehaviorSubject<boolean> = new BehaviorSubject<boolean>(false); // Modal initially hidden
   private betslipState = new BehaviorSubject<boolean>(false);
   modalState$ = this.modalState.asObservable();
