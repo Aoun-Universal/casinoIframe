@@ -43,14 +43,14 @@
   </ngx-slick-carousel>
 
 
-  <button class="max-[1155px]:hidden group absolute left-[5px] top-[5%] z-10  text-white" (click)="heroPrev()">
+  <button class="max-[1155px]:hidden group absolute left-[5px] top-[40%] z-10  text-white" (click)="heroPrev()">
     <span class="inline-block translate-y-3 opacity-50 transition-all duration-200 group-hover:opacity-100">
       <svg fill="currentColor" viewBox="0 0 64 64" class="svg-icon text-[24px]">
         <title></title>
         <path d="M36.998 53.995 16 32.998 36.998 12l6.306 6.306L28.61 33l14.694 14.694L36.998 54v-.005Z"></path>
       </svg></span>
   </button>
-  <button class=" max-[1155px]:hidden group absolute right-[5px] top-[5%] z-10   text-white" (click)="heroNext()">
+  <button class=" max-[1155px]:hidden group absolute right-[5px] top-[40%] z-10   text-white" (click)="heroNext()">
     <span
       class="inline-block  text-white translate-y-3  opacity-50 transition-all duration-200 group-hover:opacity-100">
       <svg fill="currentColor" viewBox="0 0 64 64" class="svg-icon text-[24px]">
@@ -434,7 +434,7 @@
 
     <!--Cards gallery  -->
     <div class="gallery">
-      <ngx-slick-carousel class="carousel mt-6" #gallerySlider="slick-carousel" [config]="galleryConfig"
+      <ngx-slick-carousel class="carousel mt-6 gallery-carousel" #gallerySlider="slick-carousel" [config]="galleryConfig"
         (init)="gallerySlickInit($event)" (afterChange)="galleryAfterChange($event)">
 
         @for (card of cards; track $index) {
@@ -466,11 +466,11 @@
                       <circle class="fg1 svelte-9imt6m" style="stroke:#1475e1"></circle>
                     </svg>
                   </div>
-                  <div class="w-full text-center">
+                  <div class="w-full text-center timer-text">
                     <span class="end-text">Ends in</span>
                     <div class="time">
                       <span *ngIf="card.timer.days">{{ card.timer.days }}d</span>
-                      <span>{{ card.timer.hours }}h</span> {{ card.timer.minutes }}m
+                      <span> {{ card.timer.hours }}h</span> {{ card.timer.minutes }}m
                     </div>
                   </div>
                 </div>
