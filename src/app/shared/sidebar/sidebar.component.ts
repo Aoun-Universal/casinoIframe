@@ -75,5 +75,8 @@ export class SidebarComponent implements OnInit {
   opennotificationModal() {
     this.toggle.setnotificationModal(true)
   }
+  onWalletBtnClick(){
+    this.toggle.setWalletModal(true)
+  }
   
 }

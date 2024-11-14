@@ -334,7 +334,7 @@
           <!-- dropdown inner content -->
           <div class="inner-content" [ngClass]="{'active-dropdown':openBar === 'profile'}">
             <div class="hr-border"></div>
-            <div class="nav-item dropdown-item">
+            <div class="nav-item dropdown-item" (click)="onWalletBtnClick()">
               <div class="title-wrapper">
                 <svg fill="currentColor" viewBox="0 0 64 64" class="svg-icon ">
                   <title></title>
