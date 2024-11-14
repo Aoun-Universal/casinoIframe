@@ -19,6 +19,7 @@ import { SelfExclusionComponent } from './pages/self-exclusion/self-exclusion.co
 import { RetentionProgramComponent } from './pages/retention-program/retention-program.component';
 import { AffiliateOverviewComponent } from './pages/affiliate-overview/affiliate-overview.component';
 import { CommissionComponent } from './pages/commission/commission.component';
+import { FundsComponent } from './pages/funds/funds.component';
 
 
 export const routes: Routes = [
@@ -108,6 +109,10 @@ export const routes: Routes = [
           {
             path: 'commission',
             component:CommissionComponent,
+          },
+          {
+            path: 'funds',
+            component:FundsComponent,
           },
           
         ],
