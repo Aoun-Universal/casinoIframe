@@ -1,7 +1,7 @@
 ::-webkit-scrollbar {
     display: none;
 }
-section {
+.main-section {
     @apply max-w-[1200px] m-[0_auto] relative max-[1680px]:p-[0px_3vw]
 }
 
@@ -459,3 +459,194 @@ tr:hover {
     @apply bg-[#2f4553] text-white
   }
   
+
+  /* Main header Section */
+.header-wrapper{
+    @apply flex justify-center py-8 w-full bg-cover;
+    background-image: url(../../../../public/assets/home/home-header-bg.png);
+}
+
+.ctainer{
+    @apply w-full p-[0_3vw] [max-width:calc(1200px+6vw)]
+}
+
+.header-inner{
+    @apply grid  m-[0_auto] relative text-white w-full max-w-[1200px]
+}
+
+.authenticated-wrapper{
+    @apply w-full h-full mx-auto max-w-[390px] flex overflow-visible flex-col justify-center items-start self-center
+}
+
+.details-wrapper{
+    @apply flex justify-center rounded-xl overflow-visible relative w-full bg-[rgb(15,33,46)] max-w-96 p-2 [background-image:linear-gradient(to_bottom,rgb(33,55,67),rgb(15,33,46))] lg:aspect-video
+}
+
+.wrapper-content{
+    @apply flex flex-col justify-center rounded-lg w-full bg-[rgb(15,33,46)] border-[2px] border-solid border-[#2f4553]
+}
+
+.content-details{
+    @apply flex flex-col justify-between p-6 z-10 h-full
+}
+
+.vip-progress{
+    @apply flex justify-between items-center gap-5
+}
+
+.slide-progress{
+    @apply flex justify-between hover:[transform:translateX(6px)] [transition:.25s]
+}
+
+.arrow-svg{
+    fill: rgba(177,186,211,1);
+}
+
+.info-svg{
+    @apply !mt-1
+}
+
+.progress-bar{
+    @apply relative w-full my-2 overflow-hidden rounded-[10px] bg-[rgba(47,69,83,1)] h-[0.625em]
+}
+
+.success-bar{
+    @apply h-full w-full shadow-lg rounded-[10px] relative right-full bg-[#1fff20]
+} 
+
+.miletone-wrap{
+    @apply flex items-center whitespace-nowrap gap-[.5ch]
+}
+
+.miletone-text{
+    @apply text-[#b1bad3] text-left text-[.875rem] font-semibold inline-flex mt-0.5 leading-[16.8px]
+}
+
+
+/* Cards area */
+
+.cards-area{
+    @apply flex gap-1.5 md:gap-4 xl:gap-2.5 justify-end mt-3 
+}
+
+.cards-border{
+    display: contents ;
+}
+
+.gradient-border{
+    @apply  p-[2px]  [transition:transform_.3s_ease] hover:[transform:translateY(-6px)];
+}
+
+.gradient-border-cassino{
+    background: radial-gradient(circle at 100% 100%,#213743 0,#213743 6px,transparent 6px) 0% 0%/8px 8px no-repeat,radial-gradient(circle at 0 100%,#213743 0,#213743 6px,transparent 6px) 100% 0%/8px 8px no-repeat,radial-gradient(circle at 100% 0,#213743 0,#213743 6px,transparent 6px) 0% 100%/8px 8px no-repeat,radial-gradient(circle at 0 0,#213743 0,#213743 6px,transparent 6px) 100% 100%/8px 8px no-repeat,linear-gradient(#213743,#213743) 50% 50%/calc(100% - 4px) calc(100% - 16px) no-repeat,linear-gradient(#213743,#213743) 50% 50%/calc(100% - 16px) calc(100% - 4px) no-repeat,linear-gradient(0deg,transparent 15%,#017aff 100%);
+}
+
+.gradient-border-sports{
+    background: radial-gradient(circle at 100% 100%,#213743 0,#213743 6px,transparent 6px) 0% 0%/8px 8px no-repeat,radial-gradient(circle at 0 100%,#213743 0,#213743 6px,transparent 6px) 100% 0%/8px 8px no-repeat,radial-gradient(circle at 100% 0,#213743 0,#213743 6px,transparent 6px) 0% 100%/8px 8px no-repeat,radial-gradient(circle at 0 0,#213743 0,#213743 6px,transparent 6px) 100% 100%/8px 8px no-repeat,linear-gradient(#213743,#213743) 50% 50%/calc(100% - 4px) calc(100% - 16px) no-repeat,linear-gradient(#213743,#213743) 50% 50%/calc(100% - 16px) calc(100% - 4px) no-repeat,linear-gradient(0deg,transparent 15%,#00CA51 100%);
+}
+
+
+.img-area{
+    @apply  flex-1 rounded-t-md overflow-hidden
+}
+
+.img-area img{
+    @apply object-cover max-w-[350px] max-h-[230px] w-full [aspect-ratio:1.52174/1]
+}
+
+.casino-data{
+    @apply py-3 px-4 text-left h-full
+}
+
+.casino-text{
+    @apply inline-flex justify-start gap-2 items-center text-[.875rem] text-white font-bold leading-[17px]
+}
+
+/* Cards gallery */
+.gallery{
+    @apply [grid-auto-columns:100%] -ml-1.5 -mr-1.5 grid [grid-auto-flow:column] [scroll-behavior:smooth] [scroll-snap-type:x_mandatory] pt-[10px] overflow-x-auto 
+}
+
+.gallery-slide{
+    @apply p-[0_6px] [scroll-snap-align:start] [will-change:opacity] [transition:opacity_.3s];
+}
+
+.gallery-card{
+    @apply w-full max-w-[650px] min-h-16 bg-[rgb(33,55,67)] rounded shadow-md
+}
+
+.gallery-content{
+    @apply  grid w-full h-48 pt-4 [grid-template-columns:1fr_.8fr_1.2fr] [gap:0_0] [grid-template-rows:58px_70px_48px];
+    grid-template-areas: "heading heading timer" "buttons buttons timer" "footer footer footer";
+}
+
+.heading{
+    @apply pl-4;
+    grid-area: heading;
+}
+
+.race{
+    @apply max-w-full text-white text-left text-lg font-bold whitespace-nowrap text-ellipsis overflow-hidden [display:inherit]
+}
+
+.gallery-buttons{
+    @apply  pl-4 pb-4  content-end ;
+    grid-area: buttons;
+}
+
+.leaderboard{
+    @apply inline-flex relative items-center gap-2 justify-center rounded-sm font-semibold whitespace-nowrap  transition disabled:pointer-events-none disabled:opacity-50 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 active:scale-[0.98] bg-[rgb(20,117,225)] text-white hover:hover:bg-blue-600 hover:hover:text-white focus-visible:outline-white text-sm leading-none shadow-md py-[0.9375rem] px-[1.25rem]
+}
+/* Timer */
+.timer{
+    @apply flex justify-end pr-4 pb-4 overflow-hidden;
+    grid-area: timer;
+}
+
+.timer-area{
+    @apply flex items-center justify-center relative w-28 h-28
+}
+
+.end-text{
+    @apply text-[#b1bad3] font-bold text-[.75rem] max-w-full leading-normal
+}
+
+.circular-progress{
+    /* --size: 250px;
+    --half-size: calc(var(--size) / 2);
+    --stroke-width: 20px;
+    --radius: calc((var(--size) - var(--stroke-width)) / 2);
+    --circumference: calc(var(--radius) * pi * 2);
+    --dash: calc((35.01 * var(--circumference)) / 100);
+    background: var(--grey-600); */
+}
+
+.footer{
+    grid-area: footer;
+}
+
+.footer-main{
+    @apply grid grid-flow-col auto-cols-auto h-12 py-3 pr-2 pl-4 bg-[rgb(33,55,67)] rounded-b border-solid border-t-2 border-[rgb(47,69,83)]
+}
+
+
+@media screen and (min-width:700px){
+.gallery{
+    grid-auto-columns: 50.00%;
+}
+}
+
+@media screen and (min-width:827px){
+    .header-inner{
+        @apply justify-between [grid-template-columns:40%_55%]
+    }
+    .authenticated-wrapper{
+        @apply  mr-auto ml-0
+    }
+    .cards-area{
+        @apply mt-0
+    }
+    .sm-cards-header{
+        @apply hidden
+    }
+}
