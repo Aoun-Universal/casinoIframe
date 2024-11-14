@@ -13,7 +13,7 @@
         <span class="ms-[.5em]">VIP</span>
       </h2>
       <button type="button"
-        class="inline-flex relative items-center gap-2 justify-center rounded-sm font-semibold whitespace-nowrap ring-offset-background transition disabled:pointer-events-none disabled:opacity-50 focus-visible:outline-2 focus-visible:outline-offset-2 active:scale-[0.98] bg-transparent text-grey-200 betterhover:hover:bg-transparent betterhover:hover:text-white focus-visible:text-white focus-visible:outline-none text-base leading-none"
+        class="inline-flex relative items-center gap-2 justify-center rounded-sm font-semibold whitespace-nowrap  transition disabled:pointer-events-none disabled:opacity-50 focus-visible:outline-2 focus-visible:outline-offset-2 active:scale-[0.98] bg-transparent text-grey-200 betterhover:hover:bg-transparent betterhover:hover:text-white focus-visible:text-white focus-visible:outline-none text-base leading-none"
         (click)="closevipModal()">
         <svg fill="currentColor" viewBox="0 0 64 64" class="svg-icon w-[16px] h-[16px]">
           <title></title>
@@ -32,11 +32,11 @@
               <div class="slider variant-dark svelte-1vkrcyy">
                 <div class="content-wrapper svelte-1vkrcyy">
                   <button (click)="toggletab('Deposit')" type="button"
-                    class="inline-flex relative items-center gap-2 justify-center font-semibold whitespace-nowrap ring-offset-background transition disabled:pointer-events-none disabled:opacity-50 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 active:scale-[0.98] bg-transparent       betterhover:hover:bg-grey-400 betterhover:hover:text-white focus-visible:outline-white text-sm leading-none [&amp;_svg]:text-grey-200 [&amp;:hover>svg]:text-white py-[0.8125rem] px-[1rem] rounded-full  !text-white [&amp;_svg]:!text-white"
+                    class=" btn-classes "
                     [ngClass]="{'!bg-grey-400':tab==='Deposit'}">
                     Deposit</button>
                   <button (click)="toggletab('Withdraw')" type="button"
-                    class="inline-flex relative items-center gap-2 justify-center font-semibold whitespace-nowrap ring-offset-background transition disabled:pointer-events-none disabled:opacity-50 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 active:scale-[0.98] bg-transparent text-white betterhover:hover:bg-grey-400 betterhover:hover:text-white focus-visible:outline-white text-sm leading-none [&amp;_svg]:text-grey-200 [&amp;:hover>svg]:text-white py-[0.8125rem] px-[1rem] rounded-full"
+                    class=" btn-classes"
                     data-dd-action-name="vip-benefits-tab" data-analytics="vip-benefits-tab" data-test="benefits-tab"
                     data-button-root="" [ngClass]="{'!bg-grey-400':tab==='Withdraw'}">
                     Withdraw
