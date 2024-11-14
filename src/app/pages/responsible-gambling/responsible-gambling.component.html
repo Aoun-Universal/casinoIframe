@@ -94,7 +94,7 @@
                       </a>
                     </div>
                   </div>
-                  <div class="" [ngClass]="{' p-0  gap-3 items-start grid-auto-flow:row   justify-start md:[grid-auto-flow:column] grid': routerPath !== '/responsible-gambling'}">
+                  <div class="" [ngClass]="{' p-0  gap-3 items-start grid-auto-flow:row   justify-start md:[grid-auto-flow:column] md:[grid-template-columns:_1fr_0fr_5.2fr] grid': routerPath !== '/responsible-gambling'}">
                     <div
                         class="p-0 gap-[0.5rem] items-center justify-start [grid-auto-flow:column] grid md:hidden  "
                         
@@ -180,16 +180,11 @@
                         </div>
                           <div style="display: none" ></div>
                         </div>
-                      </div>
+                  </div>
                   <div
-                    class="card  md:block hidden" [ngClass]="{'active-route': routerPath !== '/responsible-gambling'}"
-                  
-                    
-                  >
+                    class="card  md:block hidden" [ngClass]="{'active-route': routerPath !== '/responsible-gambling'}" >
                     <div
-                      class="py-2 px-0"
-                      
-                    >
+                      class="py-2 px-0">
                       <div class="relative m-0 p-0" >
                         <a
                           class=" transition-none  relative items-center gap-2 font-semibold whitespace-nowrap ring-offset-background transition disabled:pointer-events-none disabled:opacity-50 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 active:scale-[0.98] bg-transparent text-white betterhover:hover:bg-grey-900 betterhover:hover:text-white focus-visible:outline-white text-sm leading-none [&amp;_svg]:text-grey-200 [&amp;:hover>svg]:text-white py-[0.9375rem] px-[1.25rem] rounded-full w-full justify-start block"
