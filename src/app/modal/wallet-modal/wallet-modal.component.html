@@ -4,12 +4,7 @@
       <div class="relative z-[9999]">
         <button
           type="button"
-          tabindex="0"
           class="p-[1rem] absolute right-0 z-[1]"
-          aria-label="Close Modal"
-          data-testid="close-modal"
-          data-test="close-modal"
-          data-button-root=""
           (click)="onCloseModal()"
         >
           <svg fill="#B1BAD3" viewBox="0 0 64 64" class="svg-icon w-[16px]">
@@ -45,12 +40,8 @@
         </div>
         <button
           type="button"
-          tabindex="0"
-          class="inline-flex mt-6 relative items-center gap-2 justify-center bg-blue-500 text-white  text-sm leading-none shadow-md py-[0.9375rem] px-[1.25rem] w-full"
-          data-test="continue-setup"
-          data-analytics="continue-setup"
-          data-button-root=""
-        >
+          (click)="showWallet()"
+          class="inline-flex mt-6 relative items-center gap-2 justify-center bg-blue-500 text-white  text-sm leading-none shadow-md py-[0.9375rem] px-[1.25rem] w-full">
           Setup Wallet
         </button>
       </div>

@@ -1,0 +1,7 @@
+.dropdown-content{
+  @apply bg-[#213743] p-0 rounded-lg max-h-0 duration-300 transition-all overflow-hidden
+}
+
+.show{
+    @apply max-h-[200px] p-2 duration-300 transition-all
+}

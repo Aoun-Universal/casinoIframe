@@ -8,16 +8,26 @@ import { ToggleService } from '../../services/toggle.service';
   templateUrl: './wallet-modal.component.html',
   styleUrl: './wallet-modal.component.css'
 })
-export class WalletModalComponent implements OnInit{
-  isModal!:boolean;
-  constructor(private toggle:ToggleService){}
+export class WalletModalComponent implements OnInit {
+  isModal!: boolean;
+  walletState = false
+  constructor(private toggle: ToggleService) { }
 
   ngOnInit(): void {
-    this.toggle.getWalletModal().subscribe((state)=>{
-      this.isModal=state
+    this.toggle.getWalletModal().subscribe((state) => {
+      this.isModal = state
     })
+
+    this.toggle.getWallet().subscribe((value) => {
+      this.walletState = value
+    })
+
   }
-  onCloseModal(){
+  onCloseModal() {
     this.toggle.setWalletModal(false)
+  }
+  showWallet() {
+    this.toggle.setWalletModal(false);
+    this.toggle.setWallet(true)
   }
 }

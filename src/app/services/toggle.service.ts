@@ -14,8 +14,8 @@ export class ToggleService {
   private statisticsTableModalState: BehaviorSubject<boolean> = new BehaviorSubject<boolean>(false);
   private notificationModalState: BehaviorSubject<boolean> = new BehaviorSubject<boolean>(false);;
 
-  private walletModal: BehaviorSubject<boolean> = new BehaviorSubject<boolean>(false);;
-
+  private walletModal: BehaviorSubject<boolean> = new BehaviorSubject<boolean>(false);
+  private wallet: BehaviorSubject<boolean> = new BehaviorSubject<boolean>(false);
   private LeaderBoardModalState: BehaviorSubject<boolean> = new BehaviorSubject<boolean>(false);
   private RaceModalState: BehaviorSubject<boolean> = new BehaviorSubject<boolean>(false);
 
@@ -97,6 +97,13 @@ export class ToggleService {
   }
   setWalletModal(value:boolean){
     this.walletModal.next(value)
+  }
+
+  getWallet() {
+    return this.wallet
+  }
+  setWallet(value: boolean) {
+    this.wallet.next(value)
   }
 
 
