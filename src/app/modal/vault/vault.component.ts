@@ -1,5 +1,6 @@
 import { CommonModule } from '@angular/common';
 import { Component } from '@angular/core';
+import { ToggleService } from '../../services/toggle.service';
 
 @Component({
   selector: 'app-vault',
@@ -20,5 +21,10 @@ this.tooltipopen=!this.tooltipopen
 }
 toggletab(tabname:any){
 this.tab=tabname
+
+}
+constructor(private toggle:ToggleService){}
+closevaultModal() {
+  this.toggle.setVaultModalState(false);
 }
 }
