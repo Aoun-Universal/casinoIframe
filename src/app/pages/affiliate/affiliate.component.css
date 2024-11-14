@@ -2,7 +2,7 @@
   @apply bg-[#2f4553] w-full flex items-center flex-col px-[3vw] py-0;
 }
 .ctainer {
-  @apply h-full w-full max-w-[1200px];
+  @apply h-full w-full max-w-[1200px] ;
 }
 .read-more {
   @apply text-[#fff] text-left justify-start text-sm font-semibold  inline-flex items-center align-baseline;
@@ -59,10 +59,7 @@
 .outer-div {
   @apply [transition:none] relative rounded-none;
 }
-.dash {
-  @apply h-[16.6667%]  [transform:translateY(0%)] absolute left-0 top-0 w-[3px] bg-[#1475e1];
-  transition: all 0.2s ease-out;
-}
+
 .card-varient {
   @apply bg-[#0f212e]  text-[#d5dceb] rounded-lg p-6 overflow-hidden relative align-baseline m-0;
 }
@@ -127,4 +124,9 @@
 .profile-list{
     @apply  inline-flex relative items-center gap-2 font-semibold whitespace-nowrap w-full   transition disabled:pointer-events-none disabled:opacity-50 focus-visible:outline focus-visible:outline-2 hover:bg-[#B1BAD3] 
     focus-visible:outline-offset-2 active:scale-[0.98] bg-transparent text-sm leading-none  px-3 py-3 rounded-none justify-start
+}
+.dash {
+  @apply absolute left-0 w-[3px] bg-[#1475e1];
+  transition: top 0.3s ease; 
+
 }

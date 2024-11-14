@@ -17,6 +17,7 @@ import {AffiliateComponent} from './pages/affiliate/affiliate.component';
 import { RacingMarketDetailsComponent } from './pages/racing-market-details/racing-market-details.component';
 import { RetentionProgramComponent } from './pages/retention-program/retention-program.component';
 import { AffiliateOverviewComponent } from './pages/affiliate-overview/affiliate-overview.component';
+import { CommissionComponent } from './pages/commission/commission.component';
 
 
 export const routes: Routes = [
@@ -98,6 +99,10 @@ export const routes: Routes = [
           {
             path: 'retention',
             component: RetentionProgramComponent,
+          },
+          {
+            path: 'commission',
+            component:CommissionComponent,
           },
           
         ],
