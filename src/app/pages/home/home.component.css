@@ -564,7 +564,7 @@ tr:hover {
 
 /* Cards gallery */
 .gallery{
-    @apply [grid-auto-columns:100%] -ml-1.5 -mr-1.5 grid [grid-auto-flow:column] [scroll-behavior:smooth] [scroll-snap-type:x_mandatory] pt-[10px] overflow-x-auto 
+    @apply [grid-auto-columns:100%] w-full -ml-1.5 -mr-1.5 grid [grid-auto-flow:column] [scroll-behavior:smooth] [scroll-snap-type:x_mandatory] pt-[10px] overflow-x-auto 
 }
 
 .gallery-slide{
@@ -630,11 +630,11 @@ tr:hover {
 }
 
 
-@media screen and (min-width:700px){
+/* @media screen and (min-width:700px){
 .gallery{
-    grid-auto-columns: 50.00%;
+    @apply [grid-auto-columns:50%]
 }
-}
+} */
 
 @media screen and (min-width:827px){
     .header-inner{

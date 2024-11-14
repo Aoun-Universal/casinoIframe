@@ -1,4 +1,4 @@
-import { NgClass, NgFor, NgIf, NgStyle } from '@angular/common';
+import { NgClass, NgFor, NgIf, NgStyle, NgSwitch, NgSwitchCase } from '@angular/common';
 import { Component, CUSTOM_ELEMENTS_SCHEMA, ElementRef, ViewChild } from '@angular/core';
 import { ToggleService } from '../../services/toggle.service';
 import { BetSlipComponent } from '../../shared/bet-slip/bet-slip.component';
@@ -8,7 +8,7 @@ import { SlickCarouselComponent, SlickCarouselModule } from 'ngx-slick-carousel'
 @Component({
   selector: 'app-home',
   standalone: true,
-  imports: [NgFor, NgIf, NgClass, NgStyle, BetSlipComponent, SlickCarouselModule],
+  imports: [NgFor, NgIf, NgClass, NgStyle, BetSlipComponent, SlickCarouselModule,NgSwitch,NgSwitchCase],
   templateUrl: './home.component.html',
   styleUrl: './home.component.css',
   schemas: [CUSTOM_ELEMENTS_SCHEMA]
@@ -16,6 +16,8 @@ import { SlickCarouselComponent, SlickCarouselModule } from 'ngx-slick-carousel'
 export class HomeComponent {
   @ViewChild('heroSlider') heroSlider!: SlickCarouselComponent;
   @ViewChild('sportsSlider') sportsSlider!: SlickCarouselComponent;
+  @ViewChild('gallerySlider') gallerySlider!: SlickCarouselComponent;
+
   isMarketOpen = true;
   isMarketOpen2 = true;
   activeTab: number = 1;
@@ -27,6 +29,8 @@ export class HomeComponent {
   heroSlideCount = 0;
   sportsCurrentSlideIndex = 0;
   sportsSlideCount = 0;
+  galleryCurrentSlideIndex = 0;
+  gallerySlideCount = 0;
   slides = [
     {
       img: "/assets/home/1.avif",
@@ -91,6 +95,30 @@ export class HomeComponent {
     { img: "https://mediumrare.imgix.net/counter-strike-en.png?&dpr=1.5&format=auto&auto=format&q=50&w=167", count: 10 },
 
   ];
+
+  cards = [
+    {
+      title: "$100k Race",
+      description: "Ready to race to the top?",
+      leaderboardText: "Leaderboard",
+      timer: { hours: 9, minutes: 11 },
+      footerType: "notEnteredYet",  // Unique identifier for footer type
+    },
+    {
+      title: "$75k Weekly Raffle",
+      description: "Finish your week with a win!",
+      leaderboardText: "0 Tickets",
+      timer: { days: 2, hours: 8 },
+      footerType: "progressBar",  // Unique identifier for different footer
+      progress: 0,
+    },
+  ];
+  
+
+
+
+
+
   index = 0;
 
   heroSliderConfig = {
@@ -131,6 +159,24 @@ export class HomeComponent {
 
   };
 
+  galleryConfig = {
+    slidesToShow: 2,
+    slidesToScroll: 1,
+    arrows: false,
+    infinite: false,
+    variableWidth: true,
+    responsive: [
+      {
+        breakpoint: 1154,
+        settings: {
+          slidesToShow: 1,
+          slidesToScroll: 1,
+          variableWidth: true
+        }
+      },
+    ],
+  };
+
 
   heroSlickInit(e: any) {
     this.heroSlideCount = e.slick.slideCount;
@@ -140,8 +186,16 @@ export class HomeComponent {
     this.sportsSlideCount = e.slick.slideCount;
   }
 
+  gallerySlickInit(e: any) {
+    this.gallerySlideCount = e.slick.slideCount;
+  }
+
   heroAfterChange(e: any) {
     this.heroCurrentSlideIndex = e.currentSlide;
+  }
+
+  galleryAfterChange(e: any) {
+    this.galleryCurrentSlideIndex = e.currentSlide;
   }
 
   sportsAfterChange(e: any) {
@@ -151,6 +205,12 @@ export class HomeComponent {
   heroPrev() {
     if (this.heroCurrentSlideIndex !== 0) {
       this.heroSlider.slickPrev();
+    }
+  }
+
+  galleryPrev() {
+    if (this.galleryCurrentSlideIndex !== 0) {
+      this.gallerySlider.slickPrev();
     }
   }
 
@@ -165,10 +225,17 @@ export class HomeComponent {
       this.heroSlider.slickNext();
     }
   }
-  sportsNext() {
 
+  sportsNext() {
     if (this.sportsCurrentSlideIndex !== this.sportsSlideCount) {
       this.sportsSlider.slickNext();
+    }
+  }
+
+  galleryNext() {
+
+    if (this.galleryCurrentSlideIndex !== this.gallerySlideCount) {
+      this.gallerySlider.slickNext();
     }
   }
 
