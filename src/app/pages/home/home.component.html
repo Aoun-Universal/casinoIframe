@@ -451,7 +451,7 @@
               <div class="gallery-buttons">
                 <div class="flex items-center">
                   <button class="leaderboard" (click)="card.clickFunction()">{{ card.leaderboardText }}</button>
-                  <button class="arrows-btn ml-4">
+                  <button class="arrows-btn ml-4" (click)="card.InfoModal()">
                     <span>
                       <svg fill="currentColor" viewBox="0 0 64 64" class="svg-icon " style="color: var(--white);">
                         <title></title>
@@ -1082,3 +1082,4 @@
 </div>
 
 <app-leaderboard></app-leaderboard>
+<app-race></app-race>

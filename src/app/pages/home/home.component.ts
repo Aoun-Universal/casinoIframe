@@ -5,12 +5,13 @@ import { BetSlipComponent } from '../../shared/bet-slip/bet-slip.component';
 import { SlickCarouselComponent, SlickCarouselModule } from 'ngx-slick-carousel';
 import { StatisticsModalTableComponent } from "../../modal/statistics-modal-table/statistics-modal-table.component";
 import { LeaderboardComponent } from '../../modal/leaderboard/leaderboard.component';
+import { RaceComponent } from '../../modal/race/race.component';
 
 
 @Component({
   selector: 'app-home',
   standalone: true,
-  imports: [NgFor, NgIf, NgClass, NgStyle, BetSlipComponent, SlickCarouselModule,NgSwitch,NgSwitchCase,StatisticsModalTableComponent,LeaderboardComponent],
+  imports: [NgFor, NgIf, NgClass, NgStyle, BetSlipComponent, SlickCarouselModule,NgSwitch,NgSwitchCase,StatisticsModalTableComponent,LeaderboardComponent,RaceComponent],
   templateUrl: './home.component.html',
   styleUrl: './home.component.css',
   schemas: [CUSTOM_ELEMENTS_SCHEMA]
@@ -107,6 +108,7 @@ export class HomeComponent {
       timer: { hours: 9, minutes: 11 },
       footerType: "notEnteredYet",  // Unique identifier for footer type
       clickFunction: this.openLeaderBoardModal.bind(this),
+      InfoModal: this.openRaceModal.bind(this),
     },
     {
       title: "$75k Weekly Raffle",
@@ -116,6 +118,7 @@ export class HomeComponent {
       footerType: "progressBar",  // Unique identifier for different footer
       progress: 0,
       clickFunction: this.openLeaderBoardModal.bind(this),
+      InfoModal:this.openRaceModal.bind(this),
     },
   ];
   
@@ -140,6 +143,8 @@ export class HomeComponent {
     ],
 
   };
+
+  // Adjust width issues of gallery slider
   
   isCarouselActive = true;
   screenWidth = window.innerWidth;
@@ -279,6 +284,10 @@ export class HomeComponent {
 
   openLeaderBoardModal() {
     this.toggleService.setLeaderBoardModal(true);
+  }
+
+  openRaceModal() {
+    this.toggleService.setRaceModal(true);
   }
 
   toggleDropdown() {
