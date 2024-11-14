@@ -8,7 +8,7 @@
     </button>
     <div class="link-wrap" [ngClass]="{'flex-col !items-center pt-[16px] ':!isSidebar}">
       <a class="header-button casino" [ngClass]="{'casino-btn-mobile':!isSidebar}"><span class="text-[14px]"
-          *ngIf="isSidebar">CASINO</span></a>
+          *ngIf="isSidebar" routerLink="soccer">CASINO</span></a>
       <div class="image-loader"></div>
       <a class="header-button sports" [ngClass]="{'sport-btn-mobile':!isSidebar}" routerLink="sport-market"><span
           class="text-[14px]" *ngIf="isSidebar">SPORTS</span></a>
