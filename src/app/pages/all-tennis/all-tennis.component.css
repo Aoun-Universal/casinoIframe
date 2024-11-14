@@ -1,10 +1,18 @@
-.fire-icon, .accordion-card-icons{
-    filter: invert(90%) sepia(3%) saturate(5329%) hue-rotate(188deg) brightness(91%) contrast(80%);
-    width: 18px;
+.fire-icon,
+.accordion-card-icons {
+  filter: invert(90%) sepia(3%) saturate(5329%) hue-rotate(188deg)
+    brightness(91%) contrast(80%);
+  width: 18px;
 }
-.accordion-card-icons{
-    filter: invert(90%) sepia(3%) saturate(5329%) hue-rotate(188deg) brightness(91%) contrast(80%);
+.accordion-card-icons {
+  filter: invert(90%) sepia(3%) saturate(5329%) hue-rotate(188deg)
+    brightness(91%) contrast(80%);
 }
-.accordion-box-shadow{
-    box-shadow: 0 1px 3px 0 rgba(0, 0, 0, .2), 0 1px 2px 0 rgba(0, 0, 0, .12), inset 0 1px rgba(255, 255, 255, .04);
+.accordion-box-shadow {
+  box-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.2), 0 1px 2px 0 rgba(0, 0, 0, 0.12),
+    inset 0 1px rgba(255, 255, 255, 0.04);
+}
+.fav-icon {
+  filter: invert(97%) sepia(2%) saturate(449%) hue-rotate(316deg)
+    brightness(119%) contrast(100%);
 }
