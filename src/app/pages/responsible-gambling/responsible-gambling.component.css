@@ -1,3 +1,79 @@
+.good-varient {
+  @apply bg-[#2f4553] w-full flex items-center flex-col px-[3vw] py-0;
+}
+.ctainer {
+  @apply h-full w-full max-w-[1200px];
+}
+.read-more {
+  @apply text-[#fff] text-left justify-start text-sm font-semibold  inline-flex items-center align-baseline;
+}
+.span-text {
+  @apply text-[#fff]  inline text-left text-sm font-semibold;
+}
+.scrollable {
+  @apply    pt-0 flex flex-col w-full max-w-full  flex-1 [scrollbar-color:#2f4553] overflow-y-auto overflow-x-hidden [scrollbar-width:thin]
+}
+.content-wrapper{
+  @apply   relative m-0 p-0 align-baseline
+}
+.parent-svelte{
+  @apply   w-full flex flex-col items-center px-[3vw] py-0
+}
+.ctainer-svelte{
+  @apply   w-full  max-w-[1200px] self-center h-0 
+}
+
+.sizer{
+  @apply    w-full h-0
+}
+.layout-spacing{
+  @apply   pb-[32px] flex flex-col w-full
+}
+.stack{
+  @apply   p-0 gap-6 items-center justify-stretch [grid-auto-flow:row] grid
+}
+.wrap{
+  @apply  w-full grid [place-items:flex-start] pt-6
+}
+.stack-svelte{
+  @apply   w-full gap-3 p-0 items-center justify-between [grid-auto-flow:column] grid
+}
+.title{
+  @apply  text-[#fff]  text-left justify-start font-semibold text-lg inline-flex items-center
+}
+.svg-icon {
+  @apply pointer-events-none [stroke-width:0] fill-current stroke-current flex-shrink-0 inline-block size-[1em];
+}
+.card {
+  @apply sticky top-[2em] max-w-full min-w-[180px] bg-[rgb(15,33,46)] text-[#d5dceb] rounded-lg
+}
+.dash{
+  @apply h-[14.2857%] absolute left-0 top-0 w-[3px]  bg-[#1475e1]  ;
+  transition: all .2s ease-out;
+  transform: translateY(0%);
+}
+.active-route {
+  @apply sticky max-w-[220px] min-w-[220px] top-[2em];
+}
+/* Dropdown  */
+.profile-dropdown{
+  @apply absolute left-[5rem] z-[100] top-[130px] py-1  bg-white rounded-[.25rem] shadow-lg  w-[205px] 
+}
+
+.dropdown-arrow{
+  @apply absolute top-0 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-2 h-2 bg-white rotate-45 border-l border-t border-gray-200
+}
+
+.dropdown-scroll-content {
+  @apply flex flex-col p-[.25rem_0] [max-height:inherit]
+}
+
+.profile-list{
+  @apply  inline-flex relative items-center gap-2 font-semibold whitespace-nowrap w-full   transition disabled:pointer-events-none disabled:opacity-50 focus-visible:outline focus-visible:outline-2 hover:bg-[#B1BAD3] 
+  focus-visible:outline-offset-2 active:scale-[0.98] bg-transparent text-sm leading-none  px-3 py-3 rounded-none justify-start
+}
+
+/* 
 .content-wrapper {
   @apply relative;
 }
@@ -72,4 +148,4 @@
 
 .content-container {
   @apply gap-[1.5rem] grid [grid-auto-flow:column] items-start justify-start;
-}
+} */

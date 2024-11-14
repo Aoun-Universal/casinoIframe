@@ -56,7 +56,7 @@
   @apply p-[.5rem_0];
 }
 .genral-anchor {
-  @apply relative items-center gap-2 font-semibold whitespace-nowrap  transition disabled:pointer-events-none disabled:opacity-50 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 active:scale-[0.98] bg-transparent focus-visible:outline-white text-sm leading-none   py-[0.9375rem] px-[1.25rem]  !bg-grey-900 !text-white w-full justify-start block;
+  @apply relative items-center gap-2 font-semibold whitespace-nowrap  transition disabled:pointer-events-none disabled:opacity-50 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 active:scale-[0.98] bg-transparent focus-visible:outline-white text-sm leading-none   py-[0.9375rem] px-[1.25rem]  hover:bg-[rgba(7,_24,_36,_1)] !text-white w-full justify-start block;
 }
 .other-tabs {
   @apply relative items-center gap-2 font-semibold whitespace-nowrap transition disabled:pointer-events-none disabled:opacity-50 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 active:scale-[0.98] bg-transparent text-white  focus-visible:outline-white text-sm leading-none  py-[0.9375rem] px-[1.25rem]  w-full justify-start block hover:bg-[rgba(7,_24,_36,_1)] focus:bg-[rgba(7,_24,_36,_1)];

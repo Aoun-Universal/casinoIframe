@@ -1,22 +1,21 @@
-import {NgClass, NgFor, NgIf, NgStyle} from '@angular/common';
-import {Component, CUSTOM_ELEMENTS_SCHEMA, ElementRef, ViewChild} from '@angular/core';
-import {SwiperContainer} from 'swiper/element';
-import {SwiperOptions} from 'swiper/types';
-import {ToggleService} from '../../services/toggle.service';
-import {BetSlipComponent} from '../../shared/bet-slip/bet-slip.component';
+import { NgClass, NgFor, NgIf, NgStyle } from '@angular/common';
+import { Component, CUSTOM_ELEMENTS_SCHEMA, ElementRef, ViewChild } from '@angular/core';
+import { ToggleService } from '../../services/toggle.service';
+import { BetSlipComponent } from '../../shared/bet-slip/bet-slip.component';
+import { SlickCarouselComponent, SlickCarouselModule } from 'ngx-slick-carousel';
 
 
 @Component({
   selector: 'app-home',
   standalone: true,
-  imports: [NgFor, NgIf, NgClass, NgStyle, BetSlipComponent],
+  imports: [NgFor, NgIf, NgClass, NgStyle, BetSlipComponent, SlickCarouselModule],
   templateUrl: './home.component.html',
   styleUrl: './home.component.css',
   schemas: [CUSTOM_ELEMENTS_SCHEMA]
 })
 export class HomeComponent {
-  @ViewChild('swiper') swiper!: ElementRef<SwiperContainer>;
-  @ViewChild('topSportsSwiper') topSportsSwiper!: ElementRef<SwiperContainer>;
+  @ViewChild('heroSlider') heroSlider!: SlickCarouselComponent;
+  @ViewChild('sportsSlider') sportsSlider!: SlickCarouselComponent;
   isMarketOpen = true;
   isMarketOpen2 = true;
   activeTab: number = 1;
@@ -24,6 +23,10 @@ export class HomeComponent {
   TableTab: number = 1;
   // Winner Dropdown
   WinnerDropdown = false;
+  heroCurrentSlideIndex = 0;
+  heroSlideCount = 0;
+  sportsCurrentSlideIndex = 0;
+  sportsSlideCount = 0;
   slides = [
     {
       img: "/assets/home/1.avif",
@@ -74,67 +77,100 @@ export class HomeComponent {
       img: "https://mediumrare.imgix.net/politics-entertainment-en.png?&dpr=1.5&format=auto&auto=format&q=50&w=167",
       count: 1
     },
-    {img: "https://mediumrare.imgix.net/soccer-en.png?&dpr=1.5&format=auto&auto=format&q=50&w=167", count: 2},
-    {img: "https://mediumrare.imgix.net/tennis-en.png?&dpr=1.5&format=auto&auto=format&q=50&w=167", count: 3},
-    {img: "https://mediumrare.imgix.net/basketball-en.png?&dpr=1.5&format=auto&auto=format&q=50&w=167", count: 4},
-    {img: "https://mediumrare.imgix.net/cricket-en.png?&dpr=1.5&format=auto&auto=format&q=50&w=167", count: 5},
-    {img: "https://mediumrare.imgix.net/ice-hockey-en.png?&dpr=1.5&format=auto&auto=format&q=50&w=167", count: 6},
+    { img: "https://mediumrare.imgix.net/soccer-en.png?&dpr=1.5&format=auto&auto=format&q=50&w=167", count: 2 },
+    { img: "https://mediumrare.imgix.net/tennis-en.png?&dpr=1.5&format=auto&auto=format&q=50&w=167", count: 3 },
+    { img: "https://mediumrare.imgix.net/basketball-en.png?&dpr=1.5&format=auto&auto=format&q=50&w=167", count: 4 },
+    { img: "https://mediumrare.imgix.net/cricket-en.png?&dpr=1.5&format=auto&auto=format&q=50&w=167", count: 5 },
+    { img: "https://mediumrare.imgix.net/ice-hockey-en.png?&dpr=1.5&format=auto&auto=format&q=50&w=167", count: 6 },
     {
       img: "https://mediumrare.imgix.net/american-football-en.png?&dpr=1.5&format=auto&auto=format&q=50&w=167",
       count: 7
     },
-    {img: "https://mediumrare.imgix.net/racing-en.png?&dpr=1.5&format=auto&auto=format&q=50&w=167", count: 8},
-    {img: "https://mediumrare.imgix.net/dota-2-en.png?&dpr=1.5&format=auto&auto=format&q=50&w=167", count: 9},
-    {img: "https://mediumrare.imgix.net/counter-strike-en.png?&dpr=1.5&format=auto&auto=format&q=50&w=167", count: 10},
+    { img: "https://mediumrare.imgix.net/racing-en.png?&dpr=1.5&format=auto&auto=format&q=50&w=167", count: 8 },
+    { img: "https://mediumrare.imgix.net/dota-2-en.png?&dpr=1.5&format=auto&auto=format&q=50&w=167", count: 9 },
+    { img: "https://mediumrare.imgix.net/counter-strike-en.png?&dpr=1.5&format=auto&auto=format&q=50&w=167", count: 10 },
 
   ];
   index = 0;
-  // Swiper
-  swiperConfig: SwiperOptions = {
-    autoplay: false,
-    loop: false,
-    slidesPerView: 'auto',
-    spaceBetween: 30,
-    allowTouchMove: true,
-    touchRatio: 3,
-    touchAngle: 45,
-    breakpoints: {
-      320: {
-        slidesPerView: 1,
-        spaceBetween: 20,
+
+  heroSliderConfig = {
+    slidesToShow: 2,
+    slidesToScroll: 2,
+    arrows: false,
+    infinite: false,
+    variableWidth: true,
+    responsive: [
+      {
+        breakpoint: 1154,
+        settings: {
+          slidesToShow: 1,
+          slidesToScroll: 1,
+          variableWidth: true
+        }
       },
-      640: {
-        slidesPerView: 2,
-        spaceBetween: 25,
-      },
-      1024: {
-        slidesPerView: 3,
-        spaceBetween: 30,
-      }
-    }
+    ],
+
   };
-  topSportsSwiperConfig: SwiperOptions = {
-    autoplay: false,
-    slidesPerView: 'auto',
-    spaceBetween: 30,
-    allowTouchMove: true,
-    touchRatio: 3,
-    touchAngle: 45,
-    breakpoints: {
-      320: {
-        slidesPerView: 1,
-        spaceBetween: 20,
+
+  topSportsConfig = {
+    slidesToShow: 2,
+    slidesToScroll: 2,
+    arrows: false,
+    infinite: false,
+    variableWidth: true,
+    responsive: [
+      {
+        breakpoint: 1154,
+        settings: {
+          slidesToShow: 1,
+          slidesToScroll: 1,
+          variableWidth: true
+        }
       },
-      640: {
-        slidesPerView: 2,
-        spaceBetween: 25,
-      },
-      1024: {
-        slidesPerView: 5,
-        spaceBetween: 30,
-      }
-    }
+    ],
+
   };
+
+
+  heroSlickInit(e: any) {
+    this.heroSlideCount = e.slick.slideCount;
+  }
+
+  sportsSlickInit(e: any) {
+    this.sportsSlideCount = e.slick.slideCount;
+  }
+
+  heroAfterChange(e: any) {
+    this.heroCurrentSlideIndex = e.currentSlide;
+  }
+
+  sportsAfterChange(e: any) {
+    this.sportsCurrentSlideIndex = e.currentSlide;
+  }
+
+  heroPrev() {
+    if (this.heroCurrentSlideIndex !== 0) {
+      this.heroSlider.slickPrev();
+    }
+  }
+
+  sportsPrev() {
+    if (this.sportsCurrentSlideIndex !== 0) {
+      this.sportsSlider.slickPrev();
+    }
+  }
+
+  heroNext() {
+    if (this.heroCurrentSlideIndex !== this.heroSlideCount) {
+      this.heroSlider.slickNext();
+    }
+  }
+  sportsNext() {
+
+    if (this.sportsCurrentSlideIndex !== this.sportsSlideCount) {
+      this.sportsSlider.slickNext();
+    }
+  }
 
   // Betslip
   constructor(private toggleService: ToggleService) {
@@ -172,39 +208,6 @@ export class HomeComponent {
     this.LiveTab = tab;
   }
 
-  ngAfterViewInit() {
-    // Initialize each Swiper individually
-    this.initSwiper(this.swiper, this.index);
-    this.initSwiper(this.topSportsSwiper, 0);
-  }
 
-  // Swiper 1 Controls
-  slideChange(swiper: any) {
-    this.index = swiper.detail[0].activeIndex;
-  }
-
-  swipePrev() {
-    this.swiper.nativeElement.swiper.slidePrev();
-  }
-
-  swipeNext() {
-    this.swiper.nativeElement.swiper.slideNext();
-  }
-
-  // Top Sports Swiper Controls
-  swipePrevTopSports() {
-    this.topSportsSwiper.nativeElement.swiper.slidePrev();
-  }
-
-  swipeNextTopSports() {
-    this.topSportsSwiper.nativeElement.swiper.slideNext();
-  }
-
-  private initSwiper(swiperElement: ElementRef<SwiperContainer>, initialIndex: number) {
-    if (swiperElement.nativeElement.swiper) {
-      swiperElement.nativeElement.swiper.activeIndex = initialIndex;
-
-    }
-  }
 
 }

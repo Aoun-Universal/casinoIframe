@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, ElementRef, HostListener } from '@angular/core';
 import { StakeSmartComponent } from '../stake-smart/stake-smart.component';
 import { NavigationEnd, Router, RouterLink, RouterOutlet } from '@angular/router';
 import { filter } from 'rxjs';
@@ -13,7 +13,7 @@ import { CommonModule } from '@angular/common';
 })
 export class ResponsibleGamblingComponent {
   routerPath: any
-  constructor(private router: Router,) { }
+  constructor(private router: Router,private eRef: ElementRef) { }
   ngOnInit(): void {
     this.router.events
       .pipe(
@@ -26,4 +26,13 @@ export class ResponsibleGamblingComponent {
     this.routerPath = this.router.url;
 
   }
+  WinnerDropdown = false; // Initially hidden
+  toggleDropdown() {
+    this.WinnerDropdown = !this.WinnerDropdown;
+  }
+  @HostListener('document:click', ['$event'])
+  clickOutside(event: Event) {
+    if (!this.eRef.nativeElement.contains(event.target)) {
+      this.WinnerDropdown = false;
+    }}
 }
