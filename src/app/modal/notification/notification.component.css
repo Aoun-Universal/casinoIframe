@@ -1,62 +1,61 @@
+/* .notifications-widget */
 .notifications-widget.svelte-6gfkw4 {
-    display: flex;
-    flex-direction: column;
-    position: absolute;
-    top: calc(60px + .5rem);
-    right: 1.5rem;
-    width: 100%;
-    max-width: 375px;
-    max-height: 400px;
-    background-color: #0f212e;
-    padding: 0 1rem 1rem;
-    border-radius: .5rem;
-    box-shadow: 0 10px 15px -3px rgba(0, 0, 0, .2), 0 4px 6px -2px rgba(0, 0, 0, .1);
+    @apply flex flex-col absolute top-[calc(60px+0.5rem)] right-6 w-full max-w-[375px] max-h-[400px] bg-[#0f212e] p-[0_1rem_1rem] rounded-md shadow-lg;
 }
+
+/* .notifications-header */
 .notifications-header.svelte-12heyz0 {
-    background: #0f212e;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    position: relative;
-    touch-action: none;
-    padding: .25rem 0;
-    margin-right: calc(.75rem* -1);
+    @apply bg-[#0f212e] flex justify-between items-center relative touch-none py-1 pr-0;
 }
+
+/* .title */
 .title.svelte-12heyz0 {
-    display: inline-flex;
-    align-items: center;
-    gap: .5rem;
+    @apply inline-flex items-center gap-2;
 }
-.notifications-widget.svelte-6gfkw4>.notification-list-scroll {
-    height: 100%;
-    padding: 0 1rem;
-    margin: 0 calc(1rem* -1);
+
+/* .notifications-widget > .notification-list-scroll */
+.notifications-widget.svelte-6gfkw4 > .notification-list-scroll {
+    @apply h-full px-4 -mx-4;
 }
+
+/* .empty-notifications */
 .empty-notifications.svelte-w18c7z {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    height: 100%;
+    @apply flex items-center justify-center h-full;
 }
+
+/* .empty-list */
 .empty-list.svelte-1qm952x {
-    padding:1rem !important;
-    color: #b1bad3;
-    flex-direction: column;
-    margin: 0 auto;
-    display: flex;
-    align-items: center;
-    font-size: .875rem;
+    @apply p-4 text-[#b1bad3] flex flex-col mx-auto items-center text-sm;
 }
-.empty-list.spacing-compact.svelte-1qm952x>*+* {
-    margin-top: .25rem;
+
+/* .empty-list.spacing-compact > * + * */
+.empty-list.spacing-compact.svelte-1qm952x > * + * {
+    @apply mt-1;
 }
-em.variant-highlighted.svelte-17v69ua, span.variant-highlighted.svelte-17v69ua, h1.variant-highlighted.svelte-17v69ua, h2.variant-highlighted.svelte-17v69ua, h3.variant-highlighted.svelte-17v69ua, h4.variant-highlighted.svelte-17v69ua, h5.variant-highlighted.svelte-17v69ua, h6.variant-highlighted.svelte-17v69ua, p.variant-highlighted.svelte-17v69ua {
-    color: #fff;
+
+/* .variant-highlighted */
+em.variant-highlighted.svelte-17v69ua,
+span.variant-highlighted.svelte-17v69ua,
+h1.variant-highlighted.svelte-17v69ua,
+h2.variant-highlighted.svelte-17v69ua,
+h3.variant-highlighted.svelte-17v69ua,
+h4.variant-highlighted.svelte-17v69ua,
+h5.variant-highlighted.svelte-17v69ua,
+h6.variant-highlighted.svelte-17v69ua,
+p.variant-highlighted.svelte-17v69ua {
+    @apply text-white;
 }
+
+/* .large-icon */
 .large-icon.svelte-1qm952x {
-    font-size: 6rem;
+    @apply text-[6rem];
 }
+
+/* .empty-notifications svg */
 .empty-notifications.svelte-w18c7z svg {
-    transform: rotate(90deg);
-    margin-bottom: 1rem;
+    @apply transform rotate-90 mb-4;
+}
+
+.close-icon{
+    @apply inline-flex relative items-center gap-2 justify-center rounded-sm font-semibold whitespace-nowrap  transition disabled:pointer-events-none disabled:opacity-50 focus-visible:outline-2 focus-visible:outline-offset-2 active:scale-[0.98] bg-transparent text-white  focus-visible:outline-none text-base leading-none py-4 px-5
 }

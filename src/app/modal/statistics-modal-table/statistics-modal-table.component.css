@@ -118,3 +118,18 @@
 .eye-btn {
   @apply bg-[#2F4553] flex relative items-center gap-2 justify-center rounded-sm font-semibold whitespace-nowrap transition disabled:pointer-events-none disabled:opacity-50 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 active:scale-[0.98]  text-white    text-xs leading-none shadow-md py-[0.75rem] px-[0.75rem];
 }
+.close-icon{
+  @apply inline-flex relative items-center gap-2 justify-center rounded-sm font-semibold whitespace-nowrap  transition disabled:pointer-events-none disabled:opacity-50 focus-visible:outline-2 focus-visible:outline-offset-2 active:scale-[0.98] bg-transparent text-gray-200   focus-visible:text-white focus-visible:outline-none text-base leading-none w-[16px] h-[24px]
+}
+.tabs-btn{
+  @apply inline-flex relative items-center gap-2 justify-center font-semibold whitespace-nowrap  transition disabled:pointer-events-none disabled:opacity-50 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 active:scale-[0.98] bg-transparent   focus-visible:outline-white text-sm leading-none py-[0.9375rem] px-[1.25rem] rounded-full !text-white  flex-1
+}
+.drop-down{
+  @apply w-[91px] h-[39px] bg-[#0f212e] shadow-[0_1px_3px_0_rgba(0,_0,_0,_.2),_0_1px_2px_0_rgba(0,_0,_0,_.12)] border-[2px] border-[#2f4553] rounded-[.25rem] transition-all flex justify-between text-white items-center px-[5px]
+}
+.dropdown-tab{
+  @apply absolute w-[91px] bg-[#0f212e] border border-[#2f4553]  rounded-[12px] shadow-[0_1px_3px_0_rgba(0,_0,_0,_.2),_0_1px_2px_0_rgba(0,_0,_0,_.12)]
+}
+.rafles-btns{
+  @apply inline-flex relative items-center gap-2 justify-center rounded-sm font-semibold whitespace-nowrap  transition disabled:pointer-events-none disabled:opacity-50 focus-visible:outline-2 focus-visible:outline-offset-2 active:scale-[0.98] bg-transparent text-white   focus-visible:outline-none text-sm leading-none
+}
