@@ -75,4 +75,5 @@ export class SidebarComponent implements OnInit {
   opennotificationModal() {
     this.toggle.setnotificationModal(true)
   }
+  
 }
