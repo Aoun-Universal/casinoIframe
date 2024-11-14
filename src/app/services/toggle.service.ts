@@ -13,7 +13,12 @@ export class ToggleService {
   private statisticsModalState: BehaviorSubject<boolean> = new BehaviorSubject<boolean>(false);
   private statisticsTableModalState: BehaviorSubject<boolean> = new BehaviorSubject<boolean>(false);
   private notificationModalState: BehaviorSubject<boolean> = new BehaviorSubject<boolean>(false);;
+
   private walletModal: BehaviorSubject<boolean> = new BehaviorSubject<boolean>(false);;
+
+  private LeaderBoardModalState: BehaviorSubject<boolean> = new BehaviorSubject<boolean>(false);
+  private RaceModalState: BehaviorSubject<boolean> = new BehaviorSubject<boolean>(false);
+
 
 
   sidebarState$ = this.sidebarState.asObservable();
@@ -86,10 +91,28 @@ export class ToggleService {
   setnotificationModal(value: boolean) {
     this.notificationModalState.next(value)
   }
+
   getWalletModal(){
     return this.walletModal
   }
   setWalletModal(value:boolean){
     this.walletModal.next(value)
+  }
+
+
+   getLeaderBoardstate() {
+    return this.LeaderBoardModalState;
+  }
+  setLeaderBoardModal(value: boolean) {
+    this.LeaderBoardModalState.next(value);
+  }
+  
+
+  getRaceModalstate() {
+    return this.RaceModalState;
+  }
+  setRaceModal(value: boolean) {
+    this.RaceModalState.next(value);
+
   }
 }
