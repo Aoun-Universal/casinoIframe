@@ -1,36 +1,21 @@
+
 <div class="good-varient">
-  <div class="ctainer">
-    <div class="flex gap-4 py-2 flex-col md:flex-row md:justify-between items-center ">
-      <div class="flex gap-2 items-center w-full">
-        <span class="span-text"
-          ><span class="mr-3"
-            >Update to Level 2 verification so we can help secure your Stake
-            account.</span
-          >
-          <a
+  <div class="ctainer ">
+    <div class="flex gap-4 py-2 justify-between items-center md:flex-row flex-col ">
+      <div class="flex gap-2 items-center"> <span 
+          class="weight-semibold line-height-default is-inline align-left size-default text-size-default variant-highlighted with-icon-space svelte-17v69ua"><span
+            class="mr-3 text-[14px] font-semibold">Update to Level 2 verification so we can help secure your Stake account.</span> <a
             class="inline-flex relative items-center gap-2 justify-center rounded-sm font-semibold whitespace-nowrap ring-offset-background transition disabled:pointer-events-none disabled:opacity-50 focus-visible:outline-2 focus-visible:outline-offset-2 active:scale-[0.98] bg-transparent text-white betterhover:hover:bg-transparent betterhover:hover:text-white focus-visible:outline-none text-sm leading-none [&amp;_svg]:text-grey-200 [&amp;:hover>svg]:text-white underline"
-            target="_blank"
-            ><span class="read-more">Read more</span></a
-          ></span
-        >
-      </div>
-      <div class="flex gap-6 w-full md:justify-end">
-        <button
-          type="button"
-          class="inline-flex relative items-center gap-2 justify-center rounded-sm font-semibold whitespace-nowrap ring-offset-background transition disabled:pointer-events-none disabled:opacity-50 focus-visible:outline-2 focus-visible:outline-offset-2 active:scale-[0.98] bg-transparent text-white betterhover:hover:bg-transparent betterhover:hover:text-white focus-visible:outline-none text-sm leading-none [&amp;_svg]:text-grey-200 [&amp;:hover>svg]:text-white w-full"
-        >
-          Dismiss
-        </button>
-        <a
+            rel="external noreferrer noopener"><span 
+              class="weight-semibold line-height-default align-left size-default text-size-default variant-highlighted with-icon-space svelte-17v69ua">Read
+              more</span></a></span></div>
+      <div class="flex md:gap-6 md:justify-end justify-between gap-20"><button type="button" tabindex="0"
+          class="inline-flex relative items-center gap-2 justify-center rounded-sm font-semibold whitespace-nowrap ring-offset-background transition disabled:pointer-events-none disabled:opacity-50 focus-visible:outline-2 focus-visible:outline-offset-2 active:scale-[0.98] bg-transparent text-white betterhover:hover:bg-transparent betterhover:hover:text-white focus-visible:outline-none text-sm leading-none [&amp;_svg]:text-grey-200 [&amp;:hover>svg]:text-white w-full">Dismiss</button> <a
           class="inline-flex relative items-center gap-2 justify-center rounded-sm font-semibold whitespace-nowrap ring-offset-background transition disabled:pointer-events-none disabled:opacity-50 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 active:scale-[0.98] bg-blue-500 text-white betterhover:hover:bg-blue-600 betterhover:hover:text-white focus-visible:outline-white text-sm leading-none shadow-md py-[0.8125rem] px-[1rem] w-full"
-          href="/settings/verify"
-          >Update verification</a
-        >
-      </div>
+        >Update verification</a></div>
     </div>
   </div>
 </div>
-
 <div class="scrollable">
   <div>
     <div class="content-wrapper">
@@ -120,14 +105,14 @@
                           <div class="dropdown-arrow"></div>
                           <div class="dropdown-scroll-content">
                             <div>
-                              <button type="button" class="profile-list text-[#1475e1]">
+                              <button type="button" class="profile-list text-[#1475e1]" routerLink="/affiliate/Overview">
                                 <span>Overview</span>
                                 
                               </button>
-                              <button type="button" class="profile-list text-[rgb(47_69_83)]">
+                              <button type="button" class="profile-list text-[rgb(47_69_83)]" routerLink="/affiliate/retention">
                                 <span>Retention Program</span>
                               </button>
-                              <button type="button" class="profile-list text-[rgb(47_69_83)]">
+                              <button type="button" class="profile-list text-[rgb(47_69_83)]" routerLink="/affiliate/commission">
                                 <span>Commission</span>
                               </button>
                               <button type="button" class="profile-list text-[rgb(47_69_83)]">
@@ -146,44 +131,33 @@
                         </div>
                       </div>
                       <div class="card md:block hidden">
-                        <div class="outer-wraper">
+                        <div class="outer-wraper relative">
                           <div class="wraper-svelte">
+                            <!-- Navigation Links -->
                             <a
-                        routerLink="/affiliate/Overview"
-                             
-                              class="outer-div bg-[rgb(7,24,36)] relative items-center gap-2 font-semibold whitespace-nowrap ring-offset-background transition disabled:pointer-events-none disabled:opacity-50 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 active:scale-[0.98] bg-transparent betterhover:hover:bg-grey-900 betterhover:hover:text-white focus-visible:outline-white text-sm leading-none [&amp;_svg]:text-grey-200 [&amp;:hover>svg]:text-white py-[0.9375rem] px-[1.25rem] rounded-full !bg-grey-900 !text-white [&amp;_svg]:!text-white w-full justify-start block"
-                              ><span>Overview</span>
+                              *ngFor="let route of routes; let i = index"
+                              [routerLink]="route.path"
+                              [ngClass]="{
+                                '!bg-[#071824] text-white': isActive(route.path),
+                                'outer-div': true
+                              }"
+                              class="outer-div relative items-center gap-2 font-semibold whitespace-nowrap ring-offset-background transition disabled:pointer-events-none disabled:opacity-50 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 active:scale-[0.98] bg-transparent betterhover:hover:bg-grey-900 betterhover:hover:text-white focus-visible:outline-white text-sm leading-none [&amp;_svg]:text-grey-200 [&amp;:hover>svg]:text-white py-[0.9375rem] px-[1.25rem] rounded-full w-full justify-start block"
+                              (click)="updateDashPosition()"
+                            >
+                              <span>{{ route.label }}</span>
                             </a>
-                          
-                            <a
-                            routerLink="/affiliate/retention"
-                              class="outer-div relative items-center gap-2 font-semibold whitespace-nowrap ring-offset-background transition disabled:pointer-events-none disabled:opacity-50 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 active:scale-[0.98] bg-transparent text-white betterhover:hover:bg-grey-900 betterhover:hover:text-white focus-visible:outline-white text-sm leading-none [&amp;_svg]:text-grey-200 [&amp;:hover>svg]:text-white py-[0.9375rem] px-[1.25rem] rounded-full w-full justify-start block"
-                              ><span>Retention Program</span>
-                               </a
-                            ><a
-                              class="outer-div relative items-center gap-2 font-semibold whitespace-nowrap ring-offset-background transition disabled:pointer-events-none disabled:opacity-50 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 active:scale-[0.98] bg-transparent text-white betterhover:hover:bg-grey-900 betterhover:hover:text-white focus-visible:outline-white text-sm leading-none [&amp;_svg]:text-grey-200 [&amp;:hover>svg]:text-white py-[0.9375rem] px-[1.25rem] rounded-full w-full justify-start block"
-                              ><span>Commission</span> </a
-                            ><a
-                              class="outer-div relative items-center gap-2 font-semibold whitespace-nowrap ring-offset-background transition disabled:pointer-events-none disabled:opacity-50 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 active:scale-[0.98] bg-transparent text-white betterhover:hover:bg-grey-900 betterhover:hover:text-white focus-visible:outline-white text-sm leading-none [&amp;_svg]:text-grey-200 [&amp;:hover>svg]:text-white py-[0.9375rem] px-[1.25rem] rounded-full w-full justify-start block"
-                              ><span>Funds</span> </a
-                            ><a
-                              class="outer-div relative items-center gap-2 font-semibold whitespace-nowrap ring-offset-background transition disabled:pointer-events-none disabled:opacity-50 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 active:scale-[0.98] bg-transparent text-white betterhover:hover:bg-grey-900 betterhover:hover:text-white focus-visible:outline-white text-sm leading-none [&amp;_svg]:text-grey-200 [&amp;:hover>svg]:text-white py-[0.9375rem] px-[1.25rem] rounded-full w-full justify-start block"
-                              href="/affiliate/referred-users"
-                              ><span>Referred Users</span> </a
-                            ><a
-                              class="outer-div relative items-center gap-2 font-semibold whitespace-nowrap ring-offset-background transition disabled:pointer-events-none disabled:opacity-50 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 active:scale-[0.98] bg-transparent text-white betterhover:hover:bg-grey-900 betterhover:hover:text-white focus-visible:outline-white text-sm leading-none [&amp;_svg]:text-grey-200 [&amp;:hover>svg]:text-white py-[0.9375rem] px-[1.25rem] rounded-full w-full justify-start block"
-                              ><span>Campaigns</span>
-                            </a>
+                      
+                            <!-- Dash indicator positioned based on active link -->
                             <div
-                              class="dash"
-                              style="
-                                height: 16.6667%;
-                                transform: translateY(0%);
-                              "
+                              class="dash bg-[#071824] transition-all duration-300"
+                              [style.top.%]="activeIndex * (100 / routes.length)"
+                              [style.height.%]="100 / routes.length"
                             ></div>
                           </div>
                         </div>
                       </div>
+                      
+                      
                      <div>
                       <router-outlet></router-outlet>
                      </div>

@@ -9,6 +9,7 @@ import { Component } from '@angular/core';
   styleUrl: './all-tennis.component.css'
 })
 export class AllTennisComponent {
+  nestedAcc=[1,2]
   nestedAccCards=[1,2,3,4]
   accCards=[1,2,3,4,5,6]
   isAcc:boolean=false;
