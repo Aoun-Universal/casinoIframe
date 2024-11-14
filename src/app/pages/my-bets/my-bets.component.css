@@ -11,93 +11,125 @@
   @apply flex items-center justify-between;
 }
 .events-header {
-  @apply pt-4 !min-h-11;
+  @apply pt-[22.5px] !min-h-11;
 }
 .tab-slider {
-    @apply bg-[#0f212e] flex rounded-[3rem] p-[5px] flex-shrink-0 
+  @apply bg-[#0f212e] flex rounded-[3rem] p-[5px] flex-shrink-0;
 }
 
-.select-wrap{
-    @apply hidden md:flex flex-row justify-self-end items-center gap-2
+.select-wrap {
+  @apply hidden md:flex flex-row justify-self-end items-center gap-2;
 }
-.select-content{
-    @apply relative [flex-grow:1] w-full flex 
-}
-
-  .dropdown-icon-wrap{
-    @apply absolute top-[52%] right-[.5em] text-[#b1bad3] [transform:translateY(-50%)] pointer-events-none cursor-pointer
+.select-content {
+  @apply relative [flex-grow:1] w-full flex;
 }
 
-select{
-    @apply py-[7px] pl-[7px] pr-[28px] text-sm w-full text-white bg-[#0f212e] outline-none m-0 cursor-pointer appearance-none rounded-[.25rem] [transition:all_.25s] font-semibold border-[2px] border-solid border-[#2f4553] shadow-[0_1px_3px_0_rgba(0,0,0,.2),0_1px_2px_0_rgba(0,0,0,.12)];
+.dropdown-icon-wrap {
+  @apply absolute top-[52%] right-[.5em] text-[#b1bad3] [transform:translateY(-50%)] pointer-events-none cursor-pointer;
+}
+
+select {
+  @apply py-[7px] pl-[7px] pr-[28px] text-sm w-full text-white bg-[#0f212e] outline-none m-0 cursor-pointer appearance-none rounded-[.25rem] [transition:all_.25s] font-semibold border-[2px] border-solid border-[#2f4553] shadow-[0_1px_3px_0_rgba(0,0,0,.2),0_1px_2px_0_rgba(0,0,0,.12)];
 }
 .arrows-btn {
-    @apply inline-flex relative cursor-pointer items-center rounded-[2rem] gap-2 justify-center border border-solid border-[#2f4553] font-semibold text-[.875rem] whitespace-nowrap transition disabled:pointer-events-none disabled:opacity-50 focus-visible:outline-2 focus-visible:outline-offset-2 active:scale-[0.98] bg-transparent text-white focus-visible:outline-none text-sm leading-none [&:hover>svg]:text-white
+  @apply inline-flex relative cursor-pointer items-center rounded-[2rem] gap-2 justify-center border border-solid border-[#2f4553] font-semibold text-[.875rem] whitespace-nowrap transition disabled:pointer-events-none disabled:opacity-50 focus-visible:outline-2 focus-visible:outline-offset-2 active:scale-[0.98] bg-transparent text-white focus-visible:outline-none text-sm leading-none [&:hover>svg]:text-white;
 }
 
-.mode-btn{
-    @apply py-[13px] px-4 !shadow-md !rounded-[4px] !bg-[rgb(47,69,83)]
+.mode-btn {
+  @apply py-[13px] px-4 !shadow-md !rounded-[4px] !bg-[rgb(47,69,83)];
 }
 .table-container {
-    @apply !w-full  rounded-lg pt-5 shadow-lg
+  @apply !w-full  rounded-lg pt-5  md:px-0;
 }
-table{
-    @apply w-full
+table {
+  @apply w-full;
 }
-th, td {
-    @apply w-1/5 p-4  align-middle text-[#b1bad3] text-sm whitespace-nowrap rounded-tl rounded-bl ;
+th,
+td {
+  @apply w-1/5 p-4  align-middle text-[#b1bad3] text-sm whitespace-nowrap rounded-tl rounded-bl;
 }
 th {
-    @apply  font-normal !bg-[#1A2C38];
+  @apply font-normal !bg-[#1A2C38];
 }
 tr:nth-child(odd) {
-    @apply bg-[#213743];
+  @apply bg-[#213743];
 }
 tr:hover {
-    @apply bg-[#3b4c5e];
+  @apply bg-[#3b4c5e];
 }
 .bet-amount {
-    @apply flex items-center !justify-end text-end float-right;
+  @apply flex items-center !justify-end text-end float-right;
 }
-.lg-row{
-    @apply max-[768px]:hidden
+.lg-row {
+  @apply max-[768px]:hidden;
 }
 .bet-amount img {
-    @apply w-5 h-5 ml-2;
+  @apply w-5 h-5 ml-2;
 }
-.green-dot{
-    @apply w-2 h-2  rounded-[50%] ml-[3px] bg-[#1FFF20]
+.green-dot {
+  @apply w-2 h-2  rounded-[50%] ml-[3px] bg-[#1FFF20];
 }
-.layout{
-    @apply pb-[32px] flex flex-col w-full
+.layout {
+  @apply pb-[32px] flex flex-col w-full;
 }
-.page-contant{
-    @apply  pb-6 px-[3vw] w-full
+.page-contant {
+  @apply pb-6 px-[3vw] w-full;
 }
-.bet-text{
-    @apply text-nowrap ml-2 text-[18px] font-[500]
+.bet-text {
+  @apply text-nowrap ml-2 text-[18px] font-[500];
 }
-.casino-btn{
-    @apply ml-0 flex justify-center cursor-pointer items-center text-white h-[44px] text-center font-[600] text-[13px] py-[.9375rem] px-[1.25rem]
+.casino-btn {
+  @apply ml-0 flex justify-center cursor-pointer items-center text-white h-[44px] text-center font-[600] text-[13px] py-[.9375rem] px-[1.25rem];
 }
-.sports-btn{
-    @apply ml-[5px] mb-[2px] cursor-pointer flex justify-center items-center text-white  h-[44px] bg-[#2F4553] rounded-[3rem] font-[600] text-[13px] py-[.9375rem] px-[1.25rem]
+.sports-btn {
+  @apply ml-[5px] mb-[2px] cursor-pointer flex justify-center items-center text-white  h-[44px] bg-[#2F4553] rounded-[3rem] font-[600] text-[13px] py-[.9375rem] px-[1.25rem];
 }
-.main-icon{
-@apply w-[100%] flex justify-center mt-[2rem]
+.main-icon {
+  @apply w-[100%] flex justify-center mt-[2rem];
 }
-.betting{
-    @apply text-[#8A939A] font-[600] text-[13px]
+.betting {
+  @apply text-[#8A939A] font-[600] text-[13px];
 }
-.buttons-wrapper{
-    @apply flex justify-center mt-6 items-center h-[54px] bg-[#0f212e] rounded-[3rem] p-[5px]
+.buttons-wrapper {
+  @apply flex justify-center mt-6 items-center h-[54px] bg-[#0f212e] rounded-[3rem] p-[5px];
 }
-.active-scnd-btn{
-@apply w-[100%] flex justify-center text-[#b1bad3] text-[.875rem] font-[400] mt-[17px]
+.active-scnd-btn {
+  @apply w-[100%] flex justify-center text-[#b1bad3] text-[.875rem] font-[400] mt-[17px];
 }
-.start-betting-btn{
-    @apply w-[100%] flex justify-center text-[13px] font-[700] mt-0.5
+.start-betting-btn {
+  @apply w-[100%] flex justify-center text-[13px] font-[700] mt-0.5;
 }
-.betting-wrapper{
-    @apply flex gap-[1.5rem] justify-center mt-[27px] w-full
+.betting-wrapper {
+  @apply flex gap-[1.5rem] justify-center mt-[27px] w-full;
+}
+
+.wrapper-leftside {
+  @apply tab-slider max-w-[90vw] md:max-w-[50vw] overflow-x-auto;
+}
+.bottom-text {
+  @apply text-[.875rem] font-[600] px-[16px] rounded-[4px] tracking-[-2] py-[15px] whitespace-nowrap justify-center items-center bg-[#2F4553];
+}
+.bottom-wrapper {
+  @apply flex justify-center items-center w-full gap-[.5rem] pt-[18px] flex-wrap;
+}
+.bottom-content {
+  @apply px-[1rem] pb-[1rem] gap-[7px] flex flex-col;
+}
+.share-wrap {
+  @apply inline-flex ml-[.5rem];
+}
+.id-wrap {
+  @apply inline-flex relative justify-center touch-auto;
+}
+.content {
+  @apply overflow-y-auto overflow-x-hidden;
+}
+.modal-content {
+  @apply flex flex-col relative touch-auto;
+}
+.candy-text {
+  @apply text-white leading-[1.5] text-center justify-center flex text-[16px] font-[600] touch-auto;
+}
+.betting-parent {
+  @apply flex justify-center gap-[1.5rem] mt-[27px];
 }

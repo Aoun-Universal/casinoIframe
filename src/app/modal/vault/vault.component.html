@@ -1,8 +1,6 @@
-<div class="card size-md svelte-cq3ecl mx-auto" *ngIf="modalclose">
-  <div class="header svelte-227w12" bis_skin_checked="1">
-    <h2
-      class="weight-semibold line-height-default align-left size-base text-size-base variant-highlighted with-icon-space svelte-17v69ua flex items-center gap-2"
-    >
+<div class="card mx-auto mt-[45px]">
+  <div class="header">
+    <h2 class="flex items-center gap-2">
       <div>
         <svg
           fill="currentColor"
@@ -20,19 +18,13 @@
       <span class="text-white">Vault</span>
     </h2>
     <button
-      type="button"
-      tabindex="0"
-      class="inline-flex relative items-center gap-2 justify-center rounded-sm font-semibold whitespace-nowrap ring-offset-background transition disabled:pointer-events-none disabled:opacity-50 focus-visible:outline-2 focus-visible:outline-offset-2 active:scale-[0.98] bg-transparent text-grey-200 betterhover:hover:bg-transparent betterhover:hover:text-white focus-visible:text-white focus-visible:outline-none text-base leading-none"
-      aria-label="Close Modal"
-      data-testid="close-modal"
-      data-test="close-modal"
-      data-button-root=""
+      class=" btn-class"
     >
       <svg
         fill="currentColor"
         viewBox="0 0 64 64"
         class="svg-icon w-[16px]"
-        (click)="closeModal()"
+        (click)="closevaultModal()"
       >
         <title></title>
         <path
@@ -42,33 +34,25 @@
     </button>
   </div>
   <div
-    class="content scrollY overscroll-behavior-contain svelte-cq3ecl scrollbar-visible max-h-[calc(100%-8em)] overflow-y-scroll"
-    id="modal-scroll"
-    bis_skin_checked="1"
-  >
-    <div class="modal-content svelte-cq3ecl" bis_skin_checked="1">
-      <div class="content svelte-1m9kzo7" bis_skin_checked="1">
-        <div class="center-wrapper svelte-lenupg" bis_skin_checked="1">
-          <div class="tabs-wrapper scrollX svelte-1vkrcyy" bis_skin_checked="1">
-            <div
-              class="slider variant-dark svelte-1vkrcyy"
-              bis_skin_checked="1"
-            >
-              <div class="content-wrapper svelte-1vkrcyy" bis_skin_checked="1">
+    class="  overflow-y-scroll">
+    <div class="modal-content ">
+      <div class="content px-4">
+        <div class="center-wrapper">
+          <div class="tabs-wrapper">
+            <div class="slider">
+              <div class="content-wrapper">
                 <button
                   type="button"
                   tabindex="0"
-                  class="inline-flex relative items-center gap-2 justify-center font-semibold whitespace-nowrap ring-offset-background transition disabled:pointer-events-none disabled:opacity-50 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 active:scale-[0.98] bg-transparent betterhover:hover:bg-grey-400 betterhover:hover:text-white focus-visible:outline-white text-sm leading-none [&amp;_svg]:text-grey-200 [&amp;:hover>svg]:text-white py-[0.9375rem] px-[1.25rem] rounded-full !bg-grey-400 !text-white [&amp;_svg]:!text-white"
-                  data-testid="vault-tab-deposit"
-                  data-test="vault-tab-deposit"
+                  class="inline-flex relative items-center gap-2 justify-center font-semibold whitespace-nowrap ring-offset-background transition disabled:pointer-events-none disabled:opacity-50 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 active:scale-[0.98] bg-transparent betterhover:hover:bg-grey-400 betterhover:hover:text-white focus-visible:outline-white text-sm leading-none [&amp;_svg]:text-grey-200 [&amp;:hover>svg]:text-white py-[0.9375rem] px-[1.25rem] rounded-full !bg-[#2f4553] !text-white [&amp;_svg]:!text-white" (click)="toggletab('Deposit')"
+                  [ngClass]="{'!bg-[#2f4553]':tab ==='Deposit'}"
                 >
                   Deposit</button
                 ><button
                   type="button"
                   tabindex="0"
-                  class="inline-flex relative items-center gap-2 justify-center font-semibold whitespace-nowrap ring-offset-background transition disabled:pointer-events-none disabled:opacity-50 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 active:scale-[0.98] bg-transparent text-white betterhover:hover:bg-grey-400 betterhover:hover:text-white focus-visible:outline-white text-sm leading-none [&amp;_svg]:text-grey-200 [&amp;:hover>svg]:text-white py-[0.9375rem] px-[1.25rem] rounded-full"
-                  data-testid="vault-tab-withdraw"
-                  data-test="vault-tab-withdraw"
+                  class="inline-flex relative items-center gap-2 justify-center font-semibold whitespace-nowrap ring-offset-background transition disabled:pointer-events-none disabled:opacity-50 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 active:scale-[0.98] bg-transparent text-white betterhover:hover:bg-grey-400 betterhover:hover:text-white focus-visible:outline-white text-sm leading-none [&amp;_svg]:text-grey-200 [&amp;:hover>svg]:text-white py-[0.9375rem] px-[1.25rem] rounded-full" (click)="toggletab('Withdraw')"
+                  [ngClass]="{'!bg-[#2f4553]':tab ==='Withdraw'}"
                 >
                   Withdraw
                 </button>
@@ -76,51 +60,23 @@
             </div>
           </div>
         </div>
-        <form
-          data-test-form-valid="true"
-          data-test="vault-deposit"
-          class="svelte-188ba96"
-        >
-          <div class="coin-toggle svelte-1hjozqf" bis_skin_checked="1">
-            <div
-              class="wrapper currency-view-compact svelte-1hjozqf"
-              bis_skin_checked="1"
-            >
-              <span
-                class="weight-semibold line-height-default align-left size-default text-size-default variant-subtle with-icon-space svelte-17v69ua"
-                >Currency</span
-              >
-              <div class="dropdown svelte-1iau4lg" bis_skin_checked="1">
+        <form>
+          <div class="coin-toggle">
+            <div class="wrapper">
+              <span>Currency</span>
+              <div class="dropdown ">
                 <button
                   type="button"
                   tabindex="0"
-                  class="flex relative items-center gap-2 justify-center  font-semibold whitespace-nowrap ring-offset-background transition disabled:pointer-events-none disabled:opacity-50 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 active:scale-[0.98] bg-grey-700 text-white betterhover:hover:bg-grey-900 betterhover:hover:text-white focus-visible:outline-white text-sm leading-none [&amp;_svg]:text-grey-200 [&amp;:hover>svg]:text-white py-[0.8125rem] px-[1rem] rounded-sm max-h-[47px]"
-                  aria-label="Open Dropdown"
-                  data-test="coin-toggle"
-                  data-active-currency="btc"
-                  data-button-root=""
+                  class="flex relative items-center gap-2 justify-center font-semibold whitespace-nowrap ring-offset-background transition disabled:pointer-events-none disabled:opacity-50 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 active:scale-[0.98] bg-grey-700 text-white betterhover:hover:bg-grey-900 betterhover:hover:text-white focus-visible:outline-white text-sm leading-none [&amp;_svg]:text-grey-200 [&amp;:hover>svg]:text-white py-[0.8125rem] px-[1rem] rounded-sm max-h-[47px]"
                   (click)="toggletolltip()"
                 >
-                  <div class="wrap svelte-lnje3m h-[33px]" bis_skin_checked="1">
-                    <div
-                      class="currency svelte-141qgpc"
-                      role="presentation"
-                      bis_skin_checked="1"
-                    >
-                      <span class="content svelte-141qgpc"
-                        >
-                        <span
-                          class="weight-semibold line-height-default align-left size-default text-size-default variant-highlighted numeric with-icon-space is-truncate svelte-17v69ua"
-                          style="max-width: 12ch"
-                          >0.00000000</span
-                        >
-                        </span
-                      >
-                      <span
-                        class="weight-normal line-height-default align-left size-default text-size-default variant-subtle is-truncate svelte-17v69ua ms-[4px]"
-                        title="btc"
-                        style="max-width: 12ch"
-                      >
+                  <div class="wrap h-[33px]">
+                    <div class="flex justify-center items-center">
+                      <span class="mt-2">
+                        <span >0.00000000</span>
+                      </span>
+                      <span class="ms-[4px] mt-2" title="btc">
                         <svg
                           fill="none"
                           viewBox="0 0 96 96"
@@ -140,7 +96,7 @@
                       </span>
                     </div>
                   </div>
-                  <span class="dropdown-icon svelte-9n45i2" 
+                  <span class="dropdown-icon"
                     ><svg
                       fill="currentColor"
                       viewBox="0 0 64 64"
@@ -155,8 +111,7 @@
                 </button>
 
                 <div
-                
-                  class="tooltip-wrapper tooltip variant-light svelte-yjqf2g"
+                  class="tooltip-wrapper tooltip overflow-y-scroll max-h-[calc(100%-4rem)]"
                   style="
                     position: absolute;
                     margin: 0px;
@@ -164,54 +119,31 @@
                     max-height: 295.333px;
                   "
                   data-popper-placement="bottom"
-                  bis_skin_checked="1"
                 >
                   <div
-                    class="arrow svelte-yjqf2g"
+                    class="arrow"
                     style="
                       position: absolute;
                       left: 0px;
                       transform: translate3d(122.667px, 0px, 0px);
                     "
-                    
-                    bis_skin_checked="1"
                   ></div>
-                  <div style="max-height: inherit" bis_skin_checked="1" *ngIf="tooltipopen">
+                  <div style="max-height: inherit" *ngIf="tooltipopen">
                     <div
-                      class="dropdown-scroll-content scrollY scrollY-light scroll-light svelte-yjqf2g bg-white"
-                      style="max-height: inherit"
-                      bis_skin_checked="1"
+                      class=" scrollY  bg-white"
                     >
-                      <div
-                        class="wrapper currency-view-compact svelte-mdrjfw"
-                        bis_skin_checked="1"
-                      >
-                        <div
-                          class="input-search svelte-xyfpr4"
-                          bis_skin_checked="1"
-                        >
-                          <div
-                            class="search-wrapper svelte-xyfpr4 mt-[-12px]"
-                            bis_skin_checked="1"
-                          >
-                            <label class="stacked svelte-1wzq4lo">
-                              <div
-                                class="input-wrap svelte-1nbx5re"
-                                bis_skin_checked="1"
-                              >
-                                <div
-                                  class="input-content svelte-1nbx5re"
-                                  bis_skin_checked="1"
-                                >
-                                  <div
-                                    class="before-icon svelte-1nbx5re"
-                                    bis_skin_checked="1"
-                                  >
+                      <div class="wrapper">
+                        <div class="input-search">
+                          <div class="search-wrapper mt-[-12px]">
+                            <label class="stacked">
+                              <div class="input-wrap">
+                                <div class="input-content">
+                                  <div class="before-icon">
                                     <svg
                                       fill="currentColor"
                                       viewBox="0 0 64 64"
                                       class="search-svg-icon"
-                                      style="width: 14px; height: 14px;"
+                                      style="width: 14px; height: 14px"
                                     >
                                       <title></title>
                                       <path
@@ -221,72 +153,36 @@
                                       ></path>
                                     </svg>
                                   </div>
-                                  <input
-                                    autocomplete="on"
-                                    class="input spacing-expanded svelte-1nbx5re ps-[20px]"
-                                    type="search"
-                                    placeholder="Search Currencies"
-                                    style="
-                                      background-color: white;
-                                      border: 2px solid var(--grey-100);
-                                      color: var(--grey-400);
-                                    "
-                                  />
+                                  <input class="mt-2 h-[39px] ps-[20px] border-2 border-gray-300" />
                                 </div>
-                                <div
-                                  class="input-button-wrap svelte-1nbx5re"
-                                  bis_skin_checked="1"
-                                ></div>
+                                <div class="input-button-wrap"></div>
                               </div>
-                              <span
-                                class="label-content full-width svelte-1k9rtf3"
-                              >
-                                <div
-                                  class="label-left-wrapper svelte-1nbx5re"
-                                  bis_skin_checked="1"
-                                ></div>
+                              <span class="label-content full-width">
+                                <div class="label-left-wrapper"></div>
                               </span>
                             </label>
                           </div>
                         </div>
                       </div>
-                      <div
-                        class="content-wrapper scrollY scroll-light currency-view-compact svelte-mdrjfw"
-                        bis_skin_checked="1"
-                      >
+                      <div class="flex flex-col scrollY ">
                         <button
                           type="button"
                           tabindex="0"
-                          class="inline-flex relative items-center gap-2 font-semibold whitespace-nowrap ring-offset-background transition disabled:pointer-events-none disabled:opacity-50 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 active:scale-[0.98] bg-transparent text-grey-400 betterhover:hover:bg-grey-200 betterhover:hover:text-neutral-black focus-visible:outline-grey-300 text-xs leading-none [&amp;_svg]:text-grey-400 [&amp;:hover>svg]:text-grey-400 rounded-none justify-start px-3 py-[6px] shadow-none min-h-[33px] hover:bg-[rgba(177,186,211)] !hover:text-black"
+                          class="flex relative items-center gap-2 font-semibold whitespace-nowrap ring-offset-background transition disabled:pointer-events-none disabled:opacity-50 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 active:scale-[0.98] bg-transparent text-grey-400 betterhover:hover:bg-grey-200 betterhover:hover:text-neutral-black focus-visible:outline-grey-300 text-xs leading-none [&amp;_svg]:text-grey-400 [&amp;:hover>svg]:text-grey-400 rounded-none justify-start px-3 py-[6px] shadow-none min-h-[33px] hover:bg-[rgba(177,186,211)]"
                           data-testid="coin-toggle-currency-btc"
                           data-test="coin-toggle-currency-btc"
                           aria-label="Select btc"
                           data-button-root=""
                         >
-                          <div
-                            class="currency svelte-141qgpc"
-                            role="presentation"
-                            bis_skin_checked="1"
-                          >
-                            <span
-                              class="content svelte-141qgpc"
-                              style="width: 12ch"
-                              ><span
-                                class="weight-semibold line-height-default align-left size-default text-size-default variant-inherit numeric with-icon-space is-truncate svelte-17v69ua text-[14px] !hover:text-black"
-                                formattedforfilter="0"
-                                style="max-width: 12ch"
-                                >0.00000000</span
-                              ></span
+                          <div class="flex max-h-[calc(100%-2rem)] overflow-y-scroll ">
+                            <span class="content"
+                              ><span class="text-[14px]">0.00000000</span></span
                             >
                             <span
-                              class="weight-normal line-height-default align-left size-default text-size-default variant-subtle is-truncate svelte-17v69ua"
-                              title="btc"
-                              style="max-width: 12ch"
                               ><svg
                                 fill="none"
                                 viewBox="0 0 96 96"
-                                class="svg-icon"
-                                style="width: 14px; height: 14px;"
+                                class="svg-icon w-[14px] h-[14px]"
                               >
                                 <title></title>
                                 <path
@@ -299,45 +195,31 @@
                                 ></path></svg
                             ></span>
                             <span
-                              class="weight-semibold line-height-default align-left size-default text-size-default variant-inherit with-icon-space is-truncate svelte-17v69ua ms-[4px] text-[rgba(47,69,83)] tex-[14px]"
-                              formattedforfilter="0"
-                              style="max-width: 12ch"
+                              class="ms-[4px] text-[rgba(47,69,83)] text-[14px]"
                               >BTC</span
                             >
                           </div></button
                         ><button
                           type="button"
                           tabindex="0"
-                          class="inline-flex relative items-center gap-2 font-semibold whitespace-nowrap ring-offset-background transition disabled:pointer-events-none disabled:opacity-50 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 active:scale-[0.98] bg-transparent text-grey-400 betterhover:hover:bg-grey-200 betterhover:hover:text-neutral-black focus-visible:outline-grey-300 text-xs leading-none [&amp;_svg]:text-grey-400 [&amp;:hover>svg]:text-grey-400 rounded-none justify-start px-3 py-[6px] shadow-none min-h-[33px] hover:bg-[rgba(177,186,211)] !hover:text-black"
+                          class="inline-flex relative items-center gap-2 font-semibold whitespace-nowrap ring-offset-background transition disabled:pointer-events-none disabled:opacity-50 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 active:scale-[0.98] bg-transparent text-grey-400 betterhover:hover:bg-grey-200 betterhover:hover:text-neutral-black focus-visible:outline-grey-300 text-xs leading-none [&amp;_svg]:text-grey-400 [&amp;:hover>svg]:text-grey-400 rounded-none justify-start px-3 py-[6px] shadow-none min-h-[33px] hover:bg-[rgba(177,186,211)]"
                           data-testid="coin-toggle-currency-eth"
                           data-test="coin-toggle-currency-eth"
                           aria-label="Select eth"
                           data-button-root=""
                         >
-                          <div
-                            class="currency svelte-141qgpc"
-                            role="presentation"
-                            bis_skin_checked="1"
-                          >
-                            <span
-                              class="content svelte-141qgpc"
-                              style="width: 12ch"
-                              ><span
-                                class="weight-semibold line-height-default align-left size-default text-size-default variant-inherit numeric with-icon-space is-truncate svelte-17v69ua text-[14px] !hover:text-black text-[rgba(47,69,83)]"
-                                formattedforfilter="0"
-                                style="max-width: 12ch"
+                          <div class="currency">
+                            <span class="content"
+                              ><span class="text-[14px] text-[rgba(47,69,83)]"
                                 >0.00000000</span
                               ></span
                             >
                             <span
-                              class="weight-normal line-height-default align-left size-default text-size-default variant-subtle is-truncate svelte-17v69ua"
-                              title="eth"
-                              style="max-width: 12ch"
                               ><svg
                                 fill="none"
                                 viewBox="0 0 96 96"
                                 class="svg-icon"
-                                style="width: 14px; height: 14px;"
+                                style="width: 14px; height: 14px"
                               >
                                 <title></title>
                                 <path
@@ -374,45 +256,31 @@
                                 ></path></svg
                             ></span>
                             <span
-                              class="weight-semibold line-height-default align-left size-default text-size-default variant-inherit with-icon-space is-truncate svelte-17v69ua ms-[4px] text-[rgba(47,69,83)] tex-[14px]"
-                              formattedforfilter="0"
-                              style="max-width: 12ch"
+                              class="ms-[4px] text-[rgba(47,69,83)] text-[14px]"
                               >ETH</span
                             >
                           </div></button
                         ><button
                           type="button"
                           tabindex="0"
-                          class="inline-flex relative items-center gap-2 font-semibold whitespace-nowrap ring-offset-background transition disabled:pointer-events-none disabled:opacity-50 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 active:scale-[0.98] bg-transparent text-grey-400 betterhover:hover:bg-grey-200 betterhover:hover:text-neutral-black focus-visible:outline-grey-300 text-xs leading-none [&amp;_svg]:text-grey-400 [&amp;:hover>svg]:text-grey-400 rounded-none justify-start px-3 py-[6px] shadow-none min-h-[33px] hover:bg-[rgba(177,186,211)] !hover:text-black"
+                          class="inline-flex relative items-center gap-2 font-semibold whitespace-nowrap ring-offset-background transition disabled:pointer-events-none disabled:opacity-50 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 active:scale-[0.98] bg-transparent text-grey-400 betterhover:hover:bg-grey-200 betterhover:hover:text-neutral-black focus-visible:outline-grey-300 text-xs leading-none [&amp;_svg]:text-grey-400 [&amp;:hover>svg]:text-grey-400 rounded-none justify-start px-3 py-[6px] shadow-none min-h-[33px] hover:bg-[rgba(177,186,211)]"
                           data-testid="coin-toggle-currency-ltc"
                           data-test="coin-toggle-currency-ltc"
                           aria-label="Select ltc"
                           data-button-root=""
                         >
-                          <div
-                            class="currency svelte-141qgpc"
-                            role="presentation"
-                            bis_skin_checked="1"
-                          >
-                            <span
-                              class="content svelte-141qgpc"
-                              style="width: 12ch"
-                              ><span
-                                class="weight-semibold line-height-default align-left size-default text-size-default variant-inherit numeric with-icon-space is-truncate svelte-17v69ua text-[14px] !hover:text-black text-[rgba(47,69,83)]"
-                                formattedforfilter="0"
-                                style="max-width: 12ch"
+                          <div class="currency">
+                            <span class="content"
+                              ><span class="text-[14px] text-[rgba(47,69,83)]"
                                 >0.00000000</span
                               ></span
                             >
-                            <span
-                              class="weight-normal line-height-default align-left size-default text-size-default variant-subtle is-truncate svelte-17v69ua"
-                              title="ltc"
-                              style="max-width: 12ch"
+                            <span class="" title="ltc"
                               ><svg
                                 fill="none"
                                 viewBox="0 0 96 96"
                                 class="svg-icon"
-                                style="width: 14px; height: 14px;"
+                                style="width: 14px; height: 14px"
                               >
                                 <title></title>
                                 <path
@@ -425,45 +293,31 @@
                                 ></path></svg
                             ></span>
                             <span
-                              class="weight-semibold line-height-default align-left size-default text-size-default variant-inherit with-icon-space is-truncate svelte-17v69ua ms-[4px] text-[rgba(47,69,83)] tex-[14px]"
-                              formattedforfilter="0"
-                              style="max-width: 12ch"
+                              class="ms-[4px] text-[rgba(47,69,83)] text-[14px]"
                               >LTC</span
                             >
                           </div></button
                         ><button
                           type="button"
                           tabindex="0"
-                          class="inline-flex relative items-center gap-2 font-semibold whitespace-nowrap ring-offset-background transition disabled:pointer-events-none disabled:opacity-50 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 active:scale-[0.98] bg-transparent text-grey-400 betterhover:hover:bg-grey-200 betterhover:hover:text-neutral-black focus-visible:outline-grey-300 text-xs leading-none [&amp;_svg]:text-grey-400 [&amp;:hover>svg]:text-grey-400 rounded-none justify-start px-3 py-[6px] shadow-none min-h-[33px] hover:bg-[rgba(177,186,211)] !hover:text-black"
+                          class="inline-flex relative items-center gap-2 font-semibold whitespace-nowrap ring-offset-background transition disabled:pointer-events-none disabled:opacity-50 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 active:scale-[0.98] bg-transparent text-grey-400 betterhover:hover:bg-grey-200 betterhover:hover:text-neutral-black focus-visible:outline-grey-300 text-xs leading-none [&amp;_svg]:text-grey-400 [&amp;:hover>svg]:text-grey-400 rounded-none justify-start px-3 py-[6px] shadow-none min-h-[33px] hover:bg-[rgba(177,186,211)]"
                           data-testid="coin-toggle-currency-usdt"
                           data-test="coin-toggle-currency-usdt"
                           aria-label="Select usdt"
                           data-button-root=""
                         >
-                          <div
-                            class="currency svelte-141qgpc"
-                            role="presentation"
-                            bis_skin_checked="1"
-                          >
-                            <span
-                              class="content svelte-141qgpc"
-                              style="width: 12ch"
-                              ><span
-                                class="weight-semibold line-height-default align-left size-default text-size-default variant-inherit numeric with-icon-space is-truncate svelte-17v69ua text-[14px] !hover:text-black text-[rgba(47,69,83)]"
-                                formattedforfilter="0"
-                                style="max-width: 12ch"
+                          <div class="currency">
+                            <span class="content"
+                              ><span class="text-[14px] text-[rgba(47,69,83)]"
                                 >0.00000000</span
                               ></span
                             >
-                            <span
-                              class="weight-normal line-height-default align-left size-default text-size-default variant-subtle is-truncate svelte-17v69ua"
-                              title="usdt"
-                              style="max-width: 12ch"
+                            <span class="" title="usdt"
                               ><svg
                                 fill="none"
                                 viewBox="0 0 96 96"
                                 class="svg-icon"
-                                style="width: 14px; height: 14px;"
+                                style="width: 14px; height: 14px"
                               >
                                 <title></title>
                                 <path
@@ -476,45 +330,28 @@
                                 ></path></svg
                             ></span>
                             <span
-                              class="weight-semibold line-height-default align-left size-default text-size-default variant-inherit with-icon-space is-truncate svelte-17v69ua ms-[4px] text-[rgba(47,69,83)] tex-[14px]"
-                              formattedforfilter="0"
-                              style="max-width: 12ch"
+                              class="ms-[4px] text-[rgba(47,69,83)] text-[14px]"
                               >USDT</span
                             >
                           </div></button
                         ><button
                           type="button"
                           tabindex="0"
-                          class="inline-flex relative items-center gap-2 font-semibold whitespace-nowrap ring-offset-background transition disabled:pointer-events-none disabled:opacity-50 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 active:scale-[0.98] bg-transparent text-grey-400 betterhover:hover:bg-grey-200 betterhover:hover:text-neutral-black focus-visible:outline-grey-300 text-xs leading-none [&amp;_svg]:text-grey-400 [&amp;:hover>svg]:text-grey-400 rounded-none justify-start px-3 py-[6px] shadow-none min-h-[33px] hover:bg-[rgba(177,186,211)] !hover:text-black"
-                          data-testid="coin-toggle-currency-sol"
-                          data-test="coin-toggle-currency-sol"
-                          aria-label="Select sol"
+                          class="inline-flex relative items-center gap-2 font-semibold whitespace-nowrap ring-offset-background transition disabled:pointer-events-none disabled:opacity-50 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 active:scale-[0.98] bg-transparent text-grey-400 betterhover:hover:bg-grey-200 betterhover:hover:text-neutral-black focus-visible:outline-grey-300 text-xs leading-none [&amp;_svg]:text-grey-400 [&amp;:hover>svg]:text-grey-400 rounded-none justify-start px-3 py-[6px] shadow-none min-h-[33px] hover:bg-[rgba(177,186,211)]"
                           data-button-root=""
                         >
-                          <div
-                            class="currency svelte-141qgpc"
-                            role="presentation"
-                            bis_skin_checked="1"
-                          >
-                            <span
-                              class="content svelte-141qgpc"
-                              style="width: 12ch"
-                              ><span
-                                class="weight-semibold line-height-default align-left size-default text-size-default variant-inherit numeric with-icon-space is-truncate svelte-17v69ua text-[14px] !hover:text-black text-[rgba(47,69,83)]"
-                                formattedforfilter="0"
-                                style="max-width: 12ch"
+                          <div class="currency">
+                            <span class="content"
+                              ><span class="text-[14px] text-[rgba(47,69,83)]"
                                 >0.00000000</span
                               ></span
                             >
-                            <span
-                              class="weight-normal line-height-default align-left size-default text-size-default variant-subtle is-truncate svelte-17v69ua"
-                              title="sol"
-                              style="max-width: 12ch"
+                            <span class="" title="sol"
                               ><svg
                                 fill="none"
                                 viewBox="0 0 96 96"
                                 class="svg-icon"
-                                style="width: 14px; height: 14px;"
+                                style="width: 14px; height: 14px"
                               >
                                 <title></title>
                                 <path
@@ -543,45 +380,31 @@
                                 </defs></svg
                             ></span>
                             <span
-                              class="weight-semibold line-height-default align-left size-default text-size-default variant-inherit with-icon-space is-truncate svelte-17v69ua ms-[4px] text-[rgba(47,69,83)] tex-[14px]"
-                              formattedforfilter="0"
-                              style="max-width: 12ch"
+                              class="ms-[4px] text-[rgba(47,69,83)] text-[14px]"
                               >SOL</span
                             >
                           </div></button
                         ><button
                           type="button"
                           tabindex="0"
-                          class="inline-flex relative items-center gap-2 font-semibold whitespace-nowrap ring-offset-background transition disabled:pointer-events-none disabled:opacity-50 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 active:scale-[0.98] bg-transparent text-grey-400 betterhover:hover:bg-grey-200 betterhover:hover:text-neutral-black focus-visible:outline-grey-300 text-xs leading-none [&amp;_svg]:text-grey-400 [&amp;:hover>svg]:text-grey-400 rounded-none justify-start px-3 py-[6px] shadow-none min-h-[33px] hover:bg-[rgba(177,186,211)] !hover:text-black"
+                          class="inline-flex relative items-center gap-2 font-semibold whitespace-nowrap ring-offset-background transition disabled:pointer-events-none disabled:opacity-50 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 active:scale-[0.98] bg-transparent text-grey-400 betterhover:hover:bg-grey-200 betterhover:hover:text-neutral-black focus-visible:outline-grey-300 text-xs leading-none [&amp;_svg]:text-grey-400 [&amp;:hover>svg]:text-grey-400 rounded-none justify-start px-3 py-[6px] shadow-none min-h-[33px] hover:bg-[rgba(177,186,211)]"
                           data-testid="coin-toggle-currency-doge"
                           data-test="coin-toggle-currency-doge"
                           aria-label="Select doge"
                           data-button-root=""
                         >
-                          <div
-                            class="currency svelte-141qgpc"
-                            role="presentation"
-                            bis_skin_checked="1"
-                          >
-                            <span
-                              class="content svelte-141qgpc"
-                              style="width: 12ch"
-                              ><span
-                                class="weight-semibold line-height-default align-left size-default text-size-default variant-inherit numeric with-icon-space is-truncate svelte-17v69ua text-[14px] !hover:text-black text-[rgba(47,69,83)]"
-                                formattedforfilter="0"
-                                style="max-width: 12ch"
+                          <div class="currency">
+                            <span class="content"
+                              ><span class="text-[14px] text-[rgba(47,69,83)]"
                                 >0.00000000</span
                               ></span
                             >
-                            <span
-                              class="weight-normal line-height-default align-left size-default text-size-default variant-subtle is-truncate svelte-17v69ua"
-                              title="doge"
-                              style="max-width: 12ch"
+                            <span class="" title="doge"
                               ><svg
                                 fill="none"
                                 viewBox="0 0 96 96"
                                 class="svg-icon"
-                                style="width: 14px; height: 14px;"
+                                style="width: 14px; height: 14px"
                               >
                                 <title></title>
                                 <path
@@ -594,45 +417,27 @@
                                 ></path></svg
                             ></span>
                             <span
-                              class="weight-semibold line-height-default align-left size-default text-size-default variant-inherit with-icon-space is-truncate svelte-17v69ua ms-[4px] text-[rgba(47,69,83)] tex-[14px]"
-                              formattedforfilter="0"
-                              style="max-width: 12ch"
+                              class="ms-[4px] text-[rgba(47,69,83)] text-[14px]"
                               >DOGE</span
                             >
                           </div></button
                         ><button
                           type="button"
                           tabindex="0"
-                          class="inline-flex relative items-center gap-2 font-semibold whitespace-nowrap ring-offset-background transition disabled:pointer-events-none disabled:opacity-50 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 active:scale-[0.98] bg-transparent text-grey-400 betterhover:hover:bg-grey-200 betterhover:hover:text-neutral-black focus-visible:outline-grey-300 text-xs leading-none [&amp;_svg]:text-grey-400 [&amp;:hover>svg]:text-grey-400 rounded-none justify-start px-3 py-[6px] shadow-none min-h-[33px] hover:bg-[rgba(177,186,211)] !hover:text-black"
-                          data-testid="coin-toggle-currency-bch"
-                          data-test="coin-toggle-currency-bch"
-                          aria-label="Select bch"
-                          data-button-root=""
+                          class="inline-flex relative items-center gap-2 font-semibold whitespace-nowrap ring-offset-background transition disabled:pointer-events-none disabled:opacity-50 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 active:scale-[0.98] bg-transparent text-grey-400 betterhover:hover:bg-grey-200 betterhover:hover:text-neutral-black focus-visible:outline-grey-300 text-xs leading-none [&amp;_svg]:text-grey-400 [&amp;:hover>svg]:text-grey-400 rounded-none justify-start px-3 py-[6px] shadow-none min-h-[33px] hover:bg-[rgba(177,186,211)]"
                         >
-                          <div
-                            class="currency svelte-141qgpc"
-                            role="presentation"
-                            bis_skin_checked="1"
-                          >
-                            <span
-                              class="content svelte-141qgpc"
-                              style="width: 12ch"
-                              ><span
-                                class="weight-semibold line-height-default align-left size-default text-size-default variant-inherit numeric with-icon-space is-truncate svelte-17v69ua text-[14px] !hover:text-black text-[rgba(47,69,83)]"
-                                formattedforfilter="0"
-                                style="max-width: 12ch"
+                          <div class="currency">
+                            <span class="content"
+                              ><span class="text-[14px] text-[rgba(47,69,83)]"
                                 >0.00000000</span
                               ></span
                             >
-                            <span
-                              class="weight-normal line-height-default align-left size-default text-size-default variant-subtle is-truncate svelte-17v69ua"
-                              title="bch"
-                              style="max-width: 12ch"
+                            <span class="" title="bch"
                               ><svg
                                 fill="none"
                                 viewBox="0 0 96 96"
                                 class="svg-icon"
-                                style="width: 14px; height: 14px;"
+                                style="width: 14px; height: 14px"
                               >
                                 <title></title>
                                 <path
@@ -645,45 +450,27 @@
                                 ></path></svg
                             ></span>
                             <span
-                              class="weight-semibold line-height-default align-left size-default text-size-default variant-inherit with-icon-space is-truncate svelte-17v69ua ms-[4px] text-[rgba(47,69,83)] tex-[14px]"
-                              formattedforfilter="0"
-                              style="max-width: 12ch"
+                              class="ms-[4px] text-[rgba(47,69,83)] text-[14px]"
                               >BCH</span
                             >
                           </div></button
                         ><button
                           type="button"
                           tabindex="0"
-                          class="inline-flex relative items-center gap-2 font-semibold whitespace-nowrap ring-offset-background transition disabled:pointer-events-none disabled:opacity-50 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 active:scale-[0.98] bg-transparent text-grey-400 betterhover:hover:bg-grey-200 betterhover:hover:text-neutral-black focus-visible:outline-grey-300 text-xs leading-none [&amp;_svg]:text-grey-400 [&amp;:hover>svg]:text-grey-400 rounded-none justify-start px-3 py-[6px] shadow-none min-h-[33px] hover:bg-[rgba(177,186,211)] !hover:text-black"
-                          data-testid="coin-toggle-currency-xrp"
-                          data-test="coin-toggle-currency-xrp"
-                          aria-label="Select xrp"
-                          data-button-root=""
+                          class="inline-flex relative items-center gap-2 font-semibold whitespace-nowrap ring-offset-background transition disabled:pointer-events-none disabled:opacity-50 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 active:scale-[0.98] bg-transparent text-grey-400 betterhover:hover:bg-grey-200 betterhover:hover:text-neutral-black focus-visible:outline-grey-300 text-xs leading-none [&amp;_svg]:text-grey-400 [&amp;:hover>svg]:text-grey-400 rounded-none justify-start px-3 py-[6px] shadow-none min-h-[33px] hover:bg-[rgba(177,186,211)]"
                         >
-                          <div
-                            class="currency svelte-141qgpc"
-                            role="presentation"
-                            bis_skin_checked="1"
-                          >
-                            <span
-                              class="content svelte-141qgpc"
-                              style="width: 12ch"
-                              ><span
-                                class="weight-semibold line-height-default align-left size-default text-size-default variant-inherit numeric with-icon-space is-truncate svelte-17v69ua text-[14px] !hover:text-black text-[rgba(47,69,83)]"
-                                formattedforfilter="0"
-                                style="max-width: 12ch"
+                          <div class="currency">
+                            <span class="content"
+                              ><span class="text-[14px] text-[rgba(47,69,83)]"
                                 >0.00000000</span
                               ></span
                             >
-                            <span
-                              class="weight-normal line-height-default align-left size-default text-size-default variant-subtle is-truncate svelte-17v69ua"
-                              title="xrp"
-                              style="max-width: 12ch"
+                            <span class="" title="xrp"
                               ><svg
                                 fill="none"
                                 viewBox="0 0 96 96"
                                 class="svg-icon"
-                                style="width: 14px; height: 14px;"
+                                style="width: 14px; height: 14px"
                               >
                                 <title></title>
                                 <path
@@ -696,45 +483,27 @@
                                 ></path></svg
                             ></span>
                             <span
-                              class="weight-semibold line-height-default align-left size-default text-size-default variant-inherit with-icon-space is-truncate svelte-17v69ua ms-[4px] text-[rgba(47,69,83)] tex-[14px]"
-                              formattedforfilter="0"
-                              style="max-width: 12ch"
+                              class="ms-[4px] text-[rgba(47,69,83)] text-[14px]"
                               >XRP</span
                             >
                           </div></button
                         ><button
                           type="button"
                           tabindex="0"
-                          class="inline-flex relative items-center gap-2 font-semibold whitespace-nowrap ring-offset-background transition disabled:pointer-events-none disabled:opacity-50 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 active:scale-[0.98] bg-transparent text-grey-400 betterhover:hover:bg-grey-200 betterhover:hover:text-neutral-black focus-visible:outline-grey-300 text-xs leading-none [&amp;_svg]:text-grey-400 [&amp;:hover>svg]:text-grey-400 rounded-none justify-start px-3 py-[6px] shadow-none min-h-[33px] hover:bg-[rgba(177,186,211)] !hover:text-black"
-                          data-testid="coin-toggle-currency-trx"
-                          data-test="coin-toggle-currency-trx"
-                          aria-label="Select trx"
-                          data-button-root=""
+                          class="inline-flex relative items-center gap-2 font-semibold whitespace-nowrap ring-offset-background transition disabled:pointer-events-none disabled:opacity-50 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 active:scale-[0.98] bg-transparent text-grey-400 betterhover:hover:bg-grey-200 betterhover:hover:text-neutral-black focus-visible:outline-grey-300 text-xs leading-none [&amp;_svg]:text-grey-400 [&amp;:hover>svg]:text-grey-400 rounded-none justify-start px-3 py-[6px] shadow-none min-h-[33px] hover:bg-[rgba(177,186,211)]"
                         >
-                          <div
-                            class="currency svelte-141qgpc"
-                            role="presentation"
-                            bis_skin_checked="1"
-                          >
-                            <span
-                              class="content svelte-141qgpc"
-                              style="width: 12ch"
-                              ><span
-                                class="weight-semibold line-height-default align-left size-default text-size-default variant-inherit numeric with-icon-space is-truncate svelte-17v69ua text-[14px] !hover:text-black text-[rgba(47,69,83)]"
-                                formattedforfilter="0"
-                                style="max-width: 12ch"
+                          <div class="currency">
+                            <span class="content"
+                              ><span class="text-[14px] text-[rgba(47,69,83)]"
                                 >0.00000000</span
                               ></span
                             >
-                            <span
-                              class="weight-normal line-height-default align-left size-default text-size-default variant-subtle is-truncate svelte-17v69ua"
-                              title="trx"
-                              style="max-width: 12ch"
+                            <span class="" title="trx"
                               ><svg
                                 fill="none"
                                 viewBox="0 0 96 96"
                                 class="svg-icon"
-                                style="width: 14px; height: 14px;"
+                                style="width: 14px; height: 14px"
                               >
                                 <title></title>
                                 <path
@@ -747,45 +516,27 @@
                                 ></path></svg
                             ></span>
                             <span
-                              class="weight-semibold line-height-default align-left size-default text-size-default variant-inherit with-icon-space is-truncate svelte-17v69ua ms-[4px] text-[rgba(47,69,83)] tex-[14px]"
-                              formattedforfilter="0"
-                              style="max-width: 12ch"
+                              class="ms-[4px] text-[rgba(47,69,83)] text-[14px]"
                               >TRX</span
                             >
                           </div></button
                         ><button
                           type="button"
                           tabindex="0"
-                          class="inline-flex relative items-center gap-2 font-semibold whitespace-nowrap ring-offset-background transition disabled:pointer-events-none disabled:opacity-50 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 active:scale-[0.98] bg-transparent text-grey-400 betterhover:hover:bg-grey-200 betterhover:hover:text-neutral-black focus-visible:outline-grey-300 text-xs leading-none [&amp;_svg]:text-grey-400 [&amp;:hover>svg]:text-grey-400 rounded-none justify-start px-3 py-[6px] shadow-none min-h-[33px] hover:bg-[rgba(177,186,211)] !hover:text-black"
-                          data-testid="coin-toggle-currency-eos"
-                          data-test="coin-toggle-currency-eos"
-                          aria-label="Select eos"
-                          data-button-root=""
+                          class="inline-flex relative items-center gap-2 font-semibold whitespace-nowrap ring-offset-background transition disabled:pointer-events-none disabled:opacity-50 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 active:scale-[0.98] bg-transparent text-grey-400 betterhover:hover:bg-grey-200 betterhover:hover:text-neutral-black focus-visible:outline-grey-300 text-xs leading-none [&amp;_svg]:text-grey-400 [&amp;:hover>svg]:text-grey-400 rounded-none justify-start px-3 py-[6px] shadow-none min-h-[33px] hover:bg-[rgba(177,186,211)]"
                         >
-                          <div
-                            class="currency svelte-141qgpc"
-                            role="presentation"
-                            bis_skin_checked="1"
-                          >
-                            <span
-                              class="content svelte-141qgpc"
-                              style="width: 12ch"
-                              ><span
-                                class="weight-semibold line-height-default align-left size-default text-size-default variant-inherit numeric with-icon-space is-truncate svelte-17v69ua text-[14px] !hover:text-black text-[rgba(47,69,83)]"
-                                formattedforfilter="0"
-                                style="max-width: 12ch"
+                          <div class="currency">
+                            <span class="content">
+                              <span class="text-[14px] text-[rgba(47,69,83)]"
                                 >0.00000000</span
                               ></span
                             >
-                            <span
-                              class="weight-normal line-height-default align-left size-default text-size-default variant-subtle is-truncate svelte-17v69ua"
-                              title="eos"
-                              style="max-width: 12ch"
+                            <span class="" title="eos"
                               ><svg
                                 fill="none"
                                 viewBox="0 0 96 96"
                                 class="svg-icon"
-                                style="width: 14px; height: 14px;"
+                                style="width: 14px; height: 14px"
                               >
                                 <title></title>
                                 <path
@@ -798,45 +549,27 @@
                                 ></path></svg
                             ></span>
                             <span
-                              class="weight-semibold line-height-default align-left size-default text-size-default variant-inherit with-icon-space is-truncate svelte-17v69ua ms-[4px] text-[rgba(47,69,83)] tex-[14px]"
-                              formattedforfilter="0"
-                              style="max-width: 12ch"
+                              class="ms-[4px] text-[rgba(47,69,83)] text-[14px]"
                               >EOS</span
                             >
                           </div></button
                         ><button
                           type="button"
                           tabindex="0"
-                          class="inline-flex relative items-center gap-2 font-semibold whitespace-nowrap ring-offset-background transition disabled:pointer-events-none disabled:opacity-50 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 active:scale-[0.98] bg-transparent text-grey-400 betterhover:hover:bg-grey-200 betterhover:hover:text-neutral-black focus-visible:outline-grey-300 text-xs leading-none [&amp;_svg]:text-grey-400 [&amp;:hover>svg]:text-grey-400 rounded-none justify-start px-3 py-[6px] shadow-none min-h-[33px] hover:bg-[rgba(177,186,211)] !hover:text-black"
-                          data-testid="coin-toggle-currency-bnb"
-                          data-test="coin-toggle-currency-bnb"
-                          aria-label="Select bnb"
-                          data-button-root=""
+                          class="inline-flex relative items-center gap-2 font-semibold whitespace-nowrap ring-offset-background transition disabled:pointer-events-none disabled:opacity-50 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 active:scale-[0.98] bg-transparent text-grey-400 betterhover:hover:bg-grey-200 betterhover:hover:text-neutral-black focus-visible:outline-grey-300 text-xs leading-none [&amp;_svg]:text-grey-400 [&amp;:hover>svg]:text-grey-400 rounded-none justify-start px-3 py-[6px] shadow-none min-h-[33px] hover:bg-[rgba(177,186,211)]"
                         >
-                          <div
-                            class="currency svelte-141qgpc"
-                            role="presentation"
-                            bis_skin_checked="1"
-                          >
-                            <span
-                              class="content svelte-141qgpc"
-                              style="width: 12ch"
-                              ><span
-                                class="weight-semibold line-height-default align-left size-default text-size-default variant-inherit numeric with-icon-space is-truncate svelte-17v69ua text-[14px] !hover:text-black text-[rgba(47,69,83)]"
-                                formattedforfilter="0"
-                                style="max-width: 12ch"
+                          <div class="currency">
+                            <span class="content"
+                              ><span class="text-[14px] text-[rgba(47,69,83)]"
                                 >0.00000000</span
                               ></span
                             >
-                            <span
-                              class="weight-normal line-height-default align-left size-default text-size-default variant-subtle is-truncate svelte-17v69ua"
-                              title="bnb"
-                              style="max-width: 12ch"
+                            <span class="" title="bnb"
                               ><svg
                                 fill="none"
                                 viewBox="0 0 96 96"
                                 class="svg-icon"
-                                style="width: 14px; height: 14px;"
+                                style="width: 14px; height: 14px"
                               >
                                 <title></title>
                                 <path
@@ -849,45 +582,27 @@
                                 ></path></svg
                             ></span>
                             <span
-                              class="weight-semibold line-height-default align-left size-default text-size-default variant-inherit with-icon-space is-truncate svelte-17v69ua ms-[4px] text-[rgba(47,69,83)] tex-[14px]"
-                              formattedforfilter="0"
-                              style="max-width: 12ch"
+                              class="ms-[4px] text-[rgba(47,69,83)] text-[14px]"
                               >BNB</span
                             >
                           </div></button
                         ><button
                           type="button"
                           tabindex="0"
-                          class="inline-flex relative items-center gap-2 font-semibold whitespace-nowrap ring-offset-background transition disabled:pointer-events-none disabled:opacity-50 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 active:scale-[0.98] bg-transparent text-grey-400 betterhover:hover:bg-grey-200 betterhover:hover:text-neutral-black focus-visible:outline-grey-300 text-xs leading-none [&amp;_svg]:text-grey-400 [&amp;:hover>svg]:text-grey-400 rounded-none justify-start px-3 py-[6px] shadow-none min-h-[33px] hover:bg-[rgba(177,186,211)] !hover:text-black"
-                          data-testid="coin-toggle-currency-usdc"
-                          data-test="coin-toggle-currency-usdc"
-                          aria-label="Select usdc"
-                          data-button-root=""
+                          class="inline-flex relative items-center gap-2 font-semibold whitespace-nowrap ring-offset-background transition disabled:pointer-events-none disabled:opacity-50 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 active:scale-[0.98] bg-transparent text-grey-400 betterhover:hover:bg-grey-200 betterhover:hover:text-neutral-black focus-visible:outline-grey-300 text-xs leading-none [&amp;_svg]:text-grey-400 [&amp;:hover>svg]:text-grey-400 rounded-none justify-start px-3 py-[6px] shadow-none min-h-[33px] hover:bg-[rgba(177,186,211)]"
                         >
-                          <div
-                            class="currency svelte-141qgpc"
-                            role="presentation"
-                            bis_skin_checked="1"
-                          >
-                            <span
-                              class="content svelte-141qgpc"
-                              style="width: 12ch"
-                              ><span
-                                class="weight-semibold line-height-default align-left size-default text-size-default variant-inherit numeric with-icon-space is-truncate svelte-17v69ua text-[14px] !hover:text-black text-[rgba(47,69,83)]"
-                                formattedforfilter="0"
-                                style="max-width: 12ch"
+                          <div class="currency">
+                            <span class="content"
+                              ><span class="text-[14px] text-[rgba(47,69,83)]"
                                 >0.00000000</span
                               ></span
                             >
-                            <span
-                              class="weight-normal line-height-default align-left size-default text-size-default variant-subtle is-truncate svelte-17v69ua"
-                              title="usdc"
-                              style="max-width: 12ch"
+                            <span class="" title="usdc"
                               ><svg
                                 fill="none"
                                 viewBox="0 0 96 96"
                                 class="svg-icon"
-                                style="width: 14px; height: 14px;"
+                                style="width: 14px; height: 14px"
                               >
                                 <title></title>
                                 <path
@@ -908,45 +623,31 @@
                                 ></path></svg
                             ></span>
                             <span
-                              class="weight-semibold line-height-default align-left size-default text-size-default variant-inherit with-icon-space is-truncate svelte-17v69ua ms-[4px] text-[rgba(47,69,83)] tex-[14px]"
-                              formattedforfilter="0"
-                              style="max-width: 12ch"
+                              class="ms-[4px] text-[rgba(47,69,83)] text-[14px]"
                               >USDC</span
                             >
                           </div></button
                         ><button
                           type="button"
                           tabindex="0"
-                          class="inline-flex relative items-center gap-2 font-semibold whitespace-nowrap ring-offset-background transition disabled:pointer-events-none disabled:opacity-50 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 active:scale-[0.98] bg-transparent text-grey-400 betterhover:hover:bg-grey-200 betterhover:hover:text-neutral-black focus-visible:outline-grey-300 text-xs leading-none [&amp;_svg]:text-grey-400 [&amp;:hover>svg]:text-grey-400 rounded-none justify-start px-3 py-[6px] shadow-none min-h-[33px] hover:bg-[rgba(177,186,211)] !hover:text-black"
+                          class="inline-flex relative items-center gap-2 font-semibold whitespace-nowrap ring-offset-background transition disabled:pointer-events-none disabled:opacity-50 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 active:scale-[0.98] bg-transparent text-grey-400 betterhover:hover:bg-grey-200 betterhover:hover:text-neutral-black focus-visible:outline-grey-300 text-xs leading-none [&amp;_svg]:text-grey-400 [&amp;:hover>svg]:text-grey-400 rounded-none justify-start px-3 py-[6px] shadow-none min-h-[33px] hover:bg-[rgba(177,186,211)]"
                           data-testid="coin-toggle-currency-ape"
                           data-test="coin-toggle-currency-ape"
                           aria-label="Select ape"
                           data-button-root=""
                         >
-                          <div
-                            class="currency svelte-141qgpc"
-                            role="presentation"
-                            bis_skin_checked="1"
-                          >
-                            <span
-                              class="content svelte-141qgpc"
-                              style="width: 12ch"
-                              ><span
-                                class="weight-semibold line-height-default align-left size-default text-size-default variant-inherit numeric with-icon-space is-truncate svelte-17v69ua text-[14px] !hover:text-black text-[rgba(47,69,83)]"
-                                formattedforfilter="0"
-                                style="max-width: 12ch"
+                          <div class="currency">
+                            <span class="content"
+                              ><span class="text-[14px] text-[rgba(47,69,83)]"
                                 >0.00000000</span
                               ></span
                             >
-                            <span
-                              class="weight-normal line-height-default align-left size-default text-size-default variant-subtle is-truncate svelte-17v69ua"
-                              title="ape"
-                              style="max-width: 12ch"
+                            <span class="" title="ape"
                               ><svg
                                 fill="none"
                                 viewBox="0 0 96 96"
                                 class="svg-icon"
-                                style="width: 14px; height: 14px;"
+                                style="width: 14px; height: 14px"
                               >
                                 <title></title>
                                 <path
@@ -991,45 +692,31 @@
                                 ></path></svg
                             ></span>
                             <span
-                              class="weight-semibold line-height-default align-left size-default text-size-default variant-inherit with-icon-space is-truncate svelte-17v69ua ms-[4px] text-[rgba(47,69,83)] tex-[14px]"
-                              formattedforfilter="0"
-                              style="max-width: 12ch"
+                              class="ms-[4px] text-[rgba(47,69,83)] text-[14px]"
                               >APE</span
                             >
                           </div></button
                         ><button
                           type="button"
                           tabindex="0"
-                          class="inline-flex relative items-center gap-2 font-semibold whitespace-nowrap ring-offset-background transition disabled:pointer-events-none disabled:opacity-50 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 active:scale-[0.98] bg-transparent text-grey-400 betterhover:hover:bg-grey-200 betterhover:hover:text-neutral-black focus-visible:outline-grey-300 text-xs leading-none [&amp;_svg]:text-grey-400 [&amp;:hover>svg]:text-grey-400 rounded-none justify-start px-3 py-[6px] shadow-none min-h-[33px] hover:bg-[rgba(177,186,211)] !hover:text-black"
+                          class="inline-flex relative items-center gap-2 font-semibold whitespace-nowrap ring-offset-background transition disabled:pointer-events-none disabled:opacity-50 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 active:scale-[0.98] bg-transparent text-grey-400 betterhover:hover:bg-grey-200 betterhover:hover:text-neutral-black focus-visible:outline-grey-300 text-xs leading-none [&amp;_svg]:text-grey-400 [&amp;:hover>svg]:text-grey-400 rounded-none justify-start px-3 py-[6px] shadow-none min-h-[33px] hover:bg-[rgba(177,186,211)]"
                           data-testid="coin-toggle-currency-busd"
                           data-test="coin-toggle-currency-busd"
                           aria-label="Select busd"
                           data-button-root=""
                         >
-                          <div
-                            class="currency svelte-141qgpc"
-                            role="presentation"
-                            bis_skin_checked="1"
-                          >
-                            <span
-                              class="content svelte-141qgpc"
-                              style="width: 12ch"
-                              ><span
-                                class="weight-semibold line-height-default align-left size-default text-size-default variant-inherit numeric with-icon-space is-truncate svelte-17v69ua text-[14px] !hover:text-black text-[rgba(47,69,83)]"
-                                formattedforfilter="0"
-                                style="max-width: 12ch"
+                          <div class="currency">
+                            <span class="content"
+                              ><span class="text-[14px] text-[rgba(47,69,83)]"
                                 >0.00000000</span
                               ></span
                             >
-                            <span
-                              class="weight-normal line-height-default align-left size-default text-size-default variant-subtle is-truncate svelte-17v69ua"
-                              title="busd"
-                              style="max-width: 12ch"
+                            <span class="" title="busd"
                               ><svg
                                 fill="none"
                                 viewBox="0 0 96 96"
                                 class="svg-icon"
-                                style="width: 14px; height: 14px;"
+                                style="width: 14px; height: 14px"
                               >
                                 <title></title>
                                 <path
@@ -1042,45 +729,31 @@
                                 ></path></svg
                             ></span>
                             <span
-                              class="weight-semibold line-height-default align-left size-default text-size-default variant-inherit with-icon-space is-truncate svelte-17v69ua ms-[4px] text-[rgba(47,69,83)] tex-[14px]"
-                              formattedforfilter="0"
-                              style="max-width: 12ch"
+                              class="ms-[4px] text-[rgba(47,69,83)] text-[14px]"
                               >BUSD</span
                             >
                           </div></button
                         ><button
                           type="button"
                           tabindex="0"
-                          class="inline-flex relative items-center gap-2 font-semibold whitespace-nowrap ring-offset-background transition disabled:pointer-events-none disabled:opacity-50 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 active:scale-[0.98] bg-transparent text-grey-400 betterhover:hover:bg-grey-200 betterhover:hover:text-neutral-black focus-visible:outline-grey-300 text-xs leading-none [&amp;_svg]:text-grey-400 [&amp;:hover>svg]:text-grey-400 rounded-none justify-start px-3 py-[6px] shadow-none min-h-[33px] hover:bg-[rgba(177,186,211)] !hover:text-black"
+                          class="inline-flex relative items-center gap-2 font-semibold whitespace-nowrap ring-offset-background transition disabled:pointer-events-none disabled:opacity-50 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 active:scale-[0.98] bg-transparent text-grey-400 betterhover:hover:bg-grey-200 betterhover:hover:text-neutral-black focus-visible:outline-grey-300 text-xs leading-none [&amp;_svg]:text-grey-400 [&amp;:hover>svg]:text-grey-400 rounded-none justify-start px-3 py-[6px] shadow-none min-h-[33px] hover:bg-[rgba(177,186,211)]"
                           data-testid="coin-toggle-currency-cro"
                           data-test="coin-toggle-currency-cro"
                           aria-label="Select cro"
                           data-button-root=""
                         >
-                          <div
-                            class="currency svelte-141qgpc"
-                            role="presentation"
-                            bis_skin_checked="1"
-                          >
-                            <span
-                              class="content svelte-141qgpc"
-                              style="width: 12ch"
-                              ><span
-                                class="weight-semibold line-height-default align-left size-default text-size-default variant-inherit numeric with-icon-space is-truncate svelte-17v69ua text-[14px] !hover:text-black text-[rgba(47,69,83)]"
-                                formattedforfilter="0"
-                                style="max-width: 12ch"
+                          <div class="currency">
+                            <span class="content"
+                              ><span class="text-[14px] text-[rgba(47,69,83)]"
                                 >0.00000000</span
                               ></span
                             >
-                            <span
-                              class="weight-normal line-height-default align-left size-default text-size-default variant-subtle is-truncate svelte-17v69ua"
-                              title="cro"
-                              style="max-width: 12ch"
+                            <span class="" title="cro"
                               ><svg
                                 fill="none"
                                 viewBox="0 0 96 96"
                                 class="svg-icon"
-                                style="width: 14px; height: 14px;"
+                                style="width: 14px; height: 14px"
                               >
                                 <title></title>
                                 <path
@@ -1105,45 +778,31 @@
                                 ></path></svg
                             ></span>
                             <span
-                              class="weight-semibold line-height-default align-left size-default text-size-default variant-inherit with-icon-space is-truncate svelte-17v69ua ms-[4px] text-[rgba(47,69,83)] tex-[14px]"
-                              formattedforfilter="0"
-                              style="max-width: 12ch"
+                              class="ms-[4px] text-[rgba(47,69,83)] text-[14px]"
                               >CRO</span
                             >
                           </div></button
                         ><button
                           type="button"
                           tabindex="0"
-                          class="inline-flex relative items-center gap-2 font-semibold whitespace-nowrap ring-offset-background transition disabled:pointer-events-none disabled:opacity-50 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 active:scale-[0.98] bg-transparent text-grey-400 betterhover:hover:bg-grey-200 betterhover:hover:text-neutral-black focus-visible:outline-grey-300 text-xs leading-none [&amp;_svg]:text-grey-400 [&amp;:hover>svg]:text-grey-400 rounded-none justify-start px-3 py-[6px] shadow-none min-h-[33px] hover:bg-[rgba(177,186,211)] !hover:text-black"
+                          class="inline-flex relative items-center gap-2 font-semibold whitespace-nowrap ring-offset-background transition disabled:pointer-events-none disabled:opacity-50 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 active:scale-[0.98] bg-transparent text-grey-400 betterhover:hover:bg-grey-200 betterhover:hover:text-neutral-black focus-visible:outline-grey-300 text-xs leading-none [&amp;_svg]:text-grey-400 [&amp;:hover>svg]:text-grey-400 rounded-none justify-start px-3 py-[6px] shadow-none min-h-[33px] hover:bg-[rgba(177,186,211)]"
                           data-testid="coin-toggle-currency-dai"
                           data-test="coin-toggle-currency-dai"
                           aria-label="Select dai"
                           data-button-root=""
                         >
-                          <div
-                            class="currency svelte-141qgpc"
-                            role="presentation"
-                            bis_skin_checked="1"
-                          >
-                            <span
-                              class="content svelte-141qgpc"
-                              style="width: 12ch"
-                              ><span
-                                class="weight-semibold line-height-default align-left size-default text-size-default variant-inherit numeric with-icon-space is-truncate svelte-17v69ua text-[14px] !hover:text-black text-[rgba(47,69,83)]"
-                                formattedforfilter="0"
-                                style="max-width: 12ch"
+                          <div class="currency">
+                            <span class="content"
+                              ><span class="text-[14px] text-[rgba(47,69,83)]"
                                 >0.00000000</span
                               ></span
                             >
-                            <span
-                              class="weight-normal line-height-default align-left size-default text-size-default variant-subtle is-truncate svelte-17v69ua"
-                              title="dai"
-                              style="max-width: 12ch"
+                            <span class="" title="dai"
                               ><svg
                                 fill="none"
                                 viewBox="0 0 96 96"
                                 class="svg-icon"
-                                style="width: 14px; height: 14px;"
+                                style="width: 14px; height: 14px"
                               >
                                 <title></title>
                                 <path
@@ -1156,45 +815,31 @@
                                 ></path></svg
                             ></span>
                             <span
-                              class="weight-semibold line-height-default align-left size-default text-size-default variant-inherit with-icon-space is-truncate svelte-17v69ua ms-[4px] text-[rgba(47,69,83)] tex-[14px]"
-                              formattedforfilter="0"
-                              style="max-width: 12ch"
+                              class="ms-[4px] text-[rgba(47,69,83)] text-[14px]"
                               >DAI</span
                             >
                           </div></button
                         ><button
                           type="button"
                           tabindex="0"
-                          class="inline-flex relative items-center gap-2 font-semibold whitespace-nowrap ring-offset-background transition disabled:pointer-events-none disabled:opacity-50 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 active:scale-[0.98] bg-transparent text-grey-400 betterhover:hover:bg-grey-200 betterhover:hover:text-neutral-black focus-visible:outline-grey-300 text-xs leading-none [&amp;_svg]:text-grey-400 [&amp;:hover>svg]:text-grey-400 rounded-none justify-start px-3 py-[6px] shadow-none min-h-[33px] hover:bg-[rgba(177,186,211)] !hover:text-black"
+                          class="inline-flex relative items-center gap-2 font-semibold whitespace-nowrap ring-offset-background transition disabled:pointer-events-none disabled:opacity-50 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 active:scale-[0.98] bg-transparent text-grey-400 betterhover:hover:bg-grey-200 betterhover:hover:text-neutral-black focus-visible:outline-grey-300 text-xs leading-none [&amp;_svg]:text-grey-400 [&amp;:hover>svg]:text-grey-400 rounded-none justify-start px-3 py-[6px] shadow-none min-h-[33px] hover:bg-[rgba(177,186,211)]"
                           data-testid="coin-toggle-currency-link"
                           data-test="coin-toggle-currency-link"
                           aria-label="Select link"
                           data-button-root=""
                         >
-                          <div
-                            class="currency svelte-141qgpc"
-                            role="presentation"
-                            bis_skin_checked="1"
-                          >
-                            <span
-                              class="content svelte-141qgpc"
-                              style="width: 12ch"
-                              ><span
-                                class="weight-semibold line-height-default align-left size-default text-size-default variant-inherit numeric with-icon-space is-truncate svelte-17v69ua text-[14px] !hover:text-black text-[rgba(47,69,83)]"
-                                formattedforfilter="0"
-                                style="max-width: 12ch"
+                          <div class="currency">
+                            <span class="content"
+                              ><span class="text-[14px] text-[rgba(47,69,83)]"
                                 >0.00000000</span
                               ></span
                             >
-                            <span
-                              class="weight-normal line-height-default align-left size-default text-size-default variant-subtle is-truncate svelte-17v69ua "
-                              title="link"
-                              style="max-width: 12ch"
+                            <span class=" " title="link"
                               ><svg
                                 fill="none"
                                 viewBox="0 0 96 96"
                                 class="svg-icon"
-                                style="width: 14px; height: 14px;"
+                                style="width: 14px; height: 14px"
                               >
                                 <title></title>
                                 <path
@@ -1207,45 +852,31 @@
                                 ></path></svg
                             ></span>
                             <span
-                              class="weight-semibold line-height-default align-left size-default text-size-default variant-inherit with-icon-space is-truncate svelte-17v69ua ms-[4px] text-[rgba(47,69,83)] tex-[14px]"
-                              formattedforfilter="0"
-                              style="max-width: 12ch"
+                              class="ms-[4px] text-[rgba(47,69,83)] text-[14px]"
                               >LINK</span
                             >
                           </div></button
                         ><button
                           type="button"
                           tabindex="0"
-                          class="inline-flex relative items-center gap-2 font-semibold whitespace-nowrap ring-offset-background transition disabled:pointer-events-none disabled:opacity-50 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 active:scale-[0.98] bg-transparent text-grey-400 betterhover:hover:bg-grey-200 betterhover:hover:text-neutral-black focus-visible:outline-grey-300 text-xs leading-none [&amp;_svg]:text-grey-400 [&amp;:hover>svg]:text-grey-400 rounded-none justify-start px-3 py-[6px] shadow-none min-h-[33px] hover:bg-[rgba(177,186,211)] !hover:text-black"
+                          class="inline-flex relative items-center gap-2 font-semibold whitespace-nowrap ring-offset-background transition disabled:pointer-events-none disabled:opacity-50 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 active:scale-[0.98] bg-transparent text-grey-400 betterhover:hover:bg-grey-200 betterhover:hover:text-neutral-black focus-visible:outline-grey-300 text-xs leading-none [&amp;_svg]:text-grey-400 [&amp;:hover>svg]:text-grey-400 rounded-none justify-start px-3 py-[6px] shadow-none min-h-[33px] hover:bg-[rgba(177,186,211)]"
                           data-testid="coin-toggle-currency-sand"
                           data-test="coin-toggle-currency-sand"
                           aria-label="Select sand"
                           data-button-root=""
                         >
-                          <div
-                            class="currency svelte-141qgpc"
-                            role="presentation"
-                            bis_skin_checked="1"
-                          >
-                            <span
-                              class="content svelte-141qgpc"
-                              style="width: 12ch"
-                              ><span
-                                class="weight-semibold line-height-default align-left size-default text-size-default variant-inherit numeric with-icon-space is-truncate svelte-17v69ua text-[14px] !hover:text-black text-[rgba(47,69,83)]"
-                                formattedforfilter="0"
-                                style="max-width: 12ch"
+                          <div class="currency">
+                            <span class="content"
+                              ><span class="text-[14px] text-[rgba(47,69,83)]"
                                 >0.00000000</span
                               ></span
                             >
-                            <span
-                              class="weight-normal line-height-default align-left size-default text-size-default variant-subtle is-truncate svelte-17v69ua "
-                              title="sand"
-                              style="max-width: 12ch"
+                            <span class=" " title="sand"
                               ><svg
                                 fill="none"
                                 viewBox="0 0 96 96"
                                 class="svg-icon"
-                                style="width: 14px; height: 14px;"
+                                style="width: 14px; height: 14px"
                               >
                                 <title></title>
                                 <path
@@ -1258,45 +889,31 @@
                                 ></path></svg
                             ></span>
                             <span
-                              class="weight-semibold line-height-default align-left size-default text-size-default variant-inherit with-icon-space is-truncate svelte-17v69ua ms-[4px] text-[rgba(47,69,83)] tex-[14px] ms-[4px]"
-                              formattedforfilter="0"
-                              style="max-width: 12ch"
+                              class="ms-[4px] text-[rgba(47,69,83)] text-[14px] ms-[4px]"
                               >SAND</span
                             >
                           </div></button
                         ><button
                           type="button"
                           tabindex="0"
-                          class="inline-flex relative items-center gap-2 font-semibold whitespace-nowrap ring-offset-background transition disabled:pointer-events-none disabled:opacity-50 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 active:scale-[0.98] bg-transparent text-grey-400 betterhover:hover:bg-grey-200 betterhover:hover:text-neutral-black focus-visible:outline-grey-300 text-xs leading-none [&amp;_svg]:text-grey-400 [&amp;:hover>svg]:text-grey-400 rounded-none justify-start px-3 py-[6px] shadow-none min-h-[33px] hover:bg-[rgba(177,186,211)] !hover:text-black"
+                          class="inline-flex relative items-center gap-2 font-semibold whitespace-nowrap ring-offset-background transition disabled:pointer-events-none disabled:opacity-50 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 active:scale-[0.98] bg-transparent text-grey-400 betterhover:hover:bg-grey-200 betterhover:hover:text-neutral-black focus-visible:outline-grey-300 text-xs leading-none [&amp;_svg]:text-grey-400 [&amp;:hover>svg]:text-grey-400 rounded-none justify-start px-3 py-[6px] shadow-none min-h-[33px] hover:bg-[rgba(177,186,211)]"
                           data-testid="coin-toggle-currency-shib"
                           data-test="coin-toggle-currency-shib"
                           aria-label="Select shib"
                           data-button-root=""
                         >
-                          <div
-                            class="currency svelte-141qgpc"
-                            role="presentation"
-                            bis_skin_checked="1"
-                          >
-                            <span
-                              class="content svelte-141qgpc"
-                              style="width: 12ch"
-                              ><span
-                                class="weight-semibold line-height-default align-left size-default text-size-default variant-inherit numeric with-icon-space is-truncate svelte-17v69ua text-[14px] !hover:text-black text-[rgba(47,69,83)]"
-                                formattedforfilter="0"
-                                style="max-width: 12ch"
+                          <div class="currency">
+                            <span class="content"
+                              ><span class="text-[14px] text-[rgba(47,69,83)]"
                                 >0.00000000</span
                               ></span
                             >
-                            <span
-                              class="weight-normal line-height-default align-left size-default text-size-default variant-subtle is-truncate svelte-17v69ua"
-                              title="shib"
-                              style="max-width: 12ch"
+                            <span class="" title="shib"
                               ><svg
                                 fill="none"
                                 viewBox="0 0 96 96"
                                 class="svg-icon"
-                                style="width: 14px; height: 14px;"
+                                style="width: 14px; height: 14px"
                               >
                                 <title></title>
                                 <path
@@ -1341,45 +958,31 @@
                                 ></path></svg
                             ></span>
                             <span
-                              class="weight-semibold line-height-default align-left size-default text-size-default variant-inherit with-icon-space is-truncate svelte-17v69ua ms-[4px] text-[rgba(47,69,83)] tex-[14px]"
-                              formattedforfilter="0"
-                              style="max-width: 12ch"
+                              class="ms-[4px] text-[rgba(47,69,83)] text-[14px]"
                               >SHIB</span
                             >
                           </div></button
                         ><button
                           type="button"
                           tabindex="0"
-                          class="inline-flex relative items-center gap-2 font-semibold whitespace-nowrap ring-offset-background transition disabled:pointer-events-none disabled:opacity-50 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 active:scale-[0.98] bg-transparent text-grey-400 betterhover:hover:bg-grey-200 betterhover:hover:text-neutral-black focus-visible:outline-grey-300 text-xs leading-none [&amp;_svg]:text-grey-400 [&amp;:hover>svg]:text-grey-400 rounded-none justify-start px-3 py-[6px] shadow-none min-h-[33px] hover:bg-[rgba(177,186,211)] !hover:text-black"
+                          class="inline-flex relative items-center gap-2 font-semibold whitespace-nowrap ring-offset-background transition disabled:pointer-events-none disabled:opacity-50 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 active:scale-[0.98] bg-transparent text-grey-400 betterhover:hover:bg-grey-200 betterhover:hover:text-neutral-black focus-visible:outline-grey-300 text-xs leading-none [&amp;_svg]:text-grey-400 [&amp;:hover>svg]:text-grey-400 rounded-none justify-start px-3 py-[6px] shadow-none min-h-[33px] hover:bg-[rgba(177,186,211)]"
                           data-testid="coin-toggle-currency-uni"
                           data-test="coin-toggle-currency-uni"
                           aria-label="Select uni"
                           data-button-root=""
                         >
-                          <div
-                            class="currency svelte-141qgpc"
-                            role="presentation"
-                            bis_skin_checked="1"
-                          >
-                            <span
-                              class="content svelte-141qgpc"
-                              style="width: 12ch"
-                              ><span
-                                class="weight-semibold line-height-default align-left size-default text-size-default variant-inherit numeric with-icon-space is-truncate svelte-17v69ua text-[14px] !hover:text-black text-[rgba(47,69,83)]"
-                                formattedforfilter="0"
-                                style="max-width: 12ch"
+                          <div class="currency">
+                            <span class="content"
+                              ><span class="text-[14px] text-[rgba(47,69,83)]"
                                 >0.00000000</span
                               ></span
                             >
-                            <span
-                              class="weight-normal line-height-default align-left size-default text-size-default variant-subtle is-truncate svelte-17v69ua"
-                              title="uni"
-                              style="max-width: 12ch"
+                            <span class="" title="uni"
                               ><svg
                                 fill="none"
                                 viewBox="0 0 96 96"
                                 class="svg-icon"
-                                style="width: 14px; height: 14px;"
+                                style="width: 14px; height: 14px"
                               >
                                 <title></title>
                                 <path
@@ -1406,45 +1009,31 @@
                                 ></path></svg
                             ></span>
                             <span
-                              class="weight-semibold line-height-default align-left size-default text-size-default variant-inherit with-icon-space is-truncate svelte-17v69ua ms-[4px] text-[rgba(47,69,83)] tex-[14px]"
-                              formattedforfilter="0"
-                              style="max-width: 12ch"
+                              class="ms-[4px] text-[rgba(47,69,83)] text-[14px]"
                               >UNI</span
                             >
                           </div></button
                         ><button
                           type="button"
                           tabindex="0"
-                          class="inline-flex relative items-center gap-2 font-semibold whitespace-nowrap ring-offset-background transition disabled:pointer-events-none disabled:opacity-50 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 active:scale-[0.98] bg-transparent text-grey-400 betterhover:hover:bg-grey-200 betterhover:hover:text-neutral-black focus-visible:outline-grey-300 text-xs leading-none [&amp;_svg]:text-grey-400 [&amp;:hover>svg]:text-grey-400 rounded-none justify-start px-3 py-[6px] shadow-none min-h-[33px] hover:bg-[rgba(177,186,211)] !hover:text-black"
+                          class="inline-flex relative items-center gap-2 font-semibold whitespace-nowrap ring-offset-background transition disabled:pointer-events-none disabled:opacity-50 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 active:scale-[0.98] bg-transparent text-grey-400 betterhover:hover:bg-grey-200 betterhover:hover:text-neutral-black focus-visible:outline-grey-300 text-xs leading-none [&amp;_svg]:text-grey-400 [&amp;:hover>svg]:text-grey-400 rounded-none justify-start px-3 py-[6px] shadow-none min-h-[33px] hover:bg-[rgba(177,186,211)]"
                           data-testid="coin-toggle-currency-pol"
                           data-test="coin-toggle-currency-pol"
                           aria-label="Select pol"
                           data-button-root=""
                         >
-                          <div
-                            class="currency svelte-141qgpc"
-                            role="presentation"
-                            bis_skin_checked="1"
-                          >
-                            <span
-                              class="content svelte-141qgpc"
-                              style="width: 12ch"
-                              ><span
-                                class="weight-semibold line-height-default align-left size-default text-size-default variant-inherit numeric with-icon-space is-truncate svelte-17v69ua text-[14px] !hover:text-black text-[rgba(47,69,83)]"
-                                formattedforfilter="0"
-                                style="max-width: 12ch"
+                          <div class="currency">
+                            <span class="content"
+                              ><span class="text-[14px] text-[rgba(47,69,83)]"
                                 >0.00000000</span
                               ></span
                             >
-                            <span
-                              class="weight-normal line-height-default align-left size-default text-size-default variant-subtle is-truncate svelte-17v69ua"
-                              title="pol"
-                              style="max-width: 12ch"
+                            <span class="" title="pol"
                               ><svg
                                 fill="none"
                                 viewBox="0 0 96 96"
                                 class="svg-icon"
-                                style="width: 14px; height: 14px;"
+                                style="width: 14px; height: 14px"
                               >
                                 <title></title>
                                 <path
@@ -1457,9 +1046,7 @@
                                 ></path></svg
                             ></span>
                             <span
-                              class="weight-semibold line-height-default align-left size-default text-size-default variant-inherit with-icon-space is-truncate svelte-17v69ua ms-[4px] text-[rgba(47,69,83)] tex-[14px]"
-                              formattedforfilter="0"
-                              style="max-width: 12ch"
+                              class="ms-[4px] text-[rgba(47,69,83)] text-[14px]"
                               >POL</span
                             >
                           </div>
@@ -1471,10 +1058,10 @@
               </div>
             </div>
           </div>
-          <label class="stacked svelte-1wzq4lo mt-[1rem]">
-            <div class="input-wrap svelte-1nbx5re" bis_skin_checked="1">
-              <div class="input-content svelte-1nbx5re" bis_skin_checked="1">
-                <div class="after-icon svelte-1nbx5re" bis_skin_checked="1">
+          <label class="stacked mt-[1rem]">
+            <div class="input-wrap">
+              <div class="input-content">
+                <div class="after-icon">
                   <svg fill="none" viewBox="0 0 96 96" class="svg-icon">
                     <title></title>
                     <path
@@ -1489,7 +1076,7 @@
                 </div>
                 <input
                   autocomplete="on"
-                  class="input spacing-expanded svelte-1nbx5re"
+                  class="input spacing-expanded"
                   type="number"
                   data-testid="send-rain-amount"
                   name="amount"
@@ -1497,10 +1084,7 @@
                   step="1e-8"
                 />
               </div>
-              <div
-                class="input-button-wrap svelte-1nbx5re"
-                bis_skin_checked="1"
-              >
+              <div class="input-button-wrap">
                 <button
                   type="button"
                   tabindex="0"
@@ -1510,20 +1094,12 @@
                 </button>
               </div>
             </div>
-            <span
-              class="label-content w-full flex justify-between svelte-1k9rtf3"
-            >
-              <div
-                class="label-left-wrapper svelte-1nbx5re"
-                bis_skin_checked="1"
-              >
+            <span class="label-content w-full flex justify-between">
+              <div class="label-left-wrapper">
                 <span slot="label">Amount</span>
               </div>
-              <div
-                class="currency-conversion svelte-e4myuj"
-                bis_skin_checked="1"
-              >
-                <div class="svelte-e4myuj" bis_skin_checked="1">$0.00</div>
+              <div class="currency-conversion svelte-e4myuj">
+                <div class="svelte-e4myuj">$0.00</div>
               </div>
             </span>
           </label>
@@ -1534,33 +1110,22 @@
             data-test="vault-deposit-submit"
             data-testid="password-reset-button"
           >
-            <div data-loader-content="" class="contents" bis_skin_checked="1">
-              Deposit to Vault
-            </div>
+            <div data-loader-content="" class="contents">Deposit to Vault</div>
           </button>
         </form>
       </div>
-      <div class="footer svelte-1csl34j no-bottom-spacing" bis_skin_checked="1">
-        <p
-          class="weight-normal line-height-default align-left size-default text-size-default variant-subtle with-icon-space svelte-17v69ua">
-          Improve your account security with Two-Factor Authentication
-        </p>
+      <div class="footer svelte-1csl34j no-bottom-spacing">
+        <p>Improve your account security with Two-Factor Authentication</p>
         <a
           class="inline-flex relative items-center gap-2 justify-center rounded-sm font-semibold whitespace-nowrap ring-offset-background transition disabled:pointer-events-none disabled:opacity-50 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 active:scale-[0.98] bg-grey-400 text-white betterhover:hover:bg-grey-300 betterhover:hover:text-white focus-visible:outline-white text-sm leading-none shadow-md py-[0.9375rem] px-[1.25rem] w-full"
           href="/settings/security"
-          data-sveltekit-reload="off"
-          data-sveltekit-preload-data="off"
-          data-sveltekit-noscroll="off"
           >Enable 2FA</a
         >
       </div>
-      <div class="footer svelte-1csl34j" bis_skin_checked="1">
+      <div class="footer svelte-1csl34j">
         <a
           class="inline-flex relative items-center gap-2 justify-center rounded-sm font-semibold whitespace-nowrap ring-offset-background transition disabled:pointer-events-none disabled:opacity-50 focus-visible:outline-2 focus-visible:outline-offset-2 active:scale-[0.98] bg-transparent text-grey-200 betterhover:hover:bg-transparent betterhover:hover:text-white focus-visible:text-white focus-visible:outline-none text-sm leading-none"
           href="/blog/how-to-use-our-vault"
-          data-sveltekit-reload="off"
-          data-sveltekit-preload-data="off"
-          data-sveltekit-noscroll="off"
           >Learn more about Vault</a
         >
       </div>

@@ -11,9 +11,13 @@ import { TabSliderComponent } from "../../shared/tab-slider/tab-slider.component
 })
 export class MyBetsComponent {
   activeTb:string='casino';
+  openModal:boolean=false
   activeTab: number = 1;
   LiveTab = 'basketball'; 
   TableTab: number = 1;
+  openmenuModal():void{
+    this.openModal=!this.openModal
+  }
   setActivTab(tab: string): void {
     this.activeTb = tab; // Update active tab on click
   }
@@ -36,7 +40,7 @@ export class MyBetsComponent {
   tabsItem = [
     { tabTitle: 'All Bets', dotState: false },
     { tabTitle: 'High Rollers', dotState: false },
-    { tabTitle: 'Race Leaderboard', dotState: false },
+    { tabTitle: 'Race Leaderboard', dotState: true },
   ]
 
   tabsItems = [

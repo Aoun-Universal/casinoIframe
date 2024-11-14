@@ -1,30 +1,97 @@
 .container{
-    @apply w-full my-[1rem]
+    @apply min-w-full my-[1rem]
 }
 .hero{
     @apply max-w-[650px] mx-auto 
 }
 .top-heading{
-    @apply font-semibold  text-3xl inline-flex items-center gap-x-2
+    @apply font-semibold px-2 sm:px-0 text-3xl inline-flex items-center gap-x-2
 }
 .share-wrapper{
-    @apply mt-[1rem] flex justify-between items-center
+    @apply mt-[1rem] flex justify-between items-center px-2 sm:px-0
 }
 .text{
-    @apply text-[11px] text-[#b1bad3]
+    @apply text-[11.5px] text-[#b1bad3]
 }
 .links{
     @apply flex gap-4
 }
 .link{
-    @apply inline-flex relative items-center gap-2 justify-center font-semibold whitespace-nowrap  transition disabled:pointer-events-none disabled:opacity-50 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 active:scale-[0.98] bg-[#0F212E] text-white hover:bg-gray-900 hover:text-white focus-visible:outline-white text-xs leading-none p-3 rounded-full
+    @apply inline-flex relative items-center gap-2 justify-center font-semibold whitespace-nowrap  transition disabled:pointer-events-none disabled:opacity-50 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 active:scale-[0.98] bg-[#0F212E] text-white hover:bg-gray-900 hover:text-white focus-visible:outline-white text-xs leading-none p-3 rounded-full cursor-pointer
 }
 .svg-icon{
     @apply w-[12px] h-[12px]
 }
 .hero-img{
-    @apply mt-[1rem] rounded-[8px] w-full
+    @apply mt-[1rem] rounded-[8px] w-full px-2 sm:px-0
 }
-/* .content-block{
-    @apply
-} */
+.content-block{
+    @apply mt-[2rem] flex flex-col gap-4 px-2 sm:px-0
+}
+.block-heading{
+    @apply text-xl md:text-2xl font-[600]
+}
+.p-text{
+    @apply text-[#b1bad3] leading-[150%] font-semibold text-[15px]
+}
+.p-link{
+    @apply text-[15px] text-[#b1bad3] hover:text-white font-semibold cursor-pointer
+}
+.p-stake{
+    @apply text-[1rem] text-white font-semibold cursor-pointer
+}
+.list-items{
+    @apply list-disc pl-[3vw] mx-8 flex flex-col gap-2 sm:px-0
+}
+.learn{
+    @apply inline-flex items-center gap-[4px]
+}
+.svg-icon{
+    @apply w-[1rem] h-[1rem]
+}
+.button{
+    @apply flex justify-center items-center mt-[1.5rem]
+}
+.btn{
+    @apply inline-flex relative items-center gap-2 justify-center rounded-sm font-semibold whitespace-nowrap  transition disabled:pointer-events-none disabled:opacity-50 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 active:scale-[0.98] bg-blue-500 text-white hover:bg-blue-600 hover:text-white focus-visible:outline-white text-sm leading-none shadow-md py-[0.9375rem] px-[1.25rem] cursor-pointer
+}
+.pagefoot{
+    @apply bg-[#213743] w-full mt-[2.5rem]
+}
+.related-wrapper{
+    @apply  max-w-[1200px] px-[3vw] py-8 mx-auto
+}
+.related-articles{
+    @apply flex flex-col gap-4
+}
+.foot-top{
+    @apply text-[1.25rem] font-semibold
+}
+.line{
+    @apply bg-[#1a2c38] h-[2px] border-none outline-none
+}
+.article-preview-list{
+    @apply grid grid-cols-2 gap-[1.5rem]
+}
+.card{
+    @apply flex flex-col gap-4 cursor-pointer
+}
+.card-img{
+    @apply w-full group-hover:translate-y-[-4px] duration-[0.2s]
+}
+.foot-p{
+    @apply text-[#b1bad3] text-[0.875rem]
+}
+.card-content{
+    @apply flex flex-col gap-2
+}
+@media (max-width: 680px){
+    .article-preview-list{
+        @apply grid-cols-1
+    }
+}
+@media (min-width: 1089px){
+    .article-preview-list{
+        @apply grid-cols-3
+    }
+}
