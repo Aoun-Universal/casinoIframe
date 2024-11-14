@@ -5,7 +5,7 @@ import { ToggleService } from '../../services/toggle.service';
 @Component({
   selector: 'app-notification',
   standalone: true,
-  imports: [NgIf],
+  imports: [],
   templateUrl: './notification.component.html',
   styleUrl: './notification.component.css'
 })
