@@ -1,37 +1,34 @@
 <div class="card-varient">
-    <div style="">
-        <div class="layout-spacing variant-normal svelte-l4ghjo no-bottom-spacing">
+    <div>
+        <div class="layout-spacing variant-normal svelte-l4ghjo">
             <section class="stats-grid svelte-lqm917">
+                <div class="stat svelte-lqm917">
+                    <span
+                        class="text-sm text-white">Campaign
+                        Hits</span> <span
+                        class="text-sm">0</span>
+                </div>
                 <div class="stat svelte-lqm917"><span
-                        class="weight-semibold line-height-default align-left size-default text-size-default variant-highlighted with-icon-space svelte-17v69ua"
-                       >Campaign Hits</span> <span
-                        class="weight-semibold line-height-default align-left size-default text-size-default variant-subtle numeric with-icon-space svelte-17v69ua"
-                       >0</span></div>
+                        class="text-sm text-white">Referrals</span>
+                    <span
+                        class="text-sm">0</span>
+                </div>
                 <div class="stat svelte-lqm917"><span
-                        class="weight-semibold line-height-default align-left size-default text-size-default variant-highlighted with-icon-space svelte-17v69ua"
-                       >Referrals</span> <span
-                        class="weight-semibold line-height-default align-left size-default text-size-default variant-subtle numeric with-icon-space svelte-17v69ua"
-                       >0</span></div>
+                        class="text-sm text-white">Total
+                        Deposits</span> <span
+                        class="text-sm">0</span>
+                </div>
                 <div class="stat svelte-lqm917"><span
-                        class="weight-semibold line-height-default align-left size-default text-size-default variant-highlighted with-icon-space svelte-17v69ua"
-                       >Total Deposits</span> <span
-                        class="weight-semibold line-height-default align-left size-default text-size-default variant-subtle numeric with-icon-space svelte-17v69ua"
-                       >0</span></div>
+                        class="text-sm text-white">Unique
+                        Deposits</span> <span
+                        class="text-sm">0</span>
+                </div>
                 <div class="stat svelte-lqm917"><span
-                        class="weight-semibold line-height-default align-left size-default text-size-default variant-highlighted with-icon-space svelte-17v69ua"
-                       >Unique Deposits</span> <span
-                        class="weight-semibold line-height-default align-left size-default text-size-default variant-subtle numeric with-icon-space svelte-17v69ua"
-                       >0</span></div>
-                <div class="stat svelte-lqm917"><span
-                        class="weight-semibold line-height-default align-left size-default text-size-default variant-highlighted with-icon-space svelte-17v69ua"
-                       >Available</span>
-                    <div class="currency svelte-141qgpc" role="presentation"> <span class="content svelte-141qgpc"
-                           ><span
-                                class="weight-semibold line-height-default align-center size-default text-size-default variant-subtle numeric with-icon-space is-truncate svelte-17v69ua"
-                                style="max-width: 12ch;">0.00000000</span></span> <span
-                            class="weight-normal line-height-default align-left size-default text-size-default variant-subtle is-truncate svelte-17v69ua"
-                            title="btc" style="max-width: 12ch;"><svg fill="none" viewBox="0 0 96 96" class="svg-icon "
-                               >
+                        class="text-sm text-white">Available</span>
+                    <div class="currency svelte-141qgpc" role="presentation"> <span class="content svelte-141qgpc"><span
+                                class="text-sm currency" style="max-width: 12ch;">0.00000000</span></span> <span
+            
+                            title="btc" style="max-width: 12ch;"><svg fill="none" viewBox="0 0 96 96" class="svg-icon ">
                                 <title></title>
                                 <path
                                     d="M95.895 48.105C95.895 74.557 74.451 96 48 96 21.548 96 .105 74.556.105 48.105.105 21.653 21.548.21 48 .21c26.451 0 47.895 21.443 47.895 47.895Z"
@@ -45,17 +42,11 @@
             <div class="accordian-table-wrap svelte-1eda04b">
                 <div class="secondary-accordion level-2 rounded svelte-69p9vw">
                     <div class="header rounded svelte-69p9vw">
-                        <div data-test="sabahatyaseen7-campaign" slot="header" class="header svelte-1eda04b"><span
-                                class="weight-semibold line-height-default align-left size-default text-size-default variant-subtle with-icon-space svelte-17v69ua"
-                               >sabahatyaseen7</span>
-                            <div><span
-                                    class="weight-normal line-height-default align-left size-default text-size-default variant-subtle with-icon-space svelte-17v69ua"
-                                   >Commission:</span>
+                        <div class="header svelte-1eda04b"><span class="text-sm">Username77</span>
+                            <div><span class="text-sm">Commission:</span>
                                 <div class="currency svelte-141qgpc" role="presentation"> <span
-                                        class="content svelte-141qgpc"><span
-                                            class="weight-normal line-height-default align-left size-default text-size-default variant-subtle numeric with-icon-space is-truncate svelte-17v69ua"
+                                        class="content svelte-141qgpc"><span class="text-sm"
                                             style="max-width: 12ch;">0.00000000</span></span> <span
-                                        class="weight-normal line-height-default align-left size-default text-size-default variant-subtle is-truncate svelte-17v69ua"
                                         title="btc" style="max-width: 12ch;"><svg fill="none" viewBox="0 0 96 96"
                                             class="svg-icon ">
                                             <title></title>
@@ -68,30 +59,93 @@
                                         </svg></span> </div>
                             </div>
                         </div>
-                        <div class="arrow svelte-69p9vw"><svg fill="currentColor" viewBox="0 0 64 64" class="svg-icon "
-                                style="transform: rotate(90deg);
-   ">
+                        <div class="arrow svelte-69p9vw"  (click)="toggleContent()">
+                            <svg fill="currentColor" viewBox="0 0 64 64" class="svg-icon "
+                                style="transform: rotate(90deg)  " [ngStyle]="{ transform: isOpen ? 'rotate(90deg)' : 'rotate(0deg)' }">
                                 <title></title>
                                 <path
                                     d="M32.271 49.763 9.201 26.692l6.928-6.93 16.145 16.145 16.144-16.144 6.93 6.929-23.072 23.07h-.005Z">
                                 </path>
-                            </svg></div>
+                            </svg>
+                        </div>
+                    </div>
+                    <div class="content svelte-69p9vw is-open" *ngIf="isOpen">
+                        <div>
+                            <div class="content-spacing svelte-1eda04b commission">
+                                <div>
+                                    <section class="stats-grid svelte-lqm917">
+                                        <div class="state svelte-lqm917"><span
+                                                class="text-sm"
+                                                >Campaign Hits</span> <span
+                                                class="text-sm"
+                                                >0</span></div>
+                                        <div class="state svelte-lqm917"><span
+                                                class="text-sm"
+                                                >Referrals</span> <span
+                                                class="text-sm"
+                                                >0</span></div>
+                                        <div class="state svelte-lqm917"><span
+                                                class="text-sm"
+                                                >Total Deposits</span> <span
+                                                class="text-sm"
+                                                >0</span></div>
+                                        <div class="state svelte-lqm917"><span
+                                                class="text-sm"
+                                                >Unique Deposits</span> <span
+                                                class="text-sm"
+                                                >0</span></div>
+                                        <div class="state svelte-lqm917"><span
+                                                class="text-sm"
+                                                >Commission Rate</span> <span
+                                                class="text-sm"
+                                                >0.10</span></div>
+                                    </section>
+                                    <div class="wrapper svelte-1eda04b">
+                                        <div class="link svelte-1eda04b"><span
+                                                class="text-sm"
+                                                >Link</span>
+                                            <div class="wrap svelte-7j6mnu">
+                                                <label class="stacked svelte-1wzq4lo">
+                                                    <div class="input-wrap svelte-1nbx5re">
+                                                        <div class="input-content svelte-1nbx5re"> <input 
+                                                                class="input spacing-expanded svelte-1nbx5re bg-[#2F4553]"
+                                                                type="text" > </div>
+                                                        <div class="input-button-wrap svelte-1nbx5re bg-[#2F4553]"> <button
+                                                                type="button" tabindex="0"
+                                                                class="copy-btn"
+                                                                >
+                                                                <svg fill="currentColor"
+                                                                    viewBox="0 0 64 64" class="svg-icon " >
+                                                                    <title></title>
+                                                                    <path
+                                                                        d="M61.334 64H16V12.986h45.334V64ZM2.666 0v45.466H9.28V6.506h38.96V0H2.666Z">
+                                                                    </path>
+                                                                </svg></button></div>
+                                                    </div> <span class="label-content full-width svelte-1k9rtf3">
+                                                        <div class="label-left-wrapper svelte-1nbx5re"> </div>
+                                                    </span>
+                                                </label></div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="balance-grid svelte-12f32gl">
+                                    <section class="svelte-12f32gl text-sm"><span
+                                            >Available Commission</span> </section>
+                                    <section class="svelte-12f32gl text-sm"><span
+                                            >Total Commission</span> </section>
+                                </div>
+                            </div>
+                        </div>
                     </div>
                 </div>
             </div>
-            <div
-                class="stack x-center y-center gap-larger padding-none direction-horizontal padding-left-auto padding-top-auto padding-bottom-auto padding-right-auto svelte-1cd1boi">
-                <button type="button" tabindex="0"
-                    class="inline-flex relative items-center gap-2 justify-center rounded-sm font-semibold whitespace-nowrap ring-offset-background transition disabled:pointer-events-none disabled:opacity-50 focus-visible:outline-2 focus-visible:outline-offset-2 active:scale-[0.98] bg-transparent text-white betterhover:hover:bg-transparent betterhover:hover:text-white focus-visible:outline-none text-sm leading-none [&amp;_svg]:text-grey-200 [&amp;:hover>svg]:text-white"
-                    disabled="" data-testid="pagination-previous" data-test="pagination-previous"
-                    data-button-root="">Previous</button> <button type="button" tabindex="0"
-                    class="inline-flex relative items-center gap-2 justify-center rounded-sm font-semibold whitespace-nowrap ring-offset-background transition disabled:pointer-events-none disabled:opacity-50 focus-visible:outline-2 focus-visible:outline-offset-2 active:scale-[0.98] bg-transparent text-white betterhover:hover:bg-transparent betterhover:hover:text-white focus-visible:outline-none text-sm leading-none [&amp;_svg]:text-grey-200 [&amp;:hover>svg]:text-white"
-                    disabled="" data-testid="pagination-next" data-test="pagination-next"
-                    data-button-root="">Next</button></div>
-            <div><button type="button" tabindex="0"
-                    class="inline-flex relative items-center gap-2 justify-center rounded-sm font-semibold whitespace-nowrap ring-offset-background transition disabled:pointer-events-none disabled:opacity-50 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 active:scale-[0.98] bg-grey-400 text-white betterhover:hover:bg-grey-300 betterhover:hover:text-white focus-visible:outline-white text-sm leading-none shadow-md py-[0.9375rem] px-[1.25rem]"
-                    data-test="create-campaign-button" data-analytics="affiliate-campaigns-create-button"
-                    data-button-root="">Create New Campaign</button></div>
+            <div class="stack">
+                <button type="button" class="control-btn">Previous</button>
+                <button type="button" class="control-btn">Next</button>
+            </div>
+            <div>
+                <button type="button" class="create-btn">Create New Campaign</button>
+            </div>
         </div>
     </div>
 </div>
