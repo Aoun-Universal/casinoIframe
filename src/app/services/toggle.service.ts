@@ -7,6 +7,7 @@ import { BehaviorSubject } from 'rxjs';
 export class ToggleService {
   private sidebarState: BehaviorSubject<boolean> = new BehaviorSubject<boolean>(true);
   private Betslip: BehaviorSubject<boolean> = new BehaviorSubject<boolean>(false);
+  private BetslipContent: BehaviorSubject<boolean> = new BehaviorSubject<boolean>(false);
   private vipModalState: BehaviorSubject<boolean> = new BehaviorSubject<boolean>(false); // VIP modal initially hidden
   private vaultModalState: BehaviorSubject<boolean> = new BehaviorSubject<boolean>(false);; // VIP modal initially hidden
   private statisticsModalState: BehaviorSubject<boolean> = new BehaviorSubject<boolean>(false);
@@ -34,6 +35,16 @@ export class ToggleService {
   getBetslipState() {
     return this.Betslip;
   }
+  
+  getBetslipContent() {
+    return this.BetslipContent;
+  }
+
+
+  setBetslipContent(value:boolean) {
+    this.BetslipContent.next(value);
+  }
+  
   setBetslipstate(value: boolean) {
     this.Betslip.next(value);
   }

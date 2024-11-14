@@ -19,6 +19,7 @@ export class HomeComponent {
   @ViewChild('sportsSlider') sportsSlider!: SlickCarouselComponent;
   isMarketOpen = true;
   isMarketOpen2 = true;
+  betSlipContent = false
   activeTab: number = 1;
   LiveTab = 'basketball';
   TableTab: number = 1;
@@ -184,6 +185,7 @@ export class HomeComponent {
 
   openModal() {
     this.toggleService.setBetslipstate(true);
+    this.toggleService.setBetslipContent(!this.betSlipContent)
   }
 
   toggleDropdown() {
@@ -213,7 +215,5 @@ export class HomeComponent {
   setLiveTabActive(tab: string) {
     this.LiveTab = tab;
   }
-
-
 
 }
