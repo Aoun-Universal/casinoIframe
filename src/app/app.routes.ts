@@ -117,13 +117,7 @@ export const routes: Routes = [
           
         ],
       },
-      {
-        path: 'sport-market',
-        loadComponent: () =>
-          import('./pages/sports-markets/sports-markets.component').then(
-            (c) => c.SportsMarketsComponent
-          ),
-      },
+     
       {
         path: 'soccer',
         loadComponent: () =>
