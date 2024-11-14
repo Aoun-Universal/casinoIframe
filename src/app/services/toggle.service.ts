@@ -14,6 +14,7 @@ export class ToggleService {
   private statisticsTableModalState: BehaviorSubject<boolean> = new BehaviorSubject<boolean>(false);
   private notificationModalState: BehaviorSubject<boolean> = new BehaviorSubject<boolean>(false);;
   private LeaderBoardModalState: BehaviorSubject<boolean> = new BehaviorSubject<boolean>(false);
+  private RaceModalState: BehaviorSubject<boolean> = new BehaviorSubject<boolean>(false);
 
 
   sidebarState$ = this.sidebarState.asObservable();
@@ -95,4 +96,11 @@ export class ToggleService {
     this.LeaderBoardModalState.next(value);
   }
   
+  // Race Modal
+  getRaceModalstate() {
+    return this.RaceModalState;
+  }
+  setRaceModal(value: boolean) {
+    this.RaceModalState.next(value);
+  }
 }
