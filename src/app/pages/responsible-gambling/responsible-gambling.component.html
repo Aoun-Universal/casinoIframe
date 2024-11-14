@@ -95,6 +95,8 @@
                     </div>
                   </div>
                   <div class="" [ngClass]="{' p-0  gap-3 items-start grid-auto-flow:row   justify-start md:[grid-auto-flow:column] grid': routerPath !== '/responsible-gambling'}">
+                   
+                   <!-- Mbl view dropdown -->
                     <div
                         class="p-0 gap-[0.5rem] items-center justify-start [grid-auto-flow:column] grid md:hidden  "
                         
@@ -192,47 +194,23 @@
                     >
                       <div class="relative m-0 p-0" >
                         <a
-                          class=" transition-none  relative items-center gap-2 font-semibold whitespace-nowrap ring-offset-background transition disabled:pointer-events-none disabled:opacity-50 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 active:scale-[0.98] bg-transparent text-white betterhover:hover:bg-grey-900 betterhover:hover:text-white focus-visible:outline-white text-sm leading-none [&amp;_svg]:text-grey-200 [&amp;:hover>svg]:text-white py-[0.9375rem] px-[1.25rem] rounded-full w-full justify-start block"
-                          routerLink="/responsible-gambling/stake-smart"
+                        *ngFor="let route of routes; let i = index"
+                        [routerLink]="route.path"
+                        [ngClass]="{
+                          '!bg-[#071824] text-white': isActive(route.path),
+                          'outer-div': true
+                        }"
+                          class=" transition-none  relative items-center gap-2 font-semibold whitespace-nowrap ring-offset-background transition disabled:pointer-events-none disabled:opacity-50 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 active:scale-[0.98] bg-transparent text-white betterhover:hover:bg-grey-900 betterhover:hover:text-white focus-visible:outline-white text-sm leading-none [&amp;_svg]:text-grey-200 [&amp;:hover>svg]:text-white py-[0.9375rem] px-[1.25rem]  w-full justify-start block"
+                          (click)="updateDashPosition()"
                           
-                          ><span >Stake Smart</span> </a
-                        ><a
-                          class="  truncate relative items-center gap-2 font-semibold whitespace-nowrap ring-offset-background transition disabled:pointer-events-none disabled:opacity-50 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 active:scale-[0.98] bg-transparent text-white betterhover:hover:bg-grey-900 betterhover:hover:text-white focus-visible:outline-white text-sm leading-none [&amp;_svg]:text-grey-200 [&amp;:hover>svg]:text-white py-[0.9375rem] px-[1.25rem] rounded-full w-full justify-start block"
-                           routerLink="/responsible-gambling/responsible-gambling-faqs"
-                         
-                          ><span class="truncate">Responsible Gambling FAQ's</span> </a
-                        ><a
-                          class=" truncate relative items-center gap-2 font-semibold whitespace-nowrap ring-offset-background transition disabled:pointer-events-none disabled:opacity-50 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 active:scale-[0.98] bg-transparent text-white betterhover:hover:bg-grey-900 betterhover:hover:text-white focus-visible:outline-white text-sm leading-none [&amp;_svg]:text-grey-200 [&amp;:hover>svg]:text-white py-[0.9375rem] px-[1.25rem] rounded-full w-full justify-start block"
-                          href="/responsible-gambling/signs"
-                        
-                          ><span>Recognise the Signs</span> </a
-                        ><a
-                          class=" truncate relative items-center gap-2 font-semibold whitespace-nowrap ring-offset-background transition disabled:pointer-events-none disabled:opacity-50 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 active:scale-[0.98] bg-transparent text-white betterhover:hover:bg-grey-900 betterhover:hover:text-white focus-visible:outline-white text-sm leading-none [&amp;_svg]:text-grey-200 [&amp;:hover>svg]:text-white py-[0.9375rem] px-[1.25rem] rounded-full w-full justify-start block"
-                         routerLink="/responsible-gambling/self-exclusion"
-                         
-                          ><span>Self-Assessment</span> </a
-                        ><a
-                          class=" truncate relative items-center gap-2 font-semibold whitespace-nowrap ring-offset-background transition disabled:pointer-events-none disabled:opacity-50 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 active:scale-[0.98] bg-transparent text-white betterhover:hover:bg-grey-900 betterhover:hover:text-white focus-visible:outline-white text-sm leading-none [&amp;_svg]:text-grey-200 [&amp;:hover>svg]:text-white py-[0.9375rem] px-[1.25rem] rounded-full w-full justify-start block"
-                       
-                        
-                          ><span>Self Exclusion</span> </a
-                        ><a
-                          class=" truncate relative items-center gap-2 font-semibold whitespace-nowrap ring-offset-background transition disabled:pointer-events-none disabled:opacity-50 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 active:scale-[0.98] bg-transparent text-white betterhover:hover:bg-grey-900 betterhover:hover:text-white focus-visible:outline-white text-sm leading-none [&amp;_svg]:text-grey-200 [&amp;:hover>svg]:text-white py-[0.9375rem] px-[1.25rem] rounded-full w-full justify-start block"
-                         
-                        
-                          ><span>Gambling Limits</span> </a
-                        ><a routerLink="/responsible-gambling/calculator"
-                          class=" truncate relative items-center gap-2 font-semibold whitespace-nowrap ring-offset-background transition disabled:pointer-events-none disabled:opacity-50 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 active:scale-[0.98] bg-transparent text-white betterhover:hover:bg-grey-900 betterhover:hover:text-white focus-visible:outline-white text-sm leading-none [&amp;_svg]:text-grey-200 [&amp;:hover>svg]:text-white py-[0.9375rem] px-[1.25rem] rounded-full w-full justify-start block"
-                         
-                         
-                          ><span>Budget Calculator</span>
-                        </a>
-                        <div
-                          class="dash "
-                          
-                          
+                          ><span >{{ route.label }}</span> </a
                         >
-                      </div>
+                        <div
+                        class="dash bg-[#071824] transition-all duration-300"
+                                 [style.top.%]="activeIndex * (100 / routes.length)"
+                        [style.height.%]="100 / routes.length"
+                      ></div>
+                       
                       </div>
                     </div>
                   </div>

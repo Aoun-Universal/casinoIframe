@@ -48,12 +48,12 @@ this.updateDashPosition();
 
 
     routes = [
-      { path: '/affiliate/Overview', label: 'Overview' },
-      { path: '/affiliate/retention', label: 'Retention Program' },
-      { path: '/affiliate/commission', label: 'Commission' },
-      { path: '/affiliate/funds', label: 'Funds' },
-      { path: '/affiliate/referred-users', label: 'Referred Users' },
-      { path: '/affiliate/campaigns', label: 'Campaigns' },
+      { path: '/responsible-gambling/stake-smart', label: 'Stake Smart' },
+      { path: '/responsible-gambling/responsible-gambling-faqs', label: 'Responsible Gambling FAQs' },
+      { path: '/responsible-gambling/commission', label: 'Recognise the sign' },
+      { path: '/responsible-gambling/', label: 'Self Assessment' },
+      { path: '/responsible-gambling/self-exclusion', label: 'Self Exclusion' },
+      { path: '/responsible-gambling/calculator', label: 'Budget Calculator' },
     ];
   
     activeIndex = 0;
