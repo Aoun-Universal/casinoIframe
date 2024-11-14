@@ -352,60 +352,8 @@
       <span class="font-semibold text-base">All Races</span>
     </div>
     <!-- tabs section -->
-    <div class="overflow-x-auto overflow-y-hidden mt-6 w-full">
-      <div
-        class="tabs-section"
-      >
-        <a
-          class="all-races-tab-item"
-          (click)="onTabClick('friday')"
-          [ngClass]="{ 'active-tab-color': tabKey === 'friday' }"
-        >
-          Friday 08
-        </a>
-        <a
-          class="all-races-tab-item"
-          (click)="onTabClick('saturday')"
-          [ngClass]="{ 'active-tab-color': tabKey === 'saturday' }"
-        >
-          Saturday 09
-        </a>
-        <a
-          class="all-races-tab-item"
-          (click)="onTabClick('yesterday')"
-          [ngClass]="{ 'active-tab-color': tabKey === 'yesterday' }"
-        >
-          Yesterday 10
-        </a>
-        <a
-          class="all-races-tab-item"
-          (click)="onTabClick('today')"
-          [ngClass]="{ 'active-tab-color': tabKey === 'today' }"
-        >
-          Today 11
-        </a>
-        <a
-          class="all-races-tab-item"
-          (click)="onTabClick('tommorrow')"
-          [ngClass]="{ 'active-tab-color': tabKey === 'tommorrow' }"
-        >
-          Tommorrow 12
-        </a>
-        <a
-          class="all-races-tab-item"
-          (click)="onTabClick('wednesday')"
-          [ngClass]="{ 'active-tab-color': tabKey === 'wednesday' }"
-        >
-          Wednesday 13
-        </a>
-        <a
-          class="all-races-tab-item"
-          (click)="onTabClick('thursday')"
-          [ngClass]="{ 'active-tab-color': tabKey === 'thursday' }"
-        >
-          Thursday 14
-        </a>
-      </div>
+    <div class="mt-6 w-full">
+      <app-tab-slider [arrItem]="tabsItem"></app-tab-slider>
     </div>
     <!-- all races markets accordions -->
     <div class="flex flex-col mt-6 w-full gap-3">
@@ -738,33 +686,7 @@
     </div>
     <!-- tabs section -->
     <div class="mt-6 w-full flex justify-between">
-      <div class="overflow-x-auto overflow-y-hidden">
-        <div
-          class="flex items-center justify-between w-fit p-[5px] gap-[5px] rounded-full min-w-full bg-[#071824]"
-        >
-          <a
-            class="all-races-tab-item"
-            (click)="onTabClick('all-bets')"
-            [ngClass]="{ 'active-tab-color': tabKey === 'all-bets' }"
-          >
-            All bets
-          </a>
-          <a
-            class="all-races-tab-item"
-            (click)="onTabClick('high-rollers')"
-            [ngClass]="{ 'active-tab-color': tabKey === 'high-rollers' }"
-          >
-            High Rollers
-          </a>
-          <a
-            class="all-races-tab-item"
-            (click)="onTabClick('race-leaderboards')"
-            [ngClass]="{ 'active-tab-color': tabKey === 'race-leaderboards' }"
-          >
-            Race Leaderboards
-          </a>
-        </div>
-      </div>
+      <app-tab-slider [arrItem]="tabsItems"></app-tab-slider>
       <div class="flex items-center gap-x-2 max-[745px]:hidden">
         <div
           class="py-[0.8125rem] px-[1rem] flex items-center gap-x-1 bg-[#0f212e]"

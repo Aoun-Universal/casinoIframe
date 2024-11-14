@@ -1,9 +1,7 @@
-import {NgClass, NgFor, NgIf, NgStyle} from '@angular/common';
-import {Component, CUSTOM_ELEMENTS_SCHEMA, ElementRef, ViewChild} from '@angular/core';
-import {SwiperContainer} from 'swiper/element';
-import {SwiperOptions} from 'swiper/types';
-import {ToggleService} from '../../services/toggle.service';
-import {BetSlipComponent} from '../../shared/bet-slip/bet-slip.component';
+import { NgClass, NgFor, NgIf, NgStyle } from '@angular/common';
+import { Component, CUSTOM_ELEMENTS_SCHEMA, ElementRef, ViewChild } from '@angular/core';
+import { ToggleService } from '../../services/toggle.service';
+import { BetSlipComponent } from '../../shared/bet-slip/bet-slip.component';
 import { SlickCarouselComponent, SlickCarouselModule } from 'ngx-slick-carousel';
 
 
@@ -79,60 +77,60 @@ export class HomeComponent {
       img: "https://mediumrare.imgix.net/politics-entertainment-en.png?&dpr=1.5&format=auto&auto=format&q=50&w=167",
       count: 1
     },
-    {img: "https://mediumrare.imgix.net/soccer-en.png?&dpr=1.5&format=auto&auto=format&q=50&w=167", count: 2},
-    {img: "https://mediumrare.imgix.net/tennis-en.png?&dpr=1.5&format=auto&auto=format&q=50&w=167", count: 3},
-    {img: "https://mediumrare.imgix.net/basketball-en.png?&dpr=1.5&format=auto&auto=format&q=50&w=167", count: 4},
-    {img: "https://mediumrare.imgix.net/cricket-en.png?&dpr=1.5&format=auto&auto=format&q=50&w=167", count: 5},
-    {img: "https://mediumrare.imgix.net/ice-hockey-en.png?&dpr=1.5&format=auto&auto=format&q=50&w=167", count: 6},
+    { img: "https://mediumrare.imgix.net/soccer-en.png?&dpr=1.5&format=auto&auto=format&q=50&w=167", count: 2 },
+    { img: "https://mediumrare.imgix.net/tennis-en.png?&dpr=1.5&format=auto&auto=format&q=50&w=167", count: 3 },
+    { img: "https://mediumrare.imgix.net/basketball-en.png?&dpr=1.5&format=auto&auto=format&q=50&w=167", count: 4 },
+    { img: "https://mediumrare.imgix.net/cricket-en.png?&dpr=1.5&format=auto&auto=format&q=50&w=167", count: 5 },
+    { img: "https://mediumrare.imgix.net/ice-hockey-en.png?&dpr=1.5&format=auto&auto=format&q=50&w=167", count: 6 },
     {
       img: "https://mediumrare.imgix.net/american-football-en.png?&dpr=1.5&format=auto&auto=format&q=50&w=167",
       count: 7
     },
-    {img: "https://mediumrare.imgix.net/racing-en.png?&dpr=1.5&format=auto&auto=format&q=50&w=167", count: 8},
-    {img: "https://mediumrare.imgix.net/dota-2-en.png?&dpr=1.5&format=auto&auto=format&q=50&w=167", count: 9},
-    {img: "https://mediumrare.imgix.net/counter-strike-en.png?&dpr=1.5&format=auto&auto=format&q=50&w=167", count: 10},
+    { img: "https://mediumrare.imgix.net/racing-en.png?&dpr=1.5&format=auto&auto=format&q=50&w=167", count: 8 },
+    { img: "https://mediumrare.imgix.net/dota-2-en.png?&dpr=1.5&format=auto&auto=format&q=50&w=167", count: 9 },
+    { img: "https://mediumrare.imgix.net/counter-strike-en.png?&dpr=1.5&format=auto&auto=format&q=50&w=167", count: 10 },
 
   ];
   index = 0;
-  
+
   heroSliderConfig = {
     slidesToShow: 2,
     slidesToScroll: 2,
-    arrows:false,
-    infinite:false,
-    variableWidth:true,
+    arrows: false,
+    infinite: false,
+    variableWidth: true,
     responsive: [
       {
         breakpoint: 1154,
         settings: {
           slidesToShow: 1,
           slidesToScroll: 1,
-          variableWidth:true
+          variableWidth: true
         }
       },
     ],
-    
+
   };
 
   topSportsConfig = {
     slidesToShow: 2,
     slidesToScroll: 2,
-    arrows:false,
-    infinite:false,
-    variableWidth:true,
+    arrows: false,
+    infinite: false,
+    variableWidth: true,
     responsive: [
       {
         breakpoint: 1154,
         settings: {
           slidesToShow: 1,
           slidesToScroll: 1,
-          variableWidth:true
+          variableWidth: true
         }
       },
     ],
-    
+
   };
- 
+
 
   heroSlickInit(e: any) {
     this.heroSlideCount = e.slick.slideCount;
@@ -151,25 +149,25 @@ export class HomeComponent {
   }
 
   heroPrev() {
-    if(this.heroCurrentSlideIndex!==0){
+    if (this.heroCurrentSlideIndex !== 0) {
       this.heroSlider.slickPrev();
     }
   }
 
   sportsPrev() {
-    if(this.sportsCurrentSlideIndex!==0){
+    if (this.sportsCurrentSlideIndex !== 0) {
       this.sportsSlider.slickPrev();
     }
   }
-  
+
   heroNext() {
-    if(this.heroCurrentSlideIndex!==this.heroSlideCount){
+    if (this.heroCurrentSlideIndex !== this.heroSlideCount) {
       this.heroSlider.slickNext();
     }
   }
   sportsNext() {
-    
-    if(this.sportsCurrentSlideIndex!==this.sportsSlideCount){
+
+    if (this.sportsCurrentSlideIndex !== this.sportsSlideCount) {
       this.sportsSlider.slickNext();
     }
   }
@@ -210,6 +208,6 @@ export class HomeComponent {
     this.LiveTab = tab;
   }
 
- 
+
 
 }

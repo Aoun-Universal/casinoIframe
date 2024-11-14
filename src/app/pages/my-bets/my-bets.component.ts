@@ -1,18 +1,23 @@
 import { CommonModule } from '@angular/common';
 import { Component } from '@angular/core';
+import { TabSliderComponent } from "../../shared/tab-slider/tab-slider.component";
 
 @Component({
   selector: 'app-my-bets',
   standalone: true,
-  imports: [CommonModule,],
+  imports: [CommonModule, TabSliderComponent],
   templateUrl: './my-bets.component.html',
   styleUrl: './my-bets.component.css'
 })
 export class MyBetsComponent {
   activeTb:string='casino';
+  openModal:boolean=false
   activeTab: number = 1;
   LiveTab = 'basketball'; 
   TableTab: number = 1;
+  openmenuModal():void{
+    this.openModal=!this.openModal
+  }
   setActivTab(tab: string): void {
     this.activeTb = tab; // Update active tab on click
   }
@@ -31,4 +36,16 @@ export class MyBetsComponent {
     this.LiveTab = tab;
   }
 
+
+  tabsItem = [
+    { tabTitle: 'All Bets', dotState: false },
+    { tabTitle: 'High Rollers', dotState: false },
+    { tabTitle: 'Race Leaderboard', dotState: false },
+  ]
+
+  tabsItems = [
+    { tabTitle: 'Casino', dotState: false },
+    { tabTitle: 'Sports', dotState: false },
+   
+  ]
 }
