@@ -108,18 +108,22 @@
                           </path>
                         </svg>
 
-                        <div class="absolute ml-2 min-w-[300px] z-50 bottom-6 text-[12px] left-0 -translate-x-1/2 mb-2 hidden p-3 text-black bg-white rounded opacity-0 transition-opacity overflow-visible duration-300 group-hover:block group-hover:opacity-100">
+                        <div
+                          class="absolute ml-2 min-w-[250px] sm:min-w-[300px] z-50 bottom-6 text-[12px] right-0 sm:right-auto sm:left-0 sm:-translate-x-1/2 mb-2 hidden p-3 text-black bg-white rounded opacity-0 transition-opacity overflow-visible duration-300 group-hover:block group-hover:opacity-100">
                           <!-- Tooltip content -->
                           <div class="dropdown-scroll-content">
                             <div class="leading-[14px]">
-                              All bets settled on the sportsbook return a 3x (three times) faster rate of progression compared to Casino (1x progression). Voided bets are excluded.
+                              All bets settled on the sportsbook return a 3x (three times) faster rate of progression
+                              compared to Casino (1x progression). Voided bets are excluded.
                             </div>
                           </div>
-                          
+
                           <!-- Tooltip arrow -->
-                          <div class=" w-0 h-0 border-l-[8px] border-l-transparent border-r-[8px] border-r-transparent border-t-[8px] border-t-white absolute left-1/2 -translate-x-1/2 top-full"></div>
+                          <div
+                            class=" w-0 h-0 border-l-[8px] border-l-transparent border-r-[8px] border-r-transparent border-t-[8px] border-t-white absolute right-4 sm:right-auto sm:left-1/2 sm:-translate-x-1/2 top-full">
+                          </div>
                         </div>
-                        
+
 
 
 
@@ -242,7 +246,7 @@
 </section>
 
 
-  <!------------------------------ Search Wrap --------------------->
+<!------------------------------ Search Wrap --------------------->
 <section class="main-section">
   <div class="search-wrap">
     <div class="search-wrap-input">
@@ -431,66 +435,71 @@
     <!--Cards gallery  -->
     <div class="gallery">
       <ngx-slick-carousel class="carousel mt-6" #gallerySlider="slick-carousel" [config]="galleryConfig"
-      (init)="gallerySlickInit($event)" (afterChange)="galleryAfterChange($event)">
+        (init)="gallerySlickInit($event)" (afterChange)="galleryAfterChange($event)">
 
-      <div ngxSlickItem *ngFor="let card of cards" class="gallery-slide">
-        <div class="gallery-card">
-          <div class="gallery-content">
-            <!-- Heading -->
-            <div class="heading">
-              <span class="race">{{ card.title }}</span>
-              <p class="description-wrapper">{{ card.description }}</p>
-            </div>
-      
-            <!-- Gallery card buttons -->
-            <div class="gallery-buttons">
-              <div class="flex items-center">
-                <button class="leaderboard">{{ card.leaderboardText }}</button>
-                <button class="arrows-btn ml-4">
-                  <!-- SVG Icon here -->
-                </button>
+        @for (card of cards; track $index) {
+        <div ngxSlickItem class="gallery-slide">
+          <div class="gallery-card">
+            <div class="gallery-content">
+              <!-- Heading -->
+              <div class="heading">
+                <span class="race">{{ card.title }}</span>
+                <p class="description-wrapper">{{ card.description }}</p>
               </div>
-            </div>
-      
-            <!-- Timer -->
-            <div class="timer">
-              <div class="timer-area">
-                <div class="circular-progress">
-                  <!-- Timer SVG -->
-                </div>
-                <div class="w-full text-center">
-                  <span class="end-text">Ends in</span>
-                  <div class="time">
-                    <span *ngIf="card.timer.days">{{ card.timer.days }}d</span>
-                    <span>{{ card.timer.hours }}h</span> {{ card.timer.minutes }}m
-                  </div>
+
+              <!-- Gallery card buttons -->
+              <div class="gallery-buttons">
+                <div class="flex items-center">
+                  <button class="leaderboard">{{ card.leaderboardText }}</button>
+                  <button class="arrows-btn ml-4">
+                    <!-- SVG Icon here -->
+                  </button>
                 </div>
               </div>
-            </div>
-      
-            <!-- Footer -->
-            <div class="footer">
-              <div class="footer-main">
-                <ng-container [ngSwitch]="card.footerType">
-                  <!-- Footer 1 -->
-                  <div *ngSwitchCase="'notEnteredYet'">
-                    <span class="description-wrapper !font-semibold">Not entered yet</span>
+
+              <!-- Timer -->
+              <div class="timer">
+                <div class="timer-area">
+                  <div class="circular-progress">
+                    <svg viewBox="0 0 250 250" class="circular-progress absolute max-h-full top-0 left-0 svelte-9imt6m">
+                      <circle class="bg svelte-9imt6m" style="stroke:#2f4553"></circle>
+                      <circle class="fg1 svelte-9imt6m" style="stroke:#1475e1"></circle>
+                    </svg>
                   </div>
-                  <!-- Footer 2 -->
-                  <div *ngSwitchCase="'progressBar'" class="flex gap-2">
-                    <div class="progress-bar">
-                      <div class="success-bar" [style.width.%]="card.progress"></div>
+                  <div class="w-full text-center">
+                    <span class="end-text">Ends in</span>
+                    <div class="time">
+                      <span *ngIf="card.timer.days">{{ card.timer.days }}d</span>
+                      <span>{{ card.timer.hours }}h</span> {{ card.timer.minutes }}m
                     </div>
-                    <span>{{ card.progress }}%</span>
                   </div>
-                </ng-container>
+                </div>
+              </div>
+
+              <!-- Footer -->
+              <div class="footer">
+                <div class="footer-main">
+                  <ng-container [ngSwitch]="card.footerType">
+                    <!-- Footer 1 -->
+                    <div *ngSwitchCase="'notEnteredYet'">
+                      <span class="description-wrapper !font-semibold">Not entered yet</span>
+                    </div>
+                    <!-- Footer 2 -->
+                    <div *ngSwitchCase="'progressBar'" class="flex gap-2">
+                      <div class="progress-bar">
+                        <div class="success-bar" [style.width.%]="card.progress"></div>
+                      </div>
+                      <span>{{ card.progress }}%</span>
+                    </div>
+                  </ng-container>
+                </div>
               </div>
             </div>
           </div>
         </div>
-      </div>
-      
-    </ngx-slick-carousel>
+        }
+
+      </ngx-slick-carousel>
     </div>
 
   </section>

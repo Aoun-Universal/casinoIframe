@@ -419,8 +419,6 @@ select{
     @apply absolute top-[52%] right-[.5em] text-[#b1bad3] [transform:translateY(-50%)] pointer-events-none cursor-pointer
 }
 
-
-
 /* Table */
 .table-container {
     @apply !w-full  rounded-lg p-5 shadow-lg
@@ -576,7 +574,7 @@ tr:hover {
 }
 
 .gallery-content{
-    @apply  grid w-full h-48 pt-4 [grid-template-columns:1fr_.8fr_1.2fr] [gap:0_0] [grid-template-rows:58px_70px_48px];
+    @apply  grid h-48 pt-4 [grid-template-columns:1fr_.8fr_1.2fr] [gap:0_0] [grid-template-rows:58px_70px_48px];
     grid-template-areas: "heading heading timer" "buttons buttons timer" "footer footer footer";
 }
 
@@ -612,14 +610,33 @@ tr:hover {
 }
 
 .circular-progress{
-    /* --size: 250px;
+    --size: 250px;
     --half-size: calc(var(--size) / 2);
     --stroke-width: 20px;
     --radius: calc((var(--size) - var(--stroke-width)) / 2);
     --circumference: calc(var(--radius) * pi * 2);
-    --dash: calc((35.01 * var(--circumference)) / 100);
-    background: var(--grey-600); */
+    --dash: calc((25.30 * var(--circumference)) / 100);
+    background: var(--grey-600);
 }
+
+.svelte-9imt6m{
+    cx: var(--half-size);
+    cy: var(--half-size);
+    r: var(--radius);
+    stroke-width: var(--stroke-width);
+    fill: none;
+    stroke-linecap: round;
+}
+
+.fg1{
+    position: absolute;
+    transform: rotate(-90deg);
+    --half-size: calc(var(--size) / 2);
+    transform-origin: var(--half-size) var(--half-size);
+    stroke-dasharray: var(--dash) calc(var(--circumference) - var(--dash));
+    transition: stroke-dasharray 1s linear 0s;
+}
+
 
 .footer{
     grid-area: footer;
