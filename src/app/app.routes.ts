@@ -2,27 +2,8 @@ import { Routes } from '@angular/router';
 import { VaultComponent } from './modal/vault/vault.component';
 import { VipComponent } from './modal/vip/vip.component';
 import { RegisterComponent } from './modal/register/register.component';
-import { StakeSmartComponent } from './pages/stake-smart/stake-smart.component';
-import { LogoutComponent } from './modal/logout/logout.component';
-import { ResponsibleGamblingFaqsComponent } from './pages/responsible-gambling-faqs/responsible-gambling-faqs.component';
 import { NotificationComponent } from './modal/notification/notification.component';
 import { StatisticsComponent } from './modal/statistics/statistics.component';
-import { SettingsComponent } from './modal/settings-modals/settings/settings.component';
-import { MyBetsComponent } from './pages/my-bets/my-bets.component';
-import { HorseRacingComponent } from './pages/horse-racing/horse-racing.component';
-import {TeamF1Component} from './pages/stake-team/team-f1/team-f1.component';
-import {VipCloudComponent} from './pages/vip-cloud/vip-cloud.component';
-import {BlogPageComponent} from './pages/blog-page/blog-page.component';
-import {AffiliateComponent} from './pages/affiliate/affiliate.component';
-import { RacingMarketDetailsComponent } from './pages/racing-market-details/racing-market-details.component';
-import { SelfExclusionComponent } from './pages/self-exclusion/self-exclusion.component';
-import { RetentionProgramComponent } from './pages/retention-program/retention-program.component';
-import { AffiliateOverviewComponent } from './pages/affiliate-overview/affiliate-overview.component';
-import { CommissionComponent } from './pages/commission/commission.component';
-import { CalculatorComponent } from './pages/calculator/calculator.component';
-import { FundsComponent } from './pages/funds/funds.component';
-import { ReferredUsersComponent } from './pages/referred-users/referred-users.component';
-import { CampaignsComponent } from './pages/campaigns/campaigns.component';
 
 
 export const routes: Routes = [
@@ -54,9 +35,9 @@ export const routes: Routes = [
         loadComponent: () => import('./pages/racing-market-details/racing-market-details.component').then((c) => c.RacingMarketDetailsComponent)
       },
       {
-        path:'my-bets',
+        path: 'my-bets',
 
-            loadComponent: () => import('./pages/my-bets/my-bets.component').then((c) => c.MyBetsComponent)
+        loadComponent: () => import('./pages/my-bets/my-bets.component').then((c) => c.MyBetsComponent)
       },
       {
         path: 'drake',
@@ -65,7 +46,7 @@ export const routes: Routes = [
       },
       {
         path: 'team-f1',
-         loadComponent: () => import('./pages/stake-team/team-f1/team-f1.component').then((c)=> c.TeamF1Component)
+        loadComponent: () => import('./pages/stake-team/team-f1/team-f1.component').then((c) => c.TeamF1Component)
       },
       {
         path: 'responsible-gambling',
@@ -76,19 +57,32 @@ export const routes: Routes = [
         children: [
           {
             path: 'stake-smart',
-            component: StakeSmartComponent,
+            loadComponent: () =>
+              import(
+                './pages/stake-smart/stake-smart.component'
+              ).then((c) => c.StakeSmartComponent),
           },
           {
             path: 'responsible-gambling-faqs',
-            component: ResponsibleGamblingFaqsComponent,
+            loadComponent: () =>
+              import(
+                './pages/responsible-gambling-faqs/responsible-gambling-faqs.component'
+              ).then((c) => c.ResponsibleGamblingFaqsComponent),
           },
           {
             path: 'self-exclusion',
-            component: SelfExclusionComponent,
+            loadComponent: () =>
+              import(
+                './pages/self-exclusion/self-exclusion.component'
+              ).then((c) => c.SelfExclusionComponent),
+
           },
           {
             path: 'calculator',
-            component: CalculatorComponent,
+            loadComponent: () =>
+              import(
+                './pages/calculator/calculator.component'
+              ).then((c) => c.CalculatorComponent),
           },
         ],
       },
@@ -97,41 +91,60 @@ export const routes: Routes = [
         loadComponent: () =>
           import(
             './pages/affiliate/affiliate.component'
-            ).then((c) => c.AffiliateComponent),
+          ).then((c) => c.AffiliateComponent),
         children: [
           {
             path: '',
             redirectTo: 'Overview',
-            pathMatch: 'full', 
+            pathMatch: 'full',
           },
-      
+
           {
             path: 'Overview',
-            component: AffiliateOverviewComponent,
+            loadComponent: () =>
+              import(
+                './pages/affiliate-overview/affiliate-overview.component'
+              ).then((c) => c.AffiliateOverviewComponent),
+
           },
           {
             path: 'retention',
-            component: RetentionProgramComponent,
+            loadComponent: () =>
+              import(
+                './pages/retention-program/retention-program.component'
+              ).then((c) => c.RetentionProgramComponent),
           },
           {
             path: 'commission',
-            component:CommissionComponent,
+            loadComponent: () =>
+              import(
+                './pages/commission/commission.component'
+              ).then((c) => c.CommissionComponent),
           },
           {
             path: 'funds',
-            component:FundsComponent,
+            loadComponent: () =>
+              import(
+                './pages/funds/funds.component'
+              ).then((c) => c.FundsComponent),
           },
           {
             path: 'referred-users',
-            component:ReferredUsersComponent,
+            loadComponent: () =>
+              import(
+                './pages/referred-users/referred-users.component'
+              ).then((c) => c.ReferredUsersComponent),
           },
           {
             path: 'campaigns',
-            component:CampaignsComponent,
+            loadComponent: () =>
+              import(
+                './pages/campaigns/campaigns.component'
+              ).then((c) => c.CampaignsComponent),
           },
         ],
       },
-     
+
       {
         path: 'soccer',
         loadComponent: () =>
@@ -174,8 +187,8 @@ export const routes: Routes = [
           import('./pages/stake-offer/stake-offer.component').then((c) => c.StakeOfferComponent),
       },
       {
-        path:'all-tennis',
-        loadComponent: ()=> import('./pages/all-tennis/all-tennis.component').then((c=>c.AllTennisComponent))
+        path: 'all-tennis',
+        loadComponent: () => import('./pages/all-tennis/all-tennis.component').then((c => c.AllTennisComponent))
       }
     ],
   },
@@ -194,15 +207,15 @@ export const routes: Routes = [
   },
   {
     path: 'statistics',
-    component: StatisticsComponent
+    component: StatisticsComponent,
   },
   {
     path: 'notification',
-    component: NotificationComponent
+    component: NotificationComponent,
   },
   {
     path: 'vip-club',
-    component: VipCloudComponent
+    loadComponent: () => import('./pages/vip-cloud/vip-cloud.component').then((c => c.VipCloudComponent))
   },
   {
     path: '**',
