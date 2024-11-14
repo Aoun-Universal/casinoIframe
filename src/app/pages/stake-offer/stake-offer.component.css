@@ -41,7 +41,7 @@
     @apply text-[1rem] text-white font-semibold cursor-pointer
 }
 .list-items{
-    @apply list-disc pl-[3vw] mx-8 sm:px-0
+    @apply list-disc pl-[3vw] mx-8 flex flex-col gap-2 sm:px-0
 }
 .learn{
     @apply inline-flex items-center gap-[4px]
