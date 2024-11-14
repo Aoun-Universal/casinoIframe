@@ -10,21 +10,24 @@ import { ToggleService } from '../../services/toggle.service';
   styleUrl: './vault.component.css'
 })
 export class VaultComponent {
-  tab='Deposit'
-modalclose=true
-tooltipopen=false
-closeModal(){
-  this.modalclose=false
-}
-toggletolltip(){
-this.tooltipopen=!this.tooltipopen
-}
-toggletab(tabname:any){
-this.tab=tabname
-
-}
-constructor(private toggle:ToggleService){}
-closevaultModal() {
-  this.toggle.setVaultModalState(false);
-}
+  tab:any='Deposit'
+  
+  toggletab(tabname:any){
+  this.tab=tabname
+  }
+  
+  dropdownState: string = ''
+    dropdown(name:any) {
+      if (this.dropdownState === name){
+        this.dropdownState = ''
+      }else{
+        this.dropdownState = name
+      }
+     
+    }
+   
+    constructor(private toggle:ToggleService){}
+    closevipModal() {
+      this.toggle.setVaultModalState(false);
+    }
 }

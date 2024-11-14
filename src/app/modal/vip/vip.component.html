@@ -2,22 +2,22 @@
 <div 
   data-test="modal-vip"
   data-layout=""
-  class="modal svelte-cq3ecl"
-  style="--z-index: 1500"
-  bis_skin_checked="1"
+  class="modal svelte-cq3ecl z-[1500]"
+
+  
 >
-  <div class="overlay svelte-cq3ecl" style="" bis_skin_checked="1"></div>
-  <div class="card size-md svelte-cq3ecl" style="" bis_skin_checked="1">
-    <div class="header svelte-227w12" bis_skin_checked="1">
+  <div class="overlay svelte-cq3ecl"  ></div>
+  <div class="card size-md svelte-cq3ecl"  >
+    <div class="header svelte-227w12" >
       <h2
         class="weight-semibold line-height-default align-left size-base text-size-base variant-highlighted with-icon-space svelte-17v69ua"
-        style=""
+        
       >
         <svg
           fill="currentColor"
           viewBox="0 0 64 64"
           class="fisrt-svg-icon text-[#b1bad3] w-[16px] h-[16px]"
-          style=""
+          
         >
           <title></title>
           <path
@@ -30,17 +30,14 @@
         type="button"
         tabindex="0"
         class="inline-flex relative items-center gap-2 justify-center rounded-sm font-semibold whitespace-nowrap ring-offset-background transition disabled:pointer-events-none disabled:opacity-50 focus-visible:outline-2 focus-visible:outline-offset-2 active:scale-[0.98] bg-transparent text-grey-200 betterhover:hover:bg-transparent betterhover:hover:text-white focus-visible:text-white focus-visible:outline-none text-base leading-none"
-        aria-label="Close Modal"
-        data-testid="close-modal"
-        data-test="close-modal"
-        data-button-root=""
+        
         (click)="closevipModal()"
       >
         <svg
           fill="currentColor"
           viewBox="0 0 64 64"
           class="svg-icon w-[16px] h-[16px]"
-          style=""
+          
         >
           <title></title>
           <path
@@ -53,37 +50,34 @@
     <div
       class="content scrollY overscroll-behavior-contain svelte-cq3ecl scrollbar-visible"
       id="modal-scroll"
-      bis_skin_checked="1"
+      
     >
-      <div class="modal-content svelte-cq3ecl" bis_skin_checked="1">
-        <div class="content svelte-1m9kzo7" bis_skin_checked="1">
-          <div class="center-wrapper svelte-1nkt3rw" bis_skin_checked="1">
+      <div class="modal-content svelte-cq3ecl" >
+        <div class="content svelte-1m9kzo7" >
+          <div class="center-wrapper svelte-1nkt3rw" >
             <div
               class="tabs-wrapper scrollX svelte-1vkrcyy"
-              bis_skin_checked="1"
+              
             >
               <div
                 class="slider variant-dark svelte-1vkrcyy"
-                bis_skin_checked="1"
+                
               >
                 <div
                   class="content-wrapper svelte-1vkrcyy"
-                  bis_skin_checked="1"
+                  
                 >
                   <button
                   (click)="toggletab('progress')"
                     type="button"
                     tabindex="0"
                     class="inline-flex relative items-center gap-2 justify-center font-semibold whitespace-nowrap ring-offset-background transition disabled:pointer-events-none disabled:opacity-50 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 active:scale-[0.98] bg-transparent       betterhover:hover:bg-grey-400 betterhover:hover:text-white focus-visible:outline-white text-sm leading-none [&amp;_svg]:text-grey-200 [&amp;:hover>svg]:text-white py-[0.8125rem] px-[1rem] rounded-full  !text-white [&amp;_svg]:!text-white"
-                    data-dd-action-name="vip-progress-tab"
-                    data-analytics="vip-progress-tab"
-                    data-test="progress-tab"
-                    data-button-root=""
+                    
                     [ngClass]="{'!bg-grey-400':tab==='progress'}"
                   >
                     Progress</button
                   ><button
-                  (click)="toggletab('benefit')"
+                  (click)="toggletab('benifits')"
                     type="button"
                     tabindex="0"
                     class="inline-flex relative items-center gap-2 justify-center font-semibold whitespace-nowrap ring-offset-background transition disabled:pointer-events-none disabled:opacity-50 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 active:scale-[0.98] bg-transparent text-white betterhover:hover:bg-grey-400 betterhover:hover:text-white focus-visible:outline-white text-sm leading-none [&amp;_svg]:text-grey-200 [&amp;:hover>svg]:text-white py-[0.8125rem] px-[1rem] rounded-full"
@@ -91,7 +85,7 @@
                     data-analytics="vip-benefits-tab"
                     data-test="benefits-tab"
                     data-button-root=""
-                    [ngClass]="{'!bg-grey-400':tab==='benefit'}"
+                    [ngClass]="{'!bg-grey-400':tab==='benifits'}"
                   >
                     Benefits
                   </button>
@@ -101,25 +95,25 @@
           </div>
           @if (tab =='progress') 
     {
-          <div class="progress-wrap svelte-1yrgho5" bis_skin_checked="1">
+          <div class="progress-wrap svelte-1yrgho5" >
             <div
               class="flex justify-center rounded-xl overflow-hidden relative w-full bg-grey-700 max-w-96 p-2 bg-gradient-to-b from-grey-500 to-grey-700 aspect-video"
-              bis_skin_checked="1"
+              
             >
               <div
                 class="flex flex-col justify-center rounded-lg w-full bg-grey-700"
                 style="border: 2px solid rgb(47, 69, 83)"
-                bis_skin_checked="1"
+                
               >
                 <div
                   class="flex flex-col justify-between p-6 z-10 h-full"
                   style="--colors-positive: #2f4553"
-                  bis_skin_checked="1"
+                  
                 >
-                  <div class="flex justify-between mb-6" bis_skin_checked="1">
+                  <div class="flex justify-between mb-6" >
                     <span
                       class="weight-semibold line-height-default align-left size-md text-size-md variant-highlighted with-icon-space svelte-17v69ua"
-                      style=""
+                      
                       >Arslan2304</span
                     >
                     <svg
@@ -135,31 +129,31 @@
                       ></path>
                     </svg>
                   </div>
-                  <div class="w-full" data-content="" bis_skin_checked="1">
-                    <div class="w-full" bis_skin_checked="1">
+                  <div class="w-full" data-content="" >
+                    <div class="w-full" >
                       <div
                         class="flex justify-between items-center gap-5"
-                        bis_skin_checked="1"
+                        
                       >
                         <span
                           class="weight-semibold line-height-default align-left size-default text-size-default variant-highlighted with-icon-space svelte-17v69ua"
-                          style=""
+                          
                           >Your VIP Progress</span
                         >
                         <span class="flex gap-1"
                           ><span
                             class="weight-semibold line-height-default align-left size-default text-size-default variant-highlighted numeric with-icon-space svelte-17v69ua"
-                            style=""
+                            
                             >0.00%</span
                           >
                           <div
                             class="hoverable svelte-1s834q3"
                             role="tooltip"
-                            bis_skin_checked="1"
+                            
                           >
                             <span
                               class="weight-semibold line-height-default align-left size-default text-size-default variant-subtle svelte-17v69ua"
-                              style=""
+                              
                               ><svg
                                 fill="currentColor"
                                 viewBox="0 0 64 64"
@@ -187,28 +181,28 @@
                         data-melt-progress=""
                         data-progress-root=""
                         class="relative w-full my-2 overflow-hidden rounded-[10px] bg-grey-400 h-[0.625em]"
-                        bis_skin_checked="1"
+                        
                       >
                         <div
                           class="h-full w-full shadow-lg rounded-[10px] relative"
                           style="right: 100%"
-                          bis_skin_checked="1"
+                          
                         ></div>
                       </div>
                       <div
                         class="flex justify-between w-full"
-                        bis_skin_checked="1"
+                        
                       >
                         <div
                           class="miletone-wrap svelte-1ew5yq8"
-                          bis_skin_checked="1"
+                          
                         >
                           <span class="svelte-1ew5yq8"
                             ><svg
                               fill="none"
                               viewBox="0 0 96 96"
                               class="svg-icon w-[14px] h-[16px]"
-                              style=""
+                              
                             >
                               <title></title>
                               <path
@@ -218,20 +212,20 @@
                           ></span>
                           <span
                             class="weight-semibold line-height-120pct align-left size-default text-size-default variant-subtle with-icon-space svelte-17v69ua"
-                            style=""
+                            
                             >None</span
                           >
                         </div>
                         <div
                           class="miletone-wrap svelte-1ew5yq8"
-                          bis_skin_checked="1"
+                          
                         >
                           <span class="svelte-1ew5yq8"
                             ><svg
                               fill="none"
                               viewBox="0 0 96 96"
                               class="svg-icon w-[14px] h-[16px]"
-                              style=""
+                              
                             >
                               <title></title>
                               <path
@@ -241,7 +235,7 @@
                           ></span>
                           <span
                             class="weight-semibold line-height-120pct align-left size-default text-size-default variant-subtle with-icon-space svelte-17v69ua"
-                            style=""
+                            
                             >Bronze</span
                           >
                         </div>
@@ -252,23 +246,23 @@
               </div>
             </div>
           </div>
-          <div class="progress-content svelte-1yrgho5" bis_skin_checked="1">
+          <div class="progress-content svelte-1yrgho5" >
             <span
               class="weight-semibold line-height-default align-left size-md text-size-md variant-highlighted with-icon-space svelte-17v69ua"
-              style=""
+              
               >Want to achieve the next level?</span
             >
-            <div class="progress-content svelte-1yrgho5" bis_skin_checked="1">
+            <div class="progress-content svelte-1yrgho5" >
               <div
                 class="progress-content-item svelte-1yrgho5"
-                bis_skin_checked="1"
+                
               >
-                <div class="item-icon svelte-1yrgho5" bis_skin_checked="1">
+                <div class="item-icon svelte-1yrgho5" >
                   <svg
                     fill="currentColor"
                     viewBox="0 0 64 64"
                     class="svg-icon"
-                    style=""
+                    
                   >
                     <title></title>
                     <path
@@ -276,29 +270,29 @@
                     ></path>
                   </svg>
                 </div>
-                <div class="item-text svelte-1yrgho5" bis_skin_checked="1">
+                <div class="item-text svelte-1yrgho5" >
                   <span
                     class="weight-semibold line-height-default align-left size-default text-size-default variant-highlighted with-icon-space svelte-17v69ua"
-                    style=""
+                    
                     >Wager on Casino</span
                   >
                   <span
                     class="weight-normal line-height-120pct align-left size-default text-size-default variant-subtle with-icon-space svelte-17v69ua"
-                    style=""
+                    
                     >Play &amp; wager on any casino games</span
                   >
                 </div>
               </div>
               <div
                 class="progress-content-item svelte-1yrgho5"
-                bis_skin_checked="1"
+                
               >
-                <div class="item-icon svelte-1yrgho5" bis_skin_checked="1">
+                <div class="item-icon svelte-1yrgho5" >
                   <svg
                     fill="currentColor"
                     viewBox="0 0 96 96"
                     class="svg-icon"
-                    style=""
+                    
                   >
                     <title></title>
                     <path
@@ -308,39 +302,39 @@
                     ></path>
                   </svg>
                 </div>
-                <div class="item-text svelte-1yrgho5" bis_skin_checked="1">
+                <div class="item-text svelte-1yrgho5" >
                   <span
                     class="weight-semibold line-height-default align-left size-default text-size-default variant-highlighted with-icon-space svelte-17v69ua"
-                    style=""
+                    
                     >Bet on Sportsbook</span
                   >
                   <span
                     class="weight-normal line-height-120pct align-left size-default text-size-default variant-subtle with-icon-space svelte-17v69ua"
-                    style=""
+                    
                     >Place bets on upcoming &amp; live sports</span
                   >
                 </div>
               </div>
               <div
                 class="progress-content-item svelte-1yrgho5"
-                bis_skin_checked="1"
+                
               >
-                <div class="item-icon svelte-1yrgho5" bis_skin_checked="1">
+                <div class="item-icon svelte-1yrgho5" >
                   <span
                     class="weight-semibold line-height-default align-left size-default text-size-default variant-subtle with-icon-space svelte-17v69ua"
-                    style=""
+                    
                     >x3</span
                   >
                 </div>
-                <div class="item-text svelte-1yrgho5" bis_skin_checked="1">
+                <div class="item-text svelte-1yrgho5" >
                   <span
                     class="weight-semibold line-height-default align-left size-default text-size-default variant-highlighted with-icon-space svelte-17v69ua"
-                    style=""
+                    
                     >Boost x3 with Sports Bets</span
                   >
                   <span
                     class="weight-normal line-height-120pct align-left size-default text-size-default variant-subtle with-icon-space svelte-17v69ua"
-                    style=""
+                    
                     >Increase progression 3 times faster with sports
                     wagers</span
                   >
@@ -350,24 +344,22 @@
           </div>
         }
 <!-- *second-tab -->
-
+@if (tab =='benifits') {
 <div 
-  class="layout-spacing variant-tournaments svelte-l4ghjo"
-  bis_skin_checked="1"
->
+  class="flex flex-col gap-4">
   <div (click)="dropdown('Bronze')"
-    class="secondary-accordion level-2 rounded svelte-69p9vw"
+    class=" bg-[#213743] "
     data-test="benefits-bronze"
-    bis_skin_checked="1"
+    
   >
     <div
-      class="header rounded svelte-69p9vw"
+      class="flex justify-between items-center py-3 px-4 "
       data-test="benefits-bronze-button"
-      bis_skin_checked="1"
+      
     >
       <span
         class="weight-semibold line-height-default align-left size-default text-size-default variant-highlighted with-icon-space svelte-17v69ua"
-        style=""
+        
         ><svg fill="none" viewBox="0 0 96 96" class="svg-icon rotate-90" 
       >
           <title></title>
@@ -378,12 +370,12 @@
         </svg>
         <span>Bronze</span></span
       >
-      <div class="arrow svelte-69p9vw" bis_skin_checked="1">
+      <div class="arrow svelte-69p9vw" >
         <svg
           fill="currentColor"
           viewBox="0 0 64 64"
           class="svg-icon rotate-90"
-          [ngClass]="{'rotate-0':dropdownState==='Bronze'}"
+          [ngClass]="{'!rotate-0':dropdownState==='Bronze'}"
         >
           <title></title>
           <path
@@ -393,51 +385,46 @@
       </div>
     </div>
     <div *ngIf="dropdownState==='Bronze'"
-      class="content svelte-69p9vw is-open"
+      class=" px-5 py-3 border-t border-[#2f4553]"
       data-test="benefits-platinum-plus-content"
-      bis_skin_checked="1"
+      
     >
-      <div bis_skin_checked="1">
-        <ul class="svelte-1hrqmwm">
-          <li class="svelte-1hrqmwm">Bonus from Support in currency of your choice</li>
-          <li class="svelte-1hrqmwm">
+      <div >
+        <ul class="list-disc">
+          <li class="list-disc ms-5 ">Bonus from Support in currency of your choice</li>
+          <li class="list-disc ms-5">
             Rakeback enabled
           </li>
-          <li class="svelte-1hrqmwm">Weekly bonuses</li>
-          <li class="svelte-1hrqmwm">Monthly bonuses</li>
-          <li class="svelte-1hrqmwm">VIP Telegram channel access</li>
+          <li class="list-disc ms-5">Weekly bonuses</li>
+          <li class="list-disc ms-5">Monthly bonuses</li>
+          <li class="list-disc ms-5">VIP Telegram channel access</li>
         </ul>
       </div>
     </div>
   </div>
   <div (click)="dropdown('Silver')"
-    class="secondary-accordion level-2 rounded svelte-69p9vw"
-    data-test="benefits-silver"
-    bis_skin_checked="1"
+    class=" bg-[#213743] "
+    data-test="benefits-bronze"
+    
   >
     <div
-      class="header rounded svelte-69p9vw"
-      data-test="benefits-silver-button"
-      bis_skin_checked="1"
+      class="flex justify-between items-center py-3 px-4 "
+      data-test="benefits-bronze-button"
+      
     >
       <span
         class="weight-semibold line-height-default align-left size-default text-size-default variant-highlighted with-icon-space svelte-17v69ua"
-        style=""
-        ><svg fill="none" viewBox="0 0 96 96" class="svg-icon" style="">
-          <title></title>
-          <path
-            d="m48.002 14.603 8.48 15.757c1.97 3.693 5.495 6.336 9.677 7.068l.08.012 17.64 3.2L71.48 53.56a13.835 13.835 0 0 0-3.884 9.63c0 .653.045 1.292.132 1.922l-.01-.072 2.44 17.758L54.52 75.24c-1.908-.934-4.15-1.48-6.52-1.48s-4.613.546-6.608 1.518l.09-.039-15.637 7.56 2.438-17.759c.078-.555.123-1.197.123-1.85 0-3.741-1.482-7.137-3.887-9.633l.003.003-12.518-12.92 17.638-3.2a13.642 13.642 0 0 0 9.842-7.008l.036-.072L48 14.603Zm0-12.521h-.01a5.194 5.194 0 0 0-4.577 2.733l-.015.027L32 26.28a5.298 5.298 0 0 1-3.648 2.675l-.033.006-23.997 4.32C1.853 33.717 0 35.847 0 38.406a5.19 5.19 0 0 0 1.443 3.596L1.44 42l16.837 17.558a5.057 5.057 0 0 1 1.473 3.578c0 .306-.027.603-.078.894l.006-.03L16.4 87.997a5.199 5.199 0 0 0 5.148 5.918h.012c.045.003.102.003.156.003.834 0 1.623-.207 2.31-.576l-.027.013 21.397-10.32a6.209 6.209 0 0 1 2.76-.638c1.004 0 1.952.236 2.795.653l-.036-.014 21.08 10.319a4.73 4.73 0 0 0 2.249.56h.033-.003c.051.003.111.003.171.003a5.199 5.199 0 0 0 5.144-5.948l.004.027-3.28-23.998a5.055 5.055 0 0 1 1.4-4.32l16.84-17.557a5.177 5.177 0 0 0 1.448-3.6c0-2.55-1.836-4.67-4.257-5.114l-.033-.006-23.997-4.32a5.301 5.301 0 0 1-3.705-2.768l-.015-.03-11.399-21.44a5.204 5.204 0 0 0-4.593-2.759h-.008L48 2.082Z"
-            fill="#B2CCCC"
-          ></path>
-        </svg>
+        
+        >
+        <svg fill="none" viewBox="0 0 96 96" class="svg-icon " style=""> <title></title> <path d="m48.002 14.603 8.48 15.757c1.97 3.693 5.495 6.336 9.677 7.068l.08.012 17.64 3.2L71.48 53.56a13.835 13.835 0 0 0-3.884 9.63c0 .653.045 1.292.132 1.922l-.01-.072 2.44 17.758L54.52 75.24c-1.908-.934-4.15-1.48-6.52-1.48s-4.613.546-6.608 1.518l.09-.039-15.637 7.56 2.438-17.759c.078-.555.123-1.197.123-1.85 0-3.741-1.482-7.137-3.887-9.633l.003.003-12.518-12.92 17.638-3.2a13.642 13.642 0 0 0 9.842-7.008l.036-.072L48 14.603Zm0-12.521h-.01a5.194 5.194 0 0 0-4.577 2.733l-.015.027L32 26.28a5.298 5.298 0 0 1-3.648 2.675l-.033.006-23.997 4.32C1.853 33.717 0 35.847 0 38.406a5.19 5.19 0 0 0 1.443 3.596L1.44 42l16.837 17.558a5.057 5.057 0 0 1 1.473 3.578c0 .306-.027.603-.078.894l.006-.03L16.4 87.997a5.199 5.199 0 0 0 5.148 5.918h.012c.045.003.102.003.156.003.834 0 1.623-.207 2.31-.576l-.027.013 21.397-10.32a6.209 6.209 0 0 1 2.76-.638c1.004 0 1.952.236 2.795.653l-.036-.014 21.08 10.319a4.73 4.73 0 0 0 2.249.56h.033-.003c.051.003.111.003.171.003a5.199 5.199 0 0 0 5.144-5.948l.004.027-3.28-23.998a5.055 5.055 0 0 1 1.4-4.32l16.84-17.557a5.177 5.177 0 0 0 1.448-3.6c0-2.55-1.836-4.67-4.257-5.114l-.033-.006-23.997-4.32a5.301 5.301 0 0 1-3.705-2.768l-.015-.03-11.399-21.44a5.204 5.204 0 0 0-4.593-2.759h-.008L48 2.082Z" fill="#B2CCCC"></path></svg>
         <span>Silver</span></span
       >
-      <div class="arrow svelte-69p9vw" bis_skin_checked="1">
+      <div class="arrow svelte-69p9vw" >
         <svg
           fill="currentColor"
           viewBox="0 0 64 64"
           class="svg-icon rotate-90"
-          [ngClass]="{'rotate-0':dropdownState==='Silver'}"
+          [ngClass]="{'!rotate-0':dropdownState==='Silver'}"
         >
           <title></title>
           <path
@@ -447,48 +434,41 @@
       </div>
     </div>
     <div *ngIf="dropdownState==='Silver'"
-      class="content svelte-69p9vw is-open"
+      class=" px-5 py-3 border-t border-[#2f4553]"
       data-test="benefits-platinum-plus-content"
-      bis_skin_checked="1"
+      
     >
-      <div bis_skin_checked="1">
-        <ul class="svelte-1hrqmwm">
-          <li class="svelte-1hrqmwm">Bonus from Support in currency of your choice</li>
-          <li class="svelte-1hrqmwm">
-            Weekly & monthly bonuses increased
-          </li>
+      <div >
+        <ul class="list-disc  ">
+          <li class="list-disc ms-5 ">Bonus from Support in currency of your choice</li>
+          <li class="list-disc ms-5">Weekly & monthly bonuses increased </li>
         </ul>
       </div>
     </div>
   </div>
-  <div  (click)="dropdown('Gold')"
-    class="secondary-accordion level-2 rounded svelte-69p9vw"
-    data-test="benefits-gold"
-    bis_skin_checked="1"
+  <div (click)="dropdown('Gold')"
+    class=" bg-[#213743] "
+    data-test="benefits-bronze"
+    
   >
     <div
-      class="header rounded svelte-69p9vw"
-      data-test="benefits-gold-button"
-      bis_skin_checked="1"
+      class="flex justify-between items-center py-3 px-4 "
+      data-test="benefits-bronze-button"
+      
     >
       <span
         class="weight-semibold line-height-default align-left size-default text-size-default variant-highlighted with-icon-space svelte-17v69ua"
-        style=""
-        ><svg fill="none" viewBox="0 0 96 96" class="svg-icon" style="">
-          <title></title>
-          <path
-            d="m48.002 14.603 8.48 15.757c1.97 3.693 5.495 6.336 9.677 7.068l.08.012 17.64 3.2L71.48 53.56a13.835 13.835 0 0 0-3.884 9.63c0 .653.045 1.292.132 1.922l-.01-.072 2.44 17.758L54.52 75.24c-1.908-.934-4.15-1.48-6.52-1.48s-4.613.546-6.608 1.518l.09-.039-15.637 7.56 2.438-17.759c.078-.555.123-1.197.123-1.85 0-3.741-1.482-7.137-3.887-9.633l.003.003-12.518-12.92 17.638-3.2a13.642 13.642 0 0 0 9.842-7.008l.036-.072L48 14.603Zm0-12.521h-.01a5.194 5.194 0 0 0-4.577 2.733l-.015.027L32 26.28a5.298 5.298 0 0 1-3.648 2.675l-.033.006-23.997 4.32C1.853 33.717 0 35.847 0 38.406a5.19 5.19 0 0 0 1.443 3.596L1.44 42l16.837 17.558a5.057 5.057 0 0 1 1.473 3.578c0 .306-.027.603-.078.894l.006-.03L16.4 87.997a5.199 5.199 0 0 0 5.148 5.918h.012c.045.003.102.003.156.003.834 0 1.623-.207 2.31-.576l-.027.013 21.397-10.32a6.209 6.209 0 0 1 2.76-.638c1.004 0 1.952.236 2.795.653l-.036-.014 21.08 10.319a4.73 4.73 0 0 0 2.249.56h.033-.003c.051.003.111.003.171.003a5.199 5.199 0 0 0 5.144-5.948l.004.027-3.28-23.998a5.055 5.055 0 0 1 1.4-4.32l16.84-17.557a5.177 5.177 0 0 0 1.448-3.6c0-2.55-1.836-4.67-4.257-5.114l-.033-.006-23.997-4.32a5.301 5.301 0 0 1-3.705-2.768l-.015-.03-11.399-21.44a5.204 5.204 0 0 0-4.593-2.759h-.008L48 2.082Z"
-            fill="#FED100"
-          ></path>
-        </svg>
+        
+        >
+        <svg fill="none" viewBox="0 0 96 96" class="svg-icon " style=""> <title></title> <path d="m48.002 14.603 8.48 15.757c1.97 3.693 5.495 6.336 9.677 7.068l.08.012 17.64 3.2L71.48 53.56a13.835 13.835 0 0 0-3.884 9.63c0 .653.045 1.292.132 1.922l-.01-.072 2.44 17.758L54.52 75.24c-1.908-.934-4.15-1.48-6.52-1.48s-4.613.546-6.608 1.518l.09-.039-15.637 7.56 2.438-17.759c.078-.555.123-1.197.123-1.85 0-3.741-1.482-7.137-3.887-9.633l.003.003-12.518-12.92 17.638-3.2a13.642 13.642 0 0 0 9.842-7.008l.036-.072L48 14.603Zm0-12.521h-.01a5.194 5.194 0 0 0-4.577 2.733l-.015.027L32 26.28a5.298 5.298 0 0 1-3.648 2.675l-.033.006-23.997 4.32C1.853 33.717 0 35.847 0 38.406a5.19 5.19 0 0 0 1.443 3.596L1.44 42l16.837 17.558a5.057 5.057 0 0 1 1.473 3.578c0 .306-.027.603-.078.894l.006-.03L16.4 87.997a5.199 5.199 0 0 0 5.148 5.918h.012c.045.003.102.003.156.003.834 0 1.623-.207 2.31-.576l-.027.013 21.397-10.32a6.209 6.209 0 0 1 2.76-.638c1.004 0 1.952.236 2.795.653l-.036-.014 21.08 10.319a4.73 4.73 0 0 0 2.249.56h.033-.003c.051.003.111.003.171.003a5.199 5.199 0 0 0 5.144-5.948l.004.027-3.28-23.998a5.055 5.055 0 0 1 1.4-4.32l16.84-17.557a5.177 5.177 0 0 0 1.448-3.6c0-2.55-1.836-4.67-4.257-5.114l-.033-.006-23.997-4.32a5.301 5.301 0 0 1-3.705-2.768l-.015-.03-11.399-21.44a5.204 5.204 0 0 0-4.593-2.759h-.008L48 2.082Z" fill="#FED100"></path></svg>
         <span>Gold</span></span
       >
-      <div class="arrow svelte-69p9vw" bis_skin_checked="1">
+      <div class="arrow svelte-69p9vw" >
         <svg
           fill="currentColor"
           viewBox="0 0 64 64"
           class="svg-icon rotate-90"
-         [ngClass]="{'rotate-0':dropdownState==='Gold'}"
+          [ngClass]="{'!rotate-0':dropdownState==='Gold'}"
         >
           <title></title>
           <path
@@ -498,49 +478,40 @@
       </div>
     </div>
     <div *ngIf="dropdownState==='Gold'"
-      class="content svelte-69p9vw is-open"
+      class=" px-5 py-3 border-t border-[#2f4553]"
       data-test="benefits-platinum-plus-content"
-      bis_skin_checked="1"
+      
     >
-      <div bis_skin_checked="1">
-        <ul class="svelte-1hrqmwm">
-          <li class="svelte-1hrqmwm">Bonus from Support in currency of your choice</li>
-          <li class="svelte-1hrqmwm">
-            Weekly & monthly bonuses increased
-          </li>
+      <div >
+        <ul class="list-disc">
+          <li class="list-disc ms-5 ">Bonus from Support in currency of your choice</li>
+          <li class="list-disc ms-5">Weekly & monthly bonuses increased   </li>
         </ul>
       </div>
     </div>
   </div>
-  <div (click)="dropdown('Platinum I')"
-    class="secondary-accordion level-2 rounded svelte-69p9vw"
-    data-test="benefits-platinum"
-    bis_skin_checked="1"
+  <div (click)="dropdown('Platinum')"
+    class=" bg-[#213743] "
+    data-test="benefits-bronze"
+    
   >
     <div
-      class="header rounded svelte-69p9vw"
-      data-test="benefits-platinum-button"
-      bis_skin_checked="1"
+      class="flex justify-between items-center py-3 px-4 "
+      data-test="benefits-bronze-button"
+      
     >
       <span
         class="weight-semibold line-height-default align-left size-default text-size-default variant-highlighted with-icon-space svelte-17v69ua"
-        style=""
-        ><svg fill="none" viewBox="0 0 96 96" class="svg-icon" style="">
-          <title></title>
-          <path
-            d="M45.237 83.04 23.797 93.4c-3.76 1.8-8-1.28-7.44-5.4l3.28-24.12c.2-1.56-.32-3.16-1.4-4.32L1.437 42c-2.88-3-1.24-8 2.84-8.72l23.96-4.32a5.277 5.277 0 0 0 3.68-2.68l11.52-21.44c1.96-3.64 7.2-3.64 9.16 0l11.52 21.44c.76 1.4 2.12 2.4 3.68 2.68l23.96 4.32c4.08.72 5.72 5.72 2.84 8.72l-16.84 17.56a5.333 5.333 0 0 0-1.4 4.32L79.637 88c.56 4.12-3.68 7.2-7.44 5.4l-21.44-10.36c-1.72-.84-3.76-.84-5.52 0Z"
-            fill="#6FDDE7"
-          ></path>
-          <path d="M42.557 72V36h10.88v36h-10.88Z" fill="#0F212E"></path>
-        </svg>
+        
+        ><svg fill="none" viewBox="0 0 96 96" class="svg-icon " style=""> <title></title> <path d="M45.237 83.04 23.797 93.4c-3.76 1.8-8-1.28-7.44-5.4l3.28-24.12c.2-1.56-.32-3.16-1.4-4.32L1.437 42c-2.88-3-1.24-8 2.84-8.72l23.96-4.32a5.277 5.277 0 0 0 3.68-2.68l11.52-21.44c1.96-3.64 7.2-3.64 9.16 0l11.52 21.44c.76 1.4 2.12 2.4 3.68 2.68l23.96 4.32c4.08.72 5.72 5.72 2.84 8.72l-16.84 17.56a5.333 5.333 0 0 0-1.4 4.32L79.637 88c.56 4.12-3.68 7.2-7.44 5.4l-21.44-10.36c-1.72-.84-3.76-.84-5.52 0Z" fill="#6FDDE7"></path><path d="M42.557 72V36h10.88v36h-10.88Z" fill="#0F212E"></path></svg>
         <span>Platinum I - III</span></span
       >
-      <div class="arrow svelte-69p9vw" bis_skin_checked="1">
+      <div class="arrow svelte-69p9vw" >
         <svg
           fill="currentColor"
           viewBox="0 0 64 64"
           class="svg-icon rotate-90"
-          [ngClass]="{'rotate-0':dropdownState==='Platinum I'}"
+          [ngClass]="{'!rotate-0':dropdownState==='Platinum'}"
         >
           <title></title>
           <path
@@ -549,55 +520,43 @@
         </svg>
       </div>
     </div>
-    <div *ngIf="dropdownState==='Platinum I'"
-      class="content svelte-69p9vw is-open"
+    <div *ngIf="dropdownState==='Platinum'"
+      class=" px-5 py-3 border-t border-[#2f4553]"
       data-test="benefits-platinum-plus-content"
-      bis_skin_checked="1"
+      
     >
-      <div bis_skin_checked="1">
-        <ul class="svelte-1hrqmwm">
-          <li class="svelte-1hrqmwm">Bonus from Support in currency of your choice</li>
-          <li class="svelte-1hrqmwm">
-            Weekly & monthly bonuses increased
-          </li>
-          <li class="svelte-1hrqmwm">14 - 42 Day, Daily bonus (Reload)</li>
+      <div >
+        <ul >
+          <li class="list-disc ms-5 ">Bonus from Support in currency of your choice</li>
+          <li class="list-disc ms-5">Weekly & monthly bonuses increased  </li>
+          <li class="list-disc ms-5">14 - 42 Day, Daily bonus (Reload)</li>
         </ul>
       </div>
     </div>
   </div>
-  <div
-    class="secondary-accordion level-2 rounded svelte-69p9vw is-open"
-    data-test="benefits-platinum-plus"
-    bis_skin_checked="1"
+  <div (click)="dropdown('Platinum2')"
+    class=" bg-[#213743] "
+    data-test="benefits-bronze"
+    
   >
-    <div (click)="dropdown('Platinum IV')"
-      class="header rounded svelte-69p9vw"
-      data-test="benefits-platinum-plus-button"
-      bis_skin_checked="1"
+    <div
+      class="flex justify-between items-center py-3 px-4 "
+      data-test="benefits-bronze-button"
+      
     >
       <span
         class="weight-semibold line-height-default align-left size-default text-size-default variant-highlighted with-icon-space svelte-17v69ua"
-        style=""
-        ><svg fill="none" viewBox="0 0 96 96" class="svg-icon" style="">
-          <title></title>
-          <path
-            d="M45.237 83.04 23.797 93.4c-3.76 1.8-8-1.28-7.44-5.4l3.28-24.12c.2-1.56-.32-3.16-1.4-4.32L1.437 42c-2.88-3-1.24-8 2.84-8.72l23.96-4.32a5.277 5.277 0 0 0 3.68-2.68l11.52-21.44c1.96-3.64 7.2-3.64 9.16 0l11.52 21.44c.76 1.4 2.12 2.4 3.68 2.68l23.96 4.32c4.08.72 5.72 5.72 2.84 8.72l-16.84 17.56a5.333 5.333 0 0 0-1.4 4.32L79.637 88c.56 4.12-3.68 7.2-7.44 5.4l-21.44-10.36c-1.72-.84-3.76-.84-5.52 0Z"
-            fill="#6FDDE7"
-          ></path>
-          <path
-            d="M23.997 72V36h10.88v36h-10.88Zm29.4 0-13.28-36h12.36l7.76 24.24L67.997 36h12.36l-13.28 36h-13.72.04Z"
-            fill="#0F212E"
-          ></path>
-        </svg>
+        
+        >
+        <svg fill="none" viewBox="0 0 96 96" class="svg-icon " style=""> <title></title> <path d="M45.237 83.04 23.797 93.4c-3.76 1.8-8-1.28-7.44-5.4l3.28-24.12c.2-1.56-.32-3.16-1.4-4.32L1.437 42c-2.88-3-1.24-8 2.84-8.72l23.96-4.32a5.277 5.277 0 0 0 3.68-2.68l11.52-21.44c1.96-3.64 7.2-3.64 9.16 0l11.52 21.44c.76 1.4 2.12 2.4 3.68 2.68l23.96 4.32c4.08.72 5.72 5.72 2.84 8.72l-16.84 17.56a5.333 5.333 0 0 0-1.4 4.32L79.637 88c.56 4.12-3.68 7.2-7.44 5.4l-21.44-10.36c-1.72-.84-3.76-.84-5.52 0Z" fill="#6FDDE7"></path><path d="M23.997 72V36h10.88v36h-10.88Zm29.4 0-13.28-36h12.36l7.76 24.24L67.997 36h12.36l-13.28 36h-13.72.04Z" fill="#0F212E"></path></svg>
         <span>Platinum IV - VI</span></span
       >
-      <div class="arrow svelte-69p9vw" bis_skin_checked="1">
+      <div class="arrow svelte-69p9vw" >
         <svg
           fill="currentColor"
           viewBox="0 0 64 64"
           class="svg-icon rotate-90"
-        
-          [ngClass]="{'rotate-0':dropdownState==='Platinum IV'}"
+          [ngClass]="{'!rotate-0':dropdownState==='Platinum2'}"
         >
           <title></title>
           <path
@@ -606,71 +565,43 @@
         </svg>
       </div>
     </div>
-    <div *ngIf="dropdownState==='Platinum IV'"
-      class="content svelte-69p9vw is-open"
+    <div *ngIf="dropdownState==='Platinum2'"
+      class=" px-5 py-3 border-t border-[#2f4553]"
       data-test="benefits-platinum-plus-content"
-      bis_skin_checked="1"
+      
     >
-      <div bis_skin_checked="1">
-        <ul class="svelte-1hrqmwm">
-          <li class="svelte-1hrqmwm">Dedicated VIP host</li>
-          <li class="svelte-1hrqmwm">
-            Bonus from VIP host in currency of your choice
-          </li>
-          <li class="svelte-1hrqmwm">Daily &amp; weekly bonuses increased</li>
-          <li class="svelte-1hrqmwm">Monthly bonuses</li>
+      <div >
+        <ul >
+          <li class="list-disc ms-5 ">Dedicated VIP host</li>
+          <li class="list-disc ms-5">Bonus from VIP host in currency of your choice </li>
+          <li class="list-disc ms-5">Daily & weekly bonuses increased</li>
+          <li class="list-disc ms-5">Monthly bonuses</li>
         </ul>
       </div>
     </div>
   </div>
   <div (click)="dropdown('Diamond')"
-    class="secondary-accordion level-2 rounded svelte-69p9vw"
-    data-test="benefits-diamond"
-    bis_skin_checked="1"
+    class=" bg-[#213743] "
+    data-test="benefits-bronze"
+    
   >
     <div
-      class="header rounded svelte-69p9vw"
-      data-test="benefits-diamond-button"
-      bis_skin_checked="1"
+      class="flex justify-between items-center py-3 px-4 "
+      data-test="benefits-bronze-button"
+      
     >
       <span
         class="weight-semibold line-height-default align-left size-default text-size-default variant-highlighted with-icon-space svelte-17v69ua"
-        style=""
-        ><svg fill="none" viewBox="0 0 96 96" class="svg-icon" style="">
-          <title></title>
-          <path
-            d="M79.48 19.64c-21.04 3.04-42.04 3-63 0L0 43.64 48 96l48-52.36-16.52-24Z"
-            fill="#BDE9FF"
-          ></path>
-          <path
-            d="M27.68 55.52 48 96l20.32-40.48s-23.16-7.16-40.64 0Z"
-            fill="#fff"
-          ></path>
-          <path
-            d="M16.52 19.64S43.12 21.48 48 30.68c0 0-12.48 23.96-20.32 24.84 0 0-14.68-26.64-11.16-35.84v-.04Z"
-            fill="#B0B8FC"
-          ></path>
-          <path d="M48 30.68 27.68 55.52h40.64L48 30.68Z" fill="#fff"></path>
-          <path d="M96 43.64 48 96l20.32-40.48L96 43.64Z" fill="#B0B8FC"></path>
-          <path d="M0 43.64 48 96 27.68 55.52 0 43.64Z" fill="#BDE9FF"></path>
-          <path
-            d="m16.52 19.64 11.16 35.88L0 43.64l16.52-24Z"
-            fill="#B0B8FC"
-          ></path>
-          <path
-            d="M79.48 19.64 68.32 55.52 96 43.64l-16.52-24Zm-62.96 0L48 30.68l31.48-11.04H16.52Z"
-            fill="#fff"
-          ></path>
-          <path d="M42.56 29.84h10.88v36H42.56v-36Z" fill="#0F212E"></path>
-        </svg>
+        
+        ><svg fill="none" viewBox="0 0 96 96" class="svg-icon " style=""> <title></title> <path d="M79.48 19.64c-21.04 3.04-42.04 3-63 0L0 43.64 48 96l48-52.36-16.52-24Z" fill="#BDE9FF"></path><path d="M27.68 55.52 48 96l20.32-40.48s-23.16-7.16-40.64 0Z" fill="#fff"></path><path d="M16.52 19.64S43.12 21.48 48 30.68c0 0-12.48 23.96-20.32 24.84 0 0-14.68-26.64-11.16-35.84v-.04Z" fill="#B0B8FC"></path><path d="M48 30.68 27.68 55.52h40.64L48 30.68Z" fill="#fff"></path><path d="M96 43.64 48 96l20.32-40.48L96 43.64Z" fill="#B0B8FC"></path><path d="M0 43.64 48 96 27.68 55.52 0 43.64Z" fill="#BDE9FF"></path><path d="m16.52 19.64 11.16 35.88L0 43.64l16.52-24Z" fill="#B0B8FC"></path><path d="M79.48 19.64 68.32 55.52 96 43.64l-16.52-24Zm-62.96 0L48 30.68l31.48-11.04H16.52Z" fill="#fff"></path><path d="M42.56 29.84h10.88v36H42.56v-36Z" fill="#0F212E"></path></svg>
         <span>Diamond</span></span
       >
-      <div class="arrow svelte-69p9vw" bis_skin_checked="1">
+      <div class="arrow svelte-69p9vw" >
         <svg
           fill="currentColor"
           viewBox="0 0 64 64"
           class="svg-icon rotate-90"
-          [ngClass]="{'rotate-0':dropdownState==='Diamond'}"
+          [ngClass]="{'!rotate-0':dropdownState==='Diamond'}"
         >
           <title></title>
           <path
@@ -680,25 +611,24 @@
       </div>
     </div>
     <div *ngIf="dropdownState==='Diamond'"
-      class="content svelte-69p9vw is-open"
+      class=" px-5 py-3 border-t border-[#2f4553]"
       data-test="benefits-platinum-plus-content"
-      bis_skin_checked="1"
+      
     >
-      <div bis_skin_checked="1">
-        <ul class="svelte-1hrqmwm">
-          <li class="svelte-1hrqmwm">Bonus from VIP host in currency of your choice</li>
-          <li class="svelte-1hrqmwm">
-            Exclusively customized benefits
-          </li>
-          <li class="svelte-1hrqmwm">Daily & weekly bonuses increased</li>
-          <li class="svelte-1hrqmwm">Monthly bonuses</li>
+      <div >
+        <ul class="list-disc ">
+          <li class="list-disc ms-5 ">Bonus from VIP host in currency of your choice</li>
+          <li class="list-disc ms-5">Exclusively customized benefits</li>
+          <li class="list-disc ms-5">Daily & weekly bonuses increased</li>
+          <li class="list-disc ms-5">Monthly bonuses</li>
         </ul>
       </div>
     </div>
   </div>
 </div>
+}
         
-        <div class="footer svelte-1nkt3rw" bis_skin_checked="1">
+        <div class="footer svelte-1nkt3rw" >
           <a
             data-test="learn-more"
             class="inline-flex relative items-center gap-2 justify-center rounded-sm font-semibold whitespace-nowrap ring-offset-background transition disabled:pointer-events-none disabled:opacity-50 focus-visible:outline-2 focus-visible:outline-offset-2 active:scale-[0.98] bg-transparent text-grey-200 betterhover:hover:bg-transparent betterhover:hover:text-white focus-visible:text-white focus-visible:outline-none text-sm leading-none"
