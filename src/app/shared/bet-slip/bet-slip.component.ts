@@ -32,7 +32,7 @@ export class BetSlipComponent implements OnInit {
 
   selectOddsOption(option: string) {
     this.selectedOddsOption = option;
-    this.OddsDropdown = false; 
+    this.OddsDropdown = false;
 }
 
   //  Switch Tabs

@@ -1,10 +1,11 @@
 import { CommonModule } from '@angular/common';
 import { Component } from '@angular/core';
+import { TabSliderComponent } from "../../shared/tab-slider/tab-slider.component";
 
 @Component({
   selector: 'app-my-bets',
   standalone: true,
-  imports: [CommonModule,],
+  imports: [CommonModule, TabSliderComponent],
   templateUrl: './my-bets.component.html',
   styleUrl: './my-bets.component.css'
 })
@@ -31,4 +32,16 @@ export class MyBetsComponent {
     this.LiveTab = tab;
   }
 
+
+  tabsItem = [
+    { tabTitle: 'All Bets', dotState: false },
+    { tabTitle: 'High Rollers', dotState: false },
+    { tabTitle: 'Race Leaderboard', dotState: false },
+  ]
+
+  tabsItems = [
+    { tabTitle: 'Casino', dotState: false },
+    { tabTitle: 'Sports', dotState: false },
+   
+  ]
 }

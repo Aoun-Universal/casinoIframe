@@ -18,24 +18,7 @@
       <!-- start sports and casino button here -->
       <div>
         <div class="flex justify-between items-center">
-          <div
-        
-            class="buttons-wrapper"
-          
-            >
-            <a
-              class="casino-btn"
-             [ngClass]="{'bg-[#2F4553] rounded-[3rem]':activeTb==='casino'}"
-              (click)="setActivTab('casino')"
-              >Casino</a
-            >
-            <a
-              class="sports-btn"
-              [ngClass]="{'bg-[#2F4553] rounded-[3rem]':activeTb==='sports'}"
-              (click)="setActivTab('sports')"
-              >Sports</a
-            >
-          </div>
+          <app-tab-slider [arrItem]="tabsItems"></app-tab-slider>
           <div>
             <button class="active-btn mt-[22px]">
               <span class="text-[13px]">Active</span
@@ -142,40 +125,8 @@
   
   <div class="top-sports-header events-header">
     <!-- left tab slider -->
-    <div class="wrapper-leftside">
-      <div class="flex">
-        <!-- Tab item 1 -->
-        <a
-          class="tab-item tab-item1"
-          [class.active]="TableTab === 1"
-          (click)="setActiveTableTab(1)"
-        >
-          <span>All Bets</span>
-        </a>
-
-        <!-- Tab item 2 -->
-        <a
-          class="tab-item"
-          [class.active]="TableTab === 2"
-          (click)="setActiveTableTab(2)"
-        >
-          <span>High Rollers</span>
-        </a>
-
-        <!-- Tab item 3 -->
-        <a
-          class="tab-item"
-          [class.active]="TableTab === 3"
-          (click)="setActiveTableTab(3)"
-        >
-          <span class="flex items-center">Race Leaderboard <div class="green-dot"></div> </span>
-
-          <div class="bubble-wrap">
-            <div class="scale-up"></div>
-          </div>
-        </a>
-      </div>
-    </div>
+      <app-tab-slider [arrItem]="tabsItem"></app-tab-slider>
+  
 
     <!-- Right -->
     <div class="select-wrap">

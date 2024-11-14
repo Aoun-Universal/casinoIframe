@@ -1,0 +1,30 @@
+.container{
+    @apply w-full my-[1rem]
+}
+.hero{
+    @apply max-w-[650px] mx-auto 
+}
+.top-heading{
+    @apply font-semibold  text-3xl inline-flex items-center gap-x-2
+}
+.share-wrapper{
+    @apply mt-[1rem] flex justify-between items-center
+}
+.text{
+    @apply text-[11px] text-[#b1bad3]
+}
+.links{
+    @apply flex gap-4
+}
+.link{
+    @apply inline-flex relative items-center gap-2 justify-center font-semibold whitespace-nowrap  transition disabled:pointer-events-none disabled:opacity-50 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 active:scale-[0.98] bg-[#0F212E] text-white hover:bg-gray-900 hover:text-white focus-visible:outline-white text-xs leading-none p-3 rounded-full
+}
+.svg-icon{
+    @apply w-[12px] h-[12px]
+}
+.hero-img{
+    @apply mt-[1rem] rounded-[8px] w-full
+}
+/* .content-block{
+    @apply
+} */
