@@ -20,6 +20,7 @@ import { AffiliateOverviewComponent } from './pages/affiliate-overview/affiliate
 import { CommissionComponent } from './pages/commission/commission.component';
 import { FundsComponent } from './pages/funds/funds.component';
 import { ReferredUsersComponent } from './pages/referred-users/referred-users.component';
+import { CampaignsComponent } from './pages/campaigns/campaigns.component';
 
 
 export const routes: Routes = [
@@ -114,7 +115,10 @@ export const routes: Routes = [
             path: 'referred-users',
             component:ReferredUsersComponent,
           },
-          
+          {
+            path: 'campaigns',
+            component:CampaignsComponent,
+          },
         ],
       },
       {

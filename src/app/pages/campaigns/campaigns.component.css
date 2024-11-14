@@ -1,0 +1,33 @@
+.svg-icon {
+    @apply pointer-events-none [stroke-width:0] fill-current stroke-current flex-shrink-0 inline-block size-[1em];
+  }
+  .card-varient {
+    @apply bg-[#0f212e]  text-[#d5dceb] rounded-lg p-6 overflow-hidden relative align-baseline m-0;
+  }
+  .layout-spacing {
+    @apply flex flex-col w-full 
+   
+}
+  .layout-spacing {
+    width: 100%;
+    
+}
+.stats-grid.svelte-lqm917 {
+    display: grid; 
+    grid-template-columns: repeat(auto-fit, minmax(10px, 1fr));
+    grid-gap: 2rem;
+}
+.stat.svelte-lqm917 {
+    @apply flex flex-col justify-center items-center
+}
+.accordian-table-wrap.svelte-1eda04b {
+    @apply flex flex-col
+   
+}
+.layout-spacing {
+    @apply mt-[1.5rem]
+}
+.secondary-accordion.svelte-69p9vw.svelte-69p9vw {
+    @apply flex flex-col w-full relative z-0 bg-[#213743];
+    box-shadow: 0 1px 3px 0 rgba(0, 0, 0, .2), 0 1px 2px 0 rgba(0, 0, 0, .12), inset 0 1px rgba(255, 255, 255, .04);
+}
