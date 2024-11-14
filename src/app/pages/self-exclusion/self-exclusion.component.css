@@ -1,0 +1,39 @@
+.card {
+    @apply bg-[#0f212e] text-[#d5dceb] rounded-[0.5rem] p-6 overflow-hidden 
+}
+.layout-spacing {
+    @apply  [padding-bottom:unset] flex flex-col w-full
+}
+.section-list {
+    @apply  [padding-bottom:unset] flex flex-col w-full
+}
+.section-svelte{
+    @apply   rounded-lg border-[1px] pt-[28px] border-solid border-[#2f4553] flex flex-col [section-spacing-horizontal:1.5rem]
+}
+.title{
+    @apply    text-[#fff] text-left justify-start  text-xl font-semibold  inline-flex items-center
+}
+.section-content{
+    @apply     flex flex-col w-full px-6 mt-5
+}
+.span-text{
+    @apply     text-[#b1bad3] text-left text-sm font-normal block m-0
+}
+.system-message{
+    @apply     border-[#b1bad3] text-[#b1bad3] flex bg-[#0f212e] gap-3 border-[2px] border-dashed rounded-lg mt-4 p-3
+}
+.content-container{
+    @apply     flex-1 flex justify-between items-center gap-3
+}
+.msg-text{
+    @apply     text-[#b1bad3] text-left justify-start text-sm   inline-flex items-center font-normal 
+}
+.section-footer{
+    @apply    flex rounded-lg  border-t-[1px] border-solid border-[#2f4553] self-end justify-between items-center w-full flex-wrap mt-5 p-4
+}
+.more-text{
+    @apply     text-[#b1bad3] text-left inline text-sm font-normal m-0
+}
+.svg-icon {
+    @apply pointer-events-none [stroke-width:0] fill-current stroke-current flex-shrink-0 inline-block size-[1em];
+  }
