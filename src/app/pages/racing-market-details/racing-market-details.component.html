@@ -39,7 +39,6 @@
                                 <a
                                   class="pl-[32px] bg-[rgb(7,24,36)] pr-6 inline-flex relative items-center gap-2 justify-center rounded-sm font-semibold whitespace-nowrap ring-offset-background transition disabled:pointer-events-none disabled:opacity-50 focus-visible:outline-2 focus-visible:outline-offset-2 active:scale-[0.98] bg-transparent text-white betterhover:hover:bg-transparent betterhover:hover:text-white focus-visible:outline-none text-sm leading-none [&amp;_svg]:text-grey-200 [&amp;:hover>svg]:text-white"
                                   href="/sports/racing/horse-racing/all/calendar/today"
-                                  
                                   ><span
                                     class="m-0 p-0 ![transform:skew(20deg)]"
                                     >Horse Racing</span
@@ -51,7 +50,6 @@
                                 <a
                                   class="px-6 inline-flex relative items-center gap-2 justify-center rounded-sm font-semibold whitespace-nowrap ring-offset-background transition disabled:pointer-events-none disabled:opacity-50 focus-visible:outline-2 focus-visible:outline-offset-2 active:scale-[0.98] bg-transparent text-white betterhover:hover:bg-transparent betterhover:hover:text-white focus-visible:outline-none text-sm leading-none [&amp;_svg]:text-grey-200 [&amp;:hover>svg]:text-white"
                                   href="/sports/racing/horse-racing/africa/calendar/today"
-                                  
                                   ><span class="breadcrumb-label svelte-1god0j"
                                     >Africa</span
                                   ></a
@@ -62,15 +60,18 @@
                                 class="dropdown flex h-full skew-x-[-20deg] betterhover:hover:bg-grey-900"
                               >
                                 <button
-                                 
-                                 
-                                 
+                                  (click)="toggleDropdown()"
                                   type="button"
                                   class="pl-6 pr-[32px] outline-none flex items-center gap-2 skew-x-[20deg]"
                                 >
                                   <span class="Turf-text">Turffontein</span>
                                   <div class="flex">
                                     <svg
+                                      [ngClass]="
+                                        !WinnerDropdown
+                                          ? 'rotate-[360deg]'
+                                          : 'rotate-[180deg]'
+                                      "
                                       fill="currentColor"
                                       viewBox="0 0 64 64"
                                       class="svg-icon"
@@ -83,6 +84,113 @@
                                   </div>
                                 </button>
                               </div>
+                              <div
+                                class="dropdown-content"
+                                *ngIf="WinnerDropdown"
+                              >
+                                <div class="dropdown-arrow"></div>
+                                <div class="dropdown-scroll-content">
+                                  <div class="flex flex-1 px-4 py-2">
+                                    <span
+                                      class="text-[#b1bad3] leading-[18px] text-left text-sm font-semibold"
+                                      >Australasia
+                                    </span>
+                                  </div>
+
+                                  <div
+                                    class="inline-flex relative cursor-pointer items-center gap-2 w-full font-semibold text-[.875rem] whitespace-nowrap transition disabled:pointer-events-none disabled:opacity-50 focus-visible:outline-2 focus-visible:outline-offset-2 active:scale-[0.98] bg-transparent text-white focus-visible:outline-none text-sm leading-none"
+                                  >
+                                    <div class="dropdown-btn">
+                                      <span
+                                        class="text-sm text-[rgb(20,117,225)] font-semibold truncate"
+                                        >R8 Bendigo</span
+                                      >
+                                      <div
+                                        class="live-badge bg-[#e9113c]"
+                                        style="padding: 0px 4px"
+                                      >
+                                        <span
+                                          class="text-white font-semibold text-xs"
+                                          >-38m</span
+                                        >
+                                      </div>
+                                    </div>
+                                  </div>
+                                  <div
+                                    class="inline-flex relative cursor-pointer items-center gap-2 w-full font-semibold text-[.875rem] whitespace-nowrap transition disabled:pointer-events-none disabled:opacity-50 focus-visible:outline-2 focus-visible:outline-offset-2 active:scale-[0.98] bg-transparent text-white focus-visible:outline-none text-sm leading-none"
+                                  >
+                                    <div class="dropdown-btn">
+                                      <span
+                                        class="text-sm font-semibold truncate text-gray-800"
+                                        >R8 Sonoda</span
+                                      >
+                                      <div
+                                        class="live-badge bg-[#e9113c] text-white"
+                                        style="padding: 0px 4px"
+                                      >
+                                        <span
+                                          class="text-white font-semibold text-xs"
+                                          >10m</span
+                                        >
+                                      </div>
+                                    </div>
+                                  </div>
+                                  <div
+                                    class="inline-flex relative cursor-pointer items-center gap-2 w-full font-semibold text-[.875rem] whitespace-nowrap transition disabled:pointer-events-none disabled:opacity-50 focus-visible:outline-2 focus-visible:outline-offset-2 active:scale-[0.98] bg-transparent text-white focus-visible:outline-none text-sm leading-none"
+                                  >
+                                    <div class="dropdown-btn">
+                                      <span
+                                        class="text-sm font-semibold truncate text-gray-800"
+                                        >R1 Kawasaki</span
+                                      >
+                                      <div
+                                        class="live-badge"
+                                        style="padding: 0px 4px"
+                                      >
+                                        <span class="font-semibold text-xs"
+                                          >11:00</span
+                                        >
+                                      </div>
+                                    </div>
+                                  </div>
+                                  <div
+                                    class="inline-flex relative cursor-pointer items-center gap-2 w-full font-semibold text-[.875rem] whitespace-nowrap transition disabled:pointer-events-none disabled:opacity-50 focus-visible:outline-2 focus-visible:outline-offset-2 active:scale-[0.98] bg-transparent text-white focus-visible:outline-none text-sm leading-none"
+                                  >
+                                    <div class="dropdown-btn">
+                                      <span
+                                        class="text-sm font-semibold truncate text-gray-800"
+                                        >R1 Riyadh</span
+                                      >
+                                      <div
+                                        class="live-badge"
+                                        style="padding: 0px 4px"
+                                      >
+                                        <span class="font-semibold text-xs"
+                                          >17:20</span
+                                        >
+                                      </div>
+                                    </div>
+                                  </div>
+                                  <div
+                                    class="inline-flex relative cursor-pointer items-center gap-2 w-full font-semibold text-[.875rem] whitespace-nowrap transition disabled:pointer-events-none disabled:opacity-50 focus-visible:outline-2 focus-visible:outline-offset-2 active:scale-[0.98] bg-transparent text-white focus-visible:outline-none text-sm leading-none"
+                                  >
+                                    <div class="dropdown-btn">
+                                      <span
+                                        class="text-sm font-semibold truncate text-gray-800"
+                                        >R1 Al Ain</span
+                                      >
+                                      <div
+                                        class="live-badge"
+                                        style="padding: 0px 4px"
+                                      >
+                                        <span class="font-semibold text-xs"
+                                          >18:00</span
+                                        >
+                                      </div>
+                                    </div>
+                                  </div>
+                                </div>
+                              </div>
                             </div>
                           </div>
 
@@ -93,46 +201,56 @@
                                   <div
                                     class="flex w-fit gap-[5px] p-[5px] rounded-full bg-[rgb(15,33,46)]"
                                   >
-                                    <a   [class.active]="activeTab === 1" (click)="setActiveTab(1)"
+                                    <a
+                                      [class.active]="activeTab === 1"
+                                      (click)="setActiveTab(1)"
                                       class="px-5 hover:bg-gray-400 py-[15px] rounded-full font-semibold text-sm leading-none text-gray-200 bg-[rgb(47,69,83)] transition disabled:pointer-events-none disabled:opacity-50 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 active:scale-[0.98] bg-transparent focus-visible:outline-white [&:hover>svg]:text-white [&_svg]:!text-gray-200"
-                                     
                                       data-sveltekit-noscroll=""
                                       >R1 </a
-                                    ><a [class.active]="activeTab === 2" (click)="setActiveTab(2)"
+                                    ><a
+                                      [class.active]="activeTab === 2"
+                                      (click)="setActiveTab(2)"
                                       class="px-5 py-[15px] rounded-full font-semibold text-sm leading-none text-gray-200 hover:bg-gray-400 transition disabled:pointer-events-none disabled:opacity-50 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 active:scale-[0.98] bg-transparent focus-visible:outline-white [&:hover>svg]:text-white [&_svg]:!text-gray-200"
-                                    
                                       >R2 </a
-                                    ><a [class.active]="activeTab === 3" (click)="setActiveTab(3)"
+                                    ><a
+                                      [class.active]="activeTab === 3"
+                                      (click)="setActiveTab(3)"
                                       class="px-5 py-[15px] rounded-full font-semibold text-sm leading-none text-gray-200 hover:bg-gray-400 transition disabled:pointer-events-none disabled:opacity-50 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 active:scale-[0.98] bg-transparent focus-visible:outline-white [&:hover>svg]:text-white [&_svg]:!text-gray-200"
-                                    
                                       >R3 </a
-                                    ><a [class.active]="activeTab === 4" (click)="setActiveTab(4)"
+                                    ><a
+                                      [class.active]="activeTab === 4"
+                                      (click)="setActiveTab(4)"
                                       class="px-5 py-[15px] rounded-full font-semibold text-sm leading-none betterhover:hover:bg-grey-400 text-gray-200 betterhover:hover:text-white hover:bg-gray-400 transition disabled:pointer-events-none disabled:opacity-50 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 active:scale-[0.98] bg-transparent focus-visible:outline-white [&:hover>svg]:text-white [&_svg]:!text-gray-200"
-                                 
                                       >R4 </a
-                                    ><a [class.active]="activeTab === 5" (click)="setActiveTab(5)"
+                                    ><a
+                                      [class.active]="activeTab === 5"
+                                      (click)="setActiveTab(5)"
                                       class="px-5 py-[15px] rounded-full font-semibold text-sm leading-none text-gray-200 hover:bg-gray-400 transition disabled:pointer-events-none disabled:opacity-50 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 active:scale-[0.98] bg-transparent focus-visible:outline-white [&:hover>svg]:text-white [&_svg]:!text-gray-200"
-                                  
                                       >R5 </a
-                                    ><a [class.active]="activeTab === 6" (click)="setActiveTab(6)"
+                                    ><a
+                                      [class.active]="activeTab === 6"
+                                      (click)="setActiveTab(6)"
                                       class="px-5 py-[15px] rounded-full font-semibold text-sm leading-none bg-grey-400 text-gray-200 hover:bg-gray-400 transition disabled:pointer-events-none disabled:opacity-50 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 active:scale-[0.98] bg-transparent focus-visible:outline-white [&:hover>svg]:text-white [&_svg]:!text-gray-200"
-                                    
                                       >R6 </a
-                                    ><a [class.active]="activeTab === 7" (click)="setActiveTab(7)"
+                                    ><a
+                                      [class.active]="activeTab === 7"
+                                      (click)="setActiveTab(7)"
                                       class="px-5 py-[15px] rounded-full font-semibold text-sm leading-none text-gray-200 hover:bg-gray-400 transition disabled:pointer-events-none disabled:opacity-50 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 active:scale-[0.98] bg-transparent focus-visible:outline-white [&:hover>svg]:text-white [&_svg]:!text-gray-200"
-                                     
                                       >R7 </a
-                                    ><a [class.active]="activeTab === 8" (click)="setActiveTab(8)"
+                                    ><a
+                                      [class.active]="activeTab === 8"
+                                      (click)="setActiveTab(8)"
                                       class="px-5 py-[15px] rounded-full font-semibold text-sm leading-none text-gray-200 hover:bg-gray-400 transition disabled:pointer-events-none disabled:opacity-50 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 active:scale-[0.98] bg-transparent focus-visible:outline-white [&:hover>svg]:text-white [&_svg]:!text-gray-200"
-                                    
                                       >R8 </a
-                                    ><a [class.active]="activeTab === 9" (click)="setActiveTab(9)"
+                                    ><a
+                                      [class.active]="activeTab === 9"
+                                      (click)="setActiveTab(9)"
                                       class="px-5 py-[15px] rounded-full font-semibold text-sm leading-none text-gray-200 hover:bg-gray-400 transition disabled:pointer-events-none disabled:opacity-50 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 active:scale-[0.98] bg-transparent focus-visible:outline-white [&:hover>svg]:text-white [&_svg]:!text-gray-200"
-                                     
                                       >R9 </a
-                                    ><a [class.active]="activeTab === 10" (click)="setActiveTab(10)"
+                                    ><a
+                                      [class.active]="activeTab === 10"
+                                      (click)="setActiveTab(10)"
                                       class="px-5 py-[15px] rounded-full font-semibold text-sm leading-none text-gray-200 hover:bg-gray-400 transition disabled:pointer-events-none disabled:opacity-50 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 active:scale-[0.98] bg-transparent focus-visible:outline-white [&:hover>svg]:text-white [&_svg]:!text-gray-200"
-                                     
                                       >R10
                                     </a>
                                   </div>
@@ -145,9 +263,7 @@
                                       <div class="cursor-help inline-flex">
                                         <button
                                           type="button"
-                                          
                                           class="inline-flex relative items-center gap-2 justify-center rounded-sm font-semibold whitespace-nowrap ring-offset-background transition disabled:pointer-events-none disabled:opacity-50 focus-visible:outline-2 focus-visible:outline-offset-2 active:scale-[0.98] bg-transparent text-grey-200 betterhover:hover:bg-transparent betterhover:hover:text-white focus-visible:text-white focus-visible:outline-none text-sm leading-none"
-                                        
                                         >
                                           <svg
                                             fill="currentColor"
@@ -221,516 +337,1497 @@
                                     <div class="flex m-0 p-0">
                                       <button
                                         type="button"
-                                      
                                         class="hover:bg-gray-400 ml-0 inline-flex relative items-center gap-2 justify-center font-semibold whitespace-nowrap ring-offset-background bg-transparent text-sm leading-none [&amp;_svg]:text-grey-200 [&amp;:hover>svg]:text-white py-[0.9375rem] px-[1.25rem] rounded-full !bg-grey-400 !text-white [&amp;_svg]:!text-white transition disabled:pointer-events-none disabled:opacity-50 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 active:scale-[0.98] focus-visible:outline-white [&:hover>svg]:text-white [&_svg]:!text-gray-200"
-                                       
                                       >
                                         <span>Fixed</span></button
                                       ><button
                                         type="button"
-                                       
                                         class="hover:bg-gray-400 ml-[5px] inline-flex relative items-center gap-2 justify-center font-semibold whitespace-nowrap ring-offset-background text-white betterhover:hover:bg-grey-400 betterhover:hover:text-white text-sm leading-none [&amp;_svg]:text-grey-200 [&amp;:hover>svg]:text-white py-[0.9375rem] px-[1.25rem] rounded-full transition disabled:pointer-events-none disabled:opacity-50 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 active:scale-[0.98] bg-transparent focus-visible:outline-white [&:hover>svg]:text-white [&_svg]:!text-gray-200"
-                                       
                                       >
                                         <span>Starting Price</span></button
                                       ><button
                                         type="button"
-                                       
                                         class="ml-[5px] hover:bg-gray-400 inline-flex relative items-center gap-2 justify-center font-semibold whitespace-nowrap ring-offset-background text-white betterhover:hover:bg-grey-400 betterhover:hover:text-white text-sm leading-none [&amp;_svg]:text-grey-200 [&amp;:hover>svg]:text-white py-[0.9375rem] px-[1.25rem] rounded-full transition disabled:pointer-events-none disabled:opacity-50 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 active:scale-[0.98] bg-transparent focus-visible:outline-white [&:hover>svg]:text-white [&_svg]:!text-gray-200"
-                                       
                                       >
                                         <span>Trifecta</span></button
                                       ><button
                                         type="button"
-                                        
                                         class="ml-[5px] hover:bg-gray-400 inline-flex relative items-center gap-2 justify-center font-semibold whitespace-nowrap ring-offset-background text-white betterhover:hover:bg-grey-400 betterhover:hover:text-white text-sm leading-none [&amp;_svg]:text-grey-200 [&amp;:hover>svg]:text-white py-[0.9375rem] px-[1.25rem] rounded-full transition disabled:pointer-events-none disabled:opacity-50 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 active:scale-[0.98] bg-transparent focus-visible:outline-white [&:hover>svg]:text-white [&_svg]:!text-gray-200"
-                                        
                                       >
                                         <span>Exacta</span></button
                                       ><button
                                         type="button"
-                                        
                                         class="ml-[5px] hover:bg-gray-400 inline-flex relative items-center gap-2 justify-center font-semibold whitespace-nowrap ring-offset-background text-white betterhover:hover:bg-grey-400 betterhover:hover:text-white text-sm leading-none [&amp;_svg]:text-grey-200 [&amp;:hover>svg]:text-white py-[0.9375rem] px-[1.25rem] rounded-full transition disabled:pointer-events-none disabled:opacity-50 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 active:scale-[0.98] bg-transparent focus-visible:outline-white [&:hover>svg]:text-white [&_svg]:!text-gray-200"
-                                     
                                       >
                                         <span>Quinella</span></button
                                       ><button
                                         type="button"
-                                        
                                         class="ml-[5px] hover:bg-gray-400 inline-flex relative items-center gap-2 justify-center font-semibold whitespace-nowrap ring-offset-background text-white betterhover:hover:bg-grey-400 betterhover:hover:text-white text-sm leading-none [&amp;_svg]:text-grey-200 [&amp;:hover>svg]:text-white py-[0.9375rem] px-[1.25rem] rounded-full transition disabled:pointer-events-none disabled:opacity-50 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 active:scale-[0.98] bg-transparent focus-visible:outline-white [&:hover>svg]:text-white [&_svg]:!text-gray-200"
-                                        
                                       >
                                         <span>First Four</span>
                                       </button>
                                     </div>
                                   </div>
                                 </div>
-                                
-                                  <div class="market-main">
-                                      <div class="market-sub">
-                                          <button type="button" class="Runners">10 Runners <div class="arrows ">
-                                                  <div class="arrow translate-y-[3px]">
-                                                      <svg fill="currentColor" viewBox="0 0 64 64" class="svg-icon ">
-                                                          <title></title>
-                                                          <path
-                                                              d="M32.271 17 9.201 40.071 16.128 47l16.145-16.145L48.418 47l6.93-6.929L32.275 17h-.005Z">
-                                                          </path>
-                                                      </svg>
-                                                  </div>
-                                                  <div class="arrow -translate-y-[3px]">
-                                                      <svg fill="currentColor" viewBox="0 0 64 64" class="svg-icon ">
-                                                          <title></title>
-                                                          <path
-                                                              d="M32.271 49.763 9.201 26.692l6.928-6.93 16.145 16.145 16.144-16.144 6.93 6.929-23.072 23.07h-.005Z">
-                                                          </path>
-                                                      </svg>
-                                                  </div>
-                                              </div>
-                                          </button>
-                                          <div class="flucs-container">
-                                              <label class="variant-default hover:text-white svelte">
-                                                  <input type="checkbox" class="hover:text-white svelte">
-                                                  <div class="flucs-text">Flucs</div> 
-                                                  <label class="inline-flex items-center cursor-pointer">
-                                                      <input type="checkbox" value="" class="sr-only peer" id="toggle" name="toggle" (click)="toggleVisibility()">
-                                                      <div class="toggle"></div>
-                                                      <span class="ms-3 text-sm font-medium text-gray-900 dark:text-gray-300"></span>
-                                                    </label>
-                                              </label>
-                                              <div class="win-contatiner">
-                                                  <button type="button" class="win-btn">Win
-                                                      <div class="arrows">
-                                                          <div class="arrow translate-y-[3px] ">
-                                                              <svg fill="currentColor" viewBox="0 0 64 64" class="svg-icon">
-                                                                  <title></title>
-                                                                  <path
-                                                                      d="M32.271 17 9.201 40.071 16.128 47l16.145-16.145L48.418 47l6.93-6.929L32.275 17h-.005Z">
-                                                                  </path>
-                                                              </svg>
-                                                          </div>
-                                                          <div class="arrow -translate-y-[3px] ">
-                                                              <svg fill="currentColor" viewBox="0 0 64 64" class="svg-icon ">
-                                                                  <title></title>
-                                                                  <path
-                                                                      d="M32.271 49.763 9.201 26.692l6.928-6.93 16.145 16.145 16.144-16.144 6.93 6.929-23.072 23.07h-.005Z">
-                                                                  </path>
-                                                              </svg>
-                                                          </div>
-                                                      </div>
-                                                  </button>
-                                                  <span class="place-text">Place</span>
-                                              </div>
+
+                                <div class="market-main">
+                                  <div class="market-sub">
+                                    <button type="button" class="Runners">
+                                      10 Runners
+                                      <div class="arrows">
+                                        <div (click)="toggleArrow()" [ngClass]="isArrowUpSelected ? 'text-white' : 'text-gray-400'" class="arrow translate-y-[3px]">
+                                          <svg
+                                            fill="currentColor"
+                                            viewBox="0 0 64 64"
+                                            class="svg-icon"
+                                          >
+                                            <title></title>
+                                            <path
+                                              d="M32.271 17 9.201 40.071 16.128 47l16.145-16.145L48.418 47l6.93-6.929L32.275 17h-.005Z"
+                                            ></path>
+                                          </svg>
+                                        </div>
+                                        <div   (click)="toggleArrow()" [ngClass]="!isArrowUpSelected ? 'text-white' : 'text-gray-400'" class="arrow -translate-y-[3px]">
+                                          <svg
+                                            fill="currentColor"
+                                            viewBox="0 0 64 64"
+                                            class="svg-icon"
+                                          >
+                                            <title></title>
+                                            <path
+                                              d="M32.271 49.763 9.201 26.692l6.928-6.93 16.145 16.145 16.144-16.144 6.93 6.929-23.072 23.07h-.005Z"
+                                            ></path>
+                                          </svg>
+                                        </div>
+                                      </div>
+                                    </button>
+                                    <div class="flucs-container">
+                                      <label
+                                        class="variant-default hover:text-white svelte"
+                                      >
+                                        <input
+                                          type="checkbox"
+                                          class="hover:text-white svelte"
+                                        />
+                                        <div class="flucs-text">Flucs</div>
+                                        <label
+                                          class="inline-flex items-center cursor-pointer"
+                                        >
+                                          <input
+                                            type="checkbox"
+                                            value=""
+                                            class="sr-only peer"
+                                            id="toggle"
+                                            name="toggle"
+                                            (click)="toggleVisibility()"
+                                          />
+                                          <div class="toggle"></div>
+                                          <span
+                                            class="ms-3 text-sm font-medium text-gray-900 dark:text-gray-300"
+                                          ></span>
+                                        </label>
+                                      </label>
+                                      <div class="win-contatiner">
+                                        <button type="button" class="win-btn">
+                                          Win
+                                          <div class="arrows">
+                                            <div (click)="toggleArrowWin()"
+                                            [ngClass]="isArrowWinSelected ? 'text-white' : 'text-gray-400'"
+                                              class="arrow translate-y-[3px]"
+                                            >
+                                              <svg
+                                                fill="currentColor"
+                                                viewBox="0 0 64 64"
+                                                class="svg-icon"
+                                              >
+                                                <title></title>
+                                                <path
+                                                  d="M32.271 17 9.201 40.071 16.128 47l16.145-16.145L48.418 47l6.93-6.929L32.275 17h-.005Z"
+                                                ></path>
+                                              </svg>
+                                            </div>
+                                            <div (click)="toggleArrowWin()" [ngClass]="!isArrowWinSelected ? 'text-white' : 'text-gray-400'"
+                                              class="arrow -translate-y-[3px]"
+                                            >
+                                              <svg
+                                                fill="currentColor"
+                                                viewBox="0 0 64 64"
+                                                class="svg-icon"
+                                              >
+                                                <title></title>
+                                                <path
+                                                  d="M32.271 49.763 9.201 26.692l6.928-6.93 16.145 16.145 16.144-16.144 6.93 6.929-23.072 23.07h-.005Z"
+                                                ></path>
+                                              </svg>
+                                            </div>
                                           </div>
+                                        </button>
+                                        <span class="place-text">Place</span>
+                                      </div>
+                                    </div>
+                                  </div>
+                                  <div class="divider-border"></div>
+                                  <div class="flex flex-col">
+                                    <div>
+                                      <div
+                                        role="button"
+                                        class="runner-card svelte-grid"
+                                      >
+                                        <div
+                                          class="flex flex-col items-center gap-1"
+                                        >
+                                          <div
+                                            class="silk-wrapper svelte-snmmmh"
+                                          >
+                                            <div
+                                              class="silk-icon svelte-snmmmh"
+                                              style="
+                                                background-image: url(https://silks.racingandsports.com.au/jockey/silks/12-nov-2024/381336/R1.png);
+                                                background-position: -360px 2px;
+                                              "
+                                            ></div>
+                                            <img
+                                              alt="Runner silk"
+                                              class="hidden"
+                                              src="https://silks.racingandsports.com.au/jockey/silks/12-nov-2024/381336/R1.png"
+                                            />
+                                          </div>
+                                          <div
+                                            class="chevron svelte-1cbx3va"
+                                            (click)="toggleMarket()"
+                                            [ngClass]="
+                                              !isMarketOpen
+                                                ? 'rotate-[180deg]'
+                                                : 'rotate-[360deg]'
+                                            "
+                                          >
+                                            <svg
+                                              fill="currentColor"
+                                              viewBox="0 0 64 64"
+                                              class="svg-icon"
+                                            >
+                                              <title></title>
+                                              <path
+                                                d="M32.271 49.763 9.201 26.692l6.928-6.93 16.145 16.145 16.144-16.144 6.93 6.929-23.072 23.07h-.005Z"
+                                              ></path>
+                                            </svg>
+                                          </div>
+                                        </div>
+                                        <div class="truncate">
+                                          <div class="flex flex-col gap-1">
+                                            <div class="luminous-continer">
+                                              <span class="luminous"
+                                                ><span class="tabular-nums"
+                                                  >10.</span
+                                                >
+                                                Luminous Beauty</span
+                                              >
+                                              <span class="luminous-num"
+                                                >(10)</span
+                                              >
+                                            </div>
+                                            <div class="w-content">
+                                              <div class="alignment">
+                                                <div
+                                                  class="badge variant-default"
+                                                >
+                                                  W
+                                                </div>
+                                                <span
+                                                  title="54kg"
+                                                  class="weight"
+                                                  >54kg</span
+                                                >
+                                              </div>
+                                              <div class="alignment">
+                                                <div
+                                                  class="badge variant-default"
+                                                >
+                                                  J
+                                                </div>
+                                                <span
+                                                  title="R. Tanaka"
+                                                  class="weight"
+                                                  >R. Tanaka</span
+                                                >
+                                              </div>
+                                              <div class="alignment">
+                                                <div
+                                                  class="badge variant-default"
+                                                >
+                                                  F
+                                                </div>
+                                                <span
+                                                  title="0x7004"
+                                                  class="weight"
+                                                  >0x7004</span
+                                                >
+                                              </div>
+                                              <div class="alignment">
+                                                <div
+                                                  class="badge variant-default"
+                                                >
+                                                  T
+                                                </div>
+                                                <span
+                                                  title="J. Murata"
+                                                  class="weight"
+                                                  >J. Murata</span
+                                                >
+                                              </div>
+                                            </div>
+                                          </div>
+                                        </div>
+                                        <div class="right-btn">
+                                          <div
+                                            class="py-1"
+                                            *ngIf="isFluctuationVisible"
+                                          >
+                                            <div
+                                              class="fluctuations svelte-1o0p6vf"
+                                            >
+                                              <div class="fluc svelte-1o0p6vf">
+                                                <span>OP 13.00</span>
+                                              </div>
+                                              <div class="fluc svelte-1o0p6vf">
+                                                <span>6.40</span>
+                                                <div
+                                                  class="direction svelte-1o0p6vf"
+                                                >
+                                                  <div
+                                                    class="translate-y-[-5px]"
+                                                  >
+                                                    <svg
+                                                      fill="none"
+                                                      viewBox="0 0 96 80"
+                                                      class="svg-icon"
+                                                    >
+                                                      <title></title>
+                                                      <path
+                                                        d="M48.51 65.684 18.192 15.158h60.632L48.509 65.684Z"
+                                                        fill="#FF2247"
+                                                      ></path>
+                                                    </svg>
+                                                  </div>
+                                                </div>
+                                              </div>
+                                              <div class="fluc svelte-1o0p6vf">
+                                                <span>6.50</span>
+                                                <div
+                                                  class="direction svelte-1o0p6vf"
+                                                >
+                                                  <div
+                                                    class="translate-y-[-5px]"
+                                                  >
+                                                    <svg
+                                                      fill="none"
+                                                      viewBox="0 0 96 80"
+                                                      class="svg-icon"
+                                                    >
+                                                      <title></title>
+                                                      <path
+                                                        d="m48.507 15.158 30.316 50.526H18.191l30.316-50.526Z"
+                                                        fill="#00E700"
+                                                      ></path>
+                                                    </svg>
+                                                  </div>
+                                                </div>
+                                              </div>
+                                            </div>
+                                          </div>
+                                          <div class="right-btn-con">
+                                            <button class="button">
+                                              <div
+                                                class="group-active:scale-95"
+                                              >
+                                                <div class="relative">
+                                                  <span class="btn-amount"
+                                                    >4.40</span
+                                                  >
+                                                  <div
+                                                    class="arrow-odds align-left svelte-hfoo7h"
+                                                  ></div>
+                                                </div>
+                                              </div>
+                                            </button>
+                                            <button class="button">
+                                              <div
+                                                class="group-active:scale-95"
+                                              >
+                                                <div class="relative">
+                                                  <span class="btn-amount"
+                                                    >1.50</span
+                                                  >
+                                                  <div
+                                                    class="arrow-odds align-left svelte-hfoo7h"
+                                                  ></div>
+                                                </div>
+                                              </div>
+                                            </button>
+                                          </div>
+                                        </div>
                                       </div>
                                       <div class="divider-border"></div>
-                                      <div class="flex flex-col">
-                                          <div>
-                                              <div role="button" class="runner-card  svelte-grid">
-                                                  <div class="flex flex-col items-center gap-1">
-                                                      <div class="silk-wrapper svelte-snmmmh">
-                                                          <div class="silk-icon svelte-snmmmh"
-                                                              style="background-image:url(https://silks.racingandsports.com.au/jockey/silks/12-nov-2024/381336/R1.png); background-position:-360px 2px">
-                                                          </div>
-                                                          <img alt="Runner silk" class="hidden"
-                                                              src="https://silks.racingandsports.com.au/jockey/silks/12-nov-2024/381336/R1.png">
-                                                      </div>
-                                                      <div class="chevron svelte-1cbx3va" (click)="toggleMarket()"         [ngClass]="!isMarketOpen ? 'rotate-[180deg]' : 'rotate-[360deg]'" >
-                                                          <svg fill="currentColor" viewBox="0 0 64 64" class="svg-icon ">
-                                                              <title></title>
-                                                              <path
-                                                                  d="M32.271 49.763 9.201 26.692l6.928-6.93 16.145 16.145 16.144-16.144 6.93 6.929-23.072 23.07h-.005Z">
-                                                              </path>
-                                                          </svg>
-                                                      </div>
-                                                  </div>
-                                                  <div class="truncate">
-                                                      <div class="flex flex-col gap-1">
-                                                          <div class="luminous-continer">
-                                                              <span class="luminous"><span class="tabular-nums">10.</span> Luminous Beauty</span>
-                                                              <span class="luminous-num">(10)</span>
-                                                          </div>
-                                                          <div class="w-content">
-                                                              <div class="alignment">
-                                                                  <div class="badge variant-default">
-                                                                      W</div> <span title="54kg" class="weight">54kg</span>
-                                                              </div>
-                                                              <div class="alignment">
-                                                                  <div class="badge variant-default">
-                                                                      J</div> <span title="R. Tanaka" class="weight">R.
-                                                                      Tanaka</span>
-                                                              </div>
-                                                              <div class="alignment">
-                                                                  <div class="badge variant-default">
-                                                                      F</div> <span title="0x7004" class="weight">0x7004</span>
-                                                              </div>
-                                                              <div class="alignment">
-                                                                  <div class="badge variant-default">
-                                                                      T</div> <span title="J. Murata" class="weight">J.
-                                                                      Murata</span>
-                                                              </div>
-                                                          </div>
-                                                      </div>
-                                                  </div>
-                                                  <div class="right-btn">
-                                                      <div class="py-1" *ngIf="isFluctuationVisible">
-                                                          <div class="fluctuations svelte-1o0p6vf">
-                                                              <div class="fluc svelte-1o0p6vf"><span>OP 13.00</span> </div>
-                                                              <div class="fluc svelte-1o0p6vf"><span>6.40</span>
-                                                                  <div class="direction svelte-1o0p6vf">
-                                                                      <div class="translate-y-[-5px]"><svg fill="none" viewBox="0 0 96 80"
-                                                                              class="svg-icon " >
-                                                                              <title></title>
-                                                                              <path d="M48.51 65.684 18.192 15.158h60.632L48.509 65.684Z"
-                                                                                  fill="#FF2247"></path>
-                                                                          </svg></div>
-                                                                  </div>
-                                                              </div>
-                                                              <div class="fluc svelte-1o0p6vf"><span>6.50</span>
-                                                                  <div class="direction svelte-1o0p6vf">
-                                                                      <div class="translate-y-[-5px]"><svg fill="none" viewBox="0 0 96 80" class="svg-icon " >
-                                                                              <title></title>
-                                                                              <path d="m48.507 15.158 30.316 50.526H18.191l30.316-50.526Z"
-                                                                                  fill="#00E700"></path>
-                                                                          </svg></div>
-                                                                  </div>
-                                                              </div>
-                                                          </div>
-                                                      </div>
-                                                      <div class="right-btn-con"><button class="button">
-                                                              <div class="group-active:scale-95">
-                                                                  <div class="relative" ><span class="btn-amount ">4.40</span>
-                                                                      <div class="arrow-odds align-left svelte-hfoo7h"></div>
-                                                                  </div>
-                                                              </div>
-                                                          </button> <button class="button">
-                                                              <div class="group-active:scale-95">
-                                                                  <div class="relative" ><span class="btn-amount ">1.50</span>
-                                                                      <div class="arrow-odds align-left svelte-hfoo7h"></div>
-                                                                  </div>
-                                                              </div>
-                                                          </button></div>
-                                                  </div>
-                                              </div>
-                                              <div class="divider-border"></div>
-                                              <div *ngIf="isMarketOpen">
-                                                <div class="flex flex-col gap-4 pb-4 px-3">
-                                                  <div
-                                                    class="h-[0.125rem] bg-[rgb(26,44,56)] m-0 p-0"
-                                                  >
-                                                  </div>
-                                                    <div
-                                                      class="flex flex-wrap gap-y-1 gap-x-10"
-                                                    >
-                                                      <div class="truncat">
-                                                        <span
-                                                          class="text-white text-sm font-semibold"
-                                                          >Jockey</span
-                                                        >
-                                                        <span class="jockey-text"
-                                                          >Gavin Lerena</span
-                                                        >
-                                                      </div>
-                                                      <div class="truncat text-[#b1bad3]">
-                                                        <span
-                                                          class="text-white text-sm font-semibold"
-                                                          >Trainer</span
-                                                        >
-                                                        <span class="jockey-text"
-                                                          >J A Janse Van Vuuren</span
-                                                        >
-                                                      </div>
-                                                      <div class="truncat ">
-                                                        <span
-                                                          class="text-white text-sm font-semibold"
-                                                          >Bio</span
-                                                        >
-                                                        <span class="jockey-text">5yo B M</span>
-                                                      </div>
-                                                      <span class="truncat"
-                                                        ><span
-                                                          class="text-white text-sm font-semibold"
-                                                          >Sire</span
-                                                        >
-                                                        <span class="jockey-text"
-                                                          >Time Thief (AUS)</span
-                                                        ></span
-                                                      >
-                                                      <div class="truncat">
-                                                        <span
-                                                          class="text-white text-sm font-semibold"
-                                                          >Form</span
-                                                        >
-                                                        <span class="jockey-text">11243x</span>
-                                                      </div>
-                                                      
-                                                    </div>
-                                                 
-                                                
-                                                    <div
-                                                    class="h-[0.125rem] bg-[rgb(26,44,56)] m-0 p-0"
-                                                  >
-                                                  </div>
-                                              <div class="flex gap-2 flex-col">
-                                                <span class="runners-text"
-                                                  >Runner Comments</span
-                                                >
-                                                <div
-                                                  class="bg-[rgb(26,44,56)] py-2 px-3 rounded"
-                                                >
-                                                  <div
-                                                    class="w-full h-fit line-clamp-3 text-left text-sm"
-                                                    aria-expanded="false"
-                                                  >
-                                                    <div>
-                                                      Mare returning from a spell and has won
-                                                      previously when first up. Finished off
-                                                      last preparation third of 7 at this
-                                                      track July 27 over 1100m, 2 len behind
-                                                      Exchange Student carrying 60kg at $1.70.
-                                                      First up last campaign fifth of 13 at
-                                                      Greyville September 17 2023 over 1400m,
-                                                      0.8 len behind Except Temptation
-                                                      carrying 56.5kg at $5. Expect a bold
-                                                      showing.
-                                                    </div>
-                                                  </div>
-                                                </div>
-                                              </div>
-                                              
-                                              <div
-                                                class="grid auto-cols-max gap-1 bg-[rgb(33_55_67)] [grid-template-columns:repeat(8,1fr)]"
+                                      <div  class=" transition-all duration-500 overflow-hidden" [ngClass]="{
+                                        '  max-h-[1200px] h-full': isMarketOpen,
+                                        'max-h-0': !isMarketOpen
+                                      }">
+                                        <div
+                                          class="flex flex-col gap-4 pb-4 px-3"
+                                        >
+                                          <div
+                                            class="h-[0.125rem] bg-[rgb(26,44,56)] m-0 p-0"
+                                          ></div>
+                                          <div
+                                            class="flex flex-wrap gap-y-1 gap-x-10"
+                                          >
+                                            <div class="truncat">
+                                              <span
+                                                class="text-white text-sm font-semibold"
+                                                >Jockey</span
                                               >
-                                                <div
-                                                  class="flex flex-col !bg-[rgb(26,44,56)] rounded px-3 py-2"
-                                                >
-                                                  <span class="head-text">Last 10 Runs</span>
-                                                  <span class="sub-text">4371312444</span>
-                                                </div>
-                                                <div
-                                                  class="flex flex-col bg-[rgb(26,44,56)] rounded px-3 py-2"
-                                                >
-                                                  <span class="head-text">Career</span>
-                                                  <span class="sub-text">26: 3 2 2</span>
-                                                </div>
-                                                <div
-                                                  class="flex flex-col bg-[rgb(26,44,56)] rounded px-3 py-2"
-                                                >
-                                                  <span class="head-text">Prize (AUD)</span>
-                                                  <span class="sub-text">-</span>
-                                                </div>
-                                                <div
-                                                  class="flex flex-col bg-[rgb(26,44,56)] rounded px-3 py-2"
-                                                >
-                                                  <span class="head-text">Speed Map</span>
-                                                  <span class="sub-text">Leader</span>
-                                                </div>
-                                                <div
-                                                  class="flex flex-col bg-[rgb(26,44,56)] rounded px-3 py-2"
-                                                >
-                                                  <span class="head-text">Track</span>
-                                                  <span class="sub-text">2: 0 0 0</span>
-                                                </div>
-                                                <div
-                                                  class="flex flex-col bg-[rgb(26,44,56)] rounded px-3 py-2"
-                                                >
-                                                  <span class="head-text">Distance</span>
-                                                  <span class="sub-text">9: 2 1 2</span>
-                                                </div>
-                                                <div
-                                                  class="flex flex-col bg-[rgb(26,44,56)] rounded px-3 py-2"
-                                                >
-                                                  <span class="head-text"
-                                                    >Track / Distance</span
-                                                  >
-                                                  <span class="sub-text">0: 0 0 0</span>
-                                                </div>
-                                                <div
-                                                  class="flex flex-col bg-[rgb(26,44,56)] rounded px-3 py-2"
-                                                >
-                                                  <span class="head-text">Dirt</span>
-                                                  <span class="sub-text">0: 0 0 0</span>
-                                                </div>
-                                                <div
-                                                  class="flex flex-col bg-[rgb(26,44,56)] rounded px-3 py-2"
-                                                >
-                                                  <span class="head-text">Firm</span>
-                                                  <span class="sub-text">0: 0 0 0</span>
-                                                </div>
-                                                <div
-                                                  class="flex flex-col bg-[rgb(26,44,56)] rounded px-3 py-2"
-                                                >
-                                                  <span class="head-text">Good</span>
-                                                  <span class="sub-text">25: 3 2 2</span>
-                                                </div>
-                                                <div
-                                                  class="flex flex-col bg-[rgb(26,44,56)] rounded px-3 py-2"
-                                                >
-                                                  <span class="head-text">Soft</span>
-                                                  <span class="sub-text">0: 0 0 0</span>
-                                                </div>
-                                                <div
-                                                  class="flex flex-col bg-[rgb(26,44,56)] rounded px-3 py-2"
-                                                >
-                                                  <span class="head-text">Heavy</span>
-                                                  <span class="sub-text">0: 0 0 0</span>
-                                                </div>
-                                                <div
-                                                  class="flex flex-col bg-[rgb(26,44,56)] rounded px-3 py-2"
-                                                >
-                                                  <span class="head-text">Synthetic</span>
-                                                  <span class="sub-text">0: 0 0 0</span>
-                                                </div>
-                                                <div
-                                                  class="flex flex-col bg-[rgb(26,44,56)] rounded px-3 py-2"
-                                                >
-                                                  <span class="head-text">1st Up</span>
-                                                  <span class="sub-text">3: 0 0 0</span>
-                                                </div>
-                                                <div
-                                                  class="flex flex-col bg-[rgb(26,44,56)] rounded px-3 py-2"
-                                                >
-                                                  <span class="head-text">2nd Up</span>
-                                                  <span class="sub-text">3: 0 0 0</span>
-                                                </div>
-                                                <div
-                                                  class="flex flex-col bg-[rgb(26,44,56)] rounded px-3 py-2"
-                                                >
-                                                  <span class="head-text">3rd Up</span>
-                                                  <span class="sub-text">2: 0 0 0</span>
-                                                </div>
-                                              </div>
-                                              
-                                              <div
-                                                class="flex flex-col gap-2"
-                                                
+                                              <span class="jockey-text"
+                                                >Gavin Lerena</span
                                               >
-                                                <span
-                                                  class="runners-text"
-                                                  
-                                                  >Race History</span
-                                                >
-                                                <div
-                                                  class="history-list"
-                                                  
-                                                >
-                                                  <div
-                                                    class="history-head"
-                                                    
-                                                  >
-                                                    <div
-                                                      slot="header"
-                                                      class="flex flex-1 capitalize"
-                                                      
-                                                    >
-                                                      <span
-                                                        class=" basis-[10px] min-w-[40px] runners-text"
-                                                   
-                                                        >4/11</span
-                                                      >
-                                                      <span
-                                                        class="basis-[20px] min-w-[90px] runners-text"
-                                                        
-                                                        >Oct 31, 2024</span
-                                                      >
-                                                      <span
-                                                        class="basis-[20px]  runners-text"
-                                                        
-                                                        >Vaal</span
-                                                      >
-                                                      <span
-                                                        class="basis-[15px]  runners-text"
-                                                      
-                                                        >1100m</span
-                                                      >
-                                                      <span
-                                                        class="basis-[15px]  runners-text"
-                                                    
-                                                        >-</span
-                                                      >
-                                                    </div>
-                                                    <div
-                                                      class="flex items-center"
-                                                      
-                                                    >
-                                                      <svg
-                                                        fill="currentColor"
-                                                        viewBox="0 0 64 64"
-                                                        class="svg-icon"
-                                                        style="transform: rotate(90deg)"
-                                                      >
-                                                        <title></title>
-                                                        <path
-                                                          d="M32.271 49.763 9.201 26.692l6.928-6.93 16.145 16.145 16.144-16.144 6.93 6.929-23.072 23.07h-.005Z"
-                                                        ></path>
-                                                      </svg>
-                                                    </div>
-                                                  </div>
-                                                </div>
-                                                
-                                                <div
-                                                  class="flex w-full justify-center mt-3 mb-2"
-                                                  
-                                                >
-                                                  <button
-                                                    type="button"
-                                                    
-                                                    class="inline-flex relative items-center gap-2 justify-center rounded-sm font-semibold whitespace-nowrap ring-offset-background transition disabled:pointer-events-none disabled:opacity-50 focus-visible:outline-2 focus-visible:outline-offset-2 active:scale-[0.98] bg-transparent text-grey-200 betterhover:hover:bg-transparent betterhover:hover:text-white focus-visible:text-white focus-visible:outline-none text-sm leading-none"
-                                                  
-                                                  >
-                                                    Load More
-                                                  </button>
-                                                </div>
-                                                
-                                              </div>
-                                              </div>
-                                              </div>
-                                            
-                                          </div>
-                                          <div class="flex flex-col">
-                                            <div class=" divider-border"></div>
-                                            <div class="other-con">
-                                                <span class="other-text variant-subtle  ">Other Rules: Three place dividends paid.</span> <span
-                                                    class="other-text  variant-subtle">JP-SP: Japanese-Starting Price is derived from a parimutuel
-                                                    dividend and announced
-                                                    post-race.</span>
                                             </div>
+                                            <div class="truncat text-[#b1bad3]">
+                                              <span
+                                                class="text-white text-sm font-semibold"
+                                                >Trainer</span
+                                              >
+                                              <span class="jockey-text"
+                                                >J A Janse Van Vuuren</span
+                                              >
+                                            </div>
+                                            <div class="truncat">
+                                              <span
+                                                class="text-white text-sm font-semibold"
+                                                >Bio</span
+                                              >
+                                              <span class="jockey-text"
+                                                >5yo B M</span
+                                              >
+                                            </div>
+                                            <span class="truncat"
+                                              ><span
+                                                class="text-white text-sm font-semibold"
+                                                >Sire</span
+                                              >
+                                              <span class="jockey-text"
+                                                >Time Thief (AUS)</span
+                                              ></span
+                                            >
+                                            <div class="truncat">
+                                              <span
+                                                class="text-white text-sm font-semibold"
+                                                >Form</span
+                                              >
+                                              <span class="jockey-text"
+                                                >11243x</span
+                                              >
+                                            </div>
+                                          </div>
+
+                                          <div
+                                            class="h-[0.125rem] bg-[rgb(26,44,56)] m-0 p-0"
+                                          ></div>
+                                          <div class="flex gap-2 flex-col">
+                                            <span class="runners-text"
+                                              >Runner Comments</span
+                                            >
+                                            <div
+                                              class="bg-[rgb(26,44,56)] py-2 px-3 rounded"
+                                            >
+                                              <div
+                                                class="w-full h-fit line-clamp-3 text-left text-sm"
+                                                aria-expanded="false"
+                                              >
+                                                <div>
+                                                  Mare returning from a spell
+                                                  and has won previously when
+                                                  first up. Finished off last
+                                                  preparation third of 7 at this
+                                                  track July 27 over 1100m, 2
+                                                  len behind Exchange Student
+                                                  carrying 60kg at $1.70. First
+                                                  up last campaign fifth of 13
+                                                  at Greyville September 17 2023
+                                                  over 1400m, 0.8 len behind
+                                                  Except Temptation carrying
+                                                  56.5kg at $5. Expect a bold
+                                                  showing.
+                                                </div>
+                                              </div>
+                                            </div>
+                                          </div>
+
+                                          <div
+                                            class="grid auto-cols-max gap-1 bg-[rgb(33_55_67)] [grid-template-columns:repeat(8,1fr)]"
+                                          >
+                                            <div
+                                              class="flex flex-col !bg-[rgb(26,44,56)] rounded px-3 py-2"
+                                            >
+                                              <span class="head-text"
+                                                >Last 10 Runs</span
+                                              >
+                                              <span class="sub-text"
+                                                >4371312444</span
+                                              >
+                                            </div>
+                                            <div
+                                              class="flex flex-col bg-[rgb(26,44,56)] rounded px-3 py-2"
+                                            >
+                                              <span class="head-text"
+                                                >Career</span
+                                              >
+                                              <span class="sub-text"
+                                                >26: 3 2 2</span
+                                              >
+                                            </div>
+                                            <div
+                                              class="flex flex-col bg-[rgb(26,44,56)] rounded px-3 py-2"
+                                            >
+                                              <span class="head-text"
+                                                >Prize (AUD)</span
+                                              >
+                                              <span class="sub-text">-</span>
+                                            </div>
+                                            <div
+                                              class="flex flex-col bg-[rgb(26,44,56)] rounded px-3 py-2"
+                                            >
+                                              <span class="head-text"
+                                                >Speed Map</span
+                                              >
+                                              <span class="sub-text"
+                                                >Leader</span
+                                              >
+                                            </div>
+                                            <div
+                                              class="flex flex-col bg-[rgb(26,44,56)] rounded px-3 py-2"
+                                            >
+                                              <span class="head-text"
+                                                >Track</span
+                                              >
+                                              <span class="sub-text"
+                                                >2: 0 0 0</span
+                                              >
+                                            </div>
+                                            <div
+                                              class="flex flex-col bg-[rgb(26,44,56)] rounded px-3 py-2"
+                                            >
+                                              <span class="head-text"
+                                                >Distance</span
+                                              >
+                                              <span class="sub-text"
+                                                >9: 2 1 2</span
+                                              >
+                                            </div>
+                                            <div
+                                              class="flex flex-col bg-[rgb(26,44,56)] rounded px-3 py-2"
+                                            >
+                                              <span class="head-text"
+                                                >Track / Distance</span
+                                              >
+                                              <span class="sub-text"
+                                                >0: 0 0 0</span
+                                              >
+                                            </div>
+                                            <div
+                                              class="flex flex-col bg-[rgb(26,44,56)] rounded px-3 py-2"
+                                            >
+                                              <span class="head-text"
+                                                >Dirt</span
+                                              >
+                                              <span class="sub-text"
+                                                >0: 0 0 0</span
+                                              >
+                                            </div>
+                                            <div
+                                              class="flex flex-col bg-[rgb(26,44,56)] rounded px-3 py-2"
+                                            >
+                                              <span class="head-text"
+                                                >Firm</span
+                                              >
+                                              <span class="sub-text"
+                                                >0: 0 0 0</span
+                                              >
+                                            </div>
+                                            <div
+                                              class="flex flex-col bg-[rgb(26,44,56)] rounded px-3 py-2"
+                                            >
+                                              <span class="head-text"
+                                                >Good</span
+                                              >
+                                              <span class="sub-text"
+                                                >25: 3 2 2</span
+                                              >
+                                            </div>
+                                            <div
+                                              class="flex flex-col bg-[rgb(26,44,56)] rounded px-3 py-2"
+                                            >
+                                              <span class="head-text"
+                                                >Soft</span
+                                              >
+                                              <span class="sub-text"
+                                                >0: 0 0 0</span
+                                              >
+                                            </div>
+                                            <div
+                                              class="flex flex-col bg-[rgb(26,44,56)] rounded px-3 py-2"
+                                            >
+                                              <span class="head-text"
+                                                >Heavy</span
+                                              >
+                                              <span class="sub-text"
+                                                >0: 0 0 0</span
+                                              >
+                                            </div>
+                                            <div
+                                              class="flex flex-col bg-[rgb(26,44,56)] rounded px-3 py-2"
+                                            >
+                                              <span class="head-text"
+                                                >Synthetic</span
+                                              >
+                                              <span class="sub-text"
+                                                >0: 0 0 0</span
+                                              >
+                                            </div>
+                                            <div
+                                              class="flex flex-col bg-[rgb(26,44,56)] rounded px-3 py-2"
+                                            >
+                                              <span class="head-text"
+                                                >1st Up</span
+                                              >
+                                              <span class="sub-text"
+                                                >3: 0 0 0</span
+                                              >
+                                            </div>
+                                            <div
+                                              class="flex flex-col bg-[rgb(26,44,56)] rounded px-3 py-2"
+                                            >
+                                              <span class="head-text"
+                                                >2nd Up</span
+                                              >
+                                              <span class="sub-text"
+                                                >3: 0 0 0</span
+                                              >
+                                            </div>
+                                            <div
+                                              class="flex flex-col bg-[rgb(26,44,56)] rounded px-3 py-2"
+                                            >
+                                              <span class="head-text"
+                                                >3rd Up</span
+                                              >
+                                              <span class="sub-text"
+                                                >2: 0 0 0</span
+                                              >
+                                            </div>
+                                          </div>
+
+                                          <div class="flex flex-col gap-2">
+                                            <span class="runners-text"
+                                              >Race History</span
+                                            >
+                                            <div class="history-list">
+                                              <div class="history-head">
+                                                <div
+                                                  slot="header"
+                                                  class="flex flex-1 capitalize"
+                                                >
+                                                  <span
+                                                    class="basis-[10px] min-w-[40px] runners-text"
+                                                    >4/11</span
+                                                  >
+                                                  <span
+                                                    class="basis-[20px] min-w-[90px] runners-text"
+                                                    >Oct 31, 2024</span
+                                                  >
+                                                  <span
+                                                    class="basis-[20px] runners-text"
+                                                    >Vaal</span
+                                                  >
+                                                  <span
+                                                    class="basis-[15px] runners-text"
+                                                    >1100m</span
+                                                  >
+                                                  <span
+                                                    class="basis-[15px] runners-text"
+                                                    >-</span
+                                                  >
+                                                </div>
+                                                <div    [ngClass]="
+                                                !isTabsData
+                                                   ? 'rotate-[360deg]'
+                                                  : 'rotate-[270deg]'
+                                              "
+                                                (click)="toggleTabs()" class="flex items-center">
+                                                  <svg
+                                                    fill="currentColor"
+                                                    viewBox="0 0 64 64"
+                                                    class="svg-icon"
+                                                    style="
+                                                      transform: rotate(90deg);
+                                                    "
+                                                  >
+                                                    <title></title>
+                                                    <path
+                                                      d="M32.271 49.763 9.201 26.692l6.928-6.93 16.145 16.145 16.144-16.144 6.93 6.929-23.072 23.07h-.005Z"
+                                                    ></path>
+                                                  </svg>
+                                                </div>
+                                              </div>
+                                              <div class=" transition-all duration-500 overflow-hidden" [ngClass]="{
+                                                '  max-h-[1200px] h-full': isTabsData,
+                                                'max-h-0': !isTabsData
+                                              }">
+                                              <div 
+                                                class="history-content"
+                                                
+                                              >
+                                                <div >
+                                                  <div
+                                                    class="runner-history-accordin"
+                                                    
+                                                  >
+                                                    <div
+                                                      class="runner-history-item"
+                                                      
+                                                    >
+                                                      <span
+                                                        class="runner-history-text"
+                                                        
+                                                        >Margin</span
+                                                      >
+                                                      <span
+                                                        class="history-subtext"
+                                                        
+                                                        >1L</span
+                                                      >
+                                                    </div>
+                                                    <div
+                                                      class="runner-history-item"
+                                                      
+                                                    >
+                                                      <span
+                                                        class="runner-history-text"
+                                                   
+                                                        >Jockey</span
+                                                      >
+                                                      <span
+                                                        class="history-subtext"
+                                                       
+                                                        >Masaaki Ohata
+                                                        (54kg)</span
+                                                      >
+                                                    </div>
+                                                    <div
+                                                      class="runner-history-item"
+                                                      
+                                                    >
+                                                      <span
+                                                        class="runner-history-text"
+                                                        
+                                                        >Barrier</span
+                                                      >
+                                                      <span
+                                                        class="history-subtext"
+                                                       
+                                                        >8</span
+                                                      >
+                                                    </div>
+                                                    <div
+                                                      class="runner-history-item"
+                                                      
+                                                    >
+                                                      <span
+                                                        class="runner-history-text"
+                                                      
+                                                        >Time</span
+                                                      >
+                                                      <span
+                                                        class="history-subtext"
+                                                    
+                                                        >1:35.30</span
+                                                      >
+                                                    </div>
+                                                    <div
+                                                      class="runner-history-item"
+                                                      
+                                                    >
+                                                      <span
+                                                        class="runner-history-text"
+                                                      
+                                                        >Class</span
+                                                      >
+                                                      <span
+                                                        class="history-subtext"
+                                                        
+                                                        >C2 3U</span
+                                                      >
+                                                    </div>
+                                                    <div
+                                                      class="runner-history-item"
+                                                      
+                                                    >
+                                                      <span
+                                                        class="runner-history-text"
+                                                      
+                                                        >SP</span
+                                                      >
+                                                      <span
+                                                        class="history-subtext"
+                                                     
+                                                        >$2.7</span
+                                                      >
+                                                    </div>
+                                                    <div
+                                                      class="runner-history-item"
+                                                      
+                                                    >
+                                                      <span
+                                                        class="runner-history-text"
+                                                       
+                                                        >Winner</span
+                                                      >
+                                                      <span
+                                                        class="history-subtext"
+                                                     
+                                                        >Regno (56kg)</span
+                                                      >
+                                                    </div>
+                                                    <div
+                                                      class="runner-history-item"
+                                                      
+                                                    >
+                                                      <span
+                                                        class="runner-history-text"
+                                                      
+                                                        >2nd</span
+                                                      >
+                                                      <span
+                                                        class="history-subtext"
+                                                     
+                                                        >Reine Du Sable
+                                                        (54kg)</span
+                                                      >
+                                                    </div>
+                                                  </div>
+                                                </div>
+                                              </div>
+                                              </div>
+                                            </div>
+
+                                            <div
+                                              class="flex w-full justify-center mt-3 mb-2"
+                                            >
+                                              <button
+                                                type="button"
+                                                class="inline-flex relative items-center gap-2 justify-center rounded-sm font-semibold whitespace-nowrap ring-offset-background transition disabled:pointer-events-none disabled:opacity-50 focus-visible:outline-2 focus-visible:outline-offset-2 active:scale-[0.98] bg-transparent text-grey-200 betterhover:hover:bg-transparent betterhover:hover:text-white focus-visible:text-white focus-visible:outline-none text-sm leading-none"
+                                              >
+                                                Load More
+                                              </button>
+                                            </div>
+                                          </div>
                                         </div>
-<!-- Add toggle==================================================== -->
+                                      </div>
+                                    </div>
 
+                                    <!-- Add toggle==================================================== -->
+                                  </div>
+                                  <div class="divider-border"></div>
+                                  <div class="flex flex-col">
+                                    <div>
+                                      <div
+                                        role="button"
+                                        class="runner-card svelte-grid"
+                                      >
+                                        <div
+                                          class="flex flex-col items-center gap-1"
+                                        >
+                                          <div
+                                            class="silk-wrapper svelte-snmmmh"
+                                          >
+                                            <div
+                                              class="silk-icon svelte-snmmmh"
+                                              style="
+                                                background-image: url(https://silks.racingandsports.com.au/jockey/silks/12-nov-2024/381336/R1.png);
+                                                background-position: -360px 2px;
+                                              "
+                                            ></div>
+                                            <img
+                                              alt="Runner silk"
+                                              class="hidden"
+                                              src="https://silks.racingandsports.com.au/jockey/silks/12-nov-2024/381336/R1.png"
+                                            />
+                                          </div>
+                                          <div
+                                            class="chevron svelte-1cbx3va"
+                                            (click)="toggleMarketDetail()"
+                                            [ngClass]="
+                                              !isMarketDetailOpen
+                                                ? 'rotate-[180deg]'
+                                                : 'rotate-[360deg]'
+                                            "
+                                          >
+                                            <svg
+                                              fill="currentColor"
+                                              viewBox="0 0 64 64"
+                                              class="svg-icon"
+                                            >
+                                              <title></title>
+                                              <path
+                                                d="M32.271 49.763 9.201 26.692l6.928-6.93 16.145 16.145 16.144-16.144 6.93 6.929-23.072 23.07h-.005Z"
+                                              ></path>
+                                            </svg>
+                                          </div>
+                                        </div>
+                                        <div class="truncate">
+                                          <div class="flex flex-col gap-1">
+                                            <div class="luminous-continer">
+                                              <span class="luminous"
+                                                ><span class="tabular-nums"
+                                                  >10.</span
+                                                >
+                                                Luminous Beauty</span
+                                              >
+                                              <span class="luminous-num"
+                                                >(10)</span
+                                              >
+                                            </div>
+                                            <div class="w-content">
+                                              <div class="alignment">
+                                                <div
+                                                  class="badge variant-default"
+                                                >
+                                                  W
+                                                </div>
+                                                <span
+                                                  title="54kg"
+                                                  class="weight"
+                                                  >54kg</span
+                                                >
+                                              </div>
+                                              <div class="alignment">
+                                                <div
+                                                  class="badge variant-default"
+                                                >
+                                                  J
+                                                </div>
+                                                <span
+                                                  title="R. Tanaka"
+                                                  class="weight"
+                                                  >R. Tanaka</span
+                                                >
+                                              </div>
+                                              <div class="alignment">
+                                                <div
+                                                  class="badge variant-default"
+                                                >
+                                                  F
+                                                </div>
+                                                <span
+                                                  title="0x7004"
+                                                  class="weight"
+                                                  >0x7004</span
+                                                >
+                                              </div>
+                                              <div class="alignment">
+                                                <div
+                                                  class="badge variant-default"
+                                                >
+                                                  T
+                                                </div>
+                                                <span
+                                                  title="J. Murata"
+                                                  class="weight"
+                                                  >J. Murata</span
+                                                >
+                                              </div>
+                                            </div>
+                                          </div>
+                                        </div>
+                                        <div class="right-btn">
+                                          <div
+                                            class="py-1"
+                                            *ngIf="isFluctuationVisible"
+                                          >
+                                            <div
+                                              class="fluctuations svelte-1o0p6vf"
+                                            >
+                                              <div class="fluc svelte-1o0p6vf">
+                                                <span>OP 13.00</span>
+                                              </div>
+                                              <div class="fluc svelte-1o0p6vf">
+                                                <span>6.40</span>
+                                                <div
+                                                  class="direction svelte-1o0p6vf"
+                                                >
+                                                  <div
+                                                    class="translate-y-[-5px]"
+                                                  >
+                                                    <svg
+                                                      fill="none"
+                                                      viewBox="0 0 96 80"
+                                                      class="svg-icon"
+                                                    >
+                                                      <title></title>
+                                                      <path
+                                                        d="M48.51 65.684 18.192 15.158h60.632L48.509 65.684Z"
+                                                        fill="#FF2247"
+                                                      ></path>
+                                                    </svg>
+                                                  </div>
+                                                </div>
+                                              </div>
+                                              <div class="fluc svelte-1o0p6vf">
+                                                <span>6.50</span>
+                                                <div
+                                                  class="direction svelte-1o0p6vf"
+                                                >
+                                                  <div
+                                                    class="translate-y-[-5px]"
+                                                  >
+                                                    <svg
+                                                      fill="none"
+                                                      viewBox="0 0 96 80"
+                                                      class="svg-icon"
+                                                    >
+                                                      <title></title>
+                                                      <path
+                                                        d="m48.507 15.158 30.316 50.526H18.191l30.316-50.526Z"
+                                                        fill="#00E700"
+                                                      ></path>
+                                                    </svg>
+                                                  </div>
+                                                </div>
+                                              </div>
+                                            </div>
+                                          </div>
+                                          <div class="right-btn-con">
+                                            <button class="button">
+                                              <div
+                                                class="group-active:scale-95"
+                                              >
+                                                <div class="relative">
+                                                  <span class="btn-amount"
+                                                    >4.40</span
+                                                  >
+                                                  <div
+                                                    class="arrow-odds align-left svelte-hfoo7h"
+                                                  ></div>
+                                                </div>
+                                              </div>
+                                            </button>
+                                            <button class="button">
+                                              <div
+                                                class="group-active:scale-95"
+                                              >
+                                                <div class="relative">
+                                                  <span class="btn-amount"
+                                                    >1.50</span
+                                                  >
+                                                  <div
+                                                    class="arrow-odds align-left svelte-hfoo7h"
+                                                  ></div>
+                                                </div>
+                                              </div>
+                                            </button>
+                                          </div>
+                                        </div>
+                                      </div>
+                                      <div class="divider-border"></div>
+                                      <div *ngIf="isMarketDetailOpen">
+                                        <div
+                                          class="flex flex-col gap-4 pb-4 px-3"
+                                        >
+                                          <div
+                                            class="h-[0.125rem] bg-[rgb(26,44,56)] m-0 p-0"
+                                          ></div>
+                                          <div
+                                            class="flex flex-wrap gap-y-1 gap-x-10"
+                                          >
+                                            <div class="truncat">
+                                              <span
+                                                class="text-white text-sm font-semibold"
+                                                >Jockey</span
+                                              >
+                                              <span class="jockey-text"
+                                                >Gavin Lerena</span
+                                              >
+                                            </div>
+                                            <div class="truncat text-[#b1bad3]">
+                                              <span
+                                                class="text-white text-sm font-semibold"
+                                                >Trainer</span
+                                              >
+                                              <span class="jockey-text"
+                                                >J A Janse Van Vuuren</span
+                                              >
+                                            </div>
+                                            <div class="truncat">
+                                              <span
+                                                class="text-white text-sm font-semibold"
+                                                >Bio</span
+                                              >
+                                              <span class="jockey-text"
+                                                >5yo B M</span
+                                              >
+                                            </div>
+                                            <span class="truncat"
+                                              ><span
+                                                class="text-white text-sm font-semibold"
+                                                >Sire</span
+                                              >
+                                              <span class="jockey-text"
+                                                >Time Thief (AUS)</span
+                                              ></span
+                                            >
+                                            <div class="truncat">
+                                              <span
+                                                class="text-white text-sm font-semibold"
+                                                >Form</span
+                                              >
+                                              <span class="jockey-text"
+                                                >11243x</span
+                                              >
+                                            </div>
+                                          </div>
 
+                                          <div
+                                            class="h-[0.125rem] bg-[rgb(26,44,56)] m-0 p-0"
+                                          ></div>
+                                          <div class="flex gap-2 flex-col">
+                                            <span class="runners-text"
+                                              >Runner Comments</span
+                                            >
+                                            <div
+                                              class="bg-[rgb(26,44,56)] py-2 px-3 rounded"
+                                            >
+                                              <div
+                                                class="w-full h-fit line-clamp-3 text-left text-sm"
+                                                aria-expanded="false"
+                                              >
+                                                <div>
+                                                  Mare returning from a spell
+                                                  and has won previously when
+                                                  first up. Finished off last
+                                                  preparation third of 7 at this
+                                                  track July 27 over 1100m, 2
+                                                  len behind Exchange Student
+                                                  carrying 60kg at $1.70. First
+                                                  up last campaign fifth of 13
+                                                  at Greyville September 17 2023
+                                                  over 1400m, 0.8 len behind
+                                                  Except Temptation carrying
+                                                  56.5kg at $5. Expect a bold
+                                                  showing.
+                                                </div>
+                                              </div>
+                                            </div>
+                                          </div>
+
+                                          <div
+                                            class="grid auto-cols-max gap-1 bg-[rgb(33_55_67)] [grid-template-columns:repeat(8,1fr)]"
+                                          >
+                                            <div
+                                              class="flex flex-col !bg-[rgb(26,44,56)] rounded px-3 py-2"
+                                            >
+                                              <span class="head-text"
+                                                >Last 10 Runs</span
+                                              >
+                                              <span class="sub-text"
+                                                >4371312444</span
+                                              >
+                                            </div>
+                                            <div
+                                              class="flex flex-col bg-[rgb(26,44,56)] rounded px-3 py-2"
+                                            >
+                                              <span class="head-text"
+                                                >Career</span
+                                              >
+                                              <span class="sub-text"
+                                                >26: 3 2 2</span
+                                              >
+                                            </div>
+                                            <div
+                                              class="flex flex-col bg-[rgb(26,44,56)] rounded px-3 py-2"
+                                            >
+                                              <span class="head-text"
+                                                >Prize (AUD)</span
+                                              >
+                                              <span class="sub-text">-</span>
+                                            </div>
+                                            <div
+                                              class="flex flex-col bg-[rgb(26,44,56)] rounded px-3 py-2"
+                                            >
+                                              <span class="head-text"
+                                                >Speed Map</span
+                                              >
+                                              <span class="sub-text"
+                                                >Leader</span
+                                              >
+                                            </div>
+                                            <div
+                                              class="flex flex-col bg-[rgb(26,44,56)] rounded px-3 py-2"
+                                            >
+                                              <span class="head-text"
+                                                >Track</span
+                                              >
+                                              <span class="sub-text"
+                                                >2: 0 0 0</span
+                                              >
+                                            </div>
+                                            <div
+                                              class="flex flex-col bg-[rgb(26,44,56)] rounded px-3 py-2"
+                                            >
+                                              <span class="head-text"
+                                                >Distance</span
+                                              >
+                                              <span class="sub-text"
+                                                >9: 2 1 2</span
+                                              >
+                                            </div>
+                                            <div
+                                              class="flex flex-col bg-[rgb(26,44,56)] rounded px-3 py-2"
+                                            >
+                                              <span class="head-text"
+                                                >Track / Distance</span
+                                              >
+                                              <span class="sub-text"
+                                                >0: 0 0 0</span
+                                              >
+                                            </div>
+                                            <div
+                                              class="flex flex-col bg-[rgb(26,44,56)] rounded px-3 py-2"
+                                            >
+                                              <span class="head-text"
+                                                >Dirt</span
+                                              >
+                                              <span class="sub-text"
+                                                >0: 0 0 0</span
+                                              >
+                                            </div>
+                                            <div
+                                              class="flex flex-col bg-[rgb(26,44,56)] rounded px-3 py-2"
+                                            >
+                                              <span class="head-text"
+                                                >Firm</span
+                                              >
+                                              <span class="sub-text"
+                                                >0: 0 0 0</span
+                                              >
+                                            </div>
+                                            <div
+                                              class="flex flex-col bg-[rgb(26,44,56)] rounded px-3 py-2"
+                                            >
+                                              <span class="head-text"
+                                                >Good</span
+                                              >
+                                              <span class="sub-text"
+                                                >25: 3 2 2</span
+                                              >
+                                            </div>
+                                            <div
+                                              class="flex flex-col bg-[rgb(26,44,56)] rounded px-3 py-2"
+                                            >
+                                              <span class="head-text"
+                                                >Soft</span
+                                              >
+                                              <span class="sub-text"
+                                                >0: 0 0 0</span
+                                              >
+                                            </div>
+                                            <div
+                                              class="flex flex-col bg-[rgb(26,44,56)] rounded px-3 py-2"
+                                            >
+                                              <span class="head-text"
+                                                >Heavy</span
+                                              >
+                                              <span class="sub-text"
+                                                >0: 0 0 0</span
+                                              >
+                                            </div>
+                                            <div
+                                              class="flex flex-col bg-[rgb(26,44,56)] rounded px-3 py-2"
+                                            >
+                                              <span class="head-text"
+                                                >Synthetic</span
+                                              >
+                                              <span class="sub-text"
+                                                >0: 0 0 0</span
+                                              >
+                                            </div>
+                                            <div
+                                              class="flex flex-col bg-[rgb(26,44,56)] rounded px-3 py-2"
+                                            >
+                                              <span class="head-text"
+                                                >1st Up</span
+                                              >
+                                              <span class="sub-text"
+                                                >3: 0 0 0</span
+                                              >
+                                            </div>
+                                            <div
+                                              class="flex flex-col bg-[rgb(26,44,56)] rounded px-3 py-2"
+                                            >
+                                              <span class="head-text"
+                                                >2nd Up</span
+                                              >
+                                              <span class="sub-text"
+                                                >3: 0 0 0</span
+                                              >
+                                            </div>
+                                            <div
+                                              class="flex flex-col bg-[rgb(26,44,56)] rounded px-3 py-2"
+                                            >
+                                              <span class="head-text"
+                                                >3rd Up</span
+                                              >
+                                              <span class="sub-text"
+                                                >2: 0 0 0</span
+                                              >
+                                            </div>
+                                          </div>
+
+                                          <div class="flex flex-col gap-2">
+                                            <span class="runners-text"
+                                              >Race History</span
+                                            >
+                                            <div class="history-list">
+                                              <!-- <div class="history-head">
+                                                <div
+                                                  slot="header"
+                                                  class="flex flex-1 capitalize"
+                                                >
+                                                  <span
+                                                    class="basis-[10px] min-w-[40px] runners-text"
+                                                    >4/11</span
+                                                  >
+                                                  <span
+                                                    class="basis-[20px] min-w-[90px] runners-text"
+                                                    >Oct 31, 2024</span
+                                                  >
+                                                  <span
+                                                    class="basis-[20px] runners-text"
+                                                    >Vaal</span
+                                                  >
+                                                  <span
+                                                    class="basis-[15px] runners-text"
+                                                    >1100m</span
+                                                  >
+                                                  <span
+                                                    class="basis-[15px] runners-text"
+                                                    >-</span
+                                                  >
+                                                </div>
+                                                <div  [ngClass]="
+                                                !isTabsData
+                                                  ? 'rotate-[90deg]'
+                                                  : 'rotate-[360deg]'
+                                              "  (click)="toggleTabs()"  class="flex items-center">
+                                                  <svg
+                                                    fill="currentColor"
+                                                    viewBox="0 0 64 64"
+                                                    class="svg-icon"
+                                                    style="
+                                                      transform: rotate(90deg);
+                                                    "
+                                                  >
+                                                    <title></title>
+                                                    <path
+                                                      d="M32.271 49.763 9.201 26.692l6.928-6.93 16.145 16.145 16.144-16.144 6.93 6.929-23.072 23.07h-.005Z"
+                                                    ></path>
+                                                  </svg>
+                                                </div>
+                                              </div>
+                                              <div class=" transition-all duration-500 overflow-hidden" [ngClass]="{
+                                                '  max-h-[1200px] h-full': isTabsData,
+                                                'max-h-0': !isTabsData
+                                              }">
+                                              <div
+                                              class="history-content"
+                                              
+                                            >
+                                              <div >
+                                                <div
+                                                  class="runner-history-accordin"
+                                                  
+                                                >
+                                                  <div
+                                                    class="runner-history-item"
+                                                    
+                                                  >
+                                                    <span
+                                                      class="runner-history-text"
+                                                      
+                                                      >Margin</span
+                                                    >
+                                                    <span
+                                                      class="history-subtext"
+                                                      
+                                                      >1L</span
+                                                    >
+                                                  </div>
+                                                  <div
+                                                    class="runner-history-item"
+                                                    
+                                                  >
+                                                    <span
+                                                      class="runner-history-text"
+                                                 
+                                                      >Jockey</span
+                                                    >
+                                                    <span
+                                                      class="history-subtext"
+                                                     
+                                                      >Masaaki Ohata
+                                                      (54kg)</span
+                                                    >
+                                                  </div>
+                                                  <div
+                                                    class="runner-history-item"
+                                                    
+                                                  >
+                                                    <span
+                                                      class="runner-history-text"
+                                                      
+                                                      >Barrier</span
+                                                    >
+                                                    <span
+                                                      class="history-subtext"
+                                                     
+                                                      >8</span
+                                                    >
+                                                  </div>
+                                                  <div
+                                                    class="runner-history-item"
+                                                    
+                                                  >
+                                                    <span
+                                                      class="runner-history-text"
+                                                    
+                                                      >Time</span
+                                                    >
+                                                    <span
+                                                      class="history-subtext"
+                                                  
+                                                      >1:35.30</span
+                                                    >
+                                                  </div>
+                                                  <div
+                                                    class="runner-history-item"
+                                                    
+                                                  >
+                                                    <span
+                                                      class="runner-history-text"
+                                                    
+                                                      >Class</span
+                                                    >
+                                                    <span
+                                                      class="history-subtext"
+                                                      
+                                                      >C2 3U</span
+                                                    >
+                                                  </div>
+                                                  <div
+                                                    class="runner-history-item"
+                                                    
+                                                  >
+                                                    <span
+                                                      class="runner-history-text"
+                                                    
+                                                      >SP</span
+                                                    >
+                                                    <span
+                                                      class="history-subtext"
+                                                   
+                                                      >$2.7</span
+                                                    >
+                                                  </div>
+                                                  <div
+                                                    class="runner-history-item"
+                                                    
+                                                  >
+                                                    <span
+                                                      class="runner-history-text"
+                                                     
+                                                      >Winner</span
+                                                    >
+                                                    <span
+                                                      class="history-subtext"
+                                                   
+                                                      >Regno (56kg)</span
+                                                    >
+                                                  </div>
+                                                  <div
+                                                    class="runner-history-item"
+                                                    
+                                                  >
+                                                    <span
+                                                      class="runner-history-text"
+                                                    
+                                                      >2nd</span
+                                                    >
+                                                    <span
+                                                      class="history-subtext"
+                                                   
+                                                      >Reine Du Sable
+                                                      (54kg)</span
+                                                    >
+                                                  </div>
+                                                </div>
+                                              </div>
+                                            </div>
+                                            </div> -->
+                                             
+                                            </div>
+
+                                            <div
+                                              class="flex w-full justify-center mt-3 mb-2"
+                                            >
+                                              <button
+                                                type="button"
+                                                class="inline-flex relative items-center gap-2 justify-center rounded-sm font-semibold whitespace-nowrap ring-offset-background transition disabled:pointer-events-none disabled:opacity-50 focus-visible:outline-2 focus-visible:outline-offset-2 active:scale-[0.98] bg-transparent text-grey-200 betterhover:hover:bg-transparent betterhover:hover:text-white focus-visible:text-white focus-visible:outline-none text-sm leading-none"
+                                              >
+                                                Load More
+                                              </button>
+                                            </div>
+                                          </div>
+                                        </div>
+                                      </div>
+                                    </div>
+                                    <div class="flex flex-col">
+                                      <div class="divider-border"></div>
+                                      <div class="other-con">
+                                        <span class="other-text variant-subtle"
+                                          >Other Rules: Three place dividends
+                                          paid.</span
+                                        >
+                                        <span class="other-text variant-subtle"
+                                          >JP-SP: Japanese-Starting Price is
+                                          derived from a parimutuel dividend and
+                                          announced post-race.</span
+                                        >
+                                      </div>
+                                    </div>
+                                    <!-- Add toggle==================================================== -->
+                                  </div>
+                                </div>
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- 2nd card============================================== -->
+  </div>
 </div>
-
-
-</div>
-</div>
-</div>
-</div>
-</div>
-</div>
-</div>
-</div>
-</div>
-</div>
-</div>
-</div>
-</div>
-
-</div>
-</div>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-                                          <!-- 2nd card============================================== -->
-                                  

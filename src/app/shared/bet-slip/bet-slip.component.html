@@ -191,10 +191,11 @@
             }
 
             <!-- Market -->
-            @if(BetslipContent){
-            <div>
+        
+            <div [ngClass]="{'marker-animation':BetslipContent && betSlip}" *ngIf="BetslipContent">
                 <div class="betslip-bet">
                     <div class="betslip-header market-header">
+                        <div class="back-lay"></div>
                         <span class="fixture-name">
                             <div class="badge-live">Live</div>
                             <a
@@ -281,7 +282,7 @@
                     <!-- <div class="radial-line"></div> -->
                 </div>
             </div>
-            }
+            
         </div>
     </div>
 

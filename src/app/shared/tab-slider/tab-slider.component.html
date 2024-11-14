@@ -1,4 +1,4 @@
-<div class="tab-slider max-w-[90vw] md:max-w-[50vw] overflow-x-auto">
+<div class="tab-slider max-w-[90vw] md:max-w-[50vw] w-fit overflow-x-auto">
     <div class="flex gap-[5px]">
         @for (item of arrItem; track $index) {
         <a class="tab-item" (click)="tabs($index)" [ngClass]="{'active': tabIndex === $index}">

@@ -111,7 +111,7 @@
   .bottom-wrapper{
       @apply flex justify-center items-center w-full gap-[.5rem] pt-[18px] flex-wrap
   }
-  .bottom-section{
+  .bottom-content{
       @apply px-[1rem] pb-[1rem] gap-[7px] flex flex-col
   }
   .share-wrap{
@@ -126,6 +126,6 @@
   .modal-content{
       @apply flex flex-col relative touch-auto
   }
-  .candy-section{
+  .candy-text{
       @apply text-white leading-[1.5] text-center justify-center flex text-[16px] font-[600] touch-auto
   }
