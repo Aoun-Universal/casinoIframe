@@ -1,5 +1,6 @@
 import { CommonModule } from '@angular/common';
 import { Component } from '@angular/core';
+import { ToggleService } from '../../services/toggle.service';
 
 @Component({
   selector: 'app-vip',
@@ -27,5 +28,9 @@ dropdownState: string = ''
   }
   closeModal(){
 this.closeIt=false
+  }
+  constructor(private toggle:ToggleService){}
+  closevipModal() {
+    this.toggle.setVipModalState(false);
   }
 }
