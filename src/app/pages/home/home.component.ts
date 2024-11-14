@@ -117,10 +117,6 @@ export class HomeComponent {
   ];
   
 
-
-
-
-
   index = 0;
 
   heroSliderConfig = {
@@ -128,7 +124,7 @@ export class HomeComponent {
     slidesToScroll: 2,
     arrows: false,
     infinite: false,
-    variableWidth: true,
+    variableWidth: false,
     responsive: [
       {
         breakpoint: 1154,

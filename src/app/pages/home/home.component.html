@@ -967,7 +967,7 @@
     <!-- Right -->
     <div class="select-wrap">
       <!--Mode Button -->
-      <div class="cursor-help inline-flex">
+      <div class="cursor-help inline-flex relative group">
         <button class="arrows-btn mode-btn">
           <svg fill="currentColor" viewBox="0 0 64 64" class="svg-icon " style="opacity: 0.5;">
             <title></title>
@@ -975,8 +975,24 @@
               d="M42.05 8.613c2.815 0 5.192 1.879 5.955 4.494l3.64 12.792H12.253l3.64-12.792.01-.044a6.197 6.197 0 0 1 5.944-4.45H42.05ZM61.488 30.77H2.461a2.461 2.461 0 0 0 0 4.921c8.873 1.271 19.12 1.997 29.539 1.997s20.664-.726 30.696-2.131l-.598.068a2.461 2.461 0 0 0-.56-4.858l-.05.003ZM33.484 43.074h-3.05c-6.335-1.515-13.677-1.22-21.547 0v2.501l3.05.58s0 9.233 9.233 9.233c6.223 0 8.247-5.583 8.908-9.233h3.721c.661 3.65 2.685 9.233 8.908 9.233 9.233 0 9.233-9.233 9.233-9.233l3.05-.58v-2.501c-7.718-1.24-15.008-1.485-21.506 0Z">
             </path>
           </svg>
-          <span>Ghost mode off</span>
+          <span>
+            <span>Ghost mode off</span>
+          </span>
         </button>
+        <div
+        class="absolute ml-2  z-50 bottom-10 text-[12px] right-5 mb-2 hidden p-3 text-black bg-white rounded opacity-0 transition-opacity overflow-visible duration-300 group-hover:block group-hover:opacity-100">
+        <!-- Tooltip content -->
+        <div class="dropdown-scroll-content">
+          <div class="leading-[14px]">
+            Ghost Mode Off
+          </div>
+        </div>
+
+        <!-- Tooltip arrow -->
+        <div
+          class=" w-0 h-0 border-l-[8px] border-l-transparent border-r-[8px] border-r-transparent border-t-[8px] border-t-white absolute right-4 sm:right-auto sm:left-1/2 sm:-translate-x-1/2 top-full">
+        </div>
+      </div>
       </div>
 
       <!-- Select Label -->
