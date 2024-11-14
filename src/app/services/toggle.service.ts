@@ -1,6 +1,5 @@
-import { DOCUMENT } from '@angular/common';
-import { Inject, Injectable } from '@angular/core';
-import { BehaviorSubject, Observable } from 'rxjs';
+import { Injectable } from '@angular/core';
+import { BehaviorSubject } from 'rxjs';
 
 @Injectable({
   providedIn: 'root',
@@ -8,13 +7,18 @@ import { BehaviorSubject, Observable } from 'rxjs';
 export class ToggleService {
   private sidebarState: BehaviorSubject<boolean> = new BehaviorSubject<boolean>(true);
   private Betslip: BehaviorSubject<boolean> = new BehaviorSubject<boolean>(false);
-  private modalState: BehaviorSubject<boolean> = new BehaviorSubject<boolean>(false); // Modal initially hidden
-  private betslipState = new BehaviorSubject<boolean>(false);
-  modalState$ = this.modalState.asObservable();
+  private vipModalState: BehaviorSubject<boolean> = new BehaviorSubject<boolean>(false); // VIP modal initially hidden
+  private vaultModalState: BehaviorSubject<boolean> = new BehaviorSubject<boolean>(false);; // VIP modal initially hidden
+  private statisticsModalState: BehaviorSubject<boolean> = new BehaviorSubject<boolean>(false);; 
+  private notificationModalState: BehaviorSubject<boolean> = new BehaviorSubject<boolean>(false);; 
+
 
   sidebarState$ = this.sidebarState.asObservable();
+
+
   constructor() {}
 
+  // Sidebar methods
   getSidebar() {
     return this.sidebarState;
   }
@@ -24,14 +28,42 @@ export class ToggleService {
   toggleSidebar() {
     this.sidebarState.next(!this.sidebarState.value);
   }
-  // Getter for the observable state
-  getBetslipState(): Observable<boolean> {
-    return this.betslipState.asObservable();
+
+  // Betslip methods
+  getBetslipState() {
+    return this.Betslip;
+  }
+  setBetslipstate(value: boolean) {
+    this.Betslip.next(value);
   }
 
-  // Setter for updating the state
-  setBetslipstate(state: boolean): void {
-    this.betslipState.next(state);
-  }
+// VIP modal methods
+getVipModalState() {
+  return this.vipModalState;
+}
+setVipModalState(value: boolean) {
+  this.vipModalState.next(value);
+}
 
+// Vault modal methods
+getVaultModalState() {
+  return this.vaultModalState;
+}
+setVaultModalState(value: boolean) {
+  this.vaultModalState.next(value);
+}
+// statisticsmodal
+getstatisticModalstate(){
+  return this.statisticsModalState;
+}
+setstatisticModal(value:boolean){
+  this.statisticsModalState.next(value)
+}
+// notificationModal
+getnotificationModalState(){
+  return this.notificationModalState
+}
+setnotificationModal(value:boolean){
+  this.notificationModalState.next(value)
+}
 }

@@ -66,5 +66,16 @@ export class SidebarComponent implements OnInit {
   toggleSidebar(){
    this.toggle.toggleSidebar()
 }
-
+openvaultModal() {
+  this.toggle.setVaultModalState(true);
+}
+openvipModal() {
+  this.toggle.setVipModalState(true);
+}
+openstatisticModal(){
+  this.toggle.setstatisticModal(true)
+}
+opennotificationModal(){
+  this.toggle.setnotificationModal(true)
+}
 }
