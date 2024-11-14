@@ -1,12 +1,12 @@
 <div class="sidebar-wrapper"
   [ngClass]="{'md:!w-[60px] w-full transition-all duration-200':!isSidebar, 'mobile-view-show':!isSidebar}">
-  <div class="sidebar-header" [ngClass]="{'flex-col':!isSidebar}">
+  <div class="sidebar-header" [ngClass]="{'flex-col md:px-0':!isSidebar}">
     <button class="menu-button" (click)="toggleSidebar()">
       <svg class="svg-icon" fill="white" height="64" viewBox="0 0 64 64" width="64">
         <path clip-rule="evenodd" d="M0 0h64v13H0V0Zm0 25.5h64v13H0v-13ZM64 51H0v13h64V51Z" fill-rule="evenodd"></path>
       </svg>
     </button>
-    <div class="link-wrap" [ngClass]="{'flex-col !items-end':!isSidebar}">
+    <div class="link-wrap" [ngClass]="{'flex-col !items-center pt-[16px] ':!isSidebar}">
       <a class="header-button casino" [ngClass]="{'casino-btn-mobile':!isSidebar}"><span class="text-[14px]"
           *ngIf="isSidebar">CASINO</span></a>
       <div class="image-loader"></div>
@@ -345,7 +345,7 @@
                 <div [ngClass]="{'md:hidden':!isSidebar}">Wallet</div>
               </div>
             </div>
-            <div class="nav-item dropdown-item" >
+            <div class="nav-item dropdown-item">
               <div class="title-wrapper">
                 <svg fill="currentColor" viewBox="0 0 64 64" class="svg-icon ">
                   <title></title>
@@ -780,9 +780,11 @@
               <div class="title-wrapper">
                 <div [ngClass]="{'md:hidden':!isSidebar}">English</div>
               </div>
-              <label class="stacked svelte-1wzq4lo" style="flex-direction: row; align-items: center;"> <input id="en"
-                  type="radio" value="en" tabindex="-1" class="label-on-right"> <span
-                  class="indicator size-md variant-default"></span>
+              <label class="stacked svelte-1wzq4lo" style="flex-direction: row; align-items: center;">
+                <input id="custom-checkbox" type="checkbox" class="custom-checkbox" tabindex="-1">
+                <span class="indicator size-md variant-default">
+                  <span class="inner-dot"></span>
+                </span>
               </label>
             </div>
 
@@ -793,9 +795,11 @@
 
                 </div>
               </div>
-              <label class="stacked svelte-1wzq4lo" style="flex-direction: row; align-items: center;"> <input id="en"
-                  type="radio" value="en" tabindex="-1" class="label-on-right"> <span
-                  class="indicator size-md variant-default"></span>
+              <label class="stacked svelte-1wzq4lo" style="flex-direction: row; align-items: center;">
+                <input id="custom-checkbox" type="checkbox" class="custom-checkbox" tabindex="-1">
+                <span class="indicator size-md variant-default">
+                  <span class="inner-dot"></span>
+                </span>
               </label>
             </div>
 
@@ -803,18 +807,22 @@
               <div class="title-wrapper">
                 <div [ngClass]="{'md:hidden':!isSidebar}">日本語</div>
               </div>
-              <label class="stacked svelte-1wzq4lo" style="flex-direction: row; align-items: center;"> <input id="en"
-                  type="radio" value="en" tabindex="-1" class="label-on-right"> <span
-                  class="indicator size-md variant-default"></span>
+              <label class="stacked svelte-1wzq4lo" style="flex-direction: row; align-items: center;">
+                <input id="custom-checkbox" type="checkbox" class="custom-checkbox" tabindex="-1">
+                <span class="indicator size-md variant-default">
+                  <span class="inner-dot"></span>
+                </span>
               </label>
             </div>
             <div class="nav-item dropdown-item">
               <div class="title-wrapper">
                 <div [ngClass]="{'md:hidden':!isSidebar}">中文</div>
               </div>
-              <label class="stacked svelte-1wzq4lo" style="flex-direction: row; align-items: center;"> <input id="en"
-                  type="radio" value="en" tabindex="-1" class="label-on-right"> <span
-                  class="indicator size-md variant-default"></span>
+              <label class="stacked svelte-1wzq4lo" style="flex-direction: row; align-items: center;">
+                <input id="custom-checkbox" type="checkbox" class="custom-checkbox" tabindex="-1">
+                <span class="indicator size-md variant-default">
+                  <span class="inner-dot"></span>
+                </span>
               </label>
             </div>
 
@@ -822,9 +830,11 @@
               <div class="title-wrapper">
                 <div [ngClass]="{'md:hidden':!isSidebar}">Português</div>
               </div>
-              <label class="stacked svelte-1wzq4lo" style="flex-direction: row; align-items: center;"> <input id="en"
-                  type="radio" value="en" tabindex="-1" class="label-on-right"> <span
-                  class="indicator size-md variant-default"></span>
+              <label class="stacked svelte-1wzq4lo" style="flex-direction: row; align-items: center;">
+                <input id="custom-checkbox" type="checkbox" class="custom-checkbox" tabindex="-1">
+                <span class="indicator size-md variant-default">
+                  <span class="inner-dot"></span>
+                </span>
               </label>
             </div>
 
@@ -1895,7 +1905,7 @@
         <div class="inner-content" [ngClass]="{'active-dropdown':openBar === 'racing' }">
           <div class="hr-border"></div>
           <div class="sidebar-content" bis_skin_checked="1">
-            <a class="base-sidebar-anchor max-w-full svelte-1ih38ux"  routerLink="/horse-racing"
+            <a class="base-sidebar-anchor max-w-full svelte-1ih38ux" routerLink="/horse-racing"
               data-sveltekit-preload-data="off" href="/sports/counter-strike">
               <button type="button" tabindex="0"
                 class="inline-flex relative items-center gap-2 font-semibold whitespace-nowrap ring-offset-background transition disabled:pointer-events-none disabled:opacity-50 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 active:scale-[0.98] bg-transparent text-white hover:bg-[#2f4553] focus-visible:outline-white text-sm leading-none [&amp;_svg]:text-grey-200 [&amp;:hover>svg]:text-white py-[0.8125rem] px-[1rem] w-full justify-start max-w-full rounded-none"
@@ -1909,12 +1919,12 @@
                 <span style="max-width: 100%; display: block" class="svelte-17o987 is-truncate">Horse Racing</span>
               </button>
             </a>
-            <a class="base-sidebar-anchor max-w-full svelte-1ih38ux" 
-              data-sveltekit-preload-data="off" href="/sports/counter-strike-2-duels">
+            <a class="base-sidebar-anchor max-w-full svelte-1ih38ux" data-sveltekit-preload-data="off"
+              href="/sports/counter-strike-2-duels">
               <button type="button" tabindex="0"
                 class="inline-flex relative items-center gap-2 font-semibold whitespace-nowrap ring-offset-background transition disabled:pointer-events-none disabled:opacity-50 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 active:scale-[0.98] bg-transparent text-white hover:bg-[#2f4553] focus-visible:outline-white text-sm leading-none [&amp;_svg]:text-grey-200 [&amp;:hover>svg]:text-white py-[0.8125rem] px-[1rem] w-full justify-start max-w-full rounded-none"
                 data-analytics="sidebar-e-sports-counter-strike-2-duels-link" data-button-root="">
-                <svg fill="currentColor" viewBox="0 0 96 96" class="svg-icon " >
+                <svg fill="currentColor" viewBox="0 0 96 96" class="svg-icon ">
                   <title></title>
                   <path
                     d="M60.24 28.185c-.653 6.738-.28 16.661 5.448 23.815 1.77-2.261 3.213-4.846 3.819-7.892 1.21-5.908 13.178-12.785 16.764-9.693 3.586 3.093 9.733-1.984 9.733-1.984l-6.939-5.17-.14-4.061-8.289-5.308L69.134 16l-.978 3.092 3.26 3.093c-2.888 2.354-6.986 5.03-11.13 6h-.047Zm-29.963-.635c-8.096-4.72-20.472-13.445-28.102-1.621-7.63 11.824 7.305 26.509 7.305 26.509l-7.305 8.105c-.93 1.24-.93 2.956 0 4.243L13.155 84h4.793l-4.095-19.452s15.82-6.055 5.537-21.646c0 0 7.63 10.346 24.938 11.3 0 0-3.582-10.632 3.676-25.412-.14.095-9.724 3.432-17.727-1.24Zm29.546 28.272 2.676 12.017L74.39 79.534c7.73 0 9.613 4.466 9.613 4.466H72.756L53.084 70.417C46.246 61.071 46.642 52 52.291 52c5.65 0 7.582 3.822 7.582 3.822h-.05Z">
@@ -1928,7 +1938,7 @@
               <button type="button" tabindex="0"
                 class="inline-flex relative items-center gap-2 font-semibold whitespace-nowrap ring-offset-background transition disabled:pointer-events-none disabled:opacity-50 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 active:scale-[0.98] bg-transparent text-white hover:bg-[#2f4553] focus-visible:outline-white text-sm leading-none [&amp;_svg]:text-grey-200 [&amp;:hover>svg]:text-white py-[0.8125rem] px-[1rem] w-full justify-start max-w-full rounded-none"
                 data-analytics="sidebar-e-sports-dota-2-link" data-button-root="">
-                <svg fill="currentColor" viewBox="0 0 96 96" class="svg-icon undefined" >
+                <svg fill="currentColor" viewBox="0 0 96 96" class="svg-icon undefined">
                   <title></title>
                   <path fill-rule="evenodd" clip-rule="evenodd"
                     d="M23 8.88c2.64 4.56 1.08 10.4-3.48 13.04-4.56 2.64-10.4 1.08-13.04-3.48C3.84 13.88 5.4 8.04 9.96 5.4 14.52 2.76 20.36 4.32 23 8.88Zm62.88 13.48c1.96 0 3.76 1.16 4.56 2.92l-.04-.12c.84 1.8.52 3.88-.76 5.36L62 62.44c2.36 3.08 3.84 6.88 3.84 11.08 0 10.08-8.2 18.28-18.28 18.28-10.08 0-18.28-8.2-18.28-18.28 0-10.08 8.16-18.28 18.28-18.28 2.24 0 4.4.44 6.4 1.2l3.32-3.8-8.88-5.12-8 3.96-8.72 4.32c-5.92 2.92-13.12.48-16.04-5.44l-4.92-9.92c-2.68-5.36-.44-11.88 4.92-14.52a10.84 10.84 0 0 1 13.56 3.36l13.64-6.44c.68-.32 1.4-.48 2.16-.48h40.88ZM51.08 37.6l12.88 7.44L64 45l11-12.68H46.16l-12.32 5.84 2.16 4.4 10.36-5.12c1.52-.72 3.28-.68 4.72.16Z">
