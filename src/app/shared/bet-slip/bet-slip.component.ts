@@ -16,7 +16,7 @@ export class BetSlipComponent implements OnInit {
   BetslipContent = true;
 
   clearBetslip() {
-    this.BetslipContent = false;
+    this.toggleService.setBetslipContent(false)
   }
 
   toggleDropdown() {
@@ -46,6 +46,9 @@ export class BetSlipComponent implements OnInit {
   ngOnInit(): void {
     this.toggleService.getBetslipState().subscribe(value => {
       this.betSlip = value;
+      this.toggleService.getBetslipContent().subscribe((value)=>{
+       this.BetslipContent = value
+      })
     });
   }
 

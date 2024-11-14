@@ -1,10 +1,11 @@
 import { CommonModule } from '@angular/common';
 import { Component } from '@angular/core';
+import { TabSliderComponent } from '../../shared/tab-slider/tab-slider.component';
 
 @Component({
   selector: 'app-before-login',
   standalone: true,
-  imports: [CommonModule],
+  imports: [CommonModule, TabSliderComponent],
   templateUrl: './before-login.component.html',
   styleUrl: './before-login.component.css'
 })
@@ -18,4 +19,10 @@ export class BeforeLoginComponent {
     }
    
   }
+
+  tabsItems = [
+    { tabTitle: 'Casino', dotState: false },
+    { tabTitle: 'Sports', dotState: false },
+
+  ]
 }

@@ -83,3 +83,28 @@ select{
  ::ng-deep .carousel .race-slide{
     margin: 0 6px !important;
 }
+
+.section-main-container{
+    @apply w-full px-[3vw] flex flex-col mb-10
+}
+.market-intro-section{
+    @apply flex items-center justify-start gap-x-4
+}
+.prev-nav-btn{
+    @apply size-[1em] flex justify-center items-center py-[1.25rem] px-[1.5rem] bg-[#0f212e] rounded
+}
+.market-select-box{
+    @apply h-[1em] bg-[#0f212e] py-[1.25rem] px-[1.5rem] rounded flex items-center gap-x-2
+}
+.market-options-box{
+    @apply absolute z-30 top-[110%] -left-1/4 bg-white flex-col justify-start w-[300px] rounded py-2
+}
+.market-option{
+    @apply text-black text-xs font-semibold px-4 py-2 hover:bg-[#b1bad3]
+}
+.tabs-section{
+    @apply flex items-center justify-between w-fit p-[5px] gap-[5px] rounded-full min-w-full bg-[#071824]
+}
+.race-accordion-container{
+    @apply flex justify-between items-center bg-[#213743] border-solid border-b-2 border-[#2f4553]
+}
