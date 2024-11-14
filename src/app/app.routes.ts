@@ -116,6 +116,11 @@ export const routes: Routes = [
         loadComponent: () =>
           import('./pages/vip-cloud/vip-cloud.component').then((c) => c.VipCloudComponent),
       },
+      {
+        path: 'stake-offer',
+        loadComponent: () =>
+          import('./pages/stake-offer/stake-offer.component').then((c) => c.StakeOfferComponent),
+      },
     ],
   },
   {
