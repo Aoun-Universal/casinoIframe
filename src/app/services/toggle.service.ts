@@ -13,6 +13,7 @@ export class ToggleService {
   private statisticsModalState: BehaviorSubject<boolean> = new BehaviorSubject<boolean>(false);
   private statisticsTableModalState: BehaviorSubject<boolean> = new BehaviorSubject<boolean>(false);
   private notificationModalState: BehaviorSubject<boolean> = new BehaviorSubject<boolean>(false);;
+  private walletModal: BehaviorSubject<boolean> = new BehaviorSubject<boolean>(false);;
 
 
   sidebarState$ = this.sidebarState.asObservable();
@@ -84,5 +85,11 @@ export class ToggleService {
   }
   setnotificationModal(value: boolean) {
     this.notificationModalState.next(value)
+  }
+  getWalletModal(){
+    return this.walletModal
+  }
+  setWalletModal(value:boolean){
+    this.walletModal.next(value)
   }
 }
