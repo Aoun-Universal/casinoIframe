@@ -146,6 +146,11 @@ export const routes: Routes = [
         path: 'stake-offer',
         loadComponent: () => import('./pages/stake-offer/stake-offer.component').then((c) => c.StakeOfferComponent)
       },
+      {
+        path: 'stake-offer',
+        loadComponent: () =>
+          import('./pages/stake-offer/stake-offer.component').then((c) => c.StakeOfferComponent),
+      },
     ],
   },
 
