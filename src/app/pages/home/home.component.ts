@@ -3,12 +3,13 @@ import { Component, CUSTOM_ELEMENTS_SCHEMA, ElementRef, ViewChild } from '@angul
 import { ToggleService } from '../../services/toggle.service';
 import { BetSlipComponent } from '../../shared/bet-slip/bet-slip.component';
 import { SlickCarouselComponent, SlickCarouselModule } from 'ngx-slick-carousel';
+import { StatisticsModalTableComponent } from "../../modal/statistics-modal-table/statistics-modal-table.component";
 
 
 @Component({
   selector: 'app-home',
   standalone: true,
-  imports: [NgFor, NgIf, NgClass, NgStyle, BetSlipComponent, SlickCarouselModule],
+  imports: [NgFor, NgIf, NgClass, NgStyle, BetSlipComponent, SlickCarouselModule, StatisticsModalTableComponent],
   templateUrl: './home.component.html',
   styleUrl: './home.component.css',
   schemas: [CUSTOM_ELEMENTS_SCHEMA]
@@ -27,6 +28,7 @@ export class HomeComponent {
   heroSlideCount = 0;
   sportsCurrentSlideIndex = 0;
   sportsSlideCount = 0;
+
   slides = [
     {
       img: "/assets/home/1.avif",
@@ -130,6 +132,10 @@ export class HomeComponent {
     ],
 
   };
+
+  openstatisticsTableModalState() {
+    this.toggleService.setstatisticsTableModalState(true)
+  }
 
 
   heroSlickInit(e: any) {

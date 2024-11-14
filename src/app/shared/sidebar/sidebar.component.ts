@@ -59,23 +59,22 @@ export class SidebarComponent implements OnInit {
     this.setSidebar()
     this.toggle.sidebarState$.subscribe((state) => {
       this.isSidebar = state
-      console.log(this.isSidebar)
     })
-    
+
   }
-  toggleSidebar(){
-   this.toggle.toggleSidebar()
-}
-openvaultModal() {
-  this.toggle.setVaultModalState(true);
-}
-openvipModal() {
-  this.toggle.setVipModalState(true);
-}
-openstatisticModal(){
-  this.toggle.setstatisticModal(true)
-}
-opennotificationModal(){
-  this.toggle.setnotificationModal(true)
-}
+  toggleSidebar() {
+    this.toggle.toggleSidebar()
+  }
+  openvaultModal() {
+    this.toggle.setVaultModalState(true);
+  }
+  openvipModal() {
+    this.toggle.setVipModalState(true);
+  }
+  openstatisticModal() {
+    this.toggle.setstatisticModal(true)
+  }
+  opennotificationModal() {
+    this.toggle.setnotificationModal(true)
+  }
 }
