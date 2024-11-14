@@ -19,6 +19,10 @@ import { SelfExclusionComponent } from './pages/self-exclusion/self-exclusion.co
 import { RetentionProgramComponent } from './pages/retention-program/retention-program.component';
 import { AffiliateOverviewComponent } from './pages/affiliate-overview/affiliate-overview.component';
 import { CommissionComponent } from './pages/commission/commission.component';
+import { CalculatorComponent } from './pages/calculator/calculator.component';
+import { FundsComponent } from './pages/funds/funds.component';
+import { ReferredUsersComponent } from './pages/referred-users/referred-users.component';
+import { CampaignsComponent } from './pages/campaigns/campaigns.component';
 
 
 export const routes: Routes = [
@@ -82,6 +86,10 @@ export const routes: Routes = [
             path: 'self-exclusion',
             component: SelfExclusionComponent,
           },
+          {
+            path: 'calculator',
+            component: CalculatorComponent,
+          },
         ],
       },
       {
@@ -109,16 +117,21 @@ export const routes: Routes = [
             path: 'commission',
             component:CommissionComponent,
           },
-          
+          {
+            path: 'funds',
+            component:FundsComponent,
+          },
+          {
+            path: 'referred-users',
+            component:ReferredUsersComponent,
+          },
+          {
+            path: 'campaigns',
+            component:CampaignsComponent,
+          },
         ],
       },
-      {
-        path: 'sport-market',
-        loadComponent: () =>
-          import('./pages/sports-markets/sports-markets.component').then(
-            (c) => c.SportsMarketsComponent
-          ),
-      },
+     
       {
         path: 'soccer',
         loadComponent: () =>
@@ -134,13 +147,19 @@ export const routes: Routes = [
         loadComponent: () =>
           import('./modal/settings-modals/settings/settings.component').then((c) => c.SettingsComponent),
       },
+
+      {
+        path: 'horse-racing',
+        loadComponent: () =>
+          import('./pages/horse-racing/horse-racing.component').then((c) => c.HorseRacingComponent),
+      },
       {
         path: 'providers',
         loadComponent: () =>
           import('./pages/stake-offer/stake-offer.component').then((c) => c.StakeOfferComponent),
       },
       {
-        path: 'blog-page',
+        path: 'blog',
         loadComponent: () =>
           import('./pages/blog-page/blog-page.component').then((c) => c.BlogPageComponent),
       },

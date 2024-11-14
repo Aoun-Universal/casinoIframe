@@ -1,0 +1,99 @@
+.svg-icon {
+    @apply pointer-events-none [stroke-width:0] fill-current stroke-current flex-shrink-0 inline-block size-[1em];
+  }
+  .card {
+    @apply bg-[rgb(15,33,46)] text-[#d5dceb] rounded-lg p-6 overflow-hidden relative
+}
+.layout-spacing {
+    @apply [padding-bottom:unset] flex flex-col w-full
+
+}
+.section-svelte {
+    @apply  rounded-lg border-[1px] border-solid border-[#1a2c38]  bg-[#1a2c38] flex flex-col pt-[28px] [section-spacing-horizontal:1.5rem]
+  }
+.section-title {
+    @apply  text-[#fff] text-left justify-start text-xl  font-semibold inline-flex items-center
+  }
+.section-content {
+    @apply  flex  flex-col px-6 w-full  mt-5
+}
+.section-subhead{
+    @apply   text-[#b1bad3]  text-left justify-start text-sm font-normal inline-flex items-center
+}
+.svelte{
+    @apply  mt-5  h-[1px] w-full bg-[rgb(47,69,83)] 
+}
+.form-svelte{
+    @apply  flex-col justify-center mt-5 flex w-full
+}
+.form-columns{
+    @apply   w-full grid  [grid-gap:1rem] justify-between;
+    grid-template-columns: 1fr 1fr;
+}
+.form-columns {
+    width: 100%;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-gap: 1rem;
+    justify-content: space-between;
+}
+
+
+.form-content{
+    @apply  flex flex-col w-full px-6 py-0
+}
+.form-head{
+    @apply  text-[#fff] text-left justify-start text-xl  font-semibold inline-flex items-center
+}
+.section-form{
+    @apply   w-full max-w-[420px] flex flex-col mt-4
+}
+.label-stacked{
+    @apply    flex-col-reverse items-start inline-flex relative
+}
+.input-wrap{
+    @apply     w-full flex shrink-0 rounded-[0.25rem]  ;
+    box-shadow: 0 1px 3px 0 rgba(0, 0, 0, .2), 0 1px 2px 0 rgba(0, 0, 0, .12);
+}
+.input-content{
+    @apply    relative flex-grow w-full flex
+}
+.after-icon{
+    @apply    cursor-text right-3 absolute flex pointer-events-none text-[#b1bad3]  z-[2] top-[50%] ;
+    transform: translateY(-50%)
+}
+.input-spacing{
+    @apply    py-[7px] pl-[7px] pr-[28px] w-full text-[#fff] bg-[rgb(15,33,46)] border-[2px] border-solid border-[#2f4553] rounded-[0.25rem] font-semibold  outline-0 cursor-text appearance-none text-sm shadow-none ;
+    transition: all .25s
+}
+.label-content{
+    @apply    w-full justify-between inline-flex items-center font-semibold pb-1 text-[#b1bad3] ;
+    transition: .2s  
+}
+.label-wrapper{
+    @apply   inline-flex  w-full text-sm
+}
+.currency{
+    @apply    inline-flex items-center text-xs ;
+    margin-left: .5ch; 
+}
+.truncate-svelte{
+    @apply   max-w-[14ch] whitespace-nowrap overflow-hidden text-ellipsis inline-block
+}
+.card-variant{
+    @apply   p-4 flex flex-col gap-2 bg-[rgb(47,69,83)] text-[#fff] rounded-lg ;
+    box-shadow: 0 4px 6px -1px rgba(27, 23, 23, .2), 0 2px 4px -1px rgba(0, 0, 0, .12);
+}
+.income-txt{
+    @apply  text-[#fff]  text-left justify-start text-base font-semibold inline-flex items-center
+}
+.content-svelte-span{
+    @apply   inline-block overflow-hidden whitespace-nowrap [font-variant-numeric:tabular-nums]
+}
+.content-svelte-value{
+    @apply   max-w-[40ch] text-[#fff]  text-left text-base  font-bold [font-variant-numeric:tabular-nums] whitespace-nowrap overflow-hidden text-ellipsis 
+}
+.dollar-svg{
+    @apply   ml-1 max-w-[40ch] text-[#b1bad3] text-left justify-start text-base font-normal
+}
+

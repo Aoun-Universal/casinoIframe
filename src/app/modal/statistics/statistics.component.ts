@@ -1,5 +1,6 @@
 import { CommonModule } from '@angular/common';
 import { Component } from '@angular/core';
+import { ToggleService } from '../../services/toggle.service';
 
 @Component({
   selector: 'app-statistics',
@@ -21,5 +22,9 @@ toggleDropdown(): void {
 }
 closeModal(){
 this.modalClose=false
+}
+constructor(private toggle:ToggleService){}
+closestatisticModal() {
+  this.toggle.setstatisticModal(false);
 }
 }

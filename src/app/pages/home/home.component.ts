@@ -1,5 +1,5 @@
 import { NgClass, NgFor, NgIf, NgStyle, NgSwitch, NgSwitchCase } from '@angular/common';
-import { Component, CUSTOM_ELEMENTS_SCHEMA, ElementRef, ViewChild } from '@angular/core';
+import { Component, CUSTOM_ELEMENTS_SCHEMA, ElementRef, HostListener, ViewChild } from '@angular/core';
 import { ToggleService } from '../../services/toggle.service';
 import { BetSlipComponent } from '../../shared/bet-slip/bet-slip.component';
 import { SlickCarouselComponent, SlickCarouselModule } from 'ngx-slick-carousel';
@@ -110,16 +110,12 @@ export class HomeComponent {
       title: "$75k Weekly Raffle",
       description: "Finish your week with a win!",
       leaderboardText: "0 Tickets",
-      timer: { days: 2, hours: 8 },
+      timer: { days: 2, hours: 8 , minutes:5},
       footerType: "progressBar",  // Unique identifier for different footer
       progress: 0,
     },
   ];
   
-
-
-
-
 
   index = 0;
 
@@ -128,7 +124,7 @@ export class HomeComponent {
     slidesToScroll: 2,
     arrows: false,
     infinite: false,
-    variableWidth: true,
+    variableWidth: false,
     responsive: [
       {
         breakpoint: 1154,
@@ -141,6 +137,31 @@ export class HomeComponent {
     ],
 
   };
+  
+  isCarouselActive = true;
+  screenWidth = window.innerWidth;
+
+  @HostListener('window:resize', ['$event'])
+  onResize() {
+    this.screenWidth = window.innerWidth;
+    this.checkCarousel();
+  }
+
+  ngAfterViewInit() {
+    this.checkCarousel();
+  }
+
+  checkCarousel() {
+    if (this.screenWidth > 700 && this.isCarouselActive) {
+      this.gallerySlider.unslick();
+      this.isCarouselActive = false;
+    } else if (this.screenWidth <= 700 && !this.isCarouselActive) {
+      this.isCarouselActive = true;
+      setTimeout(() => {
+        this.gallerySlider.initSlick(); // Reinitialize carousel below 700px
+      });
+    }
+  }
 
   topSportsConfig = {
     slidesToShow: 2,
@@ -166,14 +187,14 @@ export class HomeComponent {
     slidesToScroll: 1,
     arrows: false,
     infinite: false,
-    variableWidth: true,
+    variableWidth: false,
     responsive: [
       {
         breakpoint: 1154,
         settings: {
           slidesToShow: 1,
           slidesToScroll: 1,
-          variableWidth: true
+          variableWidth: false
         }
       },
     ],
