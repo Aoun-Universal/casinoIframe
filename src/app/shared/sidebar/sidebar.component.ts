@@ -61,11 +61,10 @@ export class SidebarComponent implements OnInit {
       this.isSidebar = state
       console.log(this.isSidebar)
     })
-
+    
   }
+  toggleSidebar(){
+   this.toggle.toggleSidebar()
+}
 
-  toggleSidebar() {
-    this.toggle.toggleSidebar()
-
-  }
 }

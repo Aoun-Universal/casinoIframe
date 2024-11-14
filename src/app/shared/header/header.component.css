@@ -301,6 +301,9 @@ text-[.875rem] flex items-center  rounded-[20px] p-[0_1rem]
 .navigation-mobile{
     @apply grid grid-cols-[1fr_auto_1fr]  relative h-[60px]  w-[100vw] items-center  p-[0_3vw]  
     }
+    .mobile{
+        box-shadow: #0003 0 4px 6px -1px, #0000001f 0 2px 4px -1px;
+    }
 
     .title.svelte-12heyz0 {
         display: inline-flex;
@@ -346,18 +349,35 @@ text-[.875rem] flex items-center  rounded-[20px] p-[0_1rem]
 .navigation-mobile{
     grid-template-columns: 1fr 8fr 3fr;
 }
-
+   }
 .mbl-coin-toggle{
     @apply ml-6
 }
-    }
+ 
+
 
     @media screen and (max-width:350px){
         .OpenDropdown-btn{
             @apply w-[120px] 
         }
+
+
+        @media(max-width:350px){
+            .mbl-coin-toggle{
+                @apply ml-2
+            }
     }
+
+    .bell-icon{
+    padding: 5px;
     
+}
+.porfile-iocn{
+padding: 5px;
+
+}
+    
+}
 
     .currency{
         transform: translateY(-2px);
