@@ -83,6 +83,22 @@
 .jockey-text{
     @apply  text-sm text-[#b1bad3] ml-1
 }
+.history-content{
+    @apply   border-[2px] border-solid border-transparent  bg-[#0f212e] flex flex-col w-full rounded-[0.25rem]
+}
+.runner-history-accordin{
+    @apply    flex-wrap px-4 py-3 mr-[18px] [row-gap:0.5rem]  flex transform capitalize
+}
+.runner-history-item{
+    @apply    basis-[25%]
+}
+.runner-history-text{
+    @apply    text-[#fff] text-left justify-start font-semibold inline-flex items-center text-sm
+}
+.history-subtext{
+    @apply  ml-1  text-[#b1bad3] text-left justify-start font-normal inline-flex items-center text-sm
+}
+
 
 
 
@@ -91,16 +107,7 @@
 .tab-item.active , .tab-item:hover{
     @apply bg-[#2f4553] text-white
   }
-
-
-
-
-
-
-/*
-  sabahat */
-
-  .market-main{
+.market-main{
     @apply bg-[rgb(33_55_67)] rounded shadow-md gap-2 overflow-hidden mt-6
    }
    .market-sub{
@@ -158,9 +165,9 @@ span.line-height-default.svelte-17v69ua{
     @apply pointer-events-none flex-shrink-0 inline-block w-[1em] h-[1em]
 
 }
-.arrow svg {
+/* .arrow svg {
     @apply !text-[#557086]
-}
+} */
 label.svelte.svelte {
     @apply relative inline-flex items-center flex-row justify-start ;
 }
@@ -260,4 +267,26 @@ input.svelte {
 }
 .direction.svelte-1o0p6vf {
     @apply top-0
+}
+
+/* Dropdown */
+
+.dropdown-content{
+    @apply absolute left-[15rem] z-[100] !top-[85px] py-1  bg-white rounded-[.25rem] shadow-lg  w-[300px]
+}
+
+.dropdown-arrow{
+    @apply absolute top-0 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-2 h-2 bg-white rotate-45 border-l border-t border-gray-200
+}
+
+.dropdown-scroll-content {
+    @apply flex flex-col p-[.25rem_0] [max-height:inherit]
+}
+
+.dropdown-btn{
+    @apply flex flex-1 gap-4 px-4 py-2 text-gray-400 hover:bg-gray-200 transition-colors w-full justify-between max-w-full
+}
+
+.live-badge {
+    @apply px-1  text-black inline-flex text-xs font-semibold items-center justify-center rounded-[3px] whitespace-nowrap leading-[1.5]
 }
