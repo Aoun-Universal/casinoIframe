@@ -4,12 +4,13 @@ import { ToggleService } from '../../services/toggle.service';
 import { BetSlipComponent } from '../../shared/bet-slip/bet-slip.component';
 import { SlickCarouselComponent, SlickCarouselModule } from 'ngx-slick-carousel';
 import { StatisticsModalTableComponent } from "../../modal/statistics-modal-table/statistics-modal-table.component";
+import { LeaderboardComponent } from '../../modal/leaderboard/leaderboard.component';
 
 
 @Component({
   selector: 'app-home',
   standalone: true,
-  imports: [NgFor, NgIf, NgClass, NgStyle, BetSlipComponent, SlickCarouselModule,NgSwitch,NgSwitchCase,StatisticsModalTableComponent],
+  imports: [NgFor, NgIf, NgClass, NgStyle, BetSlipComponent, SlickCarouselModule,NgSwitch,NgSwitchCase,StatisticsModalTableComponent,LeaderboardComponent],
   templateUrl: './home.component.html',
   styleUrl: './home.component.css',
   schemas: [CUSTOM_ELEMENTS_SCHEMA]
@@ -105,6 +106,7 @@ export class HomeComponent {
       leaderboardText: "Leaderboard",
       timer: { hours: 9, minutes: 11 },
       footerType: "notEnteredYet",  // Unique identifier for footer type
+      clickFunction: this.openLeaderBoardModal.bind(this),
     },
     {
       title: "$75k Weekly Raffle",
@@ -113,6 +115,7 @@ export class HomeComponent {
       timer: { days: 2, hours: 8 , minutes:5},
       footerType: "progressBar",  // Unique identifier for different footer
       progress: 0,
+      clickFunction: this.openLeaderBoardModal.bind(this),
     },
   ];
   
@@ -272,6 +275,10 @@ export class HomeComponent {
   openModal() {
     this.toggleService.setBetslipstate(true);
     this.toggleService.setBetslipContent(!this.betSlipContent)
+  }
+
+  openLeaderBoardModal() {
+    this.toggleService.setLeaderBoardModal(true);
   }
 
   toggleDropdown() {
