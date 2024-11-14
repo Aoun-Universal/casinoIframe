@@ -1,0 +1,154 @@
+.svg-icon {
+    @apply pointer-events-none [stroke-width:0] fill-current stroke-current flex-shrink-0 inline-block size-[1em];
+  } 
+   .card-varient {
+    @apply bg-[#0f212e]   text-[#d5dceb] rounded-lg !p-6 overflow-hidden relative align-baseline m-0 !w-full;
+  }
+  /* .layout-spacing:not(.reset).no-bottom-spacing.svelte-l4ghjo {
+    padding-bottom: unset;
+} */
+.layout-spacing {
+    @apply flex flex-col w-full flex-wrap
+   
+}
+.affliate-wrap.svelte-1vuj99p {
+    @apply w-full flex flex-col
+  
+}
+.select-wrapper {
+    width: fit-content;
+}
+label {
+    @apply flex-col-reverse justify-start flex relative
+   
+}
+/* label.svelte-1wzq4lo {
+    @apply flex relative
+   
+} */
+
+.select-wrap.svelte {
+    @apply w-full flex flex-shrink-0
+}
+.select-content.svelte {
+    @apply relative flex-grow w-full flex 
+
+}
+.expanded {
+   @apply py-[7px] pr-[28px] pl-[7px]
+}
+.select.svelte {
+    @apply w-full text-[#fff] bg-[#0f212e] border-[2px] border-solid  border-[#2f4553] rounded-[.25rem] font-semibold outline-none cursor-pointer
+    appearance-none text-[.875rem];
+    box-shadow: 0 1px 3px 0 rgba(0, 0, 0, .2), 0 1px 2px 0 rgba(0, 0, 0, .12);
+    transition: all .25s;
+}
+.dropdown-icon-wrap.svelte {
+    @apply absolute top-[52%] right-[.5em] text-[#b1bad3] pointer-events-none cursor-pointer;
+    transform: translateY(-50%);
+
+}
+.select-wrap.svelte+.label-content {
+    @apply justify-start
+}
+.label-content {
+    @apply !w-full inline-flex items-center font-semibold text-sm text-[#b1bad3] transition-[.2s] p-[0_0_.25rem_0]
+   
+}
+.table-wrap {
+    @apply overflow-hidden w-full
+   
+}
+.affliate-wrap.svelte-1vuj99p>*+* {
+    @apply mt-[1rem]
+}
+
+th{
+    @apply !bg-[#0F212E]
+}
+.table-wrapper.svelte-z7x44z {
+    @apply overflow-x-auto max-w-full w-full relative
+  
+}
+.scrollY, .scrollX {
+    scrollbar-color: #2f4553 transparent;
+}
+.table-content.svelte-z7x44z {
+    @apply w-full relative z-[2] overflow-x-scroll;
+   
+}
+.table-content.svelte-z7x44z>tbody {
+    position: relative;
+    animation-fill-mode: forwards !important;
+    animation-duration: .35s !important;
+    animation-timing-function: ease-out !important;
+    will-change: transform;
+}
+.table-content.svelte-z7x44z th:first-child {
+    @apply text-left rounded-tl-[.25rem] rounded-bl-[.25rem]
+        
+}
+.table-content.svelte-z7x44z th {
+    @apply font-semibold
+}
+.table-content.svelte-z7x44z td, .table-content.svelte-z7x44z th {
+    @apply p-[1rem] break-words whitespace-nowrap text-center text-[#b1bad3] text-sm
+   
+}
+
+.table-content.stripey.slideDownOdd.svelte-z7x44z>tbody tr:nth-child(odd) {
+    @apply bg-[#213743]
+}
+.currency.svelte-141qgpc {
+    @apply inline-flex items-center
+  
+}
+.content.svelte-141qgpc {
+    @apply inline-flex overflow-hidden whitespace-nowrap  
+    
+}
+.form-wrap.svelte-kpsotf {
+    @apply w-full flex justify-center
+
+}
+/* .affliate-wrap.svelte-1vuj99p>*+* {
+    @apply mt-[1rem]
+} */
+.form-wrap.svelte-kpsotf>form {
+    @apply max-w-[300px]
+}
+form.svelte-188ba96:not(.is-inline) {
+    @apply flex-col justify-center
+   
+}
+form.svelte-188ba96 {
+    @apply flex w-full 
+  
+}
+form.svelte-188ba96:not(.is-inline)>* {
+    @apply w-full
+    
+}
+/* .disabled\:opacity-50:disabled {
+    opacity: .5;
+} */
+.disabled\:pointer-events-none:disabled {
+    pointer-events: none;
+}
+p.align-center.svelte-17v69ua {
+    text-align: center;
+}
+.currency.svelte-141qgpc>*+* {
+    margin-left:.25rem;
+}
+.is-truncate.svelte-17v69ua {
+    @apply whitespace-nowrap  overflow-hidden text-ellipsis 
+}
+th,td,tr,td{
+    @apply !w-full
+}
+.withdraw-btn{
+   @apply  text-[rgb(5_8_10)] inline-flex relative items-center gap-2 justify-center rounded-sm font-semibold whitespace-nowrap 
+    transition disabled:pointer-events-none disabled:opacity-50 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 active:scale-[0.98] bg-[#078417] opacity-[1px]  hover:bg-green-400  focus-visible:outline-white text-base leading-none shadow-md py-[1.125rem] px-[1.75rem] min-w-[12ch]
+}
+
