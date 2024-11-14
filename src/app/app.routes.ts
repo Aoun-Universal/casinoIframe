@@ -125,26 +125,19 @@ export const routes: Routes = [
           import('./modal/settings-modals/settings/settings.component').then((c) => c.SettingsComponent),
       },
       {
-        path: 'horse-racing',
-        loadComponent: () => import('./pages/horse-racing/horse-racing.component').then((c) => c.HorseRacingComponent)
+        path: 'providers',
+        loadComponent: () =>
+          import('./pages/stake-offer/stake-offer.component').then((c) => c.StakeOfferComponent),
+      },
+      {
+        path: 'blog-page',
+        loadComponent: () =>
+          import('./pages/blog-page/blog-page.component').then((c) => c.BlogPageComponent),
       },
       {
         path: 'vip-club',
-        loadComponent: () => import('./pages/vip-cloud/vip-cloud.component').then((c) => c.VipCloudComponent)
-      },
-      {
-        path: 'blog',
-        loadComponent: () => import('./pages/blog-page/blog-page.component').then((c) => c.BlogPageComponent)
-
-      },
-      {
-        path: 'setting',
-        loadComponent: () => import('./modal/settings-modals/settings/settings.component').then((c) => c.SettingsComponent)
-      },
-
-      {
-        path: 'stake-offer',
-        loadComponent: () => import('./pages/stake-offer/stake-offer.component').then((c) => c.StakeOfferComponent)
+        loadComponent: () =>
+          import('./pages/vip-cloud/vip-cloud.component').then((c) => c.VipCloudComponent),
       },
       {
         path: 'stake-offer',
@@ -173,6 +166,10 @@ export const routes: Routes = [
   {
     path: 'notification',
     component: NotificationComponent
+  },
+  {
+    path: 'vip-club',
+    component: VipCloudComponent
   },
   {
     path: '**',
