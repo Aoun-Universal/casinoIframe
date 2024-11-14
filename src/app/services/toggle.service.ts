@@ -13,6 +13,7 @@ export class ToggleService {
   private statisticsModalState: BehaviorSubject<boolean> = new BehaviorSubject<boolean>(false);
   private statisticsTableModalState: BehaviorSubject<boolean> = new BehaviorSubject<boolean>(false);
   private notificationModalState: BehaviorSubject<boolean> = new BehaviorSubject<boolean>(false);;
+  private LeaderBoardModalState: BehaviorSubject<boolean> = new BehaviorSubject<boolean>(false);
 
 
   sidebarState$ = this.sidebarState.asObservable();
@@ -85,4 +86,13 @@ export class ToggleService {
   setnotificationModal(value: boolean) {
     this.notificationModalState.next(value)
   }
+
+  // LeaderBoard Modal
+   getLeaderBoardstate() {
+    return this.LeaderBoardModalState;
+  }
+  setLeaderBoardModal(value: boolean) {
+    this.LeaderBoardModalState.next(value);
+  }
+  
 }

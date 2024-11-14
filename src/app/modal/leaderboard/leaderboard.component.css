@@ -1,0 +1,112 @@
+@media screen and (min-width: 768px) {
+    #svelte {
+        @apply h-px min-h-screen w-full pt-0 pb-0;
+    }
+}
+
+.svg-icon {
+    @apply mt-[-3px] pointer-events-none [stroke-width:0] fill-current stroke-current flex-shrink-0 inline-block size-[1em]
+}
+
+.modal{
+    @apply fixed inset-0 z-[1500] p-4 flex items-center justify-center text-[1500];
+}
+
+.overlay {
+    @apply absolute inset-0 bg-black bg-opacity-75 touch-none;
+}
+
+.card {
+    @apply rounded-md bg-cover bg-center relative w-full min-w-[200px] max-w-[500px] max-h-[calc(100%-4em)] flex flex-col bg-[#1a2c38] text-[#b1bad3] overflow-hidden;
+}
+
+.header {
+    @apply flex justify-between p-4 touch-none;
+}
+
+.variant-highlighted.svelte-17v69ua {
+    @apply text-white;
+}
+
+.line-height-default.svelte-17v69ua,
+.line-height-base.svelte-17v69ua {
+    @apply leading-relaxed;
+}
+
+.text-size-base.svelte-17v69ua {
+    @apply text-base;
+}
+
+.svelte-17v69ua {
+    @apply leading-snug inline-flex items-center;
+}
+
+.modal-content {
+    @apply flex-1 flex flex-col relative;
+}
+
+.content {
+    @apply px-4 pb-4 flex flex-col gap-4;
+}
+
+.bg-grey-400 {
+    @apply bg-[#2f4553] 
+}
+
+/* Modal content styling */
+.row-1{
+    @apply flex p-4 bg-grey-400 justify-between gap-2 items-center rounded-sm
+}
+
+.hidden-btn{
+    @apply bg-[rgb(7,29,42)] px-2 rounded-sm h-fit
+}
+
+.text-truncate{
+    @apply truncate max-w-[12ch]
+}
+
+.bet-row{
+    @apply flex flex-wrap-reverse justify-end
+}
+
+.place-bet{
+    @apply font-bold text-[14px] text-white  text-right
+}
+
+.main-btn{
+    @apply inline-flex relative items-center gap-2 justify-center rounded-sm font-semibold whitespace-nowrap transition disabled:pointer-events-none disabled:opacity-50 focus-visible:outline-2 focus-visible:outline-offset-2 active:scale-[0.98] bg-transparent hover:hover:bg-transparent focus-visible:outline-none text-sm text-green-900 hover:hover:text-green-900 leading-normal
+}
+
+.user-btn{
+    @apply bg-[rgb(0,231,1)] px-2 rounded-sm h-fit
+}
+
+.dash{
+    @apply min-w-[30px] text-center font-bold
+}
+
+.row-2{
+    @apply pl-4 ml-auto flex flex-row gap-2 items-center
+}
+
+.row-3{
+    @apply flex p-4 bg-grey-400 justify-between gap-6 items-center rounded-sm
+}
+
+.right-buttons{
+    @apply flex flex-col-reverse sm:flex-row items-end
+}
+
+@media screen and (max-width:330px){
+    .text-truncate{
+        @apply max-w-[8ch] text-[12px]
+    }
+    .place-bet{
+        @apply text-[10px]
+    }
+
+    .modal{
+        @apply p-0
+    }
+}

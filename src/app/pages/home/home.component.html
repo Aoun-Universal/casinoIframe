@@ -450,9 +450,16 @@
               <!-- Gallery card buttons -->
               <div class="gallery-buttons">
                 <div class="flex items-center">
-                  <button class="leaderboard">{{ card.leaderboardText }}</button>
+                  <button class="leaderboard" (click)="card.clickFunction()">{{ card.leaderboardText }}</button>
                   <button class="arrows-btn ml-4">
-                    <!-- SVG Icon here -->
+                    <span>
+                      <svg fill="currentColor" viewBox="0 0 64 64" class="svg-icon " style="color: var(--white);">
+                        <title></title>
+                        <path
+                          d="M32 0C14.326 0 0 14.326 0 32s14.326 32 32 32 32-14.326 32-32S49.674 0 32 0Zm5.24 51.68H26.76v-21h10.48v21ZM32 24.56a6.12 6.12 0 1 1 6.12-6.12v.04a6.08 6.08 0 0 1-6.08 6.08h-.042H32Z">
+                        </path>
+                      </svg>
+                    </span>
                   </button>
                 </div>
               </div>
@@ -1073,3 +1080,5 @@
 <div class="md:hidden">
   <app-bet-slip></app-bet-slip>
 </div>
+
+<app-leaderboard></app-leaderboard>
