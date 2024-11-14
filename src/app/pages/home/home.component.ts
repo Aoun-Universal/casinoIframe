@@ -1,16 +1,14 @@
 import { NgClass, NgFor, NgIf, NgStyle } from '@angular/common';
 import { Component, CUSTOM_ELEMENTS_SCHEMA, ElementRef, ViewChild } from '@angular/core';
-
 import { ToggleService } from '../../services/toggle.service';
 import { BetSlipComponent } from '../../shared/bet-slip/bet-slip.component';
 import { SlickCarouselComponent, SlickCarouselModule } from 'ngx-slick-carousel';
-import { TabSliderComponent } from '../../shared/tab-slider/tab-slider.component';
 
 
 @Component({
   selector: 'app-home',
   standalone: true,
-  imports: [NgFor, NgIf, NgClass, NgStyle, BetSlipComponent, SlickCarouselModule, TabSliderComponent],
+  imports: [NgFor, NgIf, NgClass, NgStyle, BetSlipComponent, SlickCarouselModule],
   templateUrl: './home.component.html',
   styleUrl: './home.component.css',
   schemas: [CUSTOM_ELEMENTS_SCHEMA]
@@ -210,13 +208,6 @@ export class HomeComponent {
     this.LiveTab = tab;
   }
 
-  tabsItem = [
-    { tabTitle: 'All Bets', dotState: false },
-    { tabTitle: 'High Rollers', dotState: false },
-    { tabTitle: 'Race Leaderboard', dotState: true },
-  ]
+
 
 }
-
-
-
