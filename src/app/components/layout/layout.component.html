@@ -13,4 +13,16 @@
     </main>
   </div>
     <app-bet-slip></app-bet-slip>
+    @if (vaultModal) {
+      <app-vault></app-vault>
+    }
+    @if (vipModal) {
+      <app-vip></app-vip>
+    }
+    @if (statisticModal) {
+      <app-statistics></app-statistics>
+    }
+    @if (notificationState) {
+      <app-notification></app-notification>
+    }
 </div>

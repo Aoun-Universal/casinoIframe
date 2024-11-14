@@ -9,6 +9,7 @@ import { Component } from '@angular/core';
   styleUrl: './vault.component.css'
 })
 export class VaultComponent {
+  tab='Deposit'
 modalclose=true
 tooltipopen=false
 closeModal(){
@@ -16,5 +17,8 @@ closeModal(){
 }
 toggletolltip(){
 this.tooltipopen=!this.tooltipopen
+}
+toggletab(tabname:any){
+this.tab=tabname
 }
 }
