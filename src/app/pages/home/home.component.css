@@ -593,7 +593,7 @@ tr:hover {
 }
 
 .leaderboard{
-    @apply inline-flex relative items-center gap-2 justify-center rounded-sm font-semibold whitespace-nowrap  transition disabled:pointer-events-none disabled:opacity-50 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 active:scale-[0.98] bg-[rgb(20,117,225)] text-white hover:hover:bg-blue-600 hover:hover:text-white focus-visible:outline-white text-sm leading-none shadow-md py-[0.9375rem] px-[1.25rem]
+    @apply inline-flex relative items-center gap-2 justify-center rounded-sm font-semibold whitespace-nowrap  transition disabled:pointer-events-none disabled:opacity-50 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 active:scale-[0.98] bg-[rgb(20,117,225)] text-white hover:hover:bg-blue-600 hover:hover:text-white focus-visible:outline-white text-sm leading-none shadow-md   py-[0.9375rem] px-[1.25rem]
 }
 /* Timer */
 .timer{
@@ -647,11 +647,29 @@ tr:hover {
 }
 
 
-/* @media screen and (min-width:700px){
-.gallery{
-    @apply [grid-auto-columns:50%]
+@media screen and (min-width:700px){
+ .gallery-carousel{
+    @apply flex
+ }
+ .gallery-slide{
+    width: 50%;
+ }
 }
-} */
+
+@media screen and (max-width:320px){
+    .leaderboard{
+        @apply py-2 px-3 !text-xs
+    }
+    .timer-text{
+        @apply -mt-8
+    }
+.end-text{
+    @apply text-[10px] leading-[10px] 
+}
+    .time{
+        @apply text-[14px] leading-[14px]
+    }
+}
 
 @media screen and (min-width:827px){
     .header-inner{
