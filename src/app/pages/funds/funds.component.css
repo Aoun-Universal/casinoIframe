@@ -151,3 +151,4 @@ th,td,tr,td{
    @apply  text-[rgb(5_8_10)] inline-flex relative items-center gap-2 justify-center rounded-sm font-semibold whitespace-nowrap 
     transition disabled:pointer-events-none disabled:opacity-50 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 active:scale-[0.98] bg-[#078417] opacity-[1px]  hover:bg-green-400  focus-visible:outline-white text-base leading-none shadow-md py-[1.125rem] px-[1.75rem] min-w-[12ch]
 }
+

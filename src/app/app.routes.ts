@@ -19,6 +19,7 @@ import { RetentionProgramComponent } from './pages/retention-program/retention-p
 import { AffiliateOverviewComponent } from './pages/affiliate-overview/affiliate-overview.component';
 import { CommissionComponent } from './pages/commission/commission.component';
 import { FundsComponent } from './pages/funds/funds.component';
+import { ReferredUsersComponent } from './pages/referred-users/referred-users.component';
 
 
 export const routes: Routes = [
@@ -108,6 +109,10 @@ export const routes: Routes = [
           {
             path: 'funds',
             component:FundsComponent,
+          },
+          {
+            path: 'referred-users',
+            component:ReferredUsersComponent,
           },
           
         ],
