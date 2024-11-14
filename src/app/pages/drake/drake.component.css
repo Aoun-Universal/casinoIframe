@@ -39,7 +39,7 @@
 }
 
 .drake-title {
-  @apply inline-flex items-center md:text-[1.5rem] text-[20px] leading-[132%] font-[600];
+  @apply inline-flex justify-center text-center items-center md:text-[1.5rem] text-[20px] leading-[132%] font-[600];
 }
 
 .main-content > * + * {
@@ -138,7 +138,7 @@ button {
 }
 
 .section {
-  @apply flex md:flex-row justify-center gap-y-4 flex-col;
+  @apply flex md:flex-row items-center justify-center gap-y-4 flex-col;
 }
 
 .section:not(.stacked) > * {
