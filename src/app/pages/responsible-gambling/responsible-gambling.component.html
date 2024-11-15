@@ -92,8 +92,9 @@
                     <!-- Mbl view dropdown -->
                     <div
                       class="mbl-dropdown-container"
+                      *ngIf=" routerPath !== '/responsible-gambling'"
                     >
-                      <div class=" ">
+                      <div >
                         <a
                           class="menu-nav "
                           ><svg
@@ -196,9 +197,10 @@
                       </div>
                     </div>
                     <div
-                      class="card md:block hidden"
+                      class="card "
                       [ngClass]="{
-                        'active-route': routerPath !== '/responsible-gambling'
+                        'active-route': routerPath !== '/responsible-gambling',
+                        'md:block hidden':routerPath !== '/responsible-gambling'
                       }"
                     >
                       <div class="py-2 px-0">
