@@ -17,12 +17,12 @@
           </div>
           <div>
             <!-- start sports and casino button here -->
-            <div>
+            <div class="">
               <div class="flex justify-between items-center mt-[23px]">
                 <app-tab-slider [arrItem]="tabsItems"></app-tab-slider>
-                <div>
-                  <button class="active-btn">
-                    <span class="text-[13px]">Active</span><svg fill="currentColor" viewBox="0 0 64 64" class="svg-icon"
+                <div class="flex flex-col items-center">
+                  <button class="active-btn" (click)="openDropdown(tabDropdown)">
+                    <span class="text-[13px]" >{{ tabDropdown === 'active' ? 'Active' : 'Settled' }}</span><svg fill="currentColor" viewBox="0 0 64 64" class="svg-icon"
                       style="transform: rotate(0deg)">
                       <title></title>
                       <path
@@ -30,6 +30,13 @@
                       </path>
                     </svg>
                   </button>
+                  <div *ngIf="dropdown" class="relative mt-4 z-[1]"><div class="dropdown-wrapper"></div>
+                  <div  class="dropdown">
+                    <a  class="dropdown-options" [ngClass]="{ '!text-[#1475E1] :active-class': tabDropdown === 'active' }" (click)="openDropdown('active')">Active</a>
+                    <a  class="dropdown-options" [ngClass]="{ '!text-[#1475E1] :settled-class': tabDropdown === 'settled' }" (click)="openDropdown('settled')">Settled</a>
+                  </div></div>
+                  
+
                 </div>
               </div>
               <div class="main-icon">
@@ -329,7 +336,7 @@
           </div>
           <div class="bottom-wrapper">
             <div>
-              <a href="" class="bottom-text">
+              <a  class="bottom-text">
                 Play Sugar Rush 1000</a>
             </div>
           </div>
