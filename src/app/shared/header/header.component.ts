@@ -106,9 +106,10 @@ export class HeaderComponent implements OnInit {
   ];
 
 
-  showModal() {
-    if (this.profileOptions[10]) {
-      this.toggle.setLogout(true)
+  showModal(index:any) {
+    const currentIndex = index
+    if (currentIndex === 10) {
+      this.toggle.setLogout(true);
     }
   }
 

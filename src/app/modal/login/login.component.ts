@@ -45,7 +45,7 @@ export class LoginComponent implements OnInit {
     if (emailOrName === 'admin' && password === 'Abcd1234@') {
       this.authService.login();
       this.router.navigate(['/home']);
-      console.log('Login successful');
+      window.location.reload()
       this.toggle.setLogin(false);
     } else {
       this.router.navigateByUrl('/');

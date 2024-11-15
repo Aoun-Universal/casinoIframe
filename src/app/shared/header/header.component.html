@@ -109,9 +109,9 @@
                                     <!-- Arrow -->
                                     <div class="arrow"></div>
                                     <div class="dropdown-scroll-content " style="max-height: inherit;">
-                                        <ng-container *ngFor="let option of profileOptions">
+                                        <ng-container *ngFor="let option of profileOptions; let i = index">
                                             <button *ngIf="option.type === 'button'" type="button"
-                                                class="porfile-list w-full" (click)="showModal()">
+                                                class="porfile-list w-full" (click)="showModal(i)">
                                                 <img [src]="option.icon" [alt]="option.label" class="svg-icon">
                                                 <span>{{ option.label }}</span>
                                             </button>
