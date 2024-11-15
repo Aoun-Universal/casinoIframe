@@ -31,7 +31,7 @@
             </section>
             <div class="accordian-table-wrap svelte-1eda04b">
                 <div class="secondary-accordion level-2 rounded svelte-69p9vw">
-                    <div class="header rounded svelte-69p9vw">
+                    <div class="header rounded svelte-69p9vw" (click)="toggleContent()">
                         <div class="header svelte-1eda04b"><span class="text-sm">Username77</span>
                             <div><span class="text-sm">Commission:</span>
                                 <div class="currency svelte-141qgpc" role="presentation"> <span
@@ -48,10 +48,10 @@
                                         </svg></span> </div>
                             </div>
                         </div>
-                        <div class="arrow svelte-69p9vw" (click)="toggleContent()">
+                        <div class="arrow svelte-69p9vw">
                             <svg fill="currentColor" viewBox="0 0 64 64" class="svg-icon "
                                 style="transform: rotate(90deg)  "
-                                [ngStyle]="{ transform: isOpen ? 'rotate(90deg)' : 'rotate(0deg)' }">
+                                [ngStyle]="{ transform: isOpen ? 'rotate(0deg)' : 'rotate(90deg)' }">
                                 <title></title>
                                 <path
                                     d="M32.271 49.763 9.201 26.692l6.928-6.93 16.145 16.145 16.144-16.144 6.93 6.929-23.072 23.07h-.005Z">
