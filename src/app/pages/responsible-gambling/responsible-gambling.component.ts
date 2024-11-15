@@ -12,6 +12,7 @@ import { CommonModule } from '@angular/common';
   styleUrl: './responsible-gambling.component.css'
 })
 export class ResponsibleGamblingComponent {
+ 
   routerPath: any
   constructor(private router: Router,private eRef: ElementRef,) { }
   ngOnInit(): void {
@@ -26,14 +27,9 @@ export class ResponsibleGamblingComponent {
     this.routerPath = this.router.url;
 
 // Subscribe to router events to update the dash position on route change
-this.routerSubscription = this.router.events.subscribe((event) => {
-  if (event instanceof NavigationEnd) {
-    this.updateDashPosition();
-  }
+this.routerSubscription = this.router.events.subscribe(() => {
+  this.updateDashPosition();
 });
-
-// Initialize the dash position
-this.updateDashPosition();
 
   }
   WinnerDropdown = false; // Initially hidden
@@ -46,37 +42,36 @@ this.updateDashPosition();
       this.WinnerDropdown = false;
     }}
 
-
     routes = [
       { path: '/responsible-gambling/stake-smart', label: 'Stake Smart' },
       { path: '/responsible-gambling/responsible-gambling-faqs', label: 'Responsible Gambling FAQs' },
       { path: '/responsible-gambling/commission', label: 'Recognise the sign' },
       { path: '/responsible-gambling/', label: 'Self Assessment' },
       { path: '/responsible-gambling/self-exclusion', label: 'Self Exclusion' },
-      { path: '/responsible-gambling/calculator', label: 'Budget Calculator' },
+      { path: '/responsible-gambling/calculator', label: 'Budget Calculator' }
     ];
   
     activeIndex = 0;
-    private routerSubscription: Subscription | null = null; // Initialize with null
-  
-    // constructor(private router: Router) {}
+    private routerSubscription: Subscription | null = null;
   
    
+  
+   
+  
     ngOnDestroy(): void {
-      // Unsubscribe to prevent memory leaks
       if (this.routerSubscription) {
         this.routerSubscription.unsubscribe();
       }
     }
   
-    // Method to set the active index based on the current route
-    updateDashPosition() {
+    setActiveIndex(index: number): void {
+      this.activeIndex = index;
+    }
+  
+    updateDashPosition(): void {
       const currentRoute = this.router.url;
       this.activeIndex = this.routes.findIndex(route => route.path === currentRoute);
     }
-  
-    // Check if a route is active
-    isActive(path: string): boolean {
-      return this.router.url === path;
-    }
+
+
 }
