@@ -198,3 +198,11 @@
 .tooltip {
   @apply bg-white text-black text-sm rounded-sm px-4 py-2 absolute -top-10 right-[-14px]   shadow-lg;
 }
+
+.input-camping {
+  @apply h-[39px] p-[7px] border-2 border-[#2F4553] focus:border-[#557086] focus:outline-none rounded bg-[#0F212E];
+}
+
+.main-camping {
+  @apply flex flex-col w-full text-[14px] text-[#b1bad3];
+}
