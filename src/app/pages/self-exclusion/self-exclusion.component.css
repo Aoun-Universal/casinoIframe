@@ -37,3 +37,17 @@
 .svg-icon {
     @apply pointer-events-none [stroke-width:0] fill-current stroke-current flex-shrink-0 inline-block size-[1em];
   }
+  .self-exclusion{
+    @apply inline-flex relative items-center gap-2 justify-center rounded-sm font-semibold whitespace-nowrap 
+     transition disabled:pointer-events-none disabled:opacity-50
+      focus-visible:outline-2 focus-visible:outline-offset-2 active:scale-[0.98] 
+      bg-transparent text-white hover:bg-transparent hover:text-white focus-visible:outline-none text-sm
+     leading-none 
+  }
+  .request-self {
+    @apply inline-flex bg-[rgb(47,69,83)] relative items-center gap-2 justify-center
+     rounded-sm font-semibold whitespace-nowrap  transition 
+     disabled:pointer-events-none disabled:opacity-50 focus-visible:outline 
+     focus-visible:outline-2 focus-visible:outline-offset-2 active:scale-[0.98]  text-white
+      hover:text-white focus-visible:outline-white text-sm leading-none shadow-md py-[0.9375rem] px-[1.25rem]
+  }
