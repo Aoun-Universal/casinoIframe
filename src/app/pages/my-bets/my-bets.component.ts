@@ -40,7 +40,7 @@ export class MyBetsComponent {
   tabsItem = [
     { tabTitle: 'All Bets', dotState: false },
     { tabTitle: 'High Rollers', dotState: false },
-    { tabTitle: 'Race Leaderboard', dotState: false },
+    { tabTitle: 'Race Leaderboard', dotState: true },
   ]
 
   tabsItems = [

@@ -14,11 +14,26 @@ import { VipComponent } from "../../modal/vip/vip.component";
 import { StatisticsComponent } from "../../modal/statistics/statistics.component";
 import { NotificationComponent } from "../../modal/notification/notification.component";
 import { StatisticsModalTableComponent } from "../../modal/statistics-modal-table/statistics-modal-table.component";
+import { WalletModalComponent } from "../../modal/wallet-modal/wallet-modal.component";
+import { SetupWalletComponent } from '../../modal/setup-wallet/setup-wallet.component';
 
 @Component({
   selector: 'app-layout',
   standalone: true,
-  imports: [ContentComponent, SidebarComponent, FooterComponent, CommonModule, HeaderComponent, MobileNavigationComponent, BetSlipComponent, VaultComponent, VipComponent, StatisticsComponent, NotificationComponent, StatisticsModalTableComponent],
+  imports: [ContentComponent,
+     SidebarComponent,
+      FooterComponent,
+       CommonModule,
+        HeaderComponent,
+         MobileNavigationComponent,
+          BetSlipComponent,
+           VaultComponent,
+            VipComponent,
+             StatisticsComponent,
+              NotificationComponent,
+               StatisticsModalTableComponent,
+                WalletModalComponent,
+              SetupWalletComponent],
   templateUrl: './layout.component.html',
   styleUrls: ['./layout.component.css']
 })

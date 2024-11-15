@@ -1,0 +1,157 @@
+@if (showModal) {
+<div id="svelte">
+    <div class="modal">
+        <div class="overlay"></div>
+        <div class="card size-md">
+            <!-- Header -->
+            <div class="header">
+                <h2
+                    class="weight-semibold line-height-default align-left size-base text-size-base variant-highlighted with-icon-space svelte-17v69ua">
+                    <svg fill="currentColor" viewBox="0 0 64 64" class="svg-icon mr-2">
+                        <title></title>
+                        <path fill-rule="evenodd" fill="#b1bad3" clip-rule="evenodd"
+                            d="M57.083 14.721h1.883l-.002-.002h.002a5.036 5.036 0 0 1 5.013 4.974v10.855a8.822 8.822 0 0 1-8.81 8.81h.007a2.316 2.316 0 1 1-.006-4.62 4.189 4.189 0 0 0 4.179-4.188V19.715a.373.373 0 0 0-.373-.372H56.67l-.014.129c-1.639 12.147-12.048 21.512-24.645 21.512-12.873 0-23.46-9.778-24.75-22.416H5.056a.382.382 0 0 0-.383.382v10.825a4.2 4.2 0 0 0 4.179 4.199 2.307 2.307 0 0 1 0 4.611h-.01a8.82 8.82 0 0 1-8.821-8.82V18.98a5.034 5.034 0 0 1 5.035-5.034h1.782l-.725-10.25v.011A3.433 3.433 0 0 1 9.537 0h44.948a3.433 3.433 0 0 1 3.424 3.695l-.826 11.026Zm-15.005 3.033a1.543 1.543 0 0 0-.826-2.58l-4.631-.674h-.009a1.542 1.542 0 0 1-1.15-.846l-2.074-4.199-.004-.008a1.542 1.542 0 0 0-2.755.008l-2.074 4.199-.004.008c-.221.417-.63.72-1.124.797l-4.631.675-.008.002a1.543 1.543 0 0 0-1.303 1.523c0 .427.175.813.457 1.093l3.373 3.273a1.507 1.507 0 0 1 .43 1.359l-.785 4.612.002-.008a1.53 1.53 0 0 0 2.183 1.63l4.149-2.176-.008.004a1.49 1.49 0 0 1 .723-.186c.262 0 .507.067.715.182l4.108 2.175-.008-.004a1.53 1.53 0 0 0 2.233-1.617l-.775-4.612.002.01a1.509 1.509 0 0 1 .433-1.37l3.361-3.27Zm1.603 35.462h.01a5.257 5.257 0 0 1 5.256 5.256v.14A5.388 5.388 0 0 1 43.56 64H20.461a5.388 5.388 0 0 1-5.387-5.387v-.141a5.257 5.257 0 0 1 5.257-5.256h.01a6.284 6.284 0 0 0 6.283-6.283v-1.41h10.774v1.41a6.283 6.283 0 0 0 6.283 6.283Z">
+                        </path>
+                    </svg>
+                    <span class="text-white font-bold">Leaderboard</span>
+                </h2>
+                <button (click)=" closeModal()"
+                    class="inline-flex relative items-center gap-2 justify-center rounded-sm font-semibold whitespace-nowrap ring-offset-background transition disabled:pointer-events-none disabled:opacity-50 focus-visible:outline-2 focus-visible:outline-offset-2 active:scale-[0.98] bg-transparent text-grey-200 betterhover:hover:bg-transparent betterhover:hover:text-white focus-visible:text-white focus-visible:outline-none text-base leading-none w-[16px] h-[24px]">
+                    <svg fill="currentColor" viewBox="0 0 64 64" class="svg-icon">
+                        <title></title>
+                        <path
+                            d="m54.827 16.187-7.014-7.014L32 24.987 16.187 9.173l-7.014 7.014L24.987 32 9.173 47.813l7.014 7.014L32 39.013l15.813 15.814 7.014-7.014L39.013 32l15.814-15.813Z">
+                        </path>
+                    </svg>
+                </button>
+            </div>
+
+            <!-- Modal Content -->
+            <div class="content scrollY overscroll-behavior-contain svelte-cq3ecl">
+                <div class="modal-content svelte-cq3ecl">
+                    <!-- main -->
+
+                    <div class="flex flex-col gap-2">
+
+                        <!-- 1 -->
+                        <div class="row-1">
+                            <div class="flex gap-2">
+                                <!-- leader svg -->
+                                <div class="min-w-[30px]">
+                                    <svg width="20" height="21" viewBox="0 0 20 21" fill="none"
+                                        xmlns="http://www.w3.org/2000/svg">
+                                        <path fill-rule="evenodd" clip-rule="evenodd"
+                                            d="M17 6.33334L10 2.16667L3 6.33334V14.6667L10 18.8333L17 14.6667V6.33334Z"
+                                            fill="#5D6559"></path>
+                                        <path fill-rule="evenodd" clip-rule="evenodd"
+                                            d="M10 2.16667L3 6.33334V14.6667L10 18.8333L17 14.6667V6.33334L10 2.16667ZM16.5833 6.57022L10 2.65157L3.41667 6.57022V14.4298L10 18.3484L16.5833 14.4298V6.57022Z"
+                                            fill="#E9D18C"></path>
+                                        <path
+                                            d="M9.25829 14.2765C9.25829 14.3941 9.35244 14.5 9.48189 14.5H10.7882C10.9059 14.5 11 14.3941 11 14.2765V6.72353C11 6.60588 10.9059 6.5 10.7882 6.5H9.70549L7.9873 7.84118C7.95199 7.87647 7.91669 7.97059 7.91669 8.01765V8.75882C7.91669 8.87647 8.01083 8.98235 8.12852 8.98235H9.25829V14.2765Z"
+                                            fill="#E9D18C"></path>
+                                        <path
+                                            d="M20 5.66667L17.9167 6.25001V8.58334C19.1485 8.23844 20 7.1157 20 5.83655V5.66667Z"
+                                            fill="#CBC9B5"></path>
+                                        <path
+                                            d="M20 8.33334L17.9167 8.91668V11.25C19.1485 10.9051 20 9.78237 20 8.50322V8.33334Z"
+                                            fill="#A1A498"></path>
+                                        <path
+                                            d="M20 11L17.9167 11.5833V13.9167C19.1485 13.5718 20 12.449 20 11.1699V11Z"
+                                            fill="#5D6559"></path>
+                                        <path
+                                            d="M-2.02656e-05 5.66667L2.08331 6.25001V8.58334C0.851534 8.23844 -2.02656e-05 7.1157 -2.02656e-05 5.83655V5.66667Z"
+                                            fill="#CBC9B5"></path>
+                                        <path
+                                            d="M-2.02656e-05 8.33334L2.08331 8.91668V11.25C0.851534 10.9051 -2.02656e-05 9.78237 -2.02656e-05 8.50322V8.33334Z"
+                                            fill="#A1A498"></path>
+                                        <path
+                                            d="M-2.02656e-05 11L2.08331 11.5833V13.9167C0.851534 13.5718 -2.02656e-05 12.449 -2.02656e-05 11.1699V11Z"
+                                            fill="#5D6559"></path>
+                                    </svg>
+                                </div>
+                                <!-- Hidden btn -->
+                                <div class="hidden-btn">
+                                    <div class="hoverable ">
+                                        <div class="flex gap-1 items-center w-full">
+                                            <svg fill="currentColor" viewBox="0 0 64 64" class="svg-icon ">
+                                                <title></title>
+                                                <path fill-rule="evenodd" clip-rule="evenodd"
+                                                    d="M42.05 8.613c2.815 0 5.192 1.879 5.955 4.494l3.64 12.792H12.253l3.64-12.792.01-.044a6.197 6.197 0 0 1 5.944-4.45H42.05ZM61.488 30.77H2.461a2.461 2.461 0 0 0 0 4.921c8.873 1.271 19.12 1.997 29.539 1.997s20.664-.726 30.696-2.131l-.598.068a2.461 2.461 0 0 0-.56-4.858l-.05.003ZM33.484 43.074h-3.05c-6.335-1.515-13.677-1.22-21.547 0v2.501l3.05.58s0 9.233 9.233 9.233c6.223 0 8.247-5.583 8.908-9.233h3.721c.661 3.65 2.685 9.233 8.908 9.233 9.233 0 9.233-9.233 9.233-9.233l3.05-.58v-2.501c-7.718-1.24-15.008-1.485-21.506 0Z">
+                                                </path>
+                                            </svg>
+                                            <span class="truncate">
+                                                <span
+                                                    class="weight-semibold line-height-default is-inline align-left size-default text-size-default variant-subtle with-icon-space svelte-17v69ua"><span>Hidden</span></span></span>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <!-- Right buttons -->
+                            <div class="right-buttons">
+                                <div class="flex flex-row gap-2 items-center">
+                                    <svg fill="currentColor" viewBox="0 0 64 64" class="svg-icon ">
+                                        <title></title>
+                                        <path
+                                            d="M.001 3.549v7.12h7.12v49.786h6.214c.778-3.122 3.556-5.398 6.866-5.398a7.07 7.07 0 0 1 6.856 5.348l.01.048h9.974c.778-3.122 3.556-5.398 6.866-5.398a7.07 7.07 0 0 1 6.856 5.348l.01.048h6.16V10.665h7.066v-7.12L.001 3.549Zm35.546 37.334h-17.76v-5.334h17.76v5.334Zm10.668-14.214H17.789v-5.334h28.426v5.334Z">
+                                        </path>
+                                    </svg>
+                                    <div class="currency svelte-141qgpc" role="presentation">
+                                        <span class="row-content "><span
+                                                class="weight-bold line-height-default align-left max-w-[12ch] size-default text-size-default variant-subtle numeric with-icon-space svelte-17v69ua"><span
+                                                    class="text-truncate">$221,773,115.01
+                                                </span></span></span>
+                                    </div>
+                                </div>
+                                <!-- 2 -->
+                                <div class="row-2">
+                                    <svg fill="currentColor" viewBox="0 0 64 64" class="svg-icon ">
+                                        <title></title>
+                                        <path fill="#fff"
+                                            d="M28.651 60.5H11.883c-1.85 0-3.347-1.5-3.347-3.348V37.036c-1.85 0-3.348-1.5-3.348-3.348v-6.722c0-1.85 1.5-3.348 3.348-3.348h20.116V60.5Zm26.813-36.884H35.347V60.5h16.768c1.85 0 3.349-1.5 3.349-3.348V37.036c1.85 0 3.348-1.5 3.348-3.348v-6.722c0-1.85-1.5-3.348-3.348-3.348v-.002ZM45.416 3.5C38.005 3.5 32 9.508 32 16.918h13.418c1.85 0 3.349-1.5 3.349-3.348V6.848c0-1.85-1.5-3.348-3.349-3.348Zm-26.836 0c-1.85 0-3.348 1.5-3.348 3.348v6.722c0 1.85 1.5 3.348 3.348 3.348H32C32 9.506 25.99 3.5 18.58 3.5Z">
+                                        </path>
+                                    </svg>
+                                    <div class="currency svelte-141qgpc" role="presentation">
+                                        <span class="row-content ">
+                                            <span
+                                                class="weight-bold line-height-default align-left size-default text-size-default variant-highlighted numeric with-icon-space is-truncate svelte-17v69ua"><span
+                                                    class="text-truncate">$25,000.00 </span></span></span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+
+                        <!-- 2 -->
+                        <div class="flex place-content-center gap-1">
+                            <svg width="4" height="4" viewBox="0 0 4 4" fill="none">
+                                <circle cx="2" cy="2" r="2" fill="#B1BAD3"></circle>
+                            </svg> <svg width="4" height="4" viewBox="0 0 4 4" fill="none">
+                                <circle cx="2" cy="2" r="2" fill="#B1BAD3"></circle>
+                            </svg> <svg width="4" height="4" viewBox="0 0 4 4" fill="none">
+                                <circle cx="2" cy="2" r="2" fill="#B1BAD3"></circle>
+                            </svg>
+                        </div>
+
+                        <!-- 3 -->
+                        <div class="row-3">
+                            <div class="flex gap-4">
+                                <div class="dash">-</div>
+                                <!-- User -->
+                                <div class="user-btn">
+                                    <div class="wrap">
+                                        <button class="main-btn">Scarlettt9870</button>
+                                    </div>
+                                </div>
+                            </div>
+                            <!-- place bet row -->
+                            <div class="bet-row"><span class="place-bet">Place
+                                    a bet to enter the leaderboard</span></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+</div>
+}

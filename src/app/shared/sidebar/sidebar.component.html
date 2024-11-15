@@ -8,7 +8,7 @@
     </button>
     <div class="link-wrap" [ngClass]="{'flex-col !items-center pt-[16px] ':!isSidebar}">
       <a class="header-button casino" [ngClass]="{'casino-btn-mobile':!isSidebar}"><span class="text-[14px]"
-          *ngIf="isSidebar">CASINO</span></a>
+          *ngIf="isSidebar" routerLink="soccer">CASINO</span></a>
       <div class="image-loader"></div>
       <a class="header-button sports" [ngClass]="{'sport-btn-mobile':!isSidebar}" routerLink="sport-market"><span
           class="text-[14px]" *ngIf="isSidebar">SPORTS</span></a>
@@ -334,7 +334,7 @@
           <!-- dropdown inner content -->
           <div class="inner-content" [ngClass]="{'active-dropdown':openBar === 'profile'}">
             <div class="hr-border"></div>
-            <div class="nav-item dropdown-item">
+            <div class="nav-item dropdown-item" (click)="onWalletBtnClick()">
               <div class="title-wrapper">
                 <svg fill="currentColor" viewBox="0 0 64 64" class="svg-icon ">
                   <title></title>
@@ -1051,7 +1051,6 @@
                 <div>Outrights</div>
               </div>
             </div>
-
             <div class="nav-item dropdown-item">
               <div class="title-wrapper">
                 <svg fill="none" viewBox="0 0 96 96" class="svg-icon ">
@@ -1066,9 +1065,14 @@
                 <div>La liga</div>
               </div>
             </div>
+            <div class="nav-item dropdown-item" routerLink="all-tennis">
+              <div class="title-wrapper">
+                <svg fill="#b1bad3" viewBox="0 0 64 64" class="w-[14px]"> <title></title> <path fill-rule="evenodd" clip-rule="evenodd" d="M33.092 14.967 18.97.847a2.84 2.84 0 0 0-4.018 0L.833 14.966a2.84 2.84 0 0 0 0 4.018l14.12 14.12a2.84 2.84 0 0 0 4.018 0l14.12-14.12a2.84 2.84 0 0 0 0-4.018ZM61.16 4.137H41.191a2.84 2.84 0 0 0-2.84 2.84v19.969a2.84 2.84 0 0 0 2.84 2.84H61.16a2.84 2.84 0 0 0 2.84-2.84V6.977a2.84 2.84 0 0 0-2.84-2.84Zm-54.17 34.2h19.97a2.84 2.84 0 0 1 2.84 2.84v19.969a2.84 2.84 0 0 1-2.84 2.84H6.99a2.84 2.84 0 0 1-2.839-2.84V41.177a2.84 2.84 0 0 1 2.84-2.84Zm54.17 0H41.191a2.84 2.84 0 0 0-2.84 2.84v19.969a2.84 2.84 0 0 0 2.84 2.84H61.16a2.84 2.84 0 0 0 2.84-2.84V41.177a2.84 2.84 0 0 0-2.84-2.84Z"></path></svg>
+                <div class="text-nowrap">View  All</div>
+              </div>
+            </div>
           </div>
         </div>
-
       </div>
 
       <div class="dropdown-container" *ngIf="routerPath==='/sport-market'">
