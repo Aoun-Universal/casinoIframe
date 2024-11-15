@@ -44,14 +44,16 @@ export class LoginComponent implements OnInit {
     console.log(password);
     if (emailOrName === 'admin' && password === 'Abcd1234@') {
       this.authService.login();
-      this.router.navigate(['/home']);
-      window.location.reload()
+      this.router.navigateByUrl('/home').then(() => {
+        window.location.reload(); 
+      });
       this.toggle.setLogin(false);
     } else {
       this.router.navigateByUrl('/');
       console.log('Login failed');
     }
   }
+
 
   ngOnInit(): void {
     this.toggle.getLogin().subscribe((value) => {
