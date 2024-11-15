@@ -19,6 +19,7 @@ export class ToggleService {
   private wallet: BehaviorSubject<boolean> = new BehaviorSubject<boolean>(false);
   private LeaderBoardModalState: BehaviorSubject<boolean> = new BehaviorSubject<boolean>(false);
   private RaceModalState: BehaviorSubject<boolean> = new BehaviorSubject<boolean>(false);
+  private campaingModalState: BehaviorSubject<boolean> = new BehaviorSubject<boolean>(false);
 
 
 
@@ -42,16 +43,16 @@ export class ToggleService {
   getBetslipState() {
     return this.Betslip;
   }
-  
+
   getBetslipContent() {
     return this.BetslipContent;
   }
 
 
-  setBetslipContent(value:boolean) {
+  setBetslipContent(value: boolean) {
     this.BetslipContent.next(value);
   }
-  
+
   setBetslipstate(value: boolean) {
     this.Betslip.next(value);
   }
@@ -62,6 +63,14 @@ export class ToggleService {
   }
   setVipModalState(value: boolean) {
     this.vipModalState.next(value);
+  }
+
+  // campaing modal methods
+  getCampaingModalState() {
+    return this.campaingModalState;
+  }
+  setcampaingModalState(value: boolean) {
+    this.campaingModalState.next(value);
   }
 
   // Vault modal methods
@@ -93,10 +102,10 @@ export class ToggleService {
     this.notificationModalState.next(value)
   }
 
-  getWalletModal(){
+  getWalletModal() {
     return this.walletModal
   }
-  setWalletModal(value:boolean){
+  setWalletModal(value: boolean) {
     this.walletModal.next(value)
   }
 
@@ -108,13 +117,13 @@ export class ToggleService {
   }
 
 
-   getLeaderBoardstate() {
+  getLeaderBoardstate() {
     return this.LeaderBoardModalState;
   }
   setLeaderBoardModal(value: boolean) {
     this.LeaderBoardModalState.next(value);
   }
-  
+
 
   getRaceModalstate() {
     return this.RaceModalState;

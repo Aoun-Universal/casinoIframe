@@ -4,7 +4,7 @@ import { Component } from '@angular/core';
 @Component({
   selector: 'app-vip-cloud',
   standalone: true,
-  imports: [NgIf,NgClass],
+  imports: [NgIf, NgClass],
   templateUrl: './vip-cloud.component.html',
   styleUrls: ['./vip-cloud.component.css']
 })
@@ -13,7 +13,6 @@ export class VipCloudComponent {
 
   toggleAccordion() {
     this.isOpen = !this.isOpen;
-    console.log(this.isOpen);
-    
+
   }
 }

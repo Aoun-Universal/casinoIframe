@@ -1,22 +1,16 @@
-import { CommonModule } from '@angular/common';
 import { Component } from '@angular/core';
 import { ToggleService } from '../../services/toggle.service';
+import { NgClass, NgFor, NgForOf, NgIf } from '@angular/common';
 
 @Component({
-  selector: 'app-campaigns',
+  selector: 'app-create-new-campaing',
   standalone: true,
-  imports: [CommonModule],
-  templateUrl: './campaigns.component.html',
-  styleUrl: './campaigns.component.css'
+  imports: [NgIf, NgClass],
+  templateUrl: './create-new-campaing.component.html',
+  styleUrl: './create-new-campaing.component.css'
 })
-export class CampaignsComponent {
-  isOpen = false;
+export class CreateNewCampaingComponent {
 
-  toggleContent() {
-    this.isOpen = !this.isOpen;
-  }
-
-  constructor(private toggle: ToggleService) { }
 
   referralLink: string = 'https://example.com/referral'; // Default value
   isCopied: boolean = false; // Tooltip visibility flag
@@ -39,7 +33,10 @@ export class CampaignsComponent {
     }, 2000);
   }
 
-  openCampingModal() {
-    this.toggle.setcampaingModalState(true);
+
+
+  constructor(private toggle: ToggleService) { }
+  closeCampaing() {
+    this.toggle.setcampaingModalState(false);
   }
 }
