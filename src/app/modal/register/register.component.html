@@ -9,8 +9,7 @@
             <img class="wrap-normal-svg" src="/login/white.png" />
           </div>
         </div>
-        <button (click)="closeModal()"
-          class="exit [&amp;_svg]:text-grey-200 [&amp;:hover>svg]:text-white "
+        <button (click)="closeModal()" class="exit [&amp;_svg]:text-grey-200 [&amp;:hover>svg]:text-white "
           type="button">
           Exit
         </button>
@@ -27,9 +26,7 @@
                 <div class="step-active" [ngClass]="{'step-svelte': currentStep !== 3}"></div>
               </div>
               <div class="stack-padding" [ngClass]="{'!justify-end':currentStep === 1}">
-                <button *ngIf="currentStep > 1"
-                  class="back-btn"
-                  type="button" (click)="prevStep()">
+                <button *ngIf="currentStep > 1" class="back-btn" type="button" (click)="prevStep()">
                   <img class="svg-back-arrow" src="/login/back-icon.png" />
                   Back
                 </button>
@@ -70,9 +67,7 @@
               </div>
             </label>
             <div class="flex flex-col justify-end h-full" *ngIf="currentStep === 1">
-              <button (click)="nextStep()"
-                class="confirm-btn"
-                type="button">
+              <button (click)="nextStep()" class="confirm-btn" type="button">
                 <div class="contents">
                   Confirm
                 </div>
@@ -158,9 +153,7 @@
                         formControlName="password" name="password" type="password" />
 
                       <div class="password-visibility">
-                        <button (click)="togglePasswordVisibility()"
-                          class="password-btn"
-                          type="button">
+                        <button (click)="togglePasswordVisibility()" class="password-btn" type="button">
                           <!-- pasword icon svg -->
                           <!-- pasword icon svg -->
                           <img *ngIf="!passwordVisible" alt="eye-icon" class="svg-icon-password" src="/login/eye.png" />
@@ -226,13 +219,11 @@
                     <div>
                       <label class="tc-label inline-flex items-center cursor-pointer">
                         <input type="checkbox" class="tc-checkbox hidden">
-                        <span
-                          class="indicator-variant phone-btn"
-                          (click)="togglePhone()">
+                        <span class="indicator-variant phone-btn" (click)="togglePhone()">
                           <!-- Thicker checkmark icon -->
-                          <svg class="checkmark checkmark-icon"
-                            xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"
-                            stroke-width="3" stroke-linecap="round" stroke-linejoin="round">
+                          <svg class="checkmark checkmark-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"
+                            fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round"
+                            stroke-linejoin="round">
                             <polyline points="20 6 9 17 4 12" />
                           </svg>
                         </span>
@@ -511,8 +502,7 @@
                     </div>
 
                     <div class="flex mt-1">
-                      <span
-                        class="optional-text">By
+                      <span class="optional-text">By
                         submitting your phone number, you are opting-in to
                         receive marketing communications &amp; offers via SMS from
                         Stake.</span>
@@ -533,13 +523,11 @@
                     <div>
                       <label class="tc-label inline-flex items-center cursor-pointer">
                         <input type="checkbox" class="tc-checkbox hidden">
-                        <span
-                          class="indicator-variant country-code"
-                          (click)="toggleCode()">
+                        <span class="indicator-variant country-code" (click)="toggleCode()">
                           <!-- Thicker checkmark icon -->
-                          <svg class="checkmark checkmark-icon"
-                            xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"
-                            stroke-width="3" stroke-linecap="round" stroke-linejoin="round">
+                          <svg class="checkmark checkmark-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"
+                            fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round"
+                            stroke-linejoin="round">
                             <polyline points="20 6 9 17 4 12" />
                           </svg>
                         </span>
@@ -550,47 +538,36 @@
                 </div>
                 <!-- Continue btn -->
                 <div class="nextStep-container">
-                  <button (click)="nextStep()"
-                    class="nextStep-btn"
-                    type="submit">
+                  <button (click)="nextStep()" class="nextStep-btn" type="submit">
                     <div class="contents">Continue</div>
                   </button>
                 </div>
                 <!-- OR text -->
                 <div class="wrap-svelte">
                   <div class="or-svelte">
-                    <span
-                      class="or-text">OR</span>
+                    <span class="or-text">OR</span>
                   </div>
                   <div class="oauth-svelte pb-[25px]">
                     <div class="">
-                      <button
-                        class="social-btn"
-                        type="button">
+                      <button class="social-btn" type="button">
                         <!-- facebook svg -->
                         <img alt="facebook-logo" class="svg-icon-password" src="/login/Facebook.png" />
                       </button>
                     </div>
                     <div class="">
-                      <button
-                        class="social-btn"
-                        type="button">
+                      <button class="social-btn" type="button">
                         <!-- google svg -->
                         <img alt="google-icon" class="svg-icon" src="/login/Google.png" />
                       </button>
                     </div>
                     <div class="">
-                      <button
-                        class="provider-login-line"
-                        type="button">
+                      <button class="provider-login-line" type="button">
                         <!-- provider-login-line svg -->
                         <img alt="line-icon" class="svg-icon-password" src="/login/Line.png" />
                       </button>
                     </div>
                     <div class="provider-wrapper svelte-qhfv7k">
-                      <button [disabled]="registerForm.invalid"
-                        class="provider-login-line  "
-                        type="button">
+                      <button [disabled]="registerForm.invalid" class="provider-login-line  " type="button">
                         <!-- login-twitch svg -->
                         <img alt="twitch-icon" class="svg-icon-password" src="/login/Comment.png" />
                       </button>
@@ -653,13 +630,11 @@
                     <div>
                       <label class="tc-label inline-flex items-center cursor-pointer">
                         <input type="checkbox" class="tc-checkbox hidden">
-                        <span
-                          class="indicator-variant country-code"
-                          (click)="toggleCode()">
+                        <span class="indicator-variant country-code" (click)="toggleCode()">
                           <!-- Thicker checkmark icon -->
-                          <svg class="checkmark checkmark-icon"
-                            xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"
-                            stroke-width="3" stroke-linecap="round" stroke-linejoin="round">
+                          <svg class="checkmark checkmark-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"
+                            fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round"
+                            stroke-linejoin="round">
                             <polyline points="20 6 9 17 4 12" />
                           </svg>
                         </span>
@@ -668,9 +643,7 @@
                       </label>
                     </div>
                   </div>
-                  <button
-                    class="loader-content"
-                    type="submit">
+                  <button class="loader-content" type="submit">
                     <div class="contents" data-loader-content="">
                       Create an account
                     </div>
@@ -684,9 +657,7 @@
 
             <div class="flex flex-col justify-end gap-3">
               <span class="already-text">Already have an account?
-                <button
-                  class="sign-btn [&amp;_svg]:text-grey-200 [&amp;:hover>svg]:text-white"
-                  type="button">
+                <button class="sign-btn [&amp;_svg]:text-grey-200 [&amp;:hover>svg]:text-white" type="button">
                   Sign In
                 </button></span>
             </div>
@@ -696,322 +667,3 @@
     </div>
   </div>
 </div>
-
-
-<!-- 2nd Step======================================================= -->
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-<!-- 3rd step============================================================================ -->
-
-<!-- <div *ngIf="currentStep === 3">
-  <div class="Modal-container">
-    <div class="svelte-syudie"></div>
-    <div class="card-svelte">
-      <div class="ctainer-div">
-        <div>
-          <div class="wrap-normal">
-            <img class="wrap-normal-svg" src="/login/white.png"/>
-          </div>
-        </div>
-        <button
-          class="inline-flex relative items-center gap-2 justify-center font-semibold whitespace-nowrap ring-offset-background transition disabled:pointer-events-none disabled:opacity-50 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 active:scale-[0.98] bg-transparent text-white betterhover:hover:bg-grey-900 betterhover:hover:text-white focus-visible:outline-white text-xs leading-none [&amp;_svg]:text-grey-200 [&amp;:hover>svg]:text-white py-[0.75rem] px-[0.75rem] rounded-full"
-          type="button"
-        >
-          Exit
-        </button>
-      </div>
-
-      <div class="content-svelte">
-        <div class="modal-content">
-          <div class="contenttop">
-            <div class="ctainer">
-              <div class="stack">
-                <div class="step-active"></div>
-                <div class="step-svelte"></div>
-                <div class="step-svelte"></div>
-              </div>
-              <div class="stack-padding">
-                <button
-                  class="inline-flex relative items-center gap-2 justify-center rounded-sm font-semibold whitespace-nowrap ring-offset-background transition disabled:pointer-events-none disabled:opacity-50 focus-visible:outline-2 focus-visible:outline-offset-2 active:scale-[0.98] bg-transparent text-grey-200 betterhover:hover:bg-transparent betterhover:hover:text-white focus-visible:text-white focus-visible:outline-none text-sm leading-none"
-                  type="button"
-                >
-                  <img class="svg-back-arrow" src="/login/back-icon.png"/>
-                  Back
-                </button>
-                <span class="step-text">Step 2 / 3</span>
-              </div>
-            </div>
-            <div class="self-start mb-1">
-              <h2 class="select-language">Create an account</h2>
-            </div>
-            <form
-              class="flex-col justify-center touch-auto flex w-full h-full"
-              
-            >
-              <div>
-                <div class="term-div">
-                  <div class="content-block">
-                    <h1 class="term-text">
-                      <span
-                      >Terms and Conditions
-                      </span>
-                    </h1>
-                    <p class="inline-text"><span class="span-text"></span></p>
-                    <h3 class="stake-text">
-                      <span >1. STAKE.COM </span>
-                    </h3>
-                    <p class="inline-text">
-                      <span class="span-text"
-                      >1.1 Stake.com is owned and operated by Medium Rare,
-                        N.V. (hereinafter "Stake", "We" or "Us"), a company with
-                        head office at Korporaalweg 10, Willemstad, Curaçao.
-                        Medium Rare N.V. is authorised to offer it’s services in
-                        accordance with the Certificate of Operation
-                        (Application no. OGL/2024/1451/0918) issued by the
-                        Curaçao Gaming Control Board. Some credit card payment
-                        processing are handled by its wholly owned subsidiary,
-                        Medium Rare Limited.</span
-                      >
-                    </p>
-                    <p class="inline-text mt-3">
-                      <span class="span-text"></span>
-                    </p>
-                    <h3 class="stake-text">
-                      <span >2. IMPORTANT NOTICE </span>
-                    </h3>
-                    <p class="inline-text">
-                      <span class="span-text"
-                      >2.1 By registering on www.stake.com (the “Website”),
-                        you enter into a contract with Medium Rare N.V., and
-                        agree to be bound by (i) these Terms and Conditions;
-                        (ii) our Privacy Policy; (iii) our Cookies Policy and
-                        (iv) the rules applicable to our betting or gaming
-                        products as further referenced in these Terms and
-                        Conditions (“Terms and Conditions” or “Agreement”), and
-                        the betting and/or gaming specific rules, and are deemed
-                        to have accepted and understood all the terms.</span
-                      >
-                    </p>
-                  </div>
-                </div>
-              </div>
-              <div class="stack-svelte">
-                <div class="text-left w-full">
-                  <div>
-                    <label class="accept-term" data-test="accept-terms"
-                    ><input
-                      class="tc-checkbox"
-                      type="checkbox"
-                      value="undefined"
-                    />
-                      <span class="indicator-variant"></span>
-                      <span class="checkbox-text"
-                      ><span slot="label"
-                      ><span
-                        class="text-[#b1bad3] inline text-left text-sm font-normal touch-auto"
-                      >I have read and agree to the terms and
-                            conditions</span
-                      ></span
-                      >
-                      </span></label
-                    >
-                  </div>
-                </div>
-                <button
-                  class="inline-flex relative items-center gap-2 justify-center rounded-sm font-semibold whitespace-nowrap ring-offset-background transition disabled:pointer-events-none disabled:opacity-50 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 active:scale-[0.98] bg-blue-500 text-white betterhover:hover:bg-blue-600 betterhover:hover:text-white focus-visible:outline-white text-base leading-none shadow-md py-[1.125rem] px-[1.75rem] min-w-[12ch] w-full"
-                  type="submit"
-                >
-                  <div class="contents" data-loader-content="">
-                    Create an account
-                  </div>
-                </button>
-              </div>
-            </form>
-            <div
-              
-              style="display: none"
-
-            ></div>
-            <div
-              class="flex flex-col justify-end gap-3"
-              
-
-            >
-              <span
-                class="text-[#b1bad3] text-center text-sm font-normal touch-auto"
-
-              >Already have an account?
-                <button
-                  class="inline-flex relative items-center gap-2 justify-center rounded-sm font-semibold whitespace-nowrap ring-offset-background transition disabled:pointer-events-none disabled:opacity-50 focus-visible:outline-2 focus-visible:outline-offset-2 active:scale-[0.98] bg-transparent text-white betterhover:hover:bg-transparent betterhover:hover:text-white focus-visible:outline-none text-sm leading-none [&amp;_svg]:text-grey-200 [&amp;:hover>svg]:text-white"
-                 
-                  type="button"
-                >
-                  Sign In
-                </button></span
-              >
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-  </div>
-</div> -->
-
-<!--<div class="Modal-container">-->
-<!--  &lt;!&ndash; Header Section (Logo and Exit Button) &ndash;&gt;-->
-<!--  <div class="ctainer-div">-->
-<!--    <div>-->
-<!--      <div class="wrap-normal">-->
-<!--        <img alt="Logo" class="wrap-normal-svg" src="/login/white.png"/>-->
-<!--      </div>-->
-<!--    </div>-->
-<!--    <button-->
-<!--      (click)="exit()"-->
-<!--      class="inline-flex relative items-center gap-2 justify-center font-semibold whitespace-nowrap ring-offset-background transition disabled:pointer-events-none disabled:opacity-50 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 active:scale-[0.98] bg-transparent text-white betterhover:hover:bg-grey-900 betterhover:hover:text-white focus-visible:outline-white text-xs leading-none py-[0.75rem] px-[0.75rem] rounded-full"-->
-<!--      type="button"-->
-<!--    >-->
-<!--      Exit-->
-<!--    </button>-->
-<!--  </div>-->
-
-<!--  &lt;!&ndash; Step Progress Bar &ndash;&gt;-->
-<!--  <div class="content-svelte">-->
-<!--    <div class="modal-content">-->
-<!--      <div class="contenttop">-->
-<!--        <div class="ctainer">-->
-<!--          <div class="stack">-->
-<!--            <div class="step-active"></div>-->
-<!--            <div [ngClass]="{'step-svelte': currentStep !== 2}"></div>-->
-<!--            <div [ngClass]="{'step-svelte': currentStep !== 3}"></div>-->
-<!--          </div>-->
-<!--          <div *ngIf="currentStep > 1" class="stack-padding">-->
-<!--            <button-->
-<!--              (click)="prevStep()"-->
-<!--              class="inline-flex relative items-center gap-2 justify-center rounded-sm font-semibold whitespace-nowrap ring-offset-background transition disabled:pointer-events-none disabled:opacity-50 focus-visible:outline-2 focus-visible:outline-offset-2 active:scale-[0.98] bg-transparent text-grey-200 betterhover:hover:bg-transparent betterhover:hover:text-white focus-visible:text-white focus-visible:outline-none text-sm leading-none"-->
-<!--              type="button"-->
-<!--            >-->
-<!--              <img alt="Back" class="svg-back-arrow" src="/src/app/modal/login/back-icon.png"/>-->
-<!--              Back-->
-<!--            </button>-->
-<!--            <span class="step-text">Step {{ currentStep }} / 3</span>-->
-<!--          </div>-->
-<!--        </div>-->
-
-<!--        &lt;!&ndash; Step 1 &ndash;&gt;-->
-<!--        <div *ngIf="currentStep === 1">-->
-<!--          <h2>Select your preferred language</h2>-->
-<!--          <span>-->
-<!--            Stake is available in several languages. Feel free to personalise-->
-<!--            your language across our site from the options below.-->
-<!--          </span>-->
-<!--          <label class="labelstacked">-->
-<!--            <div class="select-wrap">-->
-<!--              <div class="select-content">-->
-<!--                <select [(ngModel)]="selectedLanguage" class="select-spacing">-->
-<!--                  <option value="en">English</option>-->
-<!--                  <option value="es">Español</option>-->
-<!--                  <option value="ja">日本語</option>-->
-<!--                  <option value="zh">中文</option>-->
-<!--                  <option value="pt">Português</option>-->
-<!--                  <option value="ru">Русский</option>-->
-<!--                  <option value="fr">Français</option>-->
-<!--                  <option value="de">Deutsch</option>-->
-<!--                  <option value="hi">हिंदी</option>-->
-<!--                  <option value="id">Bahasa Indonesia</option>-->
-<!--                  <option value="ko">한국어</option>-->
-<!--                  <option value="pl">Polski</option>-->
-<!--                  <option value="tr">Türkçe</option>-->
-<!--                  <option value="vi">Tiếng Việt</option>-->
-<!--                  <option value="fi">Suomen</option>-->
-<!--                  <option value="ar">اَلْعَرَبِيَّةُ</option>-->
-<!--                </select>-->
-<!--              </div>-->
-<!--            </div>-->
-<!--          </label>-->
-<!--          <button (click)="nextStep()" class="inline-flex btn-primary">Confirm</button>-->
-<!--        </div>-->
-
-<!--        &lt;!&ndash; Step 2 &ndash;&gt;-->
-<!--        <div *ngIf="currentStep === 2">-->
-<!--          <h2>Create an account</h2>-->
-<!--          <form [formGroup]="registerForm">-->
-<!--            <label class="labelstacked">-->
-<!--              <div *ngIf="registerForm.get('email')?.invalid && registerForm.get('email')?.touched">-->
-<!--                Please enter a valid email address.-->
-<!--              </div>-->
-<!--              <input class="input-spacing" formControlName="email" placeholder="Email" type="email"/>-->
-<!--            </label>-->
-
-<!--            <label class="labelstacked">-->
-<!--              <div *ngIf="registerForm.get('username')?.invalid && registerForm.get('username')?.touched">-->
-<!--                Your username must be at least 3 characters long.-->
-<!--              </div>-->
-<!--              <input class="input-spacing" formControlName="username" placeholder="Username" type="text"/>-->
-<!--            </label>-->
-
-<!--            <label class="labelstacked">-->
-<!--              <div *ngIf="registerForm.get('password')?.invalid && registerForm.get('password')?.touched">-->
-<!--                Password must be at least 8 characters with upper and lower case letters and a number.-->
-<!--              </div>-->
-<!--              <input class="input-spacing" formControlName="password" placeholder="Password" type="password"/>-->
-<!--            </label>-->
-
-<!--            <label class="labelstacked">-->
-<!--              <div *ngIf="registerForm.get('dob')?.invalid && registerForm.get('dob')?.touched">-->
-<!--                Please enter your date of birth.-->
-<!--              </div>-->
-<!--              <input class="input-spacing" formControlName="dob" placeholder="yyyy-mm-dd" type="date"/>-->
-<!--            </label>-->
-
-<!--            <button (click)="nextStep()" [disabled]="registerForm.invalid" class="btn-primary">-->
-<!--              Continue-->
-<!--            </button>-->
-<!--          </form>-->
-<!--        </div>-->
-
-<!--        &lt;!&ndash; Step 3 &ndash;&gt;-->
-<!--        <div *ngIf="currentStep === 3">-->
-<!--          <h2>Terms and Conditions</h2>-->
-<!--          <p>By creating an account, you agree to the terms and conditions.</p>-->
-<!--          <label>-->
-<!--            <input type="checkbox"/> I agree to the terms.-->
-<!--          </label>-->
-<!--          <button (click)="submit()" class="btn-primary">Create an Account</button>-->
-<!--        </div>-->
-<!--      </div>-->
-<!--    </div>-->
-<!--  </div>-->
-<!--</div>-->
