@@ -23,6 +23,46 @@
 .back-root{
     @apply    flex gap-[0.75rem]
 }
+.back-root-arrow{
+    @apply  flex h-11  select-none rounded-sm bg-[rgb(15,33,46)] hover:bg-gray-400
+}
+.back-root-svg{
+    @apply  inline-flex relative items-center gap-2 justify-center rounded-sm font-semibold whitespace-nowrap  transition
+     disabled:pointer-events-none disabled:opacity-50
+ focus-visible:outline-2 focus-visible:outline-offset-2 active:scale-[0.98] bg-transparent text-white hover:bg-transparent hover:text-white
+     focus-visible:outline-none text-sm leading-none py-[0.9375rem] px-[1.25rem]
+}
+.horse-racing-btn{
+    @apply inline-flex relative items-center gap-2 justify-center rounded-sm font-semibold whitespace-nowrap  transition 
+    disabled:pointer-events-none disabled:opacity-50 focus-visible:outline-2 focus-visible:outline-offset-2 active:scale-[0.98] 
+    bg-transparent text-white  hover:text-white  hover:bg-[rgb(7,24,36)]
+    focus-visible:outline-none text-sm leading-none;
+}
+
+.horse-racing-btn svg {
+    @apply text-[rgb(177,186,211)];
+}
+
+.horse-racing-btn:hover > svg {
+    @apply text-white;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 .back-arrow{
     @apply     bg-[rgb(15,33,46)] rounded-[calc(0.5rem-4px)] select-none h-[11px] flex
 }
@@ -150,6 +190,9 @@ span.line-height-default.svelte-17v69ua{
 .runner-card {
     grid-template-columns: min-content auto auto;
     @apply grid cursor-pointer transition duration-200 w-full gap-x-2 py-2 px-3 items-center
+}
+.runner{
+    @apply flex flex-col items-center gap-1
 }
 .runner{
     @apply flex flex-col items-center gap-1
