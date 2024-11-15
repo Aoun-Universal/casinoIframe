@@ -92,7 +92,7 @@ th{
     @apply bg-[#213743]
 }
 .currency.svelte-141qgpc {
-    @apply inline-flex items-center
+    @apply justify-start;
   
 }
 .content.svelte-141qgpc {
@@ -121,9 +121,9 @@ form.svelte-188ba96:not(.is-inline)>* {
 .disabled\:pointer-events-none:disabled {
     pointer-events: none;
 }
-p.align-center.svelte-17v69ua {
+/* p.align-center.svelte-17v69ua {
     text-align: center;
-}
+} */
 .currency.svelte-141qgpc>*+* {
     margin-left:.25rem;
 }
@@ -135,4 +135,25 @@ p.align-center.svelte-17v69ua {
    @apply  text-[rgb(5_8_10)] inline-flex relative items-center gap-2 justify-center rounded-sm font-semibold whitespace-nowrap 
     transition disabled:pointer-events-none disabled:opacity-50 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 active:scale-[0.98] bg-[#078417] opacity-[1px]  hover:bg-green-400  focus-visible:outline-white text-base leading-none shadow-md py-[1.125rem] px-[1.75rem] min-w-[12ch]
 }
+.text-left {
+    text-align: left !important;
+}
 
+.text-center {
+    text-align: center !important;
+}
+
+.text-right {
+    text-align: right !important;
+}
+.tooltip-arrow {
+    @apply absolute bottom-[-4px] left-[50%] w-[8px] h-[8px] bg-inherit;
+    transform: translateX(-50%) rotate(45deg);
+  }
+  .tooltip{
+    @apply bg-white text-black text-sm rounded rounded-tl-[8px] rounded-tr-[8px] px-2 py-2 absolute -top-14 shadow-lg
+  }
+  .tooltip-content {
+    display: flex;
+    align-items: center;
+  }
