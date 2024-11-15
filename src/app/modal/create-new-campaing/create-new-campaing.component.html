@@ -1,0 +1,71 @@
+<div data-test="modal-vip" data-layout="" class="modal svelte-cq3ecl  z-[1500]">
+    <div class="overlay svelte-cq3ecl"></div>
+    <div class="card size-md svelte-cq3ecl">
+        <div class="header svelte-227w12">
+            <h2 class="flex items-center">
+                <svg fill="currentColor" viewBox="0 0 64 64" class=" text-[#b1bad3] w-[16px] h-[16px]">
+                    <title></title>
+                    <path
+                        d="M59.732 0H4.266A4.266 4.266 0 0 0 0 4.266V60c0 2.21 1.79 4 4 4h56c2.21 0 4-1.79 4-4V4.266A4.266 4.266 0 0 0 59.734 0h-.002ZM17.998 50.24l-8-8 4.266-4.266 3.866 3.894 9.734-9.866 4.266 4.266L17.998 50.24Zm0-20-8-8 4.134-4.374 3.866 3.894 9.866-9.894 4.266 4.266L17.998 30.24Zm36 14.774h-14v-6.026h14v6.026Zm0-20h-14v-6.026h14v6.026Z">
+                    </path>
+                </svg>
+                <span class="ms-[.5em]">VIP</span>
+            </h2>
+            <button type="button" tabindex="0" class=" top-btn" (click)="closeCampaing()">
+                <svg fill="currentColor" viewBox="0 0 64 64" class="svg-icon w-[16px] h-[16px]">
+                    <title></title>
+                    <path
+                        d="m54.827 16.187-7.014-7.014L32 24.987 16.187 9.173l-7.014 7.014L24.987 32 9.173 47.813l7.014 7.014L32 39.013l15.813 15.814 7.014-7.014L39.013 32l15.814-15.813Z">
+                    </path>
+                </svg>
+            </button>
+        </div>
+
+
+        <div class="px-4 pb-4">
+            <div class="flex flex-col w-full text-[14px] text-[#b1bad3]">
+                <label for="camping-name" class="pb-1">Camping Name <span class="text-[#ed4163]">*</span></label>
+                <input type="text" name="camping-name"
+                    class="h-[39px] p-[7px] border-2 border-[#2F4553] focus:border-[#557086] focus:outline-none rounded bg-[#0F212E]">
+            </div>
+            <div class="flex flex-col w-full text-[14px] text-[#b1bad3] mt-4">
+                <label for="camping-ID" class="pb-1">Camping ID <span class="text-[#ed4163]">*</span></label>
+                <input type="text" name="camping-ID"
+                    class="h-[39px] p-[7px] border-2 border-[#2F4553] focus:border-[#557086] focus:outline-none rounded bg-[#0F212E]">
+            </div>
+            <div class="flex flex-col w-full text-[14px] text-[#b1bad3] mt-4">
+                <label for="Referral Link" class="pb-1">Referral Link</label>
+                <div class="campaign-svelte">
+                    <label class="label-wrap">
+                        <div class="input-wrap">
+                            <div class="flex w-full relative flex-grow">
+                                <input autocomplete="on" class="input-content-wrap" disabled [value]="referralLink"
+                                    [ngClass]="{'!border-[#557086] borde-[2px]': isCopied}" />
+                            </div>
+                            <div class="input-btn-wrap">
+                                <button (click)="copyReferralLink()" type="button"
+                                    class="w-[46px] flex items-center justify-center">
+                                    <svg fill="currentColor" viewBox="0 0 64 64" class="svg-icon">
+                                        <title></title>
+                                        <path fill="#fff"
+                                            d="M61.334 64H16V12.986h45.334V64ZM2.666 0v45.466H9.28V6.506h38.96V0H2.666Z">
+                                        </path>
+                                    </svg>
+                                    <!-- Tooltip -->
+                                    <div *ngIf="isCopied" class="tooltip">
+                                        Copied!
+                                        <div class="tooltip-arrow"></div>
+                                    </div>
+                                </button>
+
+                            </div>
+                        </div>
+
+                    </label>
+                </div>
+            </div>
+            <button
+                class="bg-[#00e701] text-black h-[52px] mt-4 py-[18px] px-[28px] text-center w-full font-bold rounded">Create
+                Campaing</button>
+        </div>
+    </div>

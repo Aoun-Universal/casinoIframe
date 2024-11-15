@@ -16,24 +16,25 @@ import { NotificationComponent } from "../../modal/notification/notification.com
 import { StatisticsModalTableComponent } from "../../modal/statistics-modal-table/statistics-modal-table.component";
 import { WalletModalComponent } from "../../modal/wallet-modal/wallet-modal.component";
 import { SetupWalletComponent } from '../../modal/setup-wallet/setup-wallet.component';
+import { CreateNewCampaingComponent } from "../../modal/create-new-campaing/create-new-campaing.component";
 
 @Component({
   selector: 'app-layout',
   standalone: true,
   imports: [ContentComponent,
-     SidebarComponent,
-      FooterComponent,
-       CommonModule,
-        HeaderComponent,
-         MobileNavigationComponent,
-          BetSlipComponent,
-           VaultComponent,
-            VipComponent,
-             StatisticsComponent,
-              NotificationComponent,
-               StatisticsModalTableComponent,
-                WalletModalComponent,
-              SetupWalletComponent],
+    SidebarComponent,
+    FooterComponent,
+    CommonModule,
+    HeaderComponent,
+    MobileNavigationComponent,
+    BetSlipComponent,
+    VaultComponent,
+    VipComponent,
+    StatisticsComponent,
+    NotificationComponent,
+    StatisticsModalTableComponent,
+    WalletModalComponent,
+    SetupWalletComponent, CreateNewCampaingComponent],
   templateUrl: './layout.component.html',
   styleUrls: ['./layout.component.css']
 })
@@ -46,6 +47,7 @@ export class LayoutComponent implements OnInit {
   statisticModal: boolean = false
   statisticTableModal: boolean = false
   notificationState: boolean = false
+  campaingState: boolean = false
   constructor(private router: Router, private toggle: ToggleService) {
     this.router.events.pipe(
       filter(event => event instanceof NavigationEnd)
@@ -74,6 +76,9 @@ export class LayoutComponent implements OnInit {
     })
     this.toggle.getnotificationModalState().subscribe((state) => {
       this.notificationState = state
+    })
+    this.toggle.getCampaingModalState().subscribe((state) => {
+      this.campaingState = state
     })
   }
 }

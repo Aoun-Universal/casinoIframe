@@ -1,21 +1,23 @@
 import { CommonModule } from '@angular/common';
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
+import { LoginComponent } from '../../modal/login/login.component';
+import { ToggleService } from '../../services/toggle.service';
 
 @Component({
   selector: 'app-header',
   standalone: true,
-  imports: [ CommonModule],
+  imports: [ CommonModule, LoginComponent],
   templateUrl: './header.component.html',
   styleUrl: './header.component.css'
 })
-export class HeaderComponent {
+export class HeaderComponent  {
   isDropdownOpen = false;
   porfileDropOpen=false;
   massageDropOpen=false;
   bellDropOpen=false;
   searchbutton=false;
   cosinoDropOpen=false;
-
+  constructor(private toggle:ToggleService){}
   closeDropdown() {
     this.bellDropOpen = false;
    this.searchbutton=false;
@@ -50,6 +52,12 @@ export class HeaderComponent {
 CosinDropdown(){
   this.cosinoDropOpen=!this.cosinoDropOpen;
 }
+
+
+showLogin(){
+  this.toggle.setLogin(true)
+}
+ 
   
   currencies = [
     { value: '0.00000000', symbol: 'BTC', imageUrl: '/assets/header/bit.png' },
