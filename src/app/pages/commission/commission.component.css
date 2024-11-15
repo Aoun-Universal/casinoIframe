@@ -26,9 +26,6 @@
 h1{
     @apply text-[1.25rem] text-white leading-[132%] font-semibold
 }
-p{
-    @apply !text-[1rem] leading-[150%] !text-[#b1bad3]
-}
 .syntax.svelte-95o87d {
     @apply bg-[#213743] text-[#b1bad3eb] p-[.5rem] rounded-[.25rem] 
 }
@@ -40,7 +37,7 @@ p{
     @apply flex bg-[#0f212e] p-[.75rem] border-[2px] gap-[.75rem] border-dashed rounded-[.5rem]
   
   }
-  p.svelte-17v69ua {
+  .svelte-17v69ua {
     @apply text-[.875rem] leading-[1.5] text-[#b1bad3]
    
 } 
@@ -49,4 +46,10 @@ p{
 }
 .affliate-wrap.svelte-1vuj99p>*+* {
     @apply mt-[1rem]
+}
+.text-container{
+    @apply text-sm
+}
+.content-container{
+    @apply !text-[16px]  leading-[150%] !text-[#b1bad3]
 }
