@@ -15,7 +15,9 @@ export class SettingsComponent {
     this.isopen = !this.isopen;
   }
   @ViewChild('inputField') inputField!: ElementRef;
+  type='password'
   tooltipVisible = false;
+  isDisabled: boolean = true;
 
   ngAfterViewInit() {}
 
@@ -38,5 +40,9 @@ export class SettingsComponent {
   };
   toggledropdownfunc(item: keyof typeof this.openStates){
     this.openStates[item] = !this.openStates[item];
+  }
+  revealfunc(){
+    this.type=this.type === 'password' ? 'text' : 'password'
+    this.isDisabled=false
   }
 }
