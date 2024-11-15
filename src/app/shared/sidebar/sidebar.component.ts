@@ -1,6 +1,6 @@
 import { CommonModule, DOCUMENT } from '@angular/common';
 import { Component, HostListener, Inject, OnInit } from '@angular/core';
-import { NavigationEnd, Router, RouterLink } from '@angular/router';
+import { ActivatedRoute, NavigationEnd, Router, RouterLink } from '@angular/router';
 import { filter } from 'rxjs';
 import { VaultComponent } from "../../modal/vault/vault.component";
 import { ToggleService } from '../../services/toggle.service';
@@ -20,7 +20,7 @@ export class SidebarComponent implements OnInit {
   smScreen: boolean = false;
   xlScreen: boolean = true;
 
-  constructor(private router: Router, private toggle: ToggleService, @Inject(DOCUMENT) private document: Document) { }
+  constructor(private router: Router, private toggle: ToggleService, @Inject(DOCUMENT) private document: Document, private route:ActivatedRoute) { }
   toggleOpen(name: string) {
     if (this.openBar === name) {
       this.openBar = '';
@@ -58,6 +58,9 @@ export class SidebarComponent implements OnInit {
     if(this.smScreen){
       this.toggle.setSidebar(false)
     }
+
+    console.log(this.route.parent);
+    
 
   }
   toggleSidebar() {
