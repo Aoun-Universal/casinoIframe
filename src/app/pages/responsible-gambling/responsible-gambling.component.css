@@ -51,17 +51,12 @@
 .card {
   @apply sticky top-[2em] max-w-full min-w-[180px] bg-[rgb(15,33,46)] text-[#d5dceb] rounded-lg
 }
-
 .dash {
-  @apply absolute left-0 w-[3px] bg-[#1475e1];
-  transition: top 0.3s ease; 
-
+  @apply absolute top-0  left-0 w-[3px] bg-[#1475e1]      ;
+ 
+  transition: all 0.3s ease; 
 }
-/* .dash{
-  @apply h-[14.2857%] absolute left-0 top-0 w-[3px]  bg-[#1475e1]  ;
-  transition: all .2s ease-out;
-  transform: translateY(0%);
-} */
+
 .active-route {
   @apply sticky max-w-[220px] min-w-[220px] top-[2em];
 }

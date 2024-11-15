@@ -206,22 +206,30 @@
                       <div class="py-2 px-0">
                         <div class="relative m-0 p-0">
                           <a
-                            *ngFor="let route of routes; let i = index"
-                            [routerLink]="route.path"
-                            [ngClass]="{
-                              '!bg-[#071824] text-white': isActive(route.path),
-                              'outer-div': true
-                            }"
+                          *ngFor="let route of routes; let i = index"
+                          [routerLink]="route.path"
+                          [ngClass]="{
+                            '!bg-[#071824] text-white': activeIndex === i,
+                            'outer-div': true
+                          }"
                             class="   [&amp;_svg]:text-grey-200 [&amp;:hover>svg]:text-white  ring-offset-background dropdown-option"
-                            (click)="updateDashPosition()"
-                            ><span>{{ route.label }}</span>
+                              (click)="setActiveIndex(i)"
+                            >
+                            <span>{{ route.label }}</span>
                           </a>
                           <div
-                            class="dash bg-[#071824] transition-all duration-300"
-                            [style.top.%]="activeIndex * (100 / routes.length)"
-                            [style.height.%]="100 / routes.length"
-                          ></div>
+      class="dash bg-[#1475e1] transition-all duration-300"
+      [style.top.%]="activeIndex * (100 / routes.length)"
+      [style.height.%]="100 / routes.length"
+    ></div>
                         </div>
+
+
+
+
+
+
+
                       </div>
                     </div>
                     <router-outlet></router-outlet>
