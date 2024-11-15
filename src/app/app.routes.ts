@@ -171,7 +171,7 @@ export const routes: Routes = [
       {
         path: 'providers',
         loadComponent: () =>
-          import('./pages/stake-offer/stake-offer.component').then((c) => c.StakeOfferComponent),
+          import('./pages/providers/providers.component').then((c) => c.ProvidersComponent),
       },
       {
         path: 'blog',
