@@ -11,7 +11,7 @@
         </div>
         <!-- Exit btn -->
         <button
-          class="inline-flex relative items-center gap-2 justify-center font-semibold whitespace-nowrap ring-offset-background transition disabled:pointer-events-none disabled:opacity-50 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 active:scale-[0.98] bg-transparent text-white betterhover:hover:bg-grey-900 betterhover:hover:text-white focus-visible:outline-white text-xs leading-none [&amp;_svg]:text-grey-200 [&amp;:hover>svg]:text-white py-[0.75rem] px-[0.75rem] rounded-full"
+          class=" ring-offset-background  Exit-btn [&amp;_svg]:text-grey-200 [&amp;:hover>svg]:text-white"
           (click)="closeModal()" type="button">
           Exit
         </button>
@@ -63,12 +63,12 @@
                       <div class="before-icon"></div>
                       <div class="after-icon"></div>
                       <input [type]="passwordVisible ? 'text' : 'password'"
-                        class="py-[7px] pl-[7px]   hover:border-[#557086] pr-[48px] w-full text-[#fff] bg-[#0f212e] border-[2px] border-[#2f4553] border-solid font-semibold outline-none touch-auto cursor-text shadow-none appearance-none text-sm"
+                        class="password-feild"
                         formControlName="password" type="password" />
 
                       <div class="flex absolute right-0 top-0 h-full touch-auto">
                         <button (click)="togglePasswordVisibility()" aria-label="Reveal password"
-                          class="font-[1.125rem] py-2 px-4 flex items-center touch-auto outline-none border-0"
+                          class="password-svg"
                           type="button">
                           <!-- pasword icon svg -->
                           <img *ngIf="!passwordVisible" alt="eye-icon" class="svg-icon-password" src="/login/eye.png" />
@@ -94,7 +94,7 @@
                 <div class="flex items-end flex-1 !mt-4 w-full touch-none">
                   <!-- SignIn btn -->
                   <button
-                    class="inline-flex relative items-center gap-2 justify-center rounded-sm font-semibold whitespace-nowrap ring-offset-background transition disabled:pointer-events-none disabled:opacity-50 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 active:scale-[0.98] bg-blue-500 text-white betterhover:hover:bg-blue-600 betterhover:hover:text-white focus-visible:outline-white text-base leading-none shadow-md py-[1.125rem] px-[1.75rem] min-w-[12ch] w-full"
+                    class="ring-offset-background Signin-btn"
                     (click)=" login()" type="submit">
                     <div class="contents" data-loader-content="">
                       Sign In
@@ -107,12 +107,12 @@
               <div class="or-svelte">
                 <!-- OR text -->
                 <span
-                  class="text-[#b1bad3] text-center justify-center text-sm px-2 inline-flex items-center font-normal">OR</span>
+                  class="OR-text">OR</span>
               </div>
               <div class="oauth-svelte">
                 <div class="">
                   <button
-                    class="inline-flex bg-[rgb(47,69,83)] relative items-center gap-2 justify-center rounded-sm font-semibold whitespace-nowrap ring-offset-background transition disabled:pointer-events-none disabled:opacity-50 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 active:scale-[0.98] bg-grey-400 text-white betterhover:hover:bg-grey-300 betterhover:hover:text-white focus-visible:outline-white text-sm leading-none shadow-md py-[0.8125rem] px-[1rem]"
+                    class="ring-offset-background login-plateform-btn"
                     type="button">
                     <!-- facebook svg -->
                     <img alt="facebook-logo" class="svg-icon-password" src="/login/Facebook.png" />
@@ -121,7 +121,7 @@
                 </div>
                 <div class="">
                   <button
-                    class="inline-flex bg-[rgb(47,69,83)] relative items-center gap-2 justify-center rounded-sm font-semibold whitespace-nowrap ring-offset-background transition disabled:pointer-events-none disabled:opacity-50 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 active:scale-[0.98] bg-grey-400 text-white betterhover:hover:bg-grey-300 betterhover:hover:text-white focus-visible:outline-white text-sm leading-none shadow-md py-[0.8125rem] px-[1rem]"
+                    class="ring-offset-background login-plateform-btn"
                     type="button">
                     <!-- google svg -->
                     <img alt="google-logo" class="svg-icon" src="/login/Google.png" />
@@ -131,7 +131,7 @@
                 </div>
                 <div class="">
                   <button
-                    class="inline-flex relative bg-[rgb(47,69,83)] items-center gap-2 justify-center rounded-sm font-semibold whitespace-nowrap ring-offset-background transition disabled:pointer-events-none disabled:opacity-50 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 active:scale-[0.98] bg-grey-400 text-white betterhover:hover:bg-grey-300 betterhover:hover:text-white focus-visible:outline-white text-sm leading-none shadow-md py-[0.8125rem] px-[1rem]"
+                    class="ring-offset-background login-plateform-btn"
                     type="button">
                     <!-- provider-login-line svg -->
                     <img alt="login-line-logo" class="svg-icon-password" src="/login/Line.png" />
@@ -140,7 +140,7 @@
                 </div>
                 <div class="">
                   <button
-                    class="inline-flex relative bg-[rgb(47,69,83)] items-center gap-2 justify-center rounded-sm font-semibold whitespace-nowrap ring-offset-background transition disabled:pointer-events-none disabled:opacity-50 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 active:scale-[0.98] bg-grey-400 text-white betterhover:hover:bg-grey-300 betterhover:hover:text-white focus-visible:outline-white text-sm leading-none shadow-md py-[0.8125rem] px-[1rem]"
+                    class="ring-offset-background login-plateform-btn"
                     type="button">
                     <!-- login-twitch svg -->
                     <img alt="twitch-logo" class="svg-icon-password" src="/login/Comment.png" />
@@ -151,14 +151,14 @@
             </div>
 
             <button
-              class="inline-flex text-center relative items-center gap-2 justify-center rounded-sm font-semibold whitespace-nowrap ring-offset-background transition disabled:pointer-events-none disabled:opacity-50 focus-visible:outline-2 focus-visible:outline-offset-2 active:scale-[0.98] bg-transparent text-white betterhover:hover:bg-transparent betterhover:hover:text-white focus-visible:outline-none text-sm leading-none [&amp;_svg]:text-grey-200 [&amp;:hover>svg]:text-white"
+              class=" forgot-pass-btn  ring-offset-background  [&amp;_svg]:text-grey-200 [&amp;:hover>svg]:text-white"
               type="button">
               Forgot Password
             </button>
             <div class="footer">
               <span class="text-[#b1bad3] text-center text-sm font-normal touch-auto">Don’t have an account?
                 <button
-                  class="inline-flex relative items-center gap-2 justify-center rounded-sm font-semibold whitespace-nowrap ring-offset-background transition disabled:pointer-events-none disabled:opacity-50 focus-visible:outline-2 focus-visible:outline-offset-2 active:scale-[0.98] bg-transparent text-white betterhover:hover:bg-transparent betterhover:hover:text-white focus-visible:outline-none text-sm leading-none [&amp;_svg]:text-grey-200 [&amp;:hover>svg]:text-white"
+                  class=" ring-offset-background    register-acc-btn     [&amp;_svg]:text-grey-200 [&amp;:hover>svg]:text-white"
                   [disabled]="false" type="button">
                   Register an Account
                 </button>
