@@ -1,4 +1,4 @@
-import { Component, ElementRef, HostListener } from '@angular/core';
+import { ChangeDetectorRef, Component, ElementRef, HostListener } from '@angular/core';
 import { StakeSmartComponent } from '../stake-smart/stake-smart.component';
 import { NavigationEnd, Router, RouterLink, RouterOutlet } from '@angular/router';
 import { filter, Subscription } from 'rxjs';
@@ -14,7 +14,7 @@ import { CommonModule } from '@angular/common';
 export class ResponsibleGamblingComponent {
  
   routerPath: any
-  constructor(private router: Router,private eRef: ElementRef,) { }
+  constructor(private router: Router,private eRef: ElementRef, private cdRef: ChangeDetectorRef) { }
   ngOnInit(): void {
     this.router.events
       .pipe(
@@ -25,11 +25,14 @@ export class ResponsibleGamblingComponent {
         console.log('url');
       });
     this.routerPath = this.router.url;
+    this.updateDashPosition();
 
-// Subscribe to router events to update the dash position on route change
-this.routerSubscription = this.router.events.subscribe(() => {
-  this.updateDashPosition();
-});
+    // Subscribe to router events to detect route changes
+    this.routerSubscription = this.router.events.subscribe((event) => {
+      if (event instanceof NavigationEnd) {
+        this.updateDashPosition();
+      }
+    });
 
   }
   WinnerDropdown = false; // Initially hidden
@@ -52,26 +55,34 @@ this.routerSubscription = this.router.events.subscribe(() => {
     ];
   
     activeIndex = 0;
-    private routerSubscription: Subscription | null = null;
+  private routerSubscription: Subscription | null = null;
   
    
-  
-   
-  
     ngOnDestroy(): void {
+      // Unsubscribe to prevent memory leaks
       if (this.routerSubscription) {
         this.routerSubscription.unsubscribe();
       }
     }
   
-    setActiveIndex(index: number): void {
-      this.activeIndex = index;
-    }
-  
+    // Method to set the active index based on the current route
     updateDashPosition(): void {
       const currentRoute = this.router.url;
-      this.activeIndex = this.routes.findIndex(route => route.path === currentRoute);
+      const index = this.routes.findIndex(route => route.path === currentRoute);
+  
+      // Set activeIndex only if a matching route is found
+      this.activeIndex = index >= 0 ? index : 0; // Default to the first route if not found
+      this.cdRef.detectChanges(); // Ensure view update
     }
-
-
+  
+    // Check if a route is active
+    isActive(path: string): boolean {
+      return this.router.url === path;
+    }
+  
+    // Method to manually set active index on click
+    setActiveIndex(index: number): void {
+      this.activeIndex = index;
+      this.cdRef.detectChanges();
+    }
 }

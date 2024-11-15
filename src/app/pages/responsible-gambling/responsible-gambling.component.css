@@ -52,9 +52,12 @@
   @apply sticky top-[2em] max-w-full min-w-[180px] bg-[rgb(15,33,46)] text-[#d5dceb] rounded-lg
 }
 .dash {
-  @apply absolute top-0  left-0 w-[3px] bg-[#1475e1]      ;
+  @apply absolute top-10 left-0 w-[3px] bg-[#1475e1]      ;
  
   transition: all 0.3s ease; 
+}
+.outer-div {
+  @apply [transition:none] relative rounded-none;
 }
 
 .active-route {
