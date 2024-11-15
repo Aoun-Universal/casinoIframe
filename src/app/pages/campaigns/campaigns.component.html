@@ -107,12 +107,18 @@
                                             <div class="wrap svelte-7j6mnu">
                                                 <label class="stacked svelte-1wzq4lo">
                                                     <div class="input-wrap svelte-1nbx5re">
-                                                        <div class="input-content svelte-1nbx5re"> <input 
+                                                        <div class="input-content svelte-1nbx5re"> <input      autocomplete="on"
+                                                            class="input-content-wrap"
+                                                            [value]="referralLink"
+                                                     [ngClass]="{'!border-[#557086] borde-[2px]': isCopied}"
                                                                 class="input spacing-expanded svelte-1nbx5re bg-[#2F4553]"
                                                                 type="text" > </div>
-                                                        <div class="input-button-wrap svelte-1nbx5re bg-[#2F4553]"> <button
+                                                        <div class="input-button-wrap svelte-1nbx5re bg-[#2F4553]">
+                                                            
+                                                        <button
                                                                 type="button" tabindex="0"
                                                                 class="copy-btn"
+                                                                (click)="copyReferralLink()"
                                                                 >
                                                                 <svg fill="currentColor"
                                                                     viewBox="0 0 64 64" class="svg-icon " >
@@ -120,7 +126,15 @@
                                                                     <path
                                                                         d="M61.334 64H16V12.986h45.334V64ZM2.666 0v45.466H9.28V6.506h38.96V0H2.666Z">
                                                                     </path>
-                                                                </svg></button></div>
+                                                                </svg>
+                                                            <!-- Tooltip -->
+                                                                    <div
+                                                               *ngIf="isCopied"
+                                                                class="tooltip" >
+                                                                Copied!
+                                                            <div class="tooltip-arrow"></div>
+                                                              </div>
+                                                            </button></div>
                                                     </div> <span class="label-content full-width svelte-1k9rtf3">
                                                         <div class="label-left-wrapper svelte-1nbx5re"> </div>
                                                     </span>

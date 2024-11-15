@@ -30,7 +30,7 @@
             commission!</span
           >
           <span
-            class="text-xs text-[#b1bad3] text-left justify-start font-normal inline-flex items-center mt-4"
+            class="para"
             >*Please note that referrals from accounts with
             the same IP address will not be
             recognised.</span
@@ -41,18 +41,18 @@
                 <div class="input-wrap">
                   <div
                     class="flex w-full relative flex-grow"
-                  >
+                   >
                     <input
                       autocomplete="on"
-                      value="stake.com/?c=HIR8R1a6"
                       class="input-content-wrap"
-                      type="text"
+                      [value]="referralLink"
+               [ngClass]="{'!border-[#557086] borde-[2px]': isCopied}"
                     />
                   </div>
                   <div class="input-btn-wrap">
-                    <button
+                    <button (click)="copyReferralLink()"
                       type="button"
-                      class="input-btn inline-flex relative items-center gap-2 justify-center bg-[rgb(47,69,83)] rounded-sm font-semibold whitespace-nowrap ring-offset-background transition disabled:pointer-events-none disabled:opacity-50 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 active:scale-[0.98] bg-grey-400 text-white betterhover:hover:bg-grey-300 betterhover:hover:text-white focus-visible:outline-white text-sm leading-none py-[0.8125rem] px-[1rem] shadow-none"
+                      class="input-btn btn"
                     >
                       <svg
                         fill="currentColor"
@@ -64,7 +64,16 @@
                           d="M61.334 64H16V12.986h45.334V64ZM2.666 0v45.466H9.28V6.506h38.96V0H2.666Z"
                         ></path>
                       </svg>
+                    <!-- Tooltip -->
+                      <div
+                     *ngIf="isCopied"
+                    class="tooltip"
+                           >
+                     Copied!
+                  <div class="tooltip-arrow"></div>
+                </div>
                     </button>
+                    
                   </div>
                 </div>
                 <span class="label-content"
@@ -75,9 +84,9 @@
               >
             </div>
             <a
-              class="inline-flex bg-[rgb(47,69,83)] relative items-center gap-2 justify-center rounded-sm font-semibold whitespace-nowrap ring-offset-background transition disabled:pointer-events-none disabled:opacity-50 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 active:scale-[0.98] bg-grey-400 text-white betterhover:hover:bg-grey-300 betterhover:hover:text-white focus-visible:outline-white text-sm leading-none shadow-md py-[0.9375rem] px-[1.25rem]"
+              class="download-banners"
               target="_blank"
-              ><span data-test="download-banner"
+              ><span 
                 >Download Banners</span
               >
               <svg
