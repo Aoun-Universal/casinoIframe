@@ -1,15 +1,15 @@
 <!-- first step================================================ -->
-<div>
+<div *ngIf="signUpState" (click)="closeModal()">
   <div class="Modal-container">
     <div class="svelte-syudie"></div>
-    <div class="card-svelte">
+    <div class="card-svelte" (click)="$event.stopPropagation()">
       <div class="ctainer-div">
         <div>
           <div class="wrap-normal">
             <img class="wrap-normal-svg" src="/login/white.png" />
           </div>
         </div>
-        <button (click)="exit()"
+        <button (click)="closeModal()"
           class="inline-flex relative items-center gap-2 justify-center font-semibold whitespace-nowrap ring-offset-background transition disabled:pointer-events-none disabled:opacity-50 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 active:scale-[0.98] bg-transparent text-white betterhover:hover:bg-grey-900 betterhover:hover:text-white focus-visible:outline-white text-xs leading-none [&amp;_svg]:text-grey-200 [&amp;:hover>svg]:text-white py-[0.75rem] px-[0.75rem] rounded-full"
           type="button">
           Exit
@@ -649,7 +649,7 @@
                 </div>
                 <div class="stack-svelte">
                   <div class="text-left w-full">
-                   
+
                     <div>
                       <label class="tc-label inline-flex items-center cursor-pointer">
                         <input type="checkbox" class="tc-checkbox hidden">
@@ -658,13 +658,13 @@
                           (click)="toggleCode()">
                           <!-- Thicker checkmark icon -->
                           <svg class="checkmark w-[14px] h-[14px] text-white opacity-0 transition-opacity duration-300"
-                            xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"
-                            stroke-linecap="round" stroke-linejoin="round">
+                            xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                            stroke-width="3" stroke-linecap="round" stroke-linejoin="round">
                             <polyline points="20 6 9 17 4 12" />
                           </svg>
                         </span>
                         <span class="checkbox-text ml-2 text-gray-300">agree to the terms and
-                        conditions</span>
+                          conditions</span>
                       </label>
                     </div>
                   </div>

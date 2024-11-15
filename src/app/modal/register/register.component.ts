@@ -1,6 +1,7 @@
 import { CommonModule } from '@angular/common';
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, FormsModule, ReactiveFormsModule, Validators } from '@angular/forms';
+import { ToggleService } from '../../services/toggle.service';
 
 @Component({
   selector: 'app-register',
@@ -9,7 +10,7 @@ import { FormBuilder, FormGroup, FormsModule, ReactiveFormsModule, Validators } 
   templateUrl: './register.component.html',
   styleUrl: './register.component.css'
 })
-export class RegisterComponent {
+export class RegisterComponent implements OnInit {
   isPhone = true
   isCode = true
   registerForm: FormGroup;
@@ -17,8 +18,9 @@ export class RegisterComponent {
   passwordVisible: boolean = false;
   selectedLanguage = 'en';
   isChecked = false;
+  signUpState = false
 
-  constructor(private fb: FormBuilder) {
+  constructor(private fb: FormBuilder, private toggle:ToggleService) {
     this.registerForm = this.fb.group({
       email: ['', [Validators.required, Validators.email]],
       username: ['', [Validators.required, Validators.minLength(3), Validators.maxLength(14)]],
@@ -43,6 +45,11 @@ export class RegisterComponent {
   prevStep() {
     this.currentStep--;
   }
+  ngOnInit(): void {
+     this.toggle.getSignUp().subscribe((value:boolean)=>{
+       this.signUpState = value
+     })
+  }
 
   onSubmit() {
     if (this.registerForm.valid) {
@@ -63,8 +70,11 @@ export class RegisterComponent {
     this.isCode = !this.isCode
   }
 
-  exit() {
-    console.log('Registration exited');
+ 
+
+  closeModal(){
+  this.toggle.setSignUp(false)
   }
+  
 
 }

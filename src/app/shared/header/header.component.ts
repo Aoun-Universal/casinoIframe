@@ -2,25 +2,29 @@ import { CommonModule } from '@angular/common';
 import { Component, OnInit } from '@angular/core';
 import { LoginComponent } from '../../modal/login/login.component';
 import { ToggleService } from '../../services/toggle.service';
+import { RegisterComponent } from '../../modal/register/register.component';
+import { AuthService } from '../../services/auth.service';
+import { LogoutComponent } from '../../modal/logout/logout.component';
 
 @Component({
   selector: 'app-header',
   standalone: true,
-  imports: [ CommonModule, LoginComponent],
+  imports: [CommonModule, LoginComponent, RegisterComponent, LogoutComponent],
   templateUrl: './header.component.html',
   styleUrl: './header.component.css'
 })
-export class HeaderComponent  {
+export class HeaderComponent implements OnInit {
   isDropdownOpen = false;
-  porfileDropOpen=false;
-  massageDropOpen=false;
-  bellDropOpen=false;
-  searchbutton=false;
-  cosinoDropOpen=false;
-  constructor(private toggle:ToggleService){}
+  token: any
+  porfileDropOpen = false;
+  massageDropOpen = false;
+  bellDropOpen = false;
+  searchbutton = false;
+  cosinoDropOpen = false;
+  constructor(private toggle: ToggleService, private authService: AuthService) { }
   closeDropdown() {
     this.bellDropOpen = false;
-   this.searchbutton=false;
+    this.searchbutton = false;
 
   }
 
@@ -34,11 +38,11 @@ export class HeaderComponent  {
       this.massageDropOpen = false;
     } else if (dropdownType === 'bellDropOpen' && this.bellDropOpen) {
       this.bellDropOpen = false;
-    } 
+    }
     else if (dropdownType === 'searchbutton' && this.searchbutton) {
       this.searchbutton = false;
-    } 
-   
+    }
+
     else {
       this.isDropdownOpen = dropdownType === 'isDropdownOpen';
       this.porfileDropOpen = dropdownType === 'porfileDropOpen';
@@ -49,16 +53,26 @@ export class HeaderComponent  {
 
     }
   }
-CosinDropdown(){
-  this.cosinoDropOpen=!this.cosinoDropOpen;
-}
+
+  CosinDropdown() {
+    this.cosinoDropOpen = !this.cosinoDropOpen;
+  }
+
+  ngOnInit(): void {
+    this.token = this.authService.isAuthenticated()
+
+  }
 
 
-showLogin(){
-  this.toggle.setLogin(true)
-}
- 
-  
+  showLogin() {
+    this.toggle.setLogin(true)
+  }
+
+  showSignUp() {
+    this.toggle.setSignUp(true)
+  }
+
+
   currencies = [
     { value: '0.00000000', symbol: 'BTC', imageUrl: '/assets/header/bit.png' },
     { value: '0.00000000', symbol: 'ETH', imageUrl: '/assets/header/bit.png' },
@@ -81,7 +95,7 @@ showLogin(){
     { label: 'Wallet', icon: '/assets/header/wallet.png', type: 'button' },
     { label: 'Vault', icon: '/assets/header/valut.png', type: 'button' },
     { label: 'VIP', icon: '/assets/header/vip.png', type: 'button' },
-    { label: 'Affiliate', icon: '/assets/header/Affiliate.png', type: 'button'},
+    { label: 'Affiliate', icon: '/assets/header/Affiliate.png', type: 'button' },
     { label: 'Statistics', icon: '/assets/header/Statistics.png', type: 'button' },
     { label: 'Transactions', icon: '/assets/header/Transactions.png', type: 'button' },
     { label: 'My Bets', icon: '/assets/header/My Bets.png', type: 'button' },
@@ -90,6 +104,12 @@ showLogin(){
     { label: 'Live support', icon: '/assets/header/Live support.png', type: 'button' },
     { label: 'Logout', icon: '/assets/header/logout.png', type: 'button' }
   ];
-  
-  
+
+
+  showModal() {
+    if (this.profileOptions[10]) {
+      this.toggle.setLogout(true)
+    }
+  }
+
 }

@@ -13,10 +13,11 @@ export class ToggleService {
   private statisticsModalState: BehaviorSubject<boolean> = new BehaviorSubject<boolean>(false);
   private statisticsTableModalState: BehaviorSubject<boolean> = new BehaviorSubject<boolean>(false);
   private notificationModalState: BehaviorSubject<boolean> = new BehaviorSubject<boolean>(false);;
-
+  private signUpState: BehaviorSubject<boolean> = new BehaviorSubject<boolean>(false);
   private walletModal: BehaviorSubject<boolean> = new BehaviorSubject<boolean>(false);
   private loginState: BehaviorSubject<boolean> = new BehaviorSubject<boolean>(false);
   private wallet: BehaviorSubject<boolean> = new BehaviorSubject<boolean>(false);
+  private logoutState: BehaviorSubject<boolean> = new BehaviorSubject<boolean>(false);
   private LeaderBoardModalState: BehaviorSubject<boolean> = new BehaviorSubject<boolean>(false);
   private RaceModalState: BehaviorSubject<boolean> = new BehaviorSubject<boolean>(false);
   private campaingModalState: BehaviorSubject<boolean> = new BehaviorSubject<boolean>(false);
@@ -140,5 +141,19 @@ export class ToggleService {
     this.loginState.next(value);
   }
 
+
+  getSignUp() {
+    return this.signUpState
+  }
+  setSignUp(value: boolean) {
+    this.signUpState.next(value);
+  }
+
+  getLogout() {
+    return this.logoutState
+  }
+  setLogout(value: boolean) {
+    this.logoutState.next(value);
+  }
 
 }

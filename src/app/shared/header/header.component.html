@@ -5,7 +5,7 @@
     <div class="navigation">
         <div class="group-container">
             <div class="ctainer">
-                <div class="navigation-container">
+                <div class="navigation-container" [ngClass]="{'![grid-template-columns:1fr_1fr]':!token}">
                     <!--Stake Logo -->
                     <div class="stack">
                         <div>
@@ -19,7 +19,7 @@
                         </div>
                     </div>
                     <!-- Balance toggle button -->
-                    <div class="balance-toggle !hidden">
+                    <div class="balance-toggle " *ngIf="token">
                         <div class="coin-toggle">
                             <div class="wrapper">
                                 <div class="dropdown">
@@ -91,7 +91,7 @@
                         <button type="button" class="wallet"><span>Wallet</span></button>
                     </div>
                     <!-- Right Section for profile , search and notification -->
-                    <section class="!hidden">
+                    <section class="" *ngIf="token">
                         <div class="stack x-flex-end svelte-right right-stack">
                             <!-- Search -->
                             <button type="button" class="search-btn" (click)="toggleDropdown('searchbutton')">
@@ -111,7 +111,7 @@
                                     <div class="dropdown-scroll-content " style="max-height: inherit;">
                                         <ng-container *ngFor="let option of profileOptions">
                                             <button *ngIf="option.type === 'button'" type="button"
-                                                class="porfile-list w-full">
+                                                class="porfile-list w-full" (click)="showModal()">
                                                 <img [src]="option.icon" [alt]="option.label" class="svg-icon">
                                                 <span>{{ option.label }}</span>
                                             </button>
@@ -177,10 +177,10 @@
                         </div>
                     </section>
 
-                    <section class="">
+                    <section class="" *ngIf="!token">
                         <div class="stack x-flex-end  svelte-right">
-                            <button type="button" class="sign-in" (click)="showLogin()">Sign In</button>
-                            <button type="button" class="Register">Register</button>
+                            <button type="button" class="sign-in" (click)=" showLogin()">Sign In</button>
+                            <button type="button" class="Register" (click)="showSignUp()">Register</button>
                         </div>
                     </section>
                 </div>
@@ -415,3 +415,5 @@
 </div>
 
 <app-login></app-login>
+<app-register></app-register>
+<app-logout></app-logout>
