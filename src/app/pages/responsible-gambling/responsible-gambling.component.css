@@ -51,11 +51,17 @@
 .card {
   @apply sticky top-[2em] max-w-full min-w-[180px] bg-[rgb(15,33,46)] text-[#d5dceb] rounded-lg
 }
-.dash{
+
+.dash {
+  @apply absolute left-0 w-[3px] bg-[#1475e1];
+  transition: top 0.3s ease; 
+
+}
+/* .dash{
   @apply h-[14.2857%] absolute left-0 top-0 w-[3px]  bg-[#1475e1]  ;
   transition: all .2s ease-out;
   transform: translateY(0%);
-}
+} */
 .active-route {
   @apply sticky max-w-[220px] min-w-[220px] top-[2em];
 }
@@ -76,80 +82,35 @@
   @apply  inline-flex relative items-center gap-2 font-semibold whitespace-nowrap w-full   transition disabled:pointer-events-none disabled:opacity-50 focus-visible:outline focus-visible:outline-2 hover:bg-[#B1BAD3] 
   focus-visible:outline-offset-2 active:scale-[0.98] bg-transparent text-sm leading-none  px-3 py-3 rounded-none justify-start
 }
-
-/* 
-.content-wrapper {
-  @apply relative;
+.update-msg-wrap {
+  @apply flex gap-4 py-2 justify-between items-center md:flex-row flex-col
+}
+.read-more-btn {
+  @apply inline-flex relative items-center gap-2 justify-center rounded-sm font-semibold whitespace-nowrap  transition disabled:pointer-events-none disabled:opacity-50 focus-visible:outline-2 focus-visible:outline-offset-2 active:scale-[0.98] bg-transparent text-white hover:bg-transparent hover:text-white focus-visible:outline-none text-sm leading-none  underline
+}
+.dismiss-btn {
+  @apply inline-flex relative items-center gap-2 justify-center rounded-sm font-semibold whitespace-nowrap  transition disabled:pointer-events-none disabled:opacity-50 focus-visible:outline-2 focus-visible:outline-offset-2 active:scale-[0.98] bg-transparent text-white hover:bg-transparent hover:text-white focus-visible:outline-none text-sm leading-none  w-full
+}
+.verfication{
+  @apply inline-flex relative items-center gap-2 justify-center rounded-sm font-semibold whitespace-nowrap  transition disabled:pointer-events-none disabled:opacity-50 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 active:scale-[0.98] bg-blue-500 text-white hover:bg-blue-600 hover:text-white focus-visible:outline-white text-sm leading-none shadow-md py-[0.8125rem] px-[1rem] w-full
+}
+.header{
+  @apply gap-3 p-0 items-center justify-start [grid-auto-flow:column] grid
+}
+.header-svg{
+  @apply inline-flex relative items-center gap-2 justify-center rounded-sm font-semibold whitespace-nowrap  transition disabled:pointer-events-none disabled:opacity-50 focus-visible:outline-2 focus-visible:outline-offset-2 active:scale-[0.98] bg-transparent text-white hover:bg-transparent hover:text-white focus-visible:outline-none text-sm leading-none 
 }
 
-.parent:not(.reset) {
-  @apply w-full flex flex-col items-center p-[0_3vw];
+.dropdown-option{
+  @apply transition-none relative items-center gap-2 font-semibold whitespace-nowrap  transition disabled:pointer-events-none disabled:opacity-50 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 active:scale-[0.98] bg-transparent text-white hover:bg-[rgb(7,24,36)] hover:text-white focus-visible:outline-white text-sm leading-none 
+   py-[0.9375rem] px-[1.25rem] w-full justify-start block
 }
-
-.ctainer:not(.reset) {
-  @apply w-full max-w-[1200px] items-center;
+.mbl-dropdown-container{
+  @apply p-0 gap-[0.5rem] items-center justify-start [grid-auto-flow:column] grid md:hidden
 }
-
-.layout-spacing:not(.reset) {
-  @apply pb-8 flex flex-col w-full;
+.mbl-dropdown-options{
+  @apply inline-flex bg-[rgb(15,33,46)] relative items-center gap-2 justify-center font-semibold whitespace-nowrap  transition disabled:pointer-events-none disabled:opacity-50 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 active:scale-[0.98]  text-white hover:bg-[rgb(7,24,36)] hover:text-white focus-visible:outline-white text-sm leading-none  py-[0.9375rem] px-[1.25rem] rounded-sm
 }
-
-.stack-wrapper {
-  @apply p-0 gap-[1.5rem] grid [grid-auto-flow:row] justify-stretch items-center;
+.menu-nav{
+  @apply inline-flex relative bg-[rgb(15,33,46)] items-center gap-2 justify-center font-semibold whitespace-nowrap  transition disabled:pointer-events-none disabled:opacity-50 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 active:scale-[0.98]  text-white hover:bg-[rgb(7,24,36)] hover:text-white focus-visible:outline-white text-sm leading-none py-[0.9375rem] px-[1.25rem] rounded-sm
 }
-
-.wrap {
-  @apply w-full grid [place-items:flex-start] pt-[1.5rem];
-}
-
-.stack {
-  @apply grid [grid-auto-flow:column] justify-between items-center w-full gap-[.75rem] p-0;
-}
-
-.stack-child {
-  @apply p-0 gap-[.75rem] items-center justify-start [grid-auto-flow:column] grid;
-}
-
-.gambling-title {
-  @apply text-[18px] font-[600] justify-start leading-[1.5] inline-flex items-center gap-[.5rem];
-}
-
-.svg-icon {
-  pointer-events: none;
-  stroke-width: 0;
-  stroke: currentColor;
-  fill: currentColor;
-  flex-shrink: 0;
-  display: inline-block;
-  width: 1em;
-  height: 1em;
-  color: #b1bad3;
-}
-
-.active-route {
-  @apply sticky max-w-full min-w-[180px] top-[2em];
-}
-
-.variant-default {
-  @apply bg-[#0f212e] text-[#d5dceb] rounded-[0.5rem];
-}
-
-.outer-wrapper {
-  @apply p-[.5rem_0];
-}
-
-.wrapper {
-  @apply relative;
-}
-
-.nav-item {
-  @apply truncate hover:bg-[rgba(7,24,36)] rounded-none relative items-center gap-2 font-semibold whitespace-nowrap  transition disabled:pointer-events-none disabled:opacity-50 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 active:scale-[0.98] bg-transparent text-white  focus-visible:outline-white text-sm leading-none  py-[0.9375rem] px-[1.25rem]  w-full justify-start block;
-}
-
-.active-border {
-  @apply border-l-[3px] border-[#1375E1] bg-[rgba(7,24,36)];
-}
-
-.content-container {
-  @apply gap-[1.5rem] grid [grid-auto-flow:column] items-start justify-start;
-} */
