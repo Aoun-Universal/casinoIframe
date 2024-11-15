@@ -182,15 +182,23 @@
 .language-select {
   @apply w-full flex flex-col gap-1;
 }
+.secondary-accordion{
+    @apply flex flex-col
+}
+.toggle-content{
+    @apply py-4 px-4 bg-[#213743] border-t-[2px] border-[#2F4553] text-[0.875rem] text-[#b1bad3]
+}
 
-@media (max-width: 930px) {
-  .footer {
-    @apply flex flex-col items-start gap-4;
-  }
-  .chat-wrapper {
-    @apply flex flex-col items-start;
-  }
-  .button-wrapper {
-    @apply min-w-[100%];
-  }
+
+
+@media (max-width : 930px){
+    .footer{
+        @apply flex flex-col items-start gap-4
+    }
+    .chat-wrapper{
+        @apply flex flex-col items-start 
+    }
+    .button-wrapper{
+        @apply min-w-[100%]
+    }
 }
