@@ -7,10 +7,10 @@
       </svg>
     </button>
     <div class="link-wrap" [ngClass]="{'flex-col !items-center pt-[16px] ':!isSidebar}">
-      <a class="header-button casino" [ngClass]="{'casino-btn-mobile':!isSidebar}"><span class="text-[14px]"
-          *ngIf="isSidebar" routerLink="soccer">CASINO</span></a>
+      <a class="header-button cursor-pointer casino" [ngClass]="{'casino-btn-mobile':!isSidebar}"><span class="text-[14px]"
+          *ngIf="isSidebar" [routerLink]="'/casino/home'">CASINO</span></a>
       <div class="image-loader"></div>
-      <a class="header-button sports" [ngClass]="{'sport-btn-mobile':!isSidebar}" routerLink="sport-market"><span
+      <a class="header-button sports" [ngClass]="{'sport-btn-mobile':!isSidebar}" [routerLink]="'/sport/home'"><span
           class="text-[14px]" *ngIf="isSidebar">SPORTS</span></a>
       <div class="image-loader"></div>
     </div>
@@ -29,11 +29,8 @@
     <!-- input area end  -->
 
     <!-- mobile button -->
-    <div class="header-buttons "><a class="header-button-mobile casino mobile " data-test="header-casino-link"
-        data-analytics="header-casino-link" draggable="false" href="/casino/home"><span>CASINO</span></a>
-      <div class="image-loader "></div> <a class="header-button-mobile sports mobile " data-test="header-sports-link"
-        data-analytics="header-sports-link" draggable="false" href="/sports/home"><span>SPORTS</span></a>
-      <div class="image-loader "></div>
+    <div class="header-buttons "><a class="header-button-mobile casino mobile" draggable="false" [routerLink]="'/casino/home'"><span>CASINO</span></a>
+      <div class="image-loader "></div> <a class="header-button-mobile sports mobile " draggable="false" [routerLink]="'/sport/home'"><span>SPORTS</span></a>
     </div>
     <!-- mobile button -->
   </div>
