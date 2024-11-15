@@ -50,5 +50,5 @@ tr:hover {
 }
 
 ::-webkit-scrollbar{
-  display: none;
+  @apply hidden
 }
