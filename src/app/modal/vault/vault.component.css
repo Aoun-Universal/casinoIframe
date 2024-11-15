@@ -206,7 +206,7 @@
 
 /* Max button styling */
 .button-max {
-  @apply inline-flex items-center gap-2 justify-center rounded-sm font-semibold whitespace-nowrap bg-[#2f4553] text-white hover:bg-gray-300 text-sm py-[13px] px-4 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-white transition disabled:opacity-50;
+  @apply inline-flex items-center gap-2 justify-center rounded-sm font-semibold whitespace-nowrap bg-[#2f4553] text-white hover:bg-gray-300 text-sm py-[8px] px-4 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-white transition disabled:opacity-50;
 }
 
 /* Label content wrapper */

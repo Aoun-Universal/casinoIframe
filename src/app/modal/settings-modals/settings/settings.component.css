@@ -145,7 +145,7 @@ label.svelte-1wzq4lo {
   @apply inline-flex flex-row-reverse items-center relative;
 }
 .input-wrap.svelte-1nbx5re.svelte-1nbx5re.svelte-1nbx5re {
-  @apply w-[96%] flex-shrink-0 shadow-[0_1px_3px_0_rgba(0,_0,_0,_.2),_0_1px_2px_0_rgba(0,_0,_0,_.12)] rounded-[.25em];
+  @apply w-full flex-shrink-0 shadow-[0_1px_3px_0_rgba(0,_0,_0,_.2),_0_1px_2px_0_rgba(0,_0,_0,_.12)] rounded-[.25em];
 }
 .label-content.svelte-1k9rtf3 {
   @apply inline-flex items-center font-semibold text-[.875em] text-[#b1bad3] transition-[.2s]  p-[0_0_.25rem_0] justify-between;
@@ -177,7 +177,7 @@ p.variant-negative.svelte-17v69ua .svg-icon {
   @apply text-[#ed4163];
 }
 .input-content.svelte-1nbx5re.svelte-1nbx5re.svelte-1nbx5re {
-  @apply relative flex-grow-[1] flex;
+  @apply relative flex-grow-[1] w-full flex;
 }
 .before-icon.svelte-1nbx5re.svelte-1nbx5re.svelte-1nbx5re {
   @apply left-[.75em];
@@ -197,7 +197,7 @@ p.variant-negative.svelte-17v69ua .svg-icon {
   @apply p-[.5em];
 }
 .input.svelte-1nbx5re.svelte-1nbx5re.svelte-1nbx5re {
-  @apply  text-[#fff] bg-[#0f212e] rounded-[2px] border-[#2f4553] font-semibold  transition-[.25s] outline-none m-0 text-[.875rem] shadow-none;
+  @apply w-full  text-[#fff] bg-[#0f212e] rounded-[2px] border-[#2f4553] font-semibold  transition-[.25s] outline-none m-0 text-[.875rem] shadow-none;
 }
 form.svelte-188ba96:not(.is-inline) > * + * {
   @apply mt-[1rem];
