@@ -16,7 +16,7 @@
   .swiper-slide-main{
     @apply !w-[325px] md:!w-[360px] mx-3 md:ml-0 md:mr-5
   }
-  
+
   .swiper-slide-sports{
     @apply mr-5 !w-[150px]
   }
@@ -106,7 +106,7 @@
 }
 
 .tab-slider {
-    @apply bg-[#0f212e] flex rounded-[3rem] p-[5px] flex-shrink-0 
+    @apply bg-[#0f212e] flex rounded-[3rem] p-[5px] flex-shrink-0
 }
 
 .tab-item {
@@ -157,7 +157,7 @@
 
 /* Top sports slider */
 .sports-img {
-    @apply w-[157px] max-w-[167px] rounded-lg 
+    @apply w-[157px] max-w-[167px] rounded-lg
 }
 
 .sports-card{
@@ -198,7 +198,7 @@
 }
 
 .profile-list{
-    @apply  inline-flex w-full relative items-center gap-2 font-semibold whitespace-nowrap  text-[rgb(47_69_83)] transition disabled:pointer-events-none disabled:opacity-50 focus-visible:outline focus-visible:outline-2 hover:bg-[#B1BAD3] 
+    @apply  inline-flex w-full relative items-center gap-2 font-semibold whitespace-nowrap  text-[rgb(47_69_83)] transition disabled:pointer-events-none disabled:opacity-50 focus-visible:outline focus-visible:outline-2 hover:bg-[#B1BAD3]
     focus-visible:outline-offset-2 active:scale-[0.98] bg-transparent text-sm leading-none  px-3 py-3 rounded-none justify-start
 }
 
@@ -326,7 +326,7 @@
 
 /* FixtureScore */
 .fixture-score {
-    @apply [grid-column:4/span_2] hidden md:flex justify-end 
+    @apply [grid-column:4/span_2] hidden md:flex justify-end
 }
 
 .fixture-score-wrapper{
@@ -385,7 +385,7 @@
 }
 .scale-up{
 @apply absolute size-2 rounded-[50%] bg-[#1fff20] [transform:translate(-50%,-50%)scale(1)];
-animation: ScaleUp .2s ease-out; 
+animation: ScaleUp .2s ease-out;
 }
 
 @keyframes ScaleUp{
@@ -408,7 +408,7 @@ label{
 }
 
 .select-content{
-    @apply relative [flex-grow:1] w-full flex 
+    @apply relative [flex-grow:1] w-full flex
 }
 
 select{
@@ -456,7 +456,7 @@ tr:hover {
 .tab-item.active , .tab-item:hover{
     @apply bg-[#2f4553] text-white
   }
-  
+
 
   /* Main header Section */
 .header-wrapper{
@@ -510,7 +510,7 @@ tr:hover {
 
 .success-bar{
     @apply h-full w-full shadow-lg rounded-[10px] relative right-full bg-[#1fff20]
-} 
+}
 
 .miletone-wrap{
     @apply flex items-center whitespace-nowrap gap-[.5ch]
@@ -524,7 +524,7 @@ tr:hover {
 /* Cards area */
 
 .cards-area{
-    @apply flex gap-1.5 md:gap-4 xl:gap-2.5 justify-end mt-3 
+    @apply flex gap-1.5 md:gap-4 xl:gap-2.5 justify-end mt-3
 }
 
 .cards-border{
@@ -562,7 +562,7 @@ tr:hover {
 
 /* Cards gallery */
 .gallery{
-    @apply [grid-auto-columns:100%] w-full -ml-1.5 -mr-1.5 grid [grid-auto-flow:column] [scroll-behavior:smooth] [scroll-snap-type:x_mandatory] pt-[10px] overflow-x-auto 
+    @apply [grid-auto-columns:100%] w-full -ml-1.5 -mr-1.5 grid [grid-auto-flow:column] [scroll-behavior:smooth] [scroll-snap-type:x_mandatory] pt-[10px] overflow-x-auto
 }
 
 .gallery-slide{
@@ -664,7 +664,7 @@ tr:hover {
         @apply -mt-8
     }
 .end-text{
-    @apply text-[10px] leading-[10px] 
+    @apply text-[10px] leading-[10px]
 }
     .time{
         @apply text-[14px] leading-[14px]

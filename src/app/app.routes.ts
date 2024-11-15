@@ -29,6 +29,18 @@ export const routes: Routes = [
         canActivate: [authGuard]
       },
       {
+        path: 'sport/home', // Sportsbook route
+        loadComponent: () =>
+          import('./pages/home/home.component').then((c) => c.HomeComponent),
+        canActivate: [authGuard],
+      },
+      {
+        path: 'casino/home', // Casino route
+        loadComponent: () =>
+          import('./pages/home/home.component').then((c) => c.HomeComponent),
+        canActivate: [authGuard],
+      },
+      {
         path: 'my-bets',
         loadComponent: () => import('./pages/my-bets/my-bets.component').then((c) => c.MyBetsComponent)
       },

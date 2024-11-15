@@ -42,7 +42,7 @@ export class LoginComponent implements OnInit {
     const password = this.loginForm.get('password')!.value;
     console.log('gmail', emailOrName);
     console.log(password);
-    if (emailOrName === 'admin' && password === 'Abcd1234@') {
+    if (emailOrName === 'admin@gmail.com' && password === 'Abcd1234@') {
       this.authService.login();
       this.router.navigateByUrl('/home').then(() => {
         window.location.reload(); 

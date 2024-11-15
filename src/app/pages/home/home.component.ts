@@ -1,11 +1,14 @@
 import { NgClass, NgFor, NgIf, NgStyle, NgSwitch, NgSwitchCase } from '@angular/common';
-import { Component, CUSTOM_ELEMENTS_SCHEMA, ElementRef, HostListener, ViewChild } from '@angular/core';
+import {Component, CUSTOM_ELEMENTS_SCHEMA, HostListener, OnInit, ViewChild} from '@angular/core';
 import { ToggleService } from '../../services/toggle.service';
 import { BetSlipComponent } from '../../shared/bet-slip/bet-slip.component';
 import { SlickCarouselComponent, SlickCarouselModule } from 'ngx-slick-carousel';
 import { StatisticsModalTableComponent } from "../../modal/statistics-modal-table/statistics-modal-table.component";
 import { LeaderboardComponent } from '../../modal/leaderboard/leaderboard.component';
 import { RaceComponent } from '../../modal/race/race.component';
+import {NavigationEnd, Router } from '@angular/router';
+import { AuthService } from '../../services/auth.service';
+import { filter } from 'rxjs';
 
 
 @Component({
@@ -16,11 +19,36 @@ import { RaceComponent } from '../../modal/race/race.component';
   styleUrl: './home.component.css',
   schemas: [CUSTOM_ELEMENTS_SCHEMA]
 })
-export class HomeComponent {
+export class HomeComponent implements OnInit{
+  isLoggedIn: boolean = false;
+  isHomeRoute: boolean = false;
+
+
+  constructor(private authService: AuthService, private router: Router,private toggleService: ToggleService) {}
+
+  ngOnInit() {
+    this.checkRouteAndAuth();
+
+    // Listen to router events
+    this.router.events.pipe(filter(event => event instanceof NavigationEnd)).subscribe(() => {
+      this.checkRouteAndAuth();
+    });
+
+  }
+  navigateTo(path: string): void {
+    this.router.navigate([path]);
+  }
+
   @ViewChild('heroSlider') heroSlider!: SlickCarouselComponent;
   @ViewChild('sportsSlider') sportsSlider!: SlickCarouselComponent;
   @ViewChild('gallerySlider') gallerySlider!: SlickCarouselComponent;
 
+  checkRouteAndAuth(): void {
+    this.isLoggedIn = this.authService.isAuthenticated();
+    this.isHomeRoute = this.router.url === '/home';
+  }
+
+  // Navigate to specific routes
   isMarketOpen = true;
   isMarketOpen2 = true;
   betSlipContent = false
@@ -121,7 +149,6 @@ export class HomeComponent {
       InfoModal:this.openRaceModal.bind(this),
     },
   ];
-  
 
   index = 0;
 
@@ -145,7 +172,7 @@ export class HomeComponent {
   };
 
   // Adjust width issues of gallery slider
-  
+
   isCarouselActive = true;
   screenWidth = window.innerWidth;
 
@@ -274,8 +301,6 @@ export class HomeComponent {
   }
 
   // Betslip
-  constructor(private toggleService: ToggleService) {
-  }
 
   openModal() {
     this.toggleService.setBetslipstate(true);
