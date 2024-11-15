@@ -46,12 +46,46 @@
 .horse-racing-btn:hover > svg {
     @apply text-white;
 }
+.WinnerDropdown {
+    @apply pl-6 pr-[32px] outline-none flex items-center gap-2 skew-x-[20deg]  
+}
+.Dropdown-disable-text {
+    @apply text-[#b1bad3] leading-[18px] text-left text-sm font-semibold
+}
+.Dropdown-Option {
+    @apply inline-flex relative cursor-pointer items-center gap-2 w-full font-semibold text-[.875rem] whitespace-nowrap transition disabled:pointer-events-none disabled:opacity-50 focus-visible:outline-2 focus-visible:outline-offset-2 active:scale-[0.98] bg-transparent text-white focus-visible:outline-none text-sm leading-none
+}
 
-
-
-
-
-
+.Round-wrapper {
+    @apply flex w-fit gap-[5px] p-[5px] rounded-full bg-[rgb(15,33,46)]
+}
+.Round-btn {
+    @apply px-5 py-[15px] hover:bg-[rgb(47,69,83)] rounded-full font-semibold text-sm leading-none text-gray-200  transition disabled:pointer-events-none disabled:opacity-50 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 active:scale-[0.98] bg-transparent focus-visible:outline-white [&:hover>svg]:text-white [&_svg]:!text-gray-200
+}
+.track-stats {
+    @apply flex flex-wrap items-center [column-gap:1rem] [row-gap:0.5rem] m-0 p-0
+}
+.vedio-btn {
+    @apply inline-flex relative items-center gap-2 justify-center rounded-sm font-semibold whitespace-nowrap  transition disabled:pointer-events-none disabled:opacity-50 focus-visible:outline-2 focus-visible:outline-offset-2 active:scale-[0.98] bg-transparent text-[rgb(177,186,211)] hover:bg-transparent hover:text-white focus-visible:text-white focus-visible:outline-none text-sm leading-none
+}
+.Ended-txt {
+    @apply flex whitespace-nowrap gap-[0.5rem] m-0 p-0
+}
+.price-btn {
+    @apply hover:bg-[rgb(47,69,83)] inline-flex relative items-center gap-2 justify-center font-semibold whitespace-nowrap   text-sm leading-none   py-[0.9375rem] px-[1.25rem] rounded-full bg-transparent !text-white  transition disabled:pointer-events-none disabled:opacity-50 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 active:scale-[0.98] focus-visible:outline-white [&:hover>svg]:text-white 
+}
+.win-txt {
+    @apply ms-3 text-sm font-medium text-gray-900 dark:text-gray-300
+}
+.table-wrapper {
+    @apply grid auto-cols-max gap-1 bg-[rgb(33_55_67)] [grid-template-columns:repeat(8,1fr)]
+}
+.table-tabs {
+    @apply flex flex-col !bg-[rgb(26,44,56)] rounded px-3 py-2
+}
+.load-more {
+    @apply inline-flex relative items-center gap-2 justify-center rounded-sm font-semibold whitespace-nowrap  transition disabled:pointer-events-none disabled:opacity-50 focus-visible:outline-2 focus-visible:outline-offset-2 active:scale-[0.98] bg-transparent text-[rgb(177,186,211)] hover:bg-transparent hover:text-white focus-visible:text-white focus-visible:outline-none text-sm leading-none
+}
 
 
 
@@ -110,7 +144,7 @@
     @apply text-sm text-[#fff] font-semibold  inline text-left
 }
 .sub-text{
-    @apply text-sm text-[#fff] font-normal  inline text-left
+    @apply text-sm text-[rgb(177,186,211)] font-normal  inline text-left
 }
 .history-head{
     @apply  w-full z-[4] flex justify-between items-center bg-none px-4 py-3 text-[#fff] cursor-pointer rounded-[0.25rem]
