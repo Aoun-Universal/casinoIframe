@@ -150,3 +150,10 @@ span.variant-highlighted.svelte-17v69ua{
 focus-visible:outline-offset-2 active:scale-[0.98] !bg-[#2F4553] text-white  hover:text-white focus-visible:outline-white text-sm leading-none py-[0.8125rem] px-[1rem] shadow-none
 
 }
+ .tooltip-arrow {
+    @apply absolute bottom-[-4px] left-[50%] w-[8px] h-[8px] bg-inherit;
+    transform: translateX(-50%) rotate(45deg);
+  }
+  .tooltip{
+    @apply bg-white text-black text-sm rounded-sm px-4 py-2 absolute -top-14 right-[-2]   shadow-lg
+  }

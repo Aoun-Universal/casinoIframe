@@ -128,3 +128,30 @@
       @apply  inline-flex relative items-center gap-2 font-semibold whitespace-nowrap w-full   transition disabled:pointer-events-none disabled:opacity-50 focus-visible:outline focus-visible:outline-2 hover:bg-[#B1BAD3] 
       focus-visible:outline-offset-2 active:scale-[0.98] bg-transparent text-sm leading-none  px-3 py-3 rounded-none justify-start
   }
+  .btn{
+    @apply inline-flex relative items-center gap-2 justify-center bg-[rgb(47,69,83)] rounded-sm font-semibold whitespace-nowrap  
+    transition disabled:pointer-events-none disabled:opacity-50 
+    focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2
+     active:scale-[0.98]  text-white 
+      hover:text-white focus-visible:outline-white text-sm leading-none 
+      py-[0.8125rem] px-[1rem] shadow-none;
+  }
+  .download-banners{
+    @apply inline-flex bg-[rgb(47,69,83)] relative items-center gap-2 justify-center rounded-sm 
+    font-semibold whitespace-nowrap  
+    transition disabled:pointer-events-none disabled:opacity-50 focus-visible:outline 
+    focus-visible:outline-2 focus-visible:outline-offset-2 active:scale-[0.98] 
+     text-white hover:text-white focus-visible:outline-white 
+     text-sm leading-none shadow-md py-[0.9375rem] px-[1.25rem]
+  }
+  .para{
+    @apply text-xs text-[#b1bad3] text-left justify-start font-normal inline-flex items-center mt-4
+  }
+
+  .tooltip-arrow {
+    @apply absolute bottom-[-4px] left-[50%] w-[8px] h-[8px] bg-inherit;
+    transform: translateX(-50%) rotate(45deg);
+  }
+  .tooltip{
+    @apply bg-white text-black text-sm rounded-sm px-4 py-2 absolute -top-14 right-[-2]   shadow-lg
+  }
