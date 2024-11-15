@@ -1,0 +1,119 @@
+@if (showModal) {
+<div id="svelte">
+    <div class="modal">
+        <div class="overlay"></div>
+        <div class="card size-md">
+            <!-- Modal Content -->
+            <div class="content">
+                <div class="modal-content">
+                    <!-- Close button -->
+                    <div class="close">
+                        <button class="main-btn" (click)="closeModal()">
+                            <svg fill="currentColor" viewBox="0 0 64 64" class="svg-icon ">
+                                <title></title>
+                                <path fill="#b1b1d3"
+                                    d="m54.827 16.187-7.014-7.014L32 24.987 16.187 9.173l-7.014 7.014L24.987 32 9.173 47.813l7.014 7.014L32 39.013l15.813 15.814 7.014-7.014L39.013 32l15.814-15.813Z">
+                                </path>
+                            </svg>
+                        </button>
+                    </div>
+                    <!-- Main content -->
+                    <div class="main-content">
+                        <div class="promo">
+                            <!-- Promo banner -->
+                            <div class="relative">
+                                <div class="promo-banner">
+                                    <!-- Image -->
+                                    <div class="promo-banner-image">
+                                        <img src="assets/home/promo-banner.avif" alt="promo-banner">
+                                    </div>
+                                </div>
+                                <!-- Promo-banner-body -->
+                                <div class="promo-banner-body">
+                                    <div class="pr-8">
+                                        <h2 class="race-text">$100k Race</h2>
+                                    </div>
+                                    <!-- timer -->
+                                    <div>
+                                        <div class="timer">
+                                            <!-- Days -->
+                                            <div class="item">
+                                              <span class="text-white">
+                                                <span class="digits">{{ days }}</span>
+                                              </span>
+                                              <span class="format">Day</span>
+                                            </div>
+                                          
+                                            <!-- Hours -->
+                                            <div class="item">
+                                              <span class="text-white">
+                                                <span class="digits">{{ hours }}</span>
+                                              </span>
+                                              <span class="format">Hour</span>
+                                            </div>
+                                          
+                                            <!-- Minutes -->
+                                            <div class="item">
+                                              <span class="text-white">
+                                                <span class="digits">{{ minutes }}</span>
+                                              </span>
+                                              <span class="format">Min</span>
+                                            </div>
+                                          
+                                            <!-- Seconds -->
+                                            <div class="item">
+                                              <span class="text-white">
+                                                <span class="digits">{{ seconds }}</span>
+                                              </span>
+                                              <span class="format">Sec</span>
+                                            </div>
+                                          </div>
+                                          
+                                    </div>
+                                </div>
+                            </div>
+                            <!-- Race position -->
+                             <div class="race-position">
+                                <!-- Race position 1 -->
+                                 <div class="race-position-item item-border race-1">
+                                    <span class="race-heading">Your Position</span>
+                                    <span>-</span>
+                                 </div>
+                                 <!-- Race position 2 -->
+                                 <div class="race-position-item item-border race-2">
+                                    <span class="race-heading ">Your Current Prize</span>
+                                    <span>
+                                        <span>$0.00</span>
+                                        <span><svg fill="none" viewBox="0 0 96 96" class="svg-icon ml-1" > <title></title> <path d="M48 96c26.51 0 48-21.49 48-48S74.51 0 48 0 0 21.49 0 48s21.49 48 48 48Z" fill="#6CDE07"></path><path d="M51.52 73.32v6.56h-5.8V73.4c-7.56-.6-13.08-3.56-16.92-7.64l4.72-6.56c2.84 3 6.96 5.68 12.2 6.48V51.64c-7.48-1.88-15.4-4.64-15.4-14.12 0-7.4 6.04-13.32 15.4-14.12v-6.68h5.8v6.84c5.96.6 10.84 2.92 14.6 6.56l-4.88 6.32c-2.68-2.68-6.12-4.36-9.76-5.08v12.52c7.56 2.04 15.72 4.88 15.72 14.6 0 7.4-4.8 13.8-15.72 14.84h.04Zm-5.8-30.96V31.04c-4.16.44-6.68 2.68-6.68 5.96 0 2.84 2.84 4.28 6.68 5.36ZM58.6 59.28c0-3.36-3-4.88-7.04-6.12v12.52c5-.72 7.04-3.64 7.04-6.4Z" fill="#1B3802"></path></svg></span>
+                                    </span>
+                                 </div>
+                                 <!-- Race position 3 -->
+                                 <div class="race-position-item race-3">
+                                    <span class="race-heading">Your Your Wagered</span>
+                                    <span>
+                                        <span>$0.00</span>
+                                        <span><svg fill="none" viewBox="0 0 96 96" class="svg-icon ml-1" > <title></title> <path d="M48 96c26.51 0 48-21.49 48-48S74.51 0 48 0 0 21.49 0 48s21.49 48 48 48Z" fill="#6CDE07"></path><path d="M51.52 73.32v6.56h-5.8V73.4c-7.56-.6-13.08-3.56-16.92-7.64l4.72-6.56c2.84 3 6.96 5.68 12.2 6.48V51.64c-7.48-1.88-15.4-4.64-15.4-14.12 0-7.4 6.04-13.32 15.4-14.12v-6.68h5.8v6.84c5.96.6 10.84 2.92 14.6 6.56l-4.88 6.32c-2.68-2.68-6.12-4.36-9.76-5.08v12.52c7.56 2.04 15.72 4.88 15.72 14.6 0 7.4-4.8 13.8-15.72 14.84h.04Zm-5.8-30.96V31.04c-4.16.44-6.68 2.68-6.68 5.96 0 2.84 2.84 4.28 6.68 5.36ZM58.6 59.28c0-3.36-3-4.88-7.04-6.12v12.52c5-.72 7.04-3.64 7.04-6.4Z" fill="#1B3802"></path></svg></span>
+                                    </span>
+                                 </div>
+                             </div>
+                             <!-- Promo description -->
+                             <div class="promo-description text-center">
+                                Join Stake's 24-hour $100,000 daily race! For every bet placed, sports or casino, you’ll climb passed other racers in the top 5000 positions increasing your prize the higher you go! Upon completion of Stake races all prizes will be instantly paid out to your balance in the equivalent BTC value!
+                             </div>
+                             <!-- Read more -->
+                              <div class="promo-cta">
+                                <a class="main-btn w-full !bg-[#213743]">
+                                    Read more
+                                </a>
+                                </div>
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </div>
+
+</div>
+}

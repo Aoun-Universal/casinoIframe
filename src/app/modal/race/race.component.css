@@ -1,0 +1,138 @@
+@media screen and (min-width: 768px) {
+    #svelte {
+        @apply h-px min-h-screen w-full pt-0 pb-0;
+    }
+}
+
+.svg-icon {
+    @apply mt-[-3px] pointer-events-none [stroke-width:0] fill-current stroke-current flex-shrink-0 inline-block size-[1em]
+}
+
+.modal{
+    @apply fixed inset-0 z-[1500] p-4 flex items-center justify-center text-[1500];
+}
+
+.overlay {
+    @apply absolute inset-0 bg-black bg-opacity-75 touch-none;
+}
+
+.card {
+    @apply rounded-md bg-cover bg-center relative w-full min-w-[200px] max-w-[500px] max-h-[calc(100%-4em)] flex flex-col bg-[#1a2c38] text-[#b1bad3] overflow-hidden;
+}
+
+.content{
+    @apply overflow-y-auto [overscroll-behavior:contain] [scrollbar-color:#1A2C38]
+}
+
+.modal-content{
+    @apply flex flex-col relative bg-[#1A2C38]
+}
+
+.close{
+    @apply absolute right-0 top-0 z-[10]
+}
+
+.main-btn{
+    @apply inline-flex relative items-center gap-2 justify-center rounded-sm font-semibold whitespace-nowrap  transition disabled:pointer-events-none disabled:opacity-50 focus-visible:outline-2 focus-visible:outline-offset-2 active:scale-[0.98] bg-transparent text-gray-200 hover:hover:bg-transparent hover:hover:text-white focus-visible:text-white focus-visible:outline-none text-base leading-none py-4 px-5
+}
+
+.main-content{
+    @apply p-4 pt-0 flex flex-col gap-4
+}
+
+.promo{
+    @apply flex flex-col gap-4
+}
+
+.promo-banner{
+    @apply relative p-[0_2rem] m-[0_calc(2rem*-1)] bg-[#213743] min-h-[calc(354.6666666666667px+2rem)]
+}
+
+.promo-banner-image{
+    @apply flex justify-center p-8 
+}
+
+.promo-banner-image img{
+    @apply w-[21rem]
+}
+
+.promo-banner-body{
+    @apply pt-1.5 pb-4 absolute top-0 h-full flex flex-col justify-between items-start;
+}
+
+.race-text{
+    @apply text-white text-xl font-bold leading-normal
+}
+
+.timer{
+    @apply flex justify-center w-full gap-1
+}
+
+.item{
+    @apply flex flex-col justify-center items-center bg-[#0f212e] size-[54px]
+}
+
+.digits{
+    @apply text-white text-left text-[1.125rem] leading-normal inline-flex items-center font-bold
+}
+
+.format{
+    @apply text-[#b1bad3] font-semibold items-center inline-flex text-sm leading-normal
+}
+
+.race-position{
+    @apply  rounded-[.25rem] grid bg-[#213743] p-4 
+}
+
+.race-position-item{
+    @apply flex flex-col justify-center items-center gap-2 relative
+}
+
+.race-1::after, .race-2::after{
+    @apply [content:""] absolute top-0 left-0 right-0 bottom-0 h-7 my-auto border-r border-solid border-[#557086]
+}
+
+.promo-description{
+    @apply text-[#b1b1d3]
+}
+
+.promo-cta{
+    @apply flex w-full gap-2 flex-1
+}
+
+.race-heading{
+    @apply  text-center !text-[#b1bad3] max-[360px]:text-xs text-sm
+}
+
+@media screen and (max-width:640px){
+    .promo-banner{
+    min-height: calc(294.6666666666667px + 2rem);
+    }
+  .race-1{
+    @apply [grid-column:1/span_12] border-b border-solid border-[#557086]
+  }
+  .race-1::after{
+    display: none;
+  }
+
+  .race-2{
+    @apply [grid-column:1/span_6] py-2
+  }
+  .race-3{
+    @apply [grid-column:7/span_6] py-2
+  }
+
+}
+
+@media screen and (max-width:320px){
+    .promo-banner{
+        min-height: calc(254.6666666666667px + 2rem);
+        }
+}
+
+@media screen and (min-width:640px){
+    .race-position{
+        @apply  ![grid-template-columns:repeat(3,minmax(0,1fr))]
+      }
+}
+

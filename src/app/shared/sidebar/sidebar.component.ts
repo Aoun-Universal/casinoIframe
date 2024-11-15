@@ -31,20 +31,15 @@ export class SidebarComponent implements OnInit {
       this.toggle.setSidebar(true)
     }
   }
-
-  @HostListener('window:resize')
-  setSidebar() {
-    const windowRef = this.document.defaultView;
-    if (windowRef) {
-      if (windowRef.innerWidth > 768) {
-        this.smScreen = false;
-        this.xlScreen = true;
-      } else {
-        this.smScreen = true;
-        this.xlScreen = false;
-      }
-    }
+  @HostListener('window:resize', ['$event'])
+  onResize(event: Event) {
+    this.checkScreenSize(); 
   }
+
+  checkScreenSize() {
+    this.smScreen = window.innerWidth <= 768;  
+  }
+  
 
   ngOnInit(): void {
     // Subscribe to router events to track navigation end
@@ -56,10 +51,13 @@ export class SidebarComponent implements OnInit {
         this.routerPath = event.url; // Update the current path on navigation
       });
     this.routerPath = this.router.url;
-    this.setSidebar()
+
     this.toggle.sidebarState$.subscribe((state) => {
       this.isSidebar = state
     })
+    if(this.smScreen){
+      this.toggle.setSidebar(false)
+    }
 
   }
   toggleSidebar() {
@@ -77,4 +75,8 @@ export class SidebarComponent implements OnInit {
   opennotificationModal() {
     this.toggle.setnotificationModal(true)
   }
+  onWalletBtnClick(){
+    this.toggle.setWalletModal(true)
+  }
+  
 }
