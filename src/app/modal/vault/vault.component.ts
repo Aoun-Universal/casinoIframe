@@ -30,4 +30,8 @@ export class VaultComponent {
     closevipModal() {
       this.toggle.setVaultModalState(false);
     }
+    dropdwonvar:boolean=false
+    togledropdown(){
+     this.dropdwonvar=!this.dropdwonvar
+    }
 }

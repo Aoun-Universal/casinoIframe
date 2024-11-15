@@ -1,44 +1,40 @@
 <div id="svelte">
-    <div data-test="modal-user" data-layout="" class="modal svelte-cq3ecl" style="--z-index: 1500">
-        <div class="overlay svelte-cq3ecl"></div>
+    <div  class="modal svelte-cq3ecl z-[1500]" >
         <div class="card size-md svelte-cq3ecl">
             <div class="header svelte-227w12">
                 <h2
-                    class="weight-semibold line-height-default align-left size-base text-size-base variant-highlighted with-icon-space svelte-17v69ua">
+                    class=" svelte-17v69ua">
                     <svg fill="currentColor" viewBox="0 0 64 64" class="svg-icon w-[16px] h-[16px]">
-                        <title></title>
+                        
                         <path fill-rule="evenodd" clip-rule="evenodd"
                             d="M33.013 19.707 64 0v12.64L30.987 33.627 18.133 18.853 0 30.693V17.947L20.107 4.853l12.906 14.854ZM16 64H5.333V35.173L16 28.213V64Zm13.707-21.653-3.04-3.52V64h10.666V37.493l-2.773 1.76-4.853 3.094ZM58.667 64H48V30.72l10.667-6.8V64Z">
                         </path>
                     </svg>
                     <span class="text-white font-bold">Statistics</span>
                 </h2>
-                <button (click)="closestatisticModal()" type="button" tabindex="0"
-                    class="inline-flex relative items-center gap-2 justify-center rounded-sm font-semibold whitespace-nowrap ring-offset-background transition disabled:pointer-events-none disabled:opacity-50 focus-visible:outline-2 focus-visible:outline-offset-2 active:scale-[0.98] bg-transparent text-grey-200 betterhover:hover:bg-transparent betterhover:hover:text-white focus-visible:text-white focus-visible:outline-none text-base leading-none w-[16px] h-[24px]"
-                    aria-label="Close Modal" data-testid="close-modal" data-test="close-modal" data-button-root="">
+                <button (click)="closestatisticModal()" type="button" 
+                    class=" close-icon">
                     <svg fill="currentColor" viewBox="0 0 64 64" class="svg-icon">
-                        <title></title>
                         <path
                             d="m54.827 16.187-7.014-7.014L32 24.987 16.187 9.173l-7.014 7.014L24.987 32 9.173 47.813l7.014 7.014L32 39.013l15.813 15.814 7.014-7.014L39.013 32l15.814-15.813Z">
                         </path>
                     </svg>
                 </button>
             </div>
-            <div class="content scrollY overscroll-behavior-contain svelte-cq3ecl" id="modal-scroll"
-                data-block-touch-pan="true">
+            <div class="content scrollY ">
                 <div class="modal-content svelte-cq3ecl">
                     <div class="content svelte-1m9kzo7">
                         <div class="user-details svelte-1xuxzlg">
                             <div class="user-row svelte-1xuxzlg">
                                 <div class="user-name svelte-1xuxzlg">
                                     <span
-                                        class="weight-semibold line-height-default align-left size-md text-size-md variant-subtle with-icon-space is-truncate svelte-17v69ua"
-                                        style="max-width: 12ch">Arslan2304</span>
+                                        class="svelte-17v69ua"
+                                        >Arslan2304</span>
                                     <span
-                                        class="weight-normal line-height-default is-inline align-left size-sm text-size-sm variant-subtle with-icon-space svelte-17v69ua">Joined
+                                        class=" svelte-17v69ua">Joined
                                         on
                                         <span
-                                            class="weight-semibold line-height-default align-left size-sm text-size-sm variant-subtle with-icon-space svelte-17v69ua">November
+                                            class=" svelte-17v69ua">November
                                             8, 2024</span></span>
                                 </div>
                                 <button type="button" class="eye-btn" (click)="ignoreunIgore()">
@@ -99,31 +95,31 @@
                             </div>
                         </div>
                         <div class="center-wrapper svelte-1b46nyj">
-                            <div class="tabs-wrapper scrollX fullWidth svelte-1vkrcyy">
+                            <div class="tabs-wrapper scrollX svelte-1vkrcyy">
                                 <div class="slider variant-dark svelte-1vkrcyy">
                                     <div
                                         class="content-wrapper svelte-1vkrcyy w-full p-[5px] rounded-full h-[54px] bg-[#0f212e] overflow-auto">
-                                        <button (click)="showTabs('statistics')" type="button" tabindex="0"
-                                            class="inline-flex relative items-center gap-2 justify-center font-semibold whitespace-nowrap ring-offset-background transition disabled:pointer-events-none disabled:opacity-50 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 active:scale-[0.98] bg-transparent betterhover:hover:bg-grey-400 betterhover:hover:text-white focus-visible:outline-white text-sm leading-none [&amp;_svg]:text-grey-200 [&amp;:hover>svg]:text-white py-[0.9375rem] px-[1.25rem] rounded-full !text-white [&amp;_svg]:!text-white flex-1"
-                                            aria-label="Open Statistics" data-button-root=""
+                                        <button (click)="showTabs('statistics')" type="button" 
+                                            class=" tabs-btn"
+                                            aria-label="Open Statistics" tn
                                             [ngClass]="{ '!bg-grey-400': tabs === 'statistics' }">
                                             <span>Statistics</span>
                                         </button>
-                                        <button (click)="showTabs('Trophies')" type="button" tabindex="0"
-                                            class="inline-flex relative items-center gap-2 justify-center font-semibold whitespace-nowrap ring-offset-background transition disabled:pointer-events-none disabled:opacity-50 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 active:scale-[0.98] bg-transparent text-white betterhover:hover:bg-grey-400 betterhover:hover:text-white focus-visible:outline-white text-sm leading-none [&amp;_svg]:text-grey-200 [&amp;:hover>svg]:text-white py-[0.9375rem] px-[1.25rem] rounded-full flex-1"
-                                            aria-label="Open Trophies" data-button-root=""
+                                        <button (click)="showTabs('Trophies')" type="button" 
+                                            class="tabs-btn"
+                                            aria-label="Open Trophies" 
                                             [ngClass]="{ '!bg-grey-400': tabs === 'Trophies' }">
                                             <span>Trophies</span>
                                         </button>
-                                        <button (click)="showTabs('Races')" type="button" tabindex="0"
-                                            class="inline-flex relative items-center gap-2 justify-center font-semibold whitespace-nowrap ring-offset-background transition disabled:pointer-events-none disabled:opacity-50 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 active:scale-[0.98] bg-transparent text-white betterhover:hover:bg-grey-400 betterhover:hover:text-white focus-visible:outline-white text-sm leading-none [&amp;_svg]:text-grey-200 [&amp;:hover>svg]:text-white py-[0.9375rem] px-[1.25rem] rounded-full flex-1"
-                                            aria-label="Open Races" data-button-root=""
+                                        <button (click)="showTabs('Races')" type="button" 
+                                            class="tabs-btn"
+                                            aria-label="Open Races"
                                             [ngClass]="{ '!bg-grey-400': tabs === 'Races' }">
                                             <span>Races</span>
                                         </button>
-                                        <button (click)="showTabs('Raffles')" type="button" tabindex="0"
-                                            class="inline-flex relative items-center gap-2 justify-center font-semibold whitespace-nowrap ring-offset-background transition disabled:pointer-events-none disabled:opacity-50 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 active:scale-[0.98] bg-transparent text-white betterhover:hover:bg-grey-400 betterhover:hover:text-white focus-visible:outline-white text-sm leading-none [&amp;_svg]:text-grey-200 [&amp;:hover>svg]:text-white py-[0.9375rem] px-[1.25rem] rounded-full flex-1"
-                                            aria-label="Open Raffles" data-button-root=""
+                                        <button (click)="showTabs('Raffles')" type="button" 
+                                            class="tabs-btn"
+                                            
                                             [ngClass]="{ '!bg-grey-400': tabs === 'Raffles' }">
                                             <span>Raffles</span>
                                         </button>
@@ -174,7 +170,7 @@
                                     <div class="flex items-center">
                                         <svg fill="currentColor" viewBox="0 0 96 96"
                                             class="svg-icon w-[16px] h-[16px] me-[.5rem]">
-                                            <title></title>
+                                            
                                             <path
                                                 d="M64.688 54.312c37.121-4.57 30.353-38.63 30.353-38.63H78.354c.628-4.697.991-10.138 1.005-15.665V0H16.64c.014 5.54.377 10.982 1.073 16.32l-.068-.641H.958S-5.807 49.69 31.31 54.309c2.62 3.87 5.51 7.244 8.743 10.254l.034.031c-.411 5.579-2.65 21.624-15.59 21.624h-7.861V96h62.719v-9.782l-10.88-.367C58.192 83.52 56.272 69.67 55.905 64.594a59.158 59.158 0 0 0 8.647-10.08l.13-.205.007.003ZM75.43 30.267l2.194-5.44h8.503c-.33 4.638-1.995 8.831-4.611 12.26l.04-.055a22.158 22.158 0 0 1-10.542 6.682l-.158.038c1.735-3.789 3.302-8.283 4.457-12.94l.117-.548v.003Zm-60.984 6.765a22.653 22.653 0 0 1-4.567-12.134l-.003-.072h8.41l2.287 5.441c1.395 5.322 3.051 9.882 5.064 14.246l-.22-.531c-4.409-1.235-8.143-3.665-10.947-6.92l-.024-.027v-.003Zm40.78 3.977-6.402-3.11a1.712 1.712 0 0 0-.823-.205c-.301 0-.586.075-.833.212l.01-.003-6.4 3.11a1.604 1.604 0 0 1-2.243-1.656v.006l1.005-7.176a1.547 1.547 0 0 0-.411-1.282l-4.846-5.256a1.56 1.56 0 0 1 .813-2.606h.01l7.176-1.326c.498-.055.916-.35 1.139-.768l.003-.007 3.429-6.401a1.555 1.555 0 0 1 2.74-.007l.003.007 3.428 6.4c.216.416.617.71 1.09.776h.007l7.176 1.326a1.555 1.555 0 0 1 .823 2.606l-5.03 5.256a1.548 1.548 0 0 0-.425 1.07c0 .075.007.147.014.22v-.008l1.005 7.176a1.6 1.6 0 0 1-2.475 1.646l.006.004.01-.004Z">
                                             </path>
@@ -185,11 +181,11 @@
                                     <div class="relative inline-block text-left ms-auto">
                                         <!-- Dropdown Button -->
                                         <button (click)="toggleDropdown()"
-                                            class="w-[91px] h-[39px] bg-[#0f212e] shadow-[0_1px_3px_0_rgba(0,_0,_0,_.2),_0_1px_2px_0_rgba(0,_0,_0,_.12)] border-[2px] border-[#2f4553] rounded-[.25rem] transition-all flex justify-between text-white items-center px-[5px]">
+                                            class=" drop-down">
                                             Luckiest
                                             <svg fill="currentColor" viewBox="0 0 64 64"
                                                 class="svg-icon w-[14px] h-[14px] ">
-                                                <title></title>
+                                                
                                                 <path
                                                     d="M32.271 49.763 9.201 26.692l6.928-6.93 16.145 16.145 16.144-16.144 6.93 6.929-23.072 23.07h-.005Z">
                                                 </path>
@@ -197,7 +193,7 @@
                                         </button>
                                         <!-- Dropdown Menu -->
                                         <div *ngIf="isDropdownOpen"
-                                            class="absolute w-[91px] bg-[#0f212e] border border-[#2f4553]  rounded-[12px] shadow-[0_1px_3px_0_rgba(0,_0,_0,_.2),_0_1px_2px_0_rgba(0,_0,_0,_.12)]">
+                                            class=" dropdown-tab">
                                             <a class="block px-2 py-2 text-sm text-white hover:bg-blue-500"
                                                 selected>Luckiest</a>
                                             <a class="block px-2 py-2 text-sm text-white hover:bg-blue-500">Biggest</a>
@@ -287,7 +283,7 @@
                             </div>
                             <!-- Raffles -->
                             <div *ngIf="tabs === 'Raffles'"
-                                class="stack x-stretch y-center gap-medium padding-none direction-vertical padding-left-auto padding-top-auto padding-bottom-auto padding-right-auto svelte-1cd1boi">
+                                >
                                 <div class="empty-list spacing-normal svelte-1qm952x" data-icon="no-stats">
                                     <div class="large-icon svelte-1qm952x">
                                         <svg width="80" height="80" viewBox="0 0 80 80" fill="none"
@@ -324,17 +320,17 @@
                                     No raffles available
                                 </div>
                                 <div
-                                    class="stack x-center y-center gap-larger padding-none direction-horizontal padding-left-auto padding-top-auto padding-bottom-auto padding-right-auto svelte-1cd1boi">
-                                    <button type="button" tabindex="0"
-                                        class="inline-flex relative items-center gap-2 justify-center rounded-sm font-semibold whitespace-nowrap ring-offset-background transition disabled:pointer-events-none disabled:opacity-50 focus-visible:outline-2 focus-visible:outline-offset-2 active:scale-[0.98] bg-transparent text-white betterhover:hover:bg-transparent betterhover:hover:text-white focus-visible:outline-none text-sm leading-none [&amp;_svg]:text-grey-200 [&amp;:hover>svg]:text-white"
+                                    >
+                                    <button type="button" 
+                                        class=" rafles-btns"
                                         disabled="" data-testid="pagination-previous" data-test="pagination-previous"
-                                        data-button-root="">
+                                        tabs-btn>
                                         Previous
                                     </button>
-                                    <button type="button" tabindex="0"
-                                        class="inline-flex relative items-center gap-2 justify-center rounded-sm font-semibold whitespace-nowrap ring-offset-background transition disabled:pointer-events-none disabled:opacity-50 focus-visible:outline-2 focus-visible:outline-offset-2 active:scale-[0.98] bg-transparent text-white betterhover:hover:bg-transparent betterhover:hover:text-white focus-visible:outline-none text-sm leading-none [&amp;_svg]:text-grey-200 [&amp;:hover>svg]:text-white"
+                                    <button type="button" 
+                                        class="rafles-btns"
                                         disabled="" data-testid="pagination-next" data-test="pagination-next"
-                                        data-button-root="">
+                                        tabs-btn>
                                         Next
                                     </button>
                                 </div>

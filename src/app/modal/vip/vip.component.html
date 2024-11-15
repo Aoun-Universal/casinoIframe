@@ -1,115 +1,224 @@
-<div data-test="modal-vip" data-layout="" class="modal svelte-cq3ecl z-[1500]">
-  <div class="overlay svelte-cq3ecl"></div>
-  <div class="card size-md svelte-cq3ecl">
-    <div class="header svelte-227w12">
+<div 
+  data-test="modal-vip"
+  data-layout=""
+  class="modal svelte-cq3ecl  z-[1500]"
+
+  
+>
+  <div class="overlay svelte-cq3ecl"  ></div>
+  <div class="card size-md svelte-cq3ecl"  >
+    <div class="header svelte-227w12" >
       <h2
-        class="weight-semibold line-height-default align-left size-base text-size-base variant-highlighted with-icon-space svelte-17v69ua">
-        <svg fill="currentColor" viewBox="0 0 64 64" class="fisrt-svg-icon text-[#b1bad3] w-[16px] h-[16px]">
+        class="flex items-center"
+        
+      >
+        <svg
+          fill="currentColor"
+          viewBox="0 0 64 64"
+          class=" text-[#b1bad3] w-[16px] h-[16px]"
+          
+        >
           <title></title>
           <path
-            d="M59.732 0H4.266A4.266 4.266 0 0 0 0 4.266V60c0 2.21 1.79 4 4 4h56c2.21 0 4-1.79 4-4V4.266A4.266 4.266 0 0 0 59.734 0h-.002ZM17.998 50.24l-8-8 4.266-4.266 3.866 3.894 9.734-9.866 4.266 4.266L17.998 50.24Zm0-20-8-8 4.134-4.374 3.866 3.894 9.866-9.894 4.266 4.266L17.998 30.24Zm36 14.774h-14v-6.026h14v6.026Zm0-20h-14v-6.026h14v6.026Z">
-          </path>
+            d="M59.732 0H4.266A4.266 4.266 0 0 0 0 4.266V60c0 2.21 1.79 4 4 4h56c2.21 0 4-1.79 4-4V4.266A4.266 4.266 0 0 0 59.734 0h-.002ZM17.998 50.24l-8-8 4.266-4.266 3.866 3.894 9.734-9.866 4.266 4.266L17.998 50.24Zm0-20-8-8 4.134-4.374 3.866 3.894 9.866-9.894 4.266 4.266L17.998 30.24Zm36 14.774h-14v-6.026h14v6.026Zm0-20h-14v-6.026h14v6.026Z"
+          ></path>
         </svg>
         <span class="ms-[.5em]">VIP</span>
       </h2>
-      <button type="button" tabindex="0"
-        class="inline-flex relative items-center gap-2 justify-center rounded-sm font-semibold whitespace-nowrap ring-offset-background transition disabled:pointer-events-none disabled:opacity-50 focus-visible:outline-2 focus-visible:outline-offset-2 active:scale-[0.98] bg-transparent text-grey-200 betterhover:hover:bg-transparent betterhover:hover:text-white focus-visible:text-white focus-visible:outline-none text-base leading-none"
-        (click)="closevipModal()">
-        <svg fill="currentColor" viewBox="0 0 64 64" class="svg-icon w-[16px] h-[16px]">
+      <button
+        type="button"
+        tabindex="0"
+        class=" top-btn"
+        
+        (click)="closevipModal()"
+      >
+        <svg
+          fill="currentColor"
+          viewBox="0 0 64 64"
+          class="svg-icon w-[16px] h-[16px]"
+          
+        >
           <title></title>
           <path
-            d="m54.827 16.187-7.014-7.014L32 24.987 16.187 9.173l-7.014 7.014L24.987 32 9.173 47.813l7.014 7.014L32 39.013l15.813 15.814 7.014-7.014L39.013 32l15.814-15.813Z">
-          </path>
+            d="m54.827 16.187-7.014-7.014L32 24.987 16.187 9.173l-7.014 7.014L24.987 32 9.173 47.813l7.014 7.014L32 39.013l15.813 15.814 7.014-7.014L39.013 32l15.814-15.813Z"
+          ></path>
         </svg>
       </button>
     </div>
 
-    <div class="content scrollY overscroll-behavior-contain svelte-cq3ecl scrollbar-visible" id="modal-scroll">
-      <div class="modal-content svelte-cq3ecl">
-        <div class="content svelte-1m9kzo7">
-          <div class="center-wrapper svelte-1nkt3rw">
-            <div class="tabs-wrapper scrollX svelte-1vkrcyy">
-              <div class="slider variant-dark svelte-1vkrcyy">
-                <div class="content-wrapper svelte-1vkrcyy">
-                  <button (click)="toggletab('progress')" type="button" tabindex="0"
-                    class="inline-flex relative items-center gap-2 justify-center font-semibold whitespace-nowrap ring-offset-background transition disabled:pointer-events-none disabled:opacity-50 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 active:scale-[0.98] bg-transparent       betterhover:hover:bg-grey-400 betterhover:hover:text-white focus-visible:outline-white text-sm leading-none [&amp;_svg]:text-grey-200 [&amp;:hover>svg]:text-white py-[0.8125rem] px-[1rem] rounded-full  !text-white [&amp;_svg]:!text-white"
-                    [ngClass]="{'!bg-grey-400':tab==='progress'}">
-                    Progress</button><button (click)="toggletab('benifits')" type="button" tabindex="0"
-                    class="inline-flex relative items-center gap-2 justify-center font-semibold whitespace-nowrap ring-offset-background transition disabled:pointer-events-none disabled:opacity-50 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 active:scale-[0.98] bg-transparent text-white betterhover:hover:bg-grey-400 betterhover:hover:text-white focus-visible:outline-white text-sm leading-none [&amp;_svg]:text-grey-200 [&amp;:hover>svg]:text-white py-[0.8125rem] px-[1rem] rounded-full"
-                    data-dd-action-name="vip-benefits-tab" data-analytics="vip-benefits-tab" data-test="benefits-tab"
-                    data-button-root="" [ngClass]="{'!bg-grey-400':tab==='benifits'}">
+    <div
+      class="content scrollY  svelte-cq3ecl "
+      id="modal-scroll"
+      
+    >
+      <div class="modal-content svelte-cq3ecl" >
+        <div class="content svelte-1m9kzo7" >
+          <div class="center-wrapper svelte-1nkt3rw" >
+            <div
+              class="tabs-wrapper scrollX svelte-1vkrcyy"
+              
+            >
+              <div
+                class="slider variant-dark svelte-1vkrcyy"
+                
+              >
+                <div
+                  class="content-wrapper svelte-1vkrcyy"
+                  
+                >
+                  <button
+                  (click)="toggletab('progress')"
+                    type="button"
+                    tabindex="0"
+                    class=" toggle-btns"
+                    
+                    [ngClass]="{'!bg-grey-400':tab==='progress'}"
+                  >
+                    Progress</button
+                  ><button
+                  (click)="toggletab('benifits')"
+              
+                    class=" toggle-btns"
+                  
+                    [ngClass]="{'!bg-grey-400':tab==='benifits'}"
+                  >
                     Benefits
                   </button>
                 </div>
               </div>
             </div>
           </div>
-          @if (tab =='progress')
-          {
-          <div class="progress-wrap svelte-1yrgho5">
+          @if (tab =='progress') 
+    {
+          <div class="progress-wrap svelte-1yrgho5" >
             <div
-              class="flex justify-center rounded-xl overflow-hidden relative w-full bg-grey-700 max-w-96 p-2 bg-gradient-to-b from-grey-500 to-grey-700 aspect-video">
-              <div class="flex flex-col justify-center rounded-lg w-full bg-grey-700"
-                style="border: 2px solid rgb(47, 69, 83)">
-                <div class="flex flex-col justify-between p-6 z-10 h-full" style="--colors-positive: #2f4553">
-                  <div class="flex justify-between mb-6">
+              class=" alignment"
+              
+            >
+              <div
+                class=" border-alignment"
+                
+              >
+                <div
+                  class=" adjustment"
+                  
+                >
+                  <div class="flex justify-between mb-6" >
                     <span
-                      class="weight-semibold line-height-default align-left size-md text-size-md variant-highlighted with-icon-space svelte-17v69ua">Arslan2304</span>
-                    <svg fill="none" viewBox="0 0 96 96" class="svg-icon" style="width: 1.25rem; height: 1.25rem">
+                      class=" text-white text-[18px] flex gap-1 items-center"
+                      
+                      >Arslan2304</span
+                    >
+                    <svg
+                      fill="none"
+                      viewBox="0 0 96 96"
+                      class="svg-icon"
+                      style="width: 1.25rem; height: 1.25rem"
+                    >
                       <title></title>
                       <path
                         d="m48 14.595 8.49 15.75a13.68 13.68 0 0 0 9.66 7.08L84 40.635l-12.39 12.9a13.89 13.89 0 0 0-3.9 9.63c-.046.64-.046 1.281 0 1.92l2.46 17.76-15.66-7.56a15 15 0 0 0-6.51-1.53 15 15 0 0 0-6.6 1.5l-15.57 7.53 2.46-17.76c.034-.62.034-1.24 0-1.86a13.89 13.89 0 0 0-3.9-9.63L12 40.635l17.64-3.21a13.62 13.62 0 0 0 9.84-7.02L48 14.595Zm0-12.54a5.22 5.22 0 0 0-4.59 2.73l-11.4 21.45a5.401 5.401 0 0 1-3.66 2.67l-24 4.32A5.25 5.25 0 0 0 0 38.385a5.13 5.13 0 0 0 1.44 3.6l16.83 17.55a5.16 5.16 0 0 1 1.47 3.6c.016.29.016.58 0 .87l-3.27 24a3 3 0 0 0 0 .72 5.192 5.192 0 0 0 5.19 5.22h.18a5.07 5.07 0 0 0 2.16-.6l21.39-10.32a6.42 6.42 0 0 1 2.76-.63 6.179 6.179 0 0 1 2.79.66l21 10.32c.69.377 1.464.573 2.25.57h.21a5.22 5.22 0 0 0 5.19-5.19c.016-.25.016-.5 0-.75l-3.27-24c-.017-.25-.017-.5 0-.75a5.012 5.012 0 0 1 1.47-3.57l16.77-17.7a5.19 5.19 0 0 0-2.82-8.7l-24-4.32a5.22 5.22 0 0 1-3.69-2.76l-11.4-21.45a5.22 5.22 0 0 0-4.65-2.7Z"
-                        fill="#2F4553"></path>
+                        fill="#2F4553"
+                      ></path>
                     </svg>
                   </div>
-                  <div class="w-full" data-content="">
-                    <div class="w-full">
-                      <div class="flex justify-between items-center gap-5">
+                  <div class="w-full" data-content="" >
+                    <div class="w-full" >
+                      <div
+                        class="flex justify-between items-center gap-5"
+                        
+                      >
                         <span
-                          class="weight-semibold line-height-default align-left size-default text-size-default variant-highlighted with-icon-space svelte-17v69ua">Your
-                          VIP Progress</span>
-                        <span class="flex gap-1"><span
-                            class="weight-semibold line-height-default align-left size-default text-size-default variant-highlighted numeric with-icon-space svelte-17v69ua">0.00%</span>
-                          <div class="hoverable svelte-1s834q3" role="tooltip">
+                          class="flex gap-1 items-center"
+                          
+                          >Your VIP Progress</span
+                        >
+                        <span class="flex gap-1"
+                          ><span
+                            class="text-[14px] flex gap-1 items-center"
+                            
+                            >0.00%</span
+                          >
+                          <div
+                            class="hoverable svelte-1s834q3"
+                            role="tooltip"
+                            
+                          >
                             <span
-                              class="weight-semibold line-height-default align-left size-default text-size-default variant-subtle svelte-17v69ua"><svg
-                                fill="currentColor" viewBox="0 0 64 64" class="svg-icon w-[14px] h-[21px]"
-                                style="color: var(--grey-200)">
+                              class=" flex gap-1 items-center"
+                              
+                              ><svg
+                                fill="currentColor"
+                                viewBox="0 0 64 64"
+                                class="svg-icon w-[14px] h-[21px]"
+                                style="color: var(--grey-200)"
+                              >
                                 <title></title>
                                 <path
-                                  d="M32 0C14.326 0 0 14.326 0 32s14.326 32 32 32 32-14.326 32-32S49.674 0 32 0Zm5.24 51.68H26.76v-21h10.48v21ZM32 24.56a6.12 6.12 0 1 1 6.12-6.12v.04a6.08 6.08 0 0 1-6.08 6.08h-.042H32Z">
-                                </path>
-                              </svg></span>
+                                  d="M32 0C14.326 0 0 14.326 0 32s14.326 32 32 32 32-14.326 32-32S49.674 0 32 0Zm5.24 51.68H26.76v-21h10.48v21ZM32 24.56a6.12 6.12 0 1 1 6.12-6.12v.04a6.08 6.08 0 0 1-6.08 6.08h-.042H32Z"
+                                ></path></svg
+                            ></span>
                           </div>
                         </span>
                       </div>
-                      <div value="0" max="100" role="meter" aria-valuemin="0" aria-valuemax="100" aria-valuenow="0"
-                        data-value="0" data-state="loading" data-max="100" data-melt-progress="" data-progress-root=""
-                        class="relative w-full my-2 overflow-hidden rounded-[10px] bg-grey-400 h-[0.625em]">
-                        <div class="h-full w-full shadow-lg rounded-[10px] relative" style="right: 100%"></div>
+                      <div
+                        class="relative-classes"
+                        
+                      >
+                        <div
+                          class=" decoration-xlass"
+                          
+                        ></div>
                       </div>
-                      <div class="flex justify-between w-full">
-                        <div class="miletone-wrap svelte-1ew5yq8">
-                          <span class="svelte-1ew5yq8"><svg fill="none" viewBox="0 0 96 96"
-                              class="svg-icon w-[14px] h-[16px]">
+                      <div
+                        class="flex justify-between w-full"
+                        
+                      >
+                        <div
+                          class="miletone-wrap svelte-1ew5yq8"
+                          
+                        >
+                          <span class="svelte-1ew5yq8"
+                            ><svg
+                              fill="none"
+                              viewBox="0 0 96 96"
+                              class="svg-icon w-[14px] h-[16px]"
+                              
+                            >
                               <title></title>
                               <path
                                 d="m48 14.595 8.49 15.75a13.68 13.68 0 0 0 9.66 7.08L84 40.635l-12.39 12.9a13.89 13.89 0 0 0-3.9 9.63c-.046.64-.046 1.281 0 1.92l2.46 17.76-15.66-7.56a15 15 0 0 0-6.51-1.53 15 15 0 0 0-6.6 1.5l-15.57 7.53 2.46-17.76c.034-.62.034-1.24 0-1.86a13.89 13.89 0 0 0-3.9-9.63L12 40.635l17.64-3.21a13.62 13.62 0 0 0 9.84-7.02L48 14.595Zm0-12.54a5.22 5.22 0 0 0-4.59 2.73l-11.4 21.45a5.401 5.401 0 0 1-3.66 2.67l-24 4.32A5.25 5.25 0 0 0 0 38.385a5.13 5.13 0 0 0 1.44 3.6l16.83 17.55a5.16 5.16 0 0 1 1.47 3.6c.016.29.016.58 0 .87l-3.27 24a3 3 0 0 0 0 .72 5.192 5.192 0 0 0 5.19 5.22h.18a5.07 5.07 0 0 0 2.16-.6l21.39-10.32a6.42 6.42 0 0 1 2.76-.63 6.179 6.179 0 0 1 2.79.66l21 10.32c.69.377 1.464.573 2.25.57h.21a5.22 5.22 0 0 0 5.19-5.19c.016-.25.016-.5 0-.75l-3.27-24c-.017-.25-.017-.5 0-.75a5.012 5.012 0 0 1 1.47-3.57l16.77-17.7a5.19 5.19 0 0 0-2.82-8.7l-24-4.32a5.22 5.22 0 0 1-3.69-2.76l-11.4-21.45a5.22 5.22 0 0 0-4.65-2.7Z"
-                                fill="#2F4553"></path>
-                            </svg></span>
+                                fill="#2F4553"
+                              ></path></svg
+                          ></span>
                           <span
-                            class="weight-semibold line-height-120pct align-left size-default text-size-default variant-subtle with-icon-space svelte-17v69ua">None</span>
+                            class="flex gap-1 items-center"
+                            
+                            >None</span
+                          >
                         </div>
-                        <div class="miletone-wrap svelte-1ew5yq8">
-                          <span class="svelte-1ew5yq8"><svg fill="none" viewBox="0 0 96 96"
-                              class="svg-icon w-[14px] h-[16px]">
+                        <div
+                          class="miletone-wrap svelte-1ew5yq8"
+                          
+                        >
+                          <span class="svelte-1ew5yq8"
+                            ><svg
+                              fill="none"
+                              viewBox="0 0 96 96"
+                              class="svg-icon w-[14px] h-[16px]"
+                              
+                            >
                               <title></title>
                               <path
                                 d="m48.002 14.603 8.48 15.757c1.97 3.693 5.495 6.336 9.677 7.068l.08.012 17.64 3.2L71.48 53.56a13.835 13.835 0 0 0-3.884 9.63c0 .653.045 1.292.132 1.922l-.01-.072 2.44 17.758L54.52 75.24c-1.908-.934-4.15-1.48-6.52-1.48s-4.613.546-6.608 1.518l.09-.039-15.637 7.56 2.438-17.759c.078-.555.123-1.197.123-1.85 0-3.741-1.482-7.137-3.887-9.633l.003.003-12.518-12.92 17.638-3.2a13.642 13.642 0 0 0 9.842-7.008l.036-.072L48 14.603Zm0-12.521h-.01a5.194 5.194 0 0 0-4.577 2.733l-.015.027L32 26.28a5.298 5.298 0 0 1-3.648 2.675l-.033.006-23.997 4.32C1.853 33.717 0 35.847 0 38.406a5.19 5.19 0 0 0 1.443 3.596L1.44 42l16.837 17.558a5.057 5.057 0 0 1 1.473 3.578c0 .306-.027.603-.078.894l.006-.03L16.4 87.997a5.199 5.199 0 0 0 5.148 5.918h.012c.045.003.102.003.156.003.834 0 1.623-.207 2.31-.576l-.027.013 21.397-10.32a6.209 6.209 0 0 1 2.76-.638c1.004 0 1.952.236 2.795.653l-.036-.014 21.08 10.319a4.73 4.73 0 0 0 2.249.56h.033-.003c.051.003.111.003.171.003a5.199 5.199 0 0 0 5.144-5.948l.004.027-3.28-23.998a5.055 5.055 0 0 1 1.4-4.32l16.84-17.557a5.177 5.177 0 0 0 1.448-3.6c0-2.55-1.836-4.67-4.257-5.114l-.033-.006-23.997-4.32a5.301 5.301 0 0 1-3.705-2.768l-.015-.03-11.399-21.44a5.204 5.204 0 0 0-4.593-2.759h-.008L48 2.082Z"
-                                fill="#C69C6D"></path>
-                            </svg></span>
+                                fill="#C69C6D"
+                              ></path></svg
+                          ></span>
                           <span
-                            class="weight-semibold line-height-120pct align-left size-default text-size-default variant-subtle with-icon-space svelte-17v69ua">Bronze</span>
+                            class="flex gap-1 items-center"
+                            
+                            >Bronze</span
+                          >
                         </div>
                       </div>
                     </div>
@@ -118,289 +227,392 @@
               </div>
             </div>
           </div>
-          <div class="progress-content svelte-1yrgho5">
+          <div class="progress-content svelte-1yrgho5" >
             <span
-              class="weight-semibold line-height-default align-left size-md text-size-md variant-highlighted with-icon-space svelte-17v69ua">Want
-              to achieve the next level?</span>
-            <div class="progress-content svelte-1yrgho5">
-              <div class="progress-content-item svelte-1yrgho5">
-                <div class="item-icon svelte-1yrgho5">
-                  <svg fill="currentColor" viewBox="0 0 64 64" class="svg-icon">
+              class="text-[18px] text-white flex gap-1 items-center"
+              
+              >Want to achieve the next level?</span
+            >
+            <div class="progress-content svelte-1yrgho5" >
+              <div
+                class="progress-content-item svelte-1yrgho5"
+                
+              >
+                <div class="item-icon svelte-1yrgho5" >
+                  <svg
+                    fill="currentColor"
+                    viewBox="0 0 64 64"
+                    class="svg-icon"
+                    
+                  >
                     <title></title>
                     <path
-                      d="M12.265 47.726.21 14.603a3.574 3.574 0 0 1 2.108-4.553l.024-.007 19.282-7.015a3.55 3.55 0 0 1 4.553 2.082l.008.024.694 1.92L12.69 46.073a8.9 8.9 0 0 0-.418 1.598l-.008.056ZM63.79 15.511 48.002 58.93a3.529 3.529 0 0 1-4.558 2.1l.024.009-21.948-8.001a3.58 3.58 0 0 1-2.124-4.585l-.008.024 15.787-43.39a3.555 3.555 0 0 1 4.559-2.126l-.024-.008 21.948 8a3.58 3.58 0 0 1 2.124 4.585l.008-.024v-.002ZM50.457 32.685l-1.386-3.254a1.789 1.789 0 0 0-2.333-.956l.012-.004-2.666 1.174a1.787 1.787 0 0 1-2.316-.948l-.004-.012-1.146-2.667a1.764 1.764 0 0 0-2.332-.93l.012-.004-3.28 1.386a1.738 1.738 0 0 0-.929 2.33l-.004-.01 3.92 9.255a1.816 1.816 0 0 0 2.359.928l-.012.005 9.227-3.947a1.737 1.737 0 0 0 .794-2.356l.004.01h.08Z">
-                    </path>
+                      d="M12.265 47.726.21 14.603a3.574 3.574 0 0 1 2.108-4.553l.024-.007 19.282-7.015a3.55 3.55 0 0 1 4.553 2.082l.008.024.694 1.92L12.69 46.073a8.9 8.9 0 0 0-.418 1.598l-.008.056ZM63.79 15.511 48.002 58.93a3.529 3.529 0 0 1-4.558 2.1l.024.009-21.948-8.001a3.58 3.58 0 0 1-2.124-4.585l-.008.024 15.787-43.39a3.555 3.555 0 0 1 4.559-2.126l-.024-.008 21.948 8a3.58 3.58 0 0 1 2.124 4.585l.008-.024v-.002ZM50.457 32.685l-1.386-3.254a1.789 1.789 0 0 0-2.333-.956l.012-.004-2.666 1.174a1.787 1.787 0 0 1-2.316-.948l-.004-.012-1.146-2.667a1.764 1.764 0 0 0-2.332-.93l.012-.004-3.28 1.386a1.738 1.738 0 0 0-.929 2.33l-.004-.01 3.92 9.255a1.816 1.816 0 0 0 2.359.928l-.012.005 9.227-3.947a1.737 1.737 0 0 0 .794-2.356l.004.01h.08Z"
+                    ></path>
                   </svg>
                 </div>
-                <div class="item-text svelte-1yrgho5">
+                <div class="item-text svelte-1yrgho5" >
                   <span
-                    class="weight-semibold line-height-default align-left size-default text-size-default variant-highlighted with-icon-space svelte-17v69ua">Wager
-                    on Casino</span>
+                    class="flex gap-1 items-center"
+                    
+                    >Wager on Casino</span
+                  >
                   <span
-                    class="weight-normal line-height-120pct align-left size-default text-size-default variant-subtle with-icon-space svelte-17v69ua">Play
-                    &amp; wager on any casino games</span>
+                    class="flex gap-1 items-center"
+                    
+                    >Play &amp; wager on any casino games</span
+                  >
                 </div>
               </div>
-              <div class="progress-content-item svelte-1yrgho5">
-                <div class="item-icon svelte-1yrgho5">
-                  <svg fill="currentColor" viewBox="0 0 96 96" class="svg-icon">
+              <div
+                class="progress-content-item svelte-1yrgho5"
+                
+              >
+                <div class="item-icon svelte-1yrgho5" >
+                  <svg
+                    fill="currentColor"
+                    viewBox="0 0 96 96"
+                    class="svg-icon"
+                    
+                  >
                     <title></title>
-                    <path fill-rule="evenodd" clip-rule="evenodd"
-                      d="M14.287 13.917c16.599 6.854 30.869 15.965 43.231 27.143l-.001.002.126.11-.125-.112C64.262 31 65.501 17.31 60.63 1.865 56.773.739 52.34.092 47.758.092c-13.046 0-24.87 5.249-33.47 13.748v.077Zm79.997 46.514a46.803 46.803 0 0 1-7.907 15.996v-.003c-2.275-3.87-4.709-7.622-7.185-11.295l-.137.08c4.463-2.823 9.63-4.63 15.307-5.11l-.078.332ZM80.986 82.734c-4.75 4.553-10.46 8.116-17.124 10.458h-.003l.006-.108a38.977 38.977 0 0 1 9.137-22.842l-.281-.41c2.838 3.924 5.478 8.005 8.265 12.902Zm0 0 .016-.014-.015.015ZM12.017 64.772a83.99 83.99 0 0 0 9.697.599h.003l-.117-.006c.832.039 1.674.06 2.518.06 12.98 0 24.848-4.766 33.883-12.589a132.455 132.455 0 0 1 9.859 11.137 47.738 47.738 0 0 0-11.975 31.216l.284-.042c-2.68.49-5.44.751-8.269.76-21.022-.012-38.88-13.566-45.416-32.75 3.102.685 6.287 1.224 9.931 1.654l-.398-.039Zm-9.533-1.614c-.226-.05-.45-.1-.675-.152l.667.129.008.023Zm65.376.815.045-.051-.045.05ZM58 52.836l-.009-.009.01.01Zm-5.59-5.706A140.354 140.354 0 0 0 9.776 20.677l-.952-.332C3.305 28.021 0 37.61 0 47.97v.038c.018 2.3.192 4.539.512 6.733l-.033-.266c3.542.97 7.889 1.823 12.325 2.386l.488.05c16.526 1.797 30.138-1.637 39.12-9.78Zm21.58 11.182a149.73 149.73 0 0 0-10.601-11.7c7.864-10.897 10.059-25.19 6.466-41.155l.267.126C85.46 13.537 95.953 29.542 96 48.007c0 .604-.048 1.247-.097 1.904-.051.688-.104 1.393-.104 2.087h-.042c-8.002.159-15.445 2.596-21.552 6.586l-.215-.272Zm-10.601-11.7-.003-.003.003.003Z">
-                    </path>
+                    <path
+                      fill-rule="evenodd"
+                      clip-rule="evenodd"
+                      d="M14.287 13.917c16.599 6.854 30.869 15.965 43.231 27.143l-.001.002.126.11-.125-.112C64.262 31 65.501 17.31 60.63 1.865 56.773.739 52.34.092 47.758.092c-13.046 0-24.87 5.249-33.47 13.748v.077Zm79.997 46.514a46.803 46.803 0 0 1-7.907 15.996v-.003c-2.275-3.87-4.709-7.622-7.185-11.295l-.137.08c4.463-2.823 9.63-4.63 15.307-5.11l-.078.332ZM80.986 82.734c-4.75 4.553-10.46 8.116-17.124 10.458h-.003l.006-.108a38.977 38.977 0 0 1 9.137-22.842l-.281-.41c2.838 3.924 5.478 8.005 8.265 12.902Zm0 0 .016-.014-.015.015ZM12.017 64.772a83.99 83.99 0 0 0 9.697.599h.003l-.117-.006c.832.039 1.674.06 2.518.06 12.98 0 24.848-4.766 33.883-12.589a132.455 132.455 0 0 1 9.859 11.137 47.738 47.738 0 0 0-11.975 31.216l.284-.042c-2.68.49-5.44.751-8.269.76-21.022-.012-38.88-13.566-45.416-32.75 3.102.685 6.287 1.224 9.931 1.654l-.398-.039Zm-9.533-1.614c-.226-.05-.45-.1-.675-.152l.667.129.008.023Zm65.376.815.045-.051-.045.05ZM58 52.836l-.009-.009.01.01Zm-5.59-5.706A140.354 140.354 0 0 0 9.776 20.677l-.952-.332C3.305 28.021 0 37.61 0 47.97v.038c.018 2.3.192 4.539.512 6.733l-.033-.266c3.542.97 7.889 1.823 12.325 2.386l.488.05c16.526 1.797 30.138-1.637 39.12-9.78Zm21.58 11.182a149.73 149.73 0 0 0-10.601-11.7c7.864-10.897 10.059-25.19 6.466-41.155l.267.126C85.46 13.537 95.953 29.542 96 48.007c0 .604-.048 1.247-.097 1.904-.051.688-.104 1.393-.104 2.087h-.042c-8.002.159-15.445 2.596-21.552 6.586l-.215-.272Zm-10.601-11.7-.003-.003.003.003Z"
+                    ></path>
                   </svg>
                 </div>
-                <div class="item-text svelte-1yrgho5">
+                <div class="item-text svelte-1yrgho5" >
                   <span
-                    class="weight-semibold line-height-default align-left size-default text-size-default variant-highlighted with-icon-space svelte-17v69ua">Bet
-                    on Sportsbook</span>
+                    class="flex gap-1 items-center"
+                    
+                    >Bet on Sportsbook</span
+                  >
                   <span
-                    class="weight-normal line-height-120pct align-left size-default text-size-default variant-subtle with-icon-space svelte-17v69ua">Place
-                    bets on upcoming &amp; live sports</span>
+                    class="flex gap-1 items-center"
+                    
+                    >Place bets on upcoming &amp; live sports</span
+                  >
                 </div>
               </div>
-              <div class="progress-content-item svelte-1yrgho5">
-                <div class="item-icon svelte-1yrgho5">
+              <div
+                class="progress-content-item svelte-1yrgho5"
+                
+              >
+                <div class="item-icon svelte-1yrgho5" >
                   <span
-                    class="weight-semibold line-height-default align-left size-default text-size-default variant-subtle with-icon-space svelte-17v69ua">x3</span>
+                    class="flex gap-1 items-center"
+                    
+                    >x3</span
+                  >
                 </div>
-                <div class="item-text svelte-1yrgho5">
+                <div class="item-text svelte-1yrgho5" >
                   <span
-                    class="weight-semibold line-height-default align-left size-default text-size-default variant-highlighted with-icon-space svelte-17v69ua">Boost
-                    x3 with Sports Bets</span>
+                    class="flex gap-1 items-center"
+                    
+                    >Boost x3 with Sports Bets</span
+                  >
                   <span
-                    class="weight-normal line-height-120pct align-left size-default text-size-default variant-subtle with-icon-space svelte-17v69ua">Increase
-                    progression 3 times faster with sports
-                    wagers</span>
+                    class="flex gap-1 items-center"
+                    
+                    >Increase progression 3 times faster with sports
+                    wagers</span
+                  >
                 </div>
               </div>
             </div>
           </div>
-          }
-          <!-- *second-tab -->
-          @if (tab =='benifits') {
-          <div class="flex flex-col gap-4">
-            <div (click)="dropdown('Bronze')" class=" bg-[#213743] " data-test="benefits-bronze">
-              <div class="flex justify-between items-center py-3 px-4 " data-test="benefits-bronze-button">
-                <span
-                  class="weight-semibold line-height-default align-left size-default text-size-default variant-highlighted with-icon-space svelte-17v69ua"><svg
-                    fill="none" viewBox="0 0 96 96" class="svg-icon rotate-90">
-                    <title></title>
-                    <path
-                      d="m48.002 14.603 8.48 15.757c1.97 3.693 5.495 6.336 9.677 7.068l.08.012 17.64 3.2L71.48 53.56a13.835 13.835 0 0 0-3.884 9.63c0 .653.045 1.292.132 1.922l-.01-.072 2.44 17.758L54.52 75.24c-1.908-.934-4.15-1.48-6.52-1.48s-4.613.546-6.608 1.518l.09-.039-15.637 7.56 2.438-17.759c.078-.555.123-1.197.123-1.85 0-3.741-1.482-7.137-3.887-9.633l.003.003-12.518-12.92 17.638-3.2a13.642 13.642 0 0 0 9.842-7.008l.036-.072L48 14.603Zm0-12.521h-.01a5.194 5.194 0 0 0-4.577 2.733l-.015.027L32 26.28a5.298 5.298 0 0 1-3.648 2.675l-.033.006-23.997 4.32C1.853 33.717 0 35.847 0 38.406a5.19 5.19 0 0 0 1.443 3.596L1.44 42l16.837 17.558a5.057 5.057 0 0 1 1.473 3.578c0 .306-.027.603-.078.894l.006-.03L16.4 87.997a5.199 5.199 0 0 0 5.148 5.918h.012c.045.003.102.003.156.003.834 0 1.623-.207 2.31-.576l-.027.013 21.397-10.32a6.209 6.209 0 0 1 2.76-.638c1.004 0 1.952.236 2.795.653l-.036-.014 21.08 10.319a4.73 4.73 0 0 0 2.249.56h.033-.003c.051.003.111.003.171.003a5.199 5.199 0 0 0 5.144-5.948l.004.027-3.28-23.998a5.055 5.055 0 0 1 1.4-4.32l16.84-17.557a5.177 5.177 0 0 0 1.448-3.6c0-2.55-1.836-4.67-4.257-5.114l-.033-.006-23.997-4.32a5.301 5.301 0 0 1-3.705-2.768l-.015-.03-11.399-21.44a5.204 5.204 0 0 0-4.593-2.759h-.008L48 2.082Z"
-                      fill="#C69C6D"></path>
-                  </svg>
-                  <span>Bronze</span></span>
-                <div class="arrow svelte-69p9vw">
-                  <svg fill="currentColor" viewBox="0 0 64 64" class="svg-icon rotate-90"
-                    [ngClass]="{'!rotate-0':dropdownState==='Bronze'}">
-                    <title></title>
-                    <path
-                      d="M32.271 49.763 9.201 26.692l6.928-6.93 16.145 16.145 16.144-16.144 6.93 6.929-23.072 23.07h-.005Z">
-                    </path>
-                  </svg>
-                </div>
-              </div>
-              <div *ngIf="dropdownState==='Bronze'" class=" px-5 py-3 border-t border-[#2f4553]"
-                data-test="benefits-platinum-plus-content">
-                <div>
-                  <ul class="list-disc">
-                    <li class="list-disc ms-5 ">Bonus from Support in currency of your choice</li>
-                    <li class="list-disc ms-5">
-                      Rakeback enabled
-                    </li>
-                    <li class="list-disc ms-5">Weekly bonuses</li>
-                    <li class="list-disc ms-5">Monthly bonuses</li>
-                    <li class="list-disc ms-5">VIP Telegram channel access</li>
-                  </ul>
-                </div>
-              </div>
-            </div>
-            <div (click)="dropdown('Silver')" class=" bg-[#213743] " data-test="benefits-bronze">
-              <div class="flex justify-between items-center py-3 px-4 " data-test="benefits-bronze-button">
-                <span
-                  class="weight-semibold line-height-default align-left size-default text-size-default variant-highlighted with-icon-space svelte-17v69ua">
-                  <svg fill="none" viewBox="0 0 96 96" class="svg-icon " style="">
-                    <title></title>
-                    <path
-                      d="m48.002 14.603 8.48 15.757c1.97 3.693 5.495 6.336 9.677 7.068l.08.012 17.64 3.2L71.48 53.56a13.835 13.835 0 0 0-3.884 9.63c0 .653.045 1.292.132 1.922l-.01-.072 2.44 17.758L54.52 75.24c-1.908-.934-4.15-1.48-6.52-1.48s-4.613.546-6.608 1.518l.09-.039-15.637 7.56 2.438-17.759c.078-.555.123-1.197.123-1.85 0-3.741-1.482-7.137-3.887-9.633l.003.003-12.518-12.92 17.638-3.2a13.642 13.642 0 0 0 9.842-7.008l.036-.072L48 14.603Zm0-12.521h-.01a5.194 5.194 0 0 0-4.577 2.733l-.015.027L32 26.28a5.298 5.298 0 0 1-3.648 2.675l-.033.006-23.997 4.32C1.853 33.717 0 35.847 0 38.406a5.19 5.19 0 0 0 1.443 3.596L1.44 42l16.837 17.558a5.057 5.057 0 0 1 1.473 3.578c0 .306-.027.603-.078.894l.006-.03L16.4 87.997a5.199 5.199 0 0 0 5.148 5.918h.012c.045.003.102.003.156.003.834 0 1.623-.207 2.31-.576l-.027.013 21.397-10.32a6.209 6.209 0 0 1 2.76-.638c1.004 0 1.952.236 2.795.653l-.036-.014 21.08 10.319a4.73 4.73 0 0 0 2.249.56h.033-.003c.051.003.111.003.171.003a5.199 5.199 0 0 0 5.144-5.948l.004.027-3.28-23.998a5.055 5.055 0 0 1 1.4-4.32l16.84-17.557a5.177 5.177 0 0 0 1.448-3.6c0-2.55-1.836-4.67-4.257-5.114l-.033-.006-23.997-4.32a5.301 5.301 0 0 1-3.705-2.768l-.015-.03-11.399-21.44a5.204 5.204 0 0 0-4.593-2.759h-.008L48 2.082Z"
-                      fill="#B2CCCC"></path>
-                  </svg>
-                  <span>Silver</span></span>
-                <div class="arrow svelte-69p9vw">
-                  <svg fill="currentColor" viewBox="0 0 64 64" class="svg-icon rotate-90"
-                    [ngClass]="{'!rotate-0':dropdownState==='Silver'}">
-                    <title></title>
-                    <path
-                      d="M32.271 49.763 9.201 26.692l6.928-6.93 16.145 16.145 16.144-16.144 6.93 6.929-23.072 23.07h-.005Z">
-                    </path>
-                  </svg>
-                </div>
-              </div>
-              <div *ngIf="dropdownState==='Silver'" class=" px-5 py-3 border-t border-[#2f4553]"
-                data-test="benefits-platinum-plus-content">
-                <div>
-                  <ul class="list-disc  ">
-                    <li class="list-disc ms-5 ">Bonus from Support in currency of your choice</li>
-                    <li class="list-disc ms-5">Weekly & monthly bonuses increased </li>
-                  </ul>
-                </div>
-              </div>
-            </div>
-            <div (click)="dropdown('Gold')" class=" bg-[#213743] " data-test="benefits-bronze">
-              <div class="flex justify-between items-center py-3 px-4 " data-test="benefits-bronze-button">
-                <span
-                  class="weight-semibold line-height-default align-left size-default text-size-default variant-highlighted with-icon-space svelte-17v69ua">
-                  <svg fill="none" viewBox="0 0 96 96" class="svg-icon " style="">
-                    <title></title>
-                    <path
-                      d="m48.002 14.603 8.48 15.757c1.97 3.693 5.495 6.336 9.677 7.068l.08.012 17.64 3.2L71.48 53.56a13.835 13.835 0 0 0-3.884 9.63c0 .653.045 1.292.132 1.922l-.01-.072 2.44 17.758L54.52 75.24c-1.908-.934-4.15-1.48-6.52-1.48s-4.613.546-6.608 1.518l.09-.039-15.637 7.56 2.438-17.759c.078-.555.123-1.197.123-1.85 0-3.741-1.482-7.137-3.887-9.633l.003.003-12.518-12.92 17.638-3.2a13.642 13.642 0 0 0 9.842-7.008l.036-.072L48 14.603Zm0-12.521h-.01a5.194 5.194 0 0 0-4.577 2.733l-.015.027L32 26.28a5.298 5.298 0 0 1-3.648 2.675l-.033.006-23.997 4.32C1.853 33.717 0 35.847 0 38.406a5.19 5.19 0 0 0 1.443 3.596L1.44 42l16.837 17.558a5.057 5.057 0 0 1 1.473 3.578c0 .306-.027.603-.078.894l.006-.03L16.4 87.997a5.199 5.199 0 0 0 5.148 5.918h.012c.045.003.102.003.156.003.834 0 1.623-.207 2.31-.576l-.027.013 21.397-10.32a6.209 6.209 0 0 1 2.76-.638c1.004 0 1.952.236 2.795.653l-.036-.014 21.08 10.319a4.73 4.73 0 0 0 2.249.56h.033-.003c.051.003.111.003.171.003a5.199 5.199 0 0 0 5.144-5.948l.004.027-3.28-23.998a5.055 5.055 0 0 1 1.4-4.32l16.84-17.557a5.177 5.177 0 0 0 1.448-3.6c0-2.55-1.836-4.67-4.257-5.114l-.033-.006-23.997-4.32a5.301 5.301 0 0 1-3.705-2.768l-.015-.03-11.399-21.44a5.204 5.204 0 0 0-4.593-2.759h-.008L48 2.082Z"
-                      fill="#FED100"></path>
-                  </svg>
-                  <span>Gold</span></span>
-                <div class="arrow svelte-69p9vw">
-                  <svg fill="currentColor" viewBox="0 0 64 64" class="svg-icon rotate-90"
-                    [ngClass]="{'!rotate-0':dropdownState==='Gold'}">
-                    <title></title>
-                    <path
-                      d="M32.271 49.763 9.201 26.692l6.928-6.93 16.145 16.145 16.144-16.144 6.93 6.929-23.072 23.07h-.005Z">
-                    </path>
-                  </svg>
-                </div>
-              </div>
-              <div *ngIf="dropdownState==='Gold'" class=" px-5 py-3 border-t border-[#2f4553]"
-                data-test="benefits-platinum-plus-content">
-                <div>
-                  <ul class="list-disc">
-                    <li class="list-disc ms-5 ">Bonus from Support in currency of your choice</li>
-                    <li class="list-disc ms-5">Weekly & monthly bonuses increased </li>
-                  </ul>
-                </div>
-              </div>
-            </div>
-            <div (click)="dropdown('Platinum')" class=" bg-[#213743] " data-test="benefits-bronze">
-              <div class="flex justify-between items-center py-3 px-4 " data-test="benefits-bronze-button">
-                <span
-                  class="weight-semibold line-height-default align-left size-default text-size-default variant-highlighted with-icon-space svelte-17v69ua"><svg
-                    fill="none" viewBox="0 0 96 96" class="svg-icon " style="">
-                    <title></title>
-                    <path
-                      d="M45.237 83.04 23.797 93.4c-3.76 1.8-8-1.28-7.44-5.4l3.28-24.12c.2-1.56-.32-3.16-1.4-4.32L1.437 42c-2.88-3-1.24-8 2.84-8.72l23.96-4.32a5.277 5.277 0 0 0 3.68-2.68l11.52-21.44c1.96-3.64 7.2-3.64 9.16 0l11.52 21.44c.76 1.4 2.12 2.4 3.68 2.68l23.96 4.32c4.08.72 5.72 5.72 2.84 8.72l-16.84 17.56a5.333 5.333 0 0 0-1.4 4.32L79.637 88c.56 4.12-3.68 7.2-7.44 5.4l-21.44-10.36c-1.72-.84-3.76-.84-5.52 0Z"
-                      fill="#6FDDE7"></path>
-                    <path d="M42.557 72V36h10.88v36h-10.88Z" fill="#0F212E"></path>
-                  </svg>
-                  <span>Platinum I - III</span></span>
-                <div class="arrow svelte-69p9vw">
-                  <svg fill="currentColor" viewBox="0 0 64 64" class="svg-icon rotate-90"
-                    [ngClass]="{'!rotate-0':dropdownState==='Platinum'}">
-                    <title></title>
-                    <path
-                      d="M32.271 49.763 9.201 26.692l6.928-6.93 16.145 16.145 16.144-16.144 6.93 6.929-23.072 23.07h-.005Z">
-                    </path>
-                  </svg>
-                </div>
-              </div>
-              <div *ngIf="dropdownState==='Platinum'" class=" px-5 py-3 border-t border-[#2f4553]"
-                data-test="benefits-platinum-plus-content">
-                <div>
-                  <ul>
-                    <li class="list-disc ms-5 ">Bonus from Support in currency of your choice</li>
-                    <li class="list-disc ms-5">Weekly & monthly bonuses increased </li>
-                    <li class="list-disc ms-5">14 - 42 Day, Daily bonus (Reload)</li>
-                  </ul>
-                </div>
-              </div>
-            </div>
-            <div (click)="dropdown('Platinum2')" class=" bg-[#213743] " data-test="benefits-bronze">
-              <div class="flex justify-between items-center py-3 px-4 " data-test="benefits-bronze-button">
-                <span
-                  class="weight-semibold line-height-default align-left size-default text-size-default variant-highlighted with-icon-space svelte-17v69ua">
-                  <svg fill="none" viewBox="0 0 96 96" class="svg-icon " style="">
-                    <title></title>
-                    <path
-                      d="M45.237 83.04 23.797 93.4c-3.76 1.8-8-1.28-7.44-5.4l3.28-24.12c.2-1.56-.32-3.16-1.4-4.32L1.437 42c-2.88-3-1.24-8 2.84-8.72l23.96-4.32a5.277 5.277 0 0 0 3.68-2.68l11.52-21.44c1.96-3.64 7.2-3.64 9.16 0l11.52 21.44c.76 1.4 2.12 2.4 3.68 2.68l23.96 4.32c4.08.72 5.72 5.72 2.84 8.72l-16.84 17.56a5.333 5.333 0 0 0-1.4 4.32L79.637 88c.56 4.12-3.68 7.2-7.44 5.4l-21.44-10.36c-1.72-.84-3.76-.84-5.52 0Z"
-                      fill="#6FDDE7"></path>
-                    <path
-                      d="M23.997 72V36h10.88v36h-10.88Zm29.4 0-13.28-36h12.36l7.76 24.24L67.997 36h12.36l-13.28 36h-13.72.04Z"
-                      fill="#0F212E"></path>
-                  </svg>
-                  <span>Platinum IV - VI</span></span>
-                <div class="arrow svelte-69p9vw">
-                  <svg fill="currentColor" viewBox="0 0 64 64" class="svg-icon rotate-90"
-                    [ngClass]="{'!rotate-0':dropdownState==='Platinum2'}">
-                    <title></title>
-                    <path
-                      d="M32.271 49.763 9.201 26.692l6.928-6.93 16.145 16.145 16.144-16.144 6.93 6.929-23.072 23.07h-.005Z">
-                    </path>
-                  </svg>
-                </div>
-              </div>
-              <div *ngIf="dropdownState==='Platinum2'" class=" px-5 py-3 border-t border-[#2f4553]"
-                data-test="benefits-platinum-plus-content">
-                <div>
-                  <ul>
-                    <li class="list-disc ms-5 ">Dedicated VIP host</li>
-                    <li class="list-disc ms-5">Bonus from VIP host in currency of your choice </li>
-                    <li class="list-disc ms-5">Daily & weekly bonuses increased</li>
-                    <li class="list-disc ms-5">Monthly bonuses</li>
-                  </ul>
-                </div>
-              </div>
-            </div>
-            <div (click)="dropdown('Diamond')" class=" bg-[#213743] " data-test="benefits-bronze">
-              <div class="flex justify-between items-center py-3 px-4 " data-test="benefits-bronze-button">
-                <span
-                  class="weight-semibold line-height-default align-left size-default text-size-default variant-highlighted with-icon-space svelte-17v69ua"><svg
-                    fill="none" viewBox="0 0 96 96" class="svg-icon ">
-                    <title></title>
-                    <path d="M79.48 19.64c-21.04 3.04-42.04 3-63 0L0 43.64 48 96l48-52.36-16.52-24Z" fill="#BDE9FF">
-                    </path>
-                    <path d="M27.68 55.52 48 96l20.32-40.48s-23.16-7.16-40.64 0Z" fill="#fff"></path>
-                    <path
-                      d="M16.52 19.64S43.12 21.48 48 30.68c0 0-12.48 23.96-20.32 24.84 0 0-14.68-26.64-11.16-35.84v-.04Z"
-                      fill="#B0B8FC"></path>
-                    <path d="M48 30.68 27.68 55.52h40.64L48 30.68Z" fill="#fff"></path>
-                    <path d="M96 43.64 48 96l20.32-40.48L96 43.64Z" fill="#B0B8FC"></path>
-                    <path d="M0 43.64 48 96 27.68 55.52 0 43.64Z" fill="#BDE9FF"></path>
-                    <path d="m16.52 19.64 11.16 35.88L0 43.64l16.52-24Z" fill="#B0B8FC"></path>
-                    <path d="M79.48 19.64 68.32 55.52 96 43.64l-16.52-24Zm-62.96 0L48 30.68l31.48-11.04H16.52Z"
-                      fill="#fff"></path>
-                    <path d="M42.56 29.84h10.88v36H42.56v-36Z" fill="#0F212E"></path>
-                  </svg>
-                  <span>Diamond</span></span>
-                <div class="arrow svelte-69p9vw">
-                  <svg fill="currentColor" viewBox="0 0 64 64" class="svg-icon rotate-90"
-                    [ngClass]="{'!rotate-0':dropdownState==='Diamond'}">
-                    <title></title>
-                    <path
-                      d="M32.271 49.763 9.201 26.692l6.928-6.93 16.145 16.145 16.144-16.144 6.93 6.929-23.072 23.07h-.005Z">
-                    </path>
-                  </svg>
-                </div>
-              </div>
-              <div *ngIf="dropdownState==='Diamond'" class=" px-5 py-3 border-t border-[#2f4553]"
-                data-test="benefits-platinum-plus-content">
-                <div>
-                  <ul class="list-disc ">
-                    <li class="list-disc ms-5 ">Bonus from VIP host in currency of your choice</li>
-                    <li class="list-disc ms-5">Exclusively customized benefits</li>
-                    <li class="list-disc ms-5">Daily & weekly bonuses increased</li>
-                    <li class="list-disc ms-5">Monthly bonuses</li>
-                  </ul>
-                </div>
-              </div>
-            </div>
-          </div>
-          }
-
-          <div class="footer svelte-1nkt3rw">
-            <a data-test="learn-more"
-              class="inline-flex relative items-center gap-2 justify-center rounded-sm font-semibold whitespace-nowrap ring-offset-background transition disabled:pointer-events-none disabled:opacity-50 focus-visible:outline-2 focus-visible:outline-offset-2 active:scale-[0.98] bg-transparent text-grey-200 betterhover:hover:bg-transparent betterhover:hover:text-white focus-visible:text-white focus-visible:outline-none text-sm leading-none"
-              data-sveltekit-reload="off" data-sveltekit-preload-data="off" data-sveltekit-noscroll="off"
-              data-analytics="vip-learn-more-link">Learn more about being a Stake VIP</a>
-          </div>
-        </div>
+        }
+<!-- *second-tab -->
+@if (tab =='benifits') {
+<div 
+  class="flex flex-col gap-4">
+  <div (click)="dropdown('Bronze')"
+    class=" bg-[#213743] "
+    data-test="benefits-bronze"
+    
+  >
+    <div
+      class="flex justify-between items-center py-3 px-4 "
+      
+    >
+      <span
+        class=" flex gap-1"
+        
+        ><svg fill="none" viewBox="0 0 96 96" class="svg-icon rotate-90" 
+      >
+          <title></title>
+          <path
+            d="m48.002 14.603 8.48 15.757c1.97 3.693 5.495 6.336 9.677 7.068l.08.012 17.64 3.2L71.48 53.56a13.835 13.835 0 0 0-3.884 9.63c0 .653.045 1.292.132 1.922l-.01-.072 2.44 17.758L54.52 75.24c-1.908-.934-4.15-1.48-6.52-1.48s-4.613.546-6.608 1.518l.09-.039-15.637 7.56 2.438-17.759c.078-.555.123-1.197.123-1.85 0-3.741-1.482-7.137-3.887-9.633l.003.003-12.518-12.92 17.638-3.2a13.642 13.642 0 0 0 9.842-7.008l.036-.072L48 14.603Zm0-12.521h-.01a5.194 5.194 0 0 0-4.577 2.733l-.015.027L32 26.28a5.298 5.298 0 0 1-3.648 2.675l-.033.006-23.997 4.32C1.853 33.717 0 35.847 0 38.406a5.19 5.19 0 0 0 1.443 3.596L1.44 42l16.837 17.558a5.057 5.057 0 0 1 1.473 3.578c0 .306-.027.603-.078.894l.006-.03L16.4 87.997a5.199 5.199 0 0 0 5.148 5.918h.012c.045.003.102.003.156.003.834 0 1.623-.207 2.31-.576l-.027.013 21.397-10.32a6.209 6.209 0 0 1 2.76-.638c1.004 0 1.952.236 2.795.653l-.036-.014 21.08 10.319a4.73 4.73 0 0 0 2.249.56h.033-.003c.051.003.111.003.171.003a5.199 5.199 0 0 0 5.144-5.948l.004.027-3.28-23.998a5.055 5.055 0 0 1 1.4-4.32l16.84-17.557a5.177 5.177 0 0 0 1.448-3.6c0-2.55-1.836-4.67-4.257-5.114l-.033-.006-23.997-4.32a5.301 5.301 0 0 1-3.705-2.768l-.015-.03-11.399-21.44a5.204 5.204 0 0 0-4.593-2.759h-.008L48 2.082Z"
+            fill="#C69C6D"
+          ></path>
+        </svg>
+        <span>Bronze</span></span
+      >
+      <div class="arrow svelte-69p9vw" >
+        <svg
+          fill="currentColor"
+          viewBox="0 0 64 64"
+          class="svg-icon rotate-90"
+          [ngClass]="{'!rotate-0':dropdownState==='Bronze'}"
+        >
+          <title></title>
+          <path
+            d="M32.271 49.763 9.201 26.692l6.928-6.93 16.145 16.145 16.144-16.144 6.93 6.929-23.072 23.07h-.005Z"
+          ></path>
+        </svg>
       </div>
-
+    </div>
+    <div *ngIf="dropdownState==='Bronze'"
+      class=" px-5 py-3 border-t border-[#2f4553]"
+      
+      
+    >
+      <div >
+        <ul class="list-disc">
+          <li class="list-disc ms-5 ">Bonus from Support in currency of your choice</li>
+          <li class="list-disc ms-5">
+            Rakeback enabled
+          </li>
+          <li class="list-disc ms-5">Weekly bonuses</li>
+          <li class="list-disc ms-5">Monthly bonuses</li>
+          <li class="list-disc ms-5">VIP Telegram channel access</li>
+        </ul>
+      </div>
     </div>
   </div>
+  <div (click)="dropdown('Silver')"
+    class=" bg-[#213743] "
+    data-test="benefits-bronze"
+    
+  >
+    <div
+      class="flex justify-between items-center py-3 px-4 "
+      
+      
+    >
+      <span
+        class=" flex gap-1 items-center"
+        
+        >
+        <svg fill="none" viewBox="0 0 96 96" class="svg-icon " style=""> <title></title> <path d="m48.002 14.603 8.48 15.757c1.97 3.693 5.495 6.336 9.677 7.068l.08.012 17.64 3.2L71.48 53.56a13.835 13.835 0 0 0-3.884 9.63c0 .653.045 1.292.132 1.922l-.01-.072 2.44 17.758L54.52 75.24c-1.908-.934-4.15-1.48-6.52-1.48s-4.613.546-6.608 1.518l.09-.039-15.637 7.56 2.438-17.759c.078-.555.123-1.197.123-1.85 0-3.741-1.482-7.137-3.887-9.633l.003.003-12.518-12.92 17.638-3.2a13.642 13.642 0 0 0 9.842-7.008l.036-.072L48 14.603Zm0-12.521h-.01a5.194 5.194 0 0 0-4.577 2.733l-.015.027L32 26.28a5.298 5.298 0 0 1-3.648 2.675l-.033.006-23.997 4.32C1.853 33.717 0 35.847 0 38.406a5.19 5.19 0 0 0 1.443 3.596L1.44 42l16.837 17.558a5.057 5.057 0 0 1 1.473 3.578c0 .306-.027.603-.078.894l.006-.03L16.4 87.997a5.199 5.199 0 0 0 5.148 5.918h.012c.045.003.102.003.156.003.834 0 1.623-.207 2.31-.576l-.027.013 21.397-10.32a6.209 6.209 0 0 1 2.76-.638c1.004 0 1.952.236 2.795.653l-.036-.014 21.08 10.319a4.73 4.73 0 0 0 2.249.56h.033-.003c.051.003.111.003.171.003a5.199 5.199 0 0 0 5.144-5.948l.004.027-3.28-23.998a5.055 5.055 0 0 1 1.4-4.32l16.84-17.557a5.177 5.177 0 0 0 1.448-3.6c0-2.55-1.836-4.67-4.257-5.114l-.033-.006-23.997-4.32a5.301 5.301 0 0 1-3.705-2.768l-.015-.03-11.399-21.44a5.204 5.204 0 0 0-4.593-2.759h-.008L48 2.082Z" fill="#B2CCCC"></path></svg>
+        <span>Silver</span></span
+      >
+      <div class="arrow svelte-69p9vw" >
+        <svg
+          fill="currentColor"
+          viewBox="0 0 64 64"
+          class="svg-icon rotate-90"
+          [ngClass]="{'!rotate-0':dropdownState==='Silver'}"
+        >
+          <title></title>
+          <path
+            d="M32.271 49.763 9.201 26.692l6.928-6.93 16.145 16.145 16.144-16.144 6.93 6.929-23.072 23.07h-.005Z"
+          ></path>
+        </svg>
+      </div>
+    </div>
+    <div *ngIf="dropdownState==='Silver'"
+      class=" px-5 py-3 border-t border-[#2f4553]"
+      
+    >
+      <div >
+        <ul class="list-disc  ">
+          <li class="list-disc ms-5 ">Bonus from Support in currency of your choice</li>
+          <li class="list-disc ms-5">Weekly & monthly bonuses increased </li>
+        </ul>
+      </div>
+    </div>
+  </div>
+  <div (click)="dropdown('Gold')"
+    class=" bg-[#213743] "
+    data-test="benefits-bronze"
+    
+  >
+    <div
+      class="flex justify-between items-center py-3 px-4 "
+      
+    >
+      <span
+        class="flex gap-1 items-center"
+        
+        >
+        <svg fill="none" viewBox="0 0 96 96" class="svg-icon " style=""> <title></title> <path d="m48.002 14.603 8.48 15.757c1.97 3.693 5.495 6.336 9.677 7.068l.08.012 17.64 3.2L71.48 53.56a13.835 13.835 0 0 0-3.884 9.63c0 .653.045 1.292.132 1.922l-.01-.072 2.44 17.758L54.52 75.24c-1.908-.934-4.15-1.48-6.52-1.48s-4.613.546-6.608 1.518l.09-.039-15.637 7.56 2.438-17.759c.078-.555.123-1.197.123-1.85 0-3.741-1.482-7.137-3.887-9.633l.003.003-12.518-12.92 17.638-3.2a13.642 13.642 0 0 0 9.842-7.008l.036-.072L48 14.603Zm0-12.521h-.01a5.194 5.194 0 0 0-4.577 2.733l-.015.027L32 26.28a5.298 5.298 0 0 1-3.648 2.675l-.033.006-23.997 4.32C1.853 33.717 0 35.847 0 38.406a5.19 5.19 0 0 0 1.443 3.596L1.44 42l16.837 17.558a5.057 5.057 0 0 1 1.473 3.578c0 .306-.027.603-.078.894l.006-.03L16.4 87.997a5.199 5.199 0 0 0 5.148 5.918h.012c.045.003.102.003.156.003.834 0 1.623-.207 2.31-.576l-.027.013 21.397-10.32a6.209 6.209 0 0 1 2.76-.638c1.004 0 1.952.236 2.795.653l-.036-.014 21.08 10.319a4.73 4.73 0 0 0 2.249.56h.033-.003c.051.003.111.003.171.003a5.199 5.199 0 0 0 5.144-5.948l.004.027-3.28-23.998a5.055 5.055 0 0 1 1.4-4.32l16.84-17.557a5.177 5.177 0 0 0 1.448-3.6c0-2.55-1.836-4.67-4.257-5.114l-.033-.006-23.997-4.32a5.301 5.301 0 0 1-3.705-2.768l-.015-.03-11.399-21.44a5.204 5.204 0 0 0-4.593-2.759h-.008L48 2.082Z" fill="#FED100"></path></svg>
+        <span>Gold</span></span
+      >
+      <div class="arrow svelte-69p9vw" >
+        <svg
+          fill="currentColor"
+          viewBox="0 0 64 64"
+          class="svg-icon rotate-90"
+          [ngClass]="{'!rotate-0':dropdownState==='Gold'}"
+        >
+          <title></title>
+          <path
+            d="M32.271 49.763 9.201 26.692l6.928-6.93 16.145 16.145 16.144-16.144 6.93 6.929-23.072 23.07h-.005Z"
+          ></path>
+        </svg>
+      </div>
+    </div>
+    <div *ngIf="dropdownState==='Gold'"
+      class=" px-5 py-3 border-t border-[#2f4553]"
+      
+    >
+      <div >
+        <ul class="list-disc">
+          <li class="list-disc ms-5 ">Bonus from Support in currency of your choice</li>
+          <li class="list-disc ms-5">Weekly & monthly bonuses increased   </li>
+        </ul>
+      </div>
+    </div>
+  </div>
+  <div (click)="dropdown('Platinum')"
+    class=" bg-[#213743] "
+    data-test="benefits-bronze"
+    
+  >
+    <div
+      class="flex justify-between items-center py-3 px-4 "
+      
+      
+    >
+      <span
+        class="flex gap-1 items-center"
+        
+        ><svg fill="none" viewBox="0 0 96 96" class="svg-icon " style=""> <title></title> <path d="M45.237 83.04 23.797 93.4c-3.76 1.8-8-1.28-7.44-5.4l3.28-24.12c.2-1.56-.32-3.16-1.4-4.32L1.437 42c-2.88-3-1.24-8 2.84-8.72l23.96-4.32a5.277 5.277 0 0 0 3.68-2.68l11.52-21.44c1.96-3.64 7.2-3.64 9.16 0l11.52 21.44c.76 1.4 2.12 2.4 3.68 2.68l23.96 4.32c4.08.72 5.72 5.72 2.84 8.72l-16.84 17.56a5.333 5.333 0 0 0-1.4 4.32L79.637 88c.56 4.12-3.68 7.2-7.44 5.4l-21.44-10.36c-1.72-.84-3.76-.84-5.52 0Z" fill="#6FDDE7"></path><path d="M42.557 72V36h10.88v36h-10.88Z" fill="#0F212E"></path></svg>
+        <span>Platinum I - III</span></span
+      >
+      <div class="arrow svelte-69p9vw" >
+        <svg
+          fill="currentColor"
+          viewBox="0 0 64 64"
+          class="svg-icon rotate-90"
+          [ngClass]="{'!rotate-0':dropdownState==='Platinum'}"
+        >
+          <title></title>
+          <path
+            d="M32.271 49.763 9.201 26.692l6.928-6.93 16.145 16.145 16.144-16.144 6.93 6.929-23.072 23.07h-.005Z"
+          ></path>
+        </svg>
+      </div>
+    </div>
+    <div *ngIf="dropdownState==='Platinum'"
+      class=" px-5 py-3 border-t border-[#2f4553]"
+      
+      
+    >
+      <div >
+        <ul >
+          <li class="list-disc ms-5 ">Bonus from Support in currency of your choice</li>
+          <li class="list-disc ms-5">Weekly & monthly bonuses increased  </li>
+          <li class="list-disc ms-5">14 - 42 Day, Daily bonus (Reload)</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+  <div (click)="dropdown('Platinum2')"
+    class=" bg-[#213743] "
+    data-test="benefits-bronze"
+    
+  >
+    <div
+      class="flex justify-between items-center py-3 px-4 "
+      
+      
+    >
+      <span
+        class="flex gap-1 items-center"
+        
+        >
+        <svg fill="none" viewBox="0 0 96 96" class="svg-icon " style=""> <title></title> <path d="M45.237 83.04 23.797 93.4c-3.76 1.8-8-1.28-7.44-5.4l3.28-24.12c.2-1.56-.32-3.16-1.4-4.32L1.437 42c-2.88-3-1.24-8 2.84-8.72l23.96-4.32a5.277 5.277 0 0 0 3.68-2.68l11.52-21.44c1.96-3.64 7.2-3.64 9.16 0l11.52 21.44c.76 1.4 2.12 2.4 3.68 2.68l23.96 4.32c4.08.72 5.72 5.72 2.84 8.72l-16.84 17.56a5.333 5.333 0 0 0-1.4 4.32L79.637 88c.56 4.12-3.68 7.2-7.44 5.4l-21.44-10.36c-1.72-.84-3.76-.84-5.52 0Z" fill="#6FDDE7"></path><path d="M23.997 72V36h10.88v36h-10.88Zm29.4 0-13.28-36h12.36l7.76 24.24L67.997 36h12.36l-13.28 36h-13.72.04Z" fill="#0F212E"></path></svg>
+        <span>Platinum IV - VI</span></span
+      >
+      <div class="arrow svelte-69p9vw" >
+        <svg
+          fill="currentColor"
+          viewBox="0 0 64 64"
+          class="svg-icon rotate-90"
+          [ngClass]="{'!rotate-0':dropdownState==='Platinum2'}"
+        >
+          <title></title>
+          <path
+            d="M32.271 49.763 9.201 26.692l6.928-6.93 16.145 16.145 16.144-16.144 6.93 6.929-23.072 23.07h-.005Z"
+          ></path>
+        </svg>
+      </div>
+    </div>
+    <div *ngIf="dropdownState==='Platinum2'"
+      class=" px-5 py-3 border-t border-[#2f4553]"
+      
+      
+    >
+      <div >
+        <ul >
+          <li class="list-disc ms-5 ">Dedicated VIP host</li>
+          <li class="list-disc ms-5">Bonus from VIP host in currency of your choice </li>
+          <li class="list-disc ms-5">Daily & weekly bonuses increased</li>
+          <li class="list-disc ms-5">Monthly bonuses</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+  <div (click)="dropdown('Diamond')"
+    class=" bg-[#213743] "
+    data-test="benefits-bronze"
+    
+  >
+    <div
+      class="flex justify-between items-center py-3 px-4 "
+      
+      
+    >
+      <span
+        class="flex gap-1 items-center"
+        
+        ><svg fill="none" viewBox="0 0 96 96" class="svg-icon " style=""> <title></title> <path d="M79.48 19.64c-21.04 3.04-42.04 3-63 0L0 43.64 48 96l48-52.36-16.52-24Z" fill="#BDE9FF"></path><path d="M27.68 55.52 48 96l20.32-40.48s-23.16-7.16-40.64 0Z" fill="#fff"></path><path d="M16.52 19.64S43.12 21.48 48 30.68c0 0-12.48 23.96-20.32 24.84 0 0-14.68-26.64-11.16-35.84v-.04Z" fill="#B0B8FC"></path><path d="M48 30.68 27.68 55.52h40.64L48 30.68Z" fill="#fff"></path><path d="M96 43.64 48 96l20.32-40.48L96 43.64Z" fill="#B0B8FC"></path><path d="M0 43.64 48 96 27.68 55.52 0 43.64Z" fill="#BDE9FF"></path><path d="m16.52 19.64 11.16 35.88L0 43.64l16.52-24Z" fill="#B0B8FC"></path><path d="M79.48 19.64 68.32 55.52 96 43.64l-16.52-24Zm-62.96 0L48 30.68l31.48-11.04H16.52Z" fill="#fff"></path><path d="M42.56 29.84h10.88v36H42.56v-36Z" fill="#0F212E"></path></svg>
+        <span>Diamond</span></span
+      >
+      <div class="arrow svelte-69p9vw" >
+        <svg
+          fill="currentColor"
+          viewBox="0 0 64 64"
+          class="svg-icon rotate-90"
+          [ngClass]="{'!rotate-0':dropdownState==='Diamond'}"
+        >
+          <title></title>
+          <path
+            d="M32.271 49.763 9.201 26.692l6.928-6.93 16.145 16.145 16.144-16.144 6.93 6.929-23.072 23.07h-.005Z"
+          ></path>
+        </svg>
+      </div>
+    </div>
+    <div *ngIf="dropdownState==='Diamond'"
+      class=" px-5 py-3 border-t border-[#2f4553]"
+      
+      
+    >
+      <div >
+        <ul class="list-disc ">
+          <li class="list-disc ms-5 ">Bonus from VIP host in currency of your choice</li>
+          <li class="list-disc ms-5">Exclusively customized benefits</li>
+          <li class="list-disc ms-5">Daily & weekly bonuses increased</li>
+          <li class="list-disc ms-5">Monthly bonuses</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</div>
+}
+        
+        <div class="footer svelte-1nkt3rw" >
+          <a
+            class=" text-classes"
+            >Learn more about being a Stake VIP</a
+          >
+        </div>
+      </div>
+    </div>
+
+  </div>
+</div>

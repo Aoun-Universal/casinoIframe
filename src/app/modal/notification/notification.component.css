@@ -1,25 +1,44 @@
+/* .notifications-widget */
 .notifications-widget.svelte-6gfkw4 {
-  @apply flex flex-col absolute w-full max-w-[375px] max-h-[400px] bg-[#0f212e] shadow-[0_10px_15px_-3px_rgba(0,0,0,0.2),0_4px_6px_-2px_rgba(0,0,0,0.1)] pt-0 pb-4 px-4 rounded-lg right-6 top-[calc(60px_+_0.5rem)];
+  @apply flex flex-col absolute top-[calc(60px+0.5rem)] right-6 w-full max-w-[375px] max-h-[400px] bg-[#0f212e] p-[0_1rem_1rem] rounded-md shadow-lg;
 }
+
+/* .notifications-header */
 .notifications-header.svelte-12heyz0 {
-  @apply flex justify-between items-center relative touch-none mr-[calc(0.75rem_*_-1)] px-0 py-1 bg-[#0f212e];
+  @apply bg-[#0f212e] flex justify-between items-center relative touch-none py-1 pr-0;
 }
+
+/* .title */
 .title.svelte-12heyz0 {
   @apply inline-flex items-center gap-2;
 }
 
+/* .notifications-widget > .notification-list-scroll */
 .notifications-widget.svelte-6gfkw4 > .notification-list-scroll {
-  @apply h-full m-[0_calc(1rem_*_-1)] mt-0 mb-[*] px-4 py-0;
+  @apply h-full px-4 -mx-4;
 }
+
+/* .empty-notifications */
 .empty-notifications.svelte-w18c7z {
   @apply flex items-center justify-center h-full;
 }
+
+/* .empty-list */
 .empty-list.svelte-1qm952x {
-  @apply text-[#b1bad3] flex-col flex items-center text-sm mx-auto my-0 p-4;
+  @apply p-4 text-[#b1bad3] flex flex-col mx-auto items-center text-sm;
 }
+
+/* .empty-list.spacing-compact > * + * */
 .empty-list.spacing-compact.svelte-1qm952x > * + * {
   @apply mt-1;
 }
+
+/* .variant-highlighted */
+
+.empty-list.spacing-compact.svelte-1qm952x > * + * {
+  @apply mt-1;
+}
+
 em.variant-highlighted.svelte-17v69ua,
 span.variant-highlighted.svelte-17v69ua,
 h1.variant-highlighted.svelte-17v69ua,
@@ -31,11 +50,22 @@ h6.variant-highlighted.svelte-17v69ua,
 p.variant-highlighted.svelte-17v69ua {
   @apply text-white;
 }
+
+/* .large-icon */
 .large-icon.svelte-1qm952x {
-  @apply text-8xl;
+  @apply text-[6rem];
+}
+
+/* .empty-notifications svg */
+.empty-notifications.svelte-w18c7z svg {
+  @apply transform rotate-90 mb-4;
+}
+
+.close-icon {
+  @apply inline-flex relative items-center gap-2 justify-center rounded-sm font-semibold whitespace-nowrap  transition disabled:pointer-events-none disabled:opacity-50 focus-visible:outline-2 focus-visible:outline-offset-2 active:scale-[0.98] bg-transparent text-white  focus-visible:outline-none text-base leading-none py-4 px-5;
 }
 .empty-notifications.svelte-w18c7z svg {
-  @apply rotate-90 mb-4;
+  @apply transform rotate-90 mb-4;
 }
 
 .btn-1st {

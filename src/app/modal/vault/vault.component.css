@@ -253,3 +253,18 @@
 .btn-1st {
   @apply inline-flex relative items-center gap-2 justify-center rounded-sm font-semibold whitespace-nowrap  transition disabled:pointer-events-none disabled:opacity-50 focus-visible:outline-2 focus-visible:outline-offset-2 active:scale-[0.98] bg-transparent text-gray-200  focus-visible:text-white focus-visible:outline-none text-base leading-none;
 }
+.close-icon{
+  @apply inline-flex relative items-center gap-2 justify-center rounded-sm font-semibold whitespace-nowrap transition disabled:pointer-events-none disabled:opacity-50 focus-visible:outline-2 focus-visible:outline-offset-2 active:scale-[0.98] bg-transparent text-gray-200  focus-visible:text-white focus-visible:outline-none text-base leading-none
+}
+.alignment{
+  @apply flex flex-col justify-center items-center gap-[.75rem]
+}
+.dropdown-btns{
+  @apply flex relative items-center gap-2 font-semibold whitespace-nowrap  transition disabled:pointer-events-none disabled:opacity-50 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 active:scale-[0.98] bg-transparent text-gray-400 focus-visible:outline-gray-300 text-xs leading-none  rounded-none justify-start px-3 py-[6px] shadow-none
+}
+.dropdown-classes{
+  @apply max-w-[223.33px] max-h-[calc(100%-5em)]  bg-white absolute z-[99999] top-[9.25rem] left-[134px] rounded-[5px]
+}
+.dropdown-inut{
+  @apply bg-white ps-[2.5em] py-[.5em] pe-[.5em] max-w-[199.33px] h-[39px] border-2 border-[#d5dceb] outline-none mt-2
+}

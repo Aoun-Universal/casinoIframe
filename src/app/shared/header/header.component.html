@@ -5,7 +5,7 @@
     <div class="navigation">
         <div class="group-container">
             <div class="ctainer">
-                <div class="navigation-container">
+                <div class="navigation-container" [ngClass]="{'![grid-template-columns:1fr_1fr]':!token}">
                     <!--Stake Logo -->
                     <div class="stack">
                         <div>
@@ -19,7 +19,7 @@
                         </div>
                     </div>
                     <!-- Balance toggle button -->
-                    <div class="balance-toggle">
+                    <div class="balance-toggle " *ngIf="token">
                         <div class="coin-toggle">
                             <div class="wrapper">
                                 <div class="dropdown">
@@ -91,7 +91,7 @@
                         <button type="button" class="wallet"><span>Wallet</span></button>
                     </div>
                     <!-- Right Section for profile , search and notification -->
-                    <section>
+                    <section class="" *ngIf="token">
                         <div class="stack x-flex-end svelte-right right-stack">
                             <!-- Search -->
                             <button type="button" class="search-btn" (click)="toggleDropdown('searchbutton')">
@@ -109,9 +109,9 @@
                                     <!-- Arrow -->
                                     <div class="arrow"></div>
                                     <div class="dropdown-scroll-content " style="max-height: inherit;">
-                                        <ng-container *ngFor="let option of profileOptions">
+                                        <ng-container *ngFor="let option of profileOptions; let i = index">
                                             <button *ngIf="option.type === 'button'" type="button"
-                                                class="porfile-list w-full">
+                                                class="porfile-list w-full" (click)="showModal(i)">
                                                 <img [src]="option.icon" [alt]="option.label" class="svg-icon">
                                                 <span>{{ option.label }}</span>
                                             </button>
@@ -176,10 +176,11 @@
                             </div>
                         </div>
                     </section>
-                    <section class="hidden">
+
+                    <section class="" *ngIf="!token">
                         <div class="stack x-flex-end  svelte-right">
-                            <button type="button" class="sign-in" data-analytics="global-navbar-signin-button">Sign
-                                In</button> <button type="button" class="Register">Register</button>
+                            <button type="button" class="sign-in" (click)=" showLogin()">Sign In</button>
+                            <button type="button" class="Register" (click)="showSignUp()">Register</button>
                         </div>
                     </section>
                 </div>
@@ -373,10 +374,11 @@
                                         </ng-container>
                                     </div>
                                 </div>
-                           
-                            <button type="button" class="bell-icon" (click)="toggleDropdown('bellDropOpen')">
-                                <img src="/assets/header/bell.png" class="svg-icon ">
-                            </button> </div>
+
+                                <button type="button" class="bell-icon" (click)="toggleDropdown('bellDropOpen')">
+                                    <img src="/assets/header/bell.png" class="svg-icon ">
+                                </button>
+                            </div>
                             <div class="notifications-widget  svelte-6gfkw4" style="z-index: 901;" *ngIf="bellDropOpen">
                                 <div class="notifications-header svelte-12heyz0">
                                     <div class="title svelte-12heyz0">
@@ -411,3 +413,7 @@
         </div>
     </div>
 </div>
+
+<app-login></app-login>
+<app-register></app-register>
+<app-logout></app-logout>

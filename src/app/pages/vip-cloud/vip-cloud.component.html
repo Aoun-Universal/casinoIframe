@@ -188,8 +188,8 @@
                           </svg>
                         </div>
                         <span
-                          class="weight-normal line-height-default align-left size-default text-size-default variant-highlighted with-icon-space svelte-17v69ua"
-                          style="">Bonus Growth</span>
+                          class="weight-normal line-height-default align-left size-default text-size-default variant-highlighted with-icon-space svelte-17v69ua">Bonus
+                          Growth</span>
                       </li>
                     </ul>
                   </div>
@@ -209,7 +209,7 @@
                     </div>
                     <div class="card-header-line svelte-baey6h"></div>
                   </div>
-                  <div class="card svelte-baey6h" style="">
+                  <div class="card svelte-baey6h">
                     <div class="card-label svelte-baey6h" style="background-color: #fed100">
                       <span class="text3">Gold</span>
                     </div>
@@ -292,7 +292,7 @@
                     </div>
                     <div class="card-header-line svelte-baey6h"></div>
                   </div>
-                  <div class="card svelte-baey6h" style="">
+                  <div class="card svelte-baey6h">
                     <div class="card-label2">
                       <span class="text3">Platinum I-III</span>
                     </div>
@@ -481,12 +481,14 @@
                     <div>
                       <div class="">
                         <div class="accordian-wrap3 ">
-                          <div class="secondary-accordion level-2 rounded svelte-69p9vw">
+                          <div class="secondary-accordion level-2 rounded svelte-69p9vw" (click)="toggleAccordion()">
                             <div class="first-acc rounded svelte-69p9vw">
                               <span
                                 class="weight-semibold line-height-responsive align-left size-default text-size-default responsive-type-scale variant-highlighted with-icon-space svelte-17v69ua"><span>Why
                                   is Stake’s VIP program the best?</span></span>
-                              <div class="arrow svelte-69p9vw">
+                              <div class="arrow svelte-69p9vw rotate-0" [ngClass]="{
+                                '!rotate-[-90deg]' : isOpen
+                              }">
                                 <svg fill="currentColor" viewBox="0 0 64 64" class="svg-icon4"
                                   style="transform: rotate(90deg)">
                                   <title></title>
@@ -497,11 +499,34 @@
                               </div>
                             </div>
                           </div>
+                          <div *ngIf="isOpen" class="toggle-content">
+                            <div>
+                              <div class="accordion-content svelte-1cg0oxi">
+                                <p
+                                  class="weight-normal line-height-150pct align-left size-default text-size-default responsive-type-scale variant-subtle with-icon-space svelte-17v69ua">
+                                  Stake’s VIP program is often rated as one of
+                                  the best online casino experiences due to
+                                  the amount of bonuses we give out to
+                                  players.
+                                </p>
+                                <p
+                                  class="weight-normal line-height-150pct align-left size-default text-size-default responsive-type-scale variant-subtle with-icon-space svelte-17v69ua">
+                                  Additionally, our award winning support team
+                                  is online 24/7 to answer any questions you
+                                  have. We have the highest customer
+                                  satisfaction rate out of many online casinos
+                                  where we have amassed a community of some of
+                                  the most passionate gamblers across the
+                                  globe.
+                                </p>
+                              </div>
+                            </div>
+                          </div>
                           <div class="secondary-accordion level-2 rounded svelte-69p9vw">
                             <div class="first-acc rounded svelte-69p9vw">
                               <span
-                                class="weight-semibold line-height-responsive align-left size-default text-size-default responsive-type-scale variant-highlighted with-icon-space svelte-17v69ua"
-                                style=""><span>How much has Stake given out in
+                                class="weight-semibold line-height-responsive align-left size-default text-size-default responsive-type-scale variant-highlighted with-icon-space svelte-17v69ua"><span>How
+                                  much has Stake given out in
                                   bonuses?</span></span>
                               <div class="arrow svelte-69p9vw">
                                 <svg fill="currentColor" viewBox="0 0 64 64" class="svg-icon4"

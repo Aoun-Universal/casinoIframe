@@ -1,19 +1,16 @@
-import { CommonModule } from '@angular/common';
 import { Component } from '@angular/core';
-import { FormsModule } from '@angular/forms';
+import { ToggleService } from '../../services/toggle.service';
+import { NgClass, NgFor, NgForOf, NgIf } from '@angular/common';
 
 @Component({
-  selector: 'app-affiliate-overview',
+  selector: 'app-create-new-campaing',
   standalone: true,
-  imports: [CommonModule,FormsModule],
-  templateUrl: './affiliate-overview.component.html',
-  styleUrl: './affiliate-overview.component.css'
+  imports: [NgIf, NgClass],
+  templateUrl: './create-new-campaing.component.html',
+  styleUrl: './create-new-campaing.component.css'
 })
-export class AffiliateOverviewComponent {
-  WinnerDropdown=false;
-  toggleDropdown() {
-    this.WinnerDropdown = !this.WinnerDropdown;
-  }
+export class CreateNewCampaingComponent {
+
 
   referralLink: string = 'https://example.com/referral'; // Default value
   isCopied: boolean = false; // Tooltip visibility flag
@@ -34,5 +31,12 @@ export class AffiliateOverviewComponent {
     setTimeout(() => {
       this.isCopied = false;
     }, 2000);
+  }
+
+
+
+  constructor(private toggle: ToggleService) { }
+  closeCampaing() {
+    this.toggle.setcampaingModalState(false);
   }
 }

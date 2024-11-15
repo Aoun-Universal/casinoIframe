@@ -4,6 +4,7 @@ import { VipComponent } from './modal/vip/vip.component';
 import { RegisterComponent } from './modal/register/register.component';
 import { NotificationComponent } from './modal/notification/notification.component';
 import { StatisticsComponent } from './modal/statistics/statistics.component';
+import { authGuard } from "./auth/auth.guard";
 
 
 export const routes: Routes = [
@@ -25,6 +26,7 @@ export const routes: Routes = [
         path: 'home',
         loadComponent: () =>
           import('./pages/home/home.component').then((c) => c.HomeComponent),
+        canActivate: [authGuard]
       },
       {
         path: 'my-bets',
@@ -169,7 +171,7 @@ export const routes: Routes = [
       {
         path: 'providers',
         loadComponent: () =>
-          import('./pages/stake-offer/stake-offer.component').then((c) => c.StakeOfferComponent),
+          import('./pages/providers/providers.component').then((c) => c.ProvidersComponent),
       },
       {
         path: 'blog',
