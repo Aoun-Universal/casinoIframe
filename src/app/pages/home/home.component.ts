@@ -4,12 +4,14 @@ import { ToggleService } from '../../services/toggle.service';
 import { BetSlipComponent } from '../../shared/bet-slip/bet-slip.component';
 import { SlickCarouselComponent, SlickCarouselModule } from 'ngx-slick-carousel';
 import { StatisticsModalTableComponent } from "../../modal/statistics-modal-table/statistics-modal-table.component";
+import { LeaderboardComponent } from '../../modal/leaderboard/leaderboard.component';
+import { RaceComponent } from '../../modal/race/race.component';
 
 
 @Component({
   selector: 'app-home',
   standalone: true,
-  imports: [NgFor, NgIf, NgClass, NgStyle, BetSlipComponent, SlickCarouselModule,NgSwitch,NgSwitchCase,StatisticsModalTableComponent],
+  imports: [NgFor, NgIf, NgClass, NgStyle, BetSlipComponent, SlickCarouselModule,NgSwitch,NgSwitchCase,StatisticsModalTableComponent,LeaderboardComponent,RaceComponent],
   templateUrl: './home.component.html',
   styleUrl: './home.component.css',
   schemas: [CUSTOM_ELEMENTS_SCHEMA]
@@ -80,21 +82,21 @@ export class HomeComponent {
   ];
   sports = [
     {
-      img: "https://mediumrare.imgix.net/politics-entertainment-en.png?&dpr=1.5&format=auto&auto=format&q=50&w=167",
+      img: "/assets/home/sport-1.avif",
       count: 1
     },
-    { img: "https://mediumrare.imgix.net/soccer-en.png?&dpr=1.5&format=auto&auto=format&q=50&w=167", count: 2 },
-    { img: "https://mediumrare.imgix.net/tennis-en.png?&dpr=1.5&format=auto&auto=format&q=50&w=167", count: 3 },
-    { img: "https://mediumrare.imgix.net/basketball-en.png?&dpr=1.5&format=auto&auto=format&q=50&w=167", count: 4 },
-    { img: "https://mediumrare.imgix.net/cricket-en.png?&dpr=1.5&format=auto&auto=format&q=50&w=167", count: 5 },
-    { img: "https://mediumrare.imgix.net/ice-hockey-en.png?&dpr=1.5&format=auto&auto=format&q=50&w=167", count: 6 },
+    { img: "/assets/home/sport-2.avif", count: 2 },
+    { img: "/assets/home/sport-3.avif", count: 3 },
+    { img: "/assets/home/sport-4.avif", count: 4 },
+    { img: "/assets/home/sport-5.avif", count: 5 },
+    { img: "/assets/home/sport-6.avif", count: 6 },
     {
-      img: "https://mediumrare.imgix.net/american-football-en.png?&dpr=1.5&format=auto&auto=format&q=50&w=167",
+      img: "/assets/home/sport-7.avif",
       count: 7
     },
-    { img: "https://mediumrare.imgix.net/racing-en.png?&dpr=1.5&format=auto&auto=format&q=50&w=167", count: 8 },
-    { img: "https://mediumrare.imgix.net/dota-2-en.png?&dpr=1.5&format=auto&auto=format&q=50&w=167", count: 9 },
-    { img: "https://mediumrare.imgix.net/counter-strike-en.png?&dpr=1.5&format=auto&auto=format&q=50&w=167", count: 10 },
+    { img: "/assets/home/sport-8.avif", count: 8 },
+    { img: "/assets/home/sport-9.avif", count: 9 },
+    { img: "/assets/home/sport-10.avif", count: 10 },
 
   ];
 
@@ -105,6 +107,8 @@ export class HomeComponent {
       leaderboardText: "Leaderboard",
       timer: { hours: 9, minutes: 11 },
       footerType: "notEnteredYet",  // Unique identifier for footer type
+      clickFunction: this.openLeaderBoardModal.bind(this),
+      InfoModal: this.openRaceModal.bind(this),
     },
     {
       title: "$75k Weekly Raffle",
@@ -113,6 +117,8 @@ export class HomeComponent {
       timer: { days: 2, hours: 8 , minutes:5},
       footerType: "progressBar",  // Unique identifier for different footer
       progress: 0,
+      clickFunction: this.openLeaderBoardModal.bind(this),
+      InfoModal:this.openRaceModal.bind(this),
     },
   ];
   
@@ -137,6 +143,8 @@ export class HomeComponent {
     ],
 
   };
+
+  // Adjust width issues of gallery slider
   
   isCarouselActive = true;
   screenWidth = window.innerWidth;
@@ -272,6 +280,14 @@ export class HomeComponent {
   openModal() {
     this.toggleService.setBetslipstate(true);
     this.toggleService.setBetslipContent(!this.betSlipContent)
+  }
+
+  openLeaderBoardModal() {
+    this.toggleService.setLeaderBoardModal(true);
+  }
+
+  openRaceModal() {
+    this.toggleService.setRaceModal(true);
   }
 
   toggleDropdown() {

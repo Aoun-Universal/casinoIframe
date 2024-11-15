@@ -1,1134 +1,146 @@
-<div class="card mx-auto mt-[45px]">
-  <div class="header">
-    <h2 class="flex items-center gap-2">
-      <div>
-        <svg
-          fill="currentColor"
-          viewBox="0 0 64 64"
-          class="svg-icon w-[16px] h-[16px]"
-        >
+<div class="modal svelte-cq3ecl z-[1500]">
+  <div class="overlay svelte-cq3ecl"></div>
+  <div class="card size-md svelte-cq3ecl">
+    <div class="header svelte-227w12">
+      <h2
+        class="weight-semibold line-height-default align-left size-base text-size-base variant-highlighted with-icon-space svelte-17v69ua">
+        <svg fill="currentColor" viewBox="0 0 64 64" class="fisrt-svg-icon text-[#b1bad3] w-[16px] h-[16px]">
           <title></title>
           <path
-            fill-rule="evenodd"
-            clip-rule="evenodd"
-            d="M0 49.573V0h64v49.573H0ZM31.067 28.8h7.786v-8h-7.786a11.92 11.92 0 1 0 0 8ZM48 41.947h8v-12.08h-8v12.08Zm0-22.214h8V7.653h-8v12.08ZM23.893 24.8a4 4 0 1 1-8 0 4 4 0 0 1 8 0ZM5.333 64H18.72l4.56-7.76H5.333V64Zm53.334 0H45.28l-4.56-7.76h17.947V64Z"
-          ></path>
+            d="M59.732 0H4.266A4.266 4.266 0 0 0 0 4.266V60c0 2.21 1.79 4 4 4h56c2.21 0 4-1.79 4-4V4.266A4.266 4.266 0 0 0 59.734 0h-.002ZM17.998 50.24l-8-8 4.266-4.266 3.866 3.894 9.734-9.866 4.266 4.266L17.998 50.24Zm0-20-8-8 4.134-4.374 3.866 3.894 9.866-9.894 4.266 4.266L17.998 30.24Zm36 14.774h-14v-6.026h14v6.026Zm0-20h-14v-6.026h14v6.026Z">
+          </path>
         </svg>
-      </div>
-      <span class="text-white">Vault</span>
-    </h2>
-    <button
-      class=" btn-class"
-    >
-      <svg
-        fill="currentColor"
-        viewBox="0 0 64 64"
-        class="svg-icon w-[16px]"
-        (click)="closevaultModal()"
-      >
-        <title></title>
-        <path
-          d="m54.827 16.187-7.014-7.014L32 24.987 16.187 9.173l-7.014 7.014L24.987 32 9.173 47.813l7.014 7.014L32 39.013l15.813 15.814 7.014-7.014L39.013 32l15.814-15.813Z"
-        ></path>
-      </svg>
-    </button>
-  </div>
-  <div
-    class="  overflow-y-scroll">
-    <div class="modal-content ">
-      <div class="content px-4">
-        <div class="center-wrapper">
-          <div class="tabs-wrapper">
-            <div class="slider">
-              <div class="content-wrapper">
-                <button
-                  type="button"
-                  tabindex="0"
-                  class="inline-flex relative items-center gap-2 justify-center font-semibold whitespace-nowrap ring-offset-background transition disabled:pointer-events-none disabled:opacity-50 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 active:scale-[0.98] bg-transparent betterhover:hover:bg-grey-400 betterhover:hover:text-white focus-visible:outline-white text-sm leading-none [&amp;_svg]:text-grey-200 [&amp;:hover>svg]:text-white py-[0.9375rem] px-[1.25rem] rounded-full !bg-[#2f4553] !text-white [&amp;_svg]:!text-white" (click)="toggletab('Deposit')"
-                  [ngClass]="{'!bg-[#2f4553]':tab ==='Deposit'}"
-                >
-                  Deposit</button
-                ><button
-                  type="button"
-                  tabindex="0"
-                  class="inline-flex relative items-center gap-2 justify-center font-semibold whitespace-nowrap ring-offset-background transition disabled:pointer-events-none disabled:opacity-50 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 active:scale-[0.98] bg-transparent text-white betterhover:hover:bg-grey-400 betterhover:hover:text-white focus-visible:outline-white text-sm leading-none [&amp;_svg]:text-grey-200 [&amp;:hover>svg]:text-white py-[0.9375rem] px-[1.25rem] rounded-full" (click)="toggletab('Withdraw')"
-                  [ngClass]="{'!bg-[#2f4553]':tab ==='Withdraw'}"
-                >
-                  Withdraw
-                </button>
-              </div>
-            </div>
-          </div>
-        </div>
-        <form>
-          <div class="coin-toggle">
-            <div class="wrapper">
-              <span>Currency</span>
-              <div class="dropdown ">
-                <button
-                  type="button"
-                  tabindex="0"
-                  class="flex relative items-center gap-2 justify-center font-semibold whitespace-nowrap ring-offset-background transition disabled:pointer-events-none disabled:opacity-50 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 active:scale-[0.98] bg-grey-700 text-white betterhover:hover:bg-grey-900 betterhover:hover:text-white focus-visible:outline-white text-sm leading-none [&amp;_svg]:text-grey-200 [&amp;:hover>svg]:text-white py-[0.8125rem] px-[1rem] rounded-sm max-h-[47px]"
-                  (click)="toggletolltip()"
-                >
-                  <div class="wrap h-[33px]">
-                    <div class="flex justify-center items-center">
-                      <span class="mt-2">
-                        <span >0.00000000</span>
-                      </span>
-                      <span class="ms-[4px] mt-2" title="btc">
-                        <svg
-                          fill="none"
-                          viewBox="0 0 96 96"
-                          class="svg-icon"
-                          style="width: 14px; height: 14px"
-                        >
-                          <title></title>
-                          <path
-                            d="M95.895 48.105C95.895 74.557 74.451 96 48 96 21.548 96 .105 74.556.105 48.105.105 21.653 21.548.21 48 .21c26.451 0 47.895 21.443 47.895 47.895Z"
-                            fill="#F7931A"
-                          ></path>
-                          <path
-                            d="M69.525 42.18c.93-6.27-3.84-9.645-10.38-11.895l2.115-8.505-5.16-1.29-2.1 8.28c-1.365-.345-2.76-.66-4.14-.975l2.1-8.295-5.175-1.29-2.115 8.49c-1.125-.255-2.235-.51-3.3-.78l-7.14-1.785-1.365 5.52s3.84.885 3.75.93a2.763 2.763 0 0 1 2.414 3.011l.001-.01-2.415 9.69c.213.049.394.106.568.174l-.028-.01-.54-.135-3.39 13.5a1.879 1.879 0 0 1-2.383 1.226l.013.004-3.765-.93L24.525 63l6.735 1.665 3.69.96-2.145 8.595 5.175 1.29 2.115-8.505c1.41.375 2.775.735 4.125 1.065l-2.115 8.475 5.175 1.29 2.13-8.58c8.835 1.665 15.465.99 18.255-6.99 2.25-6.42-.105-10.125-4.755-12.54 3.39-.72 5.925-2.955 6.615-7.545ZM57.69 58.755c-1.59 6.435-12.405 3-15.915 2.085L44.61 49.5c3.51.825 14.76 2.565 13.08 9.255Zm1.605-16.665c-1.5 5.85-10.5 2.865-13.38 2.145l2.58-10.32c2.91.72 12.315 2.085 10.8 8.175Z"
-                            fill="#fff"
-                          ></path>
-                        </svg>
-                      </span>
-                    </div>
-                  </div>
-                  <span class="dropdown-icon"
-                    ><svg
-                      fill="currentColor"
-                      viewBox="0 0 64 64"
-                      class="svg-icon"
-                      style="transform: rotate(0deg); width: 14px; height: 16px"
-                    >
-                      <title></title>
-                      <path
-                        d="M32.271 49.763 9.201 26.692l6.928-6.93 16.145 16.145 16.144-16.144 6.93 6.929-23.072 23.07h-.005Z"
-                      ></path></svg
-                  ></span>
-                </button>
+        <span class="ms-[.5em]">VIP</span>
+      </h2>
+      <button type="button" class="btn-1st" (click)="closevipModal()">
+        <svg fill="currentColor" viewBox="0 0 64 64" class="svg-icon w-[16px] h-[16px]">
+          <title></title>
+          <path
+            d="m54.827 16.187-7.014-7.014L32 24.987 16.187 9.173l-7.014 7.014L24.987 32 9.173 47.813l7.014 7.014L32 39.013l15.813 15.814 7.014-7.014L39.013 32l15.814-15.813Z">
+          </path>
+        </svg>
+      </button>
+    </div>
 
-                <div
-                  class="tooltip-wrapper tooltip overflow-y-scroll max-h-[calc(100%-4rem)]"
-                  style="
-                    position: absolute;
-                    margin: 0px;
-                    transform: translate3d(140.667px, 146px, 0px);
-                    max-height: 295.333px;
-                  "
-                  data-popper-placement="bottom"
-                >
-                  <div
-                    class="arrow"
-                    style="
-                      position: absolute;
-                      left: 0px;
-                      transform: translate3d(122.667px, 0px, 0px);
-                    "
-                  ></div>
-                  <div style="max-height: inherit" *ngIf="tooltipopen">
-                    <div
-                      class=" scrollY  bg-white"
-                    >
-                      <div class="wrapper">
-                        <div class="input-search">
-                          <div class="search-wrapper mt-[-12px]">
-                            <label class="stacked">
-                              <div class="input-wrap">
-                                <div class="input-content">
-                                  <div class="before-icon">
-                                    <svg
-                                      fill="currentColor"
-                                      viewBox="0 0 64 64"
-                                      class="search-svg-icon"
-                                      style="width: 14px; height: 14px"
-                                    >
-                                      <title></title>
-                                      <path
-                                        fill-rule="evenodd"
-                                        clip-rule="evenodd"
-                                        d="M10.266 3.893a23.1 23.1 0 1 1 25.668 38.414A23.1 23.1 0 0 1 10.266 3.893Zm5.112 30.764a13.9 13.9 0 1 0 15.444-23.114 13.9 13.9 0 0 0-15.444 23.114ZM38.55 46.33a28.002 28.002 0 0 0 7.78-7.78L64 56.22 56.22 64 38.55 46.33Z"
-                                      ></path>
-                                    </svg>
-                                  </div>
-                                  <input class="mt-2 h-[39px] ps-[20px] border-2 border-gray-300" />
-                                </div>
-                                <div class="input-button-wrap"></div>
-                              </div>
-                              <span class="label-content full-width">
-                                <div class="label-left-wrapper"></div>
-                              </span>
-                            </label>
-                          </div>
-                        </div>
-                      </div>
-                      <div class="flex flex-col scrollY ">
-                        <button
-                          type="button"
-                          tabindex="0"
-                          class="flex relative items-center gap-2 font-semibold whitespace-nowrap ring-offset-background transition disabled:pointer-events-none disabled:opacity-50 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 active:scale-[0.98] bg-transparent text-grey-400 betterhover:hover:bg-grey-200 betterhover:hover:text-neutral-black focus-visible:outline-grey-300 text-xs leading-none [&amp;_svg]:text-grey-400 [&amp;:hover>svg]:text-grey-400 rounded-none justify-start px-3 py-[6px] shadow-none min-h-[33px] hover:bg-[rgba(177,186,211)]"
-                          data-testid="coin-toggle-currency-btc"
-                          data-test="coin-toggle-currency-btc"
-                          aria-label="Select btc"
-                          data-button-root=""
-                        >
-                          <div class="flex max-h-[calc(100%-2rem)] overflow-y-scroll ">
-                            <span class="content"
-                              ><span class="text-[14px]">0.00000000</span></span
-                            >
-                            <span
-                              ><svg
-                                fill="none"
-                                viewBox="0 0 96 96"
-                                class="svg-icon w-[14px] h-[14px]"
-                              >
-                                <title></title>
-                                <path
-                                  d="M95.895 48.105C95.895 74.557 74.451 96 48 96 21.548 96 .105 74.556.105 48.105.105 21.653 21.548.21 48 .21c26.451 0 47.895 21.443 47.895 47.895Z"
-                                  fill="#F7931A"
-                                ></path>
-                                <path
-                                  d="M69.525 42.18c.93-6.27-3.84-9.645-10.38-11.895l2.115-8.505-5.16-1.29-2.1 8.28c-1.365-.345-2.76-.66-4.14-.975l2.1-8.295-5.175-1.29-2.115 8.49c-1.125-.255-2.235-.51-3.3-.78l-7.14-1.785-1.365 5.52s3.84.885 3.75.93a2.763 2.763 0 0 1 2.414 3.011l.001-.01-2.415 9.69c.213.049.394.106.568.174l-.028-.01-.54-.135-3.39 13.5a1.879 1.879 0 0 1-2.383 1.226l.013.004-3.765-.93L24.525 63l6.735 1.665 3.69.96-2.145 8.595 5.175 1.29 2.115-8.505c1.41.375 2.775.735 4.125 1.065l-2.115 8.475 5.175 1.29 2.13-8.58c8.835 1.665 15.465.99 18.255-6.99 2.25-6.42-.105-10.125-4.755-12.54 3.39-.72 5.925-2.955 6.615-7.545ZM57.69 58.755c-1.59 6.435-12.405 3-15.915 2.085L44.61 49.5c3.51.825 14.76 2.565 13.08 9.255Zm1.605-16.665c-1.5 5.85-10.5 2.865-13.38 2.145l2.58-10.32c2.91.72 12.315 2.085 10.8 8.175Z"
-                                  fill="#fff"
-                                ></path></svg
-                            ></span>
-                            <span
-                              class="ms-[4px] text-[rgba(47,69,83)] text-[14px]"
-                              >BTC</span
-                            >
-                          </div></button
-                        ><button
-                          type="button"
-                          tabindex="0"
-                          class="inline-flex relative items-center gap-2 font-semibold whitespace-nowrap ring-offset-background transition disabled:pointer-events-none disabled:opacity-50 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 active:scale-[0.98] bg-transparent text-grey-400 betterhover:hover:bg-grey-200 betterhover:hover:text-neutral-black focus-visible:outline-grey-300 text-xs leading-none [&amp;_svg]:text-grey-400 [&amp;:hover>svg]:text-grey-400 rounded-none justify-start px-3 py-[6px] shadow-none min-h-[33px] hover:bg-[rgba(177,186,211)]"
-                          data-testid="coin-toggle-currency-eth"
-                          data-test="coin-toggle-currency-eth"
-                          aria-label="Select eth"
-                          data-button-root=""
-                        >
-                          <div class="currency">
-                            <span class="content"
-                              ><span class="text-[14px] text-[rgba(47,69,83)]"
-                                >0.00000000</span
-                              ></span
-                            >
-                            <span
-                              ><svg
-                                fill="none"
-                                viewBox="0 0 96 96"
-                                class="svg-icon"
-                                style="width: 14px; height: 14px"
-                              >
-                                <title></title>
-                                <path
-                                  d="M96 48c0 26.51-21.49 48-48 48S0 74.51 0 48 21.49 0 48 0s48 21.49 48 48Z"
-                                  fill="#627EEA"
-                                ></path>
-                                <path
-                                  opacity=".6"
-                                  d="M49.5 12v26.61L72 48.66 49.5 12Z"
-                                  fill="#fff"
-                                ></path>
-                                <path
-                                  d="M49.5 12 27 48.66l22.5-10.05V12Z"
-                                  fill="#fff"
-                                ></path>
-                                <path
-                                  opacity=".6"
-                                  d="M49.5 65.91V84L72 52.845 49.5 65.91Z"
-                                  fill="#fff"
-                                ></path>
-                                <path
-                                  d="M49.5 84V65.895L27 52.845 49.5 84Z"
-                                  fill="#fff"
-                                ></path>
-                                <path
-                                  opacity=".2"
-                                  d="M49.5 61.725 72 48.66 49.5 38.61v23.115Z"
-                                  fill="#fff"
-                                ></path>
-                                <path
-                                  opacity=".6"
-                                  d="m27 48.66 22.5 13.065V38.61L27 48.66Z"
-                                  fill="#fff"
-                                ></path></svg
-                            ></span>
-                            <span
-                              class="ms-[4px] text-[rgba(47,69,83)] text-[14px]"
-                              >ETH</span
-                            >
-                          </div></button
-                        ><button
-                          type="button"
-                          tabindex="0"
-                          class="inline-flex relative items-center gap-2 font-semibold whitespace-nowrap ring-offset-background transition disabled:pointer-events-none disabled:opacity-50 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 active:scale-[0.98] bg-transparent text-grey-400 betterhover:hover:bg-grey-200 betterhover:hover:text-neutral-black focus-visible:outline-grey-300 text-xs leading-none [&amp;_svg]:text-grey-400 [&amp;:hover>svg]:text-grey-400 rounded-none justify-start px-3 py-[6px] shadow-none min-h-[33px] hover:bg-[rgba(177,186,211)]"
-                          data-testid="coin-toggle-currency-ltc"
-                          data-test="coin-toggle-currency-ltc"
-                          aria-label="Select ltc"
-                          data-button-root=""
-                        >
-                          <div class="currency">
-                            <span class="content"
-                              ><span class="text-[14px] text-[rgba(47,69,83)]"
-                                >0.00000000</span
-                              ></span
-                            >
-                            <span class="" title="ltc"
-                              ><svg
-                                fill="none"
-                                viewBox="0 0 96 96"
-                                class="svg-icon"
-                                style="width: 14px; height: 14px"
-                              >
-                                <title></title>
-                                <path
-                                  d="M96 48c0 26.51-21.49 48-48 48S0 74.51 0 48 21.49 0 48 0s48 21.49 48 48Z"
-                                  fill="#BFBBBB"
-                                ></path>
-                                <path
-                                  d="M31.275 57.645 27 59.31 29.07 51l4.32-1.74L39.645 24H55.02l-4.5 18.585 4.23-1.71-2.04 8.25-4.29 1.71-2.535 10.5H69L66.375 72H27.75l3.525-14.355Z"
-                                  fill="#fff"
-                                ></path></svg
-                            ></span>
-                            <span
-                              class="ms-[4px] text-[rgba(47,69,83)] text-[14px]"
-                              >LTC</span
-                            >
-                          </div></button
-                        ><button
-                          type="button"
-                          tabindex="0"
-                          class="inline-flex relative items-center gap-2 font-semibold whitespace-nowrap ring-offset-background transition disabled:pointer-events-none disabled:opacity-50 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 active:scale-[0.98] bg-transparent text-grey-400 betterhover:hover:bg-grey-200 betterhover:hover:text-neutral-black focus-visible:outline-grey-300 text-xs leading-none [&amp;_svg]:text-grey-400 [&amp;:hover>svg]:text-grey-400 rounded-none justify-start px-3 py-[6px] shadow-none min-h-[33px] hover:bg-[rgba(177,186,211)]"
-                          data-testid="coin-toggle-currency-usdt"
-                          data-test="coin-toggle-currency-usdt"
-                          aria-label="Select usdt"
-                          data-button-root=""
-                        >
-                          <div class="currency">
-                            <span class="content"
-                              ><span class="text-[14px] text-[rgba(47,69,83)]"
-                                >0.00000000</span
-                              ></span
-                            >
-                            <span class="" title="usdt"
-                              ><svg
-                                fill="none"
-                                viewBox="0 0 96 96"
-                                class="svg-icon"
-                                style="width: 14px; height: 14px"
-                              >
-                                <title></title>
-                                <path
-                                  d="M96 48c0 26.51-21.49 48-48 48S0 74.51 0 48 21.49 0 48 0s48 21.49 48 48Z"
-                                  fill="#26A17B"
-                                ></path>
-                                <path
-                                  d="M53.766 52.149v-.006c-.33.024-2.031.126-5.826.126-3.03 0-5.163-.09-5.913-.126v.009c-11.664-.513-20.37-2.544-20.37-4.974 0-2.427 8.706-4.458 20.37-4.98v7.932c.762.054 2.946.183 5.964.183 3.62 0 5.436-.15 5.775-.18v-7.929c11.64.519 20.325 2.55 20.325 4.974 0 2.43-8.685 4.455-20.325 4.971Zm0-10.77v-7.098h16.242V23.457H25.785v10.824h16.242v7.095c-13.2.606-23.127 3.222-23.127 6.354s9.927 5.745 23.127 6.354V76.83h11.739V54.078c13.179-.606 23.082-3.219 23.082-6.348s-9.903-5.742-23.082-6.351Z"
-                                  fill="#fff"
-                                ></path></svg
-                            ></span>
-                            <span
-                              class="ms-[4px] text-[rgba(47,69,83)] text-[14px]"
-                              >USDT</span
-                            >
-                          </div></button
-                        ><button
-                          type="button"
-                          tabindex="0"
-                          class="inline-flex relative items-center gap-2 font-semibold whitespace-nowrap ring-offset-background transition disabled:pointer-events-none disabled:opacity-50 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 active:scale-[0.98] bg-transparent text-grey-400 betterhover:hover:bg-grey-200 betterhover:hover:text-neutral-black focus-visible:outline-grey-300 text-xs leading-none [&amp;_svg]:text-grey-400 [&amp;:hover>svg]:text-grey-400 rounded-none justify-start px-3 py-[6px] shadow-none min-h-[33px] hover:bg-[rgba(177,186,211)]"
-                          data-button-root=""
-                        >
-                          <div class="currency">
-                            <span class="content"
-                              ><span class="text-[14px] text-[rgba(47,69,83)]"
-                                >0.00000000</span
-                              ></span
-                            >
-                            <span class="" title="sol"
-                              ><svg
-                                fill="none"
-                                viewBox="0 0 96 96"
-                                class="svg-icon"
-                                style="width: 14px; height: 14px"
-                              >
-                                <title></title>
-                                <path
-                                  d="M96 48c0 26.51-21.49 48-48 48S0 74.51 0 48 21.49 0 48 0s48 21.49 48 48Z"
-                                  fill="#fff"
-                                ></path>
-                                <path
-                                  d="M67.924 36.044a1.417 1.417 0 0 1-.57.393 1.654 1.654 0 0 1-.687.137H22.201c-1.57 0-2.375-1.963-1.276-3.14l7.303-7.755c.157-.177.353-.315.589-.413.216-.098.451-.137.687-.137h44.643c1.59 0 2.375 1.983 1.256 3.16l-7.48 7.755Zm0 34.67c-.334.334-.786.53-1.257.53H22.201c-1.57 0-2.375-1.924-1.276-3.062l7.303-7.578c.157-.177.373-.314.589-.393.216-.098.451-.137.687-.137h44.643c1.59 0 2.375 1.943 1.256 3.082l-7.48 7.558Zm0-27.583a1.785 1.785 0 0 0-1.257-.53H22.201c-1.57 0-2.375 1.924-1.276 3.063l7.303 7.578c.157.176.373.314.589.392.216.099.451.138.687.138h44.643c1.59 0 2.375-1.944 1.256-3.082l-7.48-7.559Z"
-                                  fill="url(#a)"
-                                ></path>
-                                <defs>
-                                  <linearGradient
-                                    id="a"
-                                    x1="23.812"
-                                    y1="71.82"
-                                    x2="72.388"
-                                    y2="24.527"
-                                    gradientUnits="userSpaceOnUse"
-                                  >
-                                    <stop stop-color="#CF41E8"></stop>
-                                    <stop
-                                      offset="1"
-                                      stop-color="#10F2B0"
-                                    ></stop>
-                                  </linearGradient>
-                                </defs></svg
-                            ></span>
-                            <span
-                              class="ms-[4px] text-[rgba(47,69,83)] text-[14px]"
-                              >SOL</span
-                            >
-                          </div></button
-                        ><button
-                          type="button"
-                          tabindex="0"
-                          class="inline-flex relative items-center gap-2 font-semibold whitespace-nowrap ring-offset-background transition disabled:pointer-events-none disabled:opacity-50 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 active:scale-[0.98] bg-transparent text-grey-400 betterhover:hover:bg-grey-200 betterhover:hover:text-neutral-black focus-visible:outline-grey-300 text-xs leading-none [&amp;_svg]:text-grey-400 [&amp;:hover>svg]:text-grey-400 rounded-none justify-start px-3 py-[6px] shadow-none min-h-[33px] hover:bg-[rgba(177,186,211)]"
-                          data-testid="coin-toggle-currency-doge"
-                          data-test="coin-toggle-currency-doge"
-                          aria-label="Select doge"
-                          data-button-root=""
-                        >
-                          <div class="currency">
-                            <span class="content"
-                              ><span class="text-[14px] text-[rgba(47,69,83)]"
-                                >0.00000000</span
-                              ></span
-                            >
-                            <span class="" title="doge"
-                              ><svg
-                                fill="none"
-                                viewBox="0 0 96 96"
-                                class="svg-icon"
-                                style="width: 14px; height: 14px"
-                              >
-                                <title></title>
-                                <path
-                                  d="M95.895 48.105C95.895 74.557 74.451 96 48 96 21.548 96 .105 74.556.105 48.105.105 21.653 21.548.21 48 .21c26.451 0 47.895 21.443 47.895 47.895Z"
-                                  fill="#C2A633"
-                                ></path>
-                                <path
-                                  d="M46.815 19.5h-16.5V45H23.55v6.255h6.765v25.5H49.5s27 2.265 27-28.185c0-29.955-25.785-29.07-29.685-29.07Zm2.28 46.74h-7.95v-15h12V45h-12V30h7.5c2.835 0 17.1 1.14 17.13 18.75.03 17.61-14.64 17.415-16.68 17.415v.075Z"
-                                  fill="#fff"
-                                ></path></svg
-                            ></span>
-                            <span
-                              class="ms-[4px] text-[rgba(47,69,83)] text-[14px]"
-                              >DOGE</span
-                            >
-                          </div></button
-                        ><button
-                          type="button"
-                          tabindex="0"
-                          class="inline-flex relative items-center gap-2 font-semibold whitespace-nowrap ring-offset-background transition disabled:pointer-events-none disabled:opacity-50 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 active:scale-[0.98] bg-transparent text-grey-400 betterhover:hover:bg-grey-200 betterhover:hover:text-neutral-black focus-visible:outline-grey-300 text-xs leading-none [&amp;_svg]:text-grey-400 [&amp;:hover>svg]:text-grey-400 rounded-none justify-start px-3 py-[6px] shadow-none min-h-[33px] hover:bg-[rgba(177,186,211)]"
-                        >
-                          <div class="currency">
-                            <span class="content"
-                              ><span class="text-[14px] text-[rgba(47,69,83)]"
-                                >0.00000000</span
-                              ></span
-                            >
-                            <span class="" title="bch"
-                              ><svg
-                                fill="none"
-                                viewBox="0 0 96 96"
-                                class="svg-icon"
-                                style="width: 14px; height: 14px"
-                              >
-                                <title></title>
-                                <path
-                                  d="M96 48c0 26.51-21.49 48-48 48S0 74.51 0 48 21.49 0 48 0s48 21.49 48 48Z"
-                                  fill="#8DC351"
-                                ></path>
-                                <path
-                                  d="M60.915 29.25c-3.21-5.49-9-5.115-15.57-2.76l-3.705-7.98-4.845 2.25 3.6 7.74-3.855 1.845L33 22.5l-4.845 2.235 3.69 7.965c-1.035.51-2.07 1.02-3.075 1.5l-6.69 3.09 2.4 5.19s3.54-1.74 3.51-1.635a2.758 2.758 0 0 1 3.774.815l.006.01 4.2 9.075.525-.21-.51.24 5.895 12.72a1.891 1.891 0 0 1-1.142 2.501l-.013.004c.09 0-3.525 1.635-3.525 1.635l1.71 6.24 6.315-2.925 3.48-1.575 3.795 8.01 4.845-2.235-3.69-7.98c1.335-.585 2.625-1.17 3.885-1.755l3.675 7.935L66 71.1 62.28 63c7.935-4.245 12.69-9 9.855-16.92-2.28-6.435-6.465-7.845-11.595-6.81 2.145-2.67 2.73-6 .375-10.02ZM62.1 49.62c2.805 6-7.83 10.11-11.115 11.64L46.05 50.58c3.285-1.515 13.155-7.245 16.05-.96Zm-9.225-14.01c2.535 5.475-6.36 8.82-9.09 10.08L39.3 36c2.7-1.26 10.935-6.105 13.575-.39Z"
-                                  fill="#fff"
-                                ></path></svg
-                            ></span>
-                            <span
-                              class="ms-[4px] text-[rgba(47,69,83)] text-[14px]"
-                              >BCH</span
-                            >
-                          </div></button
-                        ><button
-                          type="button"
-                          tabindex="0"
-                          class="inline-flex relative items-center gap-2 font-semibold whitespace-nowrap ring-offset-background transition disabled:pointer-events-none disabled:opacity-50 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 active:scale-[0.98] bg-transparent text-grey-400 betterhover:hover:bg-grey-200 betterhover:hover:text-neutral-black focus-visible:outline-grey-300 text-xs leading-none [&amp;_svg]:text-grey-400 [&amp;:hover>svg]:text-grey-400 rounded-none justify-start px-3 py-[6px] shadow-none min-h-[33px] hover:bg-[rgba(177,186,211)]"
-                        >
-                          <div class="currency">
-                            <span class="content"
-                              ><span class="text-[14px] text-[rgba(47,69,83)]"
-                                >0.00000000</span
-                              ></span
-                            >
-                            <span class="" title="xrp"
-                              ><svg
-                                fill="none"
-                                viewBox="0 0 96 96"
-                                class="svg-icon"
-                                style="width: 14px; height: 14px"
-                              >
-                                <title></title>
-                                <path
-                                  d="M95.895 48.105C95.895 74.557 74.451 96 48 96 21.548 96 .105 74.556.105 48.105.105 21.653 21.548.21 48 .21c26.451 0 47.895 21.443 47.895 47.895Z"
-                                  fill="#5E5E5E"
-                                ></path>
-                                <path
-                                  d="m69.72 74.295-7.5-7.41-6.84-6.78a11.11 11.11 0 0 0-7.905-3.289 11.11 11.11 0 0 0-7.904 3.288v.001l-14.326 14.19h-9l1.305-1.35 4.5-4.5 10.305-10.2c1.23-1.215 2.43-2.475 3.735-3.6a16.52 16.52 0 0 1 9.057-4.058l.078-.007a16.705 16.705 0 0 1 2.358-.162 17.15 17.15 0 0 1 11.371 4.289l-.019-.017c1.065.915 2.01 1.935 3 2.91L74.16 69.69l4.305 4.275c.081.074.15.157.207.25l.003.005-8.955.075ZM25.395 22.5l5.1 5.07c2.34 2.31 4.65 4.62 6.99 6.915a41.505 41.505 0 0 0 3.162 2.948l.063.052a10.998 10.998 0 0 0 6.803 2.337c3.062 0 5.833-1.243 7.837-3.252 3.27-3.27 6.57-6.51 9.87-9.78l4.38-4.29h9l-1.02 1.08L68.025 33l-8.31 8.22a16.752 16.752 0 0 1-9.604 4.746l-.086.01a16.57 16.57 0 0 1-2.65.206 17 17 0 0 1-11.772-4.713l.007.006c-1.665-1.5-3.225-3.15-4.83-4.74L16.62 22.71c-.075-.075-.135-.165-.21-.255l8.985.045Z"
-                                  fill="#fff"
-                                ></path></svg
-                            ></span>
-                            <span
-                              class="ms-[4px] text-[rgba(47,69,83)] text-[14px]"
-                              >XRP</span
-                            >
-                          </div></button
-                        ><button
-                          type="button"
-                          tabindex="0"
-                          class="inline-flex relative items-center gap-2 font-semibold whitespace-nowrap ring-offset-background transition disabled:pointer-events-none disabled:opacity-50 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 active:scale-[0.98] bg-transparent text-grey-400 betterhover:hover:bg-grey-200 betterhover:hover:text-neutral-black focus-visible:outline-grey-300 text-xs leading-none [&amp;_svg]:text-grey-400 [&amp;:hover>svg]:text-grey-400 rounded-none justify-start px-3 py-[6px] shadow-none min-h-[33px] hover:bg-[rgba(177,186,211)]"
-                        >
-                          <div class="currency">
-                            <span class="content"
-                              ><span class="text-[14px] text-[rgba(47,69,83)]"
-                                >0.00000000</span
-                              ></span
-                            >
-                            <span class="" title="trx"
-                              ><svg
-                                fill="none"
-                                viewBox="0 0 96 96"
-                                class="svg-icon"
-                                style="width: 14px; height: 14px"
-                              >
-                                <title></title>
-                                <path
-                                  d="M95.895 48.105C95.895 74.557 74.452 96 48 96S.105 74.556.105 48.105C.105 21.653 21.548.21 48 .21s47.895 21.443 47.895 47.895Z"
-                                  fill="#EB0A29"
-                                ></path>
-                                <path
-                                  d="M19.065 21a14.2 14.2 0 0 0 2.22.457l.075.008 45.645 8.355c.235.03.441.134.6.285l12.06 11.475c.195.18.225.285 0 .51-3.36 4.07-6.71 8.145-10.05 12.225L50.82 77.28l-6.21 7.5-.195.21-1.005-2.49c-3.89-9.76-7.77-19.52-11.64-29.28-4.18-10.55-8.385-21.115-12.615-31.695a2.86 2.86 0 0 1-.161-.505L18.99 21h.075Zm25.2 54.495h.09c.165-1.5.345-3 .525-4.5.345-2.775.675-5.535 1.02-8.31.3-2.55.6-5.1.915-7.65.315-2.55.615-5.13.93-7.695a.599.599 0 0 0-.253-.629h-.002L25.83 28.694h-.075l18.51 46.8Zm3.48.18 25.635-31.23h-.345L63 46.305l-11.685 2.1c-.3 0-.375.195-.405.465 0 .825-.18 1.62-.285 2.43-.33 2.775-.675 5.55-1.005 8.325a1942.5 1942.5 0 0 1-.93 7.695l-.945 8.355Zm-19.5-49.5v.09l2.55 2.235 18.195 15a.434.434 0 0 0 .69.001V43.5c3.84-3.22 7.69-6.435 11.55-9.645l1.59-1.32-34.575-6.36ZM53.85 44.46c.45 0 19.5-3.435 19.995-3.6 0 0 0-.105-.105-.15a686.293 686.293 0 0 1-6.825-6.495c-.315-.3-.465-.255-.765 0-2.85 2.4-5.73 4.785-8.595 7.17-1.2 1.005-2.415 2.01-3.705 3.075Z"
-                                  fill="#fff"
-                                ></path></svg
-                            ></span>
-                            <span
-                              class="ms-[4px] text-[rgba(47,69,83)] text-[14px]"
-                              >TRX</span
-                            >
-                          </div></button
-                        ><button
-                          type="button"
-                          tabindex="0"
-                          class="inline-flex relative items-center gap-2 font-semibold whitespace-nowrap ring-offset-background transition disabled:pointer-events-none disabled:opacity-50 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 active:scale-[0.98] bg-transparent text-grey-400 betterhover:hover:bg-grey-200 betterhover:hover:text-neutral-black focus-visible:outline-grey-300 text-xs leading-none [&amp;_svg]:text-grey-400 [&amp;:hover>svg]:text-grey-400 rounded-none justify-start px-3 py-[6px] shadow-none min-h-[33px] hover:bg-[rgba(177,186,211)]"
-                        >
-                          <div class="currency">
-                            <span class="content">
-                              <span class="text-[14px] text-[rgba(47,69,83)]"
-                                >0.00000000</span
-                              ></span
-                            >
-                            <span class="" title="eos"
-                              ><svg
-                                fill="none"
-                                viewBox="0 0 96 96"
-                                class="svg-icon"
-                                style="width: 14px; height: 14px"
-                              >
-                                <title></title>
-                                <path
-                                  d="M96 48c0 26.51-21.49 48-48 48S0 74.51 0 48 21.49 0 48 0s48 21.49 48 48Z"
-                                  fill="#E7EAEF"
-                                ></path>
-                                <path
-                                  d="M48 84.75a2.426 2.426 0 0 1-.752-.125l.017.005a2.323 2.323 0 0 1-.445-.216l.01.006-22.995-13.785a2.237 2.237 0 0 1-1.017-2.476l-.003.016 8.055-33.36c.064-.28.179-.526.334-.741l-.004.006 15-21.855a2.354 2.354 0 0 1 3.716-.005l.004.005 15 21.855c.151.209.265.455.327.721l.003.014 8.055 33.36a2.234 2.234 0 0 1-1.01 2.454l-.01.006L49.17 84.42c-.12.074-.26.14-.405.19l-.015.005c-.223.085-.48.135-.749.135H48Zm14.37-42.18-10.5 35.01 16.59-9.96-6.09-25.05Zm-34.8 25.05 16.59 9.96-10.5-35.01-6.09 25.05ZM36 34.98 48 74.7l12-39.72-12-17.49-12 17.49Z"
-                                  fill="#231F20"
-                                ></path></svg
-                            ></span>
-                            <span
-                              class="ms-[4px] text-[rgba(47,69,83)] text-[14px]"
-                              >EOS</span
-                            >
-                          </div></button
-                        ><button
-                          type="button"
-                          tabindex="0"
-                          class="inline-flex relative items-center gap-2 font-semibold whitespace-nowrap ring-offset-background transition disabled:pointer-events-none disabled:opacity-50 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 active:scale-[0.98] bg-transparent text-grey-400 betterhover:hover:bg-grey-200 betterhover:hover:text-neutral-black focus-visible:outline-grey-300 text-xs leading-none [&amp;_svg]:text-grey-400 [&amp;:hover>svg]:text-grey-400 rounded-none justify-start px-3 py-[6px] shadow-none min-h-[33px] hover:bg-[rgba(177,186,211)]"
-                        >
-                          <div class="currency">
-                            <span class="content"
-                              ><span class="text-[14px] text-[rgba(47,69,83)]"
-                                >0.00000000</span
-                              ></span
-                            >
-                            <span class="" title="bnb"
-                              ><svg
-                                fill="none"
-                                viewBox="0 0 96 96"
-                                class="svg-icon"
-                                style="width: 14px; height: 14px"
-                              >
-                                <title></title>
-                                <path
-                                  d="M96 48c0 26.51-21.49 48-48 48S0 74.51 0 48 21.49 0 48 0s48 21.49 48 48Z"
-                                  fill="#F3BA2F"
-                                ></path>
-                                <path
-                                  d="M36.348 43.212 48 31.56l11.658 11.658 6.78-6.78L48 18 29.568 36.432l6.78 6.78ZM18 48l6.78-6.78L31.56 48l-6.78 6.78L18 48Zm18.348 4.788L48 64.44l11.658-11.658 6.78 6.777L48 78 29.559 59.559l6.789-6.771ZM64.44 48l6.78-6.78L78 48l-6.78 6.78L64.44 48Zm-9.564-.006h.006V48L48 54.882 41.115 48l.012-.009 1.788-1.791L48 41.118l6.879 6.879-.003-.003Z"
-                                  fill="#fff"
-                                ></path></svg
-                            ></span>
-                            <span
-                              class="ms-[4px] text-[rgba(47,69,83)] text-[14px]"
-                              >BNB</span
-                            >
-                          </div></button
-                        ><button
-                          type="button"
-                          tabindex="0"
-                          class="inline-flex relative items-center gap-2 font-semibold whitespace-nowrap ring-offset-background transition disabled:pointer-events-none disabled:opacity-50 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 active:scale-[0.98] bg-transparent text-grey-400 betterhover:hover:bg-grey-200 betterhover:hover:text-neutral-black focus-visible:outline-grey-300 text-xs leading-none [&amp;_svg]:text-grey-400 [&amp;:hover>svg]:text-grey-400 rounded-none justify-start px-3 py-[6px] shadow-none min-h-[33px] hover:bg-[rgba(177,186,211)]"
-                        >
-                          <div class="currency">
-                            <span class="content"
-                              ><span class="text-[14px] text-[rgba(47,69,83)]"
-                                >0.00000000</span
-                              ></span
-                            >
-                            <span class="" title="usdc"
-                              ><svg
-                                fill="none"
-                                viewBox="0 0 96 96"
-                                class="svg-icon"
-                                style="width: 14px; height: 14px"
-                              >
-                                <title></title>
-                                <path
-                                  d="M48 96c26.51 0 48-21.49 48-48S74.51 0 48 0 0 21.49 0 48s21.49 48 48 48Z"
-                                  fill="#0F97F8"
-                                ></path>
-                                <path
-                                  d="M37.76 85.96c0 1.28-1.04 2-2.24 1.64-16.6-5.28-28.56-20.76-28.56-39.12 0-18.36 11.96-33.8 28.56-39.08 1.24-.4 2.24.36 2.24 1.64v3.2c0 .84-.64 1.84-1.44 2.12C23.2 21.2 13.84 33.8 13.84 48.48c0 14.68 9.36 27.32 22.48 32.08.8.28 1.44 1.28 1.44 2.12v3.28Z"
-                                  fill="#fff"
-                                ></path>
-                                <path
-                                  d="M51.4 74.12c0 .96-.76 1.72-1.72 1.72h-3.4c-.96 0-1.72-.76-1.72-1.72v-5.4c-7.48-1.04-11.12-5.16-12.08-10.88-.16-1 .6-1.84 1.6-1.84h3.88c.8 0 1.48.6 1.68 1.36.72 3.36 2.68 6 8.68 6 4.4 0 7.56-2.48 7.56-6.16s-1.84-5.08-8.32-6.16c-9.56-1.28-14.12-4.2-14.12-11.68 0-5.76 4.4-10.32 11.16-11.24v-5.28c0-.96.76-1.72 1.72-1.72h3.4c.96 0 1.72.76 1.72 1.72v5.44c5.52 1 9 4.12 10.16 9.32.2 1-.56 1.88-1.6 1.88h-3.6c-.76 0-1.4-.52-1.64-1.24-1-3.28-3.32-4.76-7.44-4.76-4.52 0-6.88 2.16-6.88 5.24 0 3.24 1.32 4.88 8.28 5.84C58.12 45.84 63 48.52 63 56.52c0 6.08-4.52 11-11.6 12.08v5.48h-.04l.04.04Z"
-                                  fill="#fff"
-                                ></path>
-                                <path
-                                  d="M60.48 87.6c-1.24.4-2.24-.36-2.24-1.64v-3.2c0-.96.56-1.84 1.44-2.12 13.08-4.8 22.48-17.4 22.48-32.08S72.8 21.24 59.68 16.48c-.8-.28-1.44-1.28-1.44-2.12v-3.2c0-1.28 1.04-2 2.24-1.64 16.6 5.2 28.56 20.72 28.56 39.04s-11.96 33.8-28.56 39.12v-.08Z"
-                                  fill="#fff"
-                                ></path></svg
-                            ></span>
-                            <span
-                              class="ms-[4px] text-[rgba(47,69,83)] text-[14px]"
-                              >USDC</span
-                            >
-                          </div></button
-                        ><button
-                          type="button"
-                          tabindex="0"
-                          class="inline-flex relative items-center gap-2 font-semibold whitespace-nowrap ring-offset-background transition disabled:pointer-events-none disabled:opacity-50 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 active:scale-[0.98] bg-transparent text-grey-400 betterhover:hover:bg-grey-200 betterhover:hover:text-neutral-black focus-visible:outline-grey-300 text-xs leading-none [&amp;_svg]:text-grey-400 [&amp;:hover>svg]:text-grey-400 rounded-none justify-start px-3 py-[6px] shadow-none min-h-[33px] hover:bg-[rgba(177,186,211)]"
-                          data-testid="coin-toggle-currency-ape"
-                          data-test="coin-toggle-currency-ape"
-                          aria-label="Select ape"
-                          data-button-root=""
-                        >
-                          <div class="currency">
-                            <span class="content"
-                              ><span class="text-[14px] text-[rgba(47,69,83)]"
-                                >0.00000000</span
-                              ></span
-                            >
-                            <span class="" title="ape"
-                              ><svg
-                                fill="none"
-                                viewBox="0 0 96 96"
-                                class="svg-icon"
-                                style="width: 14px; height: 14px"
-                              >
-                                <title></title>
-                                <path
-                                  d="M96 48c0 2.4-.16 4.8-.52 7.12-.08.56-.16 1.12-.28 1.68-.48 2.64-1.2 5.2-2.12 7.68h-.04s0 .08-.04.12c-.4 1.12-.8 2.24-1.32 3.32-2.4 5.24-5.68 9.96-9.68 14h-.04c-.72.76-1.48 1.44-2.24 2.12a47.53 47.53 0 0 1-24.96 11.48c-.2.04-.4.04-.6.08-2 .28-4.08.4-6.16.4-4.96 0-9.76-.76-14.28-2.16h-.08c-.8-.24-1.56-.48-2.32-.8-4-1.44-7.76-3.44-11.16-5.88-.88-.6-1.76-1.28-2.6-2-.04 0-.08-.08-.16-.08a51.185 51.185 0 0 1-6.96-7.16c-.96-1.2-1.88-2.44-2.68-3.72 0-.04 0-.08-.04-.08-3.84-5.84-6.36-12.6-7.28-19.8-.12-.56-.16-1.08-.2-1.6A45.84 45.84 0 0 1 0 48.04a33 33 0 0 1 .16-3.44c0-.44.04-.88.08-1.36.88-9.04 4.32-17.4 9.56-24.28.4-.52.84-1.04 1.28-1.56C19.88 6.76 33.16 0 48 0c3.04 0 6 .28 8.88.84.72.12 1.44.28 2.12.44 4.04.92 7.84 2.36 11.4 4.24.68.36 1.32.76 2 1.12C82 12.32 89.48 21.28 93.24 32c.2.44.36.92.48 1.36.88 2.68 1.48 5.44 1.84 8.28.12.6.16 1.2.24 1.76.12 1.52.2 3.04.2 4.6Z"
-                                  fill="#024AD6"
-                                ></path>
-                                <path
-                                  d="M91.88 66.76c-.08.4-.12.8-.2 1.16.52-1.08.92-2.2 1.32-3.32-.6.56-1 1.36-1.12 2.16Zm1.84-8.92c-1.28 1.84-2.8 3.52-4.48 5.04-.84.76-1.36 1.8-1.48 2.92-.08.76-.2 1.52-.32 2.24-1.16 6.08-3.88 10.32-4.88 11.92l-2.84 4.08c.76-.68 1.52-1.36 2.24-2.08H82l1.08-1.64c1.08-1.64 3.84-5.96 5-12.16.16-.76.24-1.52.36-2.28.08-1 .52-1.88 1.28-2.52 1.68-1.56 3.2-3.28 4.52-5.16.32-.44.64-.92.96-1.4.12-.56.2-1.12.28-1.68-.56.96-1.12 1.84-1.76 2.72ZM9.68 19.24c-.8 2.2-1.36 4.44-1.64 6.72l-.2.64-.28.44c-1.24 1.88-3.84 5.8-4.84 11.44-.12.6-.36 1.2-.68 1.76L.24 43.2c-.04.48-.08.92-.08 1.36.12-.2.28-.44.44-.68l2-3.28c.36-.64.64-1.32.76-2 1-5.52 3.52-9.36 4.76-11.2l.16-.24.4-1.08c.32-2.24.84-4.48 1.64-6.6l.2-.6s.08-.2.2-.52c.08-.28.2-.6.36-1-.44.52-.88 1.04-1.28 1.56l-.12.32Zm85.88 22.4c-.08.24-.16.44-.24.64v.28c-.24 1.8-.64 3.56-1.2 5.28-.88 2.68-2.2 5.2-3.84 7.48-1.4 2-3.08 3.8-4.96 5.32-.52.36-.92.88-1.2 1.44-.28.56-.44 1.16-.48 1.8 0 1.12-.16 2.24-.4 3.36-.96 5.28-3.36 8.96-4.36 10.52L76.6 81.2c-3.48 4.6-7.56 7.56-12.48 9.08l-1 .32-1.08.2c-1.4.24-2.8.36-4.24.36h-1.48l-1.64.08c-.88 0-1.72.16-2.56.44-3.44 1.16-7.44 1.72-12.6 1.72-2.92 0-5.76-.2-8.2-.4.76.32 1.52.56 2.32.8h.08c1.84.08 3.8.16 5.8.16 5.2 0 9.28-.56 12.8-1.72.76-.28 1.56-.4 2.36-.44l1.68-.08h1.4c1.48.04 2.92-.12 4.36-.36l1.16-.2 1.04-.32c5.04-1.56 9.24-4.6 12.76-9.32l2.32-3.44c1.04-1.6 3.48-5.36 4.48-10.76.2-1.16.32-2.32.4-3.48 0-.52.16-1.04.4-1.52.24-.48.6-.92 1-1.24 1.96-1.56 3.68-3.4 5.08-5.44 1.72-2.32 3.04-4.92 3.92-7.64.52-1.52.88-3.08 1.12-4.64-.08-.56-.12-1.16-.24-1.76v.04ZM35.88 4.12h.96c1.72 0 3.4.24 5.08.64 1.52.4 3.12.24 4.56-.48 2.8-1.36 5.6-2.2 8.36-2.56.2 0 .4-.04.56-.08.44 0 1.08-.12 1.92-.2.48-.04 1.04-.08 1.68-.12-.68-.16-1.4-.32-2.12-.44-.64.08-1.2.12-1.56.16-.16.04-.36.04-.6.08-2.8.36-5.68 1.24-8.52 2.6-1.28.64-2.76.8-4.16.44-1.68-.44-3.44-.64-5.2-.64H35.4c-2.04.16-4.08.52-6.04 1.08-3.4 1-6.56 2.8-9.16 5.16l-.96.88-.88 1.08c-2.64 3.24-3.64 6.24-4.2 7.84-.08.32-.16.52-.24.68l-.16.48c-.72 2.04-1.24 4.12-1.48 6.2-.12.28-.2.56-.28.8l-.12.4c-.08.24-.2.52-.28.68l-.44.64c-1.12 1.72-3.52 5.32-4.28 10.36-.12.76-.4 1.52-.76 2.2l-1.2 2.2-.12.16s-.28.36-.44.56l-.6.84C2.12 48.12.96 50.4.24 52.72c.04.52.08 1.04.2 1.6.64-2.72 1.88-5.4 3.84-8.24l.56-.76.48-.6 1.32-2.4c.44-.76.72-1.6.84-2.44.76-4.88 3.08-8.4 4.24-10.08l.44-.72c.08-.2.2-.48.32-.76l.12-.4c.08-.24.16-.52.28-.84.24-2.08.76-4.16 1.48-6.12l.16-.48.24-.72c.52-1.56 1.52-4.48 4.08-7.64l.84-1.08.92-.8c2.56-2.32 5.64-4.04 8.92-5.04 1.92-.56 3.92-.92 5.92-1.04h.44v-.04Z"
-                                  fill="#6FC0FF"
-                                ></path>
-                                <path
-                                  d="M93.24 32c-.04 1.44-.28 2.68-.44 3.6v.12c-.32 1.8-.84 3.56-1.56 5.24v.2l-.08.16c0 .16-.08.32-.08.48v.24c-.2 1.48-.52 3-1.04 4.44-.72 2.28-1.84 4.44-3.24 6.36-1.4 2-2.96 3.6-4.72 4.88-.8.6-1.48 1.4-1.96 2.28-.44.88-.72 1.92-.72 2.92 0 1.2-.12 2.36-.36 3.56-.8 4.44-2.76 7.48-3.84 9.12l-1.68 2.52c-2.96 4.16-6.44 6.8-10.68 8.08l-.2.08c-.36.12-.72.2-1.08.24l-.28.08c-1.16.2-2.32.28-3.48.28h-1.04s-.32 0-.72.04h-.72c-.48.04-1.04.04-1.56.08-.88.04-1.8.2-2.64.52-3.04 1.08-6.76 1.6-11.6 1.6-3.08 0-6.08-.2-8.64-.4l-.76-.08c-.52-.08-1.08-.12-1.64-.2-2.32-.24-5.48-.6-9-2.24l-.84-.44c-.36-.2-.72-.4-1.08-.64.84.72 1.72 1.4 2.6 2 3.24 1.36 6.12 1.68 8.28 1.92.52.04 1.08.12 1.6.16l.8.08c2.56.2 5.6.44 8.68.44 4.92 0 8.68-.52 11.8-1.64.8-.32 1.64-.48 2.48-.52.48 0 1.04-.04 1.56-.04h.72l1.76-.04c1.16 0 2.36-.12 3.52-.32h.28c.4-.12.76-.2 1.16-.32l.2-.08c4.36-1.32 7.96-4.04 11-8.32l1.68-2.52c1.08-1.68 3.08-4.76 3.96-9.36.2-1.2.32-2.4.32-3.64.04-.92.28-1.84.68-2.64.44-.84 1.04-1.56 1.8-2.08 1.8-1.32 3.4-2.96 4.84-5 1.44-2 2.56-4.2 3.32-6.52.52-1.48.84-3.04 1.04-4.6v-.2s.04-.28.08-.48l.08-.2c.72-1.72 1.24-3.52 1.56-5.36v-.16c.12-.64.24-1.44.36-2.32-.12-.44-.28-.92-.48-1.36ZM18.48 22c.12-.32.2-.56.36-.92.44-1.4 1.24-3.76 3.32-6.32l.64-.76.68-.64C28.4 8.88 33.92 8.52 35.76 8.4h.32l.72-.04c2.2 0 4.32.44 6.36 1.28.4.2.8.28 1.24.24.44 0 .84-.12 1.2-.32h.08c1.84-1.08 5.28-3.08 9.72-3.64.2 0 .4-.04.52-.04.4-.08 1.04-.12 1.8-.2 1.32-.12 3.32-.28 5.48-.28 3.6 0 6.64.4 9.2 1.24-.68-.36-1.32-.76-2-1.12-2.12-.48-4.48-.72-7.2-.72-2.16 0-4.2.16-5.56.28-.76.08-1.4.16-1.76.2-.16.04-.36.04-.56.08-4.48.56-7.96 2.52-9.88 3.64h-.04c-.32.2-.68.28-1 .28-.36.04-.72-.04-1.04-.16-2.08-.88-4.28-1.32-6.56-1.32h-1.08c-1.88.16-7.56.52-12.64 5.12l-.72.68-.68.8c-2.12 2.64-2.92 5.04-3.4 6.52-.12.32-.2.56-.32.88l-.16.36c-.64 1.84-1.12 3.72-1.28 5.6-.04.08-.04.12-.04.12-.2.6-.4 1.2-.52 1.6-.24.64-.52 1.24-.6 1.44l-.36.52s-.08.16-.16.24l-.08.12c-1.08 1.64-3.36 5.08-3.76 9.72-.04.52-.16 1-.36 1.48l-.44 1.16c-.12.32-.32.64-.56.96-.36.44-.72.88-1.04 1.36l-.08.08s-.28.36-.44.56l-.76 1.04c-4.04 5.8-4.8 10.88-2.76 18.12l.12.4c.44 1.4.96 2.88 1.72 4.44l.48 1.08.12.24c.24.52.48 1.08.72 1.64.04 0 .04 0 .04.08.8 1.28 1.72 2.52 2.68 3.72-1.28-2-2.16-3.96-2.92-5.68l-.12-.24-.48-1.08c-.76-1.52-1.24-3-1.68-4.36l-.12-.4c-2-7.04-1.24-12 2.64-17.64l.8-1s.28-.36.4-.56l.08-.12c.36-.44.68-.88 1.04-1.32.28-.36.52-.72.64-1.12l.48-1.16c.2-.52.32-1.08.36-1.6.4-4.52 2.6-7.84 3.68-9.48l.08-.12s.16-.2.2-.24l.32-.56c.16-.24.4-.84.68-1.52.12-.4.32-1.04.52-1.64v-.12c.24-1.92.68-3.8 1.32-5.56l.12-.36Z"
-                                  fill="#6FC0FF"
-                                ></path>
-                                <path
-                                  d="m88.16 25.08-.16-.36-.2-.36c-1.36-2.2-2.88-3.36-3.8-4.08-.2-.16-.4-.32-.56-.48l-.48-.44c-.92-.84-1.36-1.4-2-2.2-2-2.56-4.08-4.84-9.32-6.8l-.24-.08c-2.2-.8-4.92-1.16-8.2-1.16-2 0-3.92.16-5.16.24-.72.08-1.28.16-1.68.2-.12 0-.32 0-.48.08-3.68.44-6.64 2.12-8.4 3.16-.8.4-1.6.76-2.48 1.08-.28.12-.6.16-.96.16a3.46 3.46 0 0 1-.92-.24c-1.4-.64-4.08-1.72-6.32-1.72H36c-2.6.16-6.48.76-10.04 4l-.48.44-.44.56c-1.68 2.04-2.28 3.88-2.68 5.12-.12.4-.24.72-.4 1.12l-.08.24c-.56 1.52-.96 3.12-1.12 4.76-.08.44-.08.48-.12.64-.24.64-.48 1.48-.6 1.88-.36 1-.88 2.04-1.04 2.32l-.36.52s-.12.2-.2.32l-.12.16c-1.04 1.56-2.96 4.48-3.08 8.32v.92l-.08 1.4c0 .32-.16.64-.36.88-1.2 1.28-2 2.32-2.88 3.44-.24.32-.48.68-.76 1.04l-.32.4c-3.24 4.72-3.8 8.52-2.12 14.52l.08.28c.36 1.16.84 2.52 1.48 3.84.2.48.44.96.64 1.44 1.72 3.84 3.84 8.64 9.56 11.84l.56.28c3 1.4 5.68 1.72 7.88 1.92.56.08 1.12.16 1.72.24h.52c2.48.24 5.44.44 8.36.44 4.96 0 8.56-.56 11.32-1.8.2-.08.44-.16.68-.2.48-.08 2.28-.16 4.04-.2h.24c.48-.04.76-.04.96-.04h1c.96 0 1.92-.08 2.88-.24l.6-.12.52-.16c4.84-1.48 10-8.6 10.24-8.92 1.08-1.68 2.68-4.2 3.4-7.96.4-2.2.28-4.36.16-6.24-.04-.12 0-.32 0-.6.04-.6.2-1.16.56-1.68.32-.48.8-.88 1.32-1.12 2.48-1.12 4.56-2.92 6.32-5.44 1.2-1.64 2.12-3.48 2.76-5.4.4-1.2.68-2.48.84-3.72v-.2c0-.24.08-.48.12-.76.04-.36.16-.72.32-1.04v-.08c.64-1.4 1.04-2.88 1.28-4.36v-.16c.4-2.2 1.04-5.92-.92-9.88v.04Zm.44 9.8V35c-.28 1.48-.68 2.92-1.28 4.32h-.04c-.16.4-.28.8-.32 1.2-.08.28-.08.52-.12.76v.2a19.2 19.2 0 0 1-.84 3.64c-.6 1.88-1.52 3.64-2.68 5.24-1.72 2.44-3.72 4.16-6.08 5.28-.64.28-1.2.72-1.56 1.32-.4.56-.64 1.24-.68 1.96v.64c.12 1.84.28 3.96-.16 6.12-.68 3.64-2.24 6.12-3.28 7.72-.08.08-5.32 7.32-9.96 8.72l-.52.16-.52.12c-.92.16-1.84.24-2.76.24-.2-.04-.4 0-.64-.04h-.4s-.52 0-1 .04h-.24c-1.92.08-3.6.16-4.08.24-.28.04-.56.12-.84.24-2.68 1.2-6.2 1.72-11.08 1.72-2.92 0-5.84-.2-8.32-.36l-.48-.08c-.6-.08-1.2-.12-1.76-.2-2.12-.24-4.8-.52-7.68-1.88l-.56-.28c-5.52-3.12-7.64-7.8-9.32-11.56-.2-.48-.4-.96-.64-1.44-.64-1.32-1.08-2.64-1.44-3.8l-.08-.28c-1.64-5.8-1.12-9.48 2.04-14.04l.28-.4c.28-.36.56-.68.8-1.04.84-1.08 1.64-2.12 2.84-3.4.28-.32.48-.76.52-1.2l.08-1.44v-.4l-.04-.48c.16-3.72 2-6.52 3.04-8.08l.08-.16s.16-.24.24-.32l.32-.48c.2-.32.72-1.4 1.12-2.44.12-.44.36-1.28.6-1.92.08-.24.08-.28.12-.76.16-1.56.56-3.12 1.08-4.64l.08-.2c.16-.44.28-.76.44-1.16.36-1.2.96-3 2.56-4.96l.44-.52.44-.4c3.44-3.12 7.2-3.72 9.72-3.88h.76c2.16 0 4.72 1.04 6.08 1.64.36.16.76.28 1.16.28.4 0 .8-.04 1.16-.2.88-.28 1.72-.68 2.56-1.12 1.72-1 4.6-2.64 8.16-3.08.2-.04.36-.04.52-.08.4-.04.96-.08 1.64-.16 1.24-.12 3.12-.28 5.12-.28 3.24 0 5.88.4 8.04 1.12l.2.08c5.12 1.92 7.16 4.16 9.12 6.68.64.8 1.12 1.4 2.04 2.24l.44.4s.44.4.64.56c.88.68 2.36 1.8 3.64 3.92l.2.32.16.36c1.88 3.8 1.28 7.4.92 9.56Z"
-                                  fill="#6FC0FF"
-                                ></path>
-                                <path
-                                  d="m84.32 26.96-.2-.36c-.92-1.52-1.96-2.32-2.72-2.92-.36-.28-.72-.56-1.04-.88l-.24-.24c-1.2-1.08-1.84-1.88-2.52-2.76-1.72-2.2-3.24-3.84-7.52-5.48H70c-1.76-.6-3.96-.92-6.8-.92-1.44 0-3.04.08-4.72.24-.68.08-1.2.12-1.52.16h-.08s-.28 0-.44.08c-2.84.32-5.24 1.72-6.84 2.64-1.52.84-3.76 1.68-5.08 2.04-.64.16-1.32.08-1.88-.2-.24-.12-.48-.28-.8-.44l-.24-.12c-1.08-.56-2.68-1.44-4.8-1.44h-.48c-2.12.16-4.92.64-7.48 2.96l-.24.2-.24.28c-1.16 1.44-1.56 2.68-1.92 3.8-.16.4-.28.8-.52 1.36v.08c-.48 1.24-.76 2.52-.92 3.84-.04.52-.12 1-.28 1.48-.2.52-.4 1.16-.52 1.6l-.08.28c-.48 1.24-1.2 2.92-1.64 3.48l-.2.28-.24.36-.12.2c-.92 1.4-2.32 3.44-2.4 6.12v.6c.08.4.12.8.2 1.2l.44 1.2s.08.36.04.52a.96.96 0 0 1-.28.48c-2.32 2.16-3.36 3.52-4.56 5.08-.28.36-.52.68-.84 1.08l-.16.2c-2.52 3.68-2.88 6.12-1.52 10.92v.12c.36 1.04.76 2.24 1.32 3.32.2.48.4.92.64 1.4v.16c1.64 3.6 3.32 7.32 7.76 9.8l.32.16c2.32 1.12 4.44 1.32 6.48 1.56.6.08 1.24.12 1.88.2h.28c2.36.24 5.2.44 8 .44 4.36 0 7.44-.48 9.68-1.44.48-.24 1-.4 1.52-.48.8-.16 2.24-.2 4.6-.28h.24c.56-.04.96-.04 1.2-.04h1c.76 0 1.44-.08 2.16-.2h.32l.24-.12c3.72-1.12 7.68-6.8 7.84-7.08 1.04-1.6 2.32-3.56 2.88-6.52.32-1.68.2-3.44.08-5.2-.08-1.28-.28-4 .28-4.6l.4-.56c.6-.92 1.52-1.6 2.56-1.92 2.36-.76 4.12-2.16 5.76-4.52.96-1.28 1.72-2.72 2.2-4.24.32-.96.52-1.92.64-2.92v-.2c0-.28.08-.6.16-.96.12-.68.32-1.32.56-1.92.52-1.12.84-2.32 1.04-3.52v-.16c.36-1.92.8-4.52-.56-7.28Zm.08 7.2v.16c-.24 1.16-.56 2.28-1.04 3.36-.28.68-.48 1.36-.6 2.04-.08.4-.12.72-.16 1v.24c-.12.92-.36 1.88-.64 2.8-.48 1.48-1.16 2.84-2.12 4.08-1.56 2.28-3.24 3.6-5.48 4.32-1.16.36-2.2 1.12-2.84 2.16l-.4.48c-.6.68-.52 2.88-.36 5.08.08 1.64.2 3.36-.12 5-.52 2.84-1.76 4.76-2.76 6.32 0 .04-4.04 5.76-7.56 6.84h-.2l-.28.12c-.68.12-1.4.16-2.08.16h-2.44c-2.44.08-3.88.16-4.68.32-.6.08-1.12.28-1.68.48-2.12.96-5.16 1.4-9.44 1.4-2.8 0-5.6-.2-7.96-.36h-.24c-.68-.12-1.28-.2-1.88-.28-2.04-.2-4.12-.44-6.36-1.48l-.24-.12c-4.32-2.44-5.92-6.08-7.52-9.6v-.16c-.24-.44-.48-.92-.68-1.4-.52-1.04-.92-2.24-1.24-3.24v-.12c-1.32-4.6-1-6.96 1.44-10.44l.12-.2c.28-.4.56-.72.8-1.08 1.2-1.56 2.24-2.88 4.52-5 .2-.2.36-.48.44-.76.04-.28.04-.56-.04-.84l-.44-1.16c-.08-.36-.12-.72-.16-1.08v-.56c.08-2.48 1.4-4.48 2.28-5.8l.12-.2s.2-.28.28-.4l.16-.24c.52-.68 1.28-2.52 1.68-3.6l.12-.32c.12-.44.32-1.08.52-1.6.16-.52.28-1.04.32-1.6.12-1.24.4-2.52.84-3.72l.08-.08c.2-.52.32-.96.48-1.36.32-1.08.72-2.28 1.84-3.6l.2-.24.2-.2c2.44-2.24 5.12-2.68 7.2-2.8h.4c2 0 3.52.8 4.52 1.36l.28.12c.28.16.56.32.8.44.68.36 1.52.44 2.28.24 1.36-.4 3.6-1.24 5.24-2.12 1.52-.88 3.88-2.24 6.6-2.56.16 0 .28-.04.4-.04H57c.32 0 .88-.12 1.52-.16 1.68-.16 3.24-.24 4.68-.24 2.76 0 4.92.28 6.64.88l.08-.28v.28c4.12 1.56 5.6 3.16 7.28 5.28.68.88 1.32 1.72 2.56 2.84l.24.2c.32.36.68.68 1.08.96.72.56 1.72 1.32 2.6 2.76l.16.32c1.28 2.6.84 5.12.56 6.96v.04Z"
-                                  fill="#6FC0FF"
-                                ></path>
-                                <path
-                                  d="M80.04 33.28c-.2 1.16-.44 1.72-.68 2.36-.28.72-.64 1.48-.92 3.08-.12.64-.16 1.08-.24 1.52v.04c-.08.64-.12 1.08-.4 1.88-.2.64-.56 1.72-1.44 2.88-.72.92-1.88 2.48-3.44 2.68h-.52c-4.44-2.28-8.28-3.96-9.6-4.32-1.52-.44-1.36-3.8-1.16-6.76.08-1.32.16-2.56.08-3.64-.2-3.72-.88-7.84-4.12-9.84-1.96-1.2-4.44-1.52-6.84-1.56.44-.2.92-.48 1.48-.8 1.4-.84 3.16-1.84 4.92-2 .56-.04 1.12-.12 1.68-.2 3.52-.4 6.52-.72 9.72.36 1.44.48 4.44 2.16 5.2 3.68.52 1.08 1.44 1.92 3.28 3.64.96.88 1.56 1.4 2.04 1.76.64.56.76.64.96 1.04.6 1.2.36 2.48.08 4.24l-.08-.04ZM63.76 48.64c.24.08.36.4.2.64-.48.72-1 1.68-1.64 2.84-.32.56-.6 1.12-.84 1.52-.88 1.48-.92 2.72-1 3.72-.04 1.04-.12 1.52-.72 1.96-.52.36-1.04.48-4.72 1-.64.08-.92.24-1.16.32-.04 0-.08 0-.12.04-.24.12-.52-.12-.48-.4 0-.52.04-1.16.04-1.92v-1.92c-.04-.92-.04-1.32.2-1.72.32-.48.56-.64.92-.88.56-.36 1.28-.8 2.4-2.36.6-.8.72-1.24.8-1.64 0-.16.04-.2.52-.56.48-.36 1.96-1.48 3.84-1.16.48.08 1.12.28 1.8.48l-.04.04ZM49.28 65.56s-.16.16-.32.16c-.4 0-.64-.08-.84-.28-.36-.44-.32-1.4-.24-1.92l1.56-.4c.12.84.16 2-.16 2.48v-.04Zm.12-5.6c0 .24-.04.48-.04.76v1.12c-.48.16-.88.16-1.44.16v-1.32c0-.28 0-.8.08-.92.16 0 .28-.04.44-.08.32-.08.72-.16 1-.12v.36l-.04.04Zm-2.88 5.12c-.08.8-.32 1.76-1.08 1.92-.32.08-.48 0-.6-.12-.52-.48-.6-1.88-.52-2.88.32 0 .76-.08 1.28-.16.32-.08.64-.12.88-.2 0 .36.04.92 0 1.44h.04Zm-.36-2.84-1.68.6c.08-.64.2-1.56.24-2.2 0-.44.16-.56.16-.6h.08l1.08-.04c.04.48.04 1.6 0 2.28l.12-.04Zm-2.68-.52c-.08.24-.2.96-.28 1.48l-2.12-.08c.12-.64.28-1.32.48-1.84.2-.52.4-.92.56-1.04.2-.12.68-.16.96.08.48.4.6.84.4 1.36v.04Zm-.8 6.44c-.16.24-.36.32-.56.36-.24 0-.4 0-.56-.16-.68-.6-.6-2.6-.6-3.56.88-.2 1.8-.36 2.28-.4.08.8.08 2.88-.56 3.76Zm-2.76-5.12c-.12.28-.2.52-.28.76-.24.08-1 0-1.76-.16l.52-3.32c.88-.24 1.88-.32 2.12-.04.32.32-.32 2.04-.6 2.76Zm-.96 5.6c-.4.52-1.04.72-1.88.72-.6 0-.8-.24-.92-.4-.48-.76 0-2.52.44-3.64l2.84.16s.04.44.08.72c0 .8-.08 1.8-.6 2.44h.04Z"
-                                  fill="#fff"
-                                ></path>
-                                <path
-                                  d="M70.2 47.64c-3.4-1.72-6.6-2.72-7.64-3-2.6-.76-2.36-4.52-2.16-8.12.08-1.28.16-2.52.12-3.52-.2-3.36-.8-7.08-3.52-8.76-2.92-1.8-7.76-1.4-10.72-1-1 .28-1.96.52-2.72.52h-.16c-1.76-.12-3.12-.84-4.32-1.48-.92-.52-1.76-.96-2.52-.96h-.12c-2.32.16-3.36.72-4.32 1.56-.24.24-.56.84-1.52 3.64-.48 1.4-.56 2.16-.64 2.92-.08.68-.16 1.36-.56 2.4-.24.72-.4 1.36-.6 1.96-.48 1.6-.84 2.84-1.96 4.36-.16.16-.32.4-.52.72-.24.4-.56.92-.96 1.48-.32.4-1 1.96-.96 2.4.08.76.32 1.2.56 1.76.28.52.6 1.12.68 1.96v.12c.08 1.32-.08 1.96-2.6 4.2-1.6 1.44-2.72 2.84-3.48 3.84-.08.08 0 .2.12.2h.48c.64.08 1.2.32 1.64.76.08.08.2.12.28.08.4-.16.88-.16 1.28-.12.52.08 1.04.2 1.4.52.12.12.28.2.48.16.4-.08.8-.08 1.2.08.28.08.52.24.72.44.2.2.52.24.76.12.08-.08.2-.12.28-.16.56-.16 1.16-.08 1.68.12.28.08.52.2.76.32.4.28.64.64.8 1.04.16.32.56.44.84.24.36-.24.64-.28.88-.16.12.08.24.12.28.2.2.24.52.48.84.4.8-.2 1.8-.08 2.52.32.28.12.52.36.72.68v-.16s.08-.12.16-.12h.16c.44-.2 2.56-.8 3.36.08.04.04.12.04.16 0l.24-.24c.56-.32 1.48-.36 2.08.2.12.08.32.04.44-.08 0-.08.12-.16.16-.2.24-.2.52-.28.8-.28h1.16c.32-.08 1.2-.12 1.52-.2h.04s.28-.04.44-.08c.56-.12 1.2-.28 1.72-.04.52.24.44.84.4 1.32-.04.2-.08.44-.08.64 0 .08 0 .2.04.28 0 .44 0 .84-.08 1.16v.24c.12.24.36.36.56.24.4-.24.8-.56.92-.72h.04l.08-.4c.08-.44.16-1.32.16-3.12v-.2c0-.64 0-1.2-.04-1.64-.04-1-.08-1.76.4-2.52.48-.76.92-1.04 1.36-1.32.52-.32 1.08-.68 2.04-2 .48-.64.56-.92.6-1.12.08-.52.24-.8 1-1.36.56-.44 2.4-1.8 4.84-1.4.8.12 2.08.56 3.36 1.08.08 0 .12 0 .16.04h.04c1.12.48 2.2.96 2.92 1.36.2.12.44 0 .6-.12.24-.28.48-.44.72-.6.12 0 .2-.12.28-.16.24-.2.2-.64-.08-.8ZM38.08 45.4c-.8 3.48-6.2 7.32-8.64 7.32h-.04s-.08 0-.12-.04h-.16s-.04-.04-.08-.04a4.34 4.34 0 0 1-1.52-.96c-.32-.28-.56-.68-.64-1.08v-.2c-.16-.6-.32-1.32.2-2.52.08-.16.16-.32.2-.48 0-.04.04-.08.04-.12.08-.12.12-.24.16-.36.08-.2.16-.36.2-.48 0-.04.04-.08.04-.16.16-.4.16-.56.2-.72 0-.12.04-.28.08-.52.16-.64.24-1.2.32-1.68.12-.88.2-1.64.68-2.36.08-.12.2-.2.28-.32.04-.04.08-.04.12-.08.04-.04.08-.08.12-.08l.36-.24s.08-.04.12-.04c.12-.04.2-.08.32-.08.44-.12.96-.16 1.56-.08.64.08 1.24.2 1.76.32.44.16.84.28 1.2.4.04 0 .08 0 .08.08.08 0 .16.04.2.04l.24.12c.12.04.2.12.32.12h.08c.36.24.68.4.96.6.12.12.28.2.36.32.04 0 .08.08.12.12.04 0 .08.04.12.08 1.04 1.08.96 2.36.8 3.12h-.04Zm2.48-13.16-.08.64c-.24 1.4-.8 3.36-2.84 3.84-2 .48-2.44.6-3.84.68h-.12c-1 0-2.96-.64-3.32-2.28-.24-1 .24-1.76.96-3 .16-.2.28-.44.44-.68.96-1.68 1.36-2.88 1.68-3.84.32-.96.56-1.72 1.2-2.36.16-.16.32-.32.52-.44.12-.08.28-.16.4-.24l.6-.24c.44-.16.96-.2 1.44-.2.96 0 1.92.24 2.6.8.28.24.72.72.96 2.2.16.72-.08 2.08-.6 5.12Zm14.6 4.04c-.72 1.2-1.08 1.88-1.68 2.36-1.24 1-2.64 1.24-3.8 1.24-.84 0-1.52-.12-1.96-.2-1.2-.2-3.4-.6-4.16-2.36-.12-.36-.16-.6-.16-.88s0-.72-.12-1.84v-.08c-.04-.48-.12-1.04.04-1.8v-.08c.4-2.12.52-2.44.64-2.64.2-.44.72-.6 1.12-.36.44.2.6.68.4 1.12-.04.12-.16.56-.48 2.2v.12c-.12.44-.08.8 0 1.24v.08c.12 1.2.12 1.76.12 2.04v.2c.12.28.36.52.72.72.28.16.56-.12.52-.44-.36-1.88-.32-4 .36-5.32.24-.44.68-1.2 1.08-1.88 0 0 .08-.12.12-.2.04-.08.04-.12.08-.16.2-.32.36-.6.52-.84v-.08h.04s.04-.16.08-.2h.04s.04-.08.04-.12v-.08c.12-.16.24-.32.32-.44.24-.32-.04-.72-.4-.56-.6.28-1 .6-1.08.64-.36.32-.92.24-1.2-.12-.28-.36-.24-.92.16-1.2.44-.36 2.76-2.04 5.56-1.24 2 .56 3.08 2.08 3.48 2.68.32.48 1.28 1.88 1.24 3.88 0 1.52-.64 2.6-1.8 4.6h.16Z"
-                                  fill="#fff"
-                                ></path>
-                                <path
-                                  d="M37 25.84c-.16.36-.32.76-.48 1.24-.44 1.08-.92 2.32-1.16 2.76-.4.76-.72 1.24-.96 1.64-.28.44-.52.8-.68 1.28-.32.88-.36 1.84-.16 2.88-.52-.04-1.4-.44-1.52-.88-.08-.36.16-.72.76-1.76.12-.2.28-.44.4-.68 1.08-1.84 1.52-3.2 1.84-4.2.36-1.08.52-1.52 1.08-1.92.24-.16.56-.28.88-.36Zm-1.04 38.44c-.6 1.2-1.32 2.32-1.8 2.88-.4-1.04-1.04-3.4-.88-5.28v-.16c.08-.6.24-1.12.52-1.56.2-.28.68-.44 1.28-.44.44 0 .88.08 1.28.32.2.12.52.36.52 1 .04.92-.4 2.12-.96 3.24h.04Z"
-                                  fill="#fff"
-                                ></path>
-                                <path
-                                  d="M68.44 50.72s.08.08.04.16c-.16.36-.4.6-.64.92-.32.36-.64.76-.96 1.4-.44.92-.6 1.72-.68 3.84-.08 2.48 0 3.88.08 4.88s.12 1.56-.08 2.52c-.36 1.92-1.16 3.2-2.24 4.84-1.32 2.04-2.68 4.12-4.92 4.76-.2.08-.2.08-.8.08-.52 0-1.36 0-2.96.08-2.92.12-4.4.16-5.64.4-1.32.24-2 .52-2.68.8-.6.24-1.16.48-2.24.68-.64.12-1.64.28-4.92.28-3.44 0-5.52 0-8.24-.32-3.76-.44-5.64-.64-6.92-1.32-2.96-1.56-4.2-4.4-6.28-9.12 0-.04.04-.12.12-.08.08.08.2.12.32.16.08 0 .2.04.28.08h.76c.12.36.36.68.68.88.36.2.76.2 1.16.2.4 0 .8 0 1.2-.08.2 0 .44.08.52.28.36.88.84 1.52 1.52 1.64h.16c.12 0 .32 0 .6-.2.32-.2.84-.08 1.08.2.16.16.32.32.44.4.72.72 2.4 1.08 3.84 1.08.8 0 1.48-.12 1.88-.32.6-.28.6-.72.56-.92l-.12-.96s.04-.04.08 0c.08.2.2.44.48.48h.12c.4 0 1.04.12 1.12.52.04.2.12.4.24.56.24.4.72.84 1.68.84h.08c1.12 0 1.96-.36 2.56-1.08 0-.04.08-.08.12-.16.2-.28.84-.32 1.08-.08.28.28.68.4 1.08.4h.2c.48-.04.92-.32 1.24-.76.2-.28.36-.64.48-1.04 0-.12.2-.16.28-.08.2.2.56.4 1.04.4.12 0 .24 0 .4-.04.96-.2 1.44-1 1.68-1.88h.08c.24.28.68.64 1.48.64H49c.4 0 .76-.2 1.04-.52.28-.4.44-.96.44-1.52 0-.2.16-.4.36-.48.8-.36 1.8-1.08 2.08-1.56.08-.16.24-.28.4-.32.6-.12.88-.24 1.12-.36.2-.08.36-.16.84-.24 3.72-.56 4.44-.68 5.24-1.24 1.2-.8 1.28-1.92 1.32-2.96.04-.92.12-1.92.8-3.12.24-.44.56-1 .88-1.56.52-1 1.28-2.36 1.84-3.12.12-.16.36-.24.56-.16 1.24.52 2.32 1.08 2.56 1.24l-.04-.04Z"
-                                  fill="#fff"
-                                ></path>
-                                <path
-                                  d="M32.36 61.76c-.16 1.28-.24 3 0 5.24.04.64.16 1.28.24 1.96-.16.08-.72.24-1.64.2-1.36 0-2.64-.36-3.04-.8h-.08c-.32-.32-.56-.48-.56-.96 0-.16.04-.32.2-.52.08-.12.2-.28.32-.44.24-.32.52-.68.8-1.16.84-1.44 1.16-1.88 1.56-2.4 0-.04.08-.08.12-.12.24-.32.52-.72.96-1.36.32-.48.56-.84.8-1.16.36-.48.6-.76.76-.88 0 .24-.08.52-.12.8-.08.44-.16 1-.24 1.64l-.08-.04Zm-.64-19.96c-.16.24-.36.52-.6 1.04-.64 1.44-.64 2.24-.68 2.88 0 .36 0 .6-.12.92-.08.2-.16.44-.28.72-.36.88-.88 2-.64 3.52-.32-.16-.76-.48-.84-.68 0-.08 0-.16-.04-.24-.12-.48-.16-.8.12-1.48.8-1.84.88-2.28.96-2.76 0-.12 0-.2.04-.32.16-.72.24-1.36.32-1.84.12-.76.16-1.24.44-1.64.08-.12.36-.2.72-.2h.6v.08Zm-1.04 18.12c-.04-.44-.12-.88-.28-1.28 0 0-.04-.12-.08-.16 0-.04-.08-.12-.08-.16l-.04-.04-.08-.08h-.04s-.08 0-.08-.04h-.04c-.24-.08-.52-.2-.8-.24h-.24s-.12 0-.2.04c0 0-.04 0-.08.04 0 0-.04 0-.08.04 0 0-.04.08-.08.08 0 0 0 .04-.04.08-.12.16-.2.32-.32.48-.24.36-.52.76-.76 1.12-.24.32-.48.68-.72 1-.12.2-.24.36-.4.56 0 0-.04.08-.08.08.16 0 .32.04.44.08.36.08.68.12 1.04.16.72.08 1.44.16 2.16.12h.12c.16-.24.4-.56.64-.96.16-.24.28-.44.4-.64-.04-.08-.08-.2-.12-.32l-.16.04Zm-2.56 2.96c-.08.56-.68 2-1.64 3.36-.8 1.16-1.32 1.4-1.4 1.44-.4-.04-.76-1.04-1.08-2-.12-.4-.24-.76-.32-1.12-.2-.72-.24-1.72-.2-2.32.8.44 2.24.56 4.28.6 0 0 .28 0 .4.04h-.04Zm-1.44-4.56v.04c-.36.52-.68 1-1.04 1.52-.2.28-.36.52-.52.8-.08.16-.24.32-.36.48-.28-.08-.56-.12-.84-.2-.24-.08-.48-.12-.68-.24-.04 0-.08 0-.12-.04 0-.08-.08-.16-.16-.2.08-.16.16-.32.24-.52.16-.32.32-.6.48-.92.32-.52.68-1.08 1.2-1.4 0 0 .04 0 .08-.04.2-.12.4-.2.64-.24h.28c.08 0 .12 0 .2.04h.08c.04 0 .12.08.16.12l.12.12c.16.2.2.4.24.68Zm-2.76-1.44c-.64.52-1.12 1.24-1.48 1.96-.2.4-.4.8-.64 1.24 0 .04-.04.08-.08.12-.2-.04-.4-.08-.56-.16-.2-.08-.4-.12-.6-.24a1.95 1.95 0 0 0-.28-.12c.2-.36.44-.72.64-1.04.32-.48.64-.96 1-1.4.12-.16.28-.36.48-.48.2-.12.44-.08.64-.08.24 0 .48 0 .72.12.04 0 .08.04.12.08h.04Zm-1 8.6-.08.08H21.4c-.16 0-.32 0-.4-.12-.12-.16-.16-.48-.2-.68-.2-1.08-.24-2.24-.08-3.36.56.2 1.16.36 1.76.48-.12 1 .08 2.48.24 2.92.08.2.12.4.2.64v.04Zm-1.84-8.96c-.52.64-.96 1.28-1.4 1.96-.16.28-.36.56-.48.88-.2-.04-.4-.12-.56-.24-.16-.08-.28-.2-.44-.28 0 0-.12-.12-.2-.16h-.04c.04-.12.12-.28.16-.36.12-.24.24-.48.36-.68.24-.4.48-.84.8-1.2.12-.12.2-.32.4-.36.16-.04.36 0 .48 0 .36.08.68.24.92.52v-.08Zm-3.92 2.68h.08c.12.2.32.36.52.48.08.08.16.12.28.2v.04c-.2.84-.36 1.76-.36 2.64 0 .04-.08.04-.08 0-.24-1.04-.6-2.76-.44-3.36Zm2.48 1.88c-.12.76-.16 1.52-.12 2.28 0 .4.08.84.12 1.24h-.36c-.12 0-.12 0-.2-.08-.12-.08-.24-.2-.32-.32-.2-.36-.24-.8-.28-1.16 0-.8 0-1.56.2-2.32.12.04.24.08.4.16.16.08.36.16.56.24v-.04Z"
-                                  fill="#fff"
-                                ></path></svg
-                            ></span>
-                            <span
-                              class="ms-[4px] text-[rgba(47,69,83)] text-[14px]"
-                              >APE</span
-                            >
-                          </div></button
-                        ><button
-                          type="button"
-                          tabindex="0"
-                          class="inline-flex relative items-center gap-2 font-semibold whitespace-nowrap ring-offset-background transition disabled:pointer-events-none disabled:opacity-50 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 active:scale-[0.98] bg-transparent text-grey-400 betterhover:hover:bg-grey-200 betterhover:hover:text-neutral-black focus-visible:outline-grey-300 text-xs leading-none [&amp;_svg]:text-grey-400 [&amp;:hover>svg]:text-grey-400 rounded-none justify-start px-3 py-[6px] shadow-none min-h-[33px] hover:bg-[rgba(177,186,211)]"
-                          data-testid="coin-toggle-currency-busd"
-                          data-test="coin-toggle-currency-busd"
-                          aria-label="Select busd"
-                          data-button-root=""
-                        >
-                          <div class="currency">
-                            <span class="content"
-                              ><span class="text-[14px] text-[rgba(47,69,83)]"
-                                >0.00000000</span
-                              ></span
-                            >
-                            <span class="" title="busd"
-                              ><svg
-                                fill="none"
-                                viewBox="0 0 96 96"
-                                class="svg-icon"
-                                style="width: 14px; height: 14px"
-                              >
-                                <title></title>
-                                <path
-                                  d="M48 96c26.51 0 48-21.49 48-48S74.51 0 48 0 0 21.49 0 48s21.49 48 48 48Z"
-                                  fill="#F0B90B"
-                                ></path>
-                                <path
-                                  d="m48 12.6 8.76 8.96L34.72 43.6l-8.76-8.76L48 12.6Zm13.28 13.28 8.76 8.96-35.28 35.28L26 61.36l35.28-35.48ZM21.44 39.16l8.76 8.96-8.76 8.76-8.76-8.76 8.76-8.96Zm53.12 0 8.76 8.96L48.04 83.4l-8.76-8.76 35.28-35.52v.04Z"
-                                  fill="#473800"
-                                ></path></svg
-                            ></span>
-                            <span
-                              class="ms-[4px] text-[rgba(47,69,83)] text-[14px]"
-                              >BUSD</span
-                            >
-                          </div></button
-                        ><button
-                          type="button"
-                          tabindex="0"
-                          class="inline-flex relative items-center gap-2 font-semibold whitespace-nowrap ring-offset-background transition disabled:pointer-events-none disabled:opacity-50 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 active:scale-[0.98] bg-transparent text-grey-400 betterhover:hover:bg-grey-200 betterhover:hover:text-neutral-black focus-visible:outline-grey-300 text-xs leading-none [&amp;_svg]:text-grey-400 [&amp;:hover>svg]:text-grey-400 rounded-none justify-start px-3 py-[6px] shadow-none min-h-[33px] hover:bg-[rgba(177,186,211)]"
-                          data-testid="coin-toggle-currency-cro"
-                          data-test="coin-toggle-currency-cro"
-                          aria-label="Select cro"
-                          data-button-root=""
-                        >
-                          <div class="currency">
-                            <span class="content"
-                              ><span class="text-[14px] text-[rgba(47,69,83)]"
-                                >0.00000000</span
-                              ></span
-                            >
-                            <span class="" title="cro"
-                              ><svg
-                                fill="none"
-                                viewBox="0 0 96 96"
-                                class="svg-icon"
-                                style="width: 14px; height: 14px"
-                              >
-                                <title></title>
-                                <path
-                                  d="M48 96c26.51 0 48-21.49 48-48S74.51 0 48 0 0 21.49 0 48s21.49 48 48 48Z"
-                                  fill="#0F76F8"
-                                ></path>
-                                <path
-                                  d="M48 92.4 9.52 70.2V25.8L48 3.6l38.48 22.2v44.44L48 92.44v-.04ZM12.76 68.36 48 88.72l35.24-20.36V27.64L48 7.32 12.76 27.64v40.72Z"
-                                  fill="#fff"
-                                ></path>
-                                <path
-                                  d="M62.36 23.84H33.44L30.08 38.6h35.84l-3.56-14.76Zm-23.8 35v-9.8l-8.6-5.4-9.72 7.2 13.24 23.04h5.32L45.04 68v-2.88l-6.52-6.24.04-.04Z"
-                                  fill="#fff"
-                                ></path>
-                                <path
-                                  d="M57.32 40.8H38.64l3.08 8.2-.92 9.24h14.36L54.24 49l3.08-8.2Z"
-                                  fill="#fff"
-                                ></path>
-                                <path
-                                  d="m65.92 43.52-8.48 5.52v9.8L51 65.08v2.88l6.24 5.8h5.24L75.64 50.8l-9.72-7.28Z"
-                                  fill="#fff"
-                                ></path></svg
-                            ></span>
-                            <span
-                              class="ms-[4px] text-[rgba(47,69,83)] text-[14px]"
-                              >CRO</span
-                            >
-                          </div></button
-                        ><button
-                          type="button"
-                          tabindex="0"
-                          class="inline-flex relative items-center gap-2 font-semibold whitespace-nowrap ring-offset-background transition disabled:pointer-events-none disabled:opacity-50 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 active:scale-[0.98] bg-transparent text-grey-400 betterhover:hover:bg-grey-200 betterhover:hover:text-neutral-black focus-visible:outline-grey-300 text-xs leading-none [&amp;_svg]:text-grey-400 [&amp;:hover>svg]:text-grey-400 rounded-none justify-start px-3 py-[6px] shadow-none min-h-[33px] hover:bg-[rgba(177,186,211)]"
-                          data-testid="coin-toggle-currency-dai"
-                          data-test="coin-toggle-currency-dai"
-                          aria-label="Select dai"
-                          data-button-root=""
-                        >
-                          <div class="currency">
-                            <span class="content"
-                              ><span class="text-[14px] text-[rgba(47,69,83)]"
-                                >0.00000000</span
-                              ></span
-                            >
-                            <span class="" title="dai"
-                              ><svg
-                                fill="none"
-                                viewBox="0 0 96 96"
-                                class="svg-icon"
-                                style="width: 14px; height: 14px"
-                              >
-                                <title></title>
-                                <path
-                                  d="M48 0c26.52 0 48 21.48 48 48S74.52 96 48 96 0 74.52 0 48 21.48 0 48 0Z"
-                                  fill="#F5AC37"
-                                ></path>
-                                <path
-                                  d="M49.76 51.4H68c.4 0 .56 0 .6-.52.16-1.84.16-3.72 0-5.56 0-.36-.16-.52-.56-.52H31.72c-.44 0-.56.16-.56.56v5.32c0 .453.24.68.72.68h17.88v.04Zm16.8-12.84s.04-.28 0-.4c-.32-.68-.68-1.28-1.08-1.88-.64-1-1.36-1.96-2.24-2.8-.4-.52-.88-.96-1.4-1.36-2.6-2.2-5.68-3.76-9-4.56-1.68-.36-3.4-.56-5.08-.56H31.68c-.44 0-.52.16-.52.56V38.2c0 .44 0 .56.56.56h34.6s.32-.08.36-.24h-.16l.04.04Zm0 19.08c-.52-.04-1.04-.04-1.52 0H31.76c-.44 0-.6 0-.6.6v10.4c0 .48 0 .6.6.6h15.36c.72.04 1.48 0 2.2-.16 2.24-.16 4.44-.64 6.52-1.44.76-.28 1.48-.6 2.2-1h.2c3.6-1.88 6.52-4.8 8.36-8.44 0 0 .2-.44 0-.56h-.04Zm-41.44 17v-16.6c0-.4 0-.44-.48-.44h-6.52c-.36 0-.52 0-.52-.48V51.4h6.96c.4 0 .56 0 .56-.52v-5.64c0-.36 0-.44-.48-.44h-6.52c-.36 0-.52 0-.52-.48v-5.28c0-.32 0-.4.48-.4h6.44c.44 0 .56 0 .56-.56V21.92c0-.48 0-.6.6-.6h22.48c1.64.08 3.24.24 4.88.56 3.32.6 6.48 1.8 9.4 3.48 1.92 1.12 3.72 2.52 5.28 4.08 1.2 1.24 2.24 2.56 3.2 4s1.72 3 2.36 4.6c.08.4.48.72.88.64h5.36c.453 0 .693.227.72.68v4.92c0 .48-.16.6-.68.6H75.4c-.4 0-.56 0-.52.56.16 1.84.16 3.68 0 5.48 0 .52 0 .56.56.56h4.72c.2.28 0 .56 0 .8v4.68c0 .52-.16.68-.6.68h-5.68c-.4-.08-.76.16-.88.56-1.36 3.52-3.52 6.64-6.32 9.2-1 .92-2.08 1.8-3.2 2.56-1.2.68-2.36 1.4-3.6 2-2.28 1-4.64 1.76-7.08 2.24-2.32.4-4.68.6-7.04.56H25.12v-.12Z"
-                                  fill="#FEFEFD"
-                                ></path></svg
-                            ></span>
-                            <span
-                              class="ms-[4px] text-[rgba(47,69,83)] text-[14px]"
-                              >DAI</span
-                            >
-                          </div></button
-                        ><button
-                          type="button"
-                          tabindex="0"
-                          class="inline-flex relative items-center gap-2 font-semibold whitespace-nowrap ring-offset-background transition disabled:pointer-events-none disabled:opacity-50 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 active:scale-[0.98] bg-transparent text-grey-400 betterhover:hover:bg-grey-200 betterhover:hover:text-neutral-black focus-visible:outline-grey-300 text-xs leading-none [&amp;_svg]:text-grey-400 [&amp;:hover>svg]:text-grey-400 rounded-none justify-start px-3 py-[6px] shadow-none min-h-[33px] hover:bg-[rgba(177,186,211)]"
-                          data-testid="coin-toggle-currency-link"
-                          data-test="coin-toggle-currency-link"
-                          aria-label="Select link"
-                          data-button-root=""
-                        >
-                          <div class="currency">
-                            <span class="content"
-                              ><span class="text-[14px] text-[rgba(47,69,83)]"
-                                >0.00000000</span
-                              ></span
-                            >
-                            <span class=" " title="link"
-                              ><svg
-                                fill="none"
-                                viewBox="0 0 96 96"
-                                class="svg-icon"
-                                style="width: 14px; height: 14px"
-                              >
-                                <title></title>
-                                <path
-                                  d="M48 0c26.52 0 48 21.48 48 48S74.52 96 48 96 0 74.52 0 48 21.48 0 48 0Z"
-                                  fill="#3B55D8"
-                                ></path>
-                                <path
-                                  d="m48 28.16 17.24 9.92v19.84l-17.16 9.96-17.24-9.8V38.16l17.16-10Zm0-14.6-6.32 3.68-17.2 10-6.32 3.68v34.44L24.48 69l17.24 9.88 6.32 3.64 6.32-3.68 17.16-10 6.32-3.68V30.64L71.52 27l-17.24-9.92L48 13.52v.04Z"
-                                  fill="#fff"
-                                ></path></svg
-                            ></span>
-                            <span
-                              class="ms-[4px] text-[rgba(47,69,83)] text-[14px]"
-                              >LINK</span
-                            >
-                          </div></button
-                        ><button
-                          type="button"
-                          tabindex="0"
-                          class="inline-flex relative items-center gap-2 font-semibold whitespace-nowrap ring-offset-background transition disabled:pointer-events-none disabled:opacity-50 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 active:scale-[0.98] bg-transparent text-grey-400 betterhover:hover:bg-grey-200 betterhover:hover:text-neutral-black focus-visible:outline-grey-300 text-xs leading-none [&amp;_svg]:text-grey-400 [&amp;:hover>svg]:text-grey-400 rounded-none justify-start px-3 py-[6px] shadow-none min-h-[33px] hover:bg-[rgba(177,186,211)]"
-                          data-testid="coin-toggle-currency-sand"
-                          data-test="coin-toggle-currency-sand"
-                          aria-label="Select sand"
-                          data-button-root=""
-                        >
-                          <div class="currency">
-                            <span class="content"
-                              ><span class="text-[14px] text-[rgba(47,69,83)]"
-                                >0.00000000</span
-                              ></span
-                            >
-                            <span class=" " title="sand"
-                              ><svg
-                                fill="none"
-                                viewBox="0 0 96 96"
-                                class="svg-icon"
-                                style="width: 14px; height: 14px"
-                              >
-                                <title></title>
-                                <path
-                                  d="M48 96c26.51 0 48-21.49 48-48S74.51 0 48 0 0 21.49 0 48s21.49 48 48 48Z"
-                                  fill="#0F94F8"
-                                ></path>
-                                <path
-                                  d="m31.88 22.64-5.2 5.2V48.4l5.2 5.2h20.56v10.36H42.28v-5.2H26.72v10.36l5.2 5.2h30.92l5.2-5.2V48.4l-5.2-5.2H42.28V32.84h10.36v5.2H68.2V27.68l-5.2-5.2H31.88v.2-.04Z"
-                                  fill="#fff"
-                                ></path></svg
-                            ></span>
-                            <span
-                              class="ms-[4px] text-[rgba(47,69,83)] text-[14px] ms-[4px]"
-                              >SAND</span
-                            >
-                          </div></button
-                        ><button
-                          type="button"
-                          tabindex="0"
-                          class="inline-flex relative items-center gap-2 font-semibold whitespace-nowrap ring-offset-background transition disabled:pointer-events-none disabled:opacity-50 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 active:scale-[0.98] bg-transparent text-grey-400 betterhover:hover:bg-grey-200 betterhover:hover:text-neutral-black focus-visible:outline-grey-300 text-xs leading-none [&amp;_svg]:text-grey-400 [&amp;:hover>svg]:text-grey-400 rounded-none justify-start px-3 py-[6px] shadow-none min-h-[33px] hover:bg-[rgba(177,186,211)]"
-                          data-testid="coin-toggle-currency-shib"
-                          data-test="coin-toggle-currency-shib"
-                          aria-label="Select shib"
-                          data-button-root=""
-                        >
-                          <div class="currency">
-                            <span class="content"
-                              ><span class="text-[14px] text-[rgba(47,69,83)]"
-                                >0.00000000</span
-                              ></span
-                            >
-                            <span class="" title="shib"
-                              ><svg
-                                fill="none"
-                                viewBox="0 0 96 96"
-                                class="svg-icon"
-                                style="width: 14px; height: 14px"
-                              >
-                                <title></title>
-                                <path
-                                  d="M48 0c26.52 0 48 21.48 48 48S74.52 96 48 96 0 74.52 0 48 21.48 0 48 0Z"
-                                  fill="#EB0A29"
-                                ></path>
-                                <path
-                                  d="M66.64 49.44s-.52.68-1.04 1.04c-1.48 1.08-4.08 2.08-6.76 2.56-1.52.28-3.04.32-3.48.08-.28-.16-.32-.28-.24-.64.24-.8.96-1.68 2.08-2.48.56-.4 2.88-1.84 3.96-2.4 1.8-.96 3.24-1.56 4.2-1.68.32-.04.68-.04.8 0 .2.08.4.64.48 1.32.04.36 0 1.96 0 2.24v-.04Zm-25 3.52s-.4.28-.76.32c-.36.04-1.48 0-2.08-.04-2.24-.28-4.64-1-6.36-1.84-.96-.48-1.68-.96-2.2-1.48l-.28-.32v-.4c-.08-.68-.08-1.8 0-2.2.04-.32.16-.64.32-.92l.48-.12c.48 0 .84.08 1.48.28 1.32.4 3.24 1.36 5.6 2.8 1.96 1.16 2.68 1.72 3.24 2.52.4.48.64 1.16.56 1.4Zm15 14.76s-.12.56-.28 1.16c-.16.6-.28 1.08-.28 1.12h-.64l-.48 1.12c-.24.6-.48 1.16-.52 1.24l-.08.16-.24-.36-.24-.36v-2.92h-.08s-1.48.24-2.04.28c-2.32.24-4.64.2-6.96-.16-.36-.04-.68-.08-.68-.08v3.04l-.16.28c-.08.16-.2.28-.2.28s-.12-.12-.4-.64-.44-1.04-.6-1.6l-.08-.32h-.32l-.32.04-.08-.4c-.04-.2-.08-.56-.12-.72v-.32l-.32-.24c-.16-.12-.32-.28-.36-.28a.306.306 0 0 1-.08-.2v-.12h2.64v.12l.08.12h.44c.24 0 1.08.04 1.8.08h1.32l.32-.48.36-.52h.44V64.8l-.6-.24c-1.88-.84-2.96-1.76-3.4-2.92-.08-.24-.08-.32-.12-1.36 0-1.04 0-1.16.08-1.36.16-.52.56-.96 1.08-1.08.2-.04.64-.04 3.16-.04h2.96l.32.16c.4.2.56.32.8.64s.32.6.32 1.24c0 .92-.08 1.72-.16 2.04-.12.44-.36.84-.6 1.2-.52.68-1.48 1.36-2.36 1.68l-.24.08v2.24h.24l.24.04.32.48.32.48h2.96c.12 0 .12 0 .24-.16l.12-.2h1.2c.92-.04 1.2 0 1.2 0h.08Z"
-                                  fill="#000"
-                                ></path>
-                                <path
-                                  d="M51.04 70.76c-.2.12-.32.16-.36.16 0 0-.2-.12-.32-.24l-.28-.24-.28.32c-.64.68-.68.72-.84.76-.28 0-.36 0-.72-.56-.2-.28-.32-.52-.32-.52h-.56l-.12.24-.12.28-.24-.08s-.4-.12-.56-.24l-.32-.16v-.6h5.68v.28c0 .32 0 .32-.44.6h-.2Z"
-                                  fill="#000"
-                                ></path>
-                                <path
-                                  d="M77.56 57.84v-.24c-2.56-.28-9.8-.44-16.56 5.12 0 0-2.16-9.96-12.36-9.96s-13.96 9.96-13.96 9.96c-5.72-6.12-13.32-5.68-16.08-5.28v.2c-.08 1.52-.04 2.28.2 3.24.8 3.04 3.24 6.36 7.08 9.6 6.28 5.36 14.8 9.2 21.28 9.64 6.72.44 16.68-3.48 23.28-9.24 1.04-.92 2-1.88 2.92-2.92.64-.76 1.64-2.08 1.56-2.08l.04-.04s.08-.04.04-.08c0 0 0-.04.04-.04s.04 0 .04-.04 0-.04.04-.04c0 0 .04-.04 0-.08v-.04s.04 0 .04-.04 0-.04.04-.04.04 0 .04-.04c0-.08.08-.16.12-.24.16-.24.8-1.36.88-1.56.6-1.36 1-2.6 1.16-3.8.08-.6.12-1.64.08-1.92l.08-.04ZM51.04 70.76c-.2.12-.32.16-.36.16 0 0-.2-.12-.32-.24l-.28-.24-.28.32c-.64.68-.68.72-.84.76-.28 0-.36 0-.72-.56-.2-.28-.32-.52-.32-.52h-.56l-.12.24-.12.28-.24-.08s-.4-.12-.56-.24l-.32-.16v-.6h5.68v.28c0 .32 0 .32-.44.6h-.2Zm5.32-1.92c-.16.6-.28 1.08-.28 1.12h-.64L55 71.08c-.24.6-.48 1.16-.52 1.24l-.08.16-.24-.36-.24-.36v-2.92h-.08s-1.48.24-2.04.28c-2.32.24-4.64.2-6.96-.16-.36-.04-.68-.08-.68-.08v3.04l-.16.28c-.08.16-.2.28-.2.28s-.12-.12-.4-.64-.44-1.04-.6-1.6l-.08-.32h-.32l-.32.04-.08-.4c-.04-.2-.08-.56-.12-.72v-.32l-.32-.24c-.16-.12-.32-.28-.36-.28a.306.306 0 0 1-.08-.2v-.12h2.64v.12l.08.12h.44c.24 0 1.08.04 1.8.08h1.32l.32-.48.36-.52h.44v-2.24l-.6-.24c-1.88-.84-2.96-1.76-3.4-2.92-.08-.24-.08-.32-.12-1.36 0-1.04 0-1.16.08-1.36.16-.52.56-.96 1.08-1.08.2-.04.64-.04 3.16-.04h2.96l.32.16c.4.2.56.32.8.64s.32.6.32 1.24c0 .92-.08 1.72-.16 2.04-.12.44-.36.84-.6 1.2-.52.68-1.48 1.36-2.36 1.68l-.24.08v2.24H50l.24.04.32.48.32.48h2.96c.12 0 .12 0 .24-.16l.12-.2h1.2c.96 0 1.2 0 1.2.04 0 0-.16.52-.32 1.12h.08Z"
-                                  fill="#fff"
-                                ></path>
-                                <path
-                                  d="M77.48 56.76c0-.48-.08-1.16-.08-1.48-.44-4.8-1.68-8.76-4-12.92-.08-.16-.2-.32-.24-.44 0 0 0-.08-.04-.08.32-1 1.68-5.12 2.76-9.84 1.44-6.4 2.36-13.88-.44-16.12 0 0-4.88-.36-11.4 6.04-1.76 1.76-3.4 3.68-4.84 5.72l-.44-.16c-2.64-.84-5.36-1.4-8.08-1.56-.84-.08-3.92-.08-4.92 0-3.04.2-5.36.64-8.04 1.56-.12.04-.2.08-.28.12a39.719 39.719 0 0 0-5-5.68c-6.8-6.44-11.84-6.08-11.84-6.08-3 2.32-1.96 10.16-.44 16.76 1 4.36 2.28 8.24 2.72 9.6 0 .08-.08.16-.12.24-2.48 5-3.8 9.84-4.12 14.96 2.76-.4 10.4-.84 16.12 5.28 0 0 3.76-9.96 13.96-9.96 10.2 0 12.36 9.96 12.36 9.96 6.76-5.56 14-5.4 16.56-5.12 0-.2 0-.52-.04-.84l-.12.04ZM24.8 38.24s-3.96-9.92-2.96-15.56c.16-.96.48-1.8 1-2.44 0 0 4.48.44 11.76 8.52 0 0-1.36.68-3.24 2.08-2 1.52-4.56 3.96-6.56 7.4Zm16.84 14.72s-.4.28-.76.32c-.36.04-1.48 0-2.08-.04-2.24-.28-4.64-1-6.36-1.84-.96-.48-1.68-.96-2.2-1.48l-.28-.32v-.4c-.08-.68-.08-1.8 0-2.2.04-.32.16-.64.32-.92l.48-.12c.48 0 .84.08 1.48.28 1.32.4 3.24 1.36 5.6 2.8 1.96 1.16 2.68 1.72 3.24 2.52.4.48.64 1.16.56 1.4Zm24.96-3.52s-.52.68-1.04 1.04c-1.48 1.08-4.08 2.08-6.76 2.56-1.52.28-3.04.32-3.48.08-.28-.16-.32-.28-.24-.64.24-.8.96-1.68 2.08-2.48.56-.4 2.88-1.84 3.96-2.4 1.8-.96 3.24-1.56 4.2-1.68.32-.04.68-.04.8 0 .2.08.4.64.48 1.32.04.36 0 1.96 0 2.24v-.04ZM64.84 30.8c-1.8-1.44-3.12-2.08-3.12-2.08 7-8.04 11.36-8.52 11.36-8.52.48.64.8 1.48.96 2.44 1 5.68-2.84 15.6-2.84 15.6-1.6-2.84-3.76-5.36-6.32-7.4l-.04-.04Z"
-                                  fill="#FFA409"
-                                ></path>
-                                <path
-                                  d="M74.04 22.64c-.84-.12-4.72-.12-9.16 8.16-1.8-1.44-3.12-2.08-3.12-2.08 7-8.04 11.36-8.52 11.36-8.52.48.64.8 1.48.96 2.44h-.04Z"
-                                  fill="#FF9300"
-                                ></path>
-                                <path
-                                  d="M71.2 38.24c-1.6-2.88-3.76-5.36-6.32-7.4 4.44-8.32 8.32-8.28 9.16-8.16 1 5.68-2.84 15.6-2.84 15.6v-.04Z"
-                                  fill="#FF8300"
-                                ></path>
-                                <path
-                                  d="M34.6 28.72s-1.36.68-3.24 2.08c-4.6-8.32-8.64-8.28-9.48-8.16.16-.96.48-1.8 1-2.44 0 0 4.52.44 11.76 8.52h-.04Z"
-                                  fill="#FF9300"
-                                ></path>
-                                <path
-                                  d="M31.36 30.8c-2 1.56-4.6 3.96-6.56 7.4 0 0-3.96-9.92-2.96-15.6.84-.12 4.92-.12 9.48 8.16l.04.04Z"
-                                  fill="#FF8300"
-                                ></path>
-                                <path
-                                  d="M60.48 43.72s-3.4.2-2.96-2.44c.44-2.64 3.08-2.96 3.8-2.88.72.08 3.72 1.16 3.2 3.4s-1.28 1.8-1.68 1.92c-.4.12-2.32 0-2.32 0h-.04Zm-25.04 0s-3.4.2-2.96-2.44c.44-2.64 3.08-2.96 3.8-2.88.72.08 3.72 1.16 3.2 3.4s-1.28 1.8-1.68 1.92c-.4.12-2.32 0-2.32 0h-.04Z"
-                                  fill="#fff"
-                                ></path></svg
-                            ></span>
-                            <span
-                              class="ms-[4px] text-[rgba(47,69,83)] text-[14px]"
-                              >SHIB</span
-                            >
-                          </div></button
-                        ><button
-                          type="button"
-                          tabindex="0"
-                          class="inline-flex relative items-center gap-2 font-semibold whitespace-nowrap ring-offset-background transition disabled:pointer-events-none disabled:opacity-50 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 active:scale-[0.98] bg-transparent text-grey-400 betterhover:hover:bg-grey-200 betterhover:hover:text-neutral-black focus-visible:outline-grey-300 text-xs leading-none [&amp;_svg]:text-grey-400 [&amp;:hover>svg]:text-grey-400 rounded-none justify-start px-3 py-[6px] shadow-none min-h-[33px] hover:bg-[rgba(177,186,211)]"
-                          data-testid="coin-toggle-currency-uni"
-                          data-test="coin-toggle-currency-uni"
-                          aria-label="Select uni"
-                          data-button-root=""
-                        >
-                          <div class="currency">
-                            <span class="content"
-                              ><span class="text-[14px] text-[rgba(47,69,83)]"
-                                >0.00000000</span
-                              ></span
-                            >
-                            <span class="" title="uni"
-                              ><svg
-                                fill="none"
-                                viewBox="0 0 96 96"
-                                class="svg-icon"
-                                style="width: 14px; height: 14px"
-                              >
-                                <title></title>
-                                <path
-                                  d="M96 48c0 26.48-21.48 48-48 48S0 74.48 0 48c0-15.36 7.2-29 18.4-37.8.24-.2.52-.4.76-.56C27.2 3.56 37.2 0 48 0c26.52 0 48 21.48 48 48Z"
-                                  fill="#FF007A"
-                                ></path>
-                                <path
-                                  d="M37.08 16.88c-.92-.12-.96-.16-.52-.24.84-.12 2.8.04 4.16.36 3.2.76 6.04 2.68 9.12 6.12l.8.92 1.16-.16c4.92-.8 9.96-.16 14.16 1.76 1.16.52 2.96 1.6 3.2 1.84.08.08.24.68.32 1.24.32 2.08.16 3.64-.48 4.8-.36.68-.36.84-.12 1.4.16.44.72.76 1.2.76 1.08 0 2.16-1.68 2.68-4.04l.24-.92.4.44c2.24 2.52 4.04 6 4.28 8.48l.08.68-.4-.56c-.68-1-1.28-1.68-2.12-2.24-1.52-1-3.08-1.32-7.28-1.56-3.8-.24-5.96-.52-8.08-1.24-3.64-1.2-5.48-2.76-9.76-8.44-1.92-2.52-3.08-3.88-4.28-5.04-2.6-2.52-5.2-3.84-8.6-4.36h-.16Z"
-                                  fill="#fff"
-                                ></path>
-                                <path
-                                  d="M70 22.52c.08-1.68.32-2.8.8-3.8.16-.4.36-.76.4-.76.04 0-.04.32-.16.68-.36.96-.4 2.36-.16 3.88.32 2 .44 2.24 2.56 4.44.96 1 2.12 2.28 2.56 2.84l.76.96-.76-.72c-.92-.88-3.04-2.56-3.52-2.8-.32-.16-.36-.16-.56.04-.16.16-.24.44-.24 1.72-.04 2-.32 3.24-.96 4.52-.36.68-.4.52-.08-.24.24-.56.28-.84.28-2.76 0-3.84-.44-4.76-3.12-6.32-.68-.4-1.8-.96-2.48-1.28-.72-.32-1.24-.56-1.2-.56.08-.08 2.68.68 3.72 1.12 1.56.6 1.8.68 2 .6.12-.12.24-.48.28-1.6l-.12.04Zm-31.12 6.56c-1.84-2.56-3.04-6.56-2.8-9.52l.08-.92.44.08c.8.12 2.16.68 2.84 1.08 1.76 1.08 2.56 2.52 3.32 6.16.24 1.08.52 2.28.68 2.68.24.68 1.08 2.2 1.76 3.2.48.72.16 1.08-.92.96-1.68-.16-3.92-1.72-5.4-3.72Zm28.88 19.24C59 44.8 55.92 41.72 55.92 36.56c0-.76.04-1.36.04-1.36.04 0 .36.28.76.56 1.76 1.4 3.76 2.04 9.28 2.84 3.24.48 5.08.84 6.76 1.4 5.36 1.76 8.68 5.4 9.44 10.28.24 1.4.08 4.12-.28 5.52-.32 1.12-1.2 3.12-1.4 3.2-.04 0-.12-.24-.12-.56-.08-1.84-1-3.64-2.56-5-1.84-1.6-4.24-2.8-10.08-5.12Zm-6.2 1.44c-.08-.68-.32-1.52-.44-1.84l-.24-.68.4.48c.56.68 1 1.44 1.4 2.56.32.84.32 1.12.32 2.48 0 1.36-.04 1.64-.32 2.4-.44 1.2-.96 2.04-1.84 2.96-1.6 1.64-3.68 2.52-6.64 2.92-.52.04-2.04.16-3.36.28-3.32.16-5.52.52-7.52 1.24-.28.08-.52.16-.56.12-.08-.08 1.28-.88 2.4-1.4 1.56-.76 3.12-1.16 6.64-1.76 1.72-.28 3.48-.6 3.92-.8 4.36-1.36 6.56-4.76 5.84-8.92v-.04Z"
-                                  fill="#fff"
-                                ></path>
-                                <path
-                                  d="M65.6 56.88c-1.16-2.52-1.4-4.92-.8-7.16.08-.24.16-.44.28-.44.12 0 .36.12.6.32.52.36 1.64.96 4.48 2.52 3.6 1.96 5.6 3.44 7.04 5.16 1.24 1.52 2 3.24 2.36 5.36.24 1.2.08 4.08-.24 5.28-.96 3.76-3.2 6.76-6.4 8.48-.48.28-.88.44-.92.44-.04 0 .12-.44.4-.96 1.08-2.24 1.2-4.44.4-6.84-.48-1.52-1.52-3.32-3.52-6.36-2.44-3.52-3-4.48-3.64-5.76l-.04-.04ZM32.64 70.4c3.28-2.76 7.28-4.68 11-5.32 1.6-.28 4.24-.16 5.72.24 2.36.6 4.48 1.96 5.56 3.6 1.08 1.6 1.56 2.96 2.04 6 .16 1.2.4 2.44.44 2.68.36 1.6 1.08 2.84 1.96 3.48 1.36 1 3.76 1.08 6.12.16.4-.12.76-.28.76-.24.08.08-1.12.88-1.92 1.28-1.12.56-2 .76-3.2.76-2.12 0-3.92-1.12-5.4-3.32-.32-.44-.92-1.72-1.44-2.92-1.56-3.6-2.36-4.64-4.16-5.84-1.6-1-3.64-1.24-5.16-.48-2.04.96-2.56 3.6-1.16 5.16.56.68 1.64 1.2 2.52 1.32 1.64.24 3.04-1.08 3.04-2.68 0-1.08-.4-1.68-1.44-2.16-1.4-.6-2.96.08-2.92 1.44 0 .56.28.92.84 1.2.24.107.267.147.08.12-1.28-.28-1.6-1.84-.56-2.88 1.24-1.24 3.84-.72 4.72 1 .36.72.4 2.12.08 3-.76 1.96-2.88 2.96-5.04 2.4-1.44-.4-2.08-.8-3.84-2.6-3.08-3.2-4.28-3.8-8.72-4.48l-.84-.12.92-.88v.08Z"
-                                  fill="#fff"
-                                ></path>
-                                <path
-                                  fill-rule="evenodd"
-                                  clip-rule="evenodd"
-                                  d="M38.88 31.4c-1.2-1.36-11.36-12.56-19.72-21.76-.24.16-.52.36-.76.56 8.68 10.6 17.4 21.32 17.96 22.08.68.92.4 1.76-.68 2.36-.64.36-1.92.72-2.52.72-.72 0-1.56-.36-2.12-.92-.4-.4-2.12-2.92-6.04-9-2.96-4.64-5.48-8.48-5.52-8.52l5.24 9.56c3.4 6.04 4.48 8.2 4.48 8.48 0 .56-.16.88-.88 1.68-1.16 1.32-1.72 2.84-2.12 5.96-.44 3.48-1.64 5.96-5.04 10.16-1.96 2.48-2.28 2.92-2.76 3.92-.64 1.24-.8 1.96-.88 3.56-.12 1.68.08 2.72.56 4.32.44 1.44.92 2.36 2.12 4.16 1 1.6 1.64 2.8 1.64 3.24 0 .36.08.36 1.68 0 3.8-.88 6.92-2.4 8.64-4.24 1.08-1.16 1.36-1.8 1.36-3.36 0-1.04 0-1.24-.32-1.88-.44-.96-1.28-1.76-3.08-3-2.4-1.64-3.44-2.96-3.68-4.72-.24-1.52.04-2.52 1.36-5.32 1.36-2.88 1.72-4.04 1.96-6.96.12-1.88.36-2.64.88-3.2.56-.6 1.04-.84 2.44-1 2.24-.32 3.68-.88 4.84-2 1.04-.92 1.48-1.84 1.52-3.24v-1l-.56-.64ZM23 62.12c-.44.8-1.28 1.08-1.92.6-.4-.32-.4-.76-.08-1.24s.28-.72-.12-.92c-.28-.12-.36-.28-.36-.44 0-.68 1.12-.92 1.88-.4.8.52 1.08 1.56.6 2.4Zm20.64-22.96c-.68-.36-2.04-.48-2.76-.28-1.04.32-2.08 1.48-2.36 2.6-.2.72-.12 2 .2 2.4.48.6.92.8 2.16.8 2.44 0 4.52-1.08 4.72-2.36.24-1.04-.68-2.52-1.96-3.16Zm.08 1.92c-.28.36-1.08.72-1.64.72-.88 0-1.8-.6-1.8-1.2 0-1.12 1.8-1.76 3-1 .64.4.8.96.44 1.48Z"
-                                  fill="#fff"
-                                ></path></svg
-                            ></span>
-                            <span
-                              class="ms-[4px] text-[rgba(47,69,83)] text-[14px]"
-                              >UNI</span
-                            >
-                          </div></button
-                        ><button
-                          type="button"
-                          tabindex="0"
-                          class="inline-flex relative items-center gap-2 font-semibold whitespace-nowrap ring-offset-background transition disabled:pointer-events-none disabled:opacity-50 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 active:scale-[0.98] bg-transparent text-grey-400 betterhover:hover:bg-grey-200 betterhover:hover:text-neutral-black focus-visible:outline-grey-300 text-xs leading-none [&amp;_svg]:text-grey-400 [&amp;:hover>svg]:text-grey-400 rounded-none justify-start px-3 py-[6px] shadow-none min-h-[33px] hover:bg-[rgba(177,186,211)]"
-                          data-testid="coin-toggle-currency-pol"
-                          data-test="coin-toggle-currency-pol"
-                          aria-label="Select pol"
-                          data-button-root=""
-                        >
-                          <div class="currency">
-                            <span class="content"
-                              ><span class="text-[14px] text-[rgba(47,69,83)]"
-                                >0.00000000</span
-                              ></span
-                            >
-                            <span class="" title="pol"
-                              ><svg
-                                fill="none"
-                                viewBox="0 0 96 96"
-                                class="svg-icon"
-                                style="width: 14px; height: 14px"
-                              >
-                                <title></title>
-                                <path
-                                  d="M48 96c26.51 0 48-21.49 48-48S74.51 0 48 0 0 21.49 0 48s21.49 48 48 48Z"
-                                  fill="#914FFF"
-                                ></path>
-                                <path
-                                  d="M65.56 36.32c-1.24-.72-2.84-.72-4.28 0l-10 5.88-6.8 3.76-9.8 5.88c-1.24.72-2.84.72-4.28 0l-7.68-4.64c-1.24-.72-2.16-2.16-2.16-3.76v-8.92c0-1.44.72-2.84 2.16-3.76l7.68-4.48c1.24-.72 2.84-.72 4.28 0l7.68 4.64c1.24.72 2.16 2.16 2.16 3.76v5.88l6.8-3.92v-6.08c0-1.44-.72-2.84-2.16-3.76l-14.28-8.4c-1.24-.72-2.84-.72-4.28 0l-14.64 8.56c-1.44.72-2.16 2.16-2.16 3.56v16.76c0 1.44.72 2.84 2.16 3.76l14.44 8.4c1.24.72 2.84.72 4.28 0l9.8-5.72 6.8-3.92 9.8-5.72c1.24-.72 2.84-.72 4.28 0l7.68 4.48c1.24.72 2.16 2.16 2.16 3.76v8.92c0 1.44-.72 2.84-2.16 3.76l-7.48 4.48c-1.24.72-2.84.72-4.28 0L53.6 65c-1.24-.72-2.16-2.16-2.16-3.76v-5.72l-6.8 3.92v5.88c0 1.44.72 2.84 2.16 3.76l14.44 8.4c1.24.72 2.84.72 4.28 0l14.44-8.4c1.24-.72 2.16-2.16 2.16-3.76V48.36c0-1.44-.72-2.84-2.16-3.76l-14.44-8.4.04.12Z"
-                                  fill="#fff"
-                                ></path></svg
-                            ></span>
-                            <span
-                              class="ms-[4px] text-[rgba(47,69,83)] text-[14px]"
-                              >POL</span
-                            >
-                          </div>
-                        </button>
-                      </div>
-                    </div>
-                  </div>
+    <div class="content scrollY overscroll-behavior-contain svelte-cq3ecl scrollbar-visible" id="modal-scroll">
+      <div class="modal-content svelte-cq3ecl">
+        <div class="content svelte-1m9kzo7">
+          <div class="center-wrapper svelte-1nkt3rw">
+            <div class="tabs-wrapper scrollX svelte-1vkrcyy">
+              <div class="slider variant-dark svelte-1vkrcyy">
+                <div class="content-wrapper svelte-1vkrcyy">
+                  <button (click)="toggletab('Deposit')" type="button" class=" btn-classes "
+                    [ngClass]="{'!bg-grey-400':tab==='Deposit'}">
+                    Deposit</button>
+                  <button (click)="toggletab('Withdraw')" type="button" class=" btn-classes"
+                    data-dd-action-name="vip-benefits-tab" data-analytics="vip-benefits-tab" data-test="benefits-tab"
+                    data-button-root="" [ngClass]="{'!bg-grey-400':tab==='Withdraw'}">
+                    Withdraw
+                  </button>
                 </div>
               </div>
             </div>
           </div>
-          <label class="stacked mt-[1rem]">
-            <div class="input-wrap">
-              <div class="input-content">
-                <div class="after-icon">
-                  <svg fill="none" viewBox="0 0 96 96" class="svg-icon">
-                    <title></title>
+
+          <div class="coin-toggle">
+            <div class="mx-auto">
+              <span class="currency-label">Currency</span>
+              <div class="dropdown">
+                <button class="dropdown-button ">
+                  <div class="currency-wrap ">
+                    <span class="currency-amount">0.00000000</span>
+                    <span class="currency-icon" title="btc">
+                      <svg fill="none" viewBox="0 0 96 96" class="w-4 h-4">
+                        <path
+                          d="M95.895 48.105C95.895 74.557 74.451 96 48 96 21.548 96 .105 74.556.105 48.105.105 21.653 21.548.21 48 .21c26.451 0 47.895 21.443 47.895 47.895Z"
+                          fill="#F7931A"></path>
+                        <path
+                          d="M69.525 42.18c.93-6.27-3.84-9.645-10.38-11.895l2.115-8.505-5.16-1.29-2.1 8.28c-1.365-.345-2.76-.66-4.14-.975l2.1-8.295-5.175-1.29-2.115 8.49c-1.125-.255-2.235-.51-3.3-.78l-7.14-1.785-1.365 5.52s3.84.885 3.75.93a2.763 2.763 0 0 1 2.414 3.011l.001-.01-2.415 9.69c.213.049.394.106.568.174l-.028-.01-.54-.135-3.39 13.5a1.879 1.879 0 0 1-2.383 1.226l.013.004-3.765-.93L24.525 63l6.735 1.665 3.69.96-2.145 8.595 5.175 1.29 2.115-8.505c1.41.375 2.775.735 4.125 1.065l-2.115 8.475 5.175 1.29 2.13-8.58c8.835 1.665 15.465.99 18.255-6.99 2.25-6.42-.105-10.125-4.755-12.54 3.39-.72 5.925-2.955 6.615-7.545ZM57.69 58.755c-1.59 6.435-12.405 3-15.915 2.085L44.61 49.5c3.51.825 14.76 2.565 13.08 9.255Zm1.605-16.665c-1.5 5.85-10.5 2.865-13.38 2.145l2.58-10.32c2.91.72 12.315 2.085 10.8 8.175Z"
+                          fill="#fff"></path>
+                      </svg>
+                    </span>
+                  </div>
+                  <span class="dropdown-icon">
+                    <svg fill="currentColor" viewBox="0 0 64 64" class="w-4 h-4">
+                      <path
+                        d="M32.271 49.763 9.201 26.692l6.928-6.93 16.145 16.145 16.144-16.144 6.93 6.929-23.072 23.07h-.005Z">
+                      </path>
+                    </svg>
+                  </span>
+                </button>
+              </div>
+            </div>
+          </div>
+
+          <label class="stacked ">
+            <div class="input-wrap ">
+              <div class="input-content w-full  ">
+                <div class="after-icon absolute right-[5.5rem] z-50 ">
+                  <svg fill="none" viewBox="0 0 96 96" class="svg-icon w-[14px] h-[14px]">
                     <path
                       d="M95.895 48.105C95.895 74.557 74.451 96 48 96 21.548 96 .105 74.556.105 48.105.105 21.653 21.548.21 48 .21c26.451 0 47.895 21.443 47.895 47.895Z"
-                      fill="#F7931A"
-                    ></path>
+                      fill="#F7931A"></path>
                     <path
-                      d="M69.525 42.18c.93-6.27-3.84-9.645-10.38-11.895l2.115-8.505-5.16-1.29-2.1 8.28c-1.365-.345-2.76-.66-4.14-.975l2.1-8.295-5.175-1.29-2.115 8.49c-1.125-.255-2.235-.51-3.3-.78l-7.14-1.785-1.365 5.52s3.84.885 3.75.93a2.763 2.763 0 0 1 2.414 3.011l.001-.01-2.415 9.69c.213.049.394.106.568.174l-.028-.01-.54-.135-3.39 13.5a1.879 1.879 0 0 1-2.383 1.226l.013.004-3.765-.93L24.525 63l6.735 1.665 3.69.96-2.145 8.595 5.175 1.29 2.115-8.505c1.41.375 2.775.735 4.125 1.065l-2.115 8.475 5.175 1.29 2.13-8.58c8.835 1.665 15.465.99 18.255-6.99 2.25-6.42-.105-10. text-[rgba(]47,69,83)125-4.755-12.54 3.39-.72 5.925-2.955 6.615-7.545ZM57.69 58.755c-1.59 6.435-12.405 3-15.915 2.085L44.61 49.5c3.51.825 14.76 2.565 13.08 9.255Zm1.605-16.665c-1.5 5.85-10.5 2.865-13.38 2.145l2.58-10.32c2.91.72 12.315 2.085 10.8 8.175Z"
-                      fill="#fff"
-                    ></path>
+                      d="M69.525 42.18c.93-6.27-3.84-9.645-10.38-11.895l2.115-8.505-5.16-1.29-2.1 8.28c-1.365-.345-2.76-.66-4.14-.975l2.1-8.295-5.175-1.29-2.115 8.49c-1.125-.255-2.235-.51-3.3-.78l-7.14-1.785-1.365 5.52s3.84.885 3.75.93a2.763 2.763 0 0 1 2.414 3.011l.001-.01-2.415 9.69c.213.049.394.106.568.174l-.028-.01-.54-.135-3.39 13.5a1.879 1.879 0 0 1-2.383 1.226l.013.004-3.765-.93L24.525 63l6.735 1.665 3.69.96-2.145 8.595 5.175 1.29 2.115-8.505c1.41.375 2.775.735 4.125 1.065l-2.115 8.475 5.175 1.29 2.13-8.58c8.835 1.665 15.465.99 18.255-6.99 2.25-6.42-.105-10.125-4.755-12.54 3.39-.72 5.925-2.955 6.615-7.545ZM57.69 58.755c-1.59 6.435-12.405 3-15.915 2.085L44.61 49.5c3.51.825 14.76 2.565 13.08 9.255Zm1.605-16.665c-1.5 5.85-10.5 2.865-13.38 2.145l2.58-10.32c2.91.72 12.315 2.085 10.8 8.175Z"
+                      fill="#fff"></path>
                   </svg>
                 </div>
-                <input
-                  autocomplete="on"
-                  class="input spacing-expanded"
-                  type="number"
-                  data-testid="send-rain-amount"
-                  name="amount"
-                  data-test="vault-deposit-amount"
-                  step="1e-8"
-                />
+                <input autocomplete="on" class="input !bg-[#0f212e] relative" type="number" value="0.0000000"
+                  name="amount" step="1e-8">
               </div>
               <div class="input-button-wrap">
-                <button
-                  type="button"
-                  tabindex="0"
-                  class="inline-flex relative items-center gap-2 justify-center rounded-sm font-semibold whitespace-nowrap ring-offset-background transition disabled:pointer-events-none disabled:opacity-50 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 active:scale-[0.98] bg-grey-400 text-white betterhover:hover:bg-grey-300 betterhover:hover:text-white focus-visible:outline-white text-sm leading-none py-[0.8125rem] px-[1rem] shadow-none"
-                >
-                  Max
-                </button>
+                <button type="button" class="button-max bg-[#2f4553]">Max</button>
               </div>
             </div>
-            <span class="label-content w-full flex justify-between">
-              <div class="label-left-wrapper">
-                <span slot="label">Amount</span>
-              </div>
-              <div class="currency-conversion svelte-e4myuj">
-                <div class="svelte-e4myuj">$0.00</div>
-              </div>
+            <span class="label-content">
+              <div class="text-[#b1bad3]">Amount</div>
+              <div class="currency-conversion">$0.00</div>
             </span>
           </label>
-          <button
-            type="submit"
-            tabindex="0"
-            class="inline-flex relative items-center gap-2 justify-center rounded-sm font-semibold whitespace-nowrap ring-offset-background transition disabled:pointer-events-none disabled:opacity-50 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 active:scale-[0.98] bg-blue-500 text-white betterhover:hover:bg-blue-600 betterhover:hover:text-white focus-visible:outline-white text-base leading-none shadow-md py-[1.125rem] px-[1.75rem] min-w-[12ch]"
-            data-test="vault-deposit-submit"
-            data-testid="password-reset-button"
-          >
-            <div data-loader-content="" class="contents">Deposit to Vault</div>
-          </button>
-        </form>
+          @if (tab == 'Deposit') {
+          <button type="submit" class="button-submit">
+            <div>Deposit to Vault</div>
+          </button>}
+          @if (tab =='Withdraw')
+          {
+          <button type="button" class="btn-google-verify" data-button-root="">
+            <div data-loader-content="" class="contents">
+              <svg fill="none" viewBox="0 0 96 96" class="svg-icon">
+                <title></title>
+                <mask id="a" style="mask-type:luminance" maskUnits="userSpaceOnUse" x="0" y="0" width="96" height="96">
+                  <path d="M96 0H0v96h96V0Z" fill="#fff"></path>
+                </mask>
+                <g mask="url(#a)">
+                  <path
+                    d="M94.08 49.08c0-3.42-.3-6.66-.9-9.84H48v18.54h25.86c-1.14 6-4.5 11.1-9.6 14.46V84.3H79.8c9.06-8.34 14.34-20.64 14.34-35.28l-.06.06Z"
+                    fill="#4285F4"></path>
+                  <path
+                    d="M47.998 96c12.96 0 23.82-4.32 31.74-11.64L64.198 72.3c-4.32 2.88-9.78 4.56-16.26 4.56-12.48 0-23.1-8.46-26.88-19.8H5.098v12.42c7.92 15.66 24.12 26.46 42.9 26.46V96Z"
+                    fill="#34A853"></path>
+                  <path
+                    d="M21.12 57.12c-.96-2.88-1.5-5.94-1.5-9.12 0-3.18.54-6.24 1.5-9.12V26.46H5.1C1.86 32.94 0 40.26 0 48c0 7.74 1.86 15.06 5.1 21.54l16.02-12.42Z"
+                    fill="#FBBC04"></path>
+                  <path
+                    d="M47.998 19.08c7.02 0 13.38 2.4 18.36 7.2l13.74-13.74C71.758 4.8 60.898.06 47.998.06c-18.78-.06-34.98 10.68-42.9 26.4l16.02 12.42c3.78-11.34 14.34-19.8 26.88-19.8Z"
+                    fill="#E94235"></path>
+                </g>
+              </svg>
+              <span>Re-verify with Google</span>
+            </div>
+          </button> }
+        </div>
+        <div class="bg-[#0f212e] pt-4 px-4">
+          <div class="flex flex-col justify-center items-center gap-[.75rem]">
+            <p class="footer-text text-center">Improve your account security with Two-Factor Authentication</p>
+            <a href="/settings/security" class="enable-2fa-btn">Enable 2FA</a>
+          </div>
+
+          <div class="text-center text-[#a7b1c9] p-4">
+            <a href="/blog/how-to-use-our-vault" class="text-[#a7b1c9] text-[.875rem]">Learn more about Vault</a>
+          </div>
+
+        </div>
       </div>
-      <div class="footer svelte-1csl34j no-bottom-spacing">
-        <p>Improve your account security with Two-Factor Authentication</p>
-        <a
-          class="inline-flex relative items-center gap-2 justify-center rounded-sm font-semibold whitespace-nowrap ring-offset-background transition disabled:pointer-events-none disabled:opacity-50 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 active:scale-[0.98] bg-grey-400 text-white betterhover:hover:bg-grey-300 betterhover:hover:text-white focus-visible:outline-white text-sm leading-none shadow-md py-[0.9375rem] px-[1.25rem] w-full"
-          href="/settings/security"
-          >Enable 2FA</a
-        >
-      </div>
-      <div class="footer svelte-1csl34j">
-        <a
-          class="inline-flex relative items-center gap-2 justify-center rounded-sm font-semibold whitespace-nowrap ring-offset-background transition disabled:pointer-events-none disabled:opacity-50 focus-visible:outline-2 focus-visible:outline-offset-2 active:scale-[0.98] bg-transparent text-grey-200 betterhover:hover:bg-transparent betterhover:hover:text-white focus-visible:text-white focus-visible:outline-none text-sm leading-none"
-          href="/blog/how-to-use-our-vault"
-          >Learn more about Vault</a
-        >
-      </div>
+
     </div>
   </div>
-</div>

@@ -4,9 +4,6 @@
    .card-varient {
     @apply bg-[#0f212e]   text-[#d5dceb] rounded-lg !p-6 overflow-hidden relative align-baseline m-0 !w-full;
   }
-  /* .layout-spacing:not(.reset).no-bottom-spacing.svelte-l4ghjo {
-    padding-bottom: unset;
-} */
 .layout-spacing {
     @apply flex flex-col w-full flex-wrap
    
@@ -22,11 +19,6 @@ label {
     @apply flex-col-reverse justify-start flex relative
    
 }
-/* label.svelte-1wzq4lo {
-    @apply flex relative
-   
-} */
-
 .select-wrap.svelte {
     @apply w-full flex flex-shrink-0
 }
@@ -111,9 +103,6 @@ th{
     @apply w-full flex justify-center
 
 }
-/* .affliate-wrap.svelte-1vuj99p>*+* {
-    @apply mt-[1rem]
-} */
 .form-wrap.svelte-kpsotf>form {
     @apply max-w-[300px]
 }
@@ -129,9 +118,6 @@ form.svelte-188ba96:not(.is-inline)>* {
     @apply w-full
     
 }
-/* .disabled\:opacity-50:disabled {
-    opacity: .5;
-} */
 .disabled\:pointer-events-none:disabled {
     pointer-events: none;
 }
@@ -144,9 +130,7 @@ p.align-center.svelte-17v69ua {
 .is-truncate.svelte-17v69ua {
     @apply whitespace-nowrap  overflow-hidden text-ellipsis 
 }
-th,td,tr,td{
-    @apply !w-full
-}
+
 .withdraw-btn{
    @apply  text-[rgb(5_8_10)] inline-flex relative items-center gap-2 justify-center rounded-sm font-semibold whitespace-nowrap 
     transition disabled:pointer-events-none disabled:opacity-50 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 active:scale-[0.98] bg-[#078417] opacity-[1px]  hover:bg-green-400  focus-visible:outline-white text-base leading-none shadow-md py-[1.125rem] px-[1.75rem] min-w-[12ch]

@@ -306,3 +306,9 @@ label.stacked.svelte-1wzq4lo {
 .rounded-sm {
   @apply rounded-[calc(.5rem-4px)];
 }
+.btn-class{
+  @apply inline-flex relative items-center gap-2 justify-center rounded-sm font-semibold whitespace-nowrap  transition disabled:pointer-events-none disabled:opacity-50 focus-visible:outline-2 focus-visible:outline-offset-2 active:scale-[0.98] bg-transparent text-white  focus-visible:outline-none text-sm leading-none
+}
+.submit-btn{
+  @apply inline-flex relative items-center gap-2 justify-center rounded-sm font-semibold whitespace-nowrap  transition disabled:pointer-events-none disabled:opacity-50 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 active:scale-[0.98] bg-green-500 text-neutral-black  focus-visible:outline-white text-sm leading-none shadow-md py-[0.9375rem] px-[1.25rem] min-w-[12ch]
+}
