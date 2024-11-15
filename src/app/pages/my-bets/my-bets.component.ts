@@ -15,6 +15,12 @@ export class MyBetsComponent {
   activeTab: number = 1;
   LiveTab = 'basketball'; 
   TableTab: number = 1;
+  dropdown:boolean=false
+  tabDropdown:string='active'
+  openDropdown(tab:string){
+    this.tabDropdown=tab
+    this.dropdown=!this.dropdown
+  }
   openmenuModal():void{
     this.openModal=!this.openModal
   }
