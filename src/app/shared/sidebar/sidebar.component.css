@@ -186,9 +186,17 @@
 .sports:hover {
   background-image: url("/assets/sidebar/sports-ball-orange.avif");
 }
+.sports-active {
+  background-image: url("/assets/sidebar/sports-ball-orange.avif") !important;
+}
 .casino:hover {
   background-image: url("/assets/sidebar/casino-poker-cards-green-en.webp");
 }
+
+.casino-active {
+  background-image: url("/assets/sidebar/casino-poker-cards-green-en.webp") !important;
+}
+
 .sport-btn-mobile {
   width: 2.75rem !important;
   height: 2.75rem !important;

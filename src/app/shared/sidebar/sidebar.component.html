@@ -7,10 +7,10 @@
       </svg>
     </button>
     <div class="link-wrap" [ngClass]="{'flex-col !items-center pt-[16px] ':!isSidebar}">
-      <a class="header-button cursor-pointer casino" [ngClass]="{'casino-btn-mobile':!isSidebar}"><span class="text-[14px]"
+      <a class="header-button cursor-pointer casino" [ngClass]="{'casino-btn-mobile':!isSidebar, 'casino-active': routerPath === '/casino/home'}"><span class="text-[14px]"
           *ngIf="isSidebar" [routerLink]="'/casino/home'">CASINO</span></a>
       <div class="image-loader"></div>
-      <a class="header-button sports" [ngClass]="{'sport-btn-mobile':!isSidebar}" [routerLink]="'/sport/home'"><span
+      <a class="header-button sports" [ngClass]="{'sport-btn-mobile':!isSidebar, 'sports-active': routerPath === '/sport/home' }"  [routerLink]="'/sport/home'"><span
           class="text-[14px]" *ngIf="isSidebar">SPORTS</span></a>
       <div class="image-loader"></div>
     </div>
