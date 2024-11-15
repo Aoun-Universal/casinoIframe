@@ -191,7 +191,7 @@
 
 /* Input content */
 .input-content {
-  @apply flex items-center bg-gray-100 rounded-sm border border-gray-300;
+  @apply flex items-center  rounded-sm ;
 }
 
 /* Icon next to input */
@@ -201,7 +201,7 @@
 
 /* Input field styling */
 .input {
-  @apply w-full p-2 text-sm text-white focus:outline-none focus:ring-2 border-2 border-[#557086] rounded-sm;
+  @apply w-full p-2 text-sm text-white focus:outline-none  rounded-sm;
 }
 
 /* Max button styling */
