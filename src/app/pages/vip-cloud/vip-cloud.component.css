@@ -2,14 +2,64 @@
   @apply max-w-[1200px] mx-auto;
 }
 .vip-cloud {
-  @apply bg-[url('/assets/vipcloud-img/top-background.webp')] bg-center bg-cover w-full max-h-[100%] px-[3vw] py-[6px];
+  @apply bg-[url('/assets/vipcloud-img/top-background.webp')] bg-center bg-cover w-full max-h-[100%] px-[3vw] py-[2px];
 }
 .top-heading {
   @apply text-3xl font-bold tracking-[1px];
 }
 .banner-text {
-  @apply flex  flex-col gap-[0.75rem] my-6;
+  @apply flex  flex-col gap-[0.75rem] mt-[4px] mb-[6px];
 }
+
+
+
+.alignment{
+  @apply flex justify-center rounded-xl overflow-hidden relative w-full bg-gradient-to-b from-transparent to-[#0F212E] max-w-96 p-2  aspect-video
+}
+.border-alignment{
+  @apply flex flex-col justify-center rounded-lg w-full bg-[#0F212E] border-2 border-[rgb(47,_69,_83)]
+}
+.card-top{
+  @apply flex justify-between mb-6
+}
+.card-head{
+  @apply text-white font-semibold text-[18px] flex gap-1 items-center
+}
+.adjustment{
+  @apply flex flex-col justify-between p-6 z-10 h-full
+}
+.relative-classes{
+  @apply relative w-full my-2 overflow-hidden rounded-[10px] bg-gray-400 h-[0.625em] 
+}
+.decoration-xlass{
+  @apply h-full w-full shadow-lg rounded-[10px] relative bg-[#2F4553]
+}
+.vip-progress{
+  @apply flex gap-1 text-[0.850rem] font-semibold items-center
+}
+.miletone-wrap{
+  @apply flex gap-1 items-center 
+}
+.card-svg{
+  @apply w-[1rem] h-[1rem]
+}
+.card-svg2{
+  @apply w-[1.125rem] h-[1.125rem]
+}
+.card-item{
+  @apply flex gap-1
+}
+.card-text{
+  @apply flex gap-1 items-center text-[0.875rem] text-[#b1bad3] font-semibold
+}
+.card-content{
+  @apply flex justify-between items-center gap-5
+}
+
+
+
+
+
 .detail {
   @apply text-[#ABB4CD] text-wrap text-[1rem] max-w-[500px];
 }
