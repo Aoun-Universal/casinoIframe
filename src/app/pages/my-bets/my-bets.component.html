@@ -21,7 +21,7 @@
               <div class="flex justify-between items-center relative z-[1] mt-[23px]">
                 <app-tab-slider [arrItem]="tabsItems"></app-tab-slider>
                 <div class="flex flex-col items-center">
-                  <button class="active-btn" (click)="openDropdown(tabDropdown)">
+                  <button class="active-btn close-dropdown" (click)="openDropdown(tabDropdown)">
                     <span class="text-[13px]" >{{ tabDropdown === 'active' ? 'Active' : 'Settled' }}</span><svg fill="currentColor" viewBox="0 0 64 64" class="svg-icon"
                       style="transform: rotate(0deg)">
                       <title></title>
@@ -30,7 +30,7 @@
                       </path>
                     </svg>
                   </button>
-               <div class="mainwrapper-dropdown">
+               <div class="mainwrapper-dropdown close-dropdown">
                 <div *ngIf="dropdown" class="relative mt-4 z-[1]"><div class="dropdown-wrapper"></div>
                 <div  class="dropdown">
                   <a  class="dropdown-options" [ngClass]="{ '!text-[#1475E1] :active-class': tabDropdown === 'active' }" (click)="openDropdown('active')">Active</a>

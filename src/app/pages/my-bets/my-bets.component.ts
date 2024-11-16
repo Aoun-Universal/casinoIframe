@@ -1,5 +1,5 @@
 import { CommonModule } from '@angular/common';
-import { Component } from '@angular/core';
+import { Component, HostListener } from '@angular/core';
 import { TabSliderComponent } from "../../shared/tab-slider/tab-slider.component";
 import { ToastrModule, ToastrService, } from 'ngx-toastr';
 import { RouterLink } from '@angular/router';
@@ -68,4 +68,20 @@ export class MyBetsComponent {
     { tabTitle: 'Sports', dotState: false },
 
   ]
+
+  @HostListener('document:click', ['$event'])
+  onClick(event: MouseEvent): void {
+    const dropdowns = document.querySelectorAll('.close-dropdown');
+    let isInsideDropdown = false;
+
+    dropdowns.forEach(dropdown => {
+      if (dropdown.contains(event.target as Node)) {
+        isInsideDropdown = true;
+      }
+    });
+
+    if (!isInsideDropdown) {
+      this.dropdown = false
+    }
+  }
 }
