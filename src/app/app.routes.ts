@@ -172,14 +172,26 @@ export const routes: Routes = [
             redirectTo: 'deposits',
             pathMatch: 'full',
           },
-
           {
             path: 'deposits',
             loadComponent: () =>
               import(
                 './pages/deposits/deposits.component'
               ).then((c) => c.DepositsComponent),
-
+          },
+          {
+            path: 'withdrawal',
+            loadComponent: () =>
+              import(
+                './pages/withdrawal/withdrawal.component'
+              ).then((c) => c.WithdrawalComponent),
+          },
+          {
+            path: 'archive',
+            loadComponent: () =>
+              import(
+                './pages/archive/archive.component'
+              ).then((c) => c.ArchiveComponent),
           },
          
         ],
