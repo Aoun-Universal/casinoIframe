@@ -32,13 +32,11 @@ export const routes: Routes = [
         path: 'sport/home', // Sportsbook route
         loadComponent: () =>
           import('./pages/home/home.component').then((c) => c.HomeComponent),
-        canActivate: [authGuard],
       },
       {
         path: 'casino/home', // Casino route
         loadComponent: () =>
           import('./pages/home/home.component').then((c) => c.HomeComponent),
-        canActivate: [authGuard],
       },
       {
         path: 'my-bets',
