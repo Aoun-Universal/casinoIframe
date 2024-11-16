@@ -78,11 +78,13 @@
                                         </ul>
 
                                         <!-- Wallet Settings -->
+                                         <div   (click)="toggleDropdown('isDropdownOpen')" (click)=" showWalletSetting()">
                                         <div class="Wallet-continer">
-                                            <button class="wallet-setting">
+                                            <button    class="wallet-setting">
                                                 <img src="/assets/header/wellet.png" class="wallet-setting-img ">
                                                 Wallet Settings
                                             </button>
+                                        </div>
                                         </div>
                                     </div>
                                 </div>
@@ -347,7 +349,7 @@
 
                                         <!-- Wallet Settings -->
                                         <div class="Wallet-continer">
-                                            <button class="wallet-setting">
+                                            <button  (click)="toggleDropdown('isDropdownOpen')" (click)=" showWalletSetting()" class="wallet-setting">
                                                 <img src="/assets/header/wellet.png" class="wallet-setting-img ">
                                                 Wallet Settings
                                             </button>
@@ -432,3 +434,4 @@
 <app-login></app-login>
 <app-register></app-register>
 <app-logout></app-logout>
+<app-wallet-setting></app-wallet-setting>

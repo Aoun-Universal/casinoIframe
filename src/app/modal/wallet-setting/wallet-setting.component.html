@@ -1,0 +1,832 @@
+<div id="svelte" *ngIf="WalletsettingState" (click)="closeModal()">
+    <div class="Modal-container">
+      <div class="svelte-syudie"></div>
+      <div class="card" (click)="$event.stopPropagation()">
+        
+          <div class="header" >
+            <h2
+              class="header-text"
+       
+            >
+              <svg
+                fill="currentColor"
+                viewBox="0 0 64 64"
+                class="svg-icon mr-2 text-[#b1bad3]"
+               
+              >
+                <title></title>
+                <path
+                  fill-rule="evenodd"
+                  clip-rule="evenodd"
+                  d="M31.2 9.013c.56.854 1.013 1.76 1.333 2.72l4.64 1.147v6.053l-4.613 1.174a12.429 12.429 0 0 1-2.4 4.106l1.333 4.587-5.253 3.013-3.307-3.44c-.773.16-1.573.24-2.373.24-.8 0-1.6-.08-2.373-.24l-3.334 3.44L9.627 28.8l1.306-4.587a12.3 12.3 0 0 1-2.346-4.106L3.92 18.933V12.88l4.667-1.147a9.913 9.913 0 0 1 1.333-2.72c.293-.48.64-.96 1.013-1.386L9.627 3.013 14.853 0l3.334 3.44c.773-.16 1.573-.24 2.373-.24.8 0 1.6.08 2.373.24L26.24 0l5.253 3.013L30.16 7.6a9.19 9.19 0 0 1 1.04 1.413ZM15.627 15.92a4.94 4.94 0 0 0 4.933 4.933 4.94 4.94 0 0 0 4.933-4.933 4.94 4.94 0 0 0-4.933-4.933 4.94 4.94 0 0 0-4.933 4.933Zm23.44 17.866V32.24c0-4.24 3.44-7.68 7.68-7.68H64V12.64c0-2-1.627-3.627-3.627-3.627H38.16c1.76.427 3.013 2.027 3.013 3.867v6.053c0 1.84-1.253 3.44-3.04 3.867l-2.773.72c-.24.48-.533.96-.827 1.413l.8 2.773c.507 1.76-.266 3.627-1.84 4.56L28.24 35.28c-.613.373-1.307.533-2 .533-1.04 0-2.107-.4-2.88-1.2l-1.947-2.026c-.586.026-1.146.026-1.733 0l-1.947 2.026a3.998 3.998 0 0 1-4.88.667l-5.226-3.014a3.986 3.986 0 0 1-1.84-4.56l.773-2.773C6.267 24.48 6 24 5.733 23.52L2.96 22.8A3.99 3.99 0 0 1 0 19.706v33.68c0 2 1.627 3.627 3.627 3.627h56.746c2 0 3.627-1.627 3.627-3.627v-11.92H46.747c-4.24 0-7.68-3.44-7.68-7.68Zm7.68-5.226a3.687 3.687 0 0 0-3.68 3.68v1.547a3.687 3.687 0 0 0 3.68 3.68H64V28.56H46.746Z"
+                ></path>
+              </svg>
+              <span>Wallet Settings</span>
+            </h2>
+            <button
+            (click)="closeModal()"
+              type="button"
+              tabindex="0"
+              class="inline-flex relative items-center gap-2 justify-center rounded-sm font-semibold whitespace-nowrap ring-offset-background transition disabled:pointer-events-none disabled:opacity-50 focus-visible:outline-2 focus-visible:outline-offset-2 active:scale-[0.98] bg-transparent text-grey-200 betterhover:hover:bg-transparent betterhover:hover:text-white focus-visible:text-white focus-visible:outline-none text-base leading-none"
+              aria-label="Close Modal"
+              data-testid="close-modal"
+              data-test="close-modal"
+              data-button-root=""
+            >
+              <svg
+                fill="currentColor"
+                viewBox="0 0 64 64"
+                class="svg-icon"
+               
+              >
+                <title></title>
+                <path
+                  d="m54.827 16.187-7.014-7.014L32 24.987 16.187 9.173l-7.014 7.014L24.987 32 9.173 47.813l7.014 7.014L32 39.013l15.813 15.814 7.014-7.014L39.013 32l15.814-15.813Z"
+                ></path>
+              </svg>
+            </button>
+          </div>
+          <div
+            class="content-svelte"
+        
+            
+          >
+            <div class="Modal-content" >
+              <div class="ctainer" >
+                <div >
+                  <div class="toggle-svelte" >
+
+                    <label
+                    class="variant-default"
+                  >
+                    <input
+                      type="checkbox"
+                      value=""
+                      class="sr-only peer"
+                      id="toggle"
+                      name="toggle"
+            
+                    />
+                    <div class="toggle"></div>
+                    <span
+                      class="win-txt"
+                    ></span>
+                  </label>
+
+                    <!-- <label class="variant-default"
+                      ><input
+                        type="checkbox"
+                        aria-checked="false"
+                        data-testid="toggle-hide-balances"
+                        class="toggle-hide-balances"
+                      />
+                      <span class="slider"
+                        ><div
+                          class="indicator-svelte"
+                          
+                        ></div
+                      ></span>
+                    </label> -->
+                    <div class="text-wrapper" >
+                      <span
+                        class="head-text"
+                       
+                        >Hide zero balances</span
+                      >
+                      <span
+                        class="sub-text"
+                        
+                        >Your zero balances won't appear in your wallet</span
+                      >
+                    </div>
+                  </div>
+                  <div class="toggle-svelte " >
+                    <label
+                    class="variant-default"
+                  >
+                    <input
+                      type="checkbox"
+                      value=""
+                      class="sr-only peer"
+                      id="toggle"
+                      name="toggle"
+            
+                    />
+                    <div class="toggle"></div>
+                    <span
+                      class="win-txt"
+                    ></span>
+                  </label>
+                    <div class="text-wrapper" >
+                      <span
+                        class="head-text"
+                       
+                        >Display crypto in fiat</span
+                      >
+                      <span
+                        class="sub-text "
+                     
+                        >All bets &amp; transactions will be settled in the crypto
+                        equivalent</span
+                      >
+                    </div>
+                  </div>
+                </div>
+                <div class="opacity-[0.5] w-full self-center touch-auto" >
+                  <div class="wallet-grid " >
+                    <div >
+                      <label
+                     
+                        class="currency-usd-label"
+                        
+                        ><input
+                          type="radio"
+                          disabled=""
+                        
+                         
+                          class="currency-usd-input"
+                          value="undefined" />
+                        <span
+                          class="usd-input"
+                        ></span>
+                        <span
+                          class="label-content"
+                       
+                          ><span class="label-svelte" slot="label"
+                            ><span>USD</span>
+                            <svg
+                              fill="none"
+                              viewBox="0 0 96 96"
+                              class="svg-icon"
+                             
+                            >
+                              <title></title>
+                              <path
+                                d="M48 96c26.51 0 48-21.49 48-48S74.51 0 48 0 0 21.49 0 48s21.49 48 48 48Z"
+                                fill="#6CDE07"
+                              ></path>
+                              <path
+                                d="M51.52 73.32v6.56h-5.8V73.4c-7.56-.6-13.08-3.56-16.92-7.64l4.72-6.56c2.84 3 6.96 5.68 12.2 6.48V51.64c-7.48-1.88-15.4-4.64-15.4-14.12 0-7.4 6.04-13.32 15.4-14.12v-6.68h5.8v6.84c5.96.6 10.84 2.92 14.6 6.56l-4.88 6.32c-2.68-2.68-6.12-4.36-9.76-5.08v12.52c7.56 2.04 15.72 4.88 15.72 14.6 0 7.4-4.8 13.8-15.72 14.84h.04Zm-5.8-30.96V31.04c-4.16.44-6.68 2.68-6.68 5.96 0 2.84 2.84 4.28 6.68 5.36ZM58.6 59.28c0-3.36-3-4.88-7.04-6.12v12.52c5-.72 7.04-3.64 7.04-6.4Z"
+                                fill="#1B3802"
+                              ></path>
+                            </svg>
+                          </span> </span
+                      ></label>
+                    </div>
+                    <div >
+                        
+                        <label
+                     
+                        class="currency-usd-label"
+                        
+                        >
+                        <input
+                          type="radio"
+                          disabled=""
+                        
+                         
+                          class="currency-usd-input"
+                          value="undefined" />
+                        <span
+                          class="usd-input"
+                        ></span>
+                        <span
+                          class="label-content"
+                       
+                          ><span class="label-svelte" slot="label"
+                            ><span>USD</span>
+                            <svg fill="none" viewBox="0 0 96 96" class="svg-icon " style=""> <title></title> <path d="M48 96c26.51 0 48-21.49 48-48S74.51 0 48 0 0 21.49 0 48s21.49 48 48 48Z" fill="#0F8FF8"></path><path d="m62.16 58.76 7.28 3.72c-3.72 5.8-9.68 10.92-19.48 10.92-11.76 0-21.36-6.92-24.44-17.6h-3.8v-4.88h2.92c-.08-.88-.16-1.76-.16-2.6 0-.96.08-1.88.16-2.76h-2.92v-4.88h3.84c3.04-10.6 12.64-17.44 24.36-17.44 9.8 0 15.84 5.08 19.48 10.92l-7.28 3.72c-2.32-4-6.96-7.04-12.2-7.04-7 0-12.64 3.84-15.2 9.88h19.64v4.88h-21c-.08.88-.16 1.8-.16 2.76 0 .88.08 1.76.16 2.6h21v4.88H34.68c2.56 6.12 8.2 10.04 15.28 10.04 5.24 0 9.88-3 12.2-7.04v-.08Z" fill="#fff"></path></svg>
+                          </span> </span
+                      ></label>
+                    </div>
+                    <div >
+                        <label
+                     
+                        class="currency-usd-label"
+                        
+                        ><input
+                          type="radio"
+                          disabled=""
+                        
+                         
+                          class="currency-usd-input"
+                          value="undefined" />
+                        <span
+                          class="usd-input"
+                        ></span>
+                        <span
+                          class="label-content"
+                       
+                          ><span class="label-svelte" slot="label"
+                            ><span>USD</span>
+                            <svg fill="none" viewBox="0 0 96 96" class="svg-icon " style=""> <title></title> <path d="M48 96c26.51 0 48-21.49 48-48S74.51 0 48 0 0 21.49 0 48s21.49 48 48 48Z" fill="#EAC749"></path><path d="M55.48 47.52H69.6v4.88H52.28v6.68H69.6v4.88H52.28v8.56h-8.52v-8.56h-17.2v-4.88H43.8V52.4H26.56v-4.88H40.6L24.96 24.04h9.72l13.36 20.8 13.24-20.8h9.76L55.48 47.52Z" fill="#000"></path></svg>
+                          </span> </span
+                      ></label>
+                    </div>
+                    <div >
+                        <label
+                     
+                        class="currency-usd-label"
+                        
+                        ><input
+                          type="radio"
+                          disabled=""
+                        
+                         
+                          class="currency-usd-input"
+                          value="undefined" />
+                        <span
+                          class="usd-input"
+                        ></span>
+                        <span
+                          class="label-content"
+                       
+                          ><span class="label-svelte" slot="label"
+                            ><span>USD</span>
+                            <svg fill="none" viewBox="0 0 96 96" class="svg-icon " style=""> <title></title> <path d="M48 96c26.51 0 48-21.49 48-48S74.51 0 48 0 0 21.49 0 48s21.49 48 48 48Z" fill="#EAC749"></path><path d="M66 29.2H54.36c2.28 1.84 3.84 4.28 4.48 7.12h7.12v5.8h-7c-.96 6.76-5.88 10.6-10.6 11.68l11.12 18.68H47.4l-9.64-17.44h-7.88v-8.4h11.24c3.6 0 6.24-1.76 7.28-4.56H30v-5.8h18.6c-1.04-2.88-3.68-4.48-7.36-4.48H30v-8.4h36.04v5.72l-.04.08Z" fill="#276304"></path></svg>
+                          </span> </span
+                      ></label>
+                    </div>
+                    <div >
+                        <label
+                     
+                        class="currency-usd-label"
+                        
+                        ><input
+                          type="radio"
+                          disabled=""
+                        
+                         
+                          class="currency-usd-input"
+                          value="undefined" />
+                        <span
+                          class="usd-input"
+                        ></span>
+                        <span
+                          class="label-content"
+                       
+                          ><span class="label-svelte" slot="label"
+                            ><span>USD</span>
+                            <svg fill="none" viewBox="0 0 96 96" class="svg-icon " style=""> <title></title> <path d="M48 96c26.51 0 48-21.49 48-48S74.51 0 48 0 0 21.49 0 48s21.49 48 48 48Z" fill="#FFC800"></path><path d="M79.2 67.32v-4.56l.04.04c5.52-1 8.64-4.88 8.64-10.16 0-6.6-5.56-8.64-9.72-10.16-2.84-1.04-4.68-1.92-4.68-3.68 0-1.48 1.08-2.6 3.32-2.6 2.24 0 4.84.84 6.88 2.68l3.6-5.88c-2.16-1.88-4.96-3.12-8.08-3.56v-4.56h-5.12v4.64c-5.64.96-8.72 5.12-8.72 9.68 0 6.657 5.28 8.558 9.427 10.05l.413.15c2.72 1.04 4.64 1.96 4.64 3.92 0 1.6-1.4 2.84-3.76 2.84-3.12 0-6-1.44-7.92-3.48l-3.76 6.08c2.4 2.32 5.48 3.76 9.68 4.16v4.4h5.12Z" fill="#276304"></path><path fill-rule="evenodd" clip-rule="evenodd" d="m27.8 62.4-1.24-5.08H16.52l-1.24 5.08H7.16l9.64-32.6h9.52l9.64 32.6H27.8Zm-6.2-25.68-3.48 13.8h6.96l-3.48-13.8ZM53.36 62.4l-4.32-11.24h-2.92V62.4H38.2V29.8h13.28c6.36 0 10.4 4.6 10.4 10.6 0 5.52-2.84 8.32-5.28 9.4l5.52 12.6h-8.76Zm-3.08-25.8h-4.16v7.76h4.16c2.12 0 3.6-1.52 3.6-3.88s-1.52-3.92-3.6-3.92v.04Z" fill="#276304"></path></svg>
+                          </span> </span
+                      ></label>
+                    </div>
+                    <div >
+                        <label
+                     
+                        class="currency-usd-label"
+                        
+                        ><input
+                          type="radio"
+                          disabled=""
+                        
+                         
+                          class="currency-usd-input"
+                          value="undefined" />
+                        <span
+                          class="usd-input"
+                        ></span>
+                        <span
+                          class="label-content"
+                       
+                          ><span class="label-svelte" slot="label"
+                            ><span>USD</span>
+                            <svg fill="none" viewBox="0 0 96 96" class="svg-icon " style=""> <title></title> <path d="M48 96c26.51 0 48-21.49 48-48S74.51 0 48 0 0 21.49 0 48s21.49 48 48 48Z" fill="#279904"></path><path d="M28.24 54.48H19.8V72.6h-8.48V24.08h21.32c9.6 0 15.84 6.24 15.84 15.2 0 8.96-5.68 13.32-11.48 14.24l11.84 19.04h-9.8L28.28 54.44l-.04.04Zm3.2-22.88H19.8V47h11.64c4.8 0 8.28-3.04 8.28-7.72s-3.48-7.72-8.28-7.72v.04Z" fill="#FFC800"></path><path d="M70.8 73.32v6.56H65V73.4c-7.56-.6-13.08-3.56-16.92-7.64l4.72-6.56c2.84 3 6.96 5.68 12.2 6.48V51.64C57.52 49.76 49.6 47 49.6 37.52c0-7.4 6.04-13.32 15.4-14.12v-6.68h5.8v6.84c5.96.6 10.84 2.92 14.6 6.56l-4.88 6.32c-2.68-2.68-6.12-4.36-9.76-5.08v12.52c7.56 2.04 15.72 4.88 15.72 14.6 0 7.4-4.8 13.8-15.72 14.84h.04ZM65 42.36V31.04c-4.16.44-6.68 2.68-6.68 5.96 0 2.84 2.84 4.28 6.68 5.36Zm12.88 16.92c0-3.36-3-4.88-7.04-6.12v12.52c5-.72 7.04-3.64 7.04-6.4Z" fill="#FFC800"></path></svg>
+                          </span> </span
+                      ></label>
+                    </div>
+                    <div >
+                        <label
+                     
+                        class="currency-usd-label"
+                        
+                        ><input
+                          type="radio"
+                          disabled=""
+                        
+                         
+                          class="currency-usd-input"
+                          value="undefined" />
+                        <span
+                          class="usd-input"
+                        ></span>
+                        <span
+                          class="label-content"
+                       
+                          ><span class="label-svelte" slot="label"
+                            ><span>USD</span>
+                            <svg
+                              fill="none"
+                              viewBox="0 0 96 96"
+                              class="svg-icon"
+                             
+                            >
+                              <title></title>
+                              <path
+                                d="M48 96c26.51 0 48-21.49 48-48S74.51 0 48 0 0 21.49 0 48s21.49 48 48 48Z"
+                                fill="#6CDE07"
+                              ></path>
+                              <path
+                                d="M51.52 73.32v6.56h-5.8V73.4c-7.56-.6-13.08-3.56-16.92-7.64l4.72-6.56c2.84 3 6.96 5.68 12.2 6.48V51.64c-7.48-1.88-15.4-4.64-15.4-14.12 0-7.4 6.04-13.32 15.4-14.12v-6.68h5.8v6.84c5.96.6 10.84 2.92 14.6 6.56l-4.88 6.32c-2.68-2.68-6.12-4.36-9.76-5.08v12.52c7.56 2.04 15.72 4.88 15.72 14.6 0 7.4-4.8 13.8-15.72 14.84h.04Zm-5.8-30.96V31.04c-4.16.44-6.68 2.68-6.68 5.96 0 2.84 2.84 4.28 6.68 5.36ZM58.6 59.28c0-3.36-3-4.88-7.04-6.12v12.52c5-.72 7.04-3.64 7.04-6.4Z"
+                                fill="#1B3802"
+                              ></path>
+                            </svg>
+                          </span> </span
+                      ></label>
+                    </div>
+                    <div >
+                        <label
+                     
+                        class="currency-usd-label"
+                        
+                        ><input
+                          type="radio"
+                          disabled=""
+                        
+                         
+                          class="currency-usd-input"
+                          value="undefined" />
+                        <span
+                          class="usd-input"
+                        ></span>
+                        <span
+                          class="label-content"
+                       
+                          ><span class="label-svelte" slot="label"
+                            ><span>USD</span>
+                            <svg
+                              fill="none"
+                              viewBox="0 0 96 96"
+                              class="svg-icon"
+                             
+                            >
+                              <title></title>
+                              <path
+                                d="M48 96c26.51 0 48-21.49 48-48S74.51 0 48 0 0 21.49 0 48s21.49 48 48 48Z"
+                                fill="#6CDE07"
+                              ></path>
+                              <path
+                                d="M51.52 73.32v6.56h-5.8V73.4c-7.56-.6-13.08-3.56-16.92-7.64l4.72-6.56c2.84 3 6.96 5.68 12.2 6.48V51.64c-7.48-1.88-15.4-4.64-15.4-14.12 0-7.4 6.04-13.32 15.4-14.12v-6.68h5.8v6.84c5.96.6 10.84 2.92 14.6 6.56l-4.88 6.32c-2.68-2.68-6.12-4.36-9.76-5.08v12.52c7.56 2.04 15.72 4.88 15.72 14.6 0 7.4-4.8 13.8-15.72 14.84h.04Zm-5.8-30.96V31.04c-4.16.44-6.68 2.68-6.68 5.96 0 2.84 2.84 4.28 6.68 5.36ZM58.6 59.28c0-3.36-3-4.88-7.04-6.12v12.52c5-.72 7.04-3.64 7.04-6.4Z"
+                                fill="#1B3802"
+                              ></path>
+                            </svg>
+                          </span> </span
+                      ></label>
+                    </div>
+                    <div >
+                        <label
+                     
+                        class="currency-usd-label"
+                        
+                        ><input
+                          type="radio"
+                          disabled=""
+                        
+                         
+                          class="currency-usd-input"
+                          value="undefined" />
+                        <span
+                          class="usd-input"
+                        ></span>
+                        <span
+                          class="label-content"
+                       
+                          ><span class="label-svelte" slot="label"
+                            ><span>USD</span>
+                            <svg
+                              fill="none"
+                              viewBox="0 0 96 96"
+                              class="svg-icon"
+                             
+                            >
+                              <title></title>
+                              <path
+                                d="M48 96c26.51 0 48-21.49 48-48S74.51 0 48 0 0 21.49 0 48s21.49 48 48 48Z"
+                                fill="#6CDE07"
+                              ></path>
+                              <path
+                                d="M51.52 73.32v6.56h-5.8V73.4c-7.56-.6-13.08-3.56-16.92-7.64l4.72-6.56c2.84 3 6.96 5.68 12.2 6.48V51.64c-7.48-1.88-15.4-4.64-15.4-14.12 0-7.4 6.04-13.32 15.4-14.12v-6.68h5.8v6.84c5.96.6 10.84 2.92 14.6 6.56l-4.88 6.32c-2.68-2.68-6.12-4.36-9.76-5.08v12.52c7.56 2.04 15.72 4.88 15.72 14.6 0 7.4-4.8 13.8-15.72 14.84h.04Zm-5.8-30.96V31.04c-4.16.44-6.68 2.68-6.68 5.96 0 2.84 2.84 4.28 6.68 5.36ZM58.6 59.28c0-3.36-3-4.88-7.04-6.12v12.52c5-.72 7.04-3.64 7.04-6.4Z"
+                                fill="#1B3802"
+                              ></path>
+                            </svg>
+                          </span> </span
+                      ></label>
+                    </div>
+                    <div >
+                        <label
+                     
+                        class="currency-usd-label"
+                        
+                        ><input
+                          type="radio"
+                          disabled=""
+                        
+                         
+                          class="currency-usd-input"
+                          value="undefined" />
+                        <span
+                          class="usd-input"
+                        ></span>
+                        <span
+                          class="label-content"
+                       
+                          ><span class="label-svelte" slot="label"
+                            ><span>USD</span>
+                            <svg
+                              fill="none"
+                              viewBox="0 0 96 96"
+                              class="svg-icon"
+                             
+                            >
+                              <title></title>
+                              <path
+                                d="M48 96c26.51 0 48-21.49 48-48S74.51 0 48 0 0 21.49 0 48s21.49 48 48 48Z"
+                                fill="#6CDE07"
+                              ></path>
+                              <path
+                                d="M51.52 73.32v6.56h-5.8V73.4c-7.56-.6-13.08-3.56-16.92-7.64l4.72-6.56c2.84 3 6.96 5.68 12.2 6.48V51.64c-7.48-1.88-15.4-4.64-15.4-14.12 0-7.4 6.04-13.32 15.4-14.12v-6.68h5.8v6.84c5.96.6 10.84 2.92 14.6 6.56l-4.88 6.32c-2.68-2.68-6.12-4.36-9.76-5.08v12.52c7.56 2.04 15.72 4.88 15.72 14.6 0 7.4-4.8 13.8-15.72 14.84h.04Zm-5.8-30.96V31.04c-4.16.44-6.68 2.68-6.68 5.96 0 2.84 2.84 4.28 6.68 5.36ZM58.6 59.28c0-3.36-3-4.88-7.04-6.12v12.52c5-.72 7.04-3.64 7.04-6.4Z"
+                                fill="#1B3802"
+                              ></path>
+                            </svg>
+                          </span> </span
+                      ></label>
+                    </div>
+                    <div >
+                        <label
+                     
+                        class="currency-usd-label"
+                        
+                        ><input
+                          type="radio"
+                          disabled=""
+                        
+                         
+                          class="currency-usd-input"
+                          value="undefined" />
+                        <span
+                          class="usd-input"
+                        ></span>
+                        <span
+                          class="label-content"
+                       
+                          ><span class="label-svelte" slot="label"
+                            ><span>USD</span>
+                            <svg
+                              fill="none"
+                              viewBox="0 0 96 96"
+                              class="svg-icon"
+                             
+                            >
+                              <title></title>
+                              <path
+                                d="M48 96c26.51 0 48-21.49 48-48S74.51 0 48 0 0 21.49 0 48s21.49 48 48 48Z"
+                                fill="#6CDE07"
+                              ></path>
+                              <path
+                                d="M51.52 73.32v6.56h-5.8V73.4c-7.56-.6-13.08-3.56-16.92-7.64l4.72-6.56c2.84 3 6.96 5.68 12.2 6.48V51.64c-7.48-1.88-15.4-4.64-15.4-14.12 0-7.4 6.04-13.32 15.4-14.12v-6.68h5.8v6.84c5.96.6 10.84 2.92 14.6 6.56l-4.88 6.32c-2.68-2.68-6.12-4.36-9.76-5.08v12.52c7.56 2.04 15.72 4.88 15.72 14.6 0 7.4-4.8 13.8-15.72 14.84h.04Zm-5.8-30.96V31.04c-4.16.44-6.68 2.68-6.68 5.96 0 2.84 2.84 4.28 6.68 5.36ZM58.6 59.28c0-3.36-3-4.88-7.04-6.12v12.52c5-.72 7.04-3.64 7.04-6.4Z"
+                                fill="#1B3802"
+                              ></path>
+                            </svg>
+                          </span> </span
+                      ></label>
+                    </div>
+                    <div >
+                        <label
+                     
+                        class="currency-usd-label"
+                        
+                        ><input
+                          type="radio"
+                          disabled=""
+                        
+                         
+                          class="currency-usd-input"
+                          value="undefined" />
+                        <span
+                          class="usd-input"
+                        ></span>
+                        <span
+                          class="label-content"
+                       
+                          ><span class="label-svelte" slot="label"
+                            ><span>USD</span>
+                            <svg
+                              fill="none"
+                              viewBox="0 0 96 96"
+                              class="svg-icon"
+                             
+                            >
+                              <title></title>
+                              <path
+                                d="M48 96c26.51 0 48-21.49 48-48S74.51 0 48 0 0 21.49 0 48s21.49 48 48 48Z"
+                                fill="#6CDE07"
+                              ></path>
+                              <path
+                                d="M51.52 73.32v6.56h-5.8V73.4c-7.56-.6-13.08-3.56-16.92-7.64l4.72-6.56c2.84 3 6.96 5.68 12.2 6.48V51.64c-7.48-1.88-15.4-4.64-15.4-14.12 0-7.4 6.04-13.32 15.4-14.12v-6.68h5.8v6.84c5.96.6 10.84 2.92 14.6 6.56l-4.88 6.32c-2.68-2.68-6.12-4.36-9.76-5.08v12.52c7.56 2.04 15.72 4.88 15.72 14.6 0 7.4-4.8 13.8-15.72 14.84h.04Zm-5.8-30.96V31.04c-4.16.44-6.68 2.68-6.68 5.96 0 2.84 2.84 4.28 6.68 5.36ZM58.6 59.28c0-3.36-3-4.88-7.04-6.12v12.52c5-.72 7.04-3.64 7.04-6.4Z"
+                                fill="#1B3802"
+                              ></path>
+                            </svg>
+                          </span> </span
+                      ></label>
+                    </div>
+                    <div >
+                        <label
+                     
+                        class="currency-usd-label"
+                        
+                        ><input
+                          type="radio"
+                          disabled=""
+                        
+                         
+                          class="currency-usd-input"
+                          value="undefined" />
+                        <span
+                          class="usd-input"
+                        ></span>
+                        <span
+                          class="label-content"
+                       
+                          ><span class="label-svelte" slot="label"
+                            ><span>USD</span>
+                            <svg
+                              fill="none"
+                              viewBox="0 0 96 96"
+                              class="svg-icon"
+                             
+                            >
+                              <title></title>
+                              <path
+                                d="M48 96c26.51 0 48-21.49 48-48S74.51 0 48 0 0 21.49 0 48s21.49 48 48 48Z"
+                                fill="#6CDE07"
+                              ></path>
+                              <path
+                                d="M51.52 73.32v6.56h-5.8V73.4c-7.56-.6-13.08-3.56-16.92-7.64l4.72-6.56c2.84 3 6.96 5.68 12.2 6.48V51.64c-7.48-1.88-15.4-4.64-15.4-14.12 0-7.4 6.04-13.32 15.4-14.12v-6.68h5.8v6.84c5.96.6 10.84 2.92 14.6 6.56l-4.88 6.32c-2.68-2.68-6.12-4.36-9.76-5.08v12.52c7.56 2.04 15.72 4.88 15.72 14.6 0 7.4-4.8 13.8-15.72 14.84h.04Zm-5.8-30.96V31.04c-4.16.44-6.68 2.68-6.68 5.96 0 2.84 2.84 4.28 6.68 5.36ZM58.6 59.28c0-3.36-3-4.88-7.04-6.12v12.52c5-.72 7.04-3.64 7.04-6.4Z"
+                                fill="#1B3802"
+                              ></path>
+                            </svg>
+                          </span> </span
+                      ></label>
+                    </div>
+                    <div >
+                        <label
+                     
+                        class="currency-usd-label"
+                        
+                        ><input
+                          type="radio"
+                          disabled=""
+                        
+                         
+                          class="currency-usd-input"
+                          value="undefined" />
+                        <span
+                          class="usd-input"
+                        ></span>
+                        <span
+                          class="label-content"
+                       
+                          ><span class="label-svelte" slot="label"
+                            ><span>USD</span>
+                            <svg
+                              fill="none"
+                              viewBox="0 0 96 96"
+                              class="svg-icon"
+                             
+                            >
+                              <title></title>
+                              <path
+                                d="M48 96c26.51 0 48-21.49 48-48S74.51 0 48 0 0 21.49 0 48s21.49 48 48 48Z"
+                                fill="#6CDE07"
+                              ></path>
+                              <path
+                                d="M51.52 73.32v6.56h-5.8V73.4c-7.56-.6-13.08-3.56-16.92-7.64l4.72-6.56c2.84 3 6.96 5.68 12.2 6.48V51.64c-7.48-1.88-15.4-4.64-15.4-14.12 0-7.4 6.04-13.32 15.4-14.12v-6.68h5.8v6.84c5.96.6 10.84 2.92 14.6 6.56l-4.88 6.32c-2.68-2.68-6.12-4.36-9.76-5.08v12.52c7.56 2.04 15.72 4.88 15.72 14.6 0 7.4-4.8 13.8-15.72 14.84h.04Zm-5.8-30.96V31.04c-4.16.44-6.68 2.68-6.68 5.96 0 2.84 2.84 4.28 6.68 5.36ZM58.6 59.28c0-3.36-3-4.88-7.04-6.12v12.52c5-.72 7.04-3.64 7.04-6.4Z"
+                                fill="#1B3802"
+                              ></path>
+                            </svg>
+                          </span> </span
+                      ></label>
+                    </div>
+                    <div >
+                        <label
+                     
+                        class="currency-usd-label"
+                        
+                        ><input
+                          type="radio"
+                          disabled=""
+                        
+                         
+                          class="currency-usd-input"
+                          value="undefined" />
+                        <span
+                          class="usd-input"
+                        ></span>
+                        <span
+                          class="label-content"
+                       
+                          ><span class="label-svelte" slot="label"
+                            ><span>USD</span>
+                            <svg
+                              fill="none"
+                              viewBox="0 0 96 96"
+                              class="svg-icon"
+                             
+                            >
+                              <title></title>
+                              <path
+                                d="M48 96c26.51 0 48-21.49 48-48S74.51 0 48 0 0 21.49 0 48s21.49 48 48 48Z"
+                                fill="#6CDE07"
+                              ></path>
+                              <path
+                                d="M51.52 73.32v6.56h-5.8V73.4c-7.56-.6-13.08-3.56-16.92-7.64l4.72-6.56c2.84 3 6.96 5.68 12.2 6.48V51.64c-7.48-1.88-15.4-4.64-15.4-14.12 0-7.4 6.04-13.32 15.4-14.12v-6.68h5.8v6.84c5.96.6 10.84 2.92 14.6 6.56l-4.88 6.32c-2.68-2.68-6.12-4.36-9.76-5.08v12.52c7.56 2.04 15.72 4.88 15.72 14.6 0 7.4-4.8 13.8-15.72 14.84h.04Zm-5.8-30.96V31.04c-4.16.44-6.68 2.68-6.68 5.96 0 2.84 2.84 4.28 6.68 5.36ZM58.6 59.28c0-3.36-3-4.88-7.04-6.12v12.52c5-.72 7.04-3.64 7.04-6.4Z"
+                                fill="#1B3802"
+                              ></path>
+                            </svg>
+                          </span> </span
+                      ></label>
+                    </div>
+                    <div >
+                        <label
+                     
+                        class="currency-usd-label"
+                        
+                        ><input
+                          type="radio"
+                          disabled=""
+                        
+                         
+                          class="currency-usd-input"
+                          value="undefined" />
+                        <span
+                          class="usd-input"
+                        ></span>
+                        <span
+                          class="label-content"
+                       
+                          ><span class="label-svelte" slot="label"
+                            ><span>USD</span>
+                            <svg
+                              fill="none"
+                              viewBox="0 0 96 96"
+                              class="svg-icon"
+                             
+                            >
+                              <title></title>
+                              <path
+                                d="M48 96c26.51 0 48-21.49 48-48S74.51 0 48 0 0 21.49 0 48s21.49 48 48 48Z"
+                                fill="#6CDE07"
+                              ></path>
+                              <path
+                                d="M51.52 73.32v6.56h-5.8V73.4c-7.56-.6-13.08-3.56-16.92-7.64l4.72-6.56c2.84 3 6.96 5.68 12.2 6.48V51.64c-7.48-1.88-15.4-4.64-15.4-14.12 0-7.4 6.04-13.32 15.4-14.12v-6.68h5.8v6.84c5.96.6 10.84 2.92 14.6 6.56l-4.88 6.32c-2.68-2.68-6.12-4.36-9.76-5.08v12.52c7.56 2.04 15.72 4.88 15.72 14.6 0 7.4-4.8 13.8-15.72 14.84h.04Zm-5.8-30.96V31.04c-4.16.44-6.68 2.68-6.68 5.96 0 2.84 2.84 4.28 6.68 5.36ZM58.6 59.28c0-3.36-3-4.88-7.04-6.12v12.52c5-.72 7.04-3.64 7.04-6.4Z"
+                                fill="#1B3802"
+                              ></path>
+                            </svg>
+                          </span> </span
+                      ></label>
+                    </div>
+                    <div >
+                        <label
+                     
+                        class="currency-usd-label"
+                        
+                        ><input
+                          type="radio"
+                          disabled=""
+                        
+                         
+                          class="currency-usd-input"
+                          value="undefined" />
+                        <span
+                          class="usd-input"
+                        ></span>
+                        <span
+                          class="label-content"
+                       
+                          ><span class="label-svelte" slot="label"
+                            ><span>USD</span>
+                            <svg
+                              fill="none"
+                              viewBox="0 0 96 96"
+                              class="svg-icon"
+                             
+                            >
+                              <title></title>
+                              <path
+                                d="M48 96c26.51 0 48-21.49 48-48S74.51 0 48 0 0 21.49 0 48s21.49 48 48 48Z"
+                                fill="#6CDE07"
+                              ></path>
+                              <path
+                                d="M51.52 73.32v6.56h-5.8V73.4c-7.56-.6-13.08-3.56-16.92-7.64l4.72-6.56c2.84 3 6.96 5.68 12.2 6.48V51.64c-7.48-1.88-15.4-4.64-15.4-14.12 0-7.4 6.04-13.32 15.4-14.12v-6.68h5.8v6.84c5.96.6 10.84 2.92 14.6 6.56l-4.88 6.32c-2.68-2.68-6.12-4.36-9.76-5.08v12.52c7.56 2.04 15.72 4.88 15.72 14.6 0 7.4-4.8 13.8-15.72 14.84h.04Zm-5.8-30.96V31.04c-4.16.44-6.68 2.68-6.68 5.96 0 2.84 2.84 4.28 6.68 5.36ZM58.6 59.28c0-3.36-3-4.88-7.04-6.12v12.52c5-.72 7.04-3.64 7.04-6.4Z"
+                                fill="#1B3802"
+                              ></path>
+                            </svg>
+                          </span> </span
+                      ></label>
+                    </div>
+                    <div >
+                        <label
+                     
+                        class="currency-usd-label"
+                        
+                        ><input
+                          type="radio"
+                          disabled=""
+                        
+                         
+                          class="currency-usd-input"
+                          value="undefined" />
+                        <span
+                          class="usd-input"
+                        ></span>
+                        <span
+                          class="label-content"
+                       
+                          ><span class="label-svelte" slot="label"
+                            ><span>USD</span>
+                            <svg
+                              fill="none"
+                              viewBox="0 0 96 96"
+                              class="svg-icon"
+                             
+                            >
+                              <title></title>
+                              <path
+                                d="M48 96c26.51 0 48-21.49 48-48S74.51 0 48 0 0 21.49 0 48s21.49 48 48 48Z"
+                                fill="#6CDE07"
+                              ></path>
+                              <path
+                                d="M51.52 73.32v6.56h-5.8V73.4c-7.56-.6-13.08-3.56-16.92-7.64l4.72-6.56c2.84 3 6.96 5.68 12.2 6.48V51.64c-7.48-1.88-15.4-4.64-15.4-14.12 0-7.4 6.04-13.32 15.4-14.12v-6.68h5.8v6.84c5.96.6 10.84 2.92 14.6 6.56l-4.88 6.32c-2.68-2.68-6.12-4.36-9.76-5.08v12.52c7.56 2.04 15.72 4.88 15.72 14.6 0 7.4-4.8 13.8-15.72 14.84h.04Zm-5.8-30.96V31.04c-4.16.44-6.68 2.68-6.68 5.96 0 2.84 2.84 4.28 6.68 5.36ZM58.6 59.28c0-3.36-3-4.88-7.04-6.12v12.52c5-.72 7.04-3.64 7.04-6.4Z"
+                                fill="#1B3802"
+                              ></path>
+                            </svg>
+                          </span> </span
+                      ></label>
+                    </div>
+                    <div >
+                        <label
+                     
+                        class="currency-usd-label"
+                        
+                        ><input
+                          type="radio"
+                          disabled=""
+                        
+                         
+                          class="currency-usd-input"
+                          value="undefined" />
+                        <span
+                          class="usd-input"
+                        ></span>
+                        <span
+                          class="label-content"
+                       
+                          ><span class="label-svelte" slot="label"
+                            ><span>USD</span>
+                            <svg
+                              fill="none"
+                              viewBox="0 0 96 96"
+                              class="svg-icon"
+                             
+                            >
+                              <title></title>
+                              <path
+                                d="M48 96c26.51 0 48-21.49 48-48S74.51 0 48 0 0 21.49 0 48s21.49 48 48 48Z"
+                                fill="#6CDE07"
+                              ></path>
+                              <path
+                                d="M51.52 73.32v6.56h-5.8V73.4c-7.56-.6-13.08-3.56-16.92-7.64l4.72-6.56c2.84 3 6.96 5.68 12.2 6.48V51.64c-7.48-1.88-15.4-4.64-15.4-14.12 0-7.4 6.04-13.32 15.4-14.12v-6.68h5.8v6.84c5.96.6 10.84 2.92 14.6 6.56l-4.88 6.32c-2.68-2.68-6.12-4.36-9.76-5.08v12.52c7.56 2.04 15.72 4.88 15.72 14.6 0 7.4-4.8 13.8-15.72 14.84h.04Zm-5.8-30.96V31.04c-4.16.44-6.68 2.68-6.68 5.96 0 2.84 2.84 4.28 6.68 5.36ZM58.6 59.28c0-3.36-3-4.88-7.04-6.12v12.52c5-.72 7.04-3.64 7.04-6.4Z"
+                                fill="#1B3802"
+                              ></path>
+                            </svg>
+                          </span> </span
+                      ></label>
+                    </div>
+                  </div>
+                </div>
+                <hr class="touch-auto bg-[rgb(47,69,83)] h-[2px] w-full" />
+                <div class="flex justify-between  touch-auto" >
+                  <div class="term" >
+                    <span
+                      class="btn-wrap"
+                     
+                      >Please note that these are currency approximations.</span
+                    >
+                  </div>
+                  <button
+                    type="button"
+                    tabindex="0"
+                    class="inline-flex relative items-center gap-2 justify-center !text-[rgb(5,8,10)] rounded-sm font-semibold whitespace-nowrap ring-offset-background transition disabled:pointer-events-none disabled:opacity-50 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 active:scale-[0.98] bg-[rgb(0,231,1)] text-neutral-black betterhover:hover:bg-green-400 betterhover:hover:text-neutral-black focus-visible:outline-white text-sm leading-none shadow-md py-[0.8125rem] px-[1rem]"
+                    data-testid="save-wallet-settings"
+                    data-button-root=""
+                  >
+                    Save
+                  </button>
+                </div>
+              </div>
+            </div>
+          </div>
+       
+      </div>
+    </div>
+  </div>

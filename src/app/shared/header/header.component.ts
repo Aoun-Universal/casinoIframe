@@ -7,11 +7,12 @@ import { AuthService } from '../../services/auth.service';
 import { LogoutComponent } from '../../modal/logout/logout.component';
 import { RouterLink } from '@angular/router';
 import { WalletModalComponent } from '../../modal/wallet-modal/wallet-modal.component';
+import { WalletSettingComponent } from "../../modal/wallet-setting/wallet-setting.component";
 
 @Component({
   selector: 'app-header',
   standalone: true,
-  imports: [CommonModule, LoginComponent, RegisterComponent, LogoutComponent,RouterLink ,WalletModalComponent],
+  imports: [CommonModule, LoginComponent, RegisterComponent, LogoutComponent, RouterLink, WalletModalComponent, WalletSettingComponent],
   templateUrl: './header.component.html',
   styleUrl: './header.component.css'
 })
@@ -63,6 +64,9 @@ export class HeaderComponent implements OnInit {
   ngOnInit(): void {
     this.token = this.authService.isAuthenticated()
 
+  }
+  showWalletSetting() {
+    this.toggle.setWalletsetting(true)
   }
 
 
