@@ -254,3 +254,5 @@
 .custom-checkbox:checked + .indicator .inner-dot {
   transform: scale(1); /* Scale to full size when checked */
 }
+
+

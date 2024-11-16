@@ -15,6 +15,7 @@ import { TooltipComponent } from "../tooltip/tooltip.component";
 export class SidebarComponent implements OnInit {
   openBar: any;
   isSidebar = true
+  selectedOption:any
   isMobileSidebar = false;
   routerPath: any
   smScreen: boolean = false;
@@ -35,6 +36,8 @@ export class SidebarComponent implements OnInit {
   onResize(event: Event) {
     this.checkScreenSize();
   }
+
+  
 
   checkScreenSize() {
     this.smScreen = window.innerWidth <= 768;
@@ -81,5 +84,19 @@ export class SidebarComponent implements OnInit {
   onWalletBtnClick(){
     this.toggle.setWalletModal(true)
   }
+  options = [
+    { id: 'decimal', value: 'decimal', label: 'Decimal' },
+    { id: 'fractional', value: 'fractional', label: 'Fractional' },
+    { id: 'american', value: 'american', label: 'American' },
+    { id: 'indonesian', value: 'indonesian', label: 'Indonesian' },
+    { id: 'hongkong', value: 'hongkong', label: 'Hong Kong' },
+    { id: 'malaysian', value: 'malaysian', label: 'Malaysian' }
+  ];
+
+  selectOption(value: string) {
+    this.selectedOption = value;
+  }
+
+
 
 }
