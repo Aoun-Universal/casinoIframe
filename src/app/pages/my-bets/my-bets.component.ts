@@ -1,29 +1,39 @@
 import { CommonModule } from '@angular/common';
 import { Component } from '@angular/core';
 import { TabSliderComponent } from "../../shared/tab-slider/tab-slider.component";
-import { RouterLink } from '@angular/router';
+import { ToastrModule, ToastrService,RouterLink } from 'ngx-toastr';
 
 @Component({
   selector: 'app-my-bets',
   standalone: true,
-  imports: [CommonModule, TabSliderComponent, RouterLink],
+  imports: [CommonModule, TabSliderComponent, ToastrModule,RouterLink],
   templateUrl: './my-bets.component.html',
   styleUrl: './my-bets.component.css'
 })
 export class MyBetsComponent {
-  activeTb:string='casino';
-  openModal:boolean=false
+  activeTb: string = 'casino';
+  openModal: boolean = false
   activeTab: number = 1;
-  LiveTab = 'basketball'; 
+  LiveTab = 'basketball';
   TableTab: number = 1;
-  dropdown:boolean=false
-  tabDropdown:string='active'
-  openDropdown(tab:string){
-    this.tabDropdown=tab
-    this.dropdown=!this.dropdown
+  dropdown: boolean = false
+  tabDropdown: string = 'active'
+
+  constructor(private toastr: ToastrService) { }
+
+  showSuccess() {
+    this.toastr.success('This is a success message!', 'Title', {
+      positionClass: 'custom-toast-top-left',
+      progressBar:true
+    });
   }
-  openmenuModal():void{
-    this.openModal=!this.openModal
+
+  openDropdown(tab: string) {
+    this.tabDropdown = tab
+    this.dropdown = !this.dropdown
+  }
+  openmenuModal(): void {
+    this.openModal = !this.openModal
   }
   setActivTab(tab: string): void {
     this.activeTb = tab; // Update active tab on click
@@ -33,13 +43,13 @@ export class MyBetsComponent {
     this.activeTab = tabIndex;
   }
 
-    // Tabs
-    setActiveTableTab(tabIndex: number): void {
-      this.TableTab = tabIndex;
-    }
+  // Tabs
+  setActiveTableTab(tabIndex: number): void {
+    this.TableTab = tabIndex;
+  }
 
-   // Table Tabs
-   setLiveTabActive(tab: string) {
+  // Table Tabs
+  setLiveTabActive(tab: string) {
     this.LiveTab = tab;
   }
 
@@ -53,6 +63,6 @@ export class MyBetsComponent {
   tabsItems = [
     { tabTitle: 'Casino', dotState: false },
     { tabTitle: 'Sports', dotState: false },
-   
+
   ]
 }

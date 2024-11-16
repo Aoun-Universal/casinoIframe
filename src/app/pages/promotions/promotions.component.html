@@ -1,0 +1,108 @@
+<p>promotions works!</p>
+<!-- Main Parent Wrapper -->
+
+<div class="main-parent">
+  <div class="child-container">
+    <!-- Left Box with Heading -->
+
+    <div class="left-box">
+      <h1 class="heading-text">
+        <span>Permosions</span
+        ><!-- Title of the section -->
+      </h1>
+    </div>
+    <div class="right-box">
+      <!-- Right Box with Banner Image -->
+
+      <img src="/assets/group-banner-default.webp" alt="" />
+    </div>
+  </div>
+</div>
+<!-- Container for Categories Section -->
+
+<div class="secound-wrapper">
+  <div class="max-w-[1200px] mx-auto">
+    <!-- Centered content wrapper -->
+
+    <div class="category-parent">
+      <section class="categories">
+        <div class="card-focus">
+          <a href="">
+            <article
+              class="flex items-center justify-between rounded-[.25rem] bg-[#213743] overflow-hidden"
+            >
+              <div class="content flex items-center">
+                <img
+                  class="w-[6rem] h-[6rem]"
+                  src="/assets/f88349b3c6179fa7d053c1daea2f50c9362220dd-500x500.webp"
+                  alt=""
+                />
+                <p class="text-[1.125rem] text-left ml-[16px] font-[600] block">
+                  Casino
+                </p>
+              </div>
+              <svg
+                fill="currentColor"
+                viewBox="0 0 64 64"
+                class="svg-icon text-[1.25rem] w-[16px] h-[16px] mr-[1.15rem]"
+              >
+                <title></title>
+                <path
+                  d="m26.307 53.995 20.998-20.997L26.307 12 20 18.306 34.694 33 20.001 47.694 26.307 54v-.005Z"
+                ></path>
+              </svg>
+            </article>
+          </a>
+        </div>
+        <!-- First Category Card: Casino -->
+
+        <div class="card-focus">
+          <a href="">
+            <article class="content-parent">
+              <div class="content flex items-center">
+                <img
+                  class="w-[6rem] h-[6rem]"
+                  src="/assets/fc8e3f8abc0d2612313c4b3b2e5a172e130a0261-500x500.webp"
+                  alt=""
+                />
+                <p class="sport-text">Sport</p>
+              </div>
+              <!-- Arrow icon for navigation -->
+
+              <svg fill="currentColor" viewBox="0 0 64 64" class="svg-icon">
+                <title></title>
+                <path
+                  d="m26.307 53.995 20.998-20.997L26.307 12 20 18.306 34.694 33 20.001 47.694 26.307 54v-.005Z"
+                ></path>
+              </svg>
+            </article>
+          </a>
+        </div>
+      </section>
+    </div>
+    <div class="mt-[1.5rem] flex flex-col">
+      <h2 class="middle-text">
+        <span>Latest Promotions</span>
+      </h2>
+      <div class="main-wrapper">
+        <div class="contents" *ngFor="let race of races">
+          <a href="">
+            <article>
+              <!-- Dynamic Image Source -->
+
+              <img [src]="race.imgUrl" alt="Race image" />
+              <!-- Information Section (Date and Title) -->
+
+              <div class="flex flex-col">
+                <span class="card-text">{{ race.endDate }}</span>
+                <!-- Dynamic Title Text -->
+
+                <h2 class="card-title">{{ race.title }}</h2>
+              </div>
+            </article>
+          </a>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

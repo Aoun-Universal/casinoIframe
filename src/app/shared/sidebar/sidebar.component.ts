@@ -38,7 +38,7 @@ export class SidebarComponent implements OnInit {
     this.checkScreenSize();
   }
 
-  
+
 
   checkScreenSize() {
     this.smScreen = window.innerWidth <= 768;
@@ -55,6 +55,7 @@ export class SidebarComponent implements OnInit {
         this.routerPath = event.url;
       });
     this.routerPath = this.router.url;
+
 
     this.toggle.sidebarState$.subscribe((state) => {
       this.isSidebar = state
