@@ -22,9 +22,11 @@ export class MyBetsComponent {
   constructor(private toastr: ToastrService) { }
 
   showSuccess() {
-    this.toastr.success('This is a success message!', 'Title', {
+    this.toastr.success('Your bets are now hidden.', 'Ghost Mode', {
       positionClass: 'custom-toast-top-left',
-      progressBar:true
+      progressBar: true,
+      timeOut: 3000,
+      closeButton: true
     });
   }
 
