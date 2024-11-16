@@ -5,6 +5,7 @@ import { RegisterComponent } from './modal/register/register.component';
 import { NotificationComponent } from './modal/notification/notification.component';
 import { StatisticsComponent } from './modal/statistics/statistics.component';
 import { authGuard } from "./auth/auth.guard";
+import { StakeRaceComponent } from './pages/stake-race/stake-race.component';
 
 
 export const routes: Routes = [
@@ -208,7 +209,10 @@ export const routes: Routes = [
       }
     ],
   },
-
+  {
+    path: 'stake-race',
+    component: StakeRaceComponent,
+  },
   {
     path: 'vault',
     component: VaultComponent,
