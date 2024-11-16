@@ -89,7 +89,8 @@
                             </div>
                         </div>
                         <!-- Wallet button -->
-                        <button (click)="onWalletBtnClick()"  type="button" class="wallet close-dropdown"><span>Wallet</span></button>
+                        <button (click)="onWalletBtnClick()" type="button"
+                            class="wallet close-dropdown"><span>Wallet</span></button>
                     </div>
                     <!-- Right Section for profile , search and notification -->
                     <section class="" *ngIf="token">
@@ -112,12 +113,13 @@
                                     <div class="arrow"></div>
                                     <div class="dropdown-scroll-content " style="max-height: inherit;">
                                         <ng-container *ngFor="let option of profileOptions; let i = index">
-                                            <button    (click)="toggleDropdown('porfileDropOpen')" *ngIf="option.type === 'button'" type="button"
-                                            [routerLink]="option.path ? option.path : null"
-                                            (click)="i === 0 ? onWalletBtnClick() : !option.path && showModal(i)"
-                                             (click)="i === 1 ? openvaultModal() : null"
-                                              (click)="i === 2 ? openvipModal() : null"
-                                               (click)="i === 4 ? openstatisticModal() : null"
+                                            <button (click)="toggleDropdown('porfileDropOpen')"
+                                                *ngIf="option.type === 'button'" type="button"
+                                                [routerLink]="option.path ? option.path : null"
+                                                (click)="i === 0 ? onWalletBtnClick() : !option.path && showModal(i)"
+                                                (click)="i === 1 ? openvaultModal() : null"
+                                                (click)="i === 2 ? openvipModal() : null"
+                                                (click)="i === 4 ? openstatisticModal() : null"
                                                 class="porfile-list w-full" (click)="showModal(i)">
                                                 <img [src]="option.icon" [alt]="option.label" class="svg-icon">
                                                 <span>{{ option.label }}</span>
@@ -355,24 +357,26 @@
                             </div>
                         </div>
                         <button type="button" tabindex="0"
+                         (click)="onWalletBtnClick()"
                             class="inline-flex relative rounded-tr-[.25rem] rounded-br-[.25rem] items-center gap-2 justify-center rounded-sm font-semibold whitespace-nowrap ring-offset-background transition disabled:pointer-events-none disabled:opacity-50 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 active:scale-[0.98] bg-[#1475E1] text-white betterhover:hover:bg-blue-600 betterhover:hover:text-white focus-visible:outline-white text-sm leading-none shadow-md py-[0.8125rem] px-[1rem]">
                             <svg fill="currentColor" viewBox="0 0 64 64" class="svg-icon ">
                                 <title></title>
                                 <path fill-rule="evenodd" clip-rule="evenodd"
                                     d="M45.71 13.349v.024c0 4.316-2.076 8.146-5.32 10.57H24.61l-.034-.024a13.19 13.19 0 0 1-5.286-10.57c0-7.296 5.914-13.21 13.21-13.21 7.296 0 13.21 5.914 13.21 13.21Zm4.806 22.844H62.23v-3.19a5.31 5.31 0 0 0-5.3-5.31H10.14a5.624 5.624 0 0 1-5.24-5.608v-.014a4.914 4.914 0 0 1 0-.522v.012a5.546 5.546 0 0 1 5.51-5.11h3.85a17.489 17.489 0 0 1-.26-2.88v-.01H7.06A7.07 7.07 0 0 0 0 20.63v37.1a6.14 6.14 0 0 0 6.13 6.13h50.79a5.31 5.31 0 0 0 5.31-5.31v-3.19H50.5c-.092.004-.2.006-.31.006-5.296 0-9.59-4.294-9.59-9.59s4.294-9.59 9.59-9.59c.108 0 .218.002.326.006Zm4.733-22.63v2.89h-4.516a18.36 18.36 0 0 0 .267-2.89h4.25Zm-4.516 2.89-.02.11.017-.11h.003ZM8.66 21.983c0-.98.792-1.774 1.77-1.78h4.91l.044.122a17.843 17.843 0 0 0 1.956 3.618h-6.91a1.77 1.77 0 0 1-1.77-1.77v-.19ZM64 39.943v11.67l-13.488-.002a5.84 5.84 0 0 1-6.094-5.834 5.84 5.84 0 0 1 6.082-5.834H64Zm-13.06 8.5a2.67 2.67 0 0 0 2.67-2.66v-.01a2.67 2.67 0 1 0-2.67 2.67Zm-1.26-28.24a18.188 18.188 0 0 1-1.998 3.74h-.002l-.038.058.04-.058H58v-3.74h-8.32Z">
                                 </path>
-                            </svg></button>
+                            </svg>
+                        </button>
                     </div>
                     <!-- Right buttons -->
                     <section>
                         <div
                             class="stack stack-right y-center gap-none padding-none direction-horizontal padding-left-auto padding-top-auto padding-bottom-auto padding-right-auto svelte-1cd1boi">
                             <div class="dropdown svelte-1iau4lg transparent flex gap-[3px]">
-                                <button type="button" class="porfile-iocn" (click)="toggleDropdown('porfileDropOpen')">
+                                <button type="button" class="porfile-iocn close-dropdown" (click)="toggleDropdown('porfileDropOpen')">
                                     <img src="/assets/header/porfile.png" class="svg-icon ">
                                 </button>
                                 <!-- porfile  Menu -->
-                                <div class="porfile-dropdown" *ngIf="porfileDropOpen">
+                                <div class="porfile-dropdown close-dropdown" *ngIf="porfileDropOpen">
                                     <!-- Arrow -->
                                     <div class="arrow"></div>
                                     <div class="dropdown-scroll-content " style="max-height: inherit;">
@@ -386,11 +390,11 @@
                                     </div>
                                 </div>
 
-                                <button type="button" class="bell-icon" (click)="toggleDropdown('bellDropOpen')">
+                                <button type="button" class="bell-icon close-dropdown" (click)="toggleDropdown('bellDropOpen')">
                                     <img src="/assets/header/bell.png" class="svg-icon ">
                                 </button>
                             </div>
-                            <div class="notifications-widget  svelte-6gfkw4" style="z-index: 901;" *ngIf="bellDropOpen">
+                            <div class="notifications-widget   close-dropdown svelte-6gfkw4" style="z-index: 901;" *ngIf="bellDropOpen">
                                 <div class="notifications-header svelte-12heyz0">
                                     <div class="title svelte-12heyz0">
                                         <img src="/assets/header/bell.png" class="svg-icon">
