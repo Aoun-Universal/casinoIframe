@@ -112,7 +112,7 @@
                                     <div class="arrow"></div>
                                     <div class="dropdown-scroll-content " style="max-height: inherit;">
                                         <ng-container *ngFor="let option of profileOptions; let i = index">
-                                            <button *ngIf="option.type === 'button'" type="button"
+                                            <button    (click)="toggleDropdown('porfileDropOpen')" *ngIf="option.type === 'button'" type="button"
                                             [routerLink]="option.path ? option.path : null"
                                             (click)="i === 0 ? onWalletBtnClick() : !option.path && showModal(i)"
                                              (click)="i === 1 ? openvaultModal() : null"
