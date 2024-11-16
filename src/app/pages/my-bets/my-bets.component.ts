@@ -1,12 +1,13 @@
 import { CommonModule } from '@angular/common';
 import { Component } from '@angular/core';
 import { TabSliderComponent } from "../../shared/tab-slider/tab-slider.component";
-import { ToastrModule, ToastrService,RouterLink } from 'ngx-toastr';
+import { ToastrModule, ToastrService, } from 'ngx-toastr';
+import { RouterLink } from '@angular/router';
 
 @Component({
   selector: 'app-my-bets',
   standalone: true,
-  imports: [CommonModule, TabSliderComponent, ToastrModule,RouterLink],
+  imports: [CommonModule, TabSliderComponent, ToastrModule, RouterLink],
   templateUrl: './my-bets.component.html',
   styleUrl: './my-bets.component.css'
 })
