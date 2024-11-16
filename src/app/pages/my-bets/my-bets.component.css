@@ -146,6 +146,38 @@ tr:hover {
   @apply absolute z-[9999] top-[39px];
 }
 ::ng-deep .custom-toast-top-left {
-  top: 0px !important;
-  left: 0px !important;
+  top: 76px !important;
+  left: 16px !important;
+  font-size: 14px !important;
+  color: #b1bad3 !important;
+}
+
+::ng-deep .toast-container .ngx-toastr {
+  box-shadow: 0 10px 15px -3px rgba(0, 0, 0, .2), 0 4px 6px -2px rgba(0, 0, 0, .1) !important;
+}
+
+ ::ng-deep .toast-message {
+  color: #b1bad3 !important;
+}
+
+::ng-deep .toast-success {
+  background-color: #1a2c38 !important;
+  background-image: url("/assets/toastr.png") !important;
+}
+
+.toast-title {
+  @apply !text-white !text-[14px];
+}
+
+::ng-deep button.toast-close-button {
+  @apply flex items-center h-[47px] mr-2.5;
+}
+
+::ng-deep .toast-progress {
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  height: 4px;
+  background-color: #557086;
+  opacity: 0.4;
 }

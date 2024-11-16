@@ -1,4 +1,4 @@
-<div id="svelte"  >
+<div  (click)="closestatisticModal()" id="svelte"  >
   <div
     data-test="modal-user"
     data-layout=""
@@ -7,7 +7,7 @@
     
   >
     <div class="overlay svelte-cq3ecl"  ></div>
-    <div class="card size-md svelte-cq3ecl"  >
+    <div  (click)="$event.stopPropagation()" class="card size-md svelte-cq3ecl"  >
       <div class="header svelte-227w12" >
         <h2
           class="weight-semibold line-height-default align-left size-base text-size-base variant-highlighted with-icon-space svelte-17v69ua"

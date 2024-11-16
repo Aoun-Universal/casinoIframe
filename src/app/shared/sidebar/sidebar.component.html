@@ -9,11 +9,13 @@
     <div class="link-wrap" [ngClass]="{'flex-col !items-center pt-[16px] ':!isSidebar}">
       <a class="header-button cursor-pointer casino"
         [ngClass]="{'casino-btn-mobile':!isSidebar, 'casino-active': routerPath === '/casino/home'}"><span
-          class="text-[14px]" *ngIf="isSidebar" [routerLink]="'/casino/home'">CASINO</span></a>
+          class="text-[14px]" *ngIf="isSidebar" (click)="navigateTo('/casino/home')"
+      >CASINO</span></a>
       <div class="image-loader"></div>
-      <a class="header-button sports"
+      <a class="header-button sports cursor-pointer"
         [ngClass]="{'sport-btn-mobile':!isSidebar, 'sports-active': routerPath === '/sport/home' }"
-        [routerLink]="'/sport/home'"><span class="text-[14px]" *ngIf="isSidebar">SPORTS</span></a>
+      ><span class="text-[14px]" *ngIf="isSidebar"       (click)="navigateTo('/sport/home')"
+      >SPORTS</span></a>
       <div class="image-loader"></div>
     </div>
   </div>
@@ -32,9 +34,11 @@
 
     <!-- mobile button -->
     <div class="header-buttons "><a class="header-button-mobile casino mobile" draggable="false"
-        [routerLink]="'/casino/home'"><span>CASINO</span></a>
+                                    (click)="navigateTo('/sport/home')"
+    ><span>CASINO</span></a>
       <div class="image-loader "></div> <a class="header-button-mobile sports mobile " draggable="false"
-        [routerLink]="'/sport/home'"><span>SPORTS</span></a>
+                                           (click)="navigateTo('/sport/home')"
+      ><span>SPORTS</span></a>
     </div>
     <!-- mobile button -->
   </div>
@@ -46,7 +50,7 @@
     <div class="sidebar-content-wrapper overflow-visible">
 
       <div class="dropdown-container">
-                <div class="nav-item group relative" *ngIf="routerPath === '/casino/home'">
+                <div class="nav-item group relative" *ngIf="isCasinoRoute()">
                   <app-tooltip [sidebarState]="isSidebar" text="Favourites ">
                     <div class="title-wrapper">
                       <svg fill="currentColor" viewBox="0 0 64 64" class="svg-icon">
@@ -60,7 +64,7 @@
                   </app-tooltip>
                 </div>
 
-        <div class="nav-item group relative" *ngIf="routerPath === '/sport/home'">
+        <div class="nav-item group relative" *ngIf="isSportRoute()">
           <app-tooltip [sidebarState]="isSidebar" text="Live Events ">
             <div class="title-wrapper">
               <svg fill="currentColor" viewBox="0 0 64 64" class="svg-icon " style="">
@@ -73,7 +77,7 @@
             </div>
           </app-tooltip>
         </div>
-                <div class="nav-item group relative" *ngIf="routerPath === '/casino/home'">
+                <div class="nav-item group relative" *ngIf="isCasinoRoute()">
                   <app-tooltip [sidebarState]="isSidebar" text="Recent ">
                     <div class="title-wrapper ">
                       <svg fill="currentColor" viewBox="0 0 96 96" class="svg-icon ">
@@ -86,7 +90,7 @@
                     </div>
                   </app-tooltip>
                 </div>
-                <div class="nav-item relative group" *ngIf="routerPath === '/casino/home'">
+                <div class="nav-item relative group" *ngIf="isCasinoRoute()">
                   <app-tooltip [sidebarState]="isSidebar" text="Challenges ">
                     <div class="title-wrapper">
                       <svg fill="currentColor" viewBox="0 0 96 96" class="svg-icon ">
@@ -99,7 +103,7 @@
                     </div>
                   </app-tooltip>
                 </div>
-        <div class="nav-item relative group" *ngIf="routerPath === '/sport/home'">
+        <div class="nav-item relative group" *ngIf="isSportRoute()">
 
           <app-tooltip [sidebarState]="isSidebar" text="Starting Soon">
             <div class="title-wrapper">
@@ -114,8 +118,7 @@
           </app-tooltip>
         </div>
 
-        <div class="nav-item relative group" *ngIf="routerPath === '/casino/home' || routerPath === '/sport/home'" routerLink="/my-bets">
-
+        <div class="nav-item relative group" *ngIf="isCasinoRoute() || isSportRoute()" [routerLink]="isCasinoRoute() ? '/casino/my-bets' : '/sport/my-bets'">
           <app-tooltip [sidebarState]="isSidebar" text="My Bets ">
             <div class="title-wrapper">
               <svg fill="currentColor" viewBox="0 0 64 64" class="svg-icon ">
@@ -130,7 +133,7 @@
         </div>
       </div>
 
-      <div class="dropdown-container" *ngIf="routerPath === '/casino/home'">
+      <div class="dropdown-container" *ngIf="isCasinoRoute()">
               <div class="nav-item" [ngClass]="{'md:!hidden':!isSidebar}">
                 <div class="title-wrapper !p-4">
                   <div>Game</div>
@@ -307,9 +310,9 @@
                 </app-tooltip>
               </div>
             </div>
-      <div class="dropdown-container" *ngIf="routerPath === '/casino/home'">
+      <div class="dropdown-container" *ngIf="isCasinoRoute()">
               <div class="nav-item">
-                <app-tooltip [sidebarState]="isSidebar" text="Providers" routerLink="/providers">
+                <app-tooltip [sidebarState]="isSidebar" text="Providers" (click)="navigateTo('/casino/providers')">
                   <div class="title-wrapper">
                     <svg fill="currentColor" viewBox="0 0 96 96" class="svg-icon ">
                       <title></title>
@@ -323,7 +326,7 @@
               </div>
             </div>
       <!-- top sports container -->
-      <div class="flex flex-col max-w-full bg-[#1a2c38] rounded-[0.5em]" *ngIf="routerPath === '/sport/home'">
+      <div class="flex flex-col max-w-full bg-[#1a2c38] rounded-[0.5em]" *ngIf="isSportRoute()">
         <div *ngIf="isSidebar" class="flex flex-col py-[0.75em] px-[1em]">
           <span class="max-w-full text-white flex justify-start text-left font-semibold text-[0.825em]"
             [ngClass]="{'md:hidden':!isSidebar}">
@@ -361,7 +364,7 @@
           <!-- dropdown inner content -->
           <div class="inner-content" [ngClass]="{'active-dropdown':openBar === 'soccer' }">
             <div class="hr-border"></div>
-            <div class="nav-item dropdown-item" routerLink="/soccer">
+            <div class="nav-item dropdown-item" (click)="navigateTo('/sport/soccer')">
               <div class="title-wrapper">
                 <svg fill="currentColor" viewBox="0 0 64 64" class="svg-icon ">
                   <title></title>
@@ -535,7 +538,7 @@
                 <div>La liga</div>
               </div>
             </div>
-            <div class="nav-item dropdown-item" routerLink="all-tennis">
+            <div class="nav-item dropdown-item" (click)="navigateTo('/sport/all-tennis')">
               <div class="title-wrapper">
                 <svg fill="#b1bad3" viewBox="0 0 64 64" class="w-[14px]">
                   <title></title>
@@ -550,7 +553,7 @@
         </div>
       </div>
 
-      <div class="dropdown-container" *ngIf="routerPath === '/sport/home'">
+      <div class="dropdown-container" *ngIf="isSportRoute()">
         <div class="nav-item" (click)="toggleOpen('all-sports')" [ngClass]="{'dropdown-item':openBar === 'all-sports'}">
           <div class="title-wrapper">
             <svg fill="currentColor" viewBox="0 0 96 96" class="svg-icon ">
@@ -1104,7 +1107,7 @@
         </div>
       </div >
 
-      <div class="dropdown-container" *ngIf="routerPath === '/sport/home'">
+      <div class="dropdown-container" *ngIf="isSportRoute()">
         <div class="nav-item" (click)="toggleOpen('all-esport')" [ngClass]="{'dropdown-item':openBar === 'all-esport'}">
           <div class="title-wrapper">
             <svg fill="currentColor" viewBox="0 0 96 96" class="svg-icon ">
@@ -1353,7 +1356,7 @@
         </div>
       </div>
 
-      <div class="dropdown-container" *ngIf="routerPath === '/sport/home'">
+      <div class="dropdown-container" *ngIf="isSportRoute()">
         <div class="nav-item" (click)="toggleOpen('racing')" [ngClass]="{'dropdown-item':openBar === 'racing'}">
           <div class="title-wrapper">
             <svg fill="currentColor" viewBox="0 0 96 96" class="svg-icon ">
@@ -1384,8 +1387,7 @@
         <div class="inner-content" [ngClass]="{'active-dropdown':openBar === 'racing' }">
           <div class="hr-border"></div>
           <div class="sidebar-content">
-            <a class="base-sidebar-anchor max-w-full svelte-1ih38ux" routerLink="/horse-racing"
-              data-sveltekit-preload-data="off" href="/sports/counter-strike">
+            <a class="base-sidebar-anchor max-w-full svelte-1ih38ux" (click)="navigateTo('/sport/horse-racing')" >
               <button type="button" tabindex="0"
                 class="inline-flex relative items-center gap-2 font-semibold whitespace-nowrap ring-offset-background transition disabled:pointer-events-none disabled:opacity-50 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 active:scale-[0.98] bg-transparent text-white hover:bg-[#2f4553] focus-visible:outline-white text-sm leading-none [&amp;_svg]:text-grey-200 [&amp;:hover>svg]:text-white py-[0.8125rem] px-[1rem] w-full justify-start max-w-full rounded-none"
                 data-analytics="sidebar-e-sports-counter-strike-link" data-button-root="">
@@ -1431,7 +1433,7 @@
         </div>
       </div>
 
-      <div class="dropdown-container" *ngIf="routerPath === '/sport/home'">
+      <div class="dropdown-container" *ngIf="isSportRoute()">
         <div class="nav-item" (click)="toggleOpen('odds')" [ngClass]="{'dropdown-item':openBar === 'odds'}">
           <div class="title-wrapper">
             <svg fill="currentColor" viewBox="0 0 96 96" class="svg-icon ">
@@ -1711,7 +1713,7 @@
                 <div [ngClass]="{'md:hidden':!isSidebar}">$75k Weekly Raffle</div>
               </div>
             </div>
-            <div class="nav-item dropdown-item">
+            <div  (click)="openRaceModal()" class="nav-item dropdown-item">
               <div class="title-wrapper">
                 <svg fill="currentColor" viewBox="0 0 64 64" class="svg-icon ">
                   <title></title>
@@ -1734,7 +1736,7 @@
               </div>
             </div>
             <div class="hr-border"></div>
-            <div class="nav-item dropdown-item" routerLink="all-tennis">
+            <div class="nav-item dropdown-item" (click)="navigateTo('/sport/all-tennis')">
               <div class="title-wrapper">
                 <svg fill="#b1bad3" viewBox="0 0 64 64" class="w-[14px]">
                   <title></title>
@@ -1808,8 +1810,6 @@
           </app-tooltip>
         </div>
       </div>
-
-
 
       <div class="dropdown-container">
         <div>
@@ -2116,3 +2116,4 @@
 @if (isSidebar) {
 <div class="fixed inset-0 min-[1200px]:hidden max-md:hidden bg-black opacity-[.5] z-[99]"></div>
 }
+<app-race></app-race>

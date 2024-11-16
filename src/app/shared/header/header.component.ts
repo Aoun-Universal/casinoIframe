@@ -5,11 +5,13 @@ import { ToggleService } from '../../services/toggle.service';
 import { RegisterComponent } from '../../modal/register/register.component';
 import { AuthService } from '../../services/auth.service';
 import { LogoutComponent } from '../../modal/logout/logout.component';
+import { RouterLink } from '@angular/router';
+import { WalletModalComponent } from '../../modal/wallet-modal/wallet-modal.component';
 
 @Component({
   selector: 'app-header',
   standalone: true,
-  imports: [CommonModule, LoginComponent, RegisterComponent, LogoutComponent],
+  imports: [CommonModule, LoginComponent, RegisterComponent, LogoutComponent,RouterLink ,WalletModalComponent],
   templateUrl: './header.component.html',
   styleUrl: './header.component.css'
 })
@@ -92,18 +94,31 @@ export class HeaderComponent implements OnInit {
 
 
   profileOptions = [
-    { label: 'Wallet', icon: '/assets/header/wallet.png', type: 'button' },
-    { label: 'Vault', icon: '/assets/header/valut.png', type: 'button' },
-    { label: 'VIP', icon: '/assets/header/vip.png', type: 'button' },
-    { label: 'Affiliate', icon: '/assets/header/Affiliate.png', type: 'button' },
-    { label: 'Statistics', icon: '/assets/header/Statistics.png', type: 'button' },
-    { label: 'Transactions', icon: '/assets/header/Transactions.png', type: 'button' },
-    { label: 'My Bets', icon: '/assets/header/My Bets.png', type: 'button' },
-    { label: 'Settings', icon: '/assets/header/setting.png', type: 'button' },
-    { label: 'Stake Smart', icon: '/assets/header/Stake Smart.png', type: 'button' },
+    { label: 'Wallet', icon: '/assets/header/wallet.png', type: 'button',   }, 
+    { label: 'Vault', icon: '/assets/header/valut.png', type: 'button',  },
+    { label: 'VIP', icon: '/assets/header/vip.png', type: 'button',  },
+    { label: 'Affiliate', icon: '/assets/header/Affiliate.png', type: 'button', path: '/affiliate' },
+    { label: 'Statistics', icon: '/assets/header/Statistics.png', type: 'button' , },
+    { label: 'Transactions', icon: '/assets/header/Transactions.png', type: 'button', path: '/transactions' },
+    { label: 'My Bets', icon: '/assets/header/My Bets.png', type: 'button' , path: '/my-bets'},
+    { label: 'Settings', icon: '/assets/header/setting.png', type: 'button', path: '/setting' },
+    { label: 'Stake Smart', icon: '/assets/header/Stake Smart.png', type: 'button', path: '/responsible-gambling/stake-smart' },
     { label: 'Live support', icon: '/assets/header/Live support.png', type: 'button' },
-    { label: 'Logout', icon: '/assets/header/logout.png', type: 'button' }
+    { label: 'Logout', icon: '/assets/header/logout.png', type: 'button',  }
   ];
+
+  onWalletBtnClick(){
+    this.toggle.setWalletModal(true)
+  }
+  openvaultModal() {
+    this.toggle.setVaultModalState(true);
+  }
+  openvipModal() {
+    this.toggle.setVipModalState(true);
+  }
+  openstatisticModal() {
+    this.toggle.setstatisticModal(true)
+  }
 
 
   showModal(index: any) {

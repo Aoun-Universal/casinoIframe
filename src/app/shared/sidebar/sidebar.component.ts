@@ -5,10 +5,11 @@ import { filter } from 'rxjs';
 import { VaultComponent } from "../../modal/vault/vault.component";
 import { ToggleService } from '../../services/toggle.service';
 import { TooltipComponent } from "../tooltip/tooltip.component";
+import { RaceComponent } from '../../modal/race/race.component';
 @Component({
   selector: 'app-sidebar',
   standalone: true,
-  imports: [CommonModule, VaultComponent, RouterLink, TooltipComponent],
+  imports: [CommonModule, VaultComponent, RouterLink, TooltipComponent, RaceComponent],
   templateUrl: './sidebar.component.html',
   styleUrls: ['./sidebar.component.css'] // Corrected from styleUrl to styleUrls
 })
@@ -16,12 +17,27 @@ export class SidebarComponent implements OnInit {
   openBar: any;
   isSidebar = true
   selectedOption:any
-  isMobileSidebar = false;
   routerPath: any
   smScreen: boolean = false;
-  xlScreen: boolean = true;
 
-  constructor(private router: Router, private toggle: ToggleService, @Inject(DOCUMENT) private document: Document, private route:ActivatedRoute) { }
+  constructor(private router: Router, private toggle: ToggleService, @Inject(DOCUMENT) private document: Document, private route:ActivatedRoute) {
+    this.router.events
+      .pipe(filter((event) => event instanceof NavigationEnd))
+      .subscribe((event: NavigationEnd) => {
+        this.routerPath = event.url || ''; // Ensure routerPath is always a string
+      });
+  }
+  navigateTo(path: string): void {
+    this.router.navigate([path]);
+  }
+  isCasinoRoute(): boolean {
+    return this.routerPath.startsWith('/casino/');
+  }
+
+  isSportRoute(): boolean {
+    return this.routerPath.startsWith('/sport/');
+  }
+
   toggleOpen(name: string) {
     if (this.openBar === name) {
       this.openBar = '';
@@ -37,25 +53,12 @@ export class SidebarComponent implements OnInit {
     this.checkScreenSize();
   }
 
-
-
   checkScreenSize() {
     this.smScreen = window.innerWidth <= 768;
   }
 
 
   ngOnInit(): void {
-    // Subscribe to router events to track navigation end
-    this.router.events
-      .pipe(
-        filter(event => event instanceof NavigationEnd)
-      )
-      .subscribe((event: NavigationEnd) => {
-        this.routerPath = event.url;
-      });
-    this.routerPath = this.router.url;
-
-
     this.toggle.sidebarState$.subscribe((state) => {
       this.isSidebar = state
     })
@@ -84,6 +87,9 @@ export class SidebarComponent implements OnInit {
   }
   onWalletBtnClick(){
     this.toggle.setWalletModal(true)
+  }
+  openRaceModal() {
+    this.toggle.setRaceModal(true);
   }
   options = [
     { id: 'decimal', value: 'decimal', label: 'Decimal' },

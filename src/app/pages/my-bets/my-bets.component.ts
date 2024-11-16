@@ -1,12 +1,13 @@
 import { CommonModule } from '@angular/common';
-import { Component } from '@angular/core';
+import { Component, HostListener } from '@angular/core';
 import { TabSliderComponent } from "../../shared/tab-slider/tab-slider.component";
-import { ToastrModule, ToastrService } from 'ngx-toastr';
+import { ToastrModule, ToastrService, } from 'ngx-toastr';
+import { RouterLink } from '@angular/router';
 
 @Component({
   selector: 'app-my-bets',
   standalone: true,
-  imports: [CommonModule, TabSliderComponent, ToastrModule],
+  imports: [CommonModule, TabSliderComponent, ToastrModule, RouterLink],
   templateUrl: './my-bets.component.html',
   styleUrl: './my-bets.component.css'
 })
@@ -22,9 +23,11 @@ export class MyBetsComponent {
   constructor(private toastr: ToastrService) { }
 
   showSuccess() {
-    this.toastr.success('This is a success message!', 'Title', {
+    this.toastr.success('Your bets are now hidden.', 'Ghost Mode', {
       positionClass: 'custom-toast-top-left',
-      progressBar:true
+      progressBar: true,
+      timeOut: 3000,
+      closeButton: true
     });
   }
 
@@ -65,4 +68,20 @@ export class MyBetsComponent {
     { tabTitle: 'Sports', dotState: false },
 
   ]
+
+  @HostListener('document:click', ['$event'])
+  onClick(event: MouseEvent): void {
+    const dropdowns = document.querySelectorAll('.close-dropdown');
+    let isInsideDropdown = false;
+
+    dropdowns.forEach(dropdown => {
+      if (dropdown.contains(event.target as Node)) {
+        isInsideDropdown = true;
+      }
+    });
+
+    if (!isInsideDropdown) {
+      this.dropdown = false
+    }
+  }
 }

@@ -274,12 +274,12 @@ input[type="date"]::-webkit-calendar-picker-indicator {
   @apply text-[#b1bad3] text-center justify-center text-sm px-2 inline-flex items-center font-normal
 }
 .social-btn{
-  @apply inline-flex bg-[rgb(47,69,83)] relative items-center gap-2 justify-center 
+  @apply inline-flex bg-[rgb(47,69,83)] hover:bg-[rgba(85,112,134)] relative items-center gap-2 justify-center 
   rounded-sm font-semibold whitespace-nowrap  transition
    disabled:pointer-events-none disabled:opacity-50 
   focus-visible:outline focus-visible:outline-2 
   focus-visible:outline-offset-2 active:scale-[0.98]  text-white 
-   hover:text-white focus-visible:outline-white text-sm leading-none shadow-md py-[0.8125rem] px-[1rem]
+   hover:text-white focus-visible:outline-white text-sm leading-none shadow-md py-[0.8125rem] px-[1rem] 
 }
 .provider-login-line{
   @apply inline-flex relative bg-[rgb(47,69,83)] items-center

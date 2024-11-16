@@ -21,7 +21,7 @@
               <div class="flex justify-between items-center relative z-[1] mt-[23px]">
                 <app-tab-slider [arrItem]="tabsItems"></app-tab-slider>
                 <div class="flex flex-col items-center">
-                  <button class="active-btn" (click)="openDropdown(tabDropdown)">
+                  <button class="active-btn close-dropdown" (click)="openDropdown(tabDropdown)">
                     <span class="text-[13px]" >{{ tabDropdown === 'active' ? 'Active' : 'Settled' }}</span><svg fill="currentColor" viewBox="0 0 64 64" class="svg-icon"
                       style="transform: rotate(0deg)">
                       <title></title>
@@ -30,14 +30,14 @@
                       </path>
                     </svg>
                   </button>
-               <div class="mainwrapper-dropdown">
+               <div class="mainwrapper-dropdown close-dropdown">
                 <div *ngIf="dropdown" class="relative mt-4 z-[1]"><div class="dropdown-wrapper"></div>
                 <div  class="dropdown">
                   <a  class="dropdown-options" [ngClass]="{ '!text-[#1475E1] :active-class': tabDropdown === 'active' }" (click)="openDropdown('active')">Active</a>
                   <a  class="dropdown-options" [ngClass]="{ '!text-[#1475E1] :settled-class': tabDropdown === 'settled' }" (click)="openDropdown('settled')">Settled</a>
                 </div></div>
                </div>
-                  
+
 
                 </div>
               </div>
@@ -87,7 +87,7 @@
                 </svg>
               </div>
               <div class="active-scnd-btn">No Active Bets</div>
-              <a class="start-betting-btn">Start Betting Now!</a>
+              <a class="start-betting-btn cursor-pointer" [routerLink]="'/sport/home'">Start Betting Now!</a>
               <div class="betting-parent">
                 <button class="betting">Previous</button>
                 <button class="betting">Next</button>
@@ -95,12 +95,12 @@
             </div>
           </div>
         </div>
-        
+
         <div class="top-sports-header events-header">
           <!-- left tab slider -->
           <app-tab-slider [arrItem]="tabsItem"></app-tab-slider>
-        
-        
+
+
           <!-- Right -->
           <div class="select-wrap">
             <!--Mode Button -->
@@ -115,7 +115,7 @@
                 <span>Ghost mode off</span>
               </button>
             </div>
-        
+
             <!-- Select Label -->
             <label class="stacked">
               <div class="select-wrap">

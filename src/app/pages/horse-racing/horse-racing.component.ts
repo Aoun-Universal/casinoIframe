@@ -2,10 +2,11 @@ import { CommonModule } from '@angular/common';
 import { Component, CUSTOM_ELEMENTS_SCHEMA, HostListener, ViewChild } from '@angular/core';
 import { SlickCarouselComponent, SlickCarouselModule } from 'ngx-slick-carousel';
 import { TabSliderComponent } from '../../shared/tab-slider/tab-slider.component';
+import {RouterLink} from "@angular/router";
 @Component({
   selector: 'app-horse-racing',
   standalone: true,
-  imports: [CommonModule, SlickCarouselModule, TabSliderComponent],
+  imports: [CommonModule, SlickCarouselModule, TabSliderComponent, RouterLink],
   templateUrl: './horse-racing.component.html',
   styleUrl: './horse-racing.component.css',
   schemas: [CUSTOM_ELEMENTS_SCHEMA]
@@ -111,5 +112,5 @@ export class HorseRacingComponent {
     { tabTitle: 'Race Leaderboard', dotState: false },
   ]
 
-  
+
 }
