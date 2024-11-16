@@ -48,8 +48,8 @@ export class ResponsibleGamblingComponent {
     routes = [
       { path: '/responsible-gambling/stake-smart', label: 'Stake Smart' },
       { path: '/responsible-gambling/responsible-gambling-faqs', label: 'Responsible Gambling FAQs' },
-      { path: '/responsible-gambling/commission', label: 'Recognise the sign' },
-      { path: '/responsible-gambling/', label: 'Self Assessment' },
+      { path: '/responsible-gambling/stake-smart', label: 'Recognise the sign' },
+      { path:'/responsible-gambling/responsible-gambling-faqs', label: 'Self Assessment' },
       { path: '/responsible-gambling/self-exclusion', label: 'Self Exclusion' },
       { path: '/responsible-gambling/calculator', label: 'Budget Calculator' }
     ];

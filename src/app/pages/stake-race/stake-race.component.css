@@ -1,0 +1,129 @@
+.good-varient {
+    @apply bg-[#2f4553] w-full flex items-center flex-col px-[3vw] py-0;
+  }
+  .ctainer {
+    @apply h-full w-full max-w-[1200px];
+  }
+  .update-msg-wrap {
+    @apply flex gap-4 py-2 justify-between items-center md:flex-row flex-col
+  }
+  
+  .read-more-btn {
+    @apply inline-flex relative items-center gap-2 justify-center rounded-sm font-semibold whitespace-nowrap  transition disabled:pointer-events-none disabled:opacity-50 focus-visible:outline-2 focus-visible:outline-offset-2 active:scale-[0.98] bg-transparent text-white hover:bg-transparent hover:text-white focus-visible:outline-none text-sm leading-none  underline
+  }
+  .dismiss-btn {
+    @apply inline-flex relative items-center gap-2 justify-center rounded-sm font-semibold whitespace-nowrap  transition disabled:pointer-events-none disabled:opacity-50 focus-visible:outline-2 focus-visible:outline-offset-2 active:scale-[0.98] bg-transparent text-white hover:bg-transparent hover:text-white focus-visible:outline-none text-sm leading-none  w-full
+  }
+  .verfication{
+    @apply inline-flex relative items-center gap-2 justify-center rounded-sm font-semibold whitespace-nowrap  transition disabled:pointer-events-none disabled:opacity-50 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 active:scale-[0.98] bg-blue-500 text-white hover:bg-blue-600 hover:text-white focus-visible:outline-white text-sm leading-none shadow-md py-[0.8125rem] px-[1rem] w-full
+  }
+  .read-more {
+    @apply text-[#fff] text-left justify-start text-sm font-semibold  inline-flex items-center align-baseline;
+  }
+  .span-text {
+    @apply text-[#fff]  inline text-left text-sm font-semibold ;
+  }
+
+  .scrollable{
+    @apply flex flex-col w-full max-w-full h-full flex-1 pt-0 overflow-y-auto overflow-x-auto
+
+}
+
+.content-wrapper {
+    @apply relative
+    
+}
+.parent {
+    @apply w-full flex flex-col items-center p-[0_3vw]
+}
+.ctainer {
+    @apply w-full max-w-[1200px] items-center
+}
+.ctainer.svelte-1p5gbm2 {
+    @apply h-0
+}
+.sizer {
+    @apply w-full h-0
+
+}
+
+.layout-spacing{
+    @apply pb-[2rem]
+}
+.layout-spacing {
+    @apply flex flex-col w-full
+}
+.ctainer.svelte.svelte {
+    @apply flex flex-col m-[1rem_auto] items-start max-w-[650px]
+}
+img.hero.svelte.svelte {
+    @apply inline-block m-[0_auto] mt-[1rem] rounded-[.5rem] w-full
+}
+span.text-size-sm.responsive-type-scale.svelte-17v69ua{
+    @apply !text-sm text-[#b1bad3] leading-[132%] text-left justify-start font-normal
+}
+.ctainer.svelte>* {
+    @apply mt-[1.5rem]
+  
+}
+
+.group.svelte.svelte {
+    @apply flex flex-col w-full 
+}
+h2{
+    @apply text-[1.75rem] leading-[1.5] text-[#fff] font-semibold
+}
+.list.svelte.svelte {
+    @apply list-disc pl-[1rem] 
+}
+.group.svelte {
+    @apply mt-[.5rem]
+}
+.list.svelte li.svelte {
+    @apply leading-[1.5];
+}
+span.text-size-base.responsive-type-scale{
+    @apply !text-lg
+}
+h1{
+    @apply text-[2.25rem] leading-[120%] font-semibold
+}
+.tag-list{
+    @apply flex
+}
+.inline-text{
+    @apply leading-[150%] text-[#b1bad3] font-normal text-lg mt-[.75rem]
+
+}
+span.line-height-default.svelte-17v69ua{
+    @apply leading-[1.5] text-[#b1bad3] font-normal
+}
+.content-block{
+    @apply !leading-[150%]
+}
+.casino-btn{
+    @apply inline-flex relative items-center gap-2 justify-center font-semibold 
+    whitespace-nowrap  transition disabled:pointer-events-none
+     disabled:opacity-50 focus-visible:outline focus-visible:outline-2 
+     focus-visible:outline-offset-2 active:scale-[0.98] bg-[rgb(15,33,46)]
+        focus-visible:outline-white  leading-none  py-[0.75rem] px-[0.75rem] rounded-full
+}
+.sport{
+    @apply inline-flex relative items-center gap-2 justify-center font-semibold
+     whitespace-nowrap  transition disabled:pointer-events-none disabled:opacity-50 
+     focus-visible:outline focus-visible:outline-2 
+     focus-visible:outline-offset-2 active:scale-[0.98]
+      bg-[rgb(15,33,46)] 
+       focus-visible:outline-white  leading-none  py-[0.75rem] px-[0.75rem] rounded-full
+}
+.tag-list.svelte-1rtuv3a {
+    @apply ml-[.5rem]
+}
+
+.promo-banner-image{
+    @apply flex justify-center p-8 
+}
+
+.promo-banner-image img{
+    @apply w-[21rem]
+}

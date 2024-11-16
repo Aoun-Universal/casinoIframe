@@ -2,11 +2,12 @@ import { Component } from '@angular/core';
 import { ToggleService } from '../../services/toggle.service';
 import { Subscription } from 'rxjs/internal/Subscription';
 import { interval } from 'rxjs';
+import { RouterLink } from '@angular/router';
 
 @Component({
   selector: 'app-race',
   standalone: true,
-  imports: [],
+  imports: [RouterLink ],
   templateUrl: './race.component.html',
   styleUrl: './race.component.css'
 })

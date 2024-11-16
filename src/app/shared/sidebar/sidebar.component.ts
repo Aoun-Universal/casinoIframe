@@ -5,10 +5,11 @@ import { filter } from 'rxjs';
 import { VaultComponent } from "../../modal/vault/vault.component";
 import { ToggleService } from '../../services/toggle.service';
 import { TooltipComponent } from "../tooltip/tooltip.component";
+import { RaceComponent } from '../../modal/race/race.component';
 @Component({
   selector: 'app-sidebar',
   standalone: true,
-  imports: [CommonModule, VaultComponent, RouterLink, TooltipComponent],
+  imports: [CommonModule, VaultComponent, RouterLink, TooltipComponent, RaceComponent],
   templateUrl: './sidebar.component.html',
   styleUrls: ['./sidebar.component.css'] // Corrected from styleUrl to styleUrls
 })
@@ -83,6 +84,9 @@ export class SidebarComponent implements OnInit {
   }
   onWalletBtnClick(){
     this.toggle.setWalletModal(true)
+  }
+  openRaceModal() {
+    this.toggle.setRaceModal(true);
   }
   options = [
     { id: 'decimal', value: 'decimal', label: 'Decimal' },

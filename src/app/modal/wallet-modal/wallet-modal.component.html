@@ -1,6 +1,6 @@
 @if(isModal){
-  <div class="content h-screen w-screen justify-center flex items-center fixed top-0 left-0 bg-black bg-opacity-60 z-50">
-    <div class="w-[500px] h-[454px]">
+  <div (click)="onCloseModal()" class="content h-screen w-screen justify-center flex items-center fixed top-0 left-0 bg-black bg-opacity-60 z-50">
+    <div   (click)="$event.stopPropagation()" class="w-[500px]  h-[454px]">
       <div class="relative z-[9999]">
         <button
           type="button"

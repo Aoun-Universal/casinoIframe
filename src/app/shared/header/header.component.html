@@ -89,7 +89,7 @@
                             </div>
                         </div>
                         <!-- Wallet button -->
-                        <button type="button" class="wallet"><span>Wallet</span></button>
+                        <button (click)="onWalletBtnClick()"  type="button" class="wallet close-dropdown"><span>Wallet</span></button>
                     </div>
                     <!-- Right Section for profile , search and notification -->
                     <section class="" *ngIf="token">
@@ -113,6 +113,11 @@
                                     <div class="dropdown-scroll-content " style="max-height: inherit;">
                                         <ng-container *ngFor="let option of profileOptions; let i = index">
                                             <button *ngIf="option.type === 'button'" type="button"
+                                            [routerLink]="option.path ? option.path : null"
+                                            (click)="i === 0 ? onWalletBtnClick() : !option.path && showModal(i)"
+                                             (click)="i === 1 ? openvaultModal() : null"
+                                              (click)="i === 2 ? openvipModal() : null"
+                                               (click)="i === 4 ? openstatisticModal() : null"
                                                 class="porfile-list w-full" (click)="showModal(i)">
                                                 <img [src]="option.icon" [alt]="option.label" class="svg-icon">
                                                 <span>{{ option.label }}</span>
