@@ -1,5 +1,5 @@
 import { CommonModule } from '@angular/common';
-import { Component, OnInit } from '@angular/core';
+import { Component, HostListener, OnInit } from '@angular/core';
 import { LoginComponent } from '../../modal/login/login.component';
 import { ToggleService } from '../../services/toggle.service';
 import { RegisterComponent } from '../../modal/register/register.component';
@@ -106,11 +106,31 @@ export class HeaderComponent implements OnInit {
   ];
 
 
-  showModal(index:any) {
+  showModal(index: any) {
     const currentIndex = index
     if (currentIndex === 10) {
       this.toggle.setLogout(true);
     }
   }
+
+  @HostListener('document:click', ['$event'])
+  onClick(event: MouseEvent): void {
+    const dropdowns = document.querySelectorAll('.close-dropdown');
+    let isInsideDropdown = false;
+
+    dropdowns.forEach(dropdown => {
+      if (dropdown.contains(event.target as Node)) {
+        isInsideDropdown = true;
+      }
+    });
+
+    if (!isInsideDropdown) {
+      this.massageDropOpen = false;
+      this.porfileDropOpen = false
+      this.isDropdownOpen = false;
+      this.bellDropOpen = false;
+    }
+  }
+
 
 }

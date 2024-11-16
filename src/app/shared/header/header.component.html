@@ -21,9 +21,10 @@
                     <!-- Balance toggle button -->
                     <div class="balance-toggle " *ngIf="token">
                         <div class="coin-toggle">
-                            <div class="wrapper">
+                            <div class="wrapper close-dropdown">
                                 <div class="dropdown">
-                                    <button type="button" class="OpenDropdown-btn">
+                                    <button type="button" class="OpenDropdown-btn"
+                                        (click)="toggleDropdown('isDropdownOpen')">
                                         <div class="wrap">
                                             <div class="currency  svelte" role="presentation">
                                                 <!-- Currency -->
@@ -45,7 +46,7 @@
                                             </div>
                                         </div>
                                         <!--  -->
-                                        <span class="dropdown-icon ml-4" (click)="toggleDropdown('isDropdownOpen')">
+                                        <span class="dropdown-icon ml-4">
                                             <img src="/assets/header/down.png" [class.rotate-180]="isDropdownOpen"
                                                 class="svg-icon ">
                                         </span>
@@ -101,11 +102,12 @@
 
                             <div class="dropdown">
                                 <!-- Profile -->
-                                <button type="button" class="porfile-iocn" (click)="toggleDropdown('porfileDropOpen')">
+                                <button type="button" class="porfile-iocn close-dropdown"
+                                    (click)="toggleDropdown('porfileDropOpen')">
                                     <img src="/assets/header/porfile.png" class="svg-icon ">
                                 </button>
                                 <!-- profile Dropdown Menu -->
-                                <div class="porfile-dropdown" *ngIf="porfileDropOpen">
+                                <div class="porfile-dropdown close-dropdown" *ngIf="porfileDropOpen">
                                     <!-- Arrow -->
                                     <div class="arrow"></div>
                                     <div class="dropdown-scroll-content " style="max-height: inherit;">
@@ -120,11 +122,13 @@
                                 </div>
                             </div>
                             <!-- Notification button -->
-                            <button type="button" class="bell-icon" (click)="toggleDropdown('bellDropOpen')">
+                            <button type="button" class="bell-icon close-dropdown"
+                                (click)="toggleDropdown('bellDropOpen')">
                                 <img src="/assets/header/bell.png" class="svg-icon ">
                             </button>
                             <!-- Notification modal -->
-                            <div class="notifications-widget  svelte-6gfkw4" style="z-index: 901;" *ngIf="bellDropOpen">
+                            <div class="notifications-widget  svelte-6gfkw4 close-dropdown" style="z-index: 901;"
+                                *ngIf="bellDropOpen">
                                 <div class="notifications-header svelte-12heyz0">
                                     <div class="title svelte-12heyz0">
                                         <svg fill="#B1BAD3" viewBox="0 0 64 64" class="svg-icon ">
@@ -156,12 +160,12 @@
                                     <div></div>
                                 </div>
                             </div>
-                            <div class="dropdown">
+                            <div class="dropdown close-dropdown">
                                 <button type="button" class="massage-icon" (click)="toggleDropdown('massageDropOpen')">
                                     <img src="/assets/header/massage.png" class="svg-icon ">
                                 </button>
                                 <!-- message menu -->
-                                <div class="massage-dropdown" *ngIf="massageDropOpen">
+                                <div class="massage-dropdown " *ngIf="massageDropOpen">
                                     <!-- Arrow -->
                                     <div class="arrow"></div>
                                     <div style="max-height: inherit;">
@@ -191,9 +195,9 @@
 
     </div>
     <!-- Searchbar opens on clicking search button -->
-    <div *ngIf="searchbutton" class="search-overlay">
+    <div *ngIf="searchbutton" class="search-overlay" (click)="closeDropdown()">
         <!-- Container for search bar -->
-        <div class="w-[1084.91px] ml-10 mt-2 pt-[55px]">
+        <div class="w-[1084.91px] ml-10 mt-2 pt-[55px]" (click)="$event.stopPropagation()">
             <!-- Search bar -->
             <div class="input-wrap ">
                 <!-- Dropdown button -->
@@ -237,7 +241,8 @@
 
         <!-- Search validation message -->
         <div data-popper-placement="bottom"
-            style="z-index: 1450; position: fixed; inset: 0px auto auto 0px; margin: 0px; transform: translate3d(282.5px, 115.5px, 0px); width: 1084.69px;">
+            style="z-index: 1450; position: fixed; inset: 0px auto auto 0px; margin: 0px; transform: translate3d(282.5px, 115.5px, 0px); width: 1084.69px;"
+            (click)="$event.stopPropagation()">
             <div class="results-wrapper scrollY svelte-15c4jgu">
                 <div class="exception-wrap svelte-4te59m"><span
                         class="font-semibold text-[#b1bad3] text-[.875rem] svelte-17v69ua">Search requires at least 3
@@ -279,9 +284,10 @@
                     <!-- Balance Toggle -->
                     <div class="balance-toggle svelte-51jofe" data-test="balance-toggle">
                         <div class="coin-toggle svelte-1hjozqf mbl-coin-toggle">
-                            <div class="wrapper currency-view-compact svelte-1hjozqf">
-                                <div class="dropdown">
-                                    <button type="button" class="OpenDropdown-btn">
+                            <div class="wrapper currency-view-compact close-dropdown svelte-1hjozqf">
+                                <div class="dropdown ">
+                                    <button type="button" class="OpenDropdown-btn "
+                                        (click)="toggleDropdown('isDropdownOpen')">
                                         <div class="wrap">
                                             <div class="currency svelte" role="presentation">
                                                 <span class="content svelte">
@@ -300,14 +306,14 @@
                                                 </span>
                                             </div>
                                         </div>
-                                        <span class="dropdown-icon ml-4" (click)="toggleDropdown('isDropdownOpen')">
+                                        <span class="dropdown-icon ml-4">
                                             <img src="/assets/header/down.png" [class.rotate-180]="isDropdownOpen"
                                                 class="svg-icon ">
                                         </span>
 
                                     </button>
                                     <!-- Dropdown Menu -->
-                                    <div class="dropdown-continer " *ngIf="isDropdownOpen">
+                                    <div class="dropdown-continer" *ngIf="isDropdownOpen">
                                         <!-- Arrow -->
                                         <div class="arrow"></div>
                                         <!-- Search Bar -->
