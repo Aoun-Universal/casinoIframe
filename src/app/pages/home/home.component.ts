@@ -6,9 +6,7 @@ import { SlickCarouselComponent, SlickCarouselModule } from 'ngx-slick-carousel'
 import { StatisticsModalTableComponent } from "../../modal/statistics-modal-table/statistics-modal-table.component";
 import { LeaderboardComponent } from '../../modal/leaderboard/leaderboard.component';
 import { RaceComponent } from '../../modal/race/race.component';
-import {NavigationEnd, Router } from '@angular/router';
-import { AuthService } from '../../services/auth.service';
-import { filter } from 'rxjs';
+import {ActivatedRoute, Router } from '@angular/router';
 
 
 @Component({
@@ -21,32 +19,31 @@ import { filter } from 'rxjs';
 })
 export class HomeComponent implements OnInit{
   isLoggedIn: boolean = false;
-  isHomeRoute: boolean = false;
+  routeType: string = '';
 
 
-  constructor(private authService: AuthService, private router: Router,private toggleService: ToggleService) {}
+  constructor( private router: Router,private toggleService: ToggleService,private route: ActivatedRoute) {}
 
   ngOnInit() {
-    this.checkRouteAndAuth();
+    // Retrieve the route type from data
+    this.routeType = this.route.snapshot.data['type'];
 
-    // Listen to router events
-    this.router.events.pipe(filter(event => event instanceof NavigationEnd)).subscribe(() => {
-      this.checkRouteAndAuth();
-    });
-
+    // Set login status based on route type
+    this.isLoggedIn = this.routeType === 'authenticated' ? this.isUserLoggedIn() : true;
   }
+  isUserLoggedIn(): boolean {
+    return true;
+  }
+
   navigateTo(path: string): void {
     this.router.navigate([path]);
   }
+
 
   @ViewChild('heroSlider') heroSlider!: SlickCarouselComponent;
   @ViewChild('sportsSlider') sportsSlider!: SlickCarouselComponent;
   @ViewChild('gallerySlider') gallerySlider!: SlickCarouselComponent;
 
-  checkRouteAndAuth(): void {
-    this.isLoggedIn = this.authService.isAuthenticated();
-    this.isHomeRoute = this.router.url === '/home';
-  }
 
   // Navigate to specific routes
   isMarketOpen = true;

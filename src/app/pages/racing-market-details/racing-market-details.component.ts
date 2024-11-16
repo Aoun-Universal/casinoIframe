@@ -1,10 +1,11 @@
 import { CommonModule } from '@angular/common';
 import { Component } from '@angular/core';
+import {RouterLink} from "@angular/router";
 
 @Component({
   selector: 'app-racing-market-details',
   standalone: true,
-  imports: [CommonModule],
+  imports: [CommonModule, RouterLink],
   templateUrl: './racing-market-details.component.html',
   styleUrl: './racing-market-details.component.css'
 })
@@ -16,15 +17,15 @@ export class RacingMarketDetailsComponent {
   WinnerDropdown = false;
   isTabsData = false;
   isArrowUpSelected: boolean = true; // Default to up arrow
-  isArrowWinSelected: boolean = true; 
+  isArrowWinSelected: boolean = true;
   toggleArrow() {
-    this.isArrowUpSelected = !this.isArrowUpSelected; 
+    this.isArrowUpSelected = !this.isArrowUpSelected;
   }
   toggleArrowWin() {
     this.isArrowWinSelected = !this.isArrowWinSelected;
   }
 
-  
+
   toggleDropdown() {
     this.WinnerDropdown = !this.WinnerDropdown;
   }
@@ -49,5 +50,5 @@ export class RacingMarketDetailsComponent {
    toggleMarketDetail() {
     this.isMarketDetailOpen = !this.isMarketDetailOpen;
   }
-  
+
 }

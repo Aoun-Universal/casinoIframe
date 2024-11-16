@@ -5,7 +5,6 @@ import { RegisterComponent } from './modal/register/register.component';
 import { NotificationComponent } from './modal/notification/notification.component';
 import { StatisticsComponent } from './modal/statistics/statistics.component';
 import { authGuard } from "./auth/auth.guard";
-import { StakeRaceComponent } from './pages/stake-race/stake-race.component';
 
 
 export const routes: Routes = [
@@ -28,30 +27,73 @@ export const routes: Routes = [
         path: 'home',
         loadComponent: () =>
           import('./pages/home/home.component').then((c) => c.HomeComponent),
+        data: { type: 'authenticated' },
         canActivate: [authGuard]
       },
       {
-        path: 'sport/home', // Sportsbook route
+        path: 'casino/home',
         loadComponent: () =>
           import('./pages/home/home.component').then((c) => c.HomeComponent),
+        data: { type: 'casino' },
       },
       {
-        path: 'casino/home', // Casino route
+        path: 'sport/home',
         loadComponent: () =>
           import('./pages/home/home.component').then((c) => c.HomeComponent),
+        data: { type: 'sport' },
       },
       {
         path: 'my-bets',
-        loadComponent: () => import('./pages/my-bets/my-bets.component').then((c) => c.MyBetsComponent)
+        loadComponent: () => import('./pages/my-bets/my-bets.component').then((c) => c.MyBetsComponent),
       },
       {
-        path: 'racing-market-detail',
-        loadComponent: () => import('./pages/racing-market-details/racing-market-details.component').then((c) => c.RacingMarketDetailsComponent)
+        path: 'casino/my-bets',
+        loadComponent: () =>
+          import('./pages/my-bets/my-bets.component').then((c) => c.MyBetsComponent),
       },
       {
-        path: 'my-bets',
+        path: 'sport/my-bets',
+        loadComponent: () =>
+          import('./pages/my-bets/my-bets.component').then((c) => c.MyBetsComponent),
+      },
 
-        loadComponent: () => import('./pages/my-bets/my-bets.component').then((c) => c.MyBetsComponent)
+      {
+        path:'sport',
+        children:[
+          {
+            path: 'horse-racing',
+            loadComponent: () =>
+              import('./pages/horse-racing/horse-racing.component').then((c) => c.HorseRacingComponent),
+          },
+          {
+            path: 'racing-market-detail',
+            loadComponent: () => import('./pages/racing-market-details/racing-market-details.component').then((c) => c.RacingMarketDetailsComponent)
+          },
+          {
+            path: 'soccer',
+            loadComponent: () =>
+              import('./pages/soccer/soccer.component').then((c) => c.SoccerComponent),
+          },
+          {
+            path: 'soccer-details',
+            loadComponent: () =>
+              import('./pages/pal-ful/pal-ful.component').then((c) => c.PalFulComponent),
+          },
+          {
+            path: 'all-tennis',
+            loadComponent: () => import('./pages/all-tennis/all-tennis.component').then((c => c.AllTennisComponent))
+          }
+        ]
+      },
+      {
+        path:'casino',
+        children:[
+          {
+            path: 'providers',
+            loadComponent: () =>
+              import('./pages/providers/providers.component').then((c) => c.ProvidersComponent),
+          },
+        ]
       },
       {
         path:'promotions',
@@ -163,31 +205,11 @@ export const routes: Routes = [
         ],
       },
 
-      {
-        path: 'soccer',
-        loadComponent: () =>
-          import('./pages/soccer/soccer.component').then((c) => c.SoccerComponent),
-      },
-      {
-        path: 'soccer-details',
-        loadComponent: () =>
-          import('./pages/pal-ful/pal-ful.component').then((c) => c.PalFulComponent),
-      },
+
       {
         path: 'setting',
         loadComponent: () =>
           import('./modal/settings-modals/settings/settings.component').then((c) => c.SettingsComponent),
-      },
-
-      {
-        path: 'horse-racing',
-        loadComponent: () =>
-          import('./pages/horse-racing/horse-racing.component').then((c) => c.HorseRacingComponent),
-      },
-      {
-        path: 'providers',
-        loadComponent: () =>
-          import('./pages/providers/providers.component').then((c) => c.ProvidersComponent),
       },
       {
         path: 'blog',
@@ -204,15 +226,33 @@ export const routes: Routes = [
         loadComponent: () =>
           import('./pages/stake-offer/stake-offer.component').then((c) => c.StakeOfferComponent),
       },
-      {
-        path: 'all-tennis',
-        loadComponent: () => import('./pages/all-tennis/all-tennis.component').then((c => c.AllTennisComponent))
-      },
-      {
-        path: 'vip-club',
-        loadComponent: () => import('./pages/vip-cloud/vip-cloud.component').then((c => c.VipCloudComponent))
-      },
+
     ],
+  },
+
+  {
+    path: 'vault',
+    component: VaultComponent,
+  },
+  {
+    path: 'vip',
+    component: VipComponent,
+  },
+  {
+    path: 'login',
+    component: RegisterComponent,
+  },
+  {
+    path: 'statistics',
+    component: StatisticsComponent,
+  },
+  {
+    path: 'notification',
+    component: NotificationComponent,
+  },
+  {
+    path: 'vip-club',
+    loadComponent: () => import('./pages/vip-cloud/vip-cloud.component').then((c => c.VipCloudComponent))
   },
 
   {

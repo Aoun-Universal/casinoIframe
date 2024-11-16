@@ -1,6 +1,6 @@
 <!-- Home starts -->
 <!------------------ Main Section for stake.com (page which initially  appears after login) --------------------->
-<section class="header-wrapper" *ngIf="isLoggedIn && isHomeRoute">
+<section class="header-wrapper" *ngIf="isLoggedIn && routeType === 'authenticated'" >
   <div class="ctainer">
     <!-- Inner section Area -->
     <div class="header-inner">
@@ -385,7 +385,7 @@
   </div>
 
   <!----------------------- Races and Rafles Section -------------------->
-  <section   *ngIf="isLoggedIn && isHomeRoute">
+  <section *ngIf="isLoggedIn && routeType === 'authenticated'" >
     <!-- Top Header -->
     <div class="top-sports-header mt-3">
       <!-- left -->
