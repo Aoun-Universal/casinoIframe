@@ -321,9 +321,7 @@
             Top Sports
           </span>
         </div>
-        <div *ngIf="isSidebar" class="line-wrapper">
-          <hr class="svelte-1sfce85">
-        </div>
+        <div class="hr-border" [ngClass]="{'md:hidden':!isSidebar}"></div>
         <div>
           <div class="nav-item" (click)="toggleOpen('soccer')" [ngClass]="{'dropdown-item':openBar === 'soccer'}">
             <div class="title-wrapper">
