@@ -225,6 +225,20 @@ export const routes: Routes = [
               ).then((c) => c.DepositsComponent),
           },
           {
+            path: 'withdrawal',
+            loadComponent: () =>
+              import(
+                './pages/withdrawal/withdrawal.component'
+              ).then((c) => c.WithdrawalComponent),
+          },
+          {
+            path: 'archive',
+            loadComponent: () =>
+              import(
+                './pages/archive/archive.component'
+              ).then((c) => c.ArchiveComponent),
+          },
+           {
             path: 'other',
             loadComponent: () =>
               import(
