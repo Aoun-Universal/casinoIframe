@@ -21,7 +21,7 @@ export class ToggleService {
   private LeaderBoardModalState: BehaviorSubject<boolean> = new BehaviorSubject<boolean>(false);
   private RaceModalState: BehaviorSubject<boolean> = new BehaviorSubject<boolean>(false);
   private campaingModalState: BehaviorSubject<boolean> = new BehaviorSubject<boolean>(false);
-
+  private WalletsettingState: BehaviorSubject<boolean> = new BehaviorSubject<boolean>(false);
 
 
   sidebarState$ = this.sidebarState.asObservable();
@@ -140,6 +140,16 @@ export class ToggleService {
   setLogin(value: boolean) {
     this.loginState.next(value);
   }
+  // Wallet setting Modal
+
+  getWalletsetting() {
+    return this.WalletsettingState
+  }
+  setWalletsetting(value: boolean) {
+    this.WalletsettingState.next(value);
+  }
+
+
 
 
   getSignUp() {
