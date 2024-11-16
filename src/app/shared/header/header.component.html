@@ -78,7 +78,7 @@
                                         </ul>
 
                                         <!-- Wallet Settings -->
-                                         <div (click)=" showWalletSetting()">
+                                         <div   (click)="toggleDropdown('isDropdownOpen')" (click)=" showWalletSetting()">
                                         <div class="Wallet-continer">
                                             <button    class="wallet-setting">
                                                 <img src="/assets/header/wellet.png" class="wallet-setting-img ">
@@ -347,7 +347,7 @@
 
                                         <!-- Wallet Settings -->
                                         <div class="Wallet-continer">
-                                            <button (click)=" showWalletSetting()" class="wallet-setting">
+                                            <button  (click)="toggleDropdown('isDropdownOpen')" (click)=" showWalletSetting()" class="wallet-setting">
                                                 <img src="/assets/header/wellet.png" class="wallet-setting-img ">
                                                 Wallet Settings
                                             </button>
