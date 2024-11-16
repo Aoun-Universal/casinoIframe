@@ -133,15 +133,19 @@ tr:hover {
 .betting-parent {
   @apply flex justify-center gap-[1.5rem] mt-[27px];
 }
-.dropdown-options{
-  @apply text-[.875rem] text-[black] p-[.75rem] cursor-pointer
+.dropdown-options {
+  @apply text-[.875rem] text-[black] p-[.75rem] cursor-pointer;
 }
-.dropdown-wrapper{
-  @apply h-2 w-2 bg-white  top-[-4px] right-[50%] rotate-45 absolute z-[999]
+.dropdown-wrapper {
+  @apply h-2 w-2 bg-white  top-[-4px] right-[50%] rotate-45 absolute z-[999];
 }
-.dropdown{
-  @apply flex flex-col justify-start h-[86px] w-[68px] bg-white rounded-[4px]
+.dropdown {
+  @apply flex flex-col justify-start h-[86px] w-[68px] bg-white rounded-[4px];
 }
-.mainwrapper-dropdown{
-  @apply absolute z-[9999] top-[39px]
+.mainwrapper-dropdown {
+  @apply absolute z-[9999] top-[39px];
+}
+::ng-deep .custom-toast-top-left {
+  top: 0px !important;
+  left: 0px !important;
 }
