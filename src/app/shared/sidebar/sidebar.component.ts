@@ -33,13 +33,13 @@ export class SidebarComponent implements OnInit {
   }
   @HostListener('window:resize', ['$event'])
   onResize(event: Event) {
-    this.checkScreenSize(); 
+    this.checkScreenSize();
   }
 
   checkScreenSize() {
-    this.smScreen = window.innerWidth <= 768;  
+    this.smScreen = window.innerWidth <= 768;
   }
-  
+
 
   ngOnInit(): void {
     // Subscribe to router events to track navigation end
@@ -48,7 +48,7 @@ export class SidebarComponent implements OnInit {
         filter(event => event instanceof NavigationEnd)
       )
       .subscribe((event: NavigationEnd) => {
-        this.routerPath = event.url; // Update the current path on navigation
+        this.routerPath = event.url;
       });
     this.routerPath = this.router.url;
 
@@ -60,7 +60,7 @@ export class SidebarComponent implements OnInit {
     }
 
     console.log(this.route.parent);
-    
+
 
   }
   toggleSidebar() {
@@ -81,5 +81,5 @@ export class SidebarComponent implements OnInit {
   onWalletBtnClick(){
     this.toggle.setWalletModal(true)
   }
-  
+
 }
