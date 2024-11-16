@@ -1,0 +1,179 @@
+
+<div class="good-varient">
+    <div class="ctainer">
+      <div
+        class="update-msg-wrap"
+      >
+        <div class="flex gap-2 items-center">
+          <span class=""
+            ><span class="mr-3 text-[14px] font-semibold"
+              >Update to Level 2 verification so we can help secure your Stake
+              account.</span
+            >
+            <a
+              class="read-more-btn ring-offset-background"
+              rel="external noreferrer noopener"
+              ><span
+                class="read-more"
+                >Read more</span
+              ></a
+            ></span
+          >
+        </div>
+        <div class="flex md:gap-6 md:justify-end justify-between gap-20">
+          <button
+            type="button"
+          
+            class="dismiss-btn"
+          >
+            Dismiss
+          </button>
+          <a
+            class="verfication   ring-offset-background"
+            >Update verification</a
+          >
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="scrollable">
+    <div>
+      <div class="content-wrapper">
+        <div class="page-content">
+          <div class="parent-svelte">
+            <div class="ctainer-svelte">
+              <div class="sizer"></div>
+            </div>
+            <div class="w-full max-w-[1200px] self-center">
+              <div class="layout-spacing">
+                <div class="affiliate-overview svelte-kjzp3y">
+                  <div>
+                    <div class="stack">
+                      <div class="wrap">
+                        <div class="stack-div justify-between">
+                          <div class="stack-div justify-start">
+                            <h1 class="header">
+                                <svg fill="currentColor" viewBox="0 0 64 64" class="svg-icon mr-2 text-[#b1bad3] " > 
+                                    <title></title> <path d="M59.732 0H4.266A4.266 4.266 0 0 0 0 4.266V60c0 2.21 1.79 4 4 4h56c2.21 0 4-1.79 4-4V4.266A4.266 4.266 0 0 0 59.734 0h-.002ZM17.998 50.24l-8-8 4.266-4.266 3.866 3.894 9.734-9.866 4.266 4.266L17.998 50.24Zm0-20-8-8 4.134-4.374 3.866 3.894 9.866-9.894 4.266 4.266L17.998 30.24Zm36 14.774h-14v-6.026h14v6.026Zm0-20h-14v-6.026h14v6.026Z"></path></svg>
+                              Transactions
+                            </h1>
+                          </div>
+                        </div>
+                      </div>
+                      <div class="main-wrapper">
+                        <div
+                          class="p-0 gap-[0.5rem] items-center justify-start [grid-auto-flow:column] grid   md:hidden"
+                          
+                        >
+                          <div
+                            class="menu-nav svelte-1bssz56"
+                            
+                          >
+                            <a
+                              class="inline-flex relative bg-[rgb(15,33,46)] items-center gap-2 justify-center font-semibold whitespace-nowrap ring-offset-background transition disabled:pointer-events-none disabled:opacity-50 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 active:scale-[0.98] bg-grey-700 text-white betterhover:hover:bg-grey-900 betterhover:hover:text-white focus-visible:outline-white text-sm leading-none py-[0.9375rem] px-[1.25rem] rounded-sm"
+                              href="/affiliate"
+                            
+                              ><svg
+                                fill="currentColor"
+                                viewBox="0 0 64 64"
+                                class="svg-icon"
+                               
+                              >
+                                <title></title>
+                                <path
+                                  d="M36.998 53.995 16 32.998 36.998 12l6.306 6.306L28.61 33l14.694 14.694L36.998 54v-.005Z"
+                                ></path></svg></a>
+                          </div>
+                          <div
+                            class="dropdown svelte-1iau4lg"
+                            
+                          >
+                            <button
+                            (click)="toggleDropdown()"
+                              type="button"
+                             
+                              class="inline-flex bg-[rgb(15,33,46)] relative items-center gap-2 justify-center font-semibold whitespace-nowrap ring-offset-background transition disabled:pointer-events-none disabled:opacity-50 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 active:scale-[0.98] bg-grey-700 text-white betterhover:hover:bg-grey-900 betterhover:hover:text-white focus-visible:outline-white text-sm leading-none [&amp;_svg]:text-grey-200 [&amp;:hover>svg]:text-white py-[0.9375rem] px-[1.25rem] rounded-sm"
+                              aria-label="Open Dropdown"
+                            
+                            >
+                              <span>Commission</span>
+                              <svg
+                                fill="currentColor"
+                                viewBox="0 0 64 64"
+                                class="svg-icon"
+                                [ngClass]="{ 'rotate-180': WinnerDropdown, 'rotate-0': !WinnerDropdown }"
+                              >
+                                <title></title>
+                                <path
+                                  d="M32.271 49.763 9.201 26.692l6.928-6.93 16.145 16.145 16.144-16.144 6.93 6.929-23.072 23.07h-.005Z"
+                                ></path>
+                              </svg>
+                            </button>
+                            <div
+                            class="profile-dropdown"
+                            *ngIf="WinnerDropdown"
+                          >
+                            <!-- Arrow -->
+                            <div class="dropdown-arrow"></div>
+                            <div class="dropdown-scroll-content">
+                              <div>
+                                <button type="button" class="profile-list text-[#1475e1]" routerLink="/transactions/deposits">
+                                  <span>Deposits</span>
+                                  
+                                </button>
+                                <button type="button" class="profile-list text-[rgb(47_69_83)]" routerLink="/transactions/withdrawals">
+                                  <span>withdrawal</span>
+                                </button>
+                                <button type="button" class="profile-list text-[rgb(47_69_83)]" routerLink="/transactions/archive">
+                                  <span>archive</span>
+                                </button>
+                                <button type="button" class="profile-list text-[rgb(47_69_83)]" routerLink="/transactions/other">
+                                  <span>other</span>
+                                </button>
+                              </div>
+                            </div>
+                          </div>
+                            <div style="display: none" ></div>
+                          </div>
+                        </div>
+                        <div class="card md:block hidden">
+                          <div class="outer-wraper relative">
+                            <div class="wraper-svelte">
+                              <!-- Navigation Links -->
+                              <a
+                                *ngFor="let route of routes; let i = index"
+                                [routerLink]="route.path"
+                                [ngClass]="{
+                                  '!bg-[#071824] text-white': isActive(route.path),
+                                  'outer-div': true
+                                }"
+                                class="outer-div relative items-center gap-2 font-semibold whitespace-nowrap ring-offset-background transition disabled:pointer-events-none disabled:opacity-50 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 active:scale-[0.98] bg-transparent betterhover:hover:bg-grey-900 betterhover:hover:text-white focus-visible:outline-white text-sm leading-none [&amp;_svg]:text-grey-200 [&amp;:hover>svg]:text-white py-[0.9375rem] px-[1.25rem] rounded-full w-full justify-start block"
+                                (click)="updateDashPosition()"
+                              >
+                                <span>{{ route.label }}</span>
+                              </a>
+                        
+                              <!-- Dash indicator positioned based on active link -->
+                              <div
+                                class="dash bg-[#071824] transition-all duration-300"
+                                [style.top.%]="activeIndex * (100 / routes.length)"
+                                [style.height.%]="100 / routes.length"
+                              ></div>
+                            </div>
+                          </div>
+                        </div>
+                        
+                       <div>
+                        <router-outlet></router-outlet>
+                       </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
