@@ -1,14 +1,16 @@
-import { CommonModule } from '@angular/common';
 import { Component } from '@angular/core';
+import {CommonModule, NgForOf} from "@angular/common";
 
 @Component({
-  selector: 'app-permotions',
+  selector: 'app-promotions',
   standalone: true,
-  imports: [CommonModule],
-  templateUrl: './permotions.component.html',
-  styleUrl: './permotions.component.css'
+    imports: [
+        CommonModule
+    ],
+  templateUrl: './promotions.component.html',
+  styleUrl: './promotions.component.css'
 })
-export class PermotionsComponent {
+export class PromotionsComponent {
   races = [
     {
       imgUrl: '/assets/9bb3b19ed17df36fea03b8f37a46c5e29612de33-1200x630.webp',
@@ -65,4 +67,5 @@ export class PermotionsComponent {
       title: 'Casino Challenges'
     }
   ];
+
 }

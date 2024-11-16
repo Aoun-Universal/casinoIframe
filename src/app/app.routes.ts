@@ -5,7 +5,6 @@ import { RegisterComponent } from './modal/register/register.component';
 import { NotificationComponent } from './modal/notification/notification.component';
 import { StatisticsComponent } from './modal/statistics/statistics.component';
 import { authGuard } from "./auth/auth.guard";
-import { PermotionsComponent } from './pages/permotions/permotions.component';
 
 
 export const routes: Routes = [
@@ -53,8 +52,8 @@ export const routes: Routes = [
         loadComponent: () => import('./pages/my-bets/my-bets.component').then((c) => c.MyBetsComponent)
       },
       {
-        path:'permosions',
-        component:PermotionsComponent
+        path:'promotions',
+        loadComponent:()=> import ('./pages/promotions/promotions.component').then((c)=>c.PromotionsComponent)
       },
       {
         path: 'drake',
