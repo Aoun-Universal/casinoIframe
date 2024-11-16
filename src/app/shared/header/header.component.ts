@@ -99,12 +99,12 @@ export class HeaderComponent implements OnInit {
     { label: 'VIP', icon: '/assets/header/vip.png', type: 'button',  },
     { label: 'Affiliate', icon: '/assets/header/Affiliate.png', type: 'button', path: '/affiliate' },
     { label: 'Statistics', icon: '/assets/header/Statistics.png', type: 'button' , },
-    { label: 'Transactions', icon: '/assets/header/Transactions.png', type: 'button', path: '/wallet' },
+    { label: 'Transactions', icon: '/assets/header/Transactions.png', type: 'button', path: '/transactions' },
     { label: 'My Bets', icon: '/assets/header/My Bets.png', type: 'button' , path: '/my-bets'},
     { label: 'Settings', icon: '/assets/header/setting.png', type: 'button', path: '/setting' },
     { label: 'Stake Smart', icon: '/assets/header/Stake Smart.png', type: 'button', path: '/responsible-gambling/stake-smart' },
     { label: 'Live support', icon: '/assets/header/Live support.png', type: 'button' },
-    { label: 'Logout', icon: '/assets/header/logout.png', type: 'button', path: '/wallet' }
+    { label: 'Logout', icon: '/assets/header/logout.png', type: 'button',  }
   ];
 
   onWalletBtnClick(){

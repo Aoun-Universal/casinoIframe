@@ -7,6 +7,7 @@ import { StatisticsComponent } from './modal/statistics/statistics.component';
 import { authGuard } from "./auth/auth.guard";
 
 
+
 export const routes: Routes = [
 
   {
@@ -216,14 +217,19 @@ export const routes: Routes = [
             redirectTo: 'deposits',
             pathMatch: 'full',
           },
-
           {
             path: 'deposits',
             loadComponent: () =>
               import(
                 './pages/deposits/deposits.component'
               ).then((c) => c.DepositsComponent),
-
+          },
+          {
+            path: 'other',
+            loadComponent: () =>
+              import(
+                './pages/others/others.component'
+              ).then((c) => c.OthersComponent),
           },
          
         ],
@@ -258,6 +264,7 @@ export const routes: Routes = [
     path: 'vault',
     component: VaultComponent,
   },
+ 
   {
     path: 'vip',
     component: VipComponent,
