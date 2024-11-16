@@ -204,6 +204,30 @@ export const routes: Routes = [
           },
         ],
       },
+      {
+        path: 'transactions',
+        loadComponent: () =>
+          import(
+            './pages/transactions/transactions.component'
+          ).then((c) => c.TransactionsComponent),
+        children: [
+          {
+            path: '',
+            redirectTo: 'deposits',
+            pathMatch: 'full',
+          },
+
+          {
+            path: 'deposits',
+            loadComponent: () =>
+              import(
+                './pages/deposits/deposits.component'
+              ).then((c) => c.DepositsComponent),
+
+          },
+         
+        ],
+      },
 
 
       {
