@@ -9,6 +9,7 @@ import { StakeRaceComponent } from './pages/stake-race/stake-race.component';
 
 
 export const routes: Routes = [
+
   {
     path: '',
     loadComponent: () =>
@@ -206,37 +207,19 @@ export const routes: Routes = [
       {
         path: 'all-tennis',
         loadComponent: () => import('./pages/all-tennis/all-tennis.component').then((c => c.AllTennisComponent))
-      }
+      },
+      {
+        path: 'vip-club',
+        loadComponent: () => import('./pages/vip-cloud/vip-cloud.component').then((c => c.VipCloudComponent))
+      },
     ],
   },
+
   {
     path: 'stake-race',
-    component: StakeRaceComponent,
+    loadComponent: () => import('./pages/stake-race/stake-race.component').then((c) => c.StakeRaceComponent)
   },
-  {
-    path: 'vault',
-    component: VaultComponent,
-  },
-  {
-    path: 'vip',
-    component: VipComponent,
-  },
-  {
-    path: 'login',
-    component: RegisterComponent,
-  },
-  {
-    path: 'statistics',
-    component: StatisticsComponent,
-  },
-  {
-    path: 'notification',
-    component: NotificationComponent,
-  },
-  {
-    path: 'vip-club',
-    loadComponent: () => import('./pages/vip-cloud/vip-cloud.component').then((c => c.VipCloudComponent))
-  },
+
   {
     path: '**',
     redirectTo: '',
