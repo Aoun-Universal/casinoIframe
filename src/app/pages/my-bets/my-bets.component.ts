@@ -19,17 +19,29 @@ export class MyBetsComponent {
   TableTab: number = 1;
   dropdown: boolean = false
   tabDropdown: string = 'active'
+  ghostMode: boolean = false;
 
   constructor(private toastr: ToastrService) { }
 
-  showSuccess() {
-    this.toastr.success('Your bets are now hidden.', 'Ghost Mode', {
-      positionClass: 'custom-toast-top-left',
-      progressBar: true,
-      timeOut: 3000,
-      closeButton: true
-    });
+  toggleGhostMode() {
+    this.ghostMode = !this.ghostMode; // Toggle Ghost Mode state
+    if (this.ghostMode) {
+      this.toastr.success('Your bets are now hidden.', 'Ghost Mode On', {
+        positionClass: 'custom-toast-top-left',
+        progressBar: true,
+        timeOut: 3000,
+        closeButton: true,
+      });
+    } else {
+      this.toastr.success('Your bets are now public.', 'Ghost Mode Off', {
+        positionClass: 'custom-toast-top-left',
+        progressBar: true,
+        timeOut: 3000,
+        closeButton: true,
+      });
+    }
   }
+
 
   openDropdown(tab: string) {
     this.tabDropdown = tab

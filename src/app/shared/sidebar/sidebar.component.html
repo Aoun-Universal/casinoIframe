@@ -8,12 +8,12 @@
     </button>
     <div class="link-wrap" [ngClass]="{'flex-col !items-center pt-[16px] ':!isSidebar}">
       <a class="header-button cursor-pointer casino"
-        [ngClass]="{'casino-btn-mobile':!isSidebar, 'casino-active': routerPath === '/casino/home'}"><span
+        [ngClass]="{'casino-btn-mobile':!isSidebar, 'casino-active': isCasinoRoute()}"><span
           class="text-[14px]" *ngIf="isSidebar" (click)="navigateTo('/casino/home')"
       >CASINO</span></a>
       <div class="image-loader"></div>
       <a class="header-button sports cursor-pointer"
-        [ngClass]="{'sport-btn-mobile':!isSidebar, 'sports-active': routerPath === '/sport/home' }"
+        [ngClass]="{'sport-btn-mobile':!isSidebar, 'sports-active': isSportRoute() }"
       ><span class="text-[14px]" *ngIf="isSidebar"       (click)="navigateTo('/sport/home')"
       >SPORTS</span></a>
       <div class="image-loader"></div>
