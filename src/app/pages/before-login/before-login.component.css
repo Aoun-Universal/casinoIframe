@@ -15,7 +15,7 @@
 }
 
 .hero-heading {
-  @apply font-[700]  text-left block text-[3.25rem] max-md:text-[2rem] max-md:text-center  leading-[120%] text-white;
+  @apply font-bold text-left block text-[3.35rem] max-md:text-[2rem] max-md:text-center  leading-[122%] text-white;
 }
 
 .signup-btn {
@@ -136,7 +136,7 @@
 }
 
 .game-title {
-  @apply whitespace-break-spaces text-white leading-[132%] text-[1.25rem] truncate;
+  @apply whitespace-break-spaces overflow-hidden text-white leading-[132%] text-left text-[1.25rem] font-bold truncate text-ellipsis max-w-full;
 }
 
 .bg-img-wrapper {
@@ -546,7 +546,7 @@
 }
 
 .partner-title {
-  @apply text-center text-base truncate font-bold max-w-full;
+  @apply text-center text-base  leading-[1.5] text-[#fff] overflow-hidden truncate whitespace-nowrap font-bold max-w-full;
 }
 
 .partner-logo {
