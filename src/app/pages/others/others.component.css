@@ -1,39 +1,26 @@
-.card-varient {
-    @apply bg-[#0f212e]  text-[#d5dceb] rounded-lg p-6 overflow-hidden relative;
+ .card-varient {
+    @apply bg-[#0f212e]   text-[#d5dceb] rounded-lg p-6 overflow-hidden relative;
   }
 
-  .svg-icon {
-    @apply pointer-events-none [stroke-width:0] fill-current stroke-current flex-shrink-0 inline-block size-[1em];
-  }
+ 
   .layout-spacing {
-    @apply flex flex-col w-full  
+    @apply flex flex-col w-full  overflow-hidden [padding-bottom:unset] 
 }
 .scrollX {
-    @apply flex [scrollbar-color:#2f4553]   [scrollbar-width:thin]  overflow-x-auto overflow-y-hidden;
-    transform: translateZ(0);
+    @apply flex [scrollbar-color:#2f4553] w-[90vw] md:w-[65vw]  [scrollbar-width:thin]  !overflow-x-auto !overflow-y-hidden;
+    /* transform: translateZ(0); */
 }
 
 
 .slider-varient{
-    @apply flex rounded-[3rem] p-[5px] shrink-0
+    @apply flex rounded-[3rem] p-[5px] shrink-0 bg-[#1a2c38]
 }
 
-.tabs-wrapper.svelte-1vkrcyy .slider.variant-light {
-    @apply !bg-[#1a2c38]
-}
-.layout-spacing.variant-normal.svelte-l4ghjo>*+*{
-    @apply flex flex-col w-full
-}
-.empty-list.svelte-1qm952x {
-    @apply !p-[1rem] text-[#b1bad3] flex-col m-[0_auto] flex items-center text-sm
-}
-.large-icon.svelte-1qm952x {
+.large-icon{
     @apply font-[6rem] text-[#557086]
 
 }
-.stack{
-    @apply !text-[#848D94] opacity-[.5] text-sm  items-center text-center gap-[1.5rem] flex justify-center
-}
+
 .control-btn{
     @apply inline-flex relative items-center gap-2 justify-center rounded-sm 
     font-semibold whitespace-nowrap  transition
@@ -48,7 +35,7 @@
     @apply inline-flex relative items-center gap-2 justify-start rounded-sm font-semibold whitespace-nowrap  transition disabled:pointer-events-none disabled:opacity-50 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 active:scale-[0.98] bg-[rgb(47,69,83)] text-white  hover:text-white focus-visible:outline-white text-sm leading-none shadow-md py-[0.9375rem] px-[1.25rem]
 }
 .crypto{
-    @apply inline-flex relative items-center gap-2 justify-center font-semibold  hover:bg-[rgb(47,69,83)]
+    @apply ml-0 inline-flex relative items-center gap-2 justify-center font-semibold  hover:bg-[rgb(47,69,83)]
     whitespace-nowrap transition disabled:pointer-events-none disabled:opacity-50
      focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 
      active:scale-[0.98] bg-transparent text-white 
@@ -58,43 +45,19 @@
 .tab-btn{
     @apply bg-[#1a2c38] w-fit rounded-full ml-0 p-[5px]
 }
-.card-varient {
-    @apply bg-[#0f212e]  text-[#d5dceb] rounded-lg p-6 overflow-hidden relative align-baseline m-0;
-  }
+
 
   .svg-icon {
     @apply pointer-events-none [stroke-width:0] fill-current stroke-current flex-shrink-0 inline-block size-[1em];
   }
-  .layout-spacing {
-    @apply flex flex-col w-full  
+  
+.empty-list{
+    @apply !p-[1rem]  text-[#b1bad3] flex-col m-[0_auto] mt-6 flex items-center text-sm
 }
-.tabs-wrapper.svelte-1vkrcyy {
-    @apply flex
-}
- .scrollX {
-    scrollbar-color: #2f4553 transparent;
-}
-.scrollX {
-    @apply overflow-auto overflow-x-hidden;
-    transform: translateZ(0);
-    scrollbar-width: thin;
-}
-.tabs-wrapper.svelte-1vkrcyy .slider.variant-light {
-    @apply !bg-[#1a2c38]
-}
-.layout-spacing.variant-normal.svelte-l4ghjo>*+*{
-    @apply mt-[1.5rem]
-}
-.empty-list.svelte-1qm952x {
-    @apply !p-[1rem] text-[#b1bad3] flex-col m-[0_auto] flex items-center text-sm
-}
-.large-icon.svelte-1qm952x {
-    @apply font-[6rem] text-[#557086]
 
-}
-.stack{
-    @apply !text-[#848D94] opacity-[.5] text-sm  items-center text-center gap-[1.5rem] flex justify-center
-}
+.stack-btn{
+    @apply     [grid-auto-flow:column]  items-center text-center gap-[1.5rem] grid mt-6 justify-center p-0
+} 
 .control-btn{
     @apply inline-flex relative items-center gap-2 justify-center rounded-sm 
     font-semibold whitespace-nowrap  transition
@@ -119,4 +82,5 @@
 .tab-btn{
     @apply bg-[#1a2c38] w-fit rounded-full ml-0 p-[5px]
 }
+ 
 
