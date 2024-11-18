@@ -9,7 +9,7 @@ import { Component } from '@angular/core';
   styleUrl: './others.component.css'
 })
 export class OthersComponent {
-  tabs = ['All', 'Bonus','Drop','Campaign Withdrawal','Reload Claim', 'Race Payout' , 'Rains Sent', 'Rakeback Received','Sportsbook Promotion Payout','Tips Received' , 'Vault Deposit', 'Vault Withdrawal'];
+  tabs = ['All', 'Bonus','Drop','Campaign Withdrawal','Reload Claim', 'Race Payout' , 'Rains Sent', 'Rakeback Received','Sportsbook Promotion Payout','Tips Received' , 'Vault Deposit', 'Vault Withdrawal',];
   selectedTab = 0; // Default tab index
 
   selectTab(index: number) {
