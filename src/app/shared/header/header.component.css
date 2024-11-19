@@ -200,10 +200,10 @@ svg.svelte-md2ju7 {
 }
 
 .notifications-widget {
-  @apply flex flex-col max-md:min-w-[100vw] absolute top-[calc(60px+5rem)] right-[1.5rem] w-full max-w-[375px] max-h-[400px] bg-[#0f212e] p-[0_1rem_1rem] rounded-[.5rem] shadow-[0,10px,15px,-3px_rgba(0,0,0,2),0,4px,6px,2px_rgba(0,0,0,.1)];
+  @apply flex flex-col max-md:min-w-[100vw]  absolute top-[calc(60px+5rem)] right-[1.5rem] w-full max-w-[375px] max-h-[400px] bg-[#0f212e] p-[0_1rem_1rem] rounded-[.5rem] shadow-[0,10px,15px,-3px_rgba(0,0,0,2),0,4px,6px,2px_rgba(0,0,0,.1)];
 }
 .svelte-6gfkw4 {
-  @apply flex flex-col absolute top-[calc(40px+2rem)] md:right-[1.5rem] max-md:p-0 !left-[6px] min-w-[100vw]   w-full max-md:max-w-[375px] max-h-[400px]     bg-[#0f212e] p-[0_1rem_1rem] rounded-[.5rem] shadow-[0,10px,15px,-3px_rgba(0,0,0,2),0,4px,6px,2px_rgba(0,0,0,.1)];
+  @apply flex flex-col absolute top-[calc(40px+2rem)] md:right-[1.5rem] max-md:p-0 max-md:!left-[6px] max-md:min-w-[100vw]   w-full md:max-w-[375px] max-h-[400px]     bg-[#0f212e] p-[0_1rem_1rem] rounded-[.5rem] shadow-[0,10px,15px,-3px_rgba(0,0,0,2),0,4px,6px,2px_rgba(0,0,0,.1)];
 }
 .notifications-header {
   @apply bg-[#0f212e] flex justify-between items-center relative max-md:!px-2.5 touch-none p-[.25rem_0] m-[calc(.25rem*-1)];

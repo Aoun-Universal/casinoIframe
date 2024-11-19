@@ -39,7 +39,7 @@
   @apply p-0 gap-3 w-full items-center  [grid-auto-flow:column] grid;
 }
 .header {
-  @apply text-[#fff] text-left justify-start text-lg font-semibold inline-flex items-center;
+  @apply text-[#fff] text-left justify-start text-[17.7px] font-semibold inline-flex items-center;
 }
 .svg-icon {
   @apply pointer-events-none [stroke-width:0] fill-current stroke-current flex-shrink-0 inline-block size-[1em];
