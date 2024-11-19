@@ -1,5 +1,5 @@
 .good-varient {
-  @apply bg-[#2f4553] w-full flex items-center flex-col px-[3vw] py-0;
+  @apply bg-[#2f4553] w-full flex items-center flex-col px-[3vw] py-0 ;
 }
 .ctainer {
   @apply h-full w-full max-w-[1200px];
@@ -61,7 +61,7 @@
 }
 
 .card-varient {
-  @apply bg-[#0f212e]  text-[#d5dceb] rounded-lg p-6 overflow-hidden relative align-baseline m-0;
+  @apply bg-[#0f212e]  text-[#d5dceb] rounded-lg p-6  relative align-baseline m-0 overflow-hidden w-[95vw];
 }
 .layout {
   @apply flex flex-col w-full  [padding-bottom:unset];

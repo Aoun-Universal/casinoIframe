@@ -2,7 +2,7 @@
     @apply pointer-events-none [stroke-width:0] fill-current stroke-current flex-shrink-0 inline-block size-[1em];
   }
   .card-varient {
-    @apply bg-[#0f212e]  text-[#d5dceb] rounded-lg p-6 overflow-hidden relative align-baseline m-0;
+    @apply bg-[#0f212e]  text-[#d5dceb] rounded-lg p-6 overflow-hidden relative align-baseline m-0 w-[95vw];
   }
   .layout-spacing {
     @apply flex flex-col w-full

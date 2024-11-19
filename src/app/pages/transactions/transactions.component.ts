@@ -12,6 +12,11 @@ import { Subscription } from 'rxjs';
 })
 export class TransactionsComponent {
   WinnerDropdown=false;
+  selectedOption: string = 'Deposits';
+  selectOption(option: string) {
+    this.selectedOption = option; // Set selected option
+    this.WinnerDropdown = false; // Close dropdown
+  }
   toggleDropdown() {
     this.WinnerDropdown = !this.WinnerDropdown;
   }

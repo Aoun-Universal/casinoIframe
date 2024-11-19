@@ -2,7 +2,7 @@
     @apply pointer-events-none [stroke-width:0] fill-current stroke-current flex-shrink-0 inline-block size-[1em];
   } 
    .card-varient {
-    @apply bg-[#0f212e]   text-[#d5dceb] rounded-lg !p-6 overflow-hidden relative align-baseline m-0 !w-full;
+    @apply bg-[#0f212e]   text-[#d5dceb] rounded-lg !p-6 overflow-hidden relative align-baseline m-0 !w-[95vw];
   }
 .layout-spacing {
     @apply flex flex-col w-full flex-wrap
@@ -48,7 +48,7 @@ label {
    
 }
 .table-wrap {
-    @apply overflow-hidden w-full
+    @apply overflow-y-hidden overflow-x-auto w-full
    
 }
 .affliate-wrap.svelte-1vuj99p>*+* {
@@ -59,7 +59,7 @@ th{
     @apply !bg-[#0F212E]
 }
 .table-wrapper.svelte-z7x44z {
-    @apply overflow-x-auto max-w-full w-full relative
+    @apply overflow-x-auto max-w-[90vw] w-[90vw] relative
   
 }
 .scrollY, .scrollX {
