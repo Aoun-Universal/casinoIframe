@@ -15,11 +15,11 @@
 }
 
 .hero-heading {
-  @apply font-bold text-left block text-[3.35rem] max-md:text-[2rem] max-md:text-center  leading-[122%] text-white;
+  @apply font-bold text-left block text-[3.35rem] max-md:text-[2rem] max-md:text-center  leading-[115%] text-white;
 }
 
 .signup-btn {
-  @apply inline-flex relative items-center hover:bg-[rgba(16,94,180)] gap-2 justify-center rounded-sm font-semibold whitespace-nowrap  transition disabled:pointer-events-none disabled:opacity-50 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 active:scale-[0.98] bg-blue-500 text-white   focus-visible:outline-white text-sm leading-none shadow-md py-[0.9375rem] px-[1.25rem] mt-8 md:mt-4 w-full md:w-auto;
+  @apply inline-flex relative items-center hover:bg-[rgba(16,94,180)] gap-2 justify-center rounded-sm font-semibold whitespace-nowrap  transition disabled:pointer-events-none disabled:opacity-50 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 active:scale-[0.98] bg-[rgb(20,117,225)] text-white   focus-visible:outline-white text-sm leading-none shadow-md py-[0.9375rem] px-[1.25rem] mt-8 md:mt-4 w-full md:w-auto;
 }
 
 .icons-container {
@@ -112,7 +112,7 @@
 }
 
 .thousand-title {
-  @apply text-[40px] text-left font-bold text-white max-md:text-[28px] leading-[1.3];
+  @apply text-[40px] text-left font-bold text-white max-md:text-[28px] leading-[1.31];
 }
 
 .games-wrapper {
@@ -136,7 +136,7 @@
 }
 
 .game-title {
-  @apply whitespace-break-spaces overflow-hidden text-white leading-[132%] text-left text-[1.25rem] font-bold truncate text-ellipsis max-w-full;
+  @apply whitespace-break-spaces  text-left overflow-hidden block text-white leading-[1.3] text-[1.25rem] font-bold truncate text-ellipsis max-w-full;
 }
 
 .bg-img-wrapper {
@@ -144,7 +144,7 @@
 }
 
 .hero-img {
-  @apply object-cover max-w-[382px] max-h-[400px] [aspect-ratio:0.955_/_1] w-full self-end hidden md:block;
+  @apply object-cover max-w-[382px] max-h-[400px] [aspect-ratio:0.955_/_1] w-full self-end hidden md:block h-auto select-none;
 }
 
 .mobile-banner-img {
@@ -175,11 +175,11 @@
 }
 
 .video-text-details {
-  @apply text-[1rem] text-white leading-[1.5];
+  @apply text-[1rem] text-white leading-[1.5]   font-normal  items-center;
 }
 
 .video-items-wrapper {
-  @apply flex flex-row  p-4 pb-5 rounded relative overflow-hidden  bg-[rgba(33,55,67)];
+  @apply flex flex-row  p-4  rounded relative overflow-hidden  bg-[rgba(33,55,67)];
 }
 
 .play-bar {
@@ -518,7 +518,7 @@
 }
 
 .crypto-currency-title {
-  @apply text-[#fff] leading-[1.3] md:text-[2.5rem] text-[28px] font-bold inline-flex;
+  @apply text-[#fff] leading-[1.31] md:text-[2.5rem] text-[28px] font-bold inline-flex;
 }
 
 .sponsorship-partners {
@@ -609,7 +609,7 @@
 }
 
 .dropdown-content {
-  @apply text-base text-[#b1bad3];
+  @apply text-base text-[#b1bad3] inline text-left font-normal;
 }
 
 .table-content {
@@ -634,7 +634,17 @@
 }
 
 .table-heading {
-  @apply !bg-transparent hover:!bg-transparent;
+  @apply !bg-transparent  hover:!bg-transparent;
+}
+.t-head{
+  @apply rounded-none border-b-[1px] border-solid border-[rgb(47,69,83)] align-middle whitespace-nowrap text-sm text-[#b1bad3] ;
+  word-wrap: break-word;
+  
+}
+.t-data{
+  @apply align-middle whitespace-nowrap text-sm  ;
+  word-wrap: break-word;
+  
 }
 
 .table {
@@ -648,4 +658,11 @@ tr {
 
 .table-row {
   @apply hover:!bg-transparent;
+}
+.table-body {
+  @apply relative ;
+  animation-fill-mode: forwards !important;
+  animation-fill-mode: forwards !important;
+  animation-timing-function: ease-out !important;
+  animation-timing-function: ease-out !important;
 }
