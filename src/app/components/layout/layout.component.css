@@ -3,7 +3,7 @@
 }
 
 .sidebar {
-  @apply  pb-[65px] pt-[60px] md:pt-0 md:pb-[0px] h-[calc(100vw-125px)] md:h-screen overflow-visible;
+  @apply pb-[65px] pt-[60px] md:pt-0 md:pb-[0px] h-[calc(100vw-125px)] md:h-screen overflow-visible;
 }
 
 .main-container {
@@ -15,5 +15,5 @@
 }
 
 .page-wrapper {
-  @apply h-[calc(100vh-60px)] pt-[25px]  bg-[rgb(26,44,56)] overflow-y-auto;
+  @apply h-[calc(100vh-60px)] pt-[25px] lg:pt-0  bg-[rgb(26,44,56)] overflow-y-auto;
 }
