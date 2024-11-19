@@ -47,11 +47,11 @@
 }
 
 .card-title {
-    @apply font-bold text-white leading-[21.6px] text-[1.125rem] text-left inline-flex items-center justify-start
+    @apply font-bold text-white leading-[21.6px] text-sm text-left inline-flex items-center justify-start
 }
 
 .description-wrapper {
-    @apply text-white leading-[21.6px] text-[.875rem] text-left
+    @apply  leading-[21.6px] text-[.875rem] text-left
 }
 
 .button-wrapper {
@@ -305,7 +305,7 @@
 
 /* Market name */
 .market-name{
-    @apply px-2 w-full [grid-column:1/span_12] md:[grid-column:7/span_4] relative items-center text-center bg-[#213743]
+    @apply px-2 w-full [grid-column:1/span_12] md:[grid-column:7/span_4] relative items-center text-center bg-[#213743] 
 }
 
 .market-name span{
