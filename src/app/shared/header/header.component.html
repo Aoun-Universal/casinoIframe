@@ -382,13 +382,23 @@
                                     <!-- Arrow -->
                                     <div class="arrow"></div>
                                     <div class="dropdown-scroll-content " style="max-height: inherit;">
-                                        <ng-container *ngFor="let option of profileOptions">
-                                            <button *ngIf="option.type === 'button'" type="button"
-                                                class="porfile-list w-full">
+
+
+                                        <ng-container *ngFor="let option of profileOptions; let i = index">
+                                            <button (click)="toggleDropdown('porfileDropOpen')"
+                                                *ngIf="option.type === 'button'" type="button"
+                                                [routerLink]="option.path ? option.path : null"
+                                                (click)="i === 0 ? onWalletBtnClick() : !option.path && showModal(i)"
+                                                (click)="i === 1 ? openvaultModal() : null"
+                                                (click)="i === 2 ? openvipModal() : null"
+                                                (click)="i === 4 ? openstatisticModal() : null"
+                                                class="porfile-list w-full" (click)="showModal(i)">
                                                 <img [src]="option.icon" [alt]="option.label" class="svg-icon">
                                                 <span>{{ option.label }}</span>
                                             </button>
                                         </ng-container>
+
+                                        
                                     </div>
                                 </div>
 
