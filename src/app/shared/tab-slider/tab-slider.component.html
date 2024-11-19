@@ -2,7 +2,7 @@
     <div class="flex gap-[5px]">
         @for (item of arrItem; track $index) {
         <a class="tab-item" (click)="tabs($index)" [ngClass]="{'active': tabIndex === $index}">
-            <span>{{item.tabTitle}}</span>
+            <span class="text-[14.7px]">{{item.tabTitle}}</span>
             <div class="bubble-wrap" *ngIf="item.dotState">
                 <div class="scale-up"></div>
             </div>
