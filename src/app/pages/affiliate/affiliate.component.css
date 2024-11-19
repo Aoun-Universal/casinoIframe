@@ -133,3 +133,9 @@
 .nav-title {
   @apply text-[13.8px] text-white;
 }
+
+@media(max-width:520px){
+  .card-varient {
+    @apply !w-[95vw]
+  }
+}

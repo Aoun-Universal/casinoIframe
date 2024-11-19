@@ -2,7 +2,7 @@
     @apply pointer-events-none [stroke-width:0] fill-current stroke-current flex-shrink-0 inline-block size-[1em];
   } 
    .card-varient {
-    @apply bg-[#0f212e]   text-[#d5dceb] rounded-lg !p-6 overflow-hidden relative align-baseline m-0 !w-[95vw];
+    @apply bg-[#0f212e]   text-[#d5dceb] rounded-lg !p-6 overflow-hidden relative align-baseline m-0 !w-[100%];
   }
 .layout-spacing {
     @apply flex flex-col w-full flex-wrap
@@ -59,7 +59,7 @@ th{
     @apply !bg-[#0F212E]
 }
 .table-wrapper.svelte-z7x44z {
-    @apply overflow-x-auto max-w-[90vw] w-[90vw] relative
+    @apply overflow-x-auto max-w-[100%] w-[100%] relative
   
 }
 .scrollY, .scrollX {
@@ -156,4 +156,9 @@ form.svelte-188ba96:not(.is-inline)>* {
   .tooltip-content {
     display: flex;
     align-items: center;
+  }
+  @media(max-width:590px){
+    .card-varient {
+      @apply !w-[95vw]
+    }
   }
