@@ -145,13 +145,18 @@ form.svelte-188ba96:not(.is-inline) > * {
   text-align: right !important;
 }
 .tooltip-arrow {
-  @apply absolute bottom-[-4px] left-[50%] w-[8px] h-[8px] bg-inherit;
-  transform: translateX(-50%) rotate(45deg);
-}
-.tooltip {
-  @apply bg-white text-black text-sm rounded rounded-tl-[8px] rounded-tr-[8px] px-2 py-2 absolute -top-14 shadow-lg;
-}
-.tooltip-content {
-  display: flex;
-  align-items: center;
-}
+    @apply absolute bottom-[-4px] left-[50%] w-[8px] h-[8px] bg-inherit;
+    transform: translateX(-50%) rotate(45deg);
+  }
+  .tooltip{
+    @apply bg-white text-black text-sm rounded rounded-tl-[8px] rounded-tr-[8px] px-2 py-2 absolute -top-14 shadow-lg
+  }
+  .tooltip-content {
+    display: flex;
+    align-items: center;
+  }
+  @media(max-width:520px){
+    .card-varient {
+      @apply !w-[95vw]
+    }
+  }

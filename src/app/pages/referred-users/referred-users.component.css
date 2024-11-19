@@ -51,6 +51,7 @@ label.stacked.svelte-1wzq4lo {
 .scrollY,
 .scrollX {
   scrollbar-color: #2f4553 transparent;
+  overflow-x: auto
 }
 .table-content {
   @apply w-full relative z-[2] overflow-x-scroll;
