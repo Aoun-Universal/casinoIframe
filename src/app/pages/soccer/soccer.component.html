@@ -13,17 +13,17 @@
         <div class="w-full  h-full lg:flex lg:flex-row lg:justify-between lg:items-center ">
             <div class="mt-6  bar_wrapper ">
                 <div class="p-[5px] bar_sub_wrapper  bg_primary  ">
-                    <div class="flex_start gap-3">
+                    <div class="flex_start gap-1 -translate-y-[1px]">
                         <a [ngClass]="[activeTab ==='live&Upcoming' ? 'bg-[#2F4553]' : '']"
-                            (click)="setActiveTab('live&Upcoming')" class=" bar_btns">
+                            (click)="setActiveTab('live&Upcoming')" class=" bar_btns ">
                             Live & Upcoming
                         </a>
                         <a [ngClass]="[activeTab ==='outrights' ? 'bg-[#2F4553]' : '']"
-                            (click)="setActiveTab('outrights')" class=" bar_btns">
+                            (click)="setActiveTab('outrights')" class=" bar_btns ">
                             Outrights
                         </a>
                         <a [ngClass]="[activeTab === 'allSoccer' ? 'bg-[#2F4553]' : '']"
-                            (click)="setActiveTab('allSoccer')" class=" bar_btns">
+                            (click)="setActiveTab('allSoccer')" class=" bar_btns ">
                             All Soccer
                         </a>
                     </div>
