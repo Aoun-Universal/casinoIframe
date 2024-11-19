@@ -86,3 +86,8 @@ th {
       @apply !w-[95vw]
     }
   }
+@media(max-width:590px){
+    .card-varient {
+      @apply !w-[95vw]
+    }
+  }
