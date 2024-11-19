@@ -32,7 +32,7 @@
 
 /* ----- Tabs ----- */
 .tabs {
-  @apply p-2 border-b-[2px] border-solid border-[#213743] grid place-items-start gap-2 [grid-auto-flow:column];
+  @apply px-2 pt-2 !pb-2 border-b-[2px] border-solid  border-[#213743] grid place-items-start gap-2 [grid-auto-flow:column];
 }
 
 .tabs-wrapper {
@@ -267,7 +267,7 @@
 }
 
 .empty-text {
-  @apply text-sm text-[#b1bad3] mt-5;
+  @apply text-sm text-[#b1bad3] mt-[35px];
 }
 
 .marker-animation {
