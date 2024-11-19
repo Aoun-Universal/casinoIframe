@@ -158,7 +158,7 @@ svg.svelte-md2ju7 {
   @apply absolute top-0 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-2 h-2 bg-white rotate-45 border-l border-t border-gray-200;
 }
 .serch-input {
-  @apply w-full pl-[35px] pr-[7px] py-[7px] text-[rgb(47_69_83)] text-sm placeholder:text-[#2f4553] placeholder:font-semibold bg-white  border-[#d5dceb] border-[2px] focus:outline-none focus:border-gray-400 shadow rounded-[.25rem];
+  @apply w-full pl-[35px] pr-[7px] py-[7px] text-[rgb(47_69_83)] text-sm placeholder:text-[#2f4553ce] placeholder:font-semibold bg-white  border-[#d5dceb] border-[2px] focus:outline-none focus:border-gray-400 shadow rounded-[.25rem];
 }
 .search-svg {
   @apply absolute inset-y-0 left-0 flex items-center pl-3 pointer-events-none;
@@ -353,4 +353,7 @@ text-[.875rem] flex items-center  rounded-[20px] p-[0_1rem];
 
 .currency {
   transform: translateY(-2px);
+}
+@media screen and (max-width: 350px) {
+ 
 }
