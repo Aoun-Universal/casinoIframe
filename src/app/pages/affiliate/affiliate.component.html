@@ -84,12 +84,12 @@
                             aria-label="Open Dropdown"
                           
                           >
-                            <span>Commission</span>
+                            <span>{{ selectedOption }}</span>
                             <svg
                               fill="currentColor"
                               viewBox="0 0 64 64"
                               class="svg-icon"
-                              style="transform: rotate(180deg)"
+                              [ngClass]="{'rotate-180': WinnerDropdown }"
                             >
                               <title></title>
                               <path
@@ -105,22 +105,23 @@
                           <div class="dropdown-arrow"></div>
                           <div class="dropdown-scroll-content">
                             <div>
-                              <button type="button" class="profile-list text-[#1475e1]" routerLink="/affiliate/Overview">
+                              <button type="button" class="profile-list text-[#1475e1]" routerLink="/affiliate/Overview" (click)="selectOption('Overview')">
                                 <span >Overview</span>
                                 
                               </button>
-                              <button type="button" class="profile-list text-[rgb(47_69_83)]" routerLink="/affiliate/retention">
+                              <button type="button" class="profile-list text-[rgb(47_69_83)]" routerLink="/affiliate/retention" (click)="selectOption('Retention Program')">
                                 <span >Retention Program</span>
                               </button>
-                              <button type="button" class="profile-list text-[rgb(47_69_83)]" routerLink="/affiliate/commission">
+                              <button type="button" class="profile-list text-[rgb(47_69_83)]" routerLink="/affiliate/commission" (click)="selectOption('Commission')">
                                 <span >Commission</span>
                               </button>
-                              <button type="button" class="profile-list text-[rgb(47_69_83)]" routerLink="/affiliate/funds">
+                              <button type="button" class="profile-list text-[rgb(47_69_83)]" routerLink="/affiliate/funds" (click)="selectOption('Funds')">
                                 <span >Funds</span>
                               </button>
-                              <button type="button" class="profile-list text-[rgb(47_69_83)]" routerLink="/affiliate/referred-users">                                <span >Referred Users</span>
+                              <button type="button" class="profile-list text-[rgb(47_69_83)]" routerLink="/affiliate/referred-users" (click)="selectOption('Referred Users')">                           
+                                     <span >Referred Users</span>
                               </button>
-                              <button type="button" class="profile-list text-[rgb(47_69_83)]" routerLink="/affiliate/Campaigns">
+                              <button type="button" class="profile-list text-[rgb(47_69_83)]" routerLink="/affiliate/campaigns" (click)="selectOption('Campaigns')">
                                 <span >Campaigns</span>
                               </button>
                             </div>
