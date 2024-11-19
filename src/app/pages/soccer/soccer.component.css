@@ -22,7 +22,7 @@
     @apply max-h-11 max-w-[54px] py-[15px] px-5 border-0 rounded mr-3;
   }
   .bar_wrapper {
-    @apply overflow-x-auto overflow-y-hidden;
+    @apply overflow-x-auto overflow-y-hidden w-full;
   }
 
   .bar_sub_wrapper {
@@ -32,10 +32,10 @@
     @apply flex flex-row justify-start items-center;
   }
   .bar_btns {
-    @apply border-0 rounded-full h-[44px] whitespace-nowrap leading-normal text-[14px] py-[14px] px-5;
+    @apply border-0 rounded-full h-[44px] whitespace-nowrap leading-normal text-[14px] py-[14px] px-5 font-semibold;
   }
   .cat_dropdowns_btns {
-    @apply px-3 py-2.5 cursor-pointer text-sm w-full  text-start;
+    @apply px-3 py-2.5 cursor-pointer text-sm w-full  text-start !font-medium;
   }
 
   .blinking-dash {

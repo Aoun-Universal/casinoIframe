@@ -41,7 +41,7 @@
                     <button (click)="toggleCatDropDown()" [disabled]="standardView"
                         [ngClass]="[standardView ? 'opacity-50' : 'opacity-100']"
                         class="bg_primary border-0 rounded py-[13px] px-4 max-w-[98.55px] max-h-10 cursor-pointer flex justify-center items-center gap-2">
-                        <div>
+                        <div class="font-semibold text-[14px]">
                             {{catDropdownSelectedVal}}
                         </div>
                         <img [ngClass]="[catDropdownState ? 'rotate-180' : 'rotate-0']" class="w-[14px] h-[15px]"
@@ -80,14 +80,14 @@
         <div class="mt-6 h-full">
             <div class="flex_start gap-2">
                 <img class="w-[18px] h-[18px]" src="/assets/soccer/fire.svg" alt="sports">
-                <h3 class="text-[18px] text-white">Popular Soccer</h3>
+                <h3 class="text-[18px] text-white font-semibold">Popular Soccer</h3>
             </div>
             <div class="mt-3 h-full">
                 <div (click)="toggleEventDropdown()"
                     class="bg-[#081E2A] cursor-pointer px-4 py-3 border-0 rounded-t text-white h-[45px] flex flex-row justify-between items-center w-full">
                     <div class="flex_row gap-2">
                         <img class="w-4 h-4" src="/assets/soccer/uk-flag.svg" alt="uk">
-                        <h3 class="text-sm text-white">England</h3>
+                        <h3 class="text-sm text-white font-semibold">England</h3>
                     </div>
                     <div class="flex_row gap-4">
                         @if (!eventDropdownState) {
@@ -155,7 +155,8 @@
                                                     <div class="hidden"
                                                         [ngClass]="{ '!hidden' : !standardView , 'lg:!block':standardView}"
                                                         class="teams stacked svelte-1ykwt0t order-3 md:order-5"
-                                                        routerLink="/sport/soccer-details"><a class="teams-tag arrows-btn">
+                                                        routerLink="/sport/soccer-details"><a
+                                                            class="teams-tag arrows-btn">
                                                             <span>Pohkseh</span>
                                                         </a>
                                                         <a class="arrows-btn teams-tag">
@@ -385,16 +386,16 @@
             <div class="p-[5px] bar_sub_wrapper  bg_primary  ">
                 <div class="flex_start gap-3">
                     <a [ngClass]="[activeTab2 ==='allBets' ? 'bg-[#2F4553]' : '']" (click)="setActiveTab2('allBets')"
-                        class=" bar_btns">
+                        class=" bar_btns !font-semibold">
                         All Bets
                     </a>
                     <a [ngClass]="[activeTab2 ==='highRollers' ? 'bg-[#2F4553]' : '']"
-                        (click)="setActiveTab2('highRollers')" class=" bar_btns">
+                        (click)="setActiveTab2('highRollers')" class=" bar_btns !font-semibold">
                         High Rollers
                     </a>
                     <a [ngClass]="[activeTab2 === 'raceLeaderboard' ? 'bg-[#2F4553]' : '']"
                         (click)="setActiveTab2('raceLeaderboard')"
-                        class=" bar_btns flex flex-row justify-center items-center gap-1">
+                        class=" bar_btns !font-semibold flex flex-row justify-center items-center gap-1">
                         <div>
                             Race Leaderboard
                         </div>
@@ -411,7 +412,7 @@
         <div class="table-container">
             <table>
                 <thead>
-                    <tr>
+                    <tr class="*:font-semibold">
                         <th class="text-start">Event</th>
                         <th class="lg-row">User</th>
                         <th class="lg-row">Time</th>
@@ -428,7 +429,7 @@
                                     d="m51.12 44.48 8.506 3.894a1.629 1.629 0 0 1 .01 2.956l-.01.004L32 64 4.374 51.334a1.629 1.629 0 0 1-.01-2.956l.01-.004 8.506-3.894 16.454 7.546L32 53.332l2.666-1.226L51.12 44.48Zm8.506-28.854a1.629 1.629 0 0 0 .01-2.956l-.01-.004L32 0 4.374 12.666a1.629 1.629 0 0 0-.01 2.956l.01.004L32 28.292l27.626-12.666ZM34.694 34.294l-2.666 1.254-2.666-1.254-16.48-7.626-8.506 3.866a1.625 1.625 0 0 0-.01 2.928l.01.004 27.626 12.666 27.626-12.666a1.625 1.625 0 0 0 .01-2.928l-.01-.004-8.506-3.866-16.428 7.626Z">
                                 </path>
                             </svg>
-                            <span class="ml-2">Multi(13)</span>
+                            <span class="ml-2 font-semibold">Multi(13)</span>
                         </td>
                         <td class=" table-btn text-center gap-2 lg-row">
                             <svg fill="currentColor" viewBox="0 0 64 64" class="svg-icon ">
@@ -437,7 +438,7 @@
                                     d="M42.05 8.613c2.815 0 5.192 1.879 5.955 4.494l3.64 12.792H12.253l3.64-12.792.01-.044a6.197 6.197 0 0 1 5.944-4.45H42.05ZM61.488 30.77H2.461a2.461 2.461 0 0 0 0 4.921c8.873 1.271 19.12 1.997 29.539 1.997s20.664-.726 30.696-2.131l-.598.068a2.461 2.461 0 0 0-.56-4.858l-.05.003ZM33.484 43.074h-3.05c-6.335-1.515-13.677-1.22-21.547 0v2.501l3.05.58s0 9.233 9.233 9.233c6.223 0 8.247-5.583 8.908-9.233h3.721c.661 3.65 2.685 9.233 8.908 9.233 9.233 0 9.233-9.233 9.233-9.233l3.05-.58v-2.501c-7.718-1.24-15.008-1.485-21.506 0Z">
                                 </path>
                             </svg>
-                            <span> Hidden </span>
+                            <span class="font-semibold"> Hidden </span>
                         </td>
                         <td class="text-center lg-row">3:11 PM</td>
                         <td class="text-end lg-row ">10.55</td>
@@ -497,7 +498,7 @@
                         - whether you are a first-timer or a seasoned pro you will find a way to win big betting soccer
                         on <a class="cursor-pointer"> Stake online sportsbook </a>
                     </p>
-                    <h2 class="text-[20px] text-white my-2.5">
+                    <h2 class="text-[24px] font-semibold text-white my-2.5">
                         Soccer Betting for the Top Football Leagues Worldwide
                     </h2>
                     <p class=" inline-text mb-[1.5em] ">
@@ -559,7 +560,7 @@
                         <a>Japanese J League </a>
                         and many more leagues and tournaments from across the world!
                     </p>
-                    <h2 class="text-[20px] text-white my-2.5">
+                    <h2 class="text-[24px] font-semibold text-white my-2.5">
                         How to Bet Soccer with Best Betting Odds, Moneyline & Types of Bets
                     </h2>
                     <P class="inline-text mb-[1.5em] ">
@@ -719,7 +720,7 @@
                                 betting guide</span> </a><span>.</span>
                     </p>
 
-                    <h2 class="text-[20px] text-white my-2.5">
+                    <h2 class="text-[24px] font-semibold text-white my-2.5">
                         Live Soccer Betting & Pre-Match Soccer Betting Lines
                     </h2>
 
@@ -740,7 +741,7 @@
                             betting vs. pre-match betting </a>
                         and how to devise the best betting strategy to win at Stake.</p>
 
-                    <h2 class="text-[20px] text-white my-2.5">
+                    <h2 class="text-[24px] font-semibold text-white my-2.5">
                         Live Streaming Soccer on Stake
                     </h2>
                     <p class="inline-text mb-[1.5em]"><span>You
@@ -755,7 +756,7 @@
                                 streaming sports on Stake</span> </a><span>
                             for more information. </span></p>
 
-                    <h2 class="text-[20px] text-white my-2.5">
+                    <h2 class="text-[24px] font-semibold text-white my-2.5">
                         Soccer Betting Tips & Strategies
                     </h2>
                     <p class=" inline-text  mb-[1.5em]">
@@ -808,7 +809,7 @@
 
                     </ul>
 
-                    <h2 class="text-[20px] text-white my-2.5">
+                    <h2 class="text-[24px] font-semibold text-white my-2.5">
                         Fast Deposits & Instant Withdrawals for Soccer Betting
                     </h2>
                     <p class="inline-text mb-[1.5em]">
