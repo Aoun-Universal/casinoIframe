@@ -62,13 +62,13 @@
                     <!-- 1 -->
                     <button class="main-btn close-btn tab-item" [class.active]="activeTab === 1"
                         (click)="setActiveTab(1)">
-                        <svg fill="currentColor" viewBox="0 0 64 64" class="svg-icon">
+                        <svg fill="currentColor" viewBox="0 0 64 64" class=" svg-icon text-white ">
                             <title></title>
-                            <path fill="#b1bad3"
+                            <path fill="#fff"
                                 d="M16.134 63.996.002 47.997a5.474 5.474 0 0 0 1.728-4A5.48 5.48 0 0 0 .003 40l-.002-.002L40 0a5.474 5.474 0 0 0 4 1.728A5.48 5.48 0 0 0 47.996.002L47.998 0l16 16.133a5.474 5.474 0 0 0-1.658 3.934 5.47 5.47 0 0 0 1.657 3.931L64 24 24.002 63.998a5.475 5.475 0 0 0-3.934-1.658 5.47 5.47 0 0 0-3.931 1.658l-.003.002v-.004Z">
                             </path>
                         </svg>
-                        <span>Single</span>
+                        <span class="text-sm font-semibold">Single</span>
                     </button>
                     <!-- 2 -->
                     <button class="main-btn close-btn tab-item" [class.active]="activeTab === 2"
@@ -319,7 +319,7 @@
             <div class="stack" *ngIf="activeTab === 1">
                 <span class="stake">Total Stake</span>
                 <div class="currency inline-flex items-center">
-                    <span>0.00000000</span>
+                    <span class=" text-sm font-semibold text-white ">0.00000000</span>
                     <span class="max-w-[12ch] ml-1">
                         <svg fill="none" viewBox="0 0 96 96" class="svg-icon mt-[-3px]">
                             <title></title>
@@ -344,7 +344,7 @@
             <div class="stack">
                 <span class="stake">ESL Payout</span>
                 <div class="currency inline-flex items-center">
-                    <span>0.00000000</span>
+                    <span class=" text-sm font-semibold text-white ">0.00000000</span>
                     <span class="max-w-[12ch] ml-1">
                         <svg fill="none" viewBox="0 0 96 96" class="svg-icon mt-[-3px]">
                             <title></title>

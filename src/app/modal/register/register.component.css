@@ -50,13 +50,13 @@ input[type="date"]::-webkit-calendar-picker-indicator {
     @apply h-6 p-0 gap-2 items-center justify-end [grid-auto-flow:column] grid touch-auto;
   }
 .select-language {
-  @apply text-[#fff] text-left justify-start text-[1.5rem] font-bold touch-auto inline-flex items-center;
+  @apply text-[#fff] text-left justify-start text-2xl leading-[1.5] font-bold touch-auto inline-flex items-center;
 }
 .formsvelte {
   @apply flex-col justify-center touch-auto flex overflow-y-auto w-full h-full;
 }
 .select-language-span {
-  @apply text-[#b1bad3] text-left justify-start text-sm font-normal touch-auto inline-flex items-center;
+  @apply text-[#b1bad3]  leading-[1.5] text-left justify-start text-sm font-normal touch-auto inline-flex items-center;
 }
 .labelstacked {
   @apply flex-col-reverse items-start w-full inline-flex touch-auto relative;
@@ -83,7 +83,7 @@ input[type="date"]::-webkit-calendar-picker-indicator {
   @apply inline-flex touch-auto;
 }
 .label-content {
-  @apply w-full inline-flex items-center font-semibold text-[0.875rem] text-[#b1bad3] pb-[4px] justify-between touch-auto;
+  @apply w-full inline-flex items-center leading-[14px] font-semibold text-[0.875rem] text-[#b1bad3] pb-[4px] justify-between touch-auto;
 }
 .asterick {
   @apply text-[#ed4163] text-left justify-start text-[0.875rem] font-normal touch-auto inline-flex items-center;
@@ -138,7 +138,7 @@ input[type="date"]::-webkit-calendar-picker-indicator {
 }
 
 .select-spacing {
-  @apply py-[7px] pl-[7px] pr-[28px] w-full text-[#fff] bg-[#0f212e]  border-[2px] rounded-[0.25rem] font-semibold outline-none border-[rgb(47,69,83)]  cursor-pointer appearance-none text-sm touch-auto;
+  @apply py-[7px] pl-[7px] pr-[28px] w-full text-[#fff] bg-[#0f212e]  border-[2px] rounded-[0.25rem] font-medium outline-none border-[rgb(47,69,83)]  cursor-pointer leading-[1.25rem] appearance-none text-sm touch-auto;
   box-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.2), 0 1px 2px 0 rgba(0, 0, 0, 0.12);
 }
 .number-label {
@@ -211,7 +211,7 @@ input[type="date"]::-webkit-calendar-picker-indicator {
 .content-block {
     @apply flex flex-col w-full touch-auto }
 .term-text{
-    @apply text-lg mt-0 w-full text-[#fff] text-left font-semibold align-baseline mb-2
+    @apply text-base mt-0 w-full leading-[21px] text-[#fff] text-left font-semibold align-baseline mb-2
 }
 
     .span-text{
@@ -219,10 +219,10 @@ input[type="date"]::-webkit-calendar-picker-indicator {
     }
 
 .stake-text{
-    @apply text-lg  w-full text-[#fff] inline touch-auto mt-6 mb-2
+    @apply text-base font-semibold  w-full text-[#fff] inline touch-auto mt-6 mb-2
 }
 .stack-svelte {
-    @apply p-0 gap-1 items-center flex-row justify-stretch [grid-auto-flow:row] w-full mt-4 grid touch-auto;
+    @apply p-0 gap-4 items-center flex-row justify-stretch [grid-auto-flow:row] w-full mt-4 grid touch-auto;
     
   }
   .accept-term{
@@ -232,10 +232,10 @@ input[type="date"]::-webkit-calendar-picker-indicator {
 @apply inline-flex relative items-center gap-2 justify-center font-semibold whitespace-nowrap  transition disabled:pointer-events-none disabled:opacity-50 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 active:scale-[0.98] bg-transparent text-white  hover:text-white focus-visible:outline-white text-xs leading-none py-[0.75rem] px-[0.75rem] rounded-full
 }
 .back-btn{
-@apply inline-flex relative items-center gap-2 justify-center rounded-sm font-semibold whitespace-nowrap  transition disabled:pointer-events-none disabled:opacity-50 focus-visible:outline-2 focus-visible:outline-offset-2 active:scale-[0.98] bg-transparent  hover:bg-transparent hover:text-white focus-visible:text-white focus-visible:outline-none text-sm leading-none
+@apply inline-flex relative items-center gap-2 justify-center rounded-sm font-medium whitespace-nowrap  transition disabled:pointer-events-none disabled:opacity-50 focus-visible:outline-2 focus-visible:outline-offset-2 active:scale-[0.98] bg-transparent  hover:bg-transparent hover:text-white focus-visible:text-white focus-visible:outline-none text-sm leading-none
 }
 .confirm-btn{
-  @apply inline-flex relative items-center gap-2 justify-center rounded-sm font-semibold whitespace-nowrap transition disabled:pointer-events-none disabled:opacity-50 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 active:scale-[0.98] bg-blue-500 text-white hover:bg-blue-600 hover:text-white focus-visible:outline-white text-base leading-none shadow-md py-[1.125rem] px-[1.75rem]
+  @apply inline-flex relative items-center gap-2 justify-center rounded-sm font-semibold whitespace-nowrap transition disabled:pointer-events-none disabled:opacity-50 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 active:scale-[0.98] bg-[rgb(20,117,225)] text-white hover:bg-blue-600 hover:text-white focus-visible:outline-white text-base leading-none shadow-md py-[1.125rem] px-[1.75rem]
 }
 .password-text{
   @apply text-[#f2708a] text-xs pt-2 pb-1 flex 
@@ -263,12 +263,12 @@ input[type="date"]::-webkit-calendar-picker-indicator {
   @apply  inline-flex items-center justify-center mb-1 h-[21px] w-[21px] bg-gray-800 border-2 border-gray-600 rounded-sm
 }
 .nextStep-container{
-  @apply flex flex-col mt-4 w-full items-end justify-end flex-1
+  @apply flex flex-col mt-4 w-full items-end
 }
 .nextStep-btn{
-  @apply inline-flex relative items-center gap-2 justify-center rounded-sm font-semibold whitespace-nowrap  transition disabled:pointer-events-none disabled:opacity-50 
+  @apply inline-flex relative items-center gap-2 justify-center rounded-[calc(0.5rem-4px)] font-semibold whitespace-nowrap  transition disabled:pointer-events-none disabled:opacity-50 
   focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 active:scale-[0.98]
-   bg-blue-500 text-white hover:bg-blue-600 hover:text-white focus-visible:outline-white text-base leading-none shadow-md py-[1.125rem] px-[1.75rem] min-w-[12ch] w-full
+   bg-[rgb(20,117,225)] text-white hover:bg-blue-600 hover:text-white focus-visible:outline-white text-base leading-none shadow-md py-[1.125rem] px-[1.75rem] min-w-[12ch] w-full
 }
 .or-text{
   @apply text-[#b1bad3] text-center justify-center text-sm px-2 inline-flex items-center font-normal
@@ -293,11 +293,11 @@ input[type="date"]::-webkit-calendar-picker-indicator {
   @apply flex-col justify-center touch-auto flex w-full h-full
 }
 .loader-content{
-  @apply inline-flex relative items-center gap-2 justify-center rounded-sm font-semibold whitespace-nowrap transition disabled:pointer-events-none disabled:opacity-50 focus-visible:outline focus-visible:outline-2
-   focus-visible:outline-offset-2 active:scale-[0.98] bg-blue-500 text-white hover:bg-blue-600 hover:text-white focus-visible:outline-white text-base leading-none shadow-md py-[1.125rem] px-[1.75rem] min-w-[12ch] w-full
+  @apply inline-flex relative items-center gap-2 justify-center rounded-[calc(0.5rem-4px)] font-semibold whitespace-nowrap transition disabled:pointer-events-none disabled:opacity-50 focus-visible:outline focus-visible:outline-2
+   focus-visible:outline-offset-2 active:scale-[0.98] bg-[rgb(20,117,225)] text-white hover:bg-blue-600 hover:text-white focus-visible:outline-white text-base leading-none shadow-md py-[1.125rem] px-[1.75rem] min-w-[12ch] w-full
 }
 .already-text{
-  @apply text-[#b1bad3]  text-center font-normal text-sm touch-auto
+  @apply text-[#b1bad3]  text-center font-normal leading-[1.5] text-sm touch-auto
 }
 .sign-btn{
   @apply inline-flex relative items-center gap-2 justify-center rounded-sm font-semibold whitespace-nowrap  transition disabled:pointer-events-none disabled:opacity-50 focus-visible:outline-2 focus-visible:outline-offset-2 active:scale-[0.98] bg-transparent text-white hover:bg-transparent hover:text-white focus-visible:outline-none text-sm leading-none

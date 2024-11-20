@@ -4,11 +4,12 @@ import { FormBuilder, FormGroup, ReactiveFormsModule, Validators } from '@angula
 import { ToggleService } from '../../services/toggle.service';
 import { Router } from '@angular/router';
 import { AuthService } from '../../services/auth.service';
+import { ForgotPasswordComponent } from '../forgot-password/forgot-password.component';
 
 @Component({
   selector: 'app-login',
   standalone: true,
-  imports: [ReactiveFormsModule, CommonModule],
+  imports: [ReactiveFormsModule, CommonModule, ForgotPasswordComponent ],
   templateUrl: './login.component.html',
   styleUrls: ['./login.component.css']  // Corrected to styleUrls
 })
@@ -79,5 +80,9 @@ export class LoginComponent implements OnInit {
     if (this.step < 3) {
       this.step += 1;
     }
+  }
+
+  showforgotpassword() {
+    this.toggle.setForgotpassword(true)
   }
 }
