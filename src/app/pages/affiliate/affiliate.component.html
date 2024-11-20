@@ -1,5 +1,5 @@
 
-<div class="good-varient">
+<!-- <div class="good-varient">
   <div class="ctainer ">
     <div class="flex gap-4 py-2 justify-between items-center md:flex-row flex-col ">
       <div class="flex gap-2 items-center"> <span 
@@ -15,7 +15,7 @@
         >Update verification</a></div>
     </div>
   </div>
-</div>
+</div> -->
 <div class="scrollable">
   <div>
     <div class="content-wrapper">
@@ -106,22 +106,22 @@
                           <div class="dropdown-scroll-content">
                             <div>
                               <button type="button" class="profile-list text-[#1475e1]" routerLink="/affiliate/Overview">
-                                <span>Overview</span>
+                                <span >Overview</span>
                                 
                               </button>
                               <button type="button" class="profile-list text-[rgb(47_69_83)]" routerLink="/affiliate/retention">
-                                <span>Retention Program</span>
+                                <span >Retention Program</span>
                               </button>
                               <button type="button" class="profile-list text-[rgb(47_69_83)]" routerLink="/affiliate/commission">
-                                <span>Commission</span>
+                                <span >Commission</span>
                               </button>
                               <button type="button" class="profile-list text-[rgb(47_69_83)]" routerLink="/affiliate/funds">
-                                <span>Funds</span>
+                                <span >Funds</span>
                               </button>
-                              <button type="button" class="profile-list text-[rgb(47_69_83)]" routerLink="/affiliate/referred-users">                                <span>Referred Users</span>
+                              <button type="button" class="profile-list text-[rgb(47_69_83)]" routerLink="/affiliate/referred-users">                                <span >Referred Users</span>
                               </button>
                               <button type="button" class="profile-list text-[rgb(47_69_83)]" routerLink="/affiliate/Campaigns">
-                                <span>Campaigns</span>
+                                <span >Campaigns</span>
                               </button>
                             </div>
                           </div>
@@ -140,10 +140,10 @@
                                 '!bg-[#071824] text-white': isActive(route.path),
                                 'outer-div': true
                               }"
-                              class="outer-div relative items-center gap-2 font-semibold whitespace-nowrap ring-offset-background transition disabled:pointer-events-none disabled:opacity-50 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 active:scale-[0.98] bg-transparent betterhover:hover:bg-grey-900 betterhover:hover:text-white focus-visible:outline-white text-sm leading-none [&amp;_svg]:text-grey-200 [&amp;:hover>svg]:text-white py-[0.9375rem] px-[1.25rem] rounded-full w-full justify-start block"
+                              class="outer-div relative items-center gap-2 max-h-[44px] font-semibold whitespace-nowrap ring-offset-background transition disabled:pointer-events-none disabled:opacity-50 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 active:scale-[0.98] bg-transparent betterhover:hover:bg-grey-900 betterhover:hover:text-white focus-visible:outline-white text-sm leading-none [&amp;_svg]:text-grey-200 [&amp;:hover>svg]:text-white py-[0.9375rem] px-[1.25rem] rounded-full w-full justify-start block"
                               (click)="updateDashPosition()"
                             >
-                              <span>{{ route.label }}</span>
+                              <span class="nav-title">{{ route.label }}</span>
                             </a>
                       
                             <!-- Dash indicator positioned based on active link -->

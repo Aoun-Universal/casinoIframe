@@ -65,7 +65,7 @@
     @apply pointer-events-none [stroke-width:0] fill-current stroke-current flex-shrink-0 inline-block size-[1em];
   }
   .main-wrapper {
-    @apply  p-0 gap-[1.5rem] items-start  [grid-auto-flow:row] justify-stretch md:[grid-auto-flow:column] md:[grid-template-columns:_1fr_5.2fr] grid;;
+    @apply  p-0 gap-[1.5rem] items-start overflow-hidden  [grid-auto-flow:row] justify-stretch md:[grid-auto-flow:column] md:[grid-template-columns:_1fr_5.2fr] grid;
   }
   .card {
     @apply sticky max-w-full top-[2em] min-w-[180px] bg-[#0f212e] text-[#d5dceb] rounded-lg;

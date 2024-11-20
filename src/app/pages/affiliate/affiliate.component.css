@@ -2,7 +2,7 @@
   @apply bg-[#2f4553] w-full flex items-center flex-col px-[3vw] py-0;
 }
 .ctainer {
-  @apply h-full w-full max-w-[1200px] ;
+  @apply h-full w-full max-w-[1200px];
 }
 .read-more {
   @apply text-[#fff] text-left justify-start text-sm font-semibold  inline-flex items-center align-baseline;
@@ -39,13 +39,13 @@
   @apply p-0 gap-3 w-full items-center  [grid-auto-flow:column] grid;
 }
 .header {
-  @apply text-[#fff] text-left justify-start text-lg font-semibold inline-flex items-center;
+  @apply text-[#fff] text-left justify-start text-[17.6px] font-[600] inline-flex items-center;
 }
 .svg-icon {
   @apply pointer-events-none [stroke-width:0] fill-current stroke-current flex-shrink-0 inline-block size-[1em];
 }
 .main-wrapper {
-  @apply  p-0 gap-[1.5rem] items-start  [grid-auto-flow:row] justify-stretch md:[grid-auto-flow:column] md:[grid-template-columns:_1fr_5.2fr] grid;;
+  @apply p-0 md:gap-[1.5rem] gap-2 items-start  [grid-auto-flow:row] justify-stretch md:[grid-auto-flow:column] md:[grid-template-columns:_1fr_5.2fr] grid;
 }
 .card {
   @apply sticky max-w-full top-[2em] min-w-[180px] bg-[#0f212e] text-[#d5dceb] rounded-lg;
@@ -109,24 +109,27 @@
   @apply inline-flex w-full;
 }
 /* Dropdown  */
-.profile-dropdown{
-    @apply absolute left-[5rem] z-[100] top-[130px] py-1  bg-white rounded-[.25rem] shadow-lg  w-[145px] 
+.profile-dropdown {
+  @apply absolute left-[5rem] z-[100] top-[130px] py-1  bg-white rounded-[.25rem] shadow-lg  w-[145px];
 }
 
-.dropdown-arrow{
-    @apply absolute top-0 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-2 h-2 bg-white rotate-45 border-l border-t border-gray-200
+.dropdown-arrow {
+  @apply absolute top-0 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-2 h-2 bg-white rotate-45 border-l border-t border-gray-200;
 }
 
 .dropdown-scroll-content {
-    @apply flex flex-col p-[.25rem_0] [max-height:inherit]
+  @apply flex flex-col p-[.25rem_0] [max-height:inherit];
 }
 
-.profile-list{
-    @apply  inline-flex relative items-center gap-2 font-semibold whitespace-nowrap w-full   transition disabled:pointer-events-none disabled:opacity-50 focus-visible:outline focus-visible:outline-2 hover:bg-[#B1BAD3] 
-    focus-visible:outline-offset-2 active:scale-[0.98] bg-transparent text-sm leading-none  px-3 py-3 rounded-none justify-start
+.profile-list {
+  @apply inline-flex relative items-center gap-2 font-semibold whitespace-nowrap w-full   transition disabled:pointer-events-none disabled:opacity-50 focus-visible:outline focus-visible:outline-2 hover:bg-[#B1BAD3] 
+    focus-visible:outline-offset-2 active:scale-[0.98] bg-transparent text-sm leading-none  px-3 py-3 rounded-none justify-start;
 }
 .dash {
   @apply absolute left-0 w-[3px] bg-[#1475e1];
-  transition: top 0.3s ease; 
+  transition: top 0.3s ease;
+}
 
+.nav-title {
+  @apply text-[13.8px] text-white;
 }

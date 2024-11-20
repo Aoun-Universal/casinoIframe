@@ -18,6 +18,7 @@ import { WalletSettingComponent } from "../../modal/wallet-setting/wallet-settin
 })
 export class HeaderComponent implements OnInit {
   isDropdownOpen = false;
+  sideBar = false
   token: any
   porfileDropOpen = false;
   massageDropOpen = false;
@@ -63,6 +64,9 @@ export class HeaderComponent implements OnInit {
 
   ngOnInit(): void {
     this.token = this.authService.isAuthenticated()
+    this.toggle.getSidebar().subscribe((value)=>{
+      this.sideBar = value
+    })
 
   }
   showWalletSetting() {

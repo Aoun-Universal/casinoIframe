@@ -78,13 +78,13 @@
                                         </ul>
 
                                         <!-- Wallet Settings -->
-                                         <div   (click)="toggleDropdown('isDropdownOpen')" (click)=" showWalletSetting()">
-                                        <div class="Wallet-continer">
-                                            <button    class="wallet-setting">
-                                                <img src="/assets/header/wellet.png" class="wallet-setting-img ">
-                                                Wallet Settings
-                                            </button>
-                                        </div>
+                                        <div (click)="toggleDropdown('isDropdownOpen')" (click)=" showWalletSetting()">
+                                            <div class="Wallet-continer">
+                                                <button class="wallet-setting">
+                                                    <img src="/assets/header/wellet.png" class="wallet-setting-img ">
+                                                    Wallet Settings
+                                                </button>
+                                            </div>
                                         </div>
                                     </div>
                                 </div>
@@ -206,9 +206,11 @@
     <!-- Searchbar opens on clicking search button -->
     <div *ngIf="searchbutton" class="search-overlay" (click)="closeDropdown()">
         <!-- Container for search bar -->
-        <div class="w-[1084.91px] ml-10 mt-2 pt-[55px]" (click)="$event.stopPropagation()">
+        <div class="w-[calc(100%-240px)] justify-center relative flex mt-2 pt-[55px]" (click)="$event.stopPropagation()"
+            [ngClass]="{'!w-[calc(100%-60px)]': !sideBar}">
+
             <!-- Search bar -->
-            <div class="input-wrap ">
+            <div class="input-wrap max-w-[1084.91px] w-full relative">
                 <!-- Dropdown button -->
                 <button class="casion-btn z-[2000]" (click)="CosinDropdown()">
                     Casino
@@ -219,14 +221,16 @@
                     <div class="arrow"></div>
                     <div style="max-height: inherit;">
                         <button type="button" tabindex="0" class="dropdown-scroll">
-                            <span>Casino</span></button> <button type="button" tabindex="0" class="dropdown-scroll">
-                            <span>Sports</span></button>
+                            <span>Casino</span>
+                        </button>
+                        <button type="button" tabindex="0" class="dropdown-scroll">
+                            <span>Sports</span>
+                        </button>
                     </div>
                 </div>
 
                 <!-- Search icon -->
-                <svg fill="currentColor" viewBox="0 0 64 64" class="svg-icon  search-icon">
-                    <title></title>
+                <svg fill="currentColor" viewBox="0 0 64 64" class="svg-icon search-icon">
                     <path fill-rule="evenodd" clip-rule="evenodd"
                         d="M10.266 3.893a23.1 23.1 0 1 1 25.668 38.414A23.1 23.1 0 0 1 10.266 3.893Zm5.112 30.764a13.9 13.9 0 1 0 15.444-23.114 13.9 13.9 0 0 0-15.444 23.114ZM38.55 46.33a28.002 28.002 0 0 0 7.78-7.78L64 56.22 56.22 64 38.55 46.33Z">
                     </path>
@@ -234,30 +238,33 @@
 
                 <!-- Search input -->
                 <input type="text" placeholder="Search your game"
-                    class="focus:outline-none placeholder:text-[#53646F] " />
+                    class="focus:outline-none placeholder:text-[#53646F]" />
 
                 <!-- Close button -->
                 <button class="ml-3 text-gray-500 hover:text-white" (click)="closeDropdown()">
-                    <svg fill="currentColor" viewBox="0 0 64 64" class="svg-icon ">
-                        <title></title>
+                    <svg fill="currentColor" viewBox="0 0 64 64" class="svg-icon">
                         <path
                             d="m54.827 16.187-7.014-7.014L32 24.987 16.187 9.173l-7.014 7.014L24.987 32 9.173 47.813l7.014 7.014L32 39.013l15.813 15.814 7.014-7.014L39.013 32l15.814-15.813Z">
                         </path>
                     </svg>
                 </button>
+
+                <!-- Search validation message -->
+                <div class="validation-message absolute left-1/2 transform -translate-x-1/2 translate-y-[70.5px] max-w-[1084.91px] w-full z-[1450]"
+                    (click)="$event.stopPropagation()">
+                    <div class="results-wrapper scrollY svelte-15c4jgu">
+                        <div class="exception-wrap svelte-4te59m">
+                            <span class="font-semibold text-[#b1bad3] text-[.875rem] svelte-17v69ua">
+                                Search requires at least 3 characters.
+                            </span>
+                        </div>
+                    </div>
+                </div>
             </div>
         </div>
 
-        <!-- Search validation message -->
-        <div data-popper-placement="bottom"
-            style="z-index: 1450; position: fixed; inset: 0px auto auto 0px; margin: 0px; transform: translate3d(282.5px, 115.5px, 0px); width: 1084.69px;"
-            (click)="$event.stopPropagation()">
-            <div class="results-wrapper scrollY svelte-15c4jgu">
-                <div class="exception-wrap svelte-4te59m"><span
-                        class="font-semibold text-[#b1bad3] text-[.875rem] svelte-17v69ua">Search requires at least 3
-                        characters.</span></div>
-            </div>
-        </div>
+
+
 
     </div>
 </div>
@@ -349,7 +356,8 @@
 
                                         <!-- Wallet Settings -->
                                         <div class="Wallet-continer">
-                                            <button  (click)="toggleDropdown('isDropdownOpen')" (click)=" showWalletSetting()" class="wallet-setting">
+                                            <button (click)="toggleDropdown('isDropdownOpen')"
+                                                (click)=" showWalletSetting()" class="wallet-setting">
                                                 <img src="/assets/header/wellet.png" class="wallet-setting-img ">
                                                 Wallet Settings
                                             </button>
@@ -358,8 +366,7 @@
                                 </div>
                             </div>
                         </div>
-                        <button type="button" tabindex="0"
-                         (click)="onWalletBtnClick()"
+                        <button type="button" tabindex="0" (click)="onWalletBtnClick()"
                             class="inline-flex relative rounded-tr-[.25rem] rounded-br-[.25rem] items-center gap-2 justify-center rounded-sm font-semibold whitespace-nowrap ring-offset-background transition disabled:pointer-events-none disabled:opacity-50 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 active:scale-[0.98] bg-[#1475E1] text-white betterhover:hover:bg-blue-600 betterhover:hover:text-white focus-visible:outline-white text-sm leading-none shadow-md py-[0.8125rem] px-[1rem]">
                             <svg fill="currentColor" viewBox="0 0 64 64" class="svg-icon ">
                                 <title></title>
@@ -374,7 +381,8 @@
                         <div
                             class="stack stack-right y-center gap-none padding-none direction-horizontal padding-left-auto padding-top-auto padding-bottom-auto padding-right-auto svelte-1cd1boi">
                             <div class="dropdown svelte-1iau4lg transparent flex gap-[3px]">
-                                <button type="button" class="porfile-iocn close-dropdown" (click)="toggleDropdown('porfileDropOpen')">
+                                <button type="button" class="porfile-iocn close-dropdown"
+                                    (click)="toggleDropdown('porfileDropOpen')">
                                     <img src="/assets/header/porfile.png" class="svg-icon ">
                                 </button>
                                 <!-- porfile  Menu -->
@@ -382,21 +390,33 @@
                                     <!-- Arrow -->
                                     <div class="arrow"></div>
                                     <div class="dropdown-scroll-content " style="max-height: inherit;">
-                                        <ng-container *ngFor="let option of profileOptions">
-                                            <button *ngIf="option.type === 'button'" type="button"
-                                                class="porfile-list w-full">
+
+
+                                        <ng-container *ngFor="let option of profileOptions; let i = index">
+                                            <button (click)="toggleDropdown('porfileDropOpen')"
+                                                *ngIf="option.type === 'button'" type="button"
+                                                [routerLink]="option.path ? option.path : null"
+                                                (click)="i === 0 ? onWalletBtnClick() : !option.path && showModal(i)"
+                                                (click)="i === 1 ? openvaultModal() : null"
+                                                (click)="i === 2 ? openvipModal() : null"
+                                                (click)="i === 4 ? openstatisticModal() : null"
+                                                class="porfile-list w-full" (click)="showModal(i)">
                                                 <img [src]="option.icon" [alt]="option.label" class="svg-icon">
                                                 <span>{{ option.label }}</span>
                                             </button>
                                         </ng-container>
+
+
                                     </div>
                                 </div>
 
-                                <button type="button" class="bell-icon close-dropdown" (click)="toggleDropdown('bellDropOpen')">
+                                <button type="button" class="bell-icon close-dropdown"
+                                    (click)="toggleDropdown('bellDropOpen')">
                                     <img src="/assets/header/bell.png" class="svg-icon ">
                                 </button>
                             </div>
-                            <div class="notifications-widget   close-dropdown svelte-6gfkw4" style="z-index: 901;" *ngIf="bellDropOpen">
+                            <div class="notifications-widget   close-dropdown svelte-6gfkw4" style="z-index: 901;"
+                                *ngIf="bellDropOpen">
                                 <div class="notifications-header svelte-12heyz0">
                                     <div class="title svelte-12heyz0">
                                         <img src="/assets/header/bell.png" class="svg-icon">

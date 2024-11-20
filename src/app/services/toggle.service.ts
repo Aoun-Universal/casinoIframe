@@ -22,6 +22,7 @@ export class ToggleService {
   private RaceModalState: BehaviorSubject<boolean> = new BehaviorSubject<boolean>(false);
   private campaingModalState: BehaviorSubject<boolean> = new BehaviorSubject<boolean>(false);
   private WalletsettingState: BehaviorSubject<boolean> = new BehaviorSubject<boolean>(false);
+  private betModal: BehaviorSubject<boolean> = new BehaviorSubject<boolean>(false);
 
 
   sidebarState$ = this.sidebarState.asObservable();
@@ -164,6 +165,13 @@ export class ToggleService {
   }
   setLogout(value: boolean) {
     this.logoutState.next(value);
+  }
+
+  getBetModal() {
+    return this.betModal
+  }
+  setBetModal(value: boolean) {
+    this.betModal.next(value);
   }
 
 }
