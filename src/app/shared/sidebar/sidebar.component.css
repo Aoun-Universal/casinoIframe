@@ -76,7 +76,7 @@
 }
 
 .title-wrapper {
-  @apply inline-flex items-center gap-[.5rem] text-white text-[14px] md:translate-y-0.5;
+  @apply inline-flex items-center gap-[.5rem] text-white text-[13.8px] font-semibold md:translate-y-0.5;
 }
 
 .svg-container {
