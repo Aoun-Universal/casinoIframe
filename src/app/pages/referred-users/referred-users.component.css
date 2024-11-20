@@ -51,6 +51,7 @@ label.stacked.svelte-1wzq4lo {
 .scrollY,
 .scrollX {
   scrollbar-color: #2f4553 transparent;
+  overflow-x: auto
 }
 .table-content {
   @apply w-full relative z-[2] overflow-x-scroll;
@@ -81,3 +82,13 @@ th {
 .control-bt {
   @apply inline-flex stack relative gap-2 !text-[#879097] !text-[13.7px] justify-center rounded-sm font-semibold whitespace-nowrap  transition disabled:pointer-events-none !mt-0 disabled:opacity-50 focus-visible:outline-2 focus-visible:outline-offset-2 active:scale-[0.98] bg-transparent  hover:bg-transparent hover:text-white focus-visible:outline-none text-sm leading-none;
 }
+@media(max-width:590px){
+    .card-varient {
+      @apply !w-[95vw]
+    }
+  }
+@media(max-width:590px){
+    .card-varient {
+      @apply !w-[95vw]
+    }
+  }

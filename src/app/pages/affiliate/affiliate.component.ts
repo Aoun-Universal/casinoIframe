@@ -12,8 +12,14 @@ import { Subscription } from 'rxjs';
 })
 export class AffiliateComponent {
   WinnerDropdown=false;
+  selectedOption: string = 'Overview'; 
   toggleDropdown() {
     this.WinnerDropdown = !this.WinnerDropdown;
+    
+  }
+  selectOption(option: string) {
+    this.selectedOption = option; // Set selected option
+    this.WinnerDropdown = false; // Close dropdown
   }
 
   routes = [

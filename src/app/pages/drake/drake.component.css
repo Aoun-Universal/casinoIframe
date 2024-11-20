@@ -39,7 +39,7 @@
 }
 
 .drake-title {
-  @apply inline-flex justify-center text-center items-center md:text-[1.5rem] text-[20px] leading-[132%] font-[600];
+  @apply inline-flex  text-center items-center md:text-[1.5rem] text-[20px] leading-[132%] font-[600];
 }
 
 .main-content > * + * {

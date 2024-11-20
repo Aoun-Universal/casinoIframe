@@ -12,15 +12,20 @@ import { Subscription } from 'rxjs';
 })
 export class TransactionsComponent {
   WinnerDropdown=false;
+  selectedOption: string = 'Deposits';
+  selectOption(option: string) {
+    this.selectedOption = option; // Set selected option
+    this.WinnerDropdown = false; // Close dropdown
+  }
   toggleDropdown() {
     this.WinnerDropdown = !this.WinnerDropdown;
   }
 
   routes = [
     { path: '/transactions/deposits', label: 'Deposits' },
-    { path: '/transactions/withdrawal', label: 'withdrawal' },
-    { path: '/transactions/archive', label: 'archive' },
-    { path: '/transactions/other', label: 'other' },
+    { path: '/transactions/withdrawal', label: 'Withdrawal' },
+    { path: '/transactions/archive', label: ' Bet archive' },
+    { path: '/transactions/other', label: 'Other' },
   ];
 
   activeIndex = 0;

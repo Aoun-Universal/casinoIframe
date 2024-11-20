@@ -51,7 +51,7 @@
     @apply ml-[.25rem]
 }
 .stack{
-    @apply text-[#b1bad3] text-sm  items-center text-center gap-[1.5rem] flex justify-center
+    @apply text-[#D5DCEB] text-sm  items-center text-center gap-[1.5rem] flex justify-center
 }
 .control-btn{
     @apply inline-flex stack relative gap-2 justify-center rounded-sm font-semibold whitespace-nowrap  transition disabled:pointer-events-none disabled:opacity-50 focus-visible:outline-2 focus-visible:outline-offset-2 active:scale-[0.98] bg-transparent text-white hover:bg-transparent hover:text-white focus-visible:outline-none text-sm leading-none ;
@@ -97,7 +97,7 @@
     }
     
 section.svelte-12f32gl {
-    @apply flex flex-col
+    @apply flex flex-col text-white
 
 }
 .wrapper.svelte-1eda04b {

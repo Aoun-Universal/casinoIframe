@@ -110,7 +110,7 @@
                               aria-label="Open Dropdown"
                             
                             >
-                              <span>Commission</span>
+                              <span>{{ selectedOption }}</span>
                               <svg
                                 fill="currentColor"
                                 viewBox="0 0 64 64"
@@ -131,18 +131,18 @@
                             <div class="dropdown-arrow"></div>
                             <div class="dropdown-scroll-content">
                               <div>
-                                <button type="button" class="profile-list text-[#1475e1]" routerLink="/transactions/deposits">
+                                <button type="button" class="profile-list text-[#1475e1]" routerLink="/transactions/deposits" (click)="selectOption('Deposits')">
                                   <span>Deposits</span>
                                   
                                 </button>
-                                <button type="button" class="profile-list text-[rgb(47_69_83)]" routerLink="/transactions/withdrawals">
-                                  <span>withdrawal</span>
+                                <button type="button" class="profile-list text-[rgb(47_69_83)]" routerLink="/transactions/withdrawal" (click)="selectOption('withdrawal')">
+                                  <span>Withdrawal</span>
                                 </button>
-                                <button type="button" class="profile-list text-[rgb(47_69_83)]" routerLink="/transactions/archive">
-                                  <span>archive</span>
+                                <button type="button" class="profile-list text-[rgb(47_69_83)]" routerLink="/transactions/archive"  (click)="selectOption('archive')">
+                                  <span> Bet archive</span>
                                 </button>
-                                <button type="button" class="profile-list text-[rgb(47_69_83)]" routerLink="/transactions/other">
-                                  <span>other</span>
+                                <button type="button" class="profile-list text-[rgb(47_69_83)]" routerLink="/transactions/other" (click)="selectOption('other')">
+                                  <span>Other</span>
                                 </button>
                               </div>
                             </div>
