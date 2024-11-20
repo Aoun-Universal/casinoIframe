@@ -23,9 +23,9 @@ export class TransactionsComponent {
 
   routes = [
     { path: '/transactions/deposits', label: 'Deposits' },
-    { path: '/transactions/withdrawal', label: 'withdrawal' },
-    { path: '/transactions/archive', label: 'archive' },
-    { path: '/transactions/other', label: 'other' },
+    { path: '/transactions/withdrawal', label: 'Withdrawal' },
+    { path: '/transactions/archive', label: ' Bet archive' },
+    { path: '/transactions/other', label: 'Other' },
   ];
 
   activeIndex = 0;
