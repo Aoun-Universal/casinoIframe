@@ -22,7 +22,7 @@ export class ToggleService {
   private RaceModalState: BehaviorSubject<boolean> = new BehaviorSubject<boolean>(false);
   private campaingModalState: BehaviorSubject<boolean> = new BehaviorSubject<boolean>(false);
   private WalletsettingState: BehaviorSubject<boolean> = new BehaviorSubject<boolean>(false);
-
+  private ForgotpasswordState: BehaviorSubject<boolean> = new BehaviorSubject<boolean>(false);
 
   sidebarState$ = this.sidebarState.asObservable();
 
@@ -149,7 +149,14 @@ export class ToggleService {
     this.WalletsettingState.next(value);
   }
 
+  // Forgot password Modal
 
+  getForgotpassword() {
+    return this.ForgotpasswordState
+  }
+  setForgotpassword(value: boolean) {
+    this.ForgotpasswordState.next(value);
+  }
 
 
   getSignUp() {
