@@ -1,6 +1,6 @@
 @if(isModal){
-  <div (click)="onCloseModal()" class="content h-screen w-screen justify-center flex items-center fixed top-0 left-0 bg-black bg-opacity-60 z-50">
-    <div   (click)="$event.stopPropagation()" class="w-[500px]  h-[454px]">
+  <div (click)="onCloseModal()" class="content h-screen w-screen justify-center flex items-center fixed top-0 left-0 bg-black bg-opacity-60 z-50 ">
+    <div   (click)="$event.stopPropagation()" class="w-[500px]  h-[454px] !rounded-md">
       <div class="relative z-[9999]">
         <button
           type="button"
@@ -15,24 +15,24 @@
           </svg>
         </button>
         <img
-          class="w-full h-[260px]"
+          class="w-full h-[260px] !rounded-md"
           src="	https://stake.com/_app/immutable/assets/setup-wallet-desktop.CiRQqylo.jpg"
           alt=""
         />
       </div>
       <div class="ctainer p-[2rem_1rem_1rem_1rem]  bg-[#1A2C38]">
         <div
-          class="stack x-stretch y-center gap-small padding-none direction-vertical padding-left-auto padding-top-auto padding-bottom-auto padding-right-auto svelte-1cd1boi"
+          class="stack x-stretch y-center flex flex-col  gap-small padding-none direction-vertical padding-left-auto padding-top-auto padding-bottom-auto padding-right-auto svelte-1cd1boi leading-[120%]"
          
         >
           <h1
-            class="leading-[120%] text-[1.5rem] font-[500] justify-start"
+            class="leading-[120%] text-[1.5rem]  justify-start font-semibold"
            
           >
             Let's setup your wallet &amp; get started!
           </h1>
           <span
-            class="text-[#b1bad3] text-[.875rem] justify-start text-left font-[400]"
+            class="text-[#b1bad3] text-[.875rem] justify-start text-left font-[400] !leading-[20px] !mt-[.5rem]"
             >Confirm your email &amp; quickly verify your account details to get
             started using Stake. This will allow you to deposit &amp; withdraw
             your funds seamlessly.</span
@@ -41,7 +41,7 @@
         <button
           type="button"
           (click)="showWallet()"
-          class="inline-flex mt-6 relative items-center gap-2 justify-center bg-blue-500 text-white  text-sm leading-none shadow-md py-[0.9375rem] px-[1.25rem] w-full">
+          class="inline-flex font-semibold mt-6 relative items-center gap-2 justify-center bg-blue-500 text-white  text-sm leading-none shadow-md py-[0.9375rem] px-[1.25rem] w-full">
           Setup Wallet
         </button>
       </div>
