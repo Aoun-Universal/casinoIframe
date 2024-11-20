@@ -79,7 +79,7 @@
 
             <div *ngIf="currentStep === 2">
               <!-- Title -->
-              <div class="self-start mb-1">
+              <div class="self-start mb-[2px]">
                 <h2 class="select-language">Create an account</h2>
               </div>
               <form (ngSubmit)="onSubmit()" [formGroup]="registerForm" class="formsvelte">
@@ -140,7 +140,7 @@
                 <!-- Password input feild -->
                 <label class="labelstacked mt-[1rem]">
                   <div *ngIf="registerForm.get('password')?.invalid && registerForm.get('password')?.touched"
-                    class="password-tex">
+                    class="text-[#f2708a] text-xs pt-2 pb-1  flex">
                     Your password must be at least 8 characters long, including upper and lower case letters and at
                     least
                     one number.
@@ -227,7 +227,7 @@
                             <polyline points="20 6 9 17 4 12" />
                           </svg>
                         </span>
-                        <span class="checkbox-text ml-2 text-gray-300">Phone (Optional)</span>
+                        <span class="checkbox-text ml-2 mt-[1px] text-gray-300">Phone (Optional)</span>
                       </label>
                     </div>
 
@@ -638,12 +638,12 @@
                             <polyline points="20 6 9 17 4 12" />
                           </svg>
                         </span>
-                        <span class="checkbox-text ml-2 text-gray-300">agree to the terms and
+                        <span class="checkbox-text ml-2 text-white">I have read and agree to the terms and
                           conditions</span>
                       </label>
                     </div>
                   </div>
-                  <button class="loader-content" type="submit">
+                  <button class="loader-content mb-4" type="submit">
                     <div class="contents" data-loader-content="">
                       Create an account
                     </div>
