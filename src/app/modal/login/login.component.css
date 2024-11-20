@@ -49,14 +49,7 @@
   transition-duration: 0.15s;
 }
 .svg-icon {
-  pointer-events: none;
-  stroke-width: 0;
-  stroke: currentColor;
-  fill: currentColor;
-  flex-shrink: 0;
-  display: inline-block;
-  width: 1em;
-  height: 1em;
+  @apply pointer-events-none [stroke-width:0] fill-current stroke-current flex-shrink-0 inline-block size-[1em];
 }
 
 .center-wrapper {
@@ -92,21 +85,14 @@
   @apply inline-flex touch-auto;
 }
 .label-content {
-  @apply w-full inline-flex items-center font-semibold text-[0.875rem] text-[#b1bad3] pb-[4px] justify-between touch-auto;
+  @apply w-full inline-flex items-center font-semibold text-sm tracking-[0px] leading-[14px] text-[#b1bad3] pb-[4px] justify-between touch-auto;
 }
 
 .wrap-svelte {
   @apply flex flex-col justify-center items-center gap-[1rem] touch-auto;
 }
 .svg-icon-password {
-  pointer-events: none;
-  stroke-width: 0;
-  stroke: currentColor;
-  fill: currentColor;
-  flex-shrink: 0;
-  display: inline-block;
-  width: 1em;
-  height: 1em;
+  @apply pointer-events-none [stroke-width:0] fill-current stroke-current flex-shrink-0 inline-block size-[1em];
 }
 .or-svelte {
   @apply max-w-[200px] w-full flex items-center touch-auto;
@@ -121,9 +107,7 @@
 .asterick {
   @apply text-[#ed4163] text-left justify-start text-[0.875rem] font-normal touch-auto inline-flex items-center;
 }
-/* .span-variant {
-  @apply text-[#b1bad3] text-center justify-center text-[0.875rem] font-normal inline-flex items-center;
-} */
+
 .or-svelte:after {
   content: "";
   display: inline-flex;
@@ -148,7 +132,7 @@
   @apply font-[1.125rem] py-2 px-4 flex items-center touch-auto outline-none border-0
 }
 .Signin-btn {
-  @apply inline-flex relative items-center gap-2 justify-center rounded-sm font-semibold whitespace-nowrap  transition disabled:pointer-events-none disabled:opacity-50 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 active:scale-[0.98] bg-blue-500 text-white hover:bg-blue-600 hover:text-white focus-visible:outline-white text-base leading-none shadow-md py-[1.125rem] px-[1.75rem] min-w-[12ch] w-full
+  @apply inline-flex relative items-center gap-2 justify-center rounded-sm font-semibold whitespace-nowrap  transition disabled:pointer-events-none disabled:opacity-50 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 active:scale-[0.98] bg-[rgb(20,117,225)] text-white hover:bg-blue-600 hover:text-white focus-visible:outline-white text-base leading-none shadow-md py-[1.125rem] px-[1.75rem] min-w-[12ch] w-full
 }
 .OR-text {
   @apply text-[#b1bad3] text-center justify-center text-sm px-2 inline-flex items-center font-normal
