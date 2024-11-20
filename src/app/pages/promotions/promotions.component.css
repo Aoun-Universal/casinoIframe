@@ -9,7 +9,7 @@
   @apply grid items-start mt-[1rem]
 }
 .heading-text{
-  @apply text-left justify-start font-[600] inline-flex items-center text-[24px]
+  @apply text-left text-white leading-[132%] justify-start font-semibold inline-flex items-center text-xl
 }
 .main-parent{
   @apply w-full bg-[#213743]  px-[3vw]
@@ -21,10 +21,10 @@
   @apply text-[#b1bad3] text-left justify-start text-[.75rem] font-[400] mt-[8px] inline-flex items-center
 }
 .card-title{
-  @apply text-[1.25rem] text-left justify-start font-[600] mt-[8px] inline-flex items-center
+  @apply text-lg text-white leading-[132%] text-left justify-start font-semibold mt-2 inline-flex items-center
 }
 .middle-text{
-  @apply text-[1.25rem] font-[600] inline-block text-left justify-start
+  @apply text-lg leading-[132%] font-semibold inline-flex  items-center text-left justify-start text-white
 }
 .left-box{
   @apply flex justify-center items-center
@@ -41,9 +41,12 @@
 .content-parent{
   @apply flex items-center justify-between rounded-[.25rem] bg-[#213743] overflow-hidden
 }
-.svg-icon{
+/* .svg-icon{
   @apply text-[1.25rem] w-[16px] h-[16px] mr-[1.15rem]
+} */
+.svg-icon {
+  @apply pointer-events-none text-[1.25rem] [stroke-width:0] fill-current stroke-current flex-shrink-0 inline-block size-[1em];
 }
 .sport-text{
-  @apply text-[1.125rem] text-left ml-[16px] font-[600] block
+  @apply text-base text-white leading-[132%] text-left ml-[16px] font-semibold block
 }

@@ -1,13 +1,12 @@
-<p>promotions works!</p>
 <!-- Main Parent Wrapper -->
-
+<div class="pb-[32px]">
 <div class="main-parent">
   <div class="child-container">
     <!-- Left Box with Heading -->
 
     <div class="left-box">
       <h1 class="heading-text">
-        <span>Permosions</span
+        <span>Promotions</span
         ><!-- Title of the section -->
       </h1>
     </div>
@@ -37,14 +36,16 @@
                   src="/assets/f88349b3c6179fa7d053c1daea2f50c9362220dd-500x500.webp"
                   alt=""
                 />
-                <p class="text-[1.125rem] text-left ml-[16px] font-[600] block">
+                <p
+                  class="text-base leading-[132%] text-white text-left ml-4 font-semibold block"
+                >
                   Casino
                 </p>
               </div>
               <svg
                 fill="currentColor"
                 viewBox="0 0 64 64"
-                class="svg-icon text-[1.25rem] w-[16px] h-[16px] mr-[1.15rem]"
+                class="svg-icon mr-[32px]"
               >
                 <title></title>
                 <path
@@ -69,7 +70,11 @@
               </div>
               <!-- Arrow icon for navigation -->
 
-              <svg fill="currentColor" viewBox="0 0 64 64" class="svg-icon">
+              <svg
+                fill="currentColor"
+                viewBox="0 0 64 64"
+                class="svg-icon mr-[32px]"
+              >
                 <title></title>
                 <path
                   d="m26.307 53.995 20.998-20.997L26.307 12 20 18.306 34.694 33 20.001 47.694 26.307 54v-.005Z"
@@ -87,7 +92,7 @@
       <div class="main-wrapper">
         <div class="contents" *ngFor="let race of races">
           <a href="">
-            <article>
+            <article class="flex flex-col gap-[0.5rem]">
               <!-- Dynamic Image Source -->
 
               <img [src]="race.imgUrl" alt="Race image" />
@@ -103,6 +108,33 @@
           </a>
         </div>
       </div>
+      <div
+        class="mt-6 p-0 gap-6 items-center justify-center [grid-auto-flow:column] grid"
+       
+      >
+        <button
+          type="button"
+          tabindex="0"
+          class=" pointer-events-none [opacity:.5] inline-flex relative items-center gap-2 justify-center rounded-sm font-semibold whitespace-nowrap ring-offset-background transition disabled:pointer-events-none disabled:opacity-50 focus-visible:outline-2 focus-visible:outline-offset-2 active:scale-[0.98] bg-transparent text-white betterhover:hover:bg-transparent betterhover:hover:text-white focus-visible:outline-none text-sm leading-none [&amp;_svg]:text-grey-200 [&amp;:hover>svg]:text-white"
+          disabled=""
+          data-testid="pagination-previous"
+          data-test="pagination-previous"
+          data-button-root=""
+        >
+          Previous
+        </button>
+        <button
+          type="button"
+          tabindex="0"
+          class="inline-flex relative items-center gap-2 justify-center rounded-sm font-semibold whitespace-nowrap ring-offset-background transition disabled:pointer-events-none disabled:opacity-50 focus-visible:outline-2 focus-visible:outline-offset-2 active:scale-[0.98] bg-transparent text-white betterhover:hover:bg-transparent betterhover:hover:text-white focus-visible:outline-none text-sm leading-none [&amp;_svg]:text-grey-200 [&amp;:hover>svg]:text-white"
+          data-testid="pagination-next"
+          data-test="pagination-next"
+          data-button-root=""
+        >
+          Next
+        </button>
+      </div>
     </div>
   </div>
 </div>
+</div> 
