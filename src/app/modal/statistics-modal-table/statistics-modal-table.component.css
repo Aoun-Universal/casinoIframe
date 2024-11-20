@@ -5,7 +5,7 @@
 }
 
 .modal.svelte-cq3ecl.svelte-cq3ecl {
-  @apply fixed inset-0 z-[1500] p-[1500] flex items-center justify-center text-[1500];
+  @apply fixed inset-0 z-[1500] p-[1500] bg-black/50 flex items-center justify-center text-[1500];
 }
 
 .overlay.svelte-cq3ecl.svelte-cq3ecl {

@@ -1,6 +1,6 @@
-<div id="svelte">
+<div id="svelte"(click)="closestatisticModal()">
     <div  class="modal svelte-cq3ecl z-[1500]" >
-        <div class="card size-md svelte-cq3ecl">
+        <div class="card size-md svelte-cq3ecl" (click)="$event.stopPropagation()">
             <div class="header svelte-227w12">
                 <h2
                     class=" svelte-17v69ua">
@@ -343,4 +343,4 @@
     </div>
     <div style="display: none"></div>
 </div>
-<div class="bg-black/50 fixed inset-0"></div>
+<!-- <div class="bg-black/50 fixed inset-0"></div> -->
