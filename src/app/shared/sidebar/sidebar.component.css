@@ -64,7 +64,7 @@
 }
 
 .dropdown-container {
-  @apply flex flex-col max-w-full bg-[#1a2c38] rounded;
+  @apply flex flex-col max-w-full bg-[#1a2c38] text-white rounded;
 }
 
 .dropdown-item {
@@ -76,11 +76,15 @@
 }
 
 .title-wrapper {
-  @apply inline-flex items-center gap-[.5rem] text-[14px];
+  @apply inline-flex items-center gap-[.5rem] text-white text-[14px] md:translate-y-0.5;
 }
 
 .svg-container {
-  @apply bg-[#374F5F] text-white flex-shrink-0 flex w-4 h-4 -my-1 rounded-full items-center justify-center text-xs  bg-opacity-50;
+  @apply bg-[#374F5F]  text-white flex-shrink-0 flex w-4 h-4 -my-1 rounded-full items-center justify-center text-xs;
+}
+
+.svg-container svg {
+  @apply !fill-white;
 }
 
 .inner-content {
@@ -254,5 +258,3 @@
 .custom-checkbox:checked + .indicator .inner-dot {
   transform: scale(1); /* Scale to full size when checked */
 }
-
-
