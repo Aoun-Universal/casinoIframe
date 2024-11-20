@@ -116,7 +116,7 @@
                           class="[&amp;_svg]:text-grey-200 [&amp;:hover>svg]:text-white ring-offset-background mbl-dropdown-options"
                           aria-label="Open Dropdown"
                         >
-                          <span>Stake Smart</span>
+                          <span>{{ selectedOption }}</span>
                           <div
                             [ngClass]="
                               !WinnerDropdown
@@ -142,7 +142,7 @@
                           <div class="dropdown-arrow"></div>
                           <div class="dropdown-scroll-content">
                             <div>
-                              <button
+                              <button (click)="selectOption('Stake Smart')"
                                 routerLink="/responsible-gambling/stake-smart"
                                 type="button"
                                 class="profile-list text-[#1475e1]"
@@ -151,7 +151,7 @@
                               </button>
                               <button
                                 routerLink="/responsible-gambling/responsible-gambling-faqs"
-                                type="button"
+                                type="button" (click)="selectOption('Responsible Gambling FAQs')"
                                 class="profile-list text-[rgb(47_69_83)]"
                               >
                                 <span class="truncate"
@@ -160,12 +160,14 @@
                               </button>
                               <button
                                 type="button"
+                                (click)="selectOption('Recognise the Signs')"
                                 class="profile-list text-[rgb(47_69_83)]"
                               >
                                 <span class="">Recognise the Signs</span>
                               </button>
                               <button
                                 type="button"
+                                (click)="selectOption('Self-Assessment')"
                                 class="profile-list text-[rgb(47_69_83)]"
                                 routerLink="/responsible-gambling/self-exclusion"
                               >
@@ -173,18 +175,22 @@
                               </button>
                               <button
                                 type="button"
+                                (click)="selectOption('Self Exclusion')"
                                 class="profile-list text-[rgb(47_69_83)]"
                               >
                                 <span class="truncate">Self Exclusion</span>
                               </button>
                               <button
                                 type="button"
+                                (click)="selectOption('Gambling Limits')"
+
                                 class="profile-list text-[rgb(47_69_83)]"
                               >
                                 <span class="truncate">Gambling Limits</span>
                               </button>
                               <button
                                 routerLink="/responsible-gambling/calculator"
+                                (click)="selectOption('Budget Calculator')"
                                 type="button"
                                 class="profile-list text-[rgb(47_69_83)]"
                               >

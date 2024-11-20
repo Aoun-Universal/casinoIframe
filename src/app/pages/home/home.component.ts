@@ -7,12 +7,13 @@ import { StatisticsModalTableComponent } from "../../modal/statistics-modal-tabl
 import { LeaderboardComponent } from '../../modal/leaderboard/leaderboard.component';
 import { RaceComponent } from '../../modal/race/race.component';
 import {ActivatedRoute, Router } from '@angular/router';
+import { BetsModalComponent } from '../../modal/bets-modal/bets-modal.component';
 
 
 @Component({
   selector: 'app-home',
   standalone: true,
-  imports: [NgFor, NgIf, NgClass, NgStyle, BetSlipComponent, SlickCarouselModule,NgSwitch,NgSwitchCase,StatisticsModalTableComponent,LeaderboardComponent,RaceComponent],
+  imports: [NgFor, NgIf, NgClass, NgStyle, BetSlipComponent, SlickCarouselModule,NgSwitch,NgSwitchCase,StatisticsModalTableComponent,LeaderboardComponent,RaceComponent, BetsModalComponent],
   templateUrl: './home.component.html',
   styleUrl: './home.component.css',
   schemas: [CUSTOM_ELEMENTS_SCHEMA]
@@ -288,6 +289,10 @@ export class HomeComponent implements OnInit{
     if (this.sportsCurrentSlideIndex !== this.sportsSlideCount) {
       this.sportsSlider.slickNext();
     }
+  }
+
+  openBetModal(){
+    this.toggleService.setBetModal(true)
   }
 
   galleryNext() {

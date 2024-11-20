@@ -8,7 +8,7 @@
                     </path>
                 </svg>
             </div>
-            <div class="text-main">
+            <div class="text-main *:font-semibold">
                 <span class="hidden lg:flex">Soccer</span>
                 <span class="slash"></span>
                 <span class="hidden lg:flex">England</span>
@@ -33,7 +33,7 @@
                                             alt="shirt-shadow" />
                                     </div>
                                 </div>
-                                <span>CRY</span>
+                                <p class=" font-semibold">CRY</p>
                             </div>
                             <div
                                 class="flex items-center bg-[#1d2e3b] border border-[#ffffff1f] opacity-80 text-[10px] px-1">
@@ -42,8 +42,8 @@
                                 <div>20:00</div>
                             </div>
                             <div>
-                                <div class="flex items-center gap-2 text-[14px]">
-                                    <span>FUL</span>
+                                <div class="flex items-center gap-2 text-[14px] ">
+                                    <p class="font-semibold">FUL</p>
                                     <div class="relative">
                                         <img class="w-[32px]" src="/assets/pal-ful/shirt-2.svg" alt="shirt-2" />
                                         <div class="absolute top-0 left-0">
@@ -57,7 +57,7 @@
                         <!-- 2st part in 1st table -->
                         <div class="chart-svg lg:hidden">
                             <div class="mx-4 py-2 relative">
-                                <div class="text-[10px] leading-[12px]">CRY</div>
+                                <div class="text-[10px] leading-[12px] ">CRY</div>
                                 <div class="text-[10px] leading-[12px] absolute right-[50%] translate-x-[50%] top-2">
                                     HT
                                 </div>
@@ -1750,7 +1750,7 @@
                         </div>
                         <div
                             class="py-2 px-4 mt-1 w-full flex justify-end items-center text-sm text-[#b1bad3] bg-[#0F212E]">
-                            <div>Score board</div>
+                            <div class="font-semibold">Score board</div>
                             <label class="flex items-center cursor-no-drop mx-2">
                                 <!-- Toggle Wrapper -->
                                 <div class="relative">
@@ -1766,7 +1766,7 @@
                                 </div>
                             </label>
 
-                            <div>Live streem</div>
+                            <div class="font-semibold">Live stream</div>
                         </div>
                     </div>
                     <!-- text T&C -->
@@ -1834,7 +1834,7 @@
                     <!-- 1x2  dropdown -->
                     <div class="x2-main">
                         <div (click)="toggle('isOpenx2')" class="dropdown-head">
-                            <div class="text-[14px] leading-[21px]">1x2</div>
+                            <div class="text-[14px] leading-[21px] font-semibold">1x2</div>
                             <div class="*:w-4" [ngClass]="{
                     'rotate-0' : openStates.isOpenx2,
                     'rotate-90' : !openStates.isOpenx2,
@@ -1906,12 +1906,12 @@
                     <!--Asia Total -->
                     <div class="x2-main">
                         <div class="dropdown-head" (click)="toggle('isOpenAsian')">
-                            <div class="text-[14px] leading-[21px]">Asian Total</div>
+                            <div class="text-[14px] leading-[21px] font-semibold">Asian Total</div>
                             <div class="flex items-center gap-3">
                                 <button class="text-[#b1bad3]"
                                     [ngClass]="currentTabTable == 'table' ? '!text-white' : ''"
                                     (click)="currentTabTable = 'table'">
-                                    <span class="text-[14px]">Table</span>
+                                    <span class="text-[14px] font-semibold">Table</span>
                                 </button>
                                 <button class="text-[#b1bad3]" [ngClass]="currentTabTable == 'All' ? '!text-white' : ''"
                                     (click)="currentTabTable = 'All'">
@@ -1976,12 +1976,12 @@
                     <!-- range -->
                     <div class="x2-main">
                         <div class="dropdown-head">
-                            <div class="text-[14px] leading-[21px]">Asian Total</div>
+                            <div class="text-[14px] leading-[21px] font-semibold">Asian Total</div>
                             <div class="flex items-center gap-3">
                                 <button class="text-[#b1bad3]"
                                     [ngClass]="currentTabSlider == 'slider' ? '!text-white' : ''"
                                     (click)="currentTabSlider = 'slider'">
-                                    <span class="text-[14px]">Slider</span>
+                                    <span class="text-[14px] font-semibold">Slider</span>
                                 </button>
                                 <button class="text-[#b1bad3]"
                                     [ngClass]="currentTabSlider == 'All' ? '!text-white' : ''"
@@ -2253,12 +2253,12 @@
                     <!--Correct Score -->
                     <div class="x2-main">
                         <div class="dropdown-head">
-                            <div class="text-[14px] leading-[21px]">Correct Score</div>
+                            <div class="text-[14px] leading-[21px] font-semibold">Correct Score</div>
                             <div class="flex items-center gap-3">
                                 <button class="text-[#b1bad3]"
                                     [ngClass]="currentTabTable == 'table' ? '!text-white' : ''"
                                     (click)="currentTabTable = 'table'">
-                                    <span class="text-[14px]">Slider</span>
+                                    <span class="text-[14px] font-semibold">Slider</span>
                                 </button>
                                 <button class="text-[#b1bad3]" [ngClass]="currentTabTable == 'All' ? '!text-white' : ''"
                                     (click)="currentTabTable = 'All'">
@@ -2323,12 +2323,12 @@
                     <!--Halftime/Fulltime -->
                     <div class="x2-main">
                         <div class="dropdown-head">
-                            <div class="text-[14px] leading-[21px]">Halftime/Fulltime</div>
+                            <div class="text-[14px] leading-[21px] font-semibold">Halftime/Fulltime</div>
                             <div class="flex items-center gap-3">
                                 <button class="text-[#b1bad3]"
                                     [ngClass]="currentTabSelect == 'select' ? '!text-white' : ''"
                                     (click)="currentTabSelect = 'table'">
-                                    <span class="text-[14px]">Select</span>
+                                    <span class="text-[14px] font-semibold">Select</span>
                                 </button>
                                 <button class="text-[#b1bad3]"
                                     [ngClass]="currentTabSelect == 'All' ? '!text-white' : ''"
@@ -2467,7 +2467,7 @@
                     <div class="flex items-center justify-between w-full bg-[#0F212E] px-4 min-h-[57px]">
                         <div class="flex items-center gap-2 text-[14px]">
                             <img class="w-[32px]" src="/assets/pal-ful/shirt-1.svg" alt="shirt-1" />
-                            <span>CRY</span>
+                            <span class="font-semibold">CRY</span>
                         </div>
                         <div
                             class="flex items-center bg-[#1d2e3b] border border-[#ffffff1f] opacity-80 text-[10px] px-1">
@@ -2477,7 +2477,7 @@
                         </div>
                         <div>
                             <div class="flex items-center gap-2 text-[14px]">
-                                <span>FUL</span>
+                                <span class="font-semibold">FUL</span>
                                 <img class="w-[32px]" src="/assets/pal-ful/shirt-2.svg" alt="shirt-2" />
                             </div>
                         </div>
@@ -2485,8 +2485,8 @@
                     <!-- 2st part in 1st table -->
                     <div class="chart-svg">
                         <div class="mx-4 py-2 relative">
-                            <div class="text-[10px] leading-[12px]">CRY</div>
-                            <div class="ht-text">
+                            <div class="text-[10px] leading-[12px] font-semibold">CRY</div>
+                            <div class="ht-text font-semibold">
                                 HT
                             </div>
                             <div class="ft-text">
@@ -2533,7 +2533,7 @@
                                         class="sr-momentum__grids-line srt-stroke-neutral-10" stroke="#2D3C48"></line>
                                 </g>
                             </svg>
-                            <div class="text-[10px] leading-[12px]">FUL</div>
+                            <div class="text-[10px] leading-[12px] font-semibold">FUL</div>
                             <div class="absolute bottom-[18px] w-full">
                                 <div class="graph-text right-[83.3%]">
                                     15'
@@ -2848,7 +2848,7 @@
                             <div class="bg-[#0F212E]">
                                 <!-- Navigation Buttons -->
                                 <div class="switchlg-detail">
-                                    <b class="text-[10px]"> HEAD TO HEAD </b>
+                                    <b class="text-[10px] font-semibold"> HEAD TO HEAD </b>
                                     <div class="flex items-center">
                                         <!-- Previous Button -->
                                         <button class="px-1 py-2 rounded" (click)="previousSlide()"

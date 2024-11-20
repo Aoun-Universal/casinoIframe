@@ -3,15 +3,15 @@
 }
 
 .stake-title {
-  @apply  mb-2  text-2xl  text-white leading-[132%] font-[600]  ;
+  @apply  mb-2  text-[32px]  text-white leading-[132%] font-[600]  ;
 }
 
 .second-heading{
-    @apply text-[18px] text-white mt-[24px] mb-[.5rem]
+    @apply text-[20px] text-white mt-[24px] mb-[.5rem]
 }
 
 .inline-text {
-  @apply text-[#b1bad3] text-base mt-[.75rem];
+  @apply text-[#b1bad3] text-[18px] mt-[.75rem];
 }
 
 .is-inline {
@@ -23,5 +23,5 @@ ul {
 }
 
 li {
-  @apply text-[#b1bad3];
+  @apply text-[#b1bad3] !text-[18px];
 }

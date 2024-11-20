@@ -1,4 +1,4 @@
-<div class="scrollable">
+<div class="scrollable lg:-translate-y-[25px]">
   <div>
     <div class="relative">
       <div class=" ">
@@ -13,179 +13,93 @@
                       <div class="mt-[2rem]">
                         <div class="layout-spacing-varient">
                           <div class="back-root">
-                            <div
-                              class="back-root-arrow"
-                            >
-                              <a
-                                class="back-root-svg ring-offset-background"
-                                aria-label="breadcrumbs-back"
-                                ><svg
-                                  fill="currentColor"
-                                  viewBox="0 0 64 64"
-                                  class="arrow-svg-icon"
-                                  style="transform: scale(1.25)"
-                                >
+                            <div class="back-root-arrow">
+                              <a class="back-root-svg ring-offset-background" aria-label="breadcrumbs-back"><svg
+                                  fill="currentColor" viewBox="0 0 64 64" class="arrow-svg-icon"
+                                  style="transform: scale(1.25)">
                                   <title></title>
                                   <path
-                                    d="M36.998 53.995 16 32.998 36.998 12l6.306 6.306L28.61 33l14.694 14.694L36.998 54v-.005Z"
-                                  ></path>
+                                    d="M36.998 53.995 16 32.998 36.998 12l6.306 6.306L28.61 33l14.694 14.694L36.998 54v-.005Z">
+                                  </path>
                                 </svg>
                               </a>
                             </div>
                             <div class="bread-crumb-main">
-                              <div
-                                class="ml-[-10px] flex [transform:skew(-20deg)]"
-                              >
-                                <a
-                                  class="pl-[32px] bg-[rgb(7,24,36)] pr-6 horse-racing-btn"
-
-                                  ><span
-                                    class="m-0 p-0 ![transform:skew(20deg)]"
-                                    >Horse Racing</span
-                                  ></a
-                                >
+                              <div class="ml-[-10px] flex [transform:skew(-20deg)]">
+                                <a class="pl-[32px] bg-[rgb(7,24,36)] pr-6 horse-racing-btn"><span
+                                    class="m-0 p-0 ![transform:skew(20deg)]">Horse Racing</span></a>
                               </div>
                               <span class="slash"></span>
                               <div class="flex [transform:skew(-20deg)]">
-                                <a
-                                  class="px-6 horse-racing-btn"
-
-                                  ><span class="breadcrumb-label svelte-1god0j"
-                                    >Africa</span
-                                  ></a
-                                >
+                                <a class="px-6 horse-racing-btn"><span
+                                    class="breadcrumb-label svelte-1god0j">Africa</span></a>
                               </div>
                               <span class="slash"></span>
-                              <div
-                                class="dropdown flex h-full skew-x-[-20deg] hover:bg-[rgb(7,24,36)]"
-                              >
-                                <button
-                                  (click)="toggleDropdown()"
-                                  type="button"
-                                  class="WinnerDropdown"
-                                >
+                              <div class="dropdown flex h-full skew-x-[-20deg] hover:bg-[rgb(7,24,36)]">
+                                <button (click)="toggleDropdown()" type="button" class="WinnerDropdown">
                                   <span class="Turf-text">Turffontein</span>
                                   <div class="flex">
-                                    <svg
-                                      [ngClass]="
+                                    <svg [ngClass]="
                                         !WinnerDropdown
                                           ? 'rotate-[360deg]'
                                           : 'rotate-[180deg]'
-                                      "
-                                      fill="currentColor"
-                                      viewBox="0 0 64 64"
-                                      class="svg-icon text-[rgb(177,186,211)]"
-                                    >
+                                      " fill="currentColor" viewBox="0 0 64 64"
+                                      class="svg-icon text-[rgb(177,186,211)]">
                                       <title></title>
                                       <path
-                                        d="M32.271 49.763 9.201 26.692l6.928-6.93 16.145 16.145 16.144-16.144 6.93 6.929-23.072 23.07h-.005Z"
-                                      ></path>
+                                        d="M32.271 49.763 9.201 26.692l6.928-6.93 16.145 16.145 16.144-16.144 6.93 6.929-23.072 23.07h-.005Z">
+                                      </path>
                                     </svg>
                                   </div>
                                 </button>
                               </div>
-                              <div
-                                class="dropdown-content"
-                                *ngIf="WinnerDropdown"
-                              >
+                              <div class="dropdown-content" *ngIf="WinnerDropdown">
                                 <div class="dropdown-arrow"></div>
                                 <div class="dropdown-scroll-content">
                                   <div class="flex flex-1 px-4 py-2">
-                                    <span
-                                      class="Dropdown-disable-text"
-                                      >Australasia
+                                    <span class="Dropdown-disable-text">Australasia
                                     </span>
                                   </div>
 
-                                  <div
-                                    class="Dropdown-Option"
-                                  >
+                                  <div class="Dropdown-Option">
                                     <div class="dropdown-btn">
-                                      <span
-                                        class="text-sm text-[rgb(20,117,225)] font-semibold truncate"
-                                        >R8 Bendigo</span
-                                      >
-                                      <div
-                                        class="live-badge bg-[#e9113c]"
-                                        style="padding: 0px 4px"
-                                      >
-                                        <span
-                                          class="text-white font-semibold text-xs"
-                                          >-38m</span
-                                        >
+                                      <span class="text-sm text-[rgb(20,117,225)] font-semibold truncate">R8
+                                        Bendigo</span>
+                                      <div class="live-badge bg-[#e9113c]" style="padding: 0px 4px">
+                                        <span class="text-white font-semibold text-xs">-38m</span>
                                       </div>
                                     </div>
                                   </div>
-                                  <div
-                                    class="Dropdown-Option"
-                                  >
+                                  <div class="Dropdown-Option">
                                     <div class="dropdown-btn">
-                                      <span
-                                        class="text-sm font-semibold truncate text-gray-800"
-                                        >R8 Sonoda</span
-                                      >
-                                      <div
-                                        class="live-badge bg-[#e9113c] text-white"
-                                        style="padding: 0px 4px"
-                                      >
-                                        <span
-                                          class="text-white font-semibold text-xs"
-                                          >10m</span
-                                        >
+                                      <span class="text-sm font-semibold truncate text-gray-800">R8 Sonoda</span>
+                                      <div class="live-badge bg-[#e9113c] text-white" style="padding: 0px 4px">
+                                        <span class="text-white font-semibold text-xs">10m</span>
                                       </div>
                                     </div>
                                   </div>
-                                  <div
-                                    class="Dropdown-Option"
-                                  >
+                                  <div class="Dropdown-Option">
                                     <div class="dropdown-btn">
-                                      <span
-                                        class="text-sm font-semibold truncate text-gray-800 cursor-pointer"
-                                        >R1 Kawasaki</span
-                                      >
-                                      <div
-                                        class="live-badge"
-                                        style="padding: 0 4px"
-                                      >
-                                        <span class="font-semibold text-xs"
-                                          >11:00</span
-                                        >
+                                      <span class="text-sm font-semibold truncate text-gray-800 cursor-pointer">R1
+                                        Kawasaki</span>
+                                      <div class="live-badge" style="padding: 0 4px">
+                                        <span class="font-semibold text-xs">11:00</span>
                                       </div>
                                     </div>
                                   </div>
-                                  <div
-                                    class="Dropdown-Option"
-                                  >
+                                  <div class="Dropdown-Option">
                                     <div class="dropdown-btn">
-                                      <span
-                                        class="text-sm font-semibold truncate text-gray-800"
-                                        >R1 Riyadh</span
-                                      >
-                                      <div
-                                        class="live-badge"
-                                        style="padding: 0px 4px"
-                                      >
-                                        <span class="font-semibold text-xs"
-                                          >17:20</span
-                                        >
+                                      <span class="text-sm font-semibold truncate text-gray-800">R1 Riyadh</span>
+                                      <div class="live-badge" style="padding: 0px 4px">
+                                        <span class="font-semibold text-xs">17:20</span>
                                       </div>
                                     </div>
                                   </div>
-                                  <div
-                                    class="Dropdown-Option"
-                                  >
+                                  <div class="Dropdown-Option">
                                     <div class="dropdown-btn">
-                                      <span
-                                        class="text-sm font-semibold truncate text-gray-800"
-                                        >R1 Al Ain</span
-                                      >
-                                      <div
-                                        class="live-badge"
-                                        style="padding: 0px 4px"
-                                      >
-                                        <span class="font-semibold text-xs"
-                                          >18:00</span
-                                        >
+                                      <span class="text-sm font-semibold truncate text-gray-800">R1 Al Ain</span>
+                                      <div class="live-badge" style="padding: 0px 4px">
+                                        <span class="font-semibold text-xs">18:00</span>
                                       </div>
                                     </div>
                                   </div>
@@ -198,172 +112,79 @@
                             <div>
                               <div>
                                 <div class="scrollX">
-                                  <div
-                                    class="Round-wrapper"
-                                  >
-                                    <a
-                                      [class.active]="activeTab === 1"
-                                      (click)="setActiveTab(1)"
-                                      class="Round-btn"
-                                      data-sveltekit-noscroll=""
-                                      >R1 </a
-                                    ><a
-                                      [class.active]="activeTab === 2"
-                                      (click)="setActiveTab(2)"
-                                      class="Round-btn"
-                                      >R2 </a
-                                    ><a
-                                      [class.active]="activeTab === 3"
-                                      (click)="setActiveTab(3)"
-                                      class="Round-btn"
-                                      >R3 </a
-                                    ><a
-                                      [class.active]="activeTab === 4"
-                                      (click)="setActiveTab(4)"
-                                      class="Round-btn"
-                                      >R4 </a
-                                    ><a
-                                      [class.active]="activeTab === 5"
-                                      (click)="setActiveTab(5)"
-                                      class="Round-btn"
-                                      >R5 </a
-                                    ><a
-                                      [class.active]="activeTab === 6"
-                                      (click)="setActiveTab(6)"
-                                      class="Round-btn"
-                                      >R6 </a
-                                    ><a
-                                      [class.active]="activeTab === 7"
-                                      (click)="setActiveTab(7)"
-                                      class="Round-btn"
-                                      >R7 </a
-                                    ><a
-                                      [class.active]="activeTab === 8"
-                                      (click)="setActiveTab(8)"
-                                      class="Round-btn"
-                                      >R8 </a
-                                    ><a
-                                      [class.active]="activeTab === 9"
-                                      (click)="setActiveTab(9)"
-                                      class="Round-btn"
-                                      >R9 </a
-                                    ><a
-                                      [class.active]="activeTab === 10"
-                                      (click)="setActiveTab(10)"
-                                      class="Round-btn"
-                                      >R10
+                                  <div class="Round-wrapper">
+                                    <a [class.active]="activeTab === 1" (click)="setActiveTab(1)" class="Round-btn"
+                                      data-sveltekit-noscroll="">R1 </a><a [class.active]="activeTab === 2"
+                                      (click)="setActiveTab(2)" class="Round-btn">R2 </a><a
+                                      [class.active]="activeTab === 3" (click)="setActiveTab(3)" class="Round-btn">R3
+                                    </a><a [class.active]="activeTab === 4" (click)="setActiveTab(4)"
+                                      class="Round-btn">R4 </a><a [class.active]="activeTab === 5"
+                                      (click)="setActiveTab(5)" class="Round-btn">R5 </a><a
+                                      [class.active]="activeTab === 6" (click)="setActiveTab(6)" class="Round-btn">R6
+                                    </a><a [class.active]="activeTab === 7" (click)="setActiveTab(7)"
+                                      class="Round-btn">R7 </a><a [class.active]="activeTab === 8"
+                                      (click)="setActiveTab(8)" class="Round-btn">R8 </a><a
+                                      [class.active]="activeTab === 9" (click)="setActiveTab(9)" class="Round-btn">R9
+                                    </a><a [class.active]="activeTab === 10" (click)="setActiveTab(10)"
+                                      class="Round-btn">R10
                                     </a>
                                   </div>
                                 </div>
                                 <div class="mt-6">
-                                  <div
-                                    class="track-stats"
-                                  >
+                                  <div class="track-stats">
                                     <div class="inline-flex">
                                       <div class="cursor-help inline-flex">
-                                        <button
-                                          type="button"
-                                          class="vedio-btn ring-offset-background"
-                                        >
-                                          <svg
-                                            fill="currentColor"
-                                            viewBox="0 0 64 64"
-                                            class="svg-icon"
-                                          >
+                                        <button type="button" class="vedio-btn ring-offset-background">
+                                          <svg fill="currentColor" viewBox="0 0 64 64" class="svg-icon">
                                             <title></title>
-                                            <path
-                                              fill-rule="evenodd"
-                                              clip-rule="evenodd"
-                                              d="M0 49.36V0h64v49.36H0ZM23.013 9.893v29.574l23.68-14.8-23.68-14.774ZM10.667 56h42.666v8H10.667v-8Z"
-                                            ></path>
+                                            <path fill-rule="evenodd" clip-rule="evenodd"
+                                              d="M0 49.36V0h64v49.36H0ZM23.013 9.893v29.574l23.68-14.8-23.68-14.774ZM10.667 56h42.666v8H10.667v-8Z">
+                                            </path>
                                           </svg>
                                         </button>
                                       </div>
                                     </div>
-                                    <div
-                                      class="Ended-txt"
-                                    >
-                                      <span
-                                        class="text-grey-200 font-semibold text-xs leading-[18px]"
-                                        >Ended</span
-                                      >
-                                      <span class="wrapper-text"
-                                        >November 11, 2024</span
-                                      >
+                                    <div class="Ended-txt">
+                                      <span class="text-grey-200 font-semibold text-xs leading-[18px]">Ended</span>
+                                      <span class="wrapper-text">November 11, 2024</span>
                                     </div>
-                                    <div
-                                      class="flex flex-wrap items-center gap-[0.25rem] m-0 p-0"
-                                    >
-                                      <svg
-                                        fill="currentColor"
-                                        viewBox="0 0 64 64"
-                                        class="svg-icon"
-                                      >
+                                    <div class="flex flex-wrap items-center gap-[0.25rem] m-0 p-0">
+                                      <svg fill="currentColor" viewBox="0 0 64 64" class="svg-icon">
                                         <title></title>
                                         <path
-                                          d="M54.457 22.846c-.586 0-1.172.053-1.732.16.08-.507.133-1.014.133-1.547 0-4.85-3.945-8.796-8.796-8.796a8.644 8.644 0 0 0-5.811 2.213C37.478 8.745 32.253 4 25.909 4c-6.877 0-12.448 5.571-12.448 12.448 0 .453 0 .906.08 1.333h-1.52C5.385 17.754 0 23.139 0 29.803c0 6.237 4.745 11.381 10.849 11.995 1.413-6.558 7.224-11.462 14.207-11.462 6.984 0 12.821 4.931 14.208 11.515h15.22c5.251 0 9.516-4.265 9.516-9.516s-4.265-9.516-9.516-9.516l-.027.027Z"
-                                        ></path>
+                                          d="M54.457 22.846c-.586 0-1.172.053-1.732.16.08-.507.133-1.014.133-1.547 0-4.85-3.945-8.796-8.796-8.796a8.644 8.644 0 0 0-5.811 2.213C37.478 8.745 32.253 4 25.909 4c-6.877 0-12.448 5.571-12.448 12.448 0 .453 0 .906.08 1.333h-1.52C5.385 17.754 0 23.139 0 29.803c0 6.237 4.745 11.381 10.849 11.995 1.413-6.558 7.224-11.462 14.207-11.462 6.984 0 12.821 4.931 14.208 11.515h15.22c5.251 0 9.516-4.265 9.516-9.516s-4.265-9.516-9.516-9.516l-.027.027Z">
+                                        </path>
                                         <path
-                                          d="M39.397 45.636h-4.212c0-.267.027-.533.027-.8 0-5.624-4.558-10.182-10.182-10.182-5.625 0-10.183 4.558-10.183 10.182 0 .267 0 .533.027.8a7.765 7.765 0 0 0-7.464 7.783c0 4.292 3.492 7.784 7.784 7.784H39.37c4.292 0 7.784-3.492 7.784-7.784 0-4.291-3.492-7.783-7.784-7.783h.027Z"
-                                        ></path>
+                                          d="M39.397 45.636h-4.212c0-.267.027-.533.027-.8 0-5.624-4.558-10.182-10.182-10.182-5.625 0-10.183 4.558-10.183 10.182 0 .267 0 .533.027.8a7.765 7.765 0 0 0-7.464 7.783c0 4.292 3.492 7.784 7.784 7.784H39.37c4.292 0 7.784-3.492 7.784-7.784 0-4.291-3.492-7.783-7.784-7.783h.027Z">
+                                        </path>
                                       </svg>
-                                      <div
-                                        aria-label="dot"
-                                        class="min-w-0.5 h-0.5 rounded-full bg-grey-200"
-                                      ></div>
-                                      <span class="capitalize wrapper-text"
-                                        >SOFT
+                                      <div aria-label="dot" class="min-w-0.5 h-0.5 rounded-full bg-grey-200"></div>
+                                      <span class="capitalize wrapper-text">SOFT
                                       </span>
-                                      <div
-                                        aria-label="dot"
-                                        class="min-w-0.5 h-0.5 rounded-full bg-grey-200"
-                                      ></div>
+                                      <div aria-label="dot" class="min-w-0.5 h-0.5 rounded-full bg-grey-200"></div>
                                       <span class="wrapper-text">1000m</span>
                                     </div>
                                     <div class="max-w-[100vw] overflow-hidden">
-                                      <span class="wrapper-text"
-                                        >Betway National Colour Stakes - OPEN FM
-                                        HCP</span
-                                      >
+                                      <span class="wrapper-text">Betway National Colour Stakes - OPEN FM
+                                        HCP</span>
                                     </div>
                                   </div>
-                                  <div
-                                    aria-label="divider"
-                                    class="bg-[rgb(47,69,83)] h-0.5 mt-3"
-                                  ></div>
+                                  <div aria-label="divider" class="bg-[rgb(47,69,83)] h-0.5 mt-2.5"></div>
                                 </div>
                                 <div class="tabs-wrapper">
                                   <div class="slider">
                                     <div class="flex m-0 p-0">
-                                      <button
-                                        type="button"
-                                        class=" ml-0 price-btn ring-offset-background"
-                                      >
-                                        <span>Fixed</span></button
-                                      ><button
-                                        type="button"
-                                        class="ml-[5px] price-btn ring-offset-background "
-                                      >
-                                        <span>Starting Price</span></button
-                                      ><button
-                                        type="button"
-                                        class="ml-[5px] price-btn ring-offset-background"
-                                      >
-                                        <span>Trifecta</span></button
-                                      ><button
-                                        type="button"
-                                        class="ml-[5px] price-btn ring-offset-background"
-                                      >
-                                        <span>Exacta</span></button
-                                      ><button
-                                        type="button"
-                                        class="ml-[5px] price-btn ring-offset-background"
-                                      >
-                                        <span>Quinella</span></button
-                                      ><button
-                                        type="button"
-                                        class="ml-[5px] price-btn ring-offset-background"
-                                      >
+                                      <button type="button" class=" ml-0 price-btn ring-offset-background">
+                                        <span>Fixed</span></button><button type="button"
+                                        class="ml-[5px] price-btn ring-offset-background ">
+                                        <span>Starting Price</span></button><button type="button"
+                                        class="ml-[5px] price-btn ring-offset-background">
+                                        <span>Trifecta</span></button><button type="button"
+                                        class="ml-[5px] price-btn ring-offset-background">
+                                        <span>Exacta</span></button><button type="button"
+                                        class="ml-[5px] price-btn ring-offset-background">
+                                        <span>Quinella</span></button><button type="button"
+                                        class="ml-[5px] price-btn ring-offset-background">
                                         <span>First Four</span>
                                       </button>
                                     </div>
@@ -375,260 +196,156 @@
                                     <button type="button" class="Runners">
                                       10 Runners
                                       <div class="arrows">
-                                        <div (click)="toggleArrow()" [ngClass]="isArrowUpSelected ? 'text-white' : 'text-gray-400'" class="arrow translate-y-[3px]">
-                                          <svg
-                                            fill="currentColor"
-                                            viewBox="0 0 64 64"
-                                            class="svg-icon"
-                                          >
+                                        <div (click)="toggleArrow()"
+                                          [ngClass]="isArrowUpSelected ? 'text-white' : 'text-gray-400'"
+                                          class="arrow translate-y-[3px]">
+                                          <svg fill="currentColor" viewBox="0 0 64 64" class="svg-icon">
                                             <title></title>
                                             <path
-                                              d="M32.271 17 9.201 40.071 16.128 47l16.145-16.145L48.418 47l6.93-6.929L32.275 17h-.005Z"
-                                            ></path>
+                                              d="M32.271 17 9.201 40.071 16.128 47l16.145-16.145L48.418 47l6.93-6.929L32.275 17h-.005Z">
+                                            </path>
                                           </svg>
                                         </div>
-                                        <div   (click)="toggleArrow()" [ngClass]="!isArrowUpSelected ? 'text-white' : 'text-gray-400'" class="arrow -translate-y-[3px]">
-                                          <svg
-                                            fill="currentColor"
-                                            viewBox="0 0 64 64"
-                                            class="svg-icon"
-                                          >
+                                        <div (click)="toggleArrow()"
+                                          [ngClass]="!isArrowUpSelected ? 'text-white' : 'text-gray-400'"
+                                          class="arrow -translate-y-[3px]">
+                                          <svg fill="currentColor" viewBox="0 0 64 64" class="svg-icon">
                                             <title></title>
                                             <path
-                                              d="M32.271 49.763 9.201 26.692l6.928-6.93 16.145 16.145 16.144-16.144 6.93 6.929-23.072 23.07h-.005Z"
-                                            ></path>
+                                              d="M32.271 49.763 9.201 26.692l6.928-6.93 16.145 16.145 16.144-16.144 6.93 6.929-23.072 23.07h-.005Z">
+                                            </path>
                                           </svg>
                                         </div>
                                       </div>
                                     </button>
                                     <div class="flucs-container">
-                                      <label
-                                        class="variant-default hover:text-white svelte"
-                                      >
-                                        <input
-                                          type="checkbox"
-                                          class="hover:text-white svelte"
-                                        />
-                                        <div class="flucs-text">Flucs</div>
-                                        <label
-                                          class="inline-flex items-center cursor-pointer"
-                                        >
-                                          <input
-                                            type="checkbox"
-                                            value=""
-                                            class="sr-only peer"
-                                            id="toggle"
-                                            name="toggle"
-                                            (click)="toggleVisibility()"
-                                          />
+                                      <label class="variant-default hover:text-white svelte">
+                                        <input type="checkbox" class="hover:text-white svelte" />
+                                        <div class="flucs-text font-medium">Flucs</div>
+                                        <label class="inline-flex items-center cursor-pointer">
+                                          <input type="checkbox" value="" class="sr-only peer" id="toggle" name="toggle"
+                                            (click)="toggleVisibility()" />
                                           <div class="toggle"></div>
-                                          <span
-                                            class="win-txt"
-                                          ></span>
+                                          <span class="win-txt"></span>
                                         </label>
                                       </label>
                                       <div class="win-contatiner">
-                                        <button type="button" class="win-btn">
+                                        <button type="button" class="win-btn font-medium">
                                           Win
                                           <div class="arrows">
                                             <div (click)="toggleArrowWin()"
-                                            [ngClass]="isArrowWinSelected ? 'text-white' : 'text-gray-400'"
-                                              class="arrow translate-y-[3px]"
-                                            >
-                                              <svg
-                                                fill="currentColor"
-                                                viewBox="0 0 64 64"
-                                                class="svg-icon"
-                                              >
+                                              [ngClass]="isArrowWinSelected ? 'text-white' : 'text-gray-400'"
+                                              class="arrow translate-y-[3px]">
+                                              <svg fill="currentColor" viewBox="0 0 64 64" class="svg-icon">
                                                 <title></title>
                                                 <path
-                                                  d="M32.271 17 9.201 40.071 16.128 47l16.145-16.145L48.418 47l6.93-6.929L32.275 17h-.005Z"
-                                                ></path>
+                                                  d="M32.271 17 9.201 40.071 16.128 47l16.145-16.145L48.418 47l6.93-6.929L32.275 17h-.005Z">
+                                                </path>
                                               </svg>
                                             </div>
-                                            <div (click)="toggleArrowWin()" [ngClass]="!isArrowWinSelected ? 'text-white' : 'text-gray-400'"
-                                              class="arrow -translate-y-[3px]"
-                                            >
-                                              <svg
-                                                fill="currentColor"
-                                                viewBox="0 0 64 64"
-                                                class="svg-icon"
-                                              >
+                                            <div (click)="toggleArrowWin()"
+                                              [ngClass]="!isArrowWinSelected ? 'text-white' : 'text-gray-400'"
+                                              class="arrow -translate-y-[3px]">
+                                              <svg fill="currentColor" viewBox="0 0 64 64" class="svg-icon">
                                                 <title></title>
                                                 <path
-                                                  d="M32.271 49.763 9.201 26.692l6.928-6.93 16.145 16.145 16.144-16.144 6.93 6.929-23.072 23.07h-.005Z"
-                                                ></path>
+                                                  d="M32.271 49.763 9.201 26.692l6.928-6.93 16.145 16.145 16.144-16.144 6.93 6.929-23.072 23.07h-.005Z">
+                                                </path>
                                               </svg>
                                             </div>
                                           </div>
                                         </button>
-                                        <span class="place-text">Place</span>
+                                        <span class="place-text font-medium">Place</span>
                                       </div>
                                     </div>
                                   </div>
                                   <div class="divider-border"></div>
                                   <div class="flex flex-col">
                                     <div>
-                                      <div
-                                        role="button"
-                                        class="runner-card svelte-grid"
-                                      >
-                                        <div
-                                          class="flex flex-col items-center gap-1"
-                                        >
-                                          <div
-                                            class="silk-wrapper svelte-snmmmh"
-                                          >
-                                            <div
-                                              class="silk-icon svelte-snmmmh"
-                                              style="
+                                      <div role="button" class="runner-card svelte-grid">
+                                        <div class="flex flex-col items-center gap-1">
+                                          <div class="silk-wrapper svelte-snmmmh">
+                                            <div class="silk-icon svelte-snmmmh" style="
                                                 background-image: url(https://silks.racingandsports.com.au/jockey/silks/12-nov-2024/381336/R1.png);
                                                 background-position: -360px 2px;
-                                              "
-                                            ></div>
-                                            <img
-                                              alt="Runner silk"
-                                              class="hidden"
-                                              src="https://silks.racingandsports.com.au/jockey/silks/12-nov-2024/381336/R1.png"
-                                            />
+                                              "></div>
+                                            <img alt="Runner silk" class="hidden"
+                                              src="https://silks.racingandsports.com.au/jockey/silks/12-nov-2024/381336/R1.png" />
                                           </div>
-                                          <div
-                                            class="chevron svelte-1cbx3va"
-                                            (click)="toggleMarket()"
-                                            [ngClass]="
+                                          <div class="chevron svelte-1cbx3va" (click)="toggleMarket()" [ngClass]="
                                               !isMarketOpen
                                                 ? 'rotate-[180deg]'
                                                 : 'rotate-[360deg]'
-                                            "
-                                          >
-                                            <svg
-                                              fill="currentColor"
-                                              viewBox="0 0 64 64"
-                                              class="svg-icon"
-                                            >
+                                            ">
+                                            <svg fill="currentColor" viewBox="0 0 64 64" class="svg-icon">
                                               <title></title>
                                               <path
-                                                d="M32.271 49.763 9.201 26.692l6.928-6.93 16.145 16.145 16.144-16.144 6.93 6.929-23.072 23.07h-.005Z"
-                                              ></path>
+                                                d="M32.271 49.763 9.201 26.692l6.928-6.93 16.145 16.145 16.144-16.144 6.93 6.929-23.072 23.07h-.005Z">
+                                              </path>
                                             </svg>
                                           </div>
                                         </div>
                                         <div class="truncate">
                                           <div class="flex flex-col gap-1">
                                             <div class="luminous-continer">
-                                              <span class="luminous"
-                                                ><span class="tabular-nums"
-                                                  >10.</span
-                                                >
-                                                Luminous Beauty</span
-                                              >
-                                              <span class="luminous-num"
-                                                >(10)</span
-                                              >
+                                              <span class="luminous font-semibold"><span class="tabular-nums">10.</span>
+                                                Luminous Beauty</span>
+                                              <span class="luminous-num">(10)</span>
                                             </div>
                                             <div class="w-content">
                                               <div class="alignment">
-                                                <div
-                                                  class="badge variant-default"
-                                                >
+                                                <div class="badge variant-default">
                                                   W
                                                 </div>
-                                                <span
-                                                  title="54kg"
-                                                  class="weight"
-                                                  >54kg</span
-                                                >
+                                                <span title="54kg" class="weight">54kg</span>
                                               </div>
                                               <div class="alignment">
-                                                <div
-                                                  class="badge variant-default"
-                                                >
+                                                <div class="badge variant-default">
                                                   J
                                                 </div>
-                                                <span
-                                                  title="R. Tanaka"
-                                                  class="weight"
-                                                  >R. Tanaka</span
-                                                >
+                                                <span title="R. Tanaka" class="weight">R. Tanaka</span>
                                               </div>
                                               <div class="alignment">
-                                                <div
-                                                  class="badge variant-default"
-                                                >
+                                                <div class="badge variant-default">
                                                   F
                                                 </div>
-                                                <span
-                                                  title="0x7004"
-                                                  class="weight"
-                                                  >0x7004</span
-                                                >
+                                                <span title="0x7004" class="weight">0x7004</span>
                                               </div>
                                               <div class="alignment">
-                                                <div
-                                                  class="badge variant-default"
-                                                >
+                                                <div class="badge variant-default">
                                                   T
                                                 </div>
-                                                <span
-                                                  title="J. Murata"
-                                                  class="weight"
-                                                  >J. Murata</span
-                                                >
+                                                <span title="J. Murata" class="weight">J. Murata</span>
                                               </div>
                                             </div>
                                           </div>
                                         </div>
                                         <div class="right-btn">
-                                          <div
-                                            class="py-1"
-                                            *ngIf="isFluctuationVisible"
-                                          >
-                                            <div
-                                              class="fluctuations svelte-1o0p6vf"
-                                            >
+                                          <div class="py-1" *ngIf="isFluctuationVisible">
+                                            <div class="fluctuations svelte-1o0p6vf">
                                               <div class="fluc svelte-1o0p6vf">
                                                 <span>OP 13.00</span>
                                               </div>
                                               <div class="fluc svelte-1o0p6vf">
                                                 <span>6.40</span>
-                                                <div
-                                                  class="direction svelte-1o0p6vf"
-                                                >
-                                                  <div
-                                                    class="translate-y-[-5px]"
-                                                  >
-                                                    <svg
-                                                      fill="none"
-                                                      viewBox="0 0 96 80"
-                                                      class="svg-icon"
-                                                    >
+                                                <div class="direction svelte-1o0p6vf">
+                                                  <div class="translate-y-[-5px]">
+                                                    <svg fill="none" viewBox="0 0 96 80" class="svg-icon">
                                                       <title></title>
-                                                      <path
-                                                        d="M48.51 65.684 18.192 15.158h60.632L48.509 65.684Z"
-                                                        fill="#FF2247"
-                                                      ></path>
+                                                      <path d="M48.51 65.684 18.192 15.158h60.632L48.509 65.684Z"
+                                                        fill="#FF2247"></path>
                                                     </svg>
                                                   </div>
                                                 </div>
                                               </div>
                                               <div class="fluc svelte-1o0p6vf">
                                                 <span>6.50</span>
-                                                <div
-                                                  class="direction svelte-1o0p6vf"
-                                                >
-                                                  <div
-                                                    class="translate-y-[-5px]"
-                                                  >
-                                                    <svg
-                                                      fill="none"
-                                                      viewBox="0 0 96 80"
-                                                      class="svg-icon"
-                                                    >
+                                                <div class="direction svelte-1o0p6vf">
+                                                  <div class="translate-y-[-5px]">
+                                                    <svg fill="none" viewBox="0 0 96 80" class="svg-icon">
                                                       <title></title>
-                                                      <path
-                                                        d="m48.507 15.158 30.316 50.526H18.191l30.316-50.526Z"
-                                                        fill="#00E700"
-                                                      ></path>
+                                                      <path d="m48.507 15.158 30.316 50.526H18.191l30.316-50.526Z"
+                                                        fill="#00E700"></path>
                                                     </svg>
                                                   </div>
                                                 </div>
@@ -637,30 +354,18 @@
                                           </div>
                                           <div class="right-btn-con">
                                             <button class="button">
-                                              <div
-                                                class="group-active:scale-95"
-                                              >
+                                              <div class="group-active:scale-95">
                                                 <div class="relative">
-                                                  <span class="btn-amount"
-                                                    >4.40</span
-                                                  >
-                                                  <div
-                                                    class="arrow-odds align-left svelte-hfoo7h"
-                                                  ></div>
+                                                  <span class="btn-amount">4.40</span>
+                                                  <div class="arrow-odds align-left svelte-hfoo7h"></div>
                                                 </div>
                                               </div>
                                             </button>
                                             <button class="button">
-                                              <div
-                                                class="group-active:scale-95"
-                                              >
+                                              <div class="group-active:scale-95">
                                                 <div class="relative">
-                                                  <span class="btn-amount"
-                                                    >1.50</span
-                                                  >
-                                                  <div
-                                                    class="arrow-odds align-left svelte-hfoo7h"
-                                                  ></div>
+                                                  <span class="btn-amount">1.50</span>
+                                                  <div class="arrow-odds align-left svelte-hfoo7h"></div>
                                                 </div>
                                               </div>
                                             </button>
@@ -668,80 +373,40 @@
                                         </div>
                                       </div>
                                       <div class="divider-border"></div>
-                                      <div  class=" transition-all duration-500 overflow-hidden" [ngClass]="{
+                                      <div class=" transition-all duration-500 overflow-hidden" [ngClass]="{
                                         '  max-h-[1200px] h-full': isMarketOpen,
                                         'max-h-0': !isMarketOpen
                                       }">
-                                        <div
-                                          class="flex flex-col gap-4 pb-4 px-3"
-                                        >
-                                          <div
-                                            class="h-[0.125rem] bg-[rgb(26,44,56)] m-0 p-0"
-                                          ></div>
-                                          <div
-                                            class="flex flex-wrap gap-y-1 gap-x-10"
-                                          >
+                                        <div class="flex flex-col gap-4 pb-4 px-3">
+                                          <div class="h-[0.125rem] bg-[rgb(26,44,56)] m-0 p-0"></div>
+                                          <div class="flex flex-wrap gap-y-1 gap-x-10">
                                             <div class="truncat">
-                                              <span
-                                                class="text-white text-sm font-semibold"
-                                                >Jockey</span
-                                              >
-                                              <span class="jockey-text"
-                                                >Gavin Lerena</span
-                                              >
+                                              <span class="text-white text-sm font-semibold">Jockey</span>
+                                              <span class="jockey-text">Gavin Lerena</span>
                                             </div>
                                             <div class="truncat text-[#b1bad3]">
-                                              <span
-                                                class="text-white text-sm font-semibold"
-                                                >Trainer</span
-                                              >
-                                              <span class="jockey-text"
-                                                >J A Janse Van Vuuren</span
-                                              >
+                                              <span class="text-white text-sm font-semibold">Trainer</span>
+                                              <span class="jockey-text">J A Janse Van Vuuren</span>
                                             </div>
                                             <div class="truncat">
-                                              <span
-                                                class="text-white text-sm font-semibold"
-                                                >Bio</span
-                                              >
-                                              <span class="jockey-text"
-                                                >5yo B M</span
-                                              >
+                                              <span class="text-white text-sm font-semibold">Bio</span>
+                                              <span class="jockey-text">5yo B M</span>
                                             </div>
-                                            <span class="truncat"
-                                              ><span
-                                                class="text-white text-sm font-semibold"
-                                                >Sire</span
-                                              >
-                                              <span class="jockey-text"
-                                                >Time Thief (AUS)</span
-                                              ></span
-                                            >
+                                            <span class="truncat"><span
+                                                class="text-white text-sm font-semibold">Sire</span>
+                                              <span class="jockey-text">Time Thief (AUS)</span></span>
                                             <div class="truncat">
-                                              <span
-                                                class="text-white text-sm font-semibold"
-                                                >Form</span
-                                              >
-                                              <span class="jockey-text"
-                                                >11243x</span
-                                              >
+                                              <span class="text-white text-sm font-semibold">Form</span>
+                                              <span class="jockey-text">11243x</span>
                                             </div>
                                           </div>
 
-                                          <div
-                                            class="h-[0.125rem] bg-[rgb(26,44,56)] m-0 p-0"
-                                          ></div>
+                                          <div class="h-[0.125rem] bg-[rgb(26,44,56)] m-0 p-0"></div>
                                           <div class="flex gap-2 flex-col">
-                                            <span class="runners-text"
-                                              >Runner Comments</span
-                                            >
-                                            <div
-                                              class="bg-[rgb(26,44,56)] py-2 px-3 rounded"
-                                            >
-                                              <div
-                                                class="w-full h-fit line-clamp-3 text-left text-sm"
-                                                aria-expanded="false"
-                                              >
+                                            <span class="runners-text">Runner Comments</span>
+                                            <div class="bg-[rgb(26,44,56)] py-2 px-3 rounded">
+                                              <div class="w-full h-fit line-clamp-3 text-left text-sm"
+                                                aria-expanded="false">
                                                 <div>
                                                   Mare returning from a spell
                                                   and has won previously when
@@ -761,218 +426,97 @@
                                             </div>
                                           </div>
 
-                                          <div
-                                            class="table-wrapper"
-                                          >
-                                            <div
-                                              class="table-tabs"
-                                            >
-                                              <span class="head-text"
-                                                >Last 10 Runs</span
-                                              >
-                                              <span class="sub-text"
-                                                >4371312444</span
-                                              >
+                                          <div class="table-wrapper">
+                                            <div class="table-tabs">
+                                              <span class="head-text">Last 10 Runs</span>
+                                              <span class="sub-text">4371312444</span>
                                             </div>
-                                            <div
-                                              class="table-tabs"
-                                            >
-                                              <span class="head-text"
-                                                >Career</span
-                                              >
-                                              <span class="sub-text"
-                                                >26: 3 2 2</span
-                                              >
+                                            <div class="table-tabs">
+                                              <span class="head-text">Career</span>
+                                              <span class="sub-text">26: 3 2 2</span>
                                             </div>
-                                            <div
-                                              class="table-tabs"
-                                            >
-                                              <span class="head-text"
-                                                >Prize (AUD)</span
-                                              >
+                                            <div class="table-tabs">
+                                              <span class="head-text">Prize (AUD)</span>
                                               <span class="sub-text">-</span>
                                             </div>
-                                            <div
-                                              class="table-tabs"
-                                            >
-                                              <span class="head-text"
-                                                >Speed Map</span
-                                              >
-                                              <span class="sub-text"
-                                                >Leader</span
-                                              >
+                                            <div class="table-tabs">
+                                              <span class="head-text">Speed Map</span>
+                                              <span class="sub-text">Leader</span>
                                             </div>
-                                            <div
-                                              class="table-tabs"
-                                            >
-                                              <span class="head-text"
-                                                >Track</span
-                                              >
-                                              <span class="sub-text"
-                                                >2: 0 0 0</span
-                                              >
+                                            <div class="table-tabs">
+                                              <span class="head-text">Track</span>
+                                              <span class="sub-text">2: 0 0 0</span>
                                             </div>
-                                            <div
-                                              class="table-tabs"
-                                            >
-                                              <span class="head-text"
-                                                >Distance</span
-                                              >
-                                              <span class="sub-text"
-                                                >9: 2 1 2</span
-                                              >
+                                            <div class="table-tabs">
+                                              <span class="head-text">Distance</span>
+                                              <span class="sub-text">9: 2 1 2</span>
                                             </div>
-                                            <div
-                                              class="table-tabs"
-                                            >
-                                              <span class="head-text"
-                                                >Track / Distance</span
-                                              >
-                                              <span class="sub-text"
-                                                >0: 0 0 0</span
-                                              >
+                                            <div class="table-tabs">
+                                              <span class="head-text">Track / Distance</span>
+                                              <span class="sub-text">0: 0 0 0</span>
                                             </div>
-                                            <div
-                                              class="table-tabs"
-                                            >
-                                              <span class="head-text"
-                                                >Dirt</span
-                                              >
-                                              <span class="sub-text"
-                                                >0: 0 0 0</span
-                                              >
+                                            <div class="table-tabs">
+                                              <span class="head-text">Dirt</span>
+                                              <span class="sub-text">0: 0 0 0</span>
                                             </div>
-                                            <div
-                                              class="table-tabs"
-                                            >
-                                              <span class="head-text"
-                                                >Firm</span
-                                              >
-                                              <span class="sub-text"
-                                                >0: 0 0 0</span
-                                              >
+                                            <div class="table-tabs">
+                                              <span class="head-text">Firm</span>
+                                              <span class="sub-text">0: 0 0 0</span>
                                             </div>
-                                            <div
-                                              class="table-tabs"
-                                            >
-                                              <span class="head-text"
-                                                >Good</span
-                                              >
-                                              <span class="sub-text"
-                                                >25: 3 2 2</span
-                                              >
+                                            <div class="table-tabs">
+                                              <span class="head-text">Good</span>
+                                              <span class="sub-text">25: 3 2 2</span>
                                             </div>
-                                            <div
-                                              class="table-tabs"
-                                            >
-                                              <span class="head-text"
-                                                >Soft</span
-                                              >
-                                              <span class="sub-text"
-                                                >0: 0 0 0</span
-                                              >
+                                            <div class="table-tabs">
+                                              <span class="head-text">Soft</span>
+                                              <span class="sub-text">0: 0 0 0</span>
                                             </div>
-                                            <div
-                                              class="table-tabs"
-                                            >
-                                              <span class="head-text"
-                                                >Heavy</span
-                                              >
-                                              <span class="sub-text"
-                                                >0: 0 0 0</span
-                                              >
+                                            <div class="table-tabs">
+                                              <span class="head-text">Heavy</span>
+                                              <span class="sub-text">0: 0 0 0</span>
                                             </div>
-                                            <div
-                                              class="table-tabs"
-                                            >
-                                              <span class="head-text"
-                                                >Synthetic</span
-                                              >
-                                              <span class="sub-text"
-                                                >0: 0 0 0</span
-                                              >
+                                            <div class="table-tabs">
+                                              <span class="head-text">Synthetic</span>
+                                              <span class="sub-text">0: 0 0 0</span>
                                             </div>
-                                            <div
-                                              class="table-tabs"
-                                            >
-                                              <span class="head-text"
-                                                >1st Up</span
-                                              >
-                                              <span class="sub-text"
-                                                >3: 0 0 0</span
-                                              >
+                                            <div class="table-tabs">
+                                              <span class="head-text">1st Up</span>
+                                              <span class="sub-text">3: 0 0 0</span>
                                             </div>
-                                            <div
-                                              class="table-tabs"
-                                            >
-                                              <span class="head-text"
-                                                >2nd Up</span
-                                              >
-                                              <span class="sub-text"
-                                                >3: 0 0 0</span
-                                              >
+                                            <div class="table-tabs">
+                                              <span class="head-text">2nd Up</span>
+                                              <span class="sub-text">3: 0 0 0</span>
                                             </div>
-                                            <div
-                                              class="table-tabs"
-                                            >
-                                              <span class="head-text"
-                                                >3rd Up</span
-                                              >
-                                              <span class="sub-text"
-                                                >2: 0 0 0</span
-                                              >
+                                            <div class="table-tabs">
+                                              <span class="head-text">3rd Up</span>
+                                              <span class="sub-text">2: 0 0 0</span>
                                             </div>
                                           </div>
 
                                           <div class="flex flex-col gap-2">
-                                            <span class="runners-text"
-                                              >Race History</span
-                                            >
+                                            <span class="runners-text">Race History</span>
                                             <div class="history-list">
                                               <div class="history-head">
-                                                <div
-                                                  slot="header"
-                                                  class="flex flex-1 capitalize"
-                                                >
-                                                  <span
-                                                    class="basis-[10px] min-w-[40px] runners-text"
-                                                    >4/11</span
-                                                  >
-                                                  <span
-                                                    class="basis-[20px] min-w-[90px] runners-text"
-                                                    >Oct 31, 2024</span
-                                                  >
-                                                  <span
-                                                    class="basis-[20px] runners-text"
-                                                    >Vaal</span
-                                                  >
-                                                  <span
-                                                    class="basis-[15px] runners-text"
-                                                    >1100m</span
-                                                  >
-                                                  <span
-                                                    class="basis-[15px] runners-text"
-                                                    >-</span
-                                                  >
+                                                <div slot="header" class="flex flex-1 capitalize">
+                                                  <span class="basis-[10px] min-w-[40px] runners-text">4/11</span>
+                                                  <span class="basis-[20px] min-w-[90px] runners-text">Oct 31,
+                                                    2024</span>
+                                                  <span class="basis-[20px] runners-text">Vaal</span>
+                                                  <span class="basis-[15px] runners-text">1100m</span>
+                                                  <span class="basis-[15px] runners-text">-</span>
                                                 </div>
-                                                <div    [ngClass]="
+                                                <div [ngClass]="
                                                 !isTabsData
                                                    ? 'rotate-[360deg]'
                                                   : 'rotate-[270deg]'
-                                              "
-                                                (click)="toggleTabs()" class="flex items-center">
-                                                  <svg
-                                                    fill="currentColor"
-                                                    viewBox="0 0 64 64"
-                                                    class="svg-icon"
-                                                    style="
+                                              " (click)="toggleTabs()" class="flex items-center">
+                                                  <svg fill="currentColor" viewBox="0 0 64 64" class="svg-icon" style="
                                                       transform: rotate(90deg);
-                                                    "
-                                                  >
+                                                    ">
                                                     <title></title>
                                                     <path
-                                                      d="M32.271 49.763 9.201 26.692l6.928-6.93 16.145 16.145 16.144-16.144 6.93 6.929-23.072 23.07h-.005Z"
-                                                    ></path>
+                                                      d="M32.271 49.763 9.201 26.692l6.928-6.93 16.145 16.145 16.144-16.144 6.93 6.929-23.072 23.07h-.005Z">
+                                                    </path>
                                                   </svg>
                                                 </div>
                                               </div>
@@ -980,150 +524,51 @@
                                                 '  max-h-[1200px] h-full': isTabsData,
                                                 'max-h-0': !isTabsData
                                               }">
-                                              <div
-                                                class="history-content"
-
-                                              >
-                                                <div >
-                                                  <div
-                                                    class="runner-history-accordin"
-
-                                                  >
-                                                    <div
-                                                      class="runner-history-item"
-
-                                                    >
-                                                      <span
-                                                        class="runner-history-text"
-
-                                                        >Margin</span
-                                                      >
-                                                      <span
-                                                        class="history-subtext"
-
-                                                        >1L</span
-                                                      >
-                                                    </div>
-                                                    <div
-                                                      class="runner-history-item"
-
-                                                    >
-                                                      <span
-                                                        class="runner-history-text"
-
-                                                        >Jockey</span
-                                                      >
-                                                      <span
-                                                        class="history-subtext"
-
-                                                        >Masaaki Ohata
-                                                        (54kg)</span
-                                                      >
-                                                    </div>
-                                                    <div
-                                                      class="runner-history-item"
-
-                                                    >
-                                                      <span
-                                                        class="runner-history-text"
-
-                                                        >Barrier</span
-                                                      >
-                                                      <span
-                                                        class="history-subtext"
-
-                                                        >8</span
-                                                      >
-                                                    </div>
-                                                    <div
-                                                      class="runner-history-item"
-
-                                                    >
-                                                      <span
-                                                        class="runner-history-text"
-
-                                                        >Time</span
-                                                      >
-                                                      <span
-                                                        class="history-subtext"
-
-                                                        >1:35.30</span
-                                                      >
-                                                    </div>
-                                                    <div
-                                                      class="runner-history-item"
-
-                                                    >
-                                                      <span
-                                                        class="runner-history-text"
-
-                                                        >Class</span
-                                                      >
-                                                      <span
-                                                        class="history-subtext"
-
-                                                        >C2 3U</span
-                                                      >
-                                                    </div>
-                                                    <div
-                                                      class="runner-history-item"
-
-                                                    >
-                                                      <span
-                                                        class="runner-history-text"
-
-                                                        >SP</span
-                                                      >
-                                                      <span
-                                                        class="history-subtext"
-
-                                                        >$2.7</span
-                                                      >
-                                                    </div>
-                                                    <div
-                                                      class="runner-history-item"
-
-                                                    >
-                                                      <span
-                                                        class="runner-history-text"
-
-                                                        >Winner</span
-                                                      >
-                                                      <span
-                                                        class="history-subtext"
-
-                                                        >Regno (56kg)</span
-                                                      >
-                                                    </div>
-                                                    <div
-                                                      class="runner-history-item"
-
-                                                    >
-                                                      <span
-                                                        class="runner-history-text"
-
-                                                        >2nd</span
-                                                      >
-                                                      <span
-                                                        class="history-subtext"
-
-                                                        >Reine Du Sable
-                                                        (54kg)</span
-                                                      >
+                                                <div class="history-content">
+                                                  <div>
+                                                    <div class="runner-history-accordin">
+                                                      <div class="runner-history-item">
+                                                        <span class="runner-history-text">Margin</span>
+                                                        <span class="history-subtext">1L</span>
+                                                      </div>
+                                                      <div class="runner-history-item">
+                                                        <span class="runner-history-text">Jockey</span>
+                                                        <span class="history-subtext">Masaaki Ohata
+                                                          (54kg)</span>
+                                                      </div>
+                                                      <div class="runner-history-item">
+                                                        <span class="runner-history-text">Barrier</span>
+                                                        <span class="history-subtext">8</span>
+                                                      </div>
+                                                      <div class="runner-history-item">
+                                                        <span class="runner-history-text">Time</span>
+                                                        <span class="history-subtext">1:35.30</span>
+                                                      </div>
+                                                      <div class="runner-history-item">
+                                                        <span class="runner-history-text">Class</span>
+                                                        <span class="history-subtext">C2 3U</span>
+                                                      </div>
+                                                      <div class="runner-history-item">
+                                                        <span class="runner-history-text">SP</span>
+                                                        <span class="history-subtext">$2.7</span>
+                                                      </div>
+                                                      <div class="runner-history-item">
+                                                        <span class="runner-history-text">Winner</span>
+                                                        <span class="history-subtext">Regno (56kg)</span>
+                                                      </div>
+                                                      <div class="runner-history-item">
+                                                        <span class="runner-history-text">2nd</span>
+                                                        <span class="history-subtext">Reine Du Sable
+                                                          (54kg)</span>
+                                                      </div>
                                                     </div>
                                                   </div>
                                                 </div>
                                               </div>
-                                              </div>
                                             </div>
 
-                                            <div
-                                              class="flex w-full justify-center mt-3 mb-2"
-                                            >
-                                              <button
-                                                type="button"
-                                                class="ring-offset-background  load-more"
-                                              >
+                                            <div class="flex w-full justify-center mt-3 mb-2">
+                                              <button type="button" class="ring-offset-background  load-more">
                                                 Load More
                                               </button>
                                             </div>
@@ -1137,166 +582,90 @@
                                   <div class="divider-border"></div>
                                   <div class="flex flex-col">
                                     <div>
-                                      <div
-                                        role="button"
-                                        class="runner-card svelte-grid"
-                                      >
-                                        <div
-                                          class="flex flex-col items-center gap-1"
-                                        >
-                                          <div
-                                            class="silk-wrapper svelte-snmmmh"
-                                          >
-                                            <div
-                                              class="silk-icon svelte-snmmmh"
-                                              style="
+                                      <div role="button" class="runner-card svelte-grid">
+                                        <div class="flex flex-col items-center gap-1">
+                                          <div class="silk-wrapper svelte-snmmmh">
+                                            <div class="silk-icon svelte-snmmmh" style="
                                                 background-image: url(https://silks.racingandsports.com.au/jockey/silks/12-nov-2024/381336/R1.png);
                                                 background-position: -360px 2px;
-                                              "
-                                            ></div>
-                                            <img
-                                              alt="Runner silk"
-                                              class="hidden"
-                                              src="https://silks.racingandsports.com.au/jockey/silks/12-nov-2024/381336/R1.png"
-                                            />
+                                              "></div>
+                                            <img alt="Runner silk" class="hidden"
+                                              src="https://silks.racingandsports.com.au/jockey/silks/12-nov-2024/381336/R1.png" />
                                           </div>
-                                          <div
-                                            class="chevron svelte-1cbx3va"
-                                            (click)="toggleMarketDetail()"
-                                            [ngClass]="
+                                          <div class="chevron svelte-1cbx3va" (click)="toggleMarketDetail()" [ngClass]="
                                               !isMarketDetailOpen
                                                 ? 'rotate-[180deg]'
                                                 : 'rotate-[360deg]'
-                                            "
-                                          >
-                                            <svg
-                                              fill="currentColor"
-                                              viewBox="0 0 64 64"
-                                              class="svg-icon"
-                                            >
+                                            ">
+                                            <svg fill="currentColor" viewBox="0 0 64 64" class="svg-icon">
                                               <title></title>
                                               <path
-                                                d="M32.271 49.763 9.201 26.692l6.928-6.93 16.145 16.145 16.144-16.144 6.93 6.929-23.072 23.07h-.005Z"
-                                              ></path>
+                                                d="M32.271 49.763 9.201 26.692l6.928-6.93 16.145 16.145 16.144-16.144 6.93 6.929-23.072 23.07h-.005Z">
+                                              </path>
                                             </svg>
                                           </div>
                                         </div>
                                         <div class="truncate">
                                           <div class="flex flex-col gap-1">
                                             <div class="luminous-continer">
-                                              <span class="luminous"
-                                                ><span class="tabular-nums"
-                                                  >10.</span
-                                                >
-                                                Luminous Beauty</span
-                                              >
-                                              <span class="luminous-num"
-                                                >(10)</span
-                                              >
+                                              <span class="luminous"><span class="tabular-nums">10.</span>
+                                                Luminous Beauty</span>
+                                              <span class="luminous-num">(10)</span>
                                             </div>
                                             <div class="w-content">
                                               <div class="alignment">
-                                                <div
-                                                  class="badge variant-default"
-                                                >
+                                                <div class="badge variant-default">
                                                   W
                                                 </div>
-                                                <span
-                                                  title="54kg"
-                                                  class="weight"
-                                                  >54kg</span
-                                                >
+                                                <span title="54kg" class="weight">54kg</span>
                                               </div>
                                               <div class="alignment">
-                                                <div
-                                                  class="badge variant-default"
-                                                >
+                                                <div class="badge variant-default">
                                                   J
                                                 </div>
-                                                <span
-                                                  title="R. Tanaka"
-                                                  class="weight"
-                                                  >R. Tanaka</span
-                                                >
+                                                <span title="R. Tanaka" class="weight">R. Tanaka</span>
                                               </div>
                                               <div class="alignment">
-                                                <div
-                                                  class="badge variant-default"
-                                                >
+                                                <div class="badge variant-default">
                                                   F
                                                 </div>
-                                                <span
-                                                  title="0x7004"
-                                                  class="weight"
-                                                  >0x7004</span
-                                                >
+                                                <span title="0x7004" class="weight">0x7004</span>
                                               </div>
                                               <div class="alignment">
-                                                <div
-                                                  class="badge variant-default"
-                                                >
+                                                <div class="badge variant-default">
                                                   T
                                                 </div>
-                                                <span
-                                                  title="J. Murata"
-                                                  class="weight"
-                                                  >J. Murata</span
-                                                >
+                                                <span title="J. Murata" class="weight">J. Murata</span>
                                               </div>
                                             </div>
                                           </div>
                                         </div>
                                         <div class="right-btn">
-                                          <div
-                                            class="py-1"
-                                            *ngIf="isFluctuationVisible"
-                                          >
-                                            <div
-                                              class="fluctuations svelte-1o0p6vf"
-                                            >
+                                          <div class="py-1" *ngIf="isFluctuationVisible">
+                                            <div class="fluctuations svelte-1o0p6vf">
                                               <div class="fluc svelte-1o0p6vf">
                                                 <span>OP 13.00</span>
                                               </div>
                                               <div class="fluc svelte-1o0p6vf">
                                                 <span>6.40</span>
-                                                <div
-                                                  class="direction svelte-1o0p6vf"
-                                                >
-                                                  <div
-                                                    class="translate-y-[-5px]"
-                                                  >
-                                                    <svg
-                                                      fill="none"
-                                                      viewBox="0 0 96 80"
-                                                      class="svg-icon"
-                                                    >
+                                                <div class="direction svelte-1o0p6vf">
+                                                  <div class="translate-y-[-5px]">
+                                                    <svg fill="none" viewBox="0 0 96 80" class="svg-icon">
                                                       <title></title>
-                                                      <path
-                                                        d="M48.51 65.684 18.192 15.158h60.632L48.509 65.684Z"
-                                                        fill="#FF2247"
-                                                      ></path>
+                                                      <path d="M48.51 65.684 18.192 15.158h60.632L48.509 65.684Z"
+                                                        fill="#FF2247"></path>
                                                     </svg>
                                                   </div>
                                                 </div>
                                               </div>
                                               <div class="fluc svelte-1o0p6vf">
                                                 <span>6.50</span>
-                                                <div
-                                                  class="direction svelte-1o0p6vf"
-                                                >
-                                                  <div
-                                                    class="translate-y-[-5px]"
-                                                  >
-                                                    <svg
-                                                      fill="none"
-                                                      viewBox="0 0 96 80"
-                                                      class="svg-icon"
-                                                    >
+                                                <div class="direction svelte-1o0p6vf">
+                                                  <div class="translate-y-[-5px]">
+                                                    <svg fill="none" viewBox="0 0 96 80" class="svg-icon">
                                                       <title></title>
-                                                      <path
-                                                        d="m48.507 15.158 30.316 50.526H18.191l30.316-50.526Z"
-                                                        fill="#00E700"
-                                                      ></path>
+                                                      <path d="m48.507 15.158 30.316 50.526H18.191l30.316-50.526Z"
+                                                        fill="#00E700"></path>
                                                     </svg>
                                                   </div>
                                                 </div>
@@ -1305,30 +674,18 @@
                                           </div>
                                           <div class="right-btn-con">
                                             <button class="button">
-                                              <div
-                                                class="group-active:scale-95"
-                                              >
+                                              <div class="group-active:scale-95">
                                                 <div class="relative">
-                                                  <span class="btn-amount"
-                                                    >4.40</span
-                                                  >
-                                                  <div
-                                                    class="arrow-odds align-left svelte-hfoo7h"
-                                                  ></div>
+                                                  <span class="btn-amount">4.40</span>
+                                                  <div class="arrow-odds align-left svelte-hfoo7h"></div>
                                                 </div>
                                               </div>
                                             </button>
                                             <button class="button">
-                                              <div
-                                                class="group-active:scale-95"
-                                              >
+                                              <div class="group-active:scale-95">
                                                 <div class="relative">
-                                                  <span class="btn-amount"
-                                                    >1.50</span
-                                                  >
-                                                  <div
-                                                    class="arrow-odds align-left svelte-hfoo7h"
-                                                  ></div>
+                                                  <span class="btn-amount">1.50</span>
+                                                  <div class="arrow-odds align-left svelte-hfoo7h"></div>
                                                 </div>
                                               </div>
                                             </button>
@@ -1337,76 +694,36 @@
                                       </div>
                                       <div class="divider-border"></div>
                                       <div *ngIf="isMarketDetailOpen">
-                                        <div
-                                          class="flex flex-col gap-4 pb-4 px-3"
-                                        >
-                                          <div
-                                            class="h-[0.125rem] bg-[rgb(26,44,56)] m-0 p-0"
-                                          ></div>
-                                          <div
-                                            class="flex flex-wrap gap-y-1 gap-x-10"
-                                          >
+                                        <div class="flex flex-col gap-4 pb-4 px-3">
+                                          <div class="h-[0.125rem] bg-[rgb(26,44,56)] m-0 p-0"></div>
+                                          <div class="flex flex-wrap gap-y-1 gap-x-10">
                                             <div class="truncat">
-                                              <span
-                                                class="text-white text-sm font-semibold"
-                                                >Jockey</span
-                                              >
-                                              <span class="jockey-text"
-                                                >Gavin Lerena</span
-                                              >
+                                              <span class="text-white text-sm font-semibold">Jockey</span>
+                                              <span class="jockey-text">Gavin Lerena</span>
                                             </div>
                                             <div class="truncat text-[#b1bad3]">
-                                              <span
-                                                class="text-white text-sm font-semibold"
-                                                >Trainer</span
-                                              >
-                                              <span class="jockey-text"
-                                                >J A Janse Van Vuuren</span
-                                              >
+                                              <span class="text-white text-sm font-semibold">Trainer</span>
+                                              <span class="jockey-text">J A Janse Van Vuuren</span>
                                             </div>
                                             <div class="truncat">
-                                              <span
-                                                class="text-white text-sm font-semibold"
-                                                >Bio</span
-                                              >
-                                              <span class="jockey-text"
-                                                >5yo B M</span
-                                              >
+                                              <span class="text-white text-sm font-semibold">Bio</span>
+                                              <span class="jockey-text">5yo B M</span>
                                             </div>
-                                            <span class="truncat"
-                                              ><span
-                                                class="text-white text-sm font-semibold"
-                                                >Sire</span
-                                              >
-                                              <span class="jockey-text"
-                                                >Time Thief (AUS)</span
-                                              ></span
-                                            >
+                                            <span class="truncat"><span
+                                                class="text-white text-sm font-semibold">Sire</span>
+                                              <span class="jockey-text">Time Thief (AUS)</span></span>
                                             <div class="truncat">
-                                              <span
-                                                class="text-white text-sm font-semibold"
-                                                >Form</span
-                                              >
-                                              <span class="jockey-text"
-                                                >11243x</span
-                                              >
+                                              <span class="text-white text-sm font-semibold">Form</span>
+                                              <span class="jockey-text">11243x</span>
                                             </div>
                                           </div>
 
-                                          <div
-                                            class="h-[0.125rem] bg-[rgb(26,44,56)] m-0 p-0"
-                                          ></div>
+                                          <div class="h-[0.125rem] bg-[rgb(26,44,56)] m-0 p-0"></div>
                                           <div class="flex gap-2 flex-col">
-                                            <span class="runners-text"
-                                              >Runner Comments</span
-                                            >
-                                            <div
-                                              class="bg-[rgb(26,44,56)] py-2 px-3 rounded"
-                                            >
-                                              <div
-                                                class="w-full h-fit line-clamp-3 text-left text-sm"
-                                                aria-expanded="false"
-                                              >
+                                            <span class="runners-text">Runner Comments</span>
+                                            <div class="bg-[rgb(26,44,56)] py-2 px-3 rounded">
+                                              <div class="w-full h-fit line-clamp-3 text-left text-sm"
+                                                aria-expanded="false">
                                                 <div>
                                                   Mare returning from a spell
                                                   and has won previously when
@@ -1426,173 +743,75 @@
                                             </div>
                                           </div>
 
-                                          <div
-                                            class="table-wrapper"
-                                          >
-                                            <div
-                                              class="table-tabs"
-                                            >
-                                              <span class="head-text"
-                                                >Last 10 Runs</span
-                                              >
-                                              <span class="sub-text"
-                                                >4371312444</span
-                                              >
+                                          <div class="table-wrapper">
+                                            <div class="table-tabs">
+                                              <span class="head-text">Last 10 Runs</span>
+                                              <span class="sub-text">4371312444</span>
                                             </div>
-                                            <div
-                                              class="table-tabs"
-                                            >
-                                              <span class="head-text"
-                                                >Career</span
-                                              >
-                                              <span class="sub-text"
-                                                >26: 3 2 2</span
-                                              >
+                                            <div class="table-tabs">
+                                              <span class="head-text">Career</span>
+                                              <span class="sub-text">26: 3 2 2</span>
                                             </div>
-                                            <div
-                                              class="table-tabs"
-                                            >
-                                              <span class="head-text"
-                                                >Prize (AUD)</span
-                                              >
+                                            <div class="table-tabs">
+                                              <span class="head-text">Prize (AUD)</span>
                                               <span class="sub-text">-</span>
                                             </div>
-                                            <div
-                                              class="table-tabs"
-                                            >
-                                              <span class="head-text"
-                                                >Speed Map</span
-                                              >
-                                              <span class="sub-text"
-                                                >Leader</span
-                                              >
+                                            <div class="table-tabs">
+                                              <span class="head-text">Speed Map</span>
+                                              <span class="sub-text">Leader</span>
                                             </div>
-                                            <div
-                                              class="table-tabs"
-                                            >
-                                              <span class="head-text"
-                                                >Track</span
-                                              >
-                                              <span class="sub-text"
-                                                >2: 0 0 0</span
-                                              >
+                                            <div class="table-tabs">
+                                              <span class="head-text">Track</span>
+                                              <span class="sub-text">2: 0 0 0</span>
                                             </div>
-                                            <div
-                                              class="table-tabs"
-                                            >
-                                              <span class="head-text"
-                                                >Distance</span
-                                              >
-                                              <span class="sub-text"
-                                                >9: 2 1 2</span
-                                              >
+                                            <div class="table-tabs">
+                                              <span class="head-text">Distance</span>
+                                              <span class="sub-text">9: 2 1 2</span>
                                             </div>
-                                            <div
-                                              class="table-tabs"
-                                            >
-                                              <span class="head-text"
-                                                >Track / Distance</span
-                                              >
-                                              <span class="sub-text"
-                                                >0: 0 0 0</span
-                                              >
+                                            <div class="table-tabs">
+                                              <span class="head-text">Track / Distance</span>
+                                              <span class="sub-text">0: 0 0 0</span>
                                             </div>
-                                            <div
-                                              class="table-tabs"
-                                            >
-                                              <span class="head-text"
-                                                >Dirt</span
-                                              >
-                                              <span class="sub-text"
-                                                >0: 0 0 0</span
-                                              >
+                                            <div class="table-tabs">
+                                              <span class="head-text">Dirt</span>
+                                              <span class="sub-text">0: 0 0 0</span>
                                             </div>
-                                            <div
-                                              class="table-tabs"
-                                            >
-                                              <span class="head-text"
-                                                >Firm</span
-                                              >
-                                              <span class="sub-text"
-                                                >0: 0 0 0</span
-                                              >
+                                            <div class="table-tabs">
+                                              <span class="head-text">Firm</span>
+                                              <span class="sub-text">0: 0 0 0</span>
                                             </div>
-                                            <div
-                                              class="table-tabs"
-                                            >
-                                              <span class="head-text"
-                                                >Good</span
-                                              >
-                                              <span class="sub-text"
-                                                >25: 3 2 2</span
-                                              >
+                                            <div class="table-tabs">
+                                              <span class="head-text">Good</span>
+                                              <span class="sub-text">25: 3 2 2</span>
                                             </div>
-                                            <div
-                                              class="table-tabs"
-                                            >
-                                              <span class="head-text"
-                                                >Soft</span
-                                              >
-                                              <span class="sub-text"
-                                                >0: 0 0 0</span
-                                              >
+                                            <div class="table-tabs">
+                                              <span class="head-text">Soft</span>
+                                              <span class="sub-text">0: 0 0 0</span>
                                             </div>
-                                            <div
-                                              class="table-tabs"
-                                            >
-                                              <span class="head-text"
-                                                >Heavy</span
-                                              >
-                                              <span class="sub-text"
-                                                >0: 0 0 0</span
-                                              >
+                                            <div class="table-tabs">
+                                              <span class="head-text">Heavy</span>
+                                              <span class="sub-text">0: 0 0 0</span>
                                             </div>
-                                            <div
-                                              class="table-tabs"
-                                            >
-                                              <span class="head-text"
-                                                >Synthetic</span
-                                              >
-                                              <span class="sub-text"
-                                                >0: 0 0 0</span
-                                              >
+                                            <div class="table-tabs">
+                                              <span class="head-text">Synthetic</span>
+                                              <span class="sub-text">0: 0 0 0</span>
                                             </div>
-                                            <div
-                                              class="table-tabs"
-                                            >
-                                              <span class="head-text"
-                                                >1st Up</span
-                                              >
-                                              <span class="sub-text"
-                                                >3: 0 0 0</span
-                                              >
+                                            <div class="table-tabs">
+                                              <span class="head-text">1st Up</span>
+                                              <span class="sub-text">3: 0 0 0</span>
                                             </div>
-                                            <div
-                                              class="table-tabs"
-                                            >
-                                              <span class="head-text"
-                                                >2nd Up</span
-                                              >
-                                              <span class="sub-text"
-                                                >3: 0 0 0</span
-                                              >
+                                            <div class="table-tabs">
+                                              <span class="head-text">2nd Up</span>
+                                              <span class="sub-text">3: 0 0 0</span>
                                             </div>
-                                            <div
-                                              class="table-tabs"
-                                            >
-                                              <span class="head-text"
-                                                >3rd Up</span
-                                              >
-                                              <span class="sub-text"
-                                                >2: 0 0 0</span
-                                              >
+                                            <div class="table-tabs">
+                                              <span class="head-text">3rd Up</span>
+                                              <span class="sub-text">2: 0 0 0</span>
                                             </div>
                                           </div>
 
                                           <div class="flex flex-col gap-2">
-                                            <span class="runners-text"
-                                              >Race History</span
-                                            >
+                                            <span class="runners-text">Race History</span>
                                             <div class="history-list">
                                               <!-- <div class="history-head">
                                                 <div
@@ -1782,13 +1001,8 @@
 
                                             </div>
 
-                                            <div
-                                              class="flex w-full justify-center mt-3 mb-2"
-                                            >
-                                              <button
-                                                type="button"
-                                                class="load-more"
-                                              >
+                                            <div class="flex w-full justify-center mt-3 mb-2">
+                                              <button type="button" class="load-more">
                                                 Load More
                                               </button>
                                             </div>
@@ -1799,15 +1013,11 @@
                                     <div class="flex flex-col">
                                       <div class="divider-border"></div>
                                       <div class="other-con">
-                                        <span class="other-text variant-subtle"
-                                          >Other Rules: Three place dividends
-                                          paid.</span
-                                        >
-                                        <span class="other-text variant-subtle"
-                                          >JP-SP: Japanese-Starting Price is
+                                        <span class="other-text variant-subtle">Other Rules: Three place dividends
+                                          paid.</span>
+                                        <span class="other-text variant-subtle">JP-SP: Japanese-Starting Price is
                                           derived from a parimutuel dividend and
-                                          announced post-race.</span
-                                        >
+                                          announced post-race.</span>
                                       </div>
                                     </div>
                                     <!-- Add toggle==================================================== -->

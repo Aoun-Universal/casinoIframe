@@ -76,7 +76,7 @@ tr:hover {
   @apply pb-6 px-[3vw] w-full;
 }
 .bet-text {
-  @apply text-nowrap ml-2 text-[18px] font-[600];
+  @apply text-nowrap ml-2 text-[18px] font-[500];
 }
 .casino-btn {
   @apply ml-0 flex justify-center cursor-pointer items-center text-white h-[44px] text-center font-[600] text-[13px] py-[.9375rem] px-[1.25rem];
@@ -88,7 +88,7 @@ tr:hover {
   @apply w-[100%] flex justify-center mt-[2rem];
 }
 .betting {
-  @apply text-[#8A939A] font-[600] text-sm;
+  @apply text-[#8A939A] font-[600] text-[13px];
 }
 .buttons-wrapper {
   @apply flex justify-center mt-6 items-center h-[54px] bg-[#0f212e] rounded-[3rem] p-[5px];
@@ -97,7 +97,7 @@ tr:hover {
   @apply w-[100%] flex justify-center text-[#b1bad3] text-[.875rem] font-[400] mt-[17px];
 }
 .start-betting-btn {
-  @apply w-[100%] flex justify-center text-[14px] font-[700] mt-0.5;
+  @apply w-[100%] flex justify-center text-[13px] font-[700] mt-0.5;
 }
 .betting-wrapper {
   @apply flex gap-[1.5rem] justify-center mt-[27px] w-full;
@@ -131,7 +131,7 @@ tr:hover {
   @apply text-white leading-[1.5] text-center justify-center flex text-[16px] font-[600] touch-auto;
 }
 .betting-parent {
-  @apply flex justify-center gap-[1.5rem] mt-[25px];
+  @apply flex justify-center gap-[1.5rem] mt-[27px];
 }
 .dropdown-options {
   @apply text-[.875rem] text-[black] p-[.75rem] cursor-pointer;
@@ -153,11 +153,10 @@ tr:hover {
 }
 
 ::ng-deep .toast-container .ngx-toastr {
-  box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.2),
-    0 4px 6px -2px rgba(0, 0, 0, 0.1) !important;
+  box-shadow: 0 10px 15px -3px rgba(0, 0, 0, .2), 0 4px 6px -2px rgba(0, 0, 0, .1) !important;
 }
 
-::ng-deep .toast-message {
+ ::ng-deep .toast-message {
   color: #b1bad3 !important;
 }
 

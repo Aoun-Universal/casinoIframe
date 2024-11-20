@@ -68,7 +68,7 @@
     @apply  p-0 gap-[1.5rem] items-start overflow-hidden  [grid-auto-flow:row] justify-stretch md:[grid-auto-flow:column] md:[grid-template-columns:_1fr_5.2fr] grid;
   }
   .card {
-    @apply sticky max-w-full top-[2em] min-w-[180px] bg-[#0f212e] text-[#d5dceb] rounded-lg;
+    @apply sticky max-w-full  min-w-[180px] bg-[#0f212e] text-[#d5dceb] rounded-lg;
   }
   .outer-wraper {
     @apply py-2 m-0 align-baseline;

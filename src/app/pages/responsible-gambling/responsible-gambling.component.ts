@@ -12,7 +12,7 @@ import { CommonModule } from '@angular/common';
   styleUrl: './responsible-gambling.component.css'
 })
 export class ResponsibleGamblingComponent {
- 
+  selectedOption: string = 'Stake Smart';
   routerPath: any
   constructor(private router: Router,private eRef: ElementRef, private cdRef: ChangeDetectorRef) { }
   ngOnInit(): void {
@@ -39,6 +39,10 @@ export class ResponsibleGamblingComponent {
   toggleDropdown() {
     this.WinnerDropdown = !this.WinnerDropdown;
   }
+  selectOption(option: string) {
+    this.selectedOption = option; // Set selected option
+    this.WinnerDropdown = false; // Close dropdown
+  }
   @HostListener('document:click', ['$event'])
   clickOutside(event: Event) {
     if (!this.eRef.nativeElement.contains(event.target)) {
@@ -48,7 +52,7 @@ export class ResponsibleGamblingComponent {
     routes = [
       { path: '/responsible-gambling/stake-smart', label: 'Stake Smart' },
       { path: '/responsible-gambling/responsible-gambling-faqs', label: 'Responsible Gambling FAQs' },
-      { path: '/responsible-gambling/stake-smart', label: 'Recognise the sign' },
+      { path: '/responsible-gambling/stake-smart', label: 'Recognise the Sign' },
       { path:'/responsible-gambling/responsible-gambling-faqs', label: 'Self Assessment' },
       { path: '/responsible-gambling/self-exclusion', label: 'Self Exclusion' },
       { path: '/responsible-gambling/calculator', label: 'Budget Calculator' }

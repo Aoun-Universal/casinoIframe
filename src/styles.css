@@ -5,9 +5,10 @@
 /* You can add global styles to this file, and also import other style files */
 body {
   background: #1a2c38;
-  color: #b1bad3;
+  color: #fff;
   font-family: "Proxima Nova", sans-serif !important;
   cursor: default;
+  overflow: hidden;
 }
 
 /* Proxima Nova Regular */
@@ -46,7 +47,6 @@ body {
   font-weight: 900;
   font-style: normal;
 }
-
 
 /* Table */
 .table-container {
@@ -87,6 +87,6 @@ tr:hover {
   @apply bg-[#2f4553] text-white;
 }
 
-::-webkit-scrollbar{
-  @apply hidden
+::-webkit-scrollbar {
+  @apply hidden;
 }

@@ -15,11 +15,11 @@
 }
 
 .hero-heading {
-  @apply font-bold text-left block text-[3.35rem] max-md:text-[2rem] max-md:text-center  leading-[115%] text-white;
+  @apply font-bold text-left block text-[3.35rem] max-md:text-[32.5px] max-md:leading-[38.4px] max-md:text-center  leading-[115%] text-white;
 }
 
 .signup-btn {
-  @apply inline-flex relative items-center hover:bg-[rgba(16,94,180)] gap-2 justify-center rounded-sm font-semibold whitespace-nowrap  transition disabled:pointer-events-none disabled:opacity-50 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 active:scale-[0.98] bg-[rgb(20,117,225)] text-white   focus-visible:outline-white text-sm leading-none shadow-md py-[0.9375rem] px-[1.25rem] mt-8 md:mt-4 w-full md:w-auto;
+  @apply inline-flex relative items-center hover:bg-[rgba(16,94,180)] gap-2 justify-center rounded font-semibold whitespace-nowrap  transition disabled:pointer-events-none disabled:opacity-50 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 active:scale-[0.98] bg-[rgb(20,117,225)] text-white   focus-visible:outline-white text-sm leading-none shadow-md py-[0.9375rem] px-[1.25rem] mt-8 md:mt-4 w-full md:w-auto;
 }
 
 .icons-container {
@@ -31,10 +31,10 @@
 }
 
 .social-media-wrapper {
-  @apply flex gap-[.5rem] items-center;
+  @apply flex gap-[.5rem] items-center max-md:w-full;
 }
 .icon-btn {
-  @apply inline-flex relative items-center gap-2 justify-center rounded-sm font-semibold whitespace-nowrap bg-[rgba(47,69,83)] hover:bg-[rgba(85,112,134)] transition disabled:pointer-events-none disabled:opacity-50 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 active:scale-[0.98]  text-white  focus-visible:outline-white text-sm leading-none shadow-md py-[0.8125rem] px-[1rem] lg:p-3;
+  @apply inline-flex relative items-center gap-2 max-md:flex-auto justify-center rounded-sm font-semibold whitespace-nowrap bg-[rgba(47,69,83)] hover:bg-[rgba(85,112,134)] transition disabled:pointer-events-none disabled:opacity-50 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 active:scale-[0.98]  text-white  focus-visible:outline-white text-sm leading-none shadow-md py-[0.8125rem] px-[1rem] lg:p-3;
 }
 
 .icon-btn img {
@@ -152,7 +152,7 @@
 }
 
 .green-btn {
-  @apply !bg-[rgba(0,231,1)] hover:!bg-[rgba(31,255,32)] !text-black;
+  @apply !bg-[rgba(0,231,1)] hover:!bg-[rgba(31,255,32)] !text-black font-semibold !text-[13.8px];
 }
 
 .video-section-wrapper {
@@ -518,7 +518,7 @@
 }
 
 .crypto-currency-title {
-  @apply text-[#fff] leading-[1.31] md:text-[2.5rem] text-[28px] font-bold inline-flex;
+  @apply text-[#fff] leading-[1.31] md:text-[2.5rem] text-[28.3px] font-bold inline-flex;
 }
 
 .sponsorship-partners {
@@ -546,7 +546,7 @@
 }
 
 .partner-title {
-  @apply text-center text-base  leading-[1.5] text-[#fff] overflow-hidden truncate whitespace-nowrap font-bold max-w-full;
+  @apply text-center text-[16.3px]  leading-[1.5] text-[#fff] overflow-hidden truncate whitespace-nowrap font-bold max-w-full;
 }
 
 .partner-logo {
@@ -582,7 +582,7 @@
 }
 
 .dropdown-header {
-  @apply flex items-center justify-between p-[.75rem_1rem];
+  @apply flex items-center justify-between p-[.75rem_1rem] max-h-[45px];
 }
 
 .dropdown-title {
@@ -636,15 +636,13 @@
 .table-heading {
   @apply !bg-transparent  hover:!bg-transparent;
 }
-.t-head{
-  @apply rounded-none border-b-[1px] border-solid border-[rgb(47,69,83)] align-middle whitespace-nowrap text-sm text-[#b1bad3] ;
+.t-head {
+  @apply rounded-none border-b-[1px] border-solid border-[rgb(47,69,83)] align-middle whitespace-nowrap text-sm text-[#b1bad3];
   word-wrap: break-word;
-  
 }
-.t-data{
-  @apply align-middle whitespace-nowrap text-sm  ;
+.t-data {
+  @apply align-middle whitespace-nowrap text-sm;
   word-wrap: break-word;
-  
 }
 
 .table {
@@ -660,9 +658,13 @@ tr {
   @apply hover:!bg-transparent;
 }
 .table-body {
-  @apply relative ;
+  @apply relative;
   animation-fill-mode: forwards !important;
   animation-fill-mode: forwards !important;
   animation-timing-function: ease-out !important;
   animation-timing-function: ease-out !important;
+}
+
+.table-container {
+  @apply pt-[48px] pb-0;
 }

@@ -33,7 +33,7 @@
                                 <th class="!text-end"><span class="">Withdrawn</span></th>
                             </tr>
                             <tbody class="svelte-z7x44z w-full">
-                                <tr class="w-full" *ngFor="let currency of currencies">
+                                <tr class="w-full table-row" *ngFor="let currency of currencies">
                                     <td *ngFor="let item of currency.items; let i = index">
                                         <div class="currency svelte-141qgpc w-full" role="presentation" [ngClass]="{
                                           'text-left': i === 0,
@@ -50,7 +50,7 @@
                                                     </span>
                                                 </span>
                                                 <span class="is-truncate svelte-17v69ua"
-                                                    title="{{ item.currencyCode }}">
+                                                    [title]="item.currencyCode">
                                                     <svg fill="none" viewBox="0 0 96 96" class="svg-icon">
                                                         <path
                                                             d="M48 96c26.51 0 48-21.49 48-48S74.51 0 48 0 0 21.49 0 48s21.49 48 48 48Z"

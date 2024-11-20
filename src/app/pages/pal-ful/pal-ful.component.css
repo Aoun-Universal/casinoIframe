@@ -37,7 +37,7 @@ section {
   @apply p-[5px] bg-[#0F212E] rounded-[3rem] flex overflow-x-auto space-x-[5px];
 }
 .switch-btn button {
-  @apply text-[14px] leading-[14px] py-[15px] px-[20px] text-inherit text-nowrap rounded-full hover:bg-[#2f4553];
+  @apply text-[14px] leading-[14px] py-[15px] px-[20px] text-inherit text-nowrap rounded-full hover:bg-[#2f4553] font-semibold;
 }
 
 .activeTab {
@@ -50,6 +50,9 @@ section {
 
 .x2-isOpen {
   @apply py-[7px] px-[10.5px] bg-[#071824] w-full flex items-center justify-between text-[14px] leading-[21px] rounded cursor-pointer hover:bg-[rgba(8,47,90,1)];
+}
+.x2-isOpen span {
+  @apply font-semibold;
 }
 
 .slash {

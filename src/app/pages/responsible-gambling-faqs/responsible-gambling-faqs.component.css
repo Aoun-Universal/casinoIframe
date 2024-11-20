@@ -26,8 +26,11 @@
   @apply text-base text-[#b1bad3] inline text-left font-normal
 }
 .span-text {
-  @apply text-base text-[#b1bad3] inline text-left font-semibold
+  @apply text-[18px] text-[#b1bad3] inline text-left font-semibold
 }
 .content-title {
   @apply  text-lg mt-6 mb-2 w-full text-[#fff] text-left font-semibold
+}
+p{
+  @apply !text-[18px]
 }

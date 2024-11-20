@@ -11,7 +11,7 @@
   @apply w-[149px] h-[80px] md:w-[214px] md:h-[115px];
 }
 .tittle {
-  @apply text-[24px];
+  @apply text-[24px] font-semibold;
 }
 
 .thumbnail {

@@ -2,47 +2,27 @@
   <!-- market intro and selction section -->
   <div class="market-intro-section">
     <a>
-      <div
-        class="prev-nav-btn"
-      >
+      <div class="prev-nav-btn">
         <i class="fa-solid fa-chevron-left text-white text-xs"></i>
       </div>
     </a>
-    <div class="relative market-selection-container">
-      <div
-        class="market-select-box"
-        (click)="toggleMarketType()"
-      >
-        <span class="text-xs font-semibold">{{ marketType }}</span>
+    <div class="relative market-selection-container ">
+      <div class="market-select-box" (click)="toggleMarketType()">
+        <span class="text-sm font-semibold">{{ marketType }}</span>
         <i class="fa-solid fa-chevron-down text-white text-xs"></i>
       </div>
-      <div
-        class="absolute top-full left-1/2 rotate-45 bg-white size-4"
-        [ngClass]="{ hidden: !marketSelection }"
-      ></div>
-      <div
-        class="market-options-box"
-        [ngClass]="{ hidden: !marketSelection }"
-      >
-        <div
-          class="market-option"
-          [ngClass]="{ ' text-[#1475e1]': marketType === 'Horse Racing' }"
-          (click)="onMarketTypeSelect('Horse Racing')"
-        >
+      <div class="absolute top-full left-1/2 rotate-45 bg-white size-4" [ngClass]="{ hidden: !marketSelection }"></div>
+      <div class="market-options-box" [ngClass]="{ hidden: !marketSelection }">
+        <div class="market-option" [ngClass]="{ ' text-[#1475e1]': marketType === 'Horse Racing' }"
+          (click)="onMarketTypeSelect('Horse Racing')">
           Horse Racing
         </div>
-        <div
-          class="market-option"
-          [ngClass]="{ ' text-[#1475e1]': marketType === 'GreyHounds' }"
-          (click)="onMarketTypeSelect('GreyHounds')"
-        >
+        <div class="market-option" [ngClass]="{ ' text-[#1475e1]': marketType === 'GreyHounds' }"
+          (click)="onMarketTypeSelect('GreyHounds')">
           GreyHounds
         </div>
-        <div
-          class="market-option"
-          [ngClass]="{ ' text-[#1475e1]': marketType === 'Harness' }"
-          (click)="onMarketTypeSelect('Harness')"
-        >
+        <div class="market-option" [ngClass]="{ ' text-[#1475e1]': marketType === 'Harness' }"
+          (click)="onMarketTypeSelect('Harness')">
           Harness
         </div>
       </div>
@@ -52,52 +32,39 @@
     <div class="w-full flex justify-between items-center">
       <div class="flex items-center gap-x-2">
         <div>
-          <svg
-            fill=""
-            viewBox="0 0 64 64"
-            class="svg-icon text-white"
-            style="color: white"
-          >
+          <svg fill="" viewBox="0 0 64 64" class="svg-icon text-white" style="color: white">
             <title></title>
             <path
-              d="M7.36 42.39c1-12.78 14.728-25.29 17.926-29.976 2.778-4.206 1.719-9.203.83-11.4a.78.78 0 0 1 .893-1h-.004c13.889 2.918 14.588 13.48 14.168 18.206-.42 4.726.42 7.913 3.478 7.224 3.057-.69 2.028-8.443 2.028-8.443s14.039 16.676 8.893 33.073c-2.588 8.574-9.033 12.19-14.449 13.89-.28.14-.56-.14-.56-.55.7-2.638 2.509-4.726 3.058-7.644 1.12-4.796-3.327-9.213-6.624-11.71-2.063-1.538-3.386-3.97-3.386-6.712 0-.127.002-.255.008-.381v.018c0-.28-.42-.42-.55-.28a90.106 90.106 0 0 1-6.652 7.202l-.022.022c-5.136 5.696-7.784 12.09-3.197 19.175.14.28-.14.69-.41.56C11.387 60.596 6.67 51.973 7.36 42.39Z"
-            ></path>
+              d="M7.36 42.39c1-12.78 14.728-25.29 17.926-29.976 2.778-4.206 1.719-9.203.83-11.4a.78.78 0 0 1 .893-1h-.004c13.889 2.918 14.588 13.48 14.168 18.206-.42 4.726.42 7.913 3.478 7.224 3.057-.69 2.028-8.443 2.028-8.443s14.039 16.676 8.893 33.073c-2.588 8.574-9.033 12.19-14.449 13.89-.28.14-.56-.14-.56-.55.7-2.638 2.509-4.726 3.058-7.644 1.12-4.796-3.327-9.213-6.624-11.71-2.063-1.538-3.386-3.97-3.386-6.712 0-.127.002-.255.008-.381v.018c0-.28-.42-.42-.55-.28a90.106 90.106 0 0 1-6.652 7.202l-.022.022c-5.136 5.696-7.784 12.09-3.197 19.175.14.28-.14.69-.41.56C11.387 60.596 6.67 51.973 7.36 42.39Z">
+            </path>
           </svg>
         </div>
-        <span class="font-semibold text-base">Next to Jump</span>
+        <span class="font-semibold text-[18px]">Next to Jump</span>
       </div>
       <div class="flex items-center">
         <div class="prev-arrow-div" (click)="prev()">
           <svg fill="" viewBox="0 0 64 64" class="arrow-icon">
             <title></title>
             <path
-              d="M56 37.486H25.091L35.335 47.73l-6.313 6.314L8 33.022 29.022 12l6.313 6.314-10.244 10.244H56v8.933-.005Z"
-            ></path>
+              d="M56 37.486H25.091L35.335 47.73l-6.313 6.314L8 33.022 29.022 12l6.313 6.314-10.244 10.244H56v8.933-.005Z">
+            </path>
           </svg>
         </div>
         <div class="next-arrow-div" (click)="next()">
           <svg fill="" viewBox="0 0 64 64" class="arrow-icon">
             <title></title>
             <path
-              d="M8 37.486h30.909L28.665 47.73l6.313 6.314L56 33.022 34.978 12l-6.313 6.314 10.244 10.244H8v8.933-.005Z"
-            ></path>
+              d="M8 37.486h30.909L28.665 47.73l6.313 6.314L56 33.022 34.978 12l-6.313 6.314 10.244 10.244H8v8.933-.005Z">
+            </path>
           </svg>
         </div>
       </div>
     </div>
     <!-- mobile carousel -->
-    <ngx-slick-carousel
-      class="carousel mt-6"
-      #slickModal="slick-carousel"
-      [config]="racingMarketConfig"
-      (init)="slickInit($event)"
-      (afterChange)="afterChange($event)"
-    >
+    <ngx-slick-carousel class="carousel mt-6" #slickModal="slick-carousel" [config]="racingMarketConfig"
+      (init)="slickInit($event)" (afterChange)="afterChange($event)">
       @for (item of carousel; track $index) {
-      <div
-        ngxSlickItem
-        class="w-full bg-[#213743] rounded shadow-md gap-2 overflow-hidden mt-6 race-slide"
-      >
+      <div ngxSlickItem class="w-full bg-[#213743] rounded shadow-md gap-2 overflow-hidden mt-6 race-slide">
         <div class="flex flex-col">
           <div class="flex flex-col gap-y-1 px-3 py-2">
             <div class="flex justify-between items-center">
@@ -105,55 +72,44 @@
                 <div>
                   <svg fill="" viewBox="0 0 96 96" class="horse-icon">
                     <title></title>
-                    <path
-                      fill-rule="evenodd"
-                      clip-rule="evenodd"
-                      d="m89.6 14.32-2.4 4.56h.04L96.04 35l-4.88 4.36L84.88 35c-2.24-.72-3.08-3.64-3.08-3.64L74.6 48.2c-3.32 10.72-5.16 12.08-7.28 13.44L54.24 77.56l-13.88-4.48 1.68-2.72 9.6 2.36 4.68-12.56c-12.24-1.32-23.16-7.56-23.16-7.56-2.28 6.08-5.84 9.84-7.88 11.88l9.72 9.4-7.04 7.8-3.76-2.2 3.12-5-13.2-10.28c6.28-4.24 6.6-10.12 6.6-10.12-5.76-1.52-8.72-9.24-8.72-9.24-7.96 3.8-12 14.44-12 14.44V45.52C17.24 28.88 26.08 28.4 26.08 28.4c7.099-.671 10.416.253 14.047 1.265 2.424.676 4.989 1.391 8.913 1.695 9.8.76 13.68-2.72 13.68-2.72 9.96-9.68 15.56-11.6 15.56-11.6l11.32-2.72ZM74.158 70.04l-1.24-2.72c4.48-2.56 5.08-6.4 5.08-6.4l3.48 9.72-11.56 5.6-1.52-2.44 5.76-3.76Z"
-                    ></path>
+                    <path fill-rule="evenodd" clip-rule="evenodd"
+                      d="m89.6 14.32-2.4 4.56h.04L96.04 35l-4.88 4.36L84.88 35c-2.24-.72-3.08-3.64-3.08-3.64L74.6 48.2c-3.32 10.72-5.16 12.08-7.28 13.44L54.24 77.56l-13.88-4.48 1.68-2.72 9.6 2.36 4.68-12.56c-12.24-1.32-23.16-7.56-23.16-7.56-2.28 6.08-5.84 9.84-7.88 11.88l9.72 9.4-7.04 7.8-3.76-2.2 3.12-5-13.2-10.28c6.28-4.24 6.6-10.12 6.6-10.12-5.76-1.52-8.72-9.24-8.72-9.24-7.96 3.8-12 14.44-12 14.44V45.52C17.24 28.88 26.08 28.4 26.08 28.4c7.099-.671 10.416.253 14.047 1.265 2.424.676 4.989 1.391 8.913 1.695 9.8.76 13.68-2.72 13.68-2.72 9.96-9.68 15.56-11.6 15.56-11.6l11.32-2.72ZM74.158 70.04l-1.24-2.72c4.48-2.56 5.08-6.4 5.08-6.4l3.48 9.72-11.56 5.6-1.52-2.44 5.76-3.76Z">
+                    </path>
                   </svg>
                 </div>
-                <span class="text-xs font-semibold cursor-pointer"  [routerLink]="'/sport/racing-market-detail'">R11 Kawasaki</span>
+                <span class="text-sm font-semibold cursor-pointer" [routerLink]="'/sport/racing-market-detail'">R11
+                  Kawasaki</span>
               </div>
               <div class="flex items-center gap-x-2">
                 <div>
                   <svg fill="" viewBox="0 0 64 64" class="live-icon">
                     <title></title>
-                    <path
-                      fill-rule="evenodd"
-                      clip-rule="evenodd"
-                      d="M0 49.36V0h64v49.36H0ZM23.013 9.893v29.574l23.68-14.8-23.68-14.774ZM10.667 56h42.666v8H10.667v-8Z"
-                    ></path>
+                    <path fill-rule="evenodd" clip-rule="evenodd"
+                      d="M0 49.36V0h64v49.36H0ZM23.013 9.893v29.574l23.68-14.8-23.68-14.774ZM10.667 56h42.666v8H10.667v-8Z">
+                    </path>
                   </svg>
                 </div>
                 <div>
-                  <span class="text-xs font-semibold">12m</span>
+                  <span class="text-sm font-semibold">12m</span>
                 </div>
               </div>
             </div>
             <div class="flex justify-between items-center">
               <div class="flex items-center gap-x-2">
                 <div>
-                  <svg
-                    fill=""
-                    viewBox="0 0 96 96"
-                    class="race-distance-icon"
-                    style=""
-                  >
+                  <svg fill="" viewBox="0 0 96 96" class="race-distance-icon" style="">
                     <title></title>
-                    <path
-                      d="M48 96c26.51 0 48-21.49 48-48S74.51 0 48 0 0 21.49 0 48s21.49 48 48 48Z"
-                      fill="#F0F0F0"
-                    ></path>
+                    <path d="M48 96c26.51 0 48-21.49 48-48S74.51 0 48 0 0 21.49 0 48s21.49 48 48 48Z" fill="#F0F0F0">
+                    </path>
                     <path
                       d="M48 68.87c11.526 0 20.87-9.344 20.87-20.87 0-11.526-9.344-20.87-20.87-20.87-11.526 0-20.87 9.344-20.87 20.87 0 11.526 9.344 20.87 20.87 20.87Z"
-                      fill="#D80027"
-                    ></path>
+                      fill="#D80027"></path>
                   </svg>
                 </div>
-                <span class="text-xs font-medium">1500m</span>
+                <span class="text-sm font-semibold">1500m</span>
               </div>
               <div class="flex items-center justify-center">
-                <div class="text-[#b1bad3] text-xs font-semibold">Win</div>
+                <div class="text-[#b1bad3] text-xs font-medium">Win</div>
               </div>
             </div>
           </div>
@@ -164,38 +120,30 @@
                 <div class="flex items-center gap-x-3">
                   <div class="player-icon-bg player-1-icon"></div>
                   <div class="flex flex-col">
-                    <div class="text-white text-xs font-semibold">
+                    <div class="text-white text-sm font-semibold">
                       2. Greatrix (4)
                     </div>
                     <div class="grid grid-cols-[6.5ch_auto] gap-y-2">
                       <div class="flex items-center gap-x-1">
-                        <div
-                          class="text-white bg-[#2f4553] text-xs p-1 rounded-[3px]"
-                        >
+                        <div class="text-white bg-[#2f4553] text-[10px] p-1 rounded-[3px]">
                           W
                         </div>
                         <span class="text-[#b1bad3] text-xs">58kg</span>
                       </div>
                       <div class="flex items-center gap-x-1">
-                        <div
-                          class="text-white bg-[#2f4553] text-xs p-1 rounded-[3px]"
-                        >
+                        <div class="text-white bg-[#2f4553] text-[10px] p-1 rounded-[3px]">
                           J
                         </div>
                         <span class="text-[#b1bad3] text-xs">58kg</span>
                       </div>
                       <div class="flex items-center gap-x-1">
-                        <div
-                          class="text-white bg-[#2f4553] text-xs p-1 rounded-[3px]"
-                        >
+                        <div class="text-white bg-[#2f4553] text-[10px] p-1 rounded-[3px]">
                           F
                         </div>
                         <span class="text-[#b1bad3] text-xs">58kg</span>
                       </div>
                       <div class="flex items-center gap-x-1">
-                        <div
-                          class="text-white bg-[#2f4553] text-xs p-1 rounded-[3px]"
-                        >
+                        <div class="text-white bg-[#2f4553] text-[10px] p-1 rounded-[3px]">
                           T
                         </div>
                         <span class="text-[#b1bad3] text-xs">58kg</span>
@@ -203,14 +151,12 @@
                     </div>
                   </div>
                 </div>
-                <div
-                  class="flex rounded justify-center items-center bg-[#071824] h-[35px] px-6"
-                >
+                <div class="flex rounded justify-center items-center bg-[#071824] h-[35px] px-6">
                   <svg fill="" viewBox="0 0 64 64" class="suspended-icon">
                     <title></title>
                     <path
-                      d="M53.998 31V21C53.874 9.382 44.432.01 32.8 0h-1.6C19.496.012 10.012 9.496 10 21.198V31H6.62v33h50.76V31h-3.382Zm-36-9.8c.006-7.288 5.912-13.194 13.2-13.2h1.6c7.288.006 13.194 5.912 13.2 13.2V31h-28v-9.8Zm17 29V55a3.001 3.001 0 0 1-6 0v-4.81c-1.806-1.056-3-2.988-3-5.196a6 6 0 1 1 9.028 5.18l-.028.016v.01Z"
-                    ></path>
+                      d="M53.998 31V21C53.874 9.382 44.432.01 32.8 0h-1.6C19.496.012 10.012 9.496 10 21.198V31H6.62v33h50.76V31h-3.382Zm-36-9.8c.006-7.288 5.912-13.194 13.2-13.2h1.6c7.288.006 13.194 5.912 13.2 13.2V31h-28v-9.8Zm17 29V55a3.001 3.001 0 0 1-6 0v-4.81c-1.806-1.056-3-2.988-3-5.196a6 6 0 1 1 9.028 5.18l-.028.016v.01Z">
+                    </path>
                   </svg>
                 </div>
               </div>
@@ -220,38 +166,30 @@
                 <div class="flex items-center gap-x-3">
                   <div class="player-icon-bg player-2-icon"></div>
                   <div class="flex flex-col">
-                    <div class="text-white text-xs font-semibold">
+                    <div class="text-white text-sm font-semibold">
                       2. Greatrix (4)
                     </div>
                     <div class="grid grid-cols-[6.5ch_auto] gap-y-2">
                       <div class="flex items-center gap-x-1">
-                        <div
-                          class="text-white bg-[#2f4553] text-xs p-1 rounded-[3px]"
-                        >
+                        <div class="text-white bg-[#2f4553] text-[10px] p-1 rounded-[3px]">
                           W
                         </div>
                         <span class="text-[#b1bad3] text-xs">58kg</span>
                       </div>
                       <div class="flex items-center gap-x-1">
-                        <div
-                          class="text-white bg-[#2f4553] text-xs p-1 rounded-[3px]"
-                        >
+                        <div class="text-white bg-[#2f4553] text-[10px] p-1 rounded-[3px]">
                           J
                         </div>
                         <span class="text-[#b1bad3] text-xs">58kg</span>
                       </div>
                       <div class="flex items-center gap-x-1">
-                        <div
-                          class="text-white bg-[#2f4553] text-xs p-1 rounded-[3px]"
-                        >
+                        <div class="text-white bg-[#2f4553] text-[10px] p-1 rounded-[3px]">
                           F
                         </div>
                         <span class="text-[#b1bad3] text-xs">58kg</span>
                       </div>
                       <div class="flex items-center gap-x-1">
-                        <div
-                          class="text-white bg-[#2f4553] text-xs p-1 rounded-[3px]"
-                        >
+                        <div class="text-white bg-[#2f4553] text-[10px] p-1 rounded-[3px]">
                           T
                         </div>
                         <span class="text-[#b1bad3] text-xs">58kg</span>
@@ -259,14 +197,12 @@
                     </div>
                   </div>
                 </div>
-                <div
-                  class="flex rounded justify-center items-center bg-[#071824] h-[35px] px-6"
-                >
+                <div class="flex rounded justify-center items-center bg-[#071824] h-[35px] px-6">
                   <svg fill="" viewBox="0 0 64 64" class="suspended-icon">
                     <title></title>
                     <path
-                      d="M53.998 31V21C53.874 9.382 44.432.01 32.8 0h-1.6C19.496.012 10.012 9.496 10 21.198V31H6.62v33h50.76V31h-3.382Zm-36-9.8c.006-7.288 5.912-13.194 13.2-13.2h1.6c7.288.006 13.194 5.912 13.2 13.2V31h-28v-9.8Zm17 29V55a3.001 3.001 0 0 1-6 0v-4.81c-1.806-1.056-3-2.988-3-5.196a6 6 0 1 1 9.028 5.18l-.028.016v.01Z"
-                    ></path>
+                      d="M53.998 31V21C53.874 9.382 44.432.01 32.8 0h-1.6C19.496.012 10.012 9.496 10 21.198V31H6.62v33h50.76V31h-3.382Zm-36-9.8c.006-7.288 5.912-13.194 13.2-13.2h1.6c7.288.006 13.194 5.912 13.2 13.2V31h-28v-9.8Zm17 29V55a3.001 3.001 0 0 1-6 0v-4.81c-1.806-1.056-3-2.988-3-5.196a6 6 0 1 1 9.028 5.18l-.028.016v.01Z">
+                    </path>
                   </svg>
                 </div>
               </div>
@@ -276,38 +212,30 @@
                 <div class="flex items-center gap-x-3">
                   <div class="player-icon-bg player-3-icon"></div>
                   <div class="flex flex-col">
-                    <div class="text-white text-xs font-semibold">
+                    <div class="text-white text-sm font-semibold">
                       2. Greatrix (4)
                     </div>
                     <div class="grid grid-cols-[6.5ch_auto] gap-y-2">
                       <div class="flex items-center gap-x-1">
-                        <div
-                          class="text-white bg-[#2f4553] text-xs p-1 rounded-[3px]"
-                        >
+                        <div class="text-white bg-[#2f4553] text-[10px] p-1 rounded-[3px]">
                           W
                         </div>
                         <span class="text-[#b1bad3] text-xs">58kg</span>
                       </div>
                       <div class="flex items-center gap-x-1">
-                        <div
-                          class="text-white bg-[#2f4553] text-xs p-1 rounded-[3px]"
-                        >
+                        <div class="text-white bg-[#2f4553] text-[10px] p-1 rounded-[3px]">
                           J
                         </div>
                         <span class="text-[#b1bad3] text-xs">58kg</span>
                       </div>
                       <div class="flex items-center gap-x-1">
-                        <div
-                          class="text-white bg-[#2f4553] text-xs p-1 rounded-[3px]"
-                        >
+                        <div class="text-white bg-[#2f4553] text-[10px] p-1 rounded-[3px]">
                           F
                         </div>
                         <span class="text-[#b1bad3] text-xs">58kg</span>
                       </div>
                       <div class="flex items-center gap-x-1">
-                        <div
-                          class="text-white bg-[#2f4553] text-xs p-1 rounded-[3px]"
-                        >
+                        <div class="text-white bg-[#2f4553] text-[10px] p-1 rounded-[3px]">
                           T
                         </div>
                         <span class="text-[#b1bad3] text-xs">58kg</span>
@@ -315,14 +243,12 @@
                     </div>
                   </div>
                 </div>
-                <div
-                  class="flex rounded justify-center items-center bg-[#071824] h-[35px] px-6"
-                >
+                <div class="flex rounded justify-center items-center bg-[#071824] h-[35px] px-6">
                   <svg fill="" viewBox="0 0 64 64" class="suspended-icon">
                     <title></title>
                     <path
-                      d="M53.998 31V21C53.874 9.382 44.432.01 32.8 0h-1.6C19.496.012 10.012 9.496 10 21.198V31H6.62v33h50.76V31h-3.382Zm-36-9.8c.006-7.288 5.912-13.194 13.2-13.2h1.6c7.288.006 13.194 5.912 13.2 13.2V31h-28v-9.8Zm17 29V55a3.001 3.001 0 0 1-6 0v-4.81c-1.806-1.056-3-2.988-3-5.196a6 6 0 1 1 9.028 5.18l-.028.016v.01Z"
-                    ></path>
+                      d="M53.998 31V21C53.874 9.382 44.432.01 32.8 0h-1.6C19.496.012 10.012 9.496 10 21.198V31H6.62v33h50.76V31h-3.382Zm-36-9.8c.006-7.288 5.912-13.194 13.2-13.2h1.6c7.288.006 13.194 5.912 13.2 13.2V31h-28v-9.8Zm17 29V55a3.001 3.001 0 0 1-6 0v-4.81c-1.806-1.056-3-2.988-3-5.196a6 6 0 1 1 9.028 5.18l-.028.016v.01Z">
+                    </path>
                   </svg>
                 </div>
               </div>
@@ -337,16 +263,11 @@
   <div class="flex flex-col mt-6">
     <div class="flex items-center gap-x-2">
       <div>
-        <svg
-          fill=""
-          viewBox="0 0 64 64"
-          class="svg-icon text-white"
-          style="color: white"
-        >
+        <svg fill="" viewBox="0 0 64 64" class="svg-icon text-white" style="color: white">
           <title></title>
           <path
-            d="M7.36 42.39c1-12.78 14.728-25.29 17.926-29.976 2.778-4.206 1.719-9.203.83-11.4a.78.78 0 0 1 .893-1h-.004c13.889 2.918 14.588 13.48 14.168 18.206-.42 4.726.42 7.913 3.478 7.224 3.057-.69 2.028-8.443 2.028-8.443s14.039 16.676 8.893 33.073c-2.588 8.574-9.033 12.19-14.449 13.89-.28.14-.56-.14-.56-.55.7-2.638 2.509-4.726 3.058-7.644 1.12-4.796-3.327-9.213-6.624-11.71-2.063-1.538-3.386-3.97-3.386-6.712 0-.127.002-.255.008-.381v.018c0-.28-.42-.42-.55-.28a90.106 90.106 0 0 1-6.652 7.202l-.022.022c-5.136 5.696-7.784 12.09-3.197 19.175.14.28-.14.69-.41.56C11.387 60.596 6.67 51.973 7.36 42.39Z"
-          ></path>
+            d="M7.36 42.39c1-12.78 14.728-25.29 17.926-29.976 2.778-4.206 1.719-9.203.83-11.4a.78.78 0 0 1 .893-1h-.004c13.889 2.918 14.588 13.48 14.168 18.206-.42 4.726.42 7.913 3.478 7.224 3.057-.69 2.028-8.443 2.028-8.443s14.039 16.676 8.893 33.073c-2.588 8.574-9.033 12.19-14.449 13.89-.28.14-.56-.14-.56-.55.7-2.638 2.509-4.726 3.058-7.644 1.12-4.796-3.327-9.213-6.624-11.71-2.063-1.538-3.386-3.97-3.386-6.712 0-.127.002-.255.008-.381v.018c0-.28-.42-.42-.55-.28a90.106 90.106 0 0 1-6.652 7.202l-.022.022c-5.136 5.696-7.784 12.09-3.197 19.175.14.28-.14.69-.41.56C11.387 60.596 6.67 51.973 7.36 42.39Z">
+          </path>
         </svg>
       </div>
       <span class="font-semibold text-base">All Races</span>
@@ -358,86 +279,48 @@
     <!-- all races markets accordions -->
     <div class="flex flex-col mt-6 w-full gap-3">
       <div class="rounded-sm overflow-hidden shadow-sm">
-        <div
-          class="race-accordion-container"
-          (click)="onAllRaceAccClick()"
-        >
-          <button
-            class="flex justify-between items-center w-full px-4 py-3 text-[#d5dceb]"
-          >
+        <div class="race-accordion-container" (click)="onAllRaceAccClick()">
+          <button class="flex justify-between items-center w-full px-4 py-3 text-[#d5dceb]">
             <span class="text-sm font-semibold leading-4"> Australia </span>
             <div class="flex gap-4">
-              <svg
-                [ngClass]="{ hidden: !accIsOpen }"
-                fill=""
-                viewBox="0 0 64 64"
-                class="acc-arrow"
-              >
+              <svg [ngClass]="{ hidden: !accIsOpen }" fill="" viewBox="0 0 64 64" class="acc-arrow">
                 <title></title>
                 <path
-                  d="M32.271 49.763 9.201 26.692l6.928-6.93 16.145 16.145 16.144-16.144 6.93 6.929-23.072 23.07h-.005Z"
-                ></path>
+                  d="M32.271 49.763 9.201 26.692l6.928-6.93 16.145 16.145 16.144-16.144 6.93 6.929-23.072 23.07h-.005Z">
+                </path>
               </svg>
-              <div
-                [ngClass]="{ hidden: accIsOpen }"
-                class="text-[#d5dceb] bg-[#2f4553] px-1 text-xs font-semibold rounded-full"
-              >
+              <div [ngClass]="{ hidden: accIsOpen }"
+                class="text-[#d5dceb] bg-[#2f4553] px-1 text-xs font-semibold rounded-full">
                 5
               </div>
-              <svg
-                [ngClass]="{ hidden: accIsOpen }"
-                fill=""
-                viewBox="0 0 64 64"
-                class="acc-arrow"
-              >
+              <svg [ngClass]="{ hidden: accIsOpen }" fill="" viewBox="0 0 64 64" class="acc-arrow">
                 <title></title>
-                <path
-                  d="M36.998 53.995 16 32.998 36.998 12l6.306 6.306L28.61 33l14.694 14.694L36.998 54v-.005Z"
-                ></path>
+                <path d="M36.998 53.995 16 32.998 36.998 12l6.306 6.306L28.61 33l14.694 14.694L36.998 54v-.005Z"></path>
               </svg>
             </div>
           </button>
         </div>
-        <div
-          class="flex flex-col bg-[#213743] max-h-0 overflow-hidden"
-          [ngClass]="{ 'max-h-fit': accIsOpen }"
-        >
-          <button
-            class="flex w-full items-center justify-between px-4 py-3 gap-2"
-          >
+        <div class="flex flex-col bg-[#213743] max-h-0 overflow-hidden" [ngClass]="{ 'max-h-fit': accIsOpen }">
+          <button class="flex w-full items-center justify-between px-4 py-3 gap-2">
             <div class="flex gap-2 items-center truncate">
               <div>
                 <svg fill="" viewBox="0 0 96 96" style="width: 12px">
                   <title></title>
-                  <path
-                    d="M96 48c0 26.51-21.49 48-48 48S0 74.51 0 48C0 48.011 48 .005 48 0c26.51 0 48 21.49 48 48Z"
-                    fill="#0052B4"
-                  ></path>
-                  <path
-                    d="M47.872 48H48v-.128l-.128.128Z"
-                    fill="#F0F0F0"
-                  ></path>
+                  <path d="M96 48c0 26.51-21.49 48-48 48S0 74.51 0 48C0 48.011 48 .005 48 0c26.51 0 48 21.49 48 48Z"
+                    fill="#0052B4"></path>
+                  <path d="M47.872 48H48v-.128l-.128.128Z" fill="#F0F0F0"></path>
                   <path
                     d="M48 25.044V0h-.008C21.486.004 0 21.493 0 48h25.043V33.898L39.146 48h8.726l.128-.128v-8.726L33.898 25.044H48Z"
-                    fill="#F0F0F0"
-                  ></path>
-                  <path
-                    d="M24.284 6.26A48.228 48.228 0 0 0 6.261 24.285V48h12.522V18.783H48V6.26H24.284Z"
-                    fill="#D80027"
-                  ></path>
-                  <path
-                    d="M48 42.097 30.946 25.044h-5.902L48 48v-5.903Z"
-                    fill="#D80027"
-                  ></path>
+                    fill="#F0F0F0"></path>
+                  <path d="M24.284 6.26A48.228 48.228 0 0 0 6.261 24.285V48h12.522V18.783H48V6.26H24.284Z"
+                    fill="#D80027"></path>
+                  <path d="M48 42.097 30.946 25.044h-5.902L48 48v-5.903Z" fill="#D80027"></path>
                   <path
                     d="m28.95 56.348 2.633 5.508 5.95-1.375-2.665 5.494 4.784 3.794-5.956 1.343.017 6.105-4.764-3.82-4.763 3.82.017-6.105-5.957-1.343 4.784-3.794-2.664-5.494 5.949 1.375 2.634-5.508Zm42.916 10.435 1.317 2.754 2.974-.688-1.332 2.747 2.392 1.897-2.978.672.008 3.052-2.381-1.91-2.382 1.91.008-3.052-2.978-.672 2.392-1.897-1.332-2.747 2.975.688 1.317-2.754ZM59.612 37.565l1.317 2.755 2.975-.688-1.332 2.747 2.392 1.897-2.978.671.008 3.053-2.382-1.91L57.231 48l.008-3.053-2.978-.671 2.392-1.897-1.332-2.747 2.974.688 1.317-2.755ZM71.866 20.87l1.317 2.754 2.974-.688-1.332 2.747 2.392 1.897-2.978.672.008 3.052-2.381-1.91-2.382 1.91.008-3.052-2.978-.672 2.392-1.897-1.332-2.747 2.975.688 1.317-2.755Zm10.703 12.521 1.317 2.755 2.975-.688-1.333 2.747 2.392 1.897-2.978.671.008 3.053-2.381-1.91-2.382 1.91.008-3.053-2.978-.671 2.392-1.897-1.332-2.747 2.975.688 1.317-2.755ZM74.916 48l1.036 3.189h3.352l-2.712 1.97 1.036 3.189-2.712-1.97-2.713 1.97 1.036-3.189-2.712-1.97h3.352L74.916 48Z"
-                    fill="#F0F0F0"
-                  ></path>
+                    fill="#F0F0F0"></path>
                 </svg>
               </div>
-              <span
-                class="flex items-center text-sm font-bold gap-1 truncate text-[#b1bad3]"
-              >
+              <span class="flex items-center text-sm font-bold gap-1 truncate text-[#b1bad3]">
                 R8 Kempsey
               </span>
             </div>
@@ -495,42 +378,26 @@
               </a>
             </div>
           </button>
-          <button
-            class="flex w-full items-center justify-between px-4 py-3 gap-2"
-          >
+          <button class="flex w-full items-center justify-between px-4 py-3 gap-2">
             <div class="flex gap-2 items-center truncate">
               <div>
                 <svg fill="" viewBox="0 0 96 96" style="width: 12px">
                   <title></title>
-                  <path
-                    d="M96 48c0 26.51-21.49 48-48 48S0 74.51 0 48C0 48.011 48 .005 48 0c26.51 0 48 21.49 48 48Z"
-                    fill="#0052B4"
-                  ></path>
-                  <path
-                    d="M47.872 48H48v-.128l-.128.128Z"
-                    fill="#F0F0F0"
-                  ></path>
+                  <path d="M96 48c0 26.51-21.49 48-48 48S0 74.51 0 48C0 48.011 48 .005 48 0c26.51 0 48 21.49 48 48Z"
+                    fill="#0052B4"></path>
+                  <path d="M47.872 48H48v-.128l-.128.128Z" fill="#F0F0F0"></path>
                   <path
                     d="M48 25.044V0h-.008C21.486.004 0 21.493 0 48h25.043V33.898L39.146 48h8.726l.128-.128v-8.726L33.898 25.044H48Z"
-                    fill="#F0F0F0"
-                  ></path>
-                  <path
-                    d="M24.284 6.26A48.228 48.228 0 0 0 6.261 24.285V48h12.522V18.783H48V6.26H24.284Z"
-                    fill="#D80027"
-                  ></path>
-                  <path
-                    d="M48 42.097 30.946 25.044h-5.902L48 48v-5.903Z"
-                    fill="#D80027"
-                  ></path>
+                    fill="#F0F0F0"></path>
+                  <path d="M24.284 6.26A48.228 48.228 0 0 0 6.261 24.285V48h12.522V18.783H48V6.26H24.284Z"
+                    fill="#D80027"></path>
+                  <path d="M48 42.097 30.946 25.044h-5.902L48 48v-5.903Z" fill="#D80027"></path>
                   <path
                     d="m28.95 56.348 2.633 5.508 5.95-1.375-2.665 5.494 4.784 3.794-5.956 1.343.017 6.105-4.764-3.82-4.763 3.82.017-6.105-5.957-1.343 4.784-3.794-2.664-5.494 5.949 1.375 2.634-5.508Zm42.916 10.435 1.317 2.754 2.974-.688-1.332 2.747 2.392 1.897-2.978.672.008 3.052-2.381-1.91-2.382 1.91.008-3.052-2.978-.672 2.392-1.897-1.332-2.747 2.975.688 1.317-2.754ZM59.612 37.565l1.317 2.755 2.975-.688-1.332 2.747 2.392 1.897-2.978.671.008 3.053-2.382-1.91L57.231 48l.008-3.053-2.978-.671 2.392-1.897-1.332-2.747 2.974.688 1.317-2.755ZM71.866 20.87l1.317 2.754 2.974-.688-1.332 2.747 2.392 1.897-2.978.672.008 3.052-2.381-1.91-2.382 1.91.008-3.052-2.978-.672 2.392-1.897-1.332-2.747 2.975.688 1.317-2.755Zm10.703 12.521 1.317 2.755 2.975-.688-1.333 2.747 2.392 1.897-2.978.671.008 3.053-2.381-1.91-2.382 1.91.008-3.053-2.978-.671 2.392-1.897-1.332-2.747 2.975.688 1.317-2.755ZM74.916 48l1.036 3.189h3.352l-2.712 1.97 1.036 3.189-2.712-1.97-2.713 1.97 1.036-3.189-2.712-1.97h3.352L74.916 48Z"
-                    fill="#F0F0F0"
-                  ></path>
+                    fill="#F0F0F0"></path>
                 </svg>
               </div>
-              <span
-                class="flex items-center text-sm font-bold gap-1 truncate text-[#b1bad3]"
-              >
+              <span class="flex items-center text-sm font-bold gap-1 truncate text-[#b1bad3]">
                 R8 Kempsey
               </span>
             </div>
@@ -588,42 +455,26 @@
               </a>
             </div>
           </button>
-          <button
-            class="flex w-full items-center justify-between px-4 py-3 gap-2"
-          >
+          <button class="flex w-full items-center justify-between px-4 py-3 gap-2">
             <div class="flex gap-2 items-center truncate">
               <div>
                 <svg fill="" viewBox="0 0 96 96" style="width: 12px">
                   <title></title>
-                  <path
-                    d="M96 48c0 26.51-21.49 48-48 48S0 74.51 0 48C0 48.011 48 .005 48 0c26.51 0 48 21.49 48 48Z"
-                    fill="#0052B4"
-                  ></path>
-                  <path
-                    d="M47.872 48H48v-.128l-.128.128Z"
-                    fill="#F0F0F0"
-                  ></path>
+                  <path d="M96 48c0 26.51-21.49 48-48 48S0 74.51 0 48C0 48.011 48 .005 48 0c26.51 0 48 21.49 48 48Z"
+                    fill="#0052B4"></path>
+                  <path d="M47.872 48H48v-.128l-.128.128Z" fill="#F0F0F0"></path>
                   <path
                     d="M48 25.044V0h-.008C21.486.004 0 21.493 0 48h25.043V33.898L39.146 48h8.726l.128-.128v-8.726L33.898 25.044H48Z"
-                    fill="#F0F0F0"
-                  ></path>
-                  <path
-                    d="M24.284 6.26A48.228 48.228 0 0 0 6.261 24.285V48h12.522V18.783H48V6.26H24.284Z"
-                    fill="#D80027"
-                  ></path>
-                  <path
-                    d="M48 42.097 30.946 25.044h-5.902L48 48v-5.903Z"
-                    fill="#D80027"
-                  ></path>
+                    fill="#F0F0F0"></path>
+                  <path d="M24.284 6.26A48.228 48.228 0 0 0 6.261 24.285V48h12.522V18.783H48V6.26H24.284Z"
+                    fill="#D80027"></path>
+                  <path d="M48 42.097 30.946 25.044h-5.902L48 48v-5.903Z" fill="#D80027"></path>
                   <path
                     d="m28.95 56.348 2.633 5.508 5.95-1.375-2.665 5.494 4.784 3.794-5.956 1.343.017 6.105-4.764-3.82-4.763 3.82.017-6.105-5.957-1.343 4.784-3.794-2.664-5.494 5.949 1.375 2.634-5.508Zm42.916 10.435 1.317 2.754 2.974-.688-1.332 2.747 2.392 1.897-2.978.672.008 3.052-2.381-1.91-2.382 1.91.008-3.052-2.978-.672 2.392-1.897-1.332-2.747 2.975.688 1.317-2.754ZM59.612 37.565l1.317 2.755 2.975-.688-1.332 2.747 2.392 1.897-2.978.671.008 3.053-2.382-1.91L57.231 48l.008-3.053-2.978-.671 2.392-1.897-1.332-2.747 2.974.688 1.317-2.755ZM71.866 20.87l1.317 2.754 2.974-.688-1.332 2.747 2.392 1.897-2.978.672.008 3.052-2.381-1.91-2.382 1.91.008-3.052-2.978-.672 2.392-1.897-1.332-2.747 2.975.688 1.317-2.755Zm10.703 12.521 1.317 2.755 2.975-.688-1.333 2.747 2.392 1.897-2.978.671.008 3.053-2.381-1.91-2.382 1.91.008-3.053-2.978-.671 2.392-1.897-1.332-2.747 2.975.688 1.317-2.755ZM74.916 48l1.036 3.189h3.352l-2.712 1.97 1.036 3.189-2.712-1.97-2.713 1.97 1.036-3.189-2.712-1.97h3.352L74.916 48Z"
-                    fill="#F0F0F0"
-                  ></path>
+                    fill="#F0F0F0"></path>
                 </svg>
               </div>
-              <span
-                class="flex items-center text-sm font-bold gap-1 truncate text-[#b1bad3]"
-              >
+              <span class="flex items-center text-sm font-bold gap-1 truncate text-[#b1bad3]">
                 R8 Kempsey
               </span>
             </div>
@@ -688,20 +539,14 @@
     <div class="mt-6 w-full flex justify-between">
       <app-tab-slider [arrItem]="tabsItems"></app-tab-slider>
       <div class="flex items-center gap-x-2 max-[745px]:hidden">
-        <div
-          class="py-[0.8125rem] px-[1rem] flex items-center gap-x-1 bg-[#0f212e]"
-        >
+        <div class="py-[0.8125rem] px-[1rem] flex items-center gap-x-1 bg-[#0f212e]">
           <svg fill="" viewBox="0 0 64 64" class="ghost-icon">
             <title></title>
-            <path
-              fill-rule="evenodd"
-              clip-rule="evenodd"
-              d="M42.05 8.613c2.815 0 5.192 1.879 5.955 4.494l3.64 12.792H12.253l3.64-12.792.01-.044a6.197 6.197 0 0 1 5.944-4.45H42.05ZM61.488 30.77H2.461a2.461 2.461 0 0 0 0 4.921c8.873 1.271 19.12 1.997 29.539 1.997s20.664-.726 30.696-2.131l-.598.068a2.461 2.461 0 0 0-.56-4.858l-.05.003ZM33.484 43.074h-3.05c-6.335-1.515-13.677-1.22-21.547 0v2.501l3.05.58s0 9.233 9.233 9.233c6.223 0 8.247-5.583 8.908-9.233h3.721c.661 3.65 2.685 9.233 8.908 9.233 9.233 0 9.233-9.233 9.233-9.233l3.05-.58v-2.501c-7.718-1.24-15.008-1.485-21.506 0Z"
-            ></path>
+            <path fill-rule="evenodd" clip-rule="evenodd"
+              d="M42.05 8.613c2.815 0 5.192 1.879 5.955 4.494l3.64 12.792H12.253l3.64-12.792.01-.044a6.197 6.197 0 0 1 5.944-4.45H42.05ZM61.488 30.77H2.461a2.461 2.461 0 0 0 0 4.921c8.873 1.271 19.12 1.997 29.539 1.997s20.664-.726 30.696-2.131l-.598.068a2.461 2.461 0 0 0-.56-4.858l-.05.003ZM33.484 43.074h-3.05c-6.335-1.515-13.677-1.22-21.547 0v2.501l3.05.58s0 9.233 9.233 9.233c6.223 0 8.247-5.583 8.908-9.233h3.721c.661 3.65 2.685 9.233 8.908 9.233 9.233 0 9.233-9.233 9.233-9.233l3.05-.58v-2.501c-7.718-1.24-15.008-1.485-21.506 0Z">
+            </path>
           </svg>
-          <span class="text-[#b1bad3] text-xs font-semibold"
-            >Ghost mode on</span
-          >
+          <span class="text-[#b1bad3] text-xs font-semibold">Ghost mode on</span>
         </div>
         <div class="flex relative items-center gap-x-2">
           <select>
@@ -715,8 +560,8 @@
             <svg fill="" viewBox="0 0 64 64" class="">
               <title></title>
               <path
-                d="M32.271 49.763 9.201 26.692l6.928-6.93 16.145 16.145 16.144-16.144 6.93 6.929-23.072 23.07h-.005Z"
-              ></path>
+                d="M32.271 49.763 9.201 26.692l6.928-6.93 16.145 16.145 16.144-16.144 6.93 6.929-23.072 23.07h-.005Z">
+              </path>
             </svg>
           </div>
         </div>
@@ -740,38 +585,28 @@
               <button class="flex items-center gap-x-1">
                 <svg fill="" viewBox="0 0 96 96" class="market-icon">
                   <title></title>
-                  <path
-                    fill-rule="evenodd"
-                    clip-rule="evenodd"
-                    d="M48.021.012c13.221 0 25.191 5.346 33.87 13.99l.003-.004C90.609 22.69 96 34.71 96 47.988c0 26.511-21.489 48-48 48S0 74.5 0 47.988c0-4.275.561-8.42 1.533-12.03l4.119 4 .006.005c4.62 4.533 8.1 10.224 10.035 16.875l.054.234c2.109 7.62 6.873 14.136 13.344 18.567l-.123-.078a33.326 33.326 0 0 0 18.549 5.604c18.489 0 33.48-14.99 33.48-33.48a33.356 33.356 0 0 0-9.386-23.246c-3.927-3.887-8.801-6.82-14.482-8.482l-.285-.075A40.24 40.24 0 0 1 39.93 5.56l-3.999-4-.336.075A48.082 48.082 0 0 1 48.021.012ZM11.291 34.32l-6.76-6.759.006.003.12-.288C9.304 17.355 17.327 9.33 27.535 4.563l6.639 6.92c5.591 5.546 12.56 9.703 20.68 12.001l.18.045c10.553 3.144 18.248 12.921 18.248 24.498 0 .834-.042 1.662-.11 2.373l-.01.111c-.8 7.773-5.06 14.517-11.31 18.729l.09-.057a25.28 25.28 0 0 1-14.136 4.293c-11.664 0-21.492-7.863-24.516-18.756l-.08-.327A46.449 46.449 0 0 0 11.29 34.32Z"
-                  ></path>
+                  <path fill-rule="evenodd" clip-rule="evenodd"
+                    d="M48.021.012c13.221 0 25.191 5.346 33.87 13.99l.003-.004C90.609 22.69 96 34.71 96 47.988c0 26.511-21.489 48-48 48S0 74.5 0 47.988c0-4.275.561-8.42 1.533-12.03l4.119 4 .006.005c4.62 4.533 8.1 10.224 10.035 16.875l.054.234c2.109 7.62 6.873 14.136 13.344 18.567l-.123-.078a33.326 33.326 0 0 0 18.549 5.604c18.489 0 33.48-14.99 33.48-33.48a33.356 33.356 0 0 0-9.386-23.246c-3.927-3.887-8.801-6.82-14.482-8.482l-.285-.075A40.24 40.24 0 0 1 39.93 5.56l-3.999-4-.336.075A48.082 48.082 0 0 1 48.021.012ZM11.291 34.32l-6.76-6.759.006.003.12-.288C9.304 17.355 17.327 9.33 27.535 4.563l6.639 6.92c5.591 5.546 12.56 9.703 20.68 12.001l.18.045c10.553 3.144 18.248 12.921 18.248 24.498 0 .834-.042 1.662-.11 2.373l-.01.111c-.8 7.773-5.06 14.517-11.31 18.729l.09-.057a25.28 25.28 0 0 1-14.136 4.293c-11.664 0-21.492-7.863-24.516-18.756l-.08-.327A46.449 46.449 0 0 0 11.29 34.32Z">
+                  </path>
                 </svg>
-                <span class="text-sm truncate font-semibold text-[#d5dceb]"
-                  >IPA - CHA</span
-                >
+                <span class="text-sm truncate font-semibold text-[#d5dceb]">IPA - CHA</span>
               </button>
             </td>
             <td class="p-4 max-[745px]:hidden">
               <div class="flex justify-center gap-x-1 text-center">
                 <svg fill="" viewBox="0 0 64 64" class="ghost-icon">
                   <title></title>
-                  <path
-                    fill-rule="evenodd"
-                    clip-rule="evenodd"
-                    d="M42.05 8.613c2.815 0 5.192 1.879 5.955 4.494l3.64 12.792H12.253l3.64-12.792.01-.044a6.197 6.197 0 0 1 5.944-4.45H42.05ZM61.488 30.77H2.461a2.461 2.461 0 0 0 0 4.921c8.873 1.271 19.12 1.997 29.539 1.997s20.664-.726 30.696-2.131l-.598.068a2.461 2.461 0 0 0-.56-4.858l-.05.003ZM33.484 43.074h-3.05c-6.335-1.515-13.677-1.22-21.547 0v2.501l3.05.58s0 9.233 9.233 9.233c6.223 0 8.247-5.583 8.908-9.233h3.721c.661 3.65 2.685 9.233 8.908 9.233 9.233 0 9.233-9.233 9.233-9.233l3.05-.58v-2.501c-7.718-1.24-15.008-1.485-21.506 0Z"
-                  ></path>
+                  <path fill-rule="evenodd" clip-rule="evenodd"
+                    d="M42.05 8.613c2.815 0 5.192 1.879 5.955 4.494l3.64 12.792H12.253l3.64-12.792.01-.044a6.197 6.197 0 0 1 5.944-4.45H42.05ZM61.488 30.77H2.461a2.461 2.461 0 0 0 0 4.921c8.873 1.271 19.12 1.997 29.539 1.997s20.664-.726 30.696-2.131l-.598.068a2.461 2.461 0 0 0-.56-4.858l-.05.003ZM33.484 43.074h-3.05c-6.335-1.515-13.677-1.22-21.547 0v2.501l3.05.58s0 9.233 9.233 9.233c6.223 0 8.247-5.583 8.908-9.233h3.721c.661 3.65 2.685 9.233 8.908 9.233 9.233 0 9.233-9.233 9.233-9.233l3.05-.58v-2.501c-7.718-1.24-15.008-1.485-21.506 0Z">
+                  </path>
                 </svg>
-                <span class="text-sm font-semibold text-[#B1BAD3]">Hidden</span>
+                <span class="text-sm  text-[#B1BAD3]">Hidden</span>
               </div>
             </td>
-            <td
-              class="p-4 max-[745px]:hidden text-sm font-semibold text-[#B1BAD3] text-center"
-            >
+            <td class="p-4 max-[745px]:hidden text-sm  text-[#B1BAD3] text-center">
               1:16 PM
             </td>
-            <td
-              class="p-4 max-[745px]:hidden text-sm font-semibold text-[#B1BAD3] text-center"
-            >
+            <td class="p-4 max-[745px]:hidden text-sm  text-[#B1BAD3] text-center">
               2.05
             </td>
             <td class="p-4">
@@ -782,12 +617,10 @@
                     <title></title>
                     <path
                       d="M95.895 48.105C95.895 74.557 74.451 96 48 96 21.548 96 .105 74.556.105 48.105.105 21.653 21.548.21 48 .21c26.451 0 47.895 21.443 47.895 47.895Z"
-                      fill="#C2A633"
-                    ></path>
+                      fill="#C2A633"></path>
                     <path
                       d="M46.815 19.5h-16.5V45H23.55v6.255h6.765v25.5H49.5s27 2.265 27-28.185c0-29.955-25.785-29.07-29.685-29.07Zm2.28 46.74h-7.95v-15h12V45h-12V30h7.5c2.835 0 17.1 1.14 17.13 18.75.03 17.61-14.64 17.415-16.68 17.415v.075Z"
-                      fill="#fff"
-                    ></path>
+                      fill="#fff"></path>
                   </svg>
                 </span>
               </div>
@@ -798,38 +631,28 @@
               <button class="flex items-center gap-x-1">
                 <svg fill="" viewBox="0 0 96 96" class="market-icon">
                   <title></title>
-                  <path
-                    fill-rule="evenodd"
-                    clip-rule="evenodd"
-                    d="M48.021.012c13.221 0 25.191 5.346 33.87 13.99l.003-.004C90.609 22.69 96 34.71 96 47.988c0 26.511-21.489 48-48 48S0 74.5 0 47.988c0-4.275.561-8.42 1.533-12.03l4.119 4 .006.005c4.62 4.533 8.1 10.224 10.035 16.875l.054.234c2.109 7.62 6.873 14.136 13.344 18.567l-.123-.078a33.326 33.326 0 0 0 18.549 5.604c18.489 0 33.48-14.99 33.48-33.48a33.356 33.356 0 0 0-9.386-23.246c-3.927-3.887-8.801-6.82-14.482-8.482l-.285-.075A40.24 40.24 0 0 1 39.93 5.56l-3.999-4-.336.075A48.082 48.082 0 0 1 48.021.012ZM11.291 34.32l-6.76-6.759.006.003.12-.288C9.304 17.355 17.327 9.33 27.535 4.563l6.639 6.92c5.591 5.546 12.56 9.703 20.68 12.001l.18.045c10.553 3.144 18.248 12.921 18.248 24.498 0 .834-.042 1.662-.11 2.373l-.01.111c-.8 7.773-5.06 14.517-11.31 18.729l.09-.057a25.28 25.28 0 0 1-14.136 4.293c-11.664 0-21.492-7.863-24.516-18.756l-.08-.327A46.449 46.449 0 0 0 11.29 34.32Z"
-                  ></path>
+                  <path fill-rule="evenodd" clip-rule="evenodd"
+                    d="M48.021.012c13.221 0 25.191 5.346 33.87 13.99l.003-.004C90.609 22.69 96 34.71 96 47.988c0 26.511-21.489 48-48 48S0 74.5 0 47.988c0-4.275.561-8.42 1.533-12.03l4.119 4 .006.005c4.62 4.533 8.1 10.224 10.035 16.875l.054.234c2.109 7.62 6.873 14.136 13.344 18.567l-.123-.078a33.326 33.326 0 0 0 18.549 5.604c18.489 0 33.48-14.99 33.48-33.48a33.356 33.356 0 0 0-9.386-23.246c-3.927-3.887-8.801-6.82-14.482-8.482l-.285-.075A40.24 40.24 0 0 1 39.93 5.56l-3.999-4-.336.075A48.082 48.082 0 0 1 48.021.012ZM11.291 34.32l-6.76-6.759.006.003.12-.288C9.304 17.355 17.327 9.33 27.535 4.563l6.639 6.92c5.591 5.546 12.56 9.703 20.68 12.001l.18.045c10.553 3.144 18.248 12.921 18.248 24.498 0 .834-.042 1.662-.11 2.373l-.01.111c-.8 7.773-5.06 14.517-11.31 18.729l.09-.057a25.28 25.28 0 0 1-14.136 4.293c-11.664 0-21.492-7.863-24.516-18.756l-.08-.327A46.449 46.449 0 0 0 11.29 34.32Z">
+                  </path>
                 </svg>
-                <span class="text-sm truncate font-semibold text-[#d5dceb]"
-                  >IPA - CHA</span
-                >
+                <span class="text-sm truncate font-semibold text-[#d5dceb]">IPA - CHA</span>
               </button>
             </td>
             <td class="p-4 max-[745px]:hidden">
               <div class="flex justify-center gap-x-1 text-center">
                 <svg fill="" viewBox="0 0 64 64" class="ghost-icon">
                   <title></title>
-                  <path
-                    fill-rule="evenodd"
-                    clip-rule="evenodd"
-                    d="M42.05 8.613c2.815 0 5.192 1.879 5.955 4.494l3.64 12.792H12.253l3.64-12.792.01-.044a6.197 6.197 0 0 1 5.944-4.45H42.05ZM61.488 30.77H2.461a2.461 2.461 0 0 0 0 4.921c8.873 1.271 19.12 1.997 29.539 1.997s20.664-.726 30.696-2.131l-.598.068a2.461 2.461 0 0 0-.56-4.858l-.05.003ZM33.484 43.074h-3.05c-6.335-1.515-13.677-1.22-21.547 0v2.501l3.05.58s0 9.233 9.233 9.233c6.223 0 8.247-5.583 8.908-9.233h3.721c.661 3.65 2.685 9.233 8.908 9.233 9.233 0 9.233-9.233 9.233-9.233l3.05-.58v-2.501c-7.718-1.24-15.008-1.485-21.506 0Z"
-                  ></path>
+                  <path fill-rule="evenodd" clip-rule="evenodd"
+                    d="M42.05 8.613c2.815 0 5.192 1.879 5.955 4.494l3.64 12.792H12.253l3.64-12.792.01-.044a6.197 6.197 0 0 1 5.944-4.45H42.05ZM61.488 30.77H2.461a2.461 2.461 0 0 0 0 4.921c8.873 1.271 19.12 1.997 29.539 1.997s20.664-.726 30.696-2.131l-.598.068a2.461 2.461 0 0 0-.56-4.858l-.05.003ZM33.484 43.074h-3.05c-6.335-1.515-13.677-1.22-21.547 0v2.501l3.05.58s0 9.233 9.233 9.233c6.223 0 8.247-5.583 8.908-9.233h3.721c.661 3.65 2.685 9.233 8.908 9.233 9.233 0 9.233-9.233 9.233-9.233l3.05-.58v-2.501c-7.718-1.24-15.008-1.485-21.506 0Z">
+                  </path>
                 </svg>
-                <span class="text-sm font-semibold text-[#B1BAD3]">Hidden</span>
+                <span class="text-sm  text-[#B1BAD3]">Hidden</span>
               </div>
             </td>
-            <td
-              class="p-4 max-[745px]:hidden text-sm font-semibold text-[#B1BAD3] text-center"
-            >
+            <td class="p-4 max-[745px]:hidden text-sm  text-[#B1BAD3] text-center">
               1:16 PM
             </td>
-            <td
-              class="p-4 max-[745px]:hidden text-sm font-semibold text-[#B1BAD3] text-center"
-            >
+            <td class="p-4 max-[745px]:hidden text-sm  text-[#B1BAD3] text-center">
               2.05
             </td>
             <td class="p-4">
@@ -840,12 +663,10 @@
                     <title></title>
                     <path
                       d="M95.895 48.105C95.895 74.557 74.451 96 48 96 21.548 96 .105 74.556.105 48.105.105 21.653 21.548.21 48 .21c26.451 0 47.895 21.443 47.895 47.895Z"
-                      fill="#C2A633"
-                    ></path>
+                      fill="#C2A633"></path>
                     <path
                       d="M46.815 19.5h-16.5V45H23.55v6.255h6.765v25.5H49.5s27 2.265 27-28.185c0-29.955-25.785-29.07-29.685-29.07Zm2.28 46.74h-7.95v-15h12V45h-12V30h7.5c2.835 0 17.1 1.14 17.13 18.75.03 17.61-14.64 17.415-16.68 17.415v.075Z"
-                      fill="#fff"
-                    ></path>
+                      fill="#fff"></path>
                   </svg>
                 </span>
               </div>
@@ -856,38 +677,28 @@
               <button class="flex items-center gap-x-1">
                 <svg fill="" viewBox="0 0 96 96" class="market-icon">
                   <title></title>
-                  <path
-                    fill-rule="evenodd"
-                    clip-rule="evenodd"
-                    d="M48.021.012c13.221 0 25.191 5.346 33.87 13.99l.003-.004C90.609 22.69 96 34.71 96 47.988c0 26.511-21.489 48-48 48S0 74.5 0 47.988c0-4.275.561-8.42 1.533-12.03l4.119 4 .006.005c4.62 4.533 8.1 10.224 10.035 16.875l.054.234c2.109 7.62 6.873 14.136 13.344 18.567l-.123-.078a33.326 33.326 0 0 0 18.549 5.604c18.489 0 33.48-14.99 33.48-33.48a33.356 33.356 0 0 0-9.386-23.246c-3.927-3.887-8.801-6.82-14.482-8.482l-.285-.075A40.24 40.24 0 0 1 39.93 5.56l-3.999-4-.336.075A48.082 48.082 0 0 1 48.021.012ZM11.291 34.32l-6.76-6.759.006.003.12-.288C9.304 17.355 17.327 9.33 27.535 4.563l6.639 6.92c5.591 5.546 12.56 9.703 20.68 12.001l.18.045c10.553 3.144 18.248 12.921 18.248 24.498 0 .834-.042 1.662-.11 2.373l-.01.111c-.8 7.773-5.06 14.517-11.31 18.729l.09-.057a25.28 25.28 0 0 1-14.136 4.293c-11.664 0-21.492-7.863-24.516-18.756l-.08-.327A46.449 46.449 0 0 0 11.29 34.32Z"
-                  ></path>
+                  <path fill-rule="evenodd" clip-rule="evenodd"
+                    d="M48.021.012c13.221 0 25.191 5.346 33.87 13.99l.003-.004C90.609 22.69 96 34.71 96 47.988c0 26.511-21.489 48-48 48S0 74.5 0 47.988c0-4.275.561-8.42 1.533-12.03l4.119 4 .006.005c4.62 4.533 8.1 10.224 10.035 16.875l.054.234c2.109 7.62 6.873 14.136 13.344 18.567l-.123-.078a33.326 33.326 0 0 0 18.549 5.604c18.489 0 33.48-14.99 33.48-33.48a33.356 33.356 0 0 0-9.386-23.246c-3.927-3.887-8.801-6.82-14.482-8.482l-.285-.075A40.24 40.24 0 0 1 39.93 5.56l-3.999-4-.336.075A48.082 48.082 0 0 1 48.021.012ZM11.291 34.32l-6.76-6.759.006.003.12-.288C9.304 17.355 17.327 9.33 27.535 4.563l6.639 6.92c5.591 5.546 12.56 9.703 20.68 12.001l.18.045c10.553 3.144 18.248 12.921 18.248 24.498 0 .834-.042 1.662-.11 2.373l-.01.111c-.8 7.773-5.06 14.517-11.31 18.729l.09-.057a25.28 25.28 0 0 1-14.136 4.293c-11.664 0-21.492-7.863-24.516-18.756l-.08-.327A46.449 46.449 0 0 0 11.29 34.32Z">
+                  </path>
                 </svg>
-                <span class="text-sm truncate font-semibold text-[#d5dceb]"
-                  >IPA - CHA</span
-                >
+                <span class="text-sm truncate font-semibold text-[#d5dceb]">IPA - CHA</span>
               </button>
             </td>
             <td class="p-4 max-[745px]:hidden">
               <div class="flex justify-center gap-x-1 text-center">
                 <svg fill="" viewBox="0 0 64 64" class="ghost-icon">
                   <title></title>
-                  <path
-                    fill-rule="evenodd"
-                    clip-rule="evenodd"
-                    d="M42.05 8.613c2.815 0 5.192 1.879 5.955 4.494l3.64 12.792H12.253l3.64-12.792.01-.044a6.197 6.197 0 0 1 5.944-4.45H42.05ZM61.488 30.77H2.461a2.461 2.461 0 0 0 0 4.921c8.873 1.271 19.12 1.997 29.539 1.997s20.664-.726 30.696-2.131l-.598.068a2.461 2.461 0 0 0-.56-4.858l-.05.003ZM33.484 43.074h-3.05c-6.335-1.515-13.677-1.22-21.547 0v2.501l3.05.58s0 9.233 9.233 9.233c6.223 0 8.247-5.583 8.908-9.233h3.721c.661 3.65 2.685 9.233 8.908 9.233 9.233 0 9.233-9.233 9.233-9.233l3.05-.58v-2.501c-7.718-1.24-15.008-1.485-21.506 0Z"
-                  ></path>
+                  <path fill-rule="evenodd" clip-rule="evenodd"
+                    d="M42.05 8.613c2.815 0 5.192 1.879 5.955 4.494l3.64 12.792H12.253l3.64-12.792.01-.044a6.197 6.197 0 0 1 5.944-4.45H42.05ZM61.488 30.77H2.461a2.461 2.461 0 0 0 0 4.921c8.873 1.271 19.12 1.997 29.539 1.997s20.664-.726 30.696-2.131l-.598.068a2.461 2.461 0 0 0-.56-4.858l-.05.003ZM33.484 43.074h-3.05c-6.335-1.515-13.677-1.22-21.547 0v2.501l3.05.58s0 9.233 9.233 9.233c6.223 0 8.247-5.583 8.908-9.233h3.721c.661 3.65 2.685 9.233 8.908 9.233 9.233 0 9.233-9.233 9.233-9.233l3.05-.58v-2.501c-7.718-1.24-15.008-1.485-21.506 0Z">
+                  </path>
                 </svg>
-                <span class="text-sm font-semibold text-[#B1BAD3]">Hidden</span>
+                <span class="text-sm  text-[#B1BAD3]">Hidden</span>
               </div>
             </td>
-            <td
-              class="p-4 max-[745px]:hidden text-sm font-semibold text-[#B1BAD3] text-center"
-            >
+            <td class="p-4 max-[745px]:hidden text-sm  text-[#B1BAD3] text-center">
               1:16 PM
             </td>
-            <td
-              class="p-4 max-[745px]:hidden text-sm font-semibold text-[#B1BAD3] text-center"
-            >
+            <td class="p-4 max-[745px]:hidden text-sm  text-[#B1BAD3] text-center">
               2.05
             </td>
             <td class="p-4">
@@ -898,12 +709,10 @@
                     <title></title>
                     <path
                       d="M95.895 48.105C95.895 74.557 74.451 96 48 96 21.548 96 .105 74.556.105 48.105.105 21.653 21.548.21 48 .21c26.451 0 47.895 21.443 47.895 47.895Z"
-                      fill="#C2A633"
-                    ></path>
+                      fill="#C2A633"></path>
                     <path
                       d="M46.815 19.5h-16.5V45H23.55v6.255h6.765v25.5H49.5s27 2.265 27-28.185c0-29.955-25.785-29.07-29.685-29.07Zm2.28 46.74h-7.95v-15h12V45h-12V30h7.5c2.835 0 17.1 1.14 17.13 18.75.03 17.61-14.64 17.415-16.68 17.415v.075Z"
-                      fill="#fff"
-                    ></path>
+                      fill="#fff"></path>
                   </svg>
                 </span>
               </div>
