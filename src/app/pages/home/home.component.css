@@ -161,7 +161,7 @@
 }
 
 .sports-card{
-    @apply hover:translate-y-[-5px]
+    @apply hover:translate-y-[-5px] overflow-y-visible
 }
 
 .ribbon {

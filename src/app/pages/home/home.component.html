@@ -421,12 +421,14 @@
     </div>
 
     <!-- Sports Slider Content -->
-    <ngx-slick-carousel class="carousel mt-2" #sportsSlider="slick-carousel" [config]="topSportsConfig"
+    <ngx-slick-carousel class="carousel mt-2 overflow-y-visible" #sportsSlider="slick-carousel" [config]="topSportsConfig"
       (init)="sportsSlickInit($event)" (afterChange)="sportsAfterChange($event)">
       @for (slide of sports; track $index) {
       <div ngxSlickItem class="px-2 relative swiper-slide-sports">
-        <div class="grid relative sports-card">
-          <img loading="lazy" [src]="slide.img" alt="Slide Image" class="sports-img" height="223" draggable="false" />
+        <div class="grid relative sports-card h-[220px]">
+          <div class="rounded-lg h-[210px]">
+          <img loading="lazy" [src]="slide.img" alt="Slide Image" class="sports-img mt-2" draggable="false" />
+          </div>
         </div>
         <div class="ribbon">
           <div class="tag-count">{{ slide.count }}</div>
@@ -486,12 +488,14 @@
     </div>
 
     <!-- Stake Slider Content -->
-    <ngx-slick-carousel class="carousel mt-2" #stakeSlider="slick-carousel" [config]="stakeConfig"
+    <ngx-slick-carousel class="carousel mt-2 overflow-y-visible" #stakeSlider="slick-carousel" [config]="stakeConfig"
       (init)="stakeSlickInit($event)" (afterChange)="stakeAfterChange($event)">
       @for (stake of stakes; track $index) {
       <div ngxSlickItem class="px-2 relative swiper-slide-sports">
-        <div class="grid relative sports-card">
-          <img loading="lazy" [src]="stake.img" alt="Slide Image" class="sports-img" height="223" draggable="false" />
+        <div class="grid relative sports-card h-[215px]">
+          <div class="rounded-lg h-[210px]">
+          <img loading="lazy" [src]="stake.img" alt="Slide Image" class="sports-img mt-1.5"   />
+        </div>
         </div>
         <div class="stake-player-row flex gap-2 pt-1">
           <span class="stake-dot"></span>
@@ -554,12 +558,14 @@
     </div>
 
     <!-- Providers Slider Content -->
-    <ngx-slick-carousel class="carousel mt-2" #providerSlider="slick-carousel" [config]="providerConfig"
+    <ngx-slick-carousel class="carousel mt-2 overflow-y-visible" #providerSlider="slick-carousel" [config]="providerConfig"
       (init)="providerSlickInit($event)" (afterChange)="providerAfterChange($event)">
       @for (provider of providers; track $index) {
       <div ngxSlickItem class="px-2 relative swiper-slide-sports">
-        <div class="grid relative sports-card">
-          <img loading="lazy" [src]="provider.img" alt="Slide Image" class="sports-img" draggable="false" />
+        <div class="grid relative sports-card h-[67px]">
+          <div class="rounded-lg h-[62px]">
+          <img loading="lazy" [src]="provider.img" alt="Slide Image" class="sports-img mt-1.5" draggable="false" />
+          </div>
         </div>
       </div>
       }
@@ -621,8 +627,10 @@
       (init)="casinoSlickInit($event)" (afterChange)="casinoAfterChange($event)">
       @for (casino of casinos; track $index;let i = $index) {
       <div ngxSlickItem class="px-2 relative swiper-slide-sports">
-        <div class="grid relative sports-card">
-          <img loading="lazy" [src]="casino.img" alt="Slide Image" class="sports-img" height="223" draggable="false" />
+        <div class="grid relative sports-card h-[215px]">
+          <div class="rounded-lg h-[210px]">
+          <img loading="lazy" [src]="casino.img" alt="Slide Image" class="sports-img mt-1.5"  draggable="false" />
+          </div>
         </div>
         <!-- <div class="info-wrap"  *ngIf="casinoCurrentSlideIndex === casinoSlideCount - 1"><span class="text-white">See All</span></div> -->
       </div>
