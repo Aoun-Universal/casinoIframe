@@ -26,7 +26,7 @@
 }
 
 .hero-card {
-    @apply !w-[325px] md:!w-[360px] overflow-hidden flex flex-col relative text-white bg-[#213743] rounded-[.5rem] cursor-pointer mx-2
+    @apply !ml-0 md:!ml-2  overflow-hidden flex flex-col relative text-white bg-[#213743] rounded-[.5rem] cursor-pointer mx-2
 }
 
 .card-wrapper {
@@ -687,7 +687,7 @@ tr:hover {
 }
 
 .stake-dot{
-    @apply my-auto size-[6.5px] ml-0.5 rounded-[50%] bg-[#1fff20] ; 
+    @apply my-auto size-[6.5px] ml-0.5 rounded-[50%] bg-[#1fff20] ;
     animation: pulse 1s infinite ease-out;
 }
 

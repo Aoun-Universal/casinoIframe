@@ -227,7 +227,7 @@ export class HomeComponent implements OnInit{
       description: "Finish your week with a win!",
       leaderboardText: "0 Tickets",
       timer: { days: 2, hours: 8 , minutes:5},
-      footerType: "progressBar",  // Unique identifier for different footer
+      footerType: "progressBar",
       progress: 0,
       clickFunction: this.openLeaderBoardModal.bind(this),
       InfoModal:this.openRaceModal.bind(this),
@@ -338,8 +338,8 @@ export class HomeComponent implements OnInit{
   index = 0;
 
   heroSliderConfig = {
-    slidesToShow: 2,
-    slidesToScroll: 2,
+    slidesToShow: 3,
+    slidesToScroll: 3,
     arrows: false,
     infinite: false,
     variableWidth: false,
