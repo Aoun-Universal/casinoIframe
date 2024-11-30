@@ -719,3 +719,7 @@ tr:hover {
   width: 100%;
   height: 100%;
 }
+
+.info-wrap{
+    @apply opacity-100 absolute rounded-[.5rem] top-0 left-0 w-full h-full p-3 pointer-events-none flex flex-row justify-center items-center
+}

@@ -16,7 +16,7 @@ import { BetsModalComponent } from '../../modal/bets-modal/bets-modal.component'
   imports: [ NgIf, NgClass, NgStyle, BetSlipComponent, SlickCarouselModule,NgSwitch,NgSwitchCase,LeaderboardComponent,RaceComponent, BetsModalComponent],
   templateUrl: './home.component.html',
   styleUrl: './home.component.css',
-  schemas: [CUSTOM_ELEMENTS_SCHEMA]
+  schemas: [CUSTOM_ELEMENTS_SCHEMA] 
 })
 export class HomeComponent implements OnInit{
   isLoggedIn: boolean = false;
@@ -261,27 +261,31 @@ export class HomeComponent implements OnInit{
     { img: "/assets/home/stake-18.avif", count: 930 },
   ];
 
-  casino = [
+  casinos: { img: string }[] = [
     {
-      img: "/assets/home/sport-1.avif"
+      img: "/assets/home/casino-1.avif"
     },
-    { img: "/assets/home/sport-2.avif" },
-    { img: "/assets/home/sport-3.avif" },
-    { img: "/assets/home/sport-4.avif" },
-    { img: "/assets/home/sport-5.avif" },
-    { img: "/assets/home/sport-6.avif" },
-    {
-      img: "/assets/home/sport-7.avif"
-    },
-    { img: "/assets/home/sport-8.avif" },
-    { img: "/assets/home/sport-9.avif" },
-    { img: "/assets/home/sport-10.avif" },
-    { img: "/assets/home/sport-8.avif" },
-    { img: "/assets/home/sport-9.avif" },
-    { img: "/assets/home/sport-10.avif" },
-    { img: "/assets/home/sport-8.avif" },
-    { img: "/assets/home/sport-9.avif" },
-    { img: "/assets/home/sport-10.avif" },
+    { img: "/assets/home/casino-2.avif" },
+    { img: "/assets/home/casino-3.avif" },
+    { img: "/assets/home/casino-4.avif" },
+    { img: "/assets/home/casino-5.avif" },
+    { img: "/assets/home/casino-6.avif" },
+    { img: "/assets/home/casino-7.avif" },
+    { img: "/assets/home/casino-8.avif" },
+    { img: "/assets/home/casino-9.avif" },
+    { img: "/assets/home/casino-10.avif" },
+    { img: "/assets/home/casino-11.avif" },
+    { img: "/assets/home/casino-12.avif" },
+    { img: "/assets/home/casino-13.avif" },
+    { img: "/assets/home/casino-14.avif" },
+    { img: "/assets/home/casino-15.avif" },
+    { img: "/assets/home/casino-16.avif" },
+    { img: "/assets/home/casino-17.avif" },
+    { img: "/assets/home/casino-18.avif" },
+    { img: "/assets/home/casino-19.avif" },
+    { img: "/assets/home/casino-20.avif" },
+    { img: "/assets/home/casino-21.avif" },
+    { img: "/assets/home/casino-22.avif" },
 
   ];
 
