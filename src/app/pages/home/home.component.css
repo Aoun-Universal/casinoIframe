@@ -685,3 +685,27 @@ tr:hover {
         @apply hidden
     }
 }
+
+.stake-dot{
+    @apply my-auto size-[6.5px] ml-0.5 rounded-[50%] bg-[#1fff20] ; 
+    animation: pulse 1s infinite ease-out;
+}
+
+@keyframes pulse{
+    0% {
+        box-shadow: 0 0 #00e70166;
+    }
+    30% {
+        box-shadow: 0 0 2px 2px #00e70166;
+    }
+    70% {
+        box-shadow: 0 0 2px 2px #00e70166;
+    }
+    100% {
+        box-shadow: 0 0 #00e70166;
+    }
+}
+
+.count-text{
+@apply text-white text-[.75rem] font-semibold
+}

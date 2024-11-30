@@ -36,11 +36,20 @@ export class HomeComponent implements OnInit{
   sportsSlideCount = 0;
   galleryCurrentSlideIndex = 0;
   gallerySlideCount = 0;
+  stakeCurrentSlideIndex = 0;
+  stakeSlideCount = 0;
+  casinoCurrentSlideIndex = 0;
+  casinoSlideCount = 0;
+  providerCurrentSlideIndex = 0;
+  providerSlideCount = 0;
   slides: Array<any> = [];
   searchPlaceholder: string = '';
   @ViewChild('heroSlider') heroSlider!: SlickCarouselComponent;
   @ViewChild('sportsSlider') sportsSlider!: SlickCarouselComponent;
   @ViewChild('gallerySlider') gallerySlider!: SlickCarouselComponent;
+  @ViewChild('stakeSlider') stakeSlider!: SlickCarouselComponent;
+  @ViewChild('casinoSlider') casinoSlider!: SlickCarouselComponent;
+  @ViewChild('providerSlider') providerSlider!: SlickCarouselComponent;
 
 
   constructor( private router: Router,private toggleService: ToggleService,private route: ActivatedRoute) {}
@@ -224,6 +233,103 @@ export class HomeComponent implements OnInit{
     },
   ];
 
+  stakes = [
+    {
+      img: "/assets/home/stake-1.avif",
+      count: 3469
+    },
+    { img: "/assets/home/stake-2.avif", count: 1943 },
+    { img: "/assets/home/stake-3.avif", count: 1931 },
+    { img: "/assets/home/stake-4.avif", count: 1962 },
+    { img: "/assets/home/stake-5.avif", count: 4814 },
+    { img: "/assets/home/stake-6.avif", count: 3218 },
+    {
+      img: "/assets/home/stake-7.avif",
+      count: 1450
+    },
+    { img: "/assets/home/stake-8.avif", count: 895 },
+    { img: "/assets/home/stake-9.avif", count: 930 },
+    { img: "/assets/home/stake-10.avif", count: 1414 },
+    { img: "/assets/home/stake-11.avif", count: 186 },
+    { img: "/assets/home/stake-12.avif", count: 711 },
+    { img: "/assets/home/stake-13.avif", count: 105 },
+    { img: "/assets/home/stake-14.avif", count: 895 },
+    { img: "/assets/home/stake-15.avif", count: 930 },
+    { img: "/assets/home/stake-16.avif", count: 1414 },
+    { img: "/assets/home/stake-17.avif", count: 895 },
+    { img: "/assets/home/stake-18.avif", count: 930 },
+  ];
+
+  casino = [
+    {
+      img: "/assets/home/sport-1.avif"
+    },
+    { img: "/assets/home/sport-2.avif" },
+    { img: "/assets/home/sport-3.avif" },
+    { img: "/assets/home/sport-4.avif" },
+    { img: "/assets/home/sport-5.avif" },
+    { img: "/assets/home/sport-6.avif" },
+    {
+      img: "/assets/home/sport-7.avif"
+    },
+    { img: "/assets/home/sport-8.avif" },
+    { img: "/assets/home/sport-9.avif" },
+    { img: "/assets/home/sport-10.avif" },
+    { img: "/assets/home/sport-8.avif" },
+    { img: "/assets/home/sport-9.avif" },
+    { img: "/assets/home/sport-10.avif" },
+    { img: "/assets/home/sport-8.avif" },
+    { img: "/assets/home/sport-9.avif" },
+    { img: "/assets/home/sport-10.avif" },
+
+  ];
+
+  providers = [
+    { img: "/assets/providers/pragmatic.png" },
+    { img: "/assets/providers/evolution.png" },
+    { img: "/assets/providers/hacksaw.png" },
+    { img: "/assets/providers/nolimit.jpeg" },
+    { img: "/assets/providers/play-go.png" },
+    { img: "/assets/providers/push-gaming.png" },
+    { img: "/assets/providers/real-gaming.png"},
+    { img: "/assets/providers/massive.png" },
+    { img: "/assets/providers/stake-gaming.png"},
+    { img: "/assets/providers/titan-gaming.png" },
+    { img: "/assets/providers/avatar-ux.png" },
+    { img: "/assets/providers/backseat.png" },
+    { img: "/assets/providers/twist.png" },
+    { img: "/assets/providers/octoplay.png" },
+    { img: "/assets/providers/elk-studios.png" },
+    { img: "/assets/providers/thunderkick.jpeg" },
+    { img: "/assets/providers/popiplay.png" },
+    { img: "/assets/providers/bg-gaming.png"},
+    { img: "/assets/providers/print-studios.png" },
+    { img: "/assets/providers/bullshark.png" },
+    { img: "/assets/providers/pg-gaming.jpeg" },
+    { img: "/assets/providers/netent.png" },
+    { img: "/assets/providers/btg.png" },
+    { img: "/assets/providers/red-tiger.png" },
+    { img: "/assets/providers/fantasma.png" },
+    { img: "/assets/providers/game-art.png"},
+    { img: "/assets/providers/oslotmill.png" },
+    { img: "/assets/providers/one-touch.png" },
+    { img: "/assets/providers/wazdan.png" },
+    { img: "/assets/providers/live-88.png" },
+    { img: "/assets/providers/gamomat.png" },
+    { img: "/assets/providers/games-global.png" },
+    { img: "/assets/providers/belatra.png" },
+    { img: "/assets/providers/endorphina.png" },
+    { img: "/assets/providers/true-lab.png" },
+    { img: "/assets/providers/blue-print.png" },
+    { img: "/assets/providers/redrake.png" },
+    { img: "/assets/providers/boming-games.png" },
+    { img: "/assets/providers/quick-spin.png" },
+    { img: "/assets/providers/novomatic.png" },
+    { img: "/assets/providers/oaks-gaming.png" },
+    { img: "/assets/providers/jade-rabbit.png" },
+    { img: "/assets/providers/jade-rabbit.png" },
+  ];
+
   index = 0;
 
   heroSliderConfig = {
@@ -308,6 +414,64 @@ export class HomeComponent implements OnInit{
       },
     ],
   };
+
+  stakeConfig = {
+    slidesToShow: 2,
+    slidesToScroll: 2,
+    arrows: false,
+    infinite: false,
+    variableWidth: true,
+    responsive: [
+      {
+        breakpoint: 1154,
+        settings: {
+          slidesToShow: 1,
+          slidesToScroll: 1,
+          variableWidth: true
+        }
+      },
+    ],
+
+  };
+
+  casinoConfig = {
+    slidesToShow: 2,
+    slidesToScroll: 2,
+    arrows: false,
+    infinite: false,
+    variableWidth: true,
+    responsive: [
+      {
+        breakpoint: 1154,
+        settings: {
+          slidesToShow: 1,
+          slidesToScroll: 1,
+          variableWidth: true
+        }
+      },
+    ],
+
+  };
+
+  providerConfig = {
+    slidesToShow: 2,
+    slidesToScroll: 2,
+    arrows: false,
+    infinite: false,
+    variableWidth: true,
+    responsive: [
+      {
+        breakpoint: 1154,
+        settings: {
+          slidesToShow: 1,
+          slidesToScroll: 1,
+          variableWidth: true
+        }
+      },
+    ],
+
+  };
+
   openstatisticsTableModalState() {
     this.toggleService.setstatisticsTableModalState(true)
   }
@@ -325,6 +489,18 @@ export class HomeComponent implements OnInit{
     this.gallerySlideCount = e.slick.slideCount;
   }
 
+  stakeSlickInit(e: any) {
+    this.stakeSlideCount = e.slick.slideCount;
+  }
+
+  casinoSlickInit(e: any) {
+    this.casinoSlideCount = e.slick.slideCount;
+  }
+
+  providerSlickInit(e: any) {
+    this.providerSlideCount = e.slick.slideCount;
+  }
+
   heroAfterChange(e: any) {
     this.heroCurrentSlideIndex = e.currentSlide;
   }
@@ -335,6 +511,18 @@ export class HomeComponent implements OnInit{
 
   sportsAfterChange(e: any) {
     this.sportsCurrentSlideIndex = e.currentSlide;
+  }
+
+  stakeAfterChange(e: any) {
+    this.stakeCurrentSlideIndex = e.currentSlide;
+  }
+
+  providerAfterChange(e: any) {
+    this.providerCurrentSlideIndex = e.currentSlide;
+  }
+
+  casinoAfterChange(e: any) {
+    this.casinoCurrentSlideIndex = e.currentSlide;
   }
 
   heroPrev() {
@@ -355,6 +543,24 @@ export class HomeComponent implements OnInit{
     }
   }
 
+  stakesPrev() {
+    if (this.stakeCurrentSlideIndex !== 0) {
+      this.stakeSlider.slickPrev();
+    }
+  }
+
+  casinoPrev() {
+    if (this.casinoCurrentSlideIndex !== 0) {
+      this.casinoSlider.slickPrev();
+    }
+  }
+
+  providerPrev() {
+    if (this.providerCurrentSlideIndex !== 0) {
+      this.providerSlider.slickPrev();
+    }
+  }
+
   heroNext() {
     if (this.heroCurrentSlideIndex !== this.heroSlideCount) {
       this.heroSlider.slickNext();
@@ -364,6 +570,24 @@ export class HomeComponent implements OnInit{
   sportsNext() {
     if (this.sportsCurrentSlideIndex !== this.sportsSlideCount) {
       this.sportsSlider.slickNext();
+    }
+  }
+
+  stakesNext() {
+    if (this.stakeCurrentSlideIndex !== this.stakeSlideCount) {
+      this.stakeSlider.slickNext();
+    }
+  }
+
+  casinoNext() {
+    if (this.casinoCurrentSlideIndex !== this.casinoSlideCount) {
+      this.casinoSlider.slickNext();
+    }
+  }
+
+  providerNext() {
+    if (this.providerCurrentSlideIndex !== this.providerSlideCount) {
+      this.providerSlider.slickNext();
     }
   }
 
