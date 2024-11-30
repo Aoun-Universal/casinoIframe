@@ -13,39 +13,14 @@ import { BetsModalComponent } from '../../modal/bets-modal/bets-modal.component'
 @Component({
   selector: 'app-home',
   standalone: true,
-  imports: [NgFor, NgIf, NgClass, NgStyle, BetSlipComponent, SlickCarouselModule,NgSwitch,NgSwitchCase,StatisticsModalTableComponent,LeaderboardComponent,RaceComponent, BetsModalComponent],
+  imports: [ NgIf, NgClass, NgStyle, BetSlipComponent, SlickCarouselModule,NgSwitch,NgSwitchCase,LeaderboardComponent,RaceComponent, BetsModalComponent],
   templateUrl: './home.component.html',
   styleUrl: './home.component.css',
   schemas: [CUSTOM_ELEMENTS_SCHEMA]
 })
 export class HomeComponent implements OnInit{
   isLoggedIn: boolean = false;
-  routeType: string = '';
-
-
-  constructor( private router: Router,private toggleService: ToggleService,private route: ActivatedRoute) {}
-
-  ngOnInit() {
-    // Retrieve the route type from data
-    this.routeType = this.route.snapshot.data['type'];
-
-    // Set login status based on route type
-    this.isLoggedIn = this.routeType === 'authenticated' ? this.isUserLoggedIn() : true;
-  }
-  isUserLoggedIn(): boolean {
-    return true;
-  }
-
-  navigateTo(path: string): void {
-    this.router.navigate([path]);
-  }
-
-
-  @ViewChild('heroSlider') heroSlider!: SlickCarouselComponent;
-  @ViewChild('sportsSlider') sportsSlider!: SlickCarouselComponent;
-  @ViewChild('gallerySlider') gallerySlider!: SlickCarouselComponent;
-
-
+  routeType: 'sport' | 'casino' | 'authenticated' | '' = '';
   // Navigate to specific routes
   isMarketOpen = true;
   isMarketOpen2 = true;
@@ -61,51 +36,152 @@ export class HomeComponent implements OnInit{
   sportsSlideCount = 0;
   galleryCurrentSlideIndex = 0;
   gallerySlideCount = 0;
-  slides = [
-    {
-      img: "/assets/home/1.avif",
-      badge: "Promo",
-      title: "Industry-Best Election Odds",
-      description: "Bet With Stake Today.",
-      buttonText: "View Market"
-    },
-    {
-      img: "/assets/home/2.avif",
-      badge: "Politics",
-      title: "Live Betting During Election",
-      description: "Plus Bingo Markets & More.",
-      buttonText: "Bet Now"
-    },
-    {
-      img: "/assets/home/3.webp",
-      badge: "Promo",
-      title: "Champions League",
-      description: "Early Goal Payout.",
-      buttonText: "Bet Now"
-    },
-    {
-      img: "/assets/home/4.webp",
-      badge: "Promo",
-      title: "NBA - 3rd Quarter Payout",
-      description: "Insurance For Bad Beats",
-      buttonText: "View Matches"
-    },
-    {
-      img: "/assets/home/5.webp",
-      badge: "Promo",
-      title: "WTA Finals ",
-      description: "Final Set Tiebreaker Payout.",
-      buttonText: "Bet Now"
-    },
-    {
-      img: "/assets/home/6.webp",
-      badge: "Promo",
-      title: "NHL",
-      description: "2+ Lead Payout",
-      buttonText: "Bet Now"
-    },
+  slides: Array<any> = [];
+  searchPlaceholder: string = '';
+  @ViewChild('heroSlider') heroSlider!: SlickCarouselComponent;
+  @ViewChild('sportsSlider') sportsSlider!: SlickCarouselComponent;
+  @ViewChild('gallerySlider') gallerySlider!: SlickCarouselComponent;
 
-  ];
+
+  constructor( private router: Router,private toggleService: ToggleService,private route: ActivatedRoute) {}
+
+  ngOnInit() {
+    const currentPath = this.route.snapshot.routeConfig?.path || '';
+    console.log('Current Route Path:', currentPath);
+
+    // Assign routeType based on the route
+    if (currentPath.includes('sport')) {
+      this.routeType = 'sport';
+    } else if (currentPath.includes('casino')) {
+      this.routeType = 'casino';
+    } else if (currentPath.includes('authenticated')) {
+      this.routeType = 'authenticated';
+    } else {
+      this.routeType = '';
+    }
+
+    console.log('Route Type:', this.routeType);
+
+    // Set placeholders and login status
+    this.searchPlaceholder = this.routeType === 'sport' ? 'Search your event' : 'Search your game';
+    this.isLoggedIn = this.routeType === 'authenticated' ? this.isUserLoggedIn() : true;
+
+    // Set up slides based on the route type
+    this.setupSlides();
+  }
+
+  isUserLoggedIn(): boolean {
+    return true;
+  }
+
+  navigateTo(path: string): void {
+    this.router.navigate([path]);
+  }
+
+  setupSlides() {
+    if(this.routeType === 'casino'){
+      this.slides = [
+        {
+          img: "/assets/home/daily-races.avif",
+          badge: "Promo",
+          title: "Daily Races",
+          description: "Play in our $100,000 Daily Race",
+          buttonText: "Race Now"
+        },
+        {
+          img: "/assets/home/weekly-raffle.avif",
+          badge: "Promo",
+          title: "Weekly Raffle",
+          description: "Share in $75,000 each week",
+          buttonText: "Learn More"
+        },
+        {
+          img: "/assets/home/conquer-casino.avif",
+          badge: "Promo",
+          title: "Conquer the Casino",
+          description: "Win a share in $50,000 every week",
+          buttonText: "Play Now"
+        },
+        {
+          img: "/assets/home/stake-vs-eddie.avif",
+          badge: "Promo",
+          title: "Stake vs Eddie",
+          description: "Win a share in $30,000 every week",
+          buttonText: "Play Now"
+        },
+        {
+          img: "/assets/home/chaos.avif",
+          badge: "Promo",
+          title: "Chaos Collector",
+          description: "Win a share in $10,000 every week",
+          buttonText: "Play Now"
+        },
+        {
+          img: "/assets/home/level-up.avif",
+          badge: "Promo",
+          title: "The Level Up",
+          description: "Win a share in $20,000 every week",
+          buttonText: "Play Now"
+        },
+        {
+          img: "/assets/home/multiplier-races.avif",
+          badge: "Promo",
+          title: "Multiplier Race",
+          description: "Win a share in $10,000 every week",
+          buttonText: "Play Now"
+        },
+
+      ]
+    }else if(this.routeType === 'sport'){
+       this.slides = [
+         {
+           img: "/assets/home/1.avif",
+           badge: "Promo",
+           title: "Industry-Best Election Odds",
+           description: "Bet With Stake Today.",
+           buttonText: "View Market"
+         },
+         {
+           img: "/assets/home/2.avif",
+           badge: "Politics",
+           title: "Live Betting During Election",
+           description: "Plus Bingo Markets & More.",
+           buttonText: "Bet Now"
+         },
+         {
+           img: "/assets/home/3.webp",
+           badge: "Promo",
+           title: "Champions League",
+           description: "Early Goal Payout.",
+           buttonText: "Bet Now"
+         },
+         {
+           img: "/assets/home/4.webp",
+           badge: "Promo",
+           title: "NBA - 3rd Quarter Payout",
+           description: "Insurance For Bad Beats",
+           buttonText: "View Matches"
+         },
+         {
+           img: "/assets/home/5.webp",
+           badge: "Promo",
+           title: "WTA Finals ",
+           description: "Final Set Tiebreaker Payout.",
+           buttonText: "Bet Now"
+         },
+         {
+           img: "/assets/home/6.webp",
+           badge: "Promo",
+           title: "NHL",
+           description: "2+ Lead Payout",
+           buttonText: "Bet Now"
+         },
+
+       ];
+    }
+
+
+  }
   sports = [
     {
       img: "/assets/home/sport-1.avif",
