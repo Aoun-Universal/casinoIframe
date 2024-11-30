@@ -305,7 +305,7 @@
 
 /* Market name */
 .market-name{
-    @apply px-2 w-full [grid-column:1/span_12] md:[grid-column:7/span_4] relative items-center text-center bg-[#213743] 
+    @apply px-2 w-full [grid-column:1/span_12] md:[grid-column:7/span_4] relative items-center text-center bg-[#213743]
 }
 
 .market-name span{
@@ -708,4 +708,14 @@ tr:hover {
 
 .count-text{
 @apply text-white text-[.75rem] font-semibold
+}
+.text_container::before {
+  background: linear-gradient(0deg, #0f212e 0%, rgba(15, 33, 46, 0) 100%);
+  position: absolute;
+  z-index: 1;
+  top: 0;
+  left: 0;
+  content: "";
+  width: 100%;
+  height: 100%;
 }

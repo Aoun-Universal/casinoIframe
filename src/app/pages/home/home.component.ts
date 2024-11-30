@@ -44,6 +44,7 @@ export class HomeComponent implements OnInit{
   providerSlideCount = 0;
   slides: Array<any> = [];
   searchPlaceholder: string = '';
+  soccerBettingOddsState: boolean = false;
   @ViewChild('heroSlider') heroSlider!: SlickCarouselComponent;
   @ViewChild('sportsSlider') sportsSlider!: SlickCarouselComponent;
   @ViewChild('gallerySlider') gallerySlider!: SlickCarouselComponent;
@@ -644,5 +645,7 @@ export class HomeComponent implements OnInit{
   setLiveTabActive(tab: string) {
     this.LiveTab = tab;
   }
-
+  toggleSoccerBettingOddState() {
+    this.soccerBettingOddsState = !this.soccerBettingOddsState;
+  }
 }
