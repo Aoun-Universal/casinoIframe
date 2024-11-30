@@ -298,7 +298,7 @@
                         </div>
                     </div>
                     <!-- Balance Toggle -->
-                    <div class="balance-toggle svelte-51jofe" data-test="balance-toggle">
+                    <div class="balance-toggle svelte-51jofe" data-test="balance-toggle" *ngIf="token">
                         <div class="coin-toggle svelte-1hjozqf mbl-coin-toggle">
                             <div class="wrapper currency-view-compact close-dropdown svelte-1hjozqf">
                                 <div class="dropdown ">
@@ -380,7 +380,7 @@
                     <section>
                         <div
                             class="stack stack-right y-center gap-none padding-none direction-horizontal padding-left-auto padding-top-auto padding-bottom-auto padding-right-auto svelte-1cd1boi">
-                            <div class="dropdown svelte-1iau4lg transparent flex gap-[3px]">
+                            <div class="dropdown svelte-1iau4lg transparent flex gap-[3px]" *ngIf="token">
                                 <button type="button" class="porfile-iocn close-dropdown"
                                     (click)="toggleDropdown('porfileDropOpen')">
                                     <img src="/assets/header/porfile.png" class="svg-icon ">
@@ -443,6 +443,12 @@
                                     <div></div>
                                 </div>
                             </div>
+                        </div>
+                    </section>
+                    <section class="" *ngIf="!token">
+                        <div class="stack x-flex-end  svelte-right">
+                            <button type="button" class="sign-in" (click)=" showLogin()">Sign In</button>
+                            <button type="button" class="Register" (click)="showSignUp()">Register</button>
                         </div>
                     </section>
                 </div>
