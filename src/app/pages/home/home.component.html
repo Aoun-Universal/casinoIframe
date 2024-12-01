@@ -424,7 +424,7 @@
     <ngx-slick-carousel class="carousel mt-2 overflow-y-visible" #sportsSlider="slick-carousel" [config]="topSportsConfig"
       (init)="sportsSlickInit($event)" (afterChange)="sportsAfterChange($event)">
       @for (slide of sports; track $index) {
-      <div ngxSlickItem class="px-2 relative swiper-slide-sports">
+      <div ngxSlickItem class="px-2relative swiper-slide-sports">
         <div class="grid relative sports-card h-[220px]">
           <div class="rounded-lg h-[210px]">
           <img loading="lazy" [src]="slide.img" alt="Slide Image" class="sports-img mt-2" draggable="false" />
@@ -561,7 +561,7 @@
     <ngx-slick-carousel class="carousel mt-2 overflow-y-visible" #providerSlider="slick-carousel" [config]="providerConfig"
       (init)="providerSlickInit($event)" (afterChange)="providerAfterChange($event)">
       @for (provider of providers; track $index) {
-      <div ngxSlickItem class="px-2 relative swiper-slide-sports">
+      <div ngxSlickItem class="px-1 relative swiper-slide-sports">
         <div class="grid relative sports-card h-[67px]">
           <div class="rounded-lg h-[62px]">
           <img loading="lazy" [src]="provider.img" alt="Slide Image" class="sports-img mt-1.5" draggable="false" />
@@ -626,7 +626,7 @@
     <ngx-slick-carousel class="carousel mt-2" #casinoSlider="slick-carousel" [config]="casinoConfig"
       (init)="casinoSlickInit($event)" (afterChange)="casinoAfterChange($event)">
       @for (casino of casinos; track $index;let i = $index) {
-      <div ngxSlickItem class="px-2 relative swiper-slide-sports">
+      <div ngxSlickItem class="px-1 relative swiper-slide-sports">
         <div class="grid relative sports-card h-[215px]">
           <div class="rounded-lg h-[210px]">
           <img loading="lazy" [src]="casino.img" alt="Slide Image" class="sports-img mt-1.5"  draggable="false" />

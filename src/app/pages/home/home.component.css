@@ -18,7 +18,7 @@
 }
 
 .swiper-slide-sports {
-  @apply mr-5 !w-[150px];
+  @apply md:mr-[11px] mr-[3px] w-[113px] md:!w-[150px];
 }
 
 .slide img {
@@ -156,7 +156,7 @@
 
 /* Top sports slider */
 .sports-img {
-  @apply w-[157px] max-w-[167px] rounded-lg;
+  @apply lg:w-[150px] w-[113px] max-w-[150px] rounded-lg;
 }
 
 .sports-card {
@@ -671,8 +671,8 @@ tr:hover {
   grid-area: footer;
 }
 
-::ng-deep .slick-slider{
-    @apply -translate-x-2
+::ng-deep .slick-slider {
+  @apply -translate-x-2;
 }
 
 /* ::ng-deep .slider-margin{
