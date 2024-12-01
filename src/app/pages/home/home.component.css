@@ -759,3 +759,16 @@ tr:hover {
 .info-wrap {
   @apply opacity-100 absolute rounded-[.5rem] top-0 left-0 w-full h-full p-3 pointer-events-none flex flex-row justify-center items-center;
 }
+.slick-carousel {
+  margin: 10px;
+}
+.image-card {
+  padding: 3px;
+}
+.card-image {
+  width: 100%;
+  height: auto;
+  border-radius: 8px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+  object-fit: cover;
+}

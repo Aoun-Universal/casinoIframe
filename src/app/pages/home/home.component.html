@@ -488,23 +488,35 @@
     </div>
 
     <!-- Stake Slider Content -->
-    <ngx-slick-carousel class="carousel mt-2 overflow-y-visible" #stakeSlider="slick-carousel" [config]="stakeConfig"
-      (init)="stakeSlickInit($event)" (afterChange)="stakeAfterChange($event)">
-      @for (stake of stakes; track $index) {
-      <div ngxSlickItem class="px-2 relative swiper-slide-sports">
-        <div class="grid relative sports-card md:h-[215px] h-[155px]">
-          <div class="rounded-lg   md:h-[210px] h-[151px]">
-          <img loading="lazy" [src]="stake.img" alt="Slide Image" class="sports-img mt-1.5"   />
-        </div>
-        </div>
-        <div class="stake-player-row flex gap-2 pt-1">
-          <span class="stake-dot"></span>
-          <span class="count-text"> {{stake.count}} <span class="text-[#b1bad3] text-xs">playing</span></span>
+<!--    <ngx-slick-carousel class="carousel mt-2 overflow-y-visible" #stakeSlider="slick-carousel" [config]="stakeConfig"-->
+<!--      (init)="stakeSlickInit($event)" (afterChange)="stakeAfterChange($event)">-->
+<!--      @for (stake of stakes; track $index) {-->
+<!--      <div ngxSlickItem class="px-2 relative swiper-slide-sports">-->
+<!--        <div class="grid relative sports-card md:h-[215px] h-[155px]">-->
+<!--          <div class="rounded-lg   md:h-[210px] h-[151px]">-->
+<!--          <img loading="lazy" [src]="stake.img" alt="Slide Image" class="sports-img mt-1.5"   />-->
+<!--        </div>-->
+<!--        </div>-->
+<!--        <div class="stake-player-row flex gap-2 pt-1">-->
+<!--          <span class="stake-dot"></span>-->
+<!--          <span class="count-text"> {{stake.count}} <span class="text-[#b1bad3] text-xs">playing</span></span>-->
 
+<!--        </div>-->
+<!--      </div>-->
+<!--      }-->
+<!--    </ngx-slick-carousel>-->
+    <div class="slick-carousel">
+      <ngx-slick-carousel
+        class="carousel"
+        [config]="slideConfig"
+      >
+        <div ngxSlickItem *ngFor="let stake of stakes" class="image-card">
+          <img loading="lazy" [src]="stake.img" alt="Image" class="card-image" />
         </div>
-      </div>
-      }
-    </ngx-slick-carousel>
+      </ngx-slick-carousel>
+    </div>
+
+
 
   </div>
 

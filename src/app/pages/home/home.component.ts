@@ -1,9 +1,8 @@
-import { NgClass, NgFor, NgIf, NgStyle, NgSwitch, NgSwitchCase } from '@angular/common';
+import {CommonModule, NgClass, NgIf, NgStyle, NgSwitch, NgSwitchCase} from '@angular/common';
 import {Component, CUSTOM_ELEMENTS_SCHEMA, HostListener, OnInit, ViewChild} from '@angular/core';
 import { ToggleService } from '../../services/toggle.service';
 import { BetSlipComponent } from '../../shared/bet-slip/bet-slip.component';
 import { SlickCarouselComponent, SlickCarouselModule } from 'ngx-slick-carousel';
-import { StatisticsModalTableComponent } from "../../modal/statistics-modal-table/statistics-modal-table.component";
 import { LeaderboardComponent } from '../../modal/leaderboard/leaderboard.component';
 import { RaceComponent } from '../../modal/race/race.component';
 import {ActivatedRoute, Router } from '@angular/router';
@@ -13,10 +12,10 @@ import { BetsModalComponent } from '../../modal/bets-modal/bets-modal.component'
 @Component({
   selector: 'app-home',
   standalone: true,
-  imports: [ NgIf, NgClass, NgStyle, BetSlipComponent, SlickCarouselModule,NgSwitch,NgSwitchCase,LeaderboardComponent,RaceComponent, BetsModalComponent],
+  imports: [ NgIf,CommonModule, NgClass, NgStyle, BetSlipComponent, SlickCarouselModule,NgSwitch,NgSwitchCase,LeaderboardComponent,RaceComponent, BetsModalComponent],
   templateUrl: './home.component.html',
   styleUrl: './home.component.css',
-  schemas: [CUSTOM_ELEMENTS_SCHEMA] 
+  schemas: [CUSTOM_ELEMENTS_SCHEMA]
 })
 export class HomeComponent implements OnInit{
   isLoggedIn: boolean = false;
@@ -421,8 +420,8 @@ export class HomeComponent implements OnInit{
   };
 
   stakeConfig = {
-    slidesToShow: 2,
-    slidesToScroll: 2,
+    slidesToShow: 3,
+    slidesToScroll: 3,
     arrows: false,
     infinite: false,
     variableWidth: true,
@@ -652,4 +651,32 @@ export class HomeComponent implements OnInit{
   toggleSoccerBettingOddState() {
     this.soccerBettingOddsState = !this.soccerBettingOddsState;
   }
+
+  slideConfig = {
+    slidesToShow: 7,
+    slidesToScroll: 1,
+    infinite: true,
+    arrows:false,
+    navigation:false,
+    responsive: [
+      {
+        breakpoint: 1024,
+        settings: {
+          slidesToShow: 7,
+        },
+      },
+      {
+        breakpoint: 768,
+        settings: {
+          slidesToShow: 3,
+        },
+      },
+      {
+        breakpoint: 480,
+        settings: {
+          slidesToShow: 3,
+        },
+      },
+    ],
+  };
 }
