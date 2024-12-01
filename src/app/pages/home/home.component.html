@@ -426,7 +426,7 @@
       @for (slide of sports; track $index) {
       <div ngxSlickItem class="px-2relative swiper-slide-sports">
         <div class="grid relative sports-card h-[220px]">
-          <div class="rounded-lg h-[210px]">
+          <div class="rounded-lg h-[210px] ">
           <img loading="lazy" [src]="slide.img" alt="Slide Image" class="sports-img mt-2" draggable="false" />
           </div>
         </div>
@@ -492,8 +492,8 @@
       (init)="stakeSlickInit($event)" (afterChange)="stakeAfterChange($event)">
       @for (stake of stakes; track $index) {
       <div ngxSlickItem class="px-2 relative swiper-slide-sports">
-        <div class="grid relative sports-card h-[215px]">
-          <div class="rounded-lg h-[210px]">
+        <div class="grid relative sports-card md:h-[215px] h-[155px]">
+          <div class="rounded-lg   md:h-[210px] h-[151px]">
           <img loading="lazy" [src]="stake.img" alt="Slide Image" class="sports-img mt-1.5"   />
         </div>
         </div>
@@ -628,7 +628,7 @@
       @for (casino of casinos; track $index;let i = $index) {
       <div ngxSlickItem class="px-1 relative swiper-slide-sports">
         <div class="grid relative sports-card h-[215px]">
-          <div class="rounded-lg h-[210px]">
+          <div class="rounded-lg  md:h-[210px] h-[151px]">
           <img loading="lazy" [src]="casino.img" alt="Slide Image" class="sports-img mt-1.5"  draggable="false" />
           </div>
         </div>
