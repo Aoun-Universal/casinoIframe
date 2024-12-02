@@ -616,8 +616,9 @@
     <!-- Casino Slider Content -->
 
 
-    <div class="slick-carousel">
-      <ngx-slick-carousel class="carousel" [config]="casinoConfig" #casinoSlider="slick-carousel">
+    <div class="slick-carousel overflow-x-auto
+">
+      <ngx-slick-carousel class="carousel overflow-x-auto" [config]="casinoConfig" #casinoSlider="slick-carousel">
         <div ngxSlickItem *ngFor="let stake of casinos" class="image-card">
           <img [src]="stake.img" alt="Image" class="card-image" />
           <!-- <div class="stake-player-row flex gap-2 pt-1">

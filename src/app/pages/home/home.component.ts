@@ -629,7 +629,7 @@ export class HomeComponent implements OnInit {
     infinite: true,
     arrows: false,
     navigation: false,
-    // swipeToSlide: true,
+    swipeToSlide: true,
     responsive: [
       {
         breakpoint: 1024,
