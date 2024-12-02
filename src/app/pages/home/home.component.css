@@ -30,7 +30,7 @@
 }
 
 .card-wrapper {
-  @apply grid relative overflow-hidden [transform:scale(1)] [grid-template-columns:55%_50%] md:[grid-template-columns:45%_55%] h-[13.75rem];
+  @apply grid relative overflow-hidden [transform:scale(1)] [grid-template-columns:55%_50%] md:[grid-template-columns:45%_55%] md:h-[13.75rem] h-[252px];
 }
 
 .content-wrapper {
@@ -759,10 +759,10 @@ tr:hover {
   @apply opacity-100 absolute rounded-[.5rem] top-0 left-0 w-full h-full p-3 pointer-events-none flex flex-row justify-center items-center;
 }
 .slick-carousel {
-  @apply md:m-2.5 my-2.5 max-md:!px-0;
+  @apply md:my-[8.5px] my-2 max-md:!px-0;
 }
 .image-card {
-  padding: 3px;
+  @apply py-[3px] pr-[15px];
 }
 .card-image {
   width: 100%;

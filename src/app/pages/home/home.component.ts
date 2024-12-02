@@ -382,7 +382,7 @@ export class HomeComponent implements OnInit {
     }
   }
 
- 
+
 
   galleryConfig = {
     slidesToShow: 2,
@@ -421,7 +421,7 @@ export class HomeComponent implements OnInit {
 
   };
 
- 
+
 
   openstatisticsTableModalState() {
     this.toggleService.setstatisticsTableModalState(true)
@@ -489,9 +489,9 @@ export class HomeComponent implements OnInit {
   }
 
   sportsPrev() {
-    
-      this.sportsSlider.slickPrev();
-    
+
+    this.sportsSlider.slickPrev();
+
   }
 
   stakesPrev() {
@@ -517,7 +517,7 @@ export class HomeComponent implements OnInit {
 
   sportsNext() {
 
-      this.sportsSlider.slickNext();
+    this.sportsSlider.slickNext();
   }
 
   stakesNext() {
@@ -532,7 +532,7 @@ export class HomeComponent implements OnInit {
   }
 
   providerNext() {
-      this.providerSlider.slickNext();
+    this.providerSlider.slickNext();
   }
 
   openBetModal() {
@@ -593,7 +593,7 @@ export class HomeComponent implements OnInit {
   }
 
   slideConfig = {
-    slidesToShow: 7,
+    slidesToShow: 6.4,
     slidesToScroll: 1,
     infinite: false,
     arrows: false,
@@ -623,7 +623,7 @@ export class HomeComponent implements OnInit {
   };
 
   casinoConfig = {
-    slidesToShow: 7,
+    slidesToShow: 6.4,
     slidesToScroll: 1,
     infinite: false,
     arrows: false,
@@ -652,7 +652,7 @@ export class HomeComponent implements OnInit {
   };
 
   providerConfig = {
-    slidesToShow: 7,
+    slidesToShow: 6.4,
     slidesToScroll: 1,
     infinite: false,
     arrows: false,
@@ -681,7 +681,7 @@ export class HomeComponent implements OnInit {
   };
 
   topSportsConfig = {
-    slidesToShow: 7,
+    slidesToShow: 6.4,
     slidesToScroll: 1,
     infinite: false,
     arrows: false,
