@@ -1,7 +1,8 @@
-import { CommonModule } from '@angular/common';
+import {CommonModule, Location} from '@angular/common';
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, FormsModule, ReactiveFormsModule, Validators } from '@angular/forms';
 import { ToggleService } from '../../services/toggle.service';
+
 
 @Component({
   selector: 'app-register',
@@ -20,7 +21,7 @@ export class RegisterComponent implements OnInit {
   isChecked = false;
   signUpState = false
 
-  constructor(private fb: FormBuilder, private toggle:ToggleService) {
+  constructor(private fb: FormBuilder, private toggle:ToggleService,private location:Location) {
     this.registerForm = this.fb.group({
       email: ['', [Validators.required, Validators.email]],
       username: ['', [Validators.required, Validators.minLength(3), Validators.maxLength(14)]],
@@ -70,11 +71,12 @@ export class RegisterComponent implements OnInit {
     this.isCode = !this.isCode
   }
 
- 
+
 
   closeModal(){
-  this.toggle.setSignUp(false)
+  this.toggle.setSignUp(false);
+  this.location.back();
   }
-  
+
 
 }

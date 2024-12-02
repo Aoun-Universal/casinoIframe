@@ -5,6 +5,7 @@ import { ToggleService } from '../../services/toggle.service';
 import { Router } from '@angular/router';
 import { AuthService } from '../../services/auth.service';
 import { ForgotPasswordComponent } from '../forgot-password/forgot-password.component';
+import { Location } from '@angular/common';
 
 @Component({
   selector: 'app-login',
@@ -23,7 +24,8 @@ export class LoginComponent implements OnInit {
     private fb: FormBuilder,
     private toggle: ToggleService,
     private router: Router,
-    private authService: AuthService
+    private authService: AuthService,
+    private location: Location
   ) {
     this.loginForm = this.fb.group({
       emailOrName: ['', [Validators.required, Validators.minLength(3)]],
@@ -46,7 +48,7 @@ export class LoginComponent implements OnInit {
     if (emailOrName === 'admin@gmail.com' && password === 'Abcd1234@') {
       this.authService.login();
       this.router.navigateByUrl('/home').then(() => {
-        window.location.reload(); 
+        window.location.reload();
       });
       this.toggle.setLogin(false);
     } else {
@@ -64,6 +66,7 @@ export class LoginComponent implements OnInit {
 
   closeModal() {
     this.toggle.setLogin(false);
+    this.location.back();
   }
 
   onSubmit() {
