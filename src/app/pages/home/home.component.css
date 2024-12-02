@@ -646,7 +646,6 @@ tr:hover {
   --radius: calc((var(--size) - var(--stroke-width)) / 2);
   --circumference: calc(var(--radius) * pi * 2);
   --dash: calc((25.3 * var(--circumference)) / 100);
-  background: var(--grey-600);
 }
 
 .svelte-9imt6m {
