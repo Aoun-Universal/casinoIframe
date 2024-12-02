@@ -616,6 +616,7 @@ export class HomeComponent implements OnInit {
         breakpoint: 480,
         settings: {
           slidesToShow: 3,
+          slidesToScroll: 3
         },
       },
     ],
