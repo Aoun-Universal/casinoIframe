@@ -1,23 +1,23 @@
-import {CommonModule, NgClass, NgIf, NgStyle, NgSwitch, NgSwitchCase} from '@angular/common';
-import {Component, CUSTOM_ELEMENTS_SCHEMA, HostListener, OnInit, ViewChild} from '@angular/core';
+import { CommonModule, NgClass, NgIf, NgStyle, NgSwitch, NgSwitchCase } from '@angular/common';
+import { Component, CUSTOM_ELEMENTS_SCHEMA, HostListener, OnInit, ViewChild } from '@angular/core';
 import { ToggleService } from '../../services/toggle.service';
 import { BetSlipComponent } from '../../shared/bet-slip/bet-slip.component';
 import { SlickCarouselComponent, SlickCarouselModule } from 'ngx-slick-carousel';
 import { LeaderboardComponent } from '../../modal/leaderboard/leaderboard.component';
 import { RaceComponent } from '../../modal/race/race.component';
-import {ActivatedRoute, Router } from '@angular/router';
+import { ActivatedRoute, Router } from '@angular/router';
 import { BetsModalComponent } from '../../modal/bets-modal/bets-modal.component';
 
 
 @Component({
   selector: 'app-home',
   standalone: true,
-  imports: [ NgIf,CommonModule, NgClass, NgStyle, BetSlipComponent, SlickCarouselModule,NgSwitch,NgSwitchCase,LeaderboardComponent,RaceComponent, BetsModalComponent],
+  imports: [NgIf, CommonModule, NgClass, NgStyle, BetSlipComponent, SlickCarouselModule, NgSwitch, NgSwitchCase, LeaderboardComponent, RaceComponent, BetsModalComponent],
   templateUrl: './home.component.html',
   styleUrl: './home.component.css',
   schemas: [CUSTOM_ELEMENTS_SCHEMA]
 })
-export class HomeComponent implements OnInit{
+export class HomeComponent implements OnInit {
   isLoggedIn: boolean = false;
   routeType: 'sport' | 'casino' | 'authenticated' | '' = '';
   // Navigate to specific routes
@@ -50,9 +50,9 @@ export class HomeComponent implements OnInit{
   @ViewChild('stakeSlider') stakeSlider!: SlickCarouselComponent;
   @ViewChild('casinoSlider') casinoSlider!: SlickCarouselComponent;
   @ViewChild('providerSlider') providerSlider!: SlickCarouselComponent;
+  @ViewChild('slickModal') slickModal!: SlickCarouselComponent;
 
-
-  constructor( private router: Router,private toggleService: ToggleService,private route: ActivatedRoute) {}
+  constructor(private router: Router, private toggleService: ToggleService, private route: ActivatedRoute) { }
 
   ngOnInit() {
     const currentPath = this.route.snapshot.routeConfig?.path || '';
@@ -88,7 +88,7 @@ export class HomeComponent implements OnInit{
   }
 
   setupSlides() {
-    if(this.routeType === 'casino'){
+    if (this.routeType === 'casino') {
       this.slides = [
         {
           img: "/assets/home/daily-races.avif",
@@ -141,52 +141,52 @@ export class HomeComponent implements OnInit{
         },
 
       ]
-    }else if(this.routeType === 'sport'){
-       this.slides = [
-         {
-           img: "/assets/home/1.avif",
-           badge: "Promo",
-           title: "Industry-Best Election Odds",
-           description: "Bet With Stake Today.",
-           buttonText: "View Market"
-         },
-         {
-           img: "/assets/home/2.avif",
-           badge: "Politics",
-           title: "Live Betting During Election",
-           description: "Plus Bingo Markets & More.",
-           buttonText: "Bet Now"
-         },
-         {
-           img: "/assets/home/3.webp",
-           badge: "Promo",
-           title: "Champions League",
-           description: "Early Goal Payout.",
-           buttonText: "Bet Now"
-         },
-         {
-           img: "/assets/home/4.webp",
-           badge: "Promo",
-           title: "NBA - 3rd Quarter Payout",
-           description: "Insurance For Bad Beats",
-           buttonText: "View Matches"
-         },
-         {
-           img: "/assets/home/5.webp",
-           badge: "Promo",
-           title: "WTA Finals ",
-           description: "Final Set Tiebreaker Payout.",
-           buttonText: "Bet Now"
-         },
-         {
-           img: "/assets/home/6.webp",
-           badge: "Promo",
-           title: "NHL",
-           description: "2+ Lead Payout",
-           buttonText: "Bet Now"
-         },
+    } else if (this.routeType === 'sport') {
+      this.slides = [
+        {
+          img: "/assets/home/1.avif",
+          badge: "Promo",
+          title: "Industry-Best Election Odds",
+          description: "Bet With Stake Today.",
+          buttonText: "View Market"
+        },
+        {
+          img: "/assets/home/2.avif",
+          badge: "Politics",
+          title: "Live Betting During Election",
+          description: "Plus Bingo Markets & More.",
+          buttonText: "Bet Now"
+        },
+        {
+          img: "/assets/home/3.webp",
+          badge: "Promo",
+          title: "Champions League",
+          description: "Early Goal Payout.",
+          buttonText: "Bet Now"
+        },
+        {
+          img: "/assets/home/4.webp",
+          badge: "Promo",
+          title: "NBA - 3rd Quarter Payout",
+          description: "Insurance For Bad Beats",
+          buttonText: "View Matches"
+        },
+        {
+          img: "/assets/home/5.webp",
+          badge: "Promo",
+          title: "WTA Finals ",
+          description: "Final Set Tiebreaker Payout.",
+          buttonText: "Bet Now"
+        },
+        {
+          img: "/assets/home/6.webp",
+          badge: "Promo",
+          title: "NHL",
+          description: "2+ Lead Payout",
+          buttonText: "Bet Now"
+        },
 
-       ];
+      ];
     }
 
 
@@ -225,11 +225,11 @@ export class HomeComponent implements OnInit{
       title: "$75k Weekly Raffle",
       description: "Finish your week with a win!",
       leaderboardText: "0 Tickets",
-      timer: { days: 2, hours: 8 , minutes:5},
+      timer: { days: 2, hours: 8, minutes: 5 },
       footerType: "progressBar",
       progress: 0,
       clickFunction: this.openLeaderBoardModal.bind(this),
-      InfoModal:this.openRaceModal.bind(this),
+      InfoModal: this.openRaceModal.bind(this),
     },
   ];
 
@@ -295,9 +295,9 @@ export class HomeComponent implements OnInit{
     { img: "/assets/providers/nolimit.jpeg" },
     { img: "/assets/providers/play-go.png" },
     { img: "/assets/providers/push-gaming.png" },
-    { img: "/assets/providers/real-gaming.png"},
+    { img: "/assets/providers/real-gaming.png" },
     { img: "/assets/providers/massive.png" },
-    { img: "/assets/providers/stake-gaming.png"},
+    { img: "/assets/providers/stake-gaming.png" },
     { img: "/assets/providers/titan-gaming.png" },
     { img: "/assets/providers/avatar-ux.png" },
     { img: "/assets/providers/backseat.png" },
@@ -306,7 +306,7 @@ export class HomeComponent implements OnInit{
     { img: "/assets/providers/elk-studios.png" },
     { img: "/assets/providers/thunderkick.jpeg" },
     { img: "/assets/providers/popiplay.png" },
-    { img: "/assets/providers/bg-gaming.png"},
+    { img: "/assets/providers/bg-gaming.png" },
     { img: "/assets/providers/print-studios.png" },
     { img: "/assets/providers/bullshark.png" },
     { img: "/assets/providers/pg-gaming.jpeg" },
@@ -314,7 +314,7 @@ export class HomeComponent implements OnInit{
     { img: "/assets/providers/btg.png" },
     { img: "/assets/providers/red-tiger.png" },
     { img: "/assets/providers/fantasma.png" },
-    { img: "/assets/providers/game-art.png"},
+    { img: "/assets/providers/game-art.png" },
     { img: "/assets/providers/oslotmill.png" },
     { img: "/assets/providers/one-touch.png" },
     { img: "/assets/providers/wazdan.png" },
@@ -438,43 +438,7 @@ export class HomeComponent implements OnInit{
 
   };
 
-  casinoConfig = {
-    slidesToShow: 2,
-    slidesToScroll: 2,
-    arrows: false,
-    infinite: false,
-    variableWidth: true,
-    responsive: [
-      {
-        breakpoint: 1154,
-        settings: {
-          slidesToShow: 1,
-          slidesToScroll: 1,
-          variableWidth: true
-        }
-      },
-    ],
-
-  };
-
-  providerConfig = {
-    slidesToShow: 2,
-    slidesToScroll: 2,
-    arrows: false,
-    infinite: false,
-    variableWidth: true,
-    responsive: [
-      {
-        breakpoint: 1154,
-        settings: {
-          slidesToShow: 1,
-          slidesToScroll: 1,
-          variableWidth: true
-        }
-      },
-    ],
-
-  };
+ 
 
   openstatisticsTableModalState() {
     this.toggleService.setstatisticsTableModalState(true)
@@ -548,21 +512,18 @@ export class HomeComponent implements OnInit{
   }
 
   stakesPrev() {
-    if (this.stakeCurrentSlideIndex !== 0) {
-      this.stakeSlider.slickPrev();
-    }
+    this.stakeSlider.slickPrev();
+
   }
 
   casinoPrev() {
-    if (this.casinoCurrentSlideIndex !== 0) {
-      this.casinoSlider.slickPrev();
-    }
+    this.casinoSlider.slickPrev();
   }
 
   providerPrev() {
-    if (this.providerCurrentSlideIndex !== 0) {
-      this.providerSlider.slickPrev();
-    }
+
+    this.providerSlider.slickPrev();
+
   }
 
   heroNext() {
@@ -584,18 +545,15 @@ export class HomeComponent implements OnInit{
   }
 
   casinoNext() {
-    if (this.casinoCurrentSlideIndex !== this.casinoSlideCount) {
-      this.casinoSlider.slickNext();
-    }
+    this.casinoSlider.slickNext();
+
   }
 
   providerNext() {
-    if (this.providerCurrentSlideIndex !== this.providerSlideCount) {
       this.providerSlider.slickNext();
-    }
   }
 
-  openBetModal(){
+  openBetModal() {
     this.toggleService.setBetModal(true)
   }
 
@@ -655,9 +613,9 @@ export class HomeComponent implements OnInit{
   slideConfig = {
     slidesToShow: 7,
     slidesToScroll: 1,
-    infinite: true,
-    arrows:false,
-    navigation:false,
+    infinite: false,
+    arrows: false,
+    navigation: false,
     responsive: [
       {
         breakpoint: 1024,
@@ -666,9 +624,10 @@ export class HomeComponent implements OnInit{
         },
       },
       {
-        breakpoint: 768,
+        breakpoint: 947,
         settings: {
-          slidesToShow: 3,
+          slidesToShow: 4,
+          slidesToScroll: 3,
         },
       },
       {
@@ -678,5 +637,73 @@ export class HomeComponent implements OnInit{
         },
       },
     ],
+
   };
+
+  casinoConfig = {
+    slidesToShow: 7,
+    slidesToScroll: 1,
+    infinite: false,
+    arrows: false,
+    navigation: false,
+    responsive: [
+      {
+        breakpoint: 1024,
+        settings: {
+          slidesToShow: 7,
+        },
+      },
+      {
+        breakpoint: 947,
+        settings: {
+          slidesToShow: 4,
+        },
+      },
+      {
+        breakpoint: 480,
+        settings: {
+          slidesToShow: 3,
+        },
+      },
+    ],
+
+  };
+
+  providerConfig = {
+    slidesToShow: 7,
+    slidesToScroll: 1,
+    infinite: false,
+    arrows: false,
+    navigation: false,
+    responsive: [
+      {
+        breakpoint: 1024,
+        settings: {
+          slidesToShow: 7,
+        },
+      },
+      {
+        breakpoint: 947,
+        settings: {
+          slidesToShow: 4,
+        },
+      },
+      {
+        breakpoint: 480,
+        settings: {
+          slidesToShow: 3,
+        },
+      },
+    ],
+
+  };
+
+  prevSlide(): void {
+    this.slickModal.slickPrev(); // Navigate to the previous slide
+  }
+
+  nextSlide(): void {
+    this.slickModal.slickNext(); // Navigate to the next slide
+  }
+
 }
