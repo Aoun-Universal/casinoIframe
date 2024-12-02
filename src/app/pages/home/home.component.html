@@ -264,8 +264,8 @@
 
 
   <!------------------------------- Tabs Wrapper For Sports ------------------->
-  <div class="tabs-wrapper" *ngIf="routeType === 'sport'">
-    <div class="tab-slider max-w-[90vw] overflow-x-auto">
+  <div class="tabs-wrapper overflow-x-auto" *ngIf="routeType === 'sport'">
+    <div class="tab-slider">
       <div class="flex">
         <!-- Tab item 1 -->
         <a class="tab-item tab-item1" [class.active]="activeTab === 1" (click)="setActiveTab(1)">
@@ -319,8 +319,8 @@
   </div>
 
   <!------------------------------- Tabs Wrapper For Casino ------------------->
-  <div class="tabs-wrapper" *ngIf="routeType === 'casino'">
-    <div class="tab-slider max-w-[90vw] overflow-x-auto">
+  <div class="tabs-wrapper overflow-scroll" *ngIf="routeType === 'casino'">
+    <div class="tab-slider">
       <div class="flex">
         <!-- Tab item 1 -->
         <a class="tab-item tab-item1" [class.active]="activeTab === 1" (click)="setActiveTab(1)">
@@ -368,6 +368,8 @@
 
           <span>Live Casino</span>
         </a>
+
+        
 
       </div>
     </div>
@@ -1198,9 +1200,9 @@
   </div>
 
   <!-- --------------------------Table Topbar ------------------>
-  <div class="top-sports-header events-header">
+  <div class="top-sports-header overflow-x-auto events-header">
     <!-- left tab slider -->
-    <div class="tab-slider max-w-[90vw] md:max-w-[50vw] overflow-x-auto">
+    <div class="tab-slider   ">
       <div class="flex">
         <!-- Tab item 1 -->
         <a class="tab-item tab-item1" [class.active]="TableTab === 1" (click)="setActiveTableTab(1)">

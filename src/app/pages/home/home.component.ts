@@ -344,12 +344,22 @@ export class HomeComponent implements OnInit {
     variableWidth: false,
     responsive: [
       {
-        breakpoint: 1154,
+        breakpoint: 1024,
+        settings: {
+          slidesToShow: 2,
+        },
+      },
+      {
+        breakpoint: 947,
+        settings: {
+          slidesToShow: 2,
+        },
+      },
+      {
+        breakpoint: 480,
         settings: {
           slidesToShow: 1,
-          slidesToScroll: 1,
-          variableWidth: true
-        }
+        },
       },
     ],
 
