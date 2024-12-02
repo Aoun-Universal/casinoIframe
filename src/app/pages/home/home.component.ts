@@ -625,15 +625,17 @@ export class HomeComponent implements OnInit {
 
   casinoConfig = {
     slidesToShow: 6.4,
-    slidesToScroll: 1,
-    infinite: false,
+    slidesToScroll: 3,
+    infinite: true,
     arrows: false,
     navigation: false,
+    swipeToSlide: true,
     responsive: [
       {
         breakpoint: 1024,
         settings: {
           slidesToShow: 7,
+          slidesToScroll: 3,
         },
       },
       {
