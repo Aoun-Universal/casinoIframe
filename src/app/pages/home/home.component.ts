@@ -382,24 +382,7 @@ export class HomeComponent implements OnInit {
     }
   }
 
-  topSportsConfig = {
-    slidesToShow: 2,
-    slidesToScroll: 2,
-    arrows: false,
-    infinite: false,
-    variableWidth: true,
-    responsive: [
-      {
-        breakpoint: 1154,
-        settings: {
-          slidesToShow: 1,
-          slidesToScroll: 1,
-          variableWidth: true
-        }
-      },
-    ],
-
-  };
+ 
 
   galleryConfig = {
     slidesToShow: 2,
@@ -506,9 +489,9 @@ export class HomeComponent implements OnInit {
   }
 
   sportsPrev() {
-    if (this.sportsCurrentSlideIndex !== 0) {
+    
       this.sportsSlider.slickPrev();
-    }
+    
   }
 
   stakesPrev() {
@@ -533,9 +516,8 @@ export class HomeComponent implements OnInit {
   }
 
   sportsNext() {
-    if (this.sportsCurrentSlideIndex !== this.sportsSlideCount) {
+
       this.sportsSlider.slickNext();
-    }
   }
 
   stakesNext() {
@@ -670,6 +652,35 @@ export class HomeComponent implements OnInit {
   };
 
   providerConfig = {
+    slidesToShow: 7,
+    slidesToScroll: 1,
+    infinite: false,
+    arrows: false,
+    navigation: false,
+    responsive: [
+      {
+        breakpoint: 1024,
+        settings: {
+          slidesToShow: 7,
+        },
+      },
+      {
+        breakpoint: 947,
+        settings: {
+          slidesToShow: 4,
+        },
+      },
+      {
+        breakpoint: 480,
+        settings: {
+          slidesToShow: 3,
+        },
+      },
+    ],
+
+  };
+
+  topSportsConfig = {
     slidesToShow: 7,
     slidesToScroll: 1,
     infinite: false,

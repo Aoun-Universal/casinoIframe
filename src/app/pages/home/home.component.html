@@ -421,21 +421,17 @@
     </div>
 
     <!-- Sports Slider Content -->
-    <ngx-slick-carousel class="carousel mt-2 overflow-y-visible" #sportsSlider="slick-carousel"
-      [config]="topSportsConfig" (init)="sportsSlickInit($event)" (afterChange)="sportsAfterChange($event)">
-      @for (slide of sports; track $index) {
-      <div ngxSlickItem class="px-2relative swiper-slide-sports">
-        <div class="grid relative sports-card h-[220px]">
-          <div class="rounded-lg h-[210px] ">
-            <img loading="lazy" [src]="slide.img" alt="Slide Image" class="sports-img mt-2" draggable="false" />
+  
+
+      <div class="slick-carousel">
+        <ngx-slick-carousel class="carousel" [config]="topSportsConfig" #sportsSlider="slick-carousel">
+          <div ngxSlickItem *ngFor="let stake of sports" class="image-card">
+            <img loading="lazy" [src]="stake.img" alt="Image" class="card-image" />
+
           </div>
-        </div>
-        <div class="ribbon">
-          <div class="tag-count">{{ slide.count }}</div>
-        </div>
+      
+        </ngx-slick-carousel>
       </div>
-      }
-    </ngx-slick-carousel>
 
 
 
@@ -490,23 +486,7 @@
     </div>
 
     <!-- Stake Slider Content -->
-    <!--    <ngx-slick-carousel class="carousel mt-2 overflow-y-visible" #stakeSlider="slick-carousel" [config]="stakeConfig"-->
-    <!--      (init)="stakeSlickInit($event)" (afterChange)="stakeAfterChange($event)">-->
-    <!--      @for (stake of stakes; track $index) {-->
-    <!--      <div ngxSlickItem class="px-2 relative swiper-slide-sports">-->
-    <!--        <div class="grid relative sports-card md:h-[215px] h-[155px]">-->
-    <!--          <div class="rounded-lg   md:h-[210px] h-[151px]">-->
-    <!--          <img loading="lazy" [src]="stake.img" alt="Slide Image" class="sports-img mt-1.5"   />-->
-    <!--        </div>-->
-    <!--        </div>-->
-    <!--        <div class="stake-player-row flex gap-2 pt-1"> -->
-    <!--          <span class="stake-dot"></span>-->
-    <!--          <span class="count-text"> {{stake.count}} <span class="text-[#b1bad3] text-xs">playing</span></span>-->
-
-    <!--        </div> -->
-    <!--      </div>-->
-    <!--      }-->
-    <!--    </ngx-slick-carousel>-->
+ 
     <div class="slick-carousel">
       <ngx-slick-carousel class="carousel" [config]="slideConfig" #slickModal="slick-carousel">
         <div ngxSlickItem *ngFor="let stake of stakes" class="image-card">
@@ -572,19 +552,7 @@
     </div>
 
     <!-- Providers Slider Content -->
-    <!-- <ngx-slick-carousel class="carousel mt-2 overflow-y-visible" #providerSlider="slick-carousel"
-      [config]="providerConfig" (init)="providerSlickInit($event)" (afterChange)="providerAfterChange($event)">
-      @for (provider of providers; track $index) {
-      <div ngxSlickItem class="px-1 relative swiper-slide-sports">
-        <div class="grid relative sports-card h-[67px]">
-          <div class="rounded-lg h-[62px]">
-            <img loading="lazy" [src]="provider.img" alt="Slide Image" class="sports-img mt-1.5" draggable="false" />
-          </div>
-        </div>
-      </div>
-      }
-    </ngx-slick-carousel> -->
-
+   
     <div class="slick-carousel">
       <ngx-slick-carousel class="carousel" [config]="slideConfig" #providerSlider="slick-carousel">
         <div ngxSlickItem *ngFor="let stake of providers" class="image-card">
@@ -646,18 +614,7 @@
     </div>
 
     <!-- Casino Slider Content -->
-    <!-- <ngx-slick-carousel class="carousel mt-2" #casinoSlider="slick-carousel" [config]="casinoConfig"
-      (init)="casinoSlickInit($event)" (afterChange)="casinoAfterChange($event)">
-      @for (casino of casinos; track $index;let i = $index) {
-      <div ngxSlickItem class="px-1 relative swiper-slide-sports">
-        <div class="grid relative sports-card h-[215px]">
-          <div class="rounded-lg  md:h-[210px] h-[151px]">
-            <img loading="lazy" [src]="casino.img" alt="Slide Image" class="sports-img mt-1.5" draggable="false" />
-          </div>
-        </div>
-      </div>
-      }
-    </ngx-slick-carousel> -->
+
 
     <div class="slick-carousel">
       <ngx-slick-carousel class="carousel" [config]="casinoConfig" #casinoSlider="slick-carousel">
