@@ -5,11 +5,19 @@ import { RegisterComponent } from './modal/register/register.component';
 import { NotificationComponent } from './modal/notification/notification.component';
 import { StatisticsComponent } from './modal/statistics/statistics.component';
 import { authGuard } from "./auth/auth.guard";
+import {LoginComponent} from "./modal/login/login.component";
 
 
 
 export const routes: Routes = [
-
+  {
+    path:"signin",
+    component: LoginComponent,
+  },
+  {
+    path:"register",
+    component: RegisterComponent,
+  },
   {
     path: '',
     loadComponent: () =>
@@ -245,7 +253,7 @@ export const routes: Routes = [
                 './pages/others/others.component'
               ).then((c) => c.OthersComponent),
           },
-         
+
         ],
       },
 
@@ -278,7 +286,7 @@ export const routes: Routes = [
     path: 'vault',
     component: VaultComponent,
   },
- 
+
   {
     path: 'vip',
     component: VipComponent,

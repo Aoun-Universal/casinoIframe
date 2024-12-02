@@ -5,14 +5,14 @@ import { ToggleService } from '../../services/toggle.service';
 import { RegisterComponent } from '../../modal/register/register.component';
 import { AuthService } from '../../services/auth.service';
 import { LogoutComponent } from '../../modal/logout/logout.component';
-import { RouterLink } from '@angular/router';
-import { WalletModalComponent } from '../../modal/wallet-modal/wallet-modal.component';
+import {NavigationEnd, Router, RouterLink } from '@angular/router';
 import { WalletSettingComponent } from "../../modal/wallet-setting/wallet-setting.component";
+import { filter } from 'rxjs';
 
 @Component({
   selector: 'app-header',
   standalone: true,
-  imports: [CommonModule, LoginComponent, RegisterComponent, LogoutComponent, RouterLink, WalletModalComponent, WalletSettingComponent],
+  imports: [CommonModule, LoginComponent, RegisterComponent, LogoutComponent, RouterLink, WalletSettingComponent],
   templateUrl: './header.component.html',
   styleUrl: './header.component.css'
 })
@@ -25,7 +25,7 @@ export class HeaderComponent implements OnInit {
   bellDropOpen = false;
   searchbutton = false;
   cosinoDropOpen = false;
-  constructor(private toggle: ToggleService, private authService: AuthService) { }
+  constructor(public toggle: ToggleService, private authService: AuthService,private router: Router) { }
   closeDropdown() {
     this.bellDropOpen = false;
     this.searchbutton = false;
@@ -67,20 +67,25 @@ export class HeaderComponent implements OnInit {
     this.toggle.getSidebar().subscribe((value)=>{
       this.sideBar = value
     })
-
+    this.router.events
+      .pipe(filter(event => event instanceof NavigationEnd))
+      .subscribe((event: NavigationEnd) => {
+        if (event.urlAfterRedirects === '/signin') {
+          this.toggle.setLogin(true);
+          this.toggle.setSignUp(false);
+        } else if (event.urlAfterRedirects === '/register') {
+          this.toggle.setLogin(false);
+          this.toggle.setSignUp(true);
+        } else {
+          this.toggle.setLogin(false);
+          this.toggle.setSignUp(false);
+        }
+      });
   }
   showWalletSetting() {
     this.toggle.setWalletsetting(true)
   }
 
-
-  showLogin() {
-    this.toggle.setLogin(true)
-  }
-
-  showSignUp() {
-    this.toggle.setSignUp(true)
-  }
 
 
   currencies = [
@@ -102,7 +107,7 @@ export class HeaderComponent implements OnInit {
 
 
   profileOptions = [
-    { label: 'Wallet', icon: '/assets/header/wallet.png', type: 'button',   }, 
+    { label: 'Wallet', icon: '/assets/header/wallet.png', type: 'button',   },
     { label: 'Vault', icon: '/assets/header/valut.png', type: 'button',  },
     { label: 'VIP', icon: '/assets/header/vip.png', type: 'button',  },
     { label: 'Affiliate', icon: '/assets/header/Affiliate.png', type: 'button', path: '/affiliate' },

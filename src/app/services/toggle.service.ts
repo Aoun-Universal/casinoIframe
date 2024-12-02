@@ -8,11 +8,11 @@ export class ToggleService {
   private sidebarState: BehaviorSubject<boolean> = new BehaviorSubject<boolean>(true);
   private Betslip: BehaviorSubject<boolean> = new BehaviorSubject<boolean>(false);
   private BetslipContent: BehaviorSubject<boolean> = new BehaviorSubject<boolean>(false);
-  private vipModalState: BehaviorSubject<boolean> = new BehaviorSubject<boolean>(false); // VIP modal initially hidden
-  private vaultModalState: BehaviorSubject<boolean> = new BehaviorSubject<boolean>(false);; // VIP modal initially hidden
+  private vipModalState: BehaviorSubject<boolean> = new BehaviorSubject<boolean>(false);
+  private vaultModalState: BehaviorSubject<boolean> = new BehaviorSubject<boolean>(false);
   private statisticsModalState: BehaviorSubject<boolean> = new BehaviorSubject<boolean>(false);
   private statisticsTableModalState: BehaviorSubject<boolean> = new BehaviorSubject<boolean>(false);
-  private notificationModalState: BehaviorSubject<boolean> = new BehaviorSubject<boolean>(false);;
+  private notificationModalState: BehaviorSubject<boolean> = new BehaviorSubject<boolean>(false);
   private signUpState: BehaviorSubject<boolean> = new BehaviorSubject<boolean>(false);
   private walletModal: BehaviorSubject<boolean> = new BehaviorSubject<boolean>(false);
   private loginState: BehaviorSubject<boolean> = new BehaviorSubject<boolean>(false);

@@ -192,8 +192,8 @@
 
                     <section class="" *ngIf="!token">
                         <div class="stack x-flex-end  svelte-right">
-                            <button type="button" class="sign-in" (click)=" showLogin()">Sign In</button>
-                            <button type="button" class="Register" (click)="showSignUp()">Register</button>
+                            <button type="button" class="sign-in" [routerLink]="['/signin']">Sign In</button>
+                            <button type="button" class="Register" [routerLink]="['/register']">Register</button>
                         </div>
                     </section>
                 </div>
@@ -447,8 +447,8 @@
                     </section>
                     <section class="" *ngIf="!token">
                         <div class="stack x-flex-end  svelte-right">
-                            <button type="button" class="sign-in" (click)=" showLogin()">Sign In</button>
-                            <button type="button" class="Register" (click)="showSignUp()">Register</button>
+                            <button type="button" class="sign-in" [routerLink]="['/signin']">Sign In</button>
+                            <button type="button" class="Register" [routerLink]="['/register']">Register</button>
                         </div>
                     </section>
                 </div>
@@ -457,7 +457,7 @@
     </div>
 </div>
 
-<app-login></app-login>
-<app-register></app-register>
+<app-login *ngIf="(toggle.getLogin() | async)"></app-login>
+<app-register *ngIf="(toggle.getSignUp() | async)"></app-register>
 <app-logout></app-logout>
 <app-wallet-setting></app-wallet-setting>
