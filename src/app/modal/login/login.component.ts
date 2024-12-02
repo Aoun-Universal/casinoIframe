@@ -2,7 +2,7 @@ import { CommonModule } from '@angular/common';
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, ReactiveFormsModule, Validators } from '@angular/forms';
 import { ToggleService } from '../../services/toggle.service';
-import { Router } from '@angular/router';
+import { Router, RouterLink } from '@angular/router';
 import { AuthService } from '../../services/auth.service';
 import { ForgotPasswordComponent } from '../forgot-password/forgot-password.component';
 import { Location } from '@angular/common';
@@ -10,7 +10,7 @@ import { Location } from '@angular/common';
 @Component({
   selector: 'app-login',
   standalone: true,
-  imports: [ReactiveFormsModule, CommonModule, ForgotPasswordComponent ],
+  imports: [ReactiveFormsModule, CommonModule, RouterLink, ForgotPasswordComponent ],
   templateUrl: './login.component.html',
   styleUrls: ['./login.component.css']  // Corrected to styleUrls
 })

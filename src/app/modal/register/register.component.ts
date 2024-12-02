@@ -2,12 +2,13 @@ import {CommonModule, Location} from '@angular/common';
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, FormsModule, ReactiveFormsModule, Validators } from '@angular/forms';
 import { ToggleService } from '../../services/toggle.service';
+import { RouterLink } from '@angular/router';
 
 
 @Component({
   selector: 'app-register',
   standalone: true,
-  imports: [ReactiveFormsModule, CommonModule, FormsModule, FormsModule],
+  imports: [ReactiveFormsModule, RouterLink,  CommonModule, FormsModule, FormsModule],
   templateUrl: './register.component.html',
   styleUrl: './register.component.css'
 })

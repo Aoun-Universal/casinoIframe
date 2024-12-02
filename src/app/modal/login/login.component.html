@@ -1,4 +1,4 @@
-<div id="svelte" *ngIf="loginState">
+<div id="svelte" >
   <div class="Modal-container">
     <div class="svelte-syudie"></div>
     <div class="card-svelte" (click)="$event.stopPropagation()">
@@ -159,7 +159,7 @@
               <span class="text-[#b1bad3] text-center text-sm font-normal touch-auto">Don’t have an account?
                 <button
                   class=" ring-offset-background register-acc-btn [&amp;_svg]:text-grey-200 [&amp;:hover>svg]:text-white"
-                  [disabled]="false" type="button">
+                  [disabled]="false" type="button" routerLink="/register">
                   Register an Account
                 </button>
               </span>

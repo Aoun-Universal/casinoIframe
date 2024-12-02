@@ -1,5 +1,5 @@
 <!-- first step================================================ -->
-<div *ngIf="signUpState" >
+<div>
   <div class="Modal-container">
     <div class="svelte-syudie"></div>
     <div class="card-svelte" (click)="$event.stopPropagation()">
@@ -657,7 +657,8 @@
 
             <div class="flex flex-col justify-end gap-3">
               <span class="already-text">Already have an account?
-                <button class="sign-btn [&amp;_svg]:text-grey-200 [&amp;:hover>svg]:text-white" type="button">
+                <button routerLink="/signin" class="sign-btn [&amp;_svg]:text-grey-200 [&amp;:hover>svg]:text-white"
+                  type="button">
                   Sign In
                 </button></span>
             </div>
