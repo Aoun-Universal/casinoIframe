@@ -214,7 +214,7 @@
           <!-- Image -->
           <div class="relative">
             <div class="img-inner">
-              <img class="!object-contain" [src]="slide.img" [alt]="slide.title" loading="lazy" decoding="async"
+              <img class="!object-contain" [src]="slide.img" [alt]="slide.title" decoding="async"
                 style="object-fit: cover; max-width: 220px; max-height: 220px; aspect-ratio: 1 / 1; width: 100%;" />
             </div>
           </div>
@@ -421,7 +421,7 @@
     </div>
 
     <!-- Sports Slider Content -->
-  
+
 
       <div class="slick-carousel">
         <ngx-slick-carousel class="carousel" [config]="topSportsConfig" #sportsSlider="slick-carousel">
@@ -429,7 +429,7 @@
             <img loading="lazy" [src]="stake.img" alt="Image" class="card-image" />
 
           </div>
-      
+
         </ngx-slick-carousel>
       </div>
 
@@ -486,11 +486,11 @@
     </div>
 
     <!-- Stake Slider Content -->
- 
+
     <div class="slick-carousel">
       <ngx-slick-carousel class="carousel" [config]="slideConfig" #slickModal="slick-carousel">
         <div ngxSlickItem *ngFor="let stake of stakes" class="image-card">
-          <img loading="lazy" [src]="stake.img" alt="Image" class="card-image" />
+          <img [src]="stake.img" alt="Image" class="card-image" />
           <div class="stake-player-row flex gap-2 pt-1">
             <span class="stake-dot"></span>
             <span class="count-text"> {{stake.count}} <span class="text-[#b1bad3] text-xs">playing</span></span>
@@ -552,13 +552,13 @@
     </div>
 
     <!-- Providers Slider Content -->
-   
+
     <div class="slick-carousel">
       <ngx-slick-carousel class="carousel" [config]="slideConfig" #providerSlider="slick-carousel">
         <div ngxSlickItem *ngFor="let stake of providers" class="image-card">
-          <img loading="lazy" [src]="stake.img" alt="Image" class="card-image" />
+          <img  [src]="stake.img" alt="Image" class="card-image" />
         </div>
-    
+
       </ngx-slick-carousel>
     </div>
 
@@ -619,13 +619,13 @@
     <div class="slick-carousel">
       <ngx-slick-carousel class="carousel" [config]="casinoConfig" #casinoSlider="slick-carousel">
         <div ngxSlickItem *ngFor="let stake of casinos" class="image-card">
-          <img loading="lazy" [src]="stake.img" alt="Image" class="card-image" />
+          <img [src]="stake.img" alt="Image" class="card-image" />
           <!-- <div class="stake-player-row flex gap-2 pt-1">
             <span class="stake-dot"></span>
             <span class="count-text"> {{stake.count}} <span class="text-[#b1bad3] text-xs">playing</span></span>
           </div> -->
         </div>
-    
+
       </ngx-slick-carousel>
     </div>
 
