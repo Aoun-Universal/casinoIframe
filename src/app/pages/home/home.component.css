@@ -762,7 +762,7 @@ tr:hover {
   @apply md:my-[8.5px] my-2 max-md:!px-0;
 }
 .image-card {
-  @apply py-[3px] pr-[15px];
+  @apply py-[3px] md:pr-[15px] pr-[6px];
 }
 .card-image {
   width: 100%;
