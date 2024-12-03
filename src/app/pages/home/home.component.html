@@ -383,7 +383,7 @@
   <!--------------------------------- Top Sports ---------------------->
   <div class="page-content" *ngIf="routeType === 'sport'">
     <!-- Top Sports Slider -->
-    <div class="top-sports-header">
+    <div class="top-sports-header mb-2.5">
       <!-- left -->
       <span>
         <span>
@@ -430,7 +430,7 @@
     <!-- Sports Slider Content -->
 
 
-    <div class="slick-carousel">
+    <!-- <div class="slick-carousel">
       <ngx-slick-carousel class="carousel" [config]="topSportsConfig" #sportsSlider="slick-carousel">
         <div ngxSlickItem *ngFor="let stake of sports" class="image-card">
           <img loading="lazy" [src]="stake.img" alt="Image" class="card-image" />
@@ -438,7 +438,17 @@
         </div>
 
       </ngx-slick-carousel>
-    </div>
+
+      
+    </div> -->
+
+    <swiper-container pagination="true" free-mode="true" pagination-clickable="true" space-between="30" slides-per-view="5">
+    
+      <swiper-slide *ngFor="let stake of sports">
+        <img [src]="stake.img" alt="">
+      </swiper-slide>
+    
+    </swiper-container>
 
 
 
@@ -467,7 +477,7 @@
 
       <!-- Right -->
       <div class="flex cursor-pointer">
-        <button class="left-arrow arrows-btn" (click)="prevSlide()">
+        <button class="left-arrow arrows-btn" >
           <div class="arrow-inner">
             <svg fill="currentColor" viewBox="0 0 64 64" class="svg-icon ">
               <title></title>
@@ -478,7 +488,7 @@
           </div>
         </button>
 
-        <button class="right-arrow arrows-btn" (click)="nextSlide()">
+        <button class="right-arrow arrows-btn" ]>
           <div class="arrow-inner">
             <svg fill="currentColor" viewBox="0 0 64 64" class="svg-icon ">
               <title></title>
@@ -647,13 +657,7 @@
       </ngx-slick-carousel>
     </div>
 
-      <swiper-container pagination="true" free-mode="true" pagination-clickable="true" space-between="30" slides-per-view="5">
-      
-        <swiper-slide *ngFor="let stake of casinos">
-          <img [src]="stake.img" alt="">
-        </swiper-slide>
-      
-      </swiper-container>
+     
 
   </div>
 

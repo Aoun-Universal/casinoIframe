@@ -1,5 +1,5 @@
 import { CommonModule, NgClass, NgIf, NgStyle, NgSwitch, NgSwitchCase } from '@angular/common';
-import { Component, CUSTOM_ELEMENTS_SCHEMA, HostListener, OnInit, ViewChild } from '@angular/core';
+import { Component, CUSTOM_ELEMENTS_SCHEMA, ElementRef, HostListener, OnInit, ViewChild } from '@angular/core';
 import { ToggleService } from '../../services/toggle.service';
 import { BetSlipComponent } from '../../shared/bet-slip/bet-slip.component';
 import { SlickCarouselComponent, SlickCarouselModule } from 'ngx-slick-carousel';
@@ -52,7 +52,7 @@ export class HomeComponent implements OnInit {
   @ViewChild('stakeSlider') stakeSlider!: SlickCarouselComponent;
   @ViewChild('casinoSlider') casinoSlider!: SlickCarouselComponent;
   @ViewChild('providerSlider') providerSlider!: SlickCarouselComponent;
-  @ViewChild('slickModal') slickModal!: SlickCarouselComponent;
+ 
   swiperConfig: any;
 
   constructor(private router: Router, private toggleService: ToggleService, private route: ActivatedRoute) { }
@@ -384,22 +384,6 @@ export class HomeComponent implements OnInit {
   ngAfterViewInit() {
 
   this.checkCarousel();
-
-   this.swiper = new Swiper('.swiper', {
-      // Swiper configuration options here
-      // For example:
-      direction: 'horizontal',
-      loop: true,
-      pagination: {
-        el: '.swiper-pagination',
-        clickable: true,
-      },
-      navigation: {
-        nextEl: '.swiper-button-next',
-        prevEl: '.swiper-button-prev',   
-
-      },
-    });
   }
 
   checkCarousel() {
@@ -746,12 +730,14 @@ export class HomeComponent implements OnInit {
 
   };
 
-  prevSlide(): void {
-    this.slickModal.slickPrev(); // Navigate to the previous slide
+
+
+  slideNext() {
+    this.swiper?.slideNext(); // Moves to the next slide
   }
 
-  nextSlide(): void {
-    this.slickModal.slickNext(); // Navigate to the next slide
+  slidePrev() {
+    this.swiper?.slidePrev(); // Moves to the previous slide
   }
 
 

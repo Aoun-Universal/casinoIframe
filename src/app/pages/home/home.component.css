@@ -122,7 +122,7 @@
 }
 
 .page-content {
-  @apply flex flex-col w-full overflow-x-hidden mt-6;
+  @apply  w-full overflow-x-hidden mt-6;
 }
 
 /* Top Sports */
