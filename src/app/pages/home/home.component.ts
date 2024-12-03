@@ -9,8 +9,6 @@ import { ActivatedRoute, Router } from '@angular/router';
 import { BetsModalComponent } from '../../modal/bets-modal/bets-modal.component';
 import Swiper from 'swiper/bundle';
 
-// import { SwiperContainer } from 'swiper/element';
-// import { SwiperOptions } from 'swiper/types';
 
 
 @Component({
@@ -21,6 +19,7 @@ import Swiper from 'swiper/bundle';
   styleUrl: './home.component.css',
   schemas: [CUSTOM_ELEMENTS_SCHEMA]
 })
+
 export class HomeComponent implements OnInit {
   isLoggedIn: boolean = false;
   swiper: Swiper | null = null;
