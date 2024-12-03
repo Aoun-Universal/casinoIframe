@@ -1,5 +1,5 @@
 import { CommonModule, NgClass, NgIf, NgStyle, NgSwitch, NgSwitchCase } from '@angular/common';
-import { Component, CUSTOM_ELEMENTS_SCHEMA, ElementRef, HostListener, OnInit, ViewChild } from '@angular/core';
+import { AfterViewInit, Component, CUSTOM_ELEMENTS_SCHEMA, ElementRef, HostListener, OnInit, ViewChild } from '@angular/core';
 import { ToggleService } from '../../services/toggle.service';
 import { BetSlipComponent } from '../../shared/bet-slip/bet-slip.component';
 import { SlickCarouselComponent, SlickCarouselModule } from 'ngx-slick-carousel';
@@ -8,6 +8,7 @@ import { RaceComponent } from '../../modal/race/race.component';
 import { ActivatedRoute, Router } from '@angular/router';
 import { BetsModalComponent } from '../../modal/bets-modal/bets-modal.component';
 import Swiper from 'swiper/bundle';
+
 
 @Component({
   selector: 'app-home',
@@ -18,7 +19,7 @@ import Swiper from 'swiper/bundle';
   schemas: [CUSTOM_ELEMENTS_SCHEMA]
 })
 
-export class HomeComponent implements OnInit {
+export class HomeComponent implements OnInit, AfterViewInit {
   isLoggedIn: boolean = false;
   swiper: Swiper | null = null;
   routeType: 'sport' | 'casino' | 'authenticated' | '' = '';
@@ -28,6 +29,7 @@ export class HomeComponent implements OnInit {
   betSlipContent = false
   activeTab: number = 1;
   LiveTab = 'basketball';
+  swiperInstance: Swiper | null = null;
   TableTab: number = 1;
   // Winner Dropdown
   WinnerDropdown = false;
@@ -52,8 +54,9 @@ export class HomeComponent implements OnInit {
   @ViewChild('stakeSlider') stakeSlider!: SlickCarouselComponent;
   @ViewChild('casinoSlider') casinoSlider!: SlickCarouselComponent;
   @ViewChild('providerSlider') providerSlider!: SlickCarouselComponent;
- 
   swiperConfig: any;
+  @ViewChild('swiperContainer', { static: false }) swiperContainer!: ElementRef;
+// swiperInstance: Swiper;
 
   constructor(private router: Router, private toggleService: ToggleService, private route: ActivatedRoute) { }
 
@@ -384,6 +387,9 @@ export class HomeComponent implements OnInit {
   ngAfterViewInit() {
 
   this.checkCarousel();
+    console.log('hi', this.swiperContainer.nativeElement);
+    // this.swiperInstance = this.swiperContainer?.swiperRef;
+  
   }
 
   checkCarousel() {
@@ -731,14 +737,14 @@ export class HomeComponent implements OnInit {
   };
 
 
-
-  slideNext() {
-    this.swiper?.slideNext(); // Moves to the next slide
+  slideNext(): void {
+    this.swiperInstance?.slideNext(); // Move to the next slide
   }
 
-  slidePrev() {
-    this.swiper?.slidePrev(); // Moves to the previous slide
+  slidePrev(): void {
+    this.swiperInstance?.slidePrev(); // Move to the previous slide
   }
+ 
 
 
 }
