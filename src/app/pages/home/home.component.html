@@ -246,13 +246,7 @@
 </section>
 
 
-<swiper-container pagination="true" free-mode="true" pagination-clickable="true" space-between="30" slides-per-view="3">
-  @for (slide of sports; track $index) {
-  <swiper-slide>
-    <img [src]="slide.img" alt="">
-  </swiper-slide>
-  }
-</swiper-container>
+
 
 <!------------------------------ Search Wrap --------------------->
 <section class="main-section">
@@ -448,6 +442,8 @@
 
 
 
+
+
   </div>
 
 
@@ -500,7 +496,7 @@
 
     <!-- Stake Slider Content -->
 
-    <div class="slick-carousel">
+    <!-- <div class="slick-carousel">
       <ngx-slick-carousel class="carousel" [config]="slideConfig" #slickModal="slick-carousel">
         <div ngxSlickItem *ngFor="let stake of stakes" class="image-card">
           <img [src]="stake.img" alt="Image" class="card-image" />
@@ -511,7 +507,16 @@
         </div>
 
       </ngx-slick-carousel>
-    </div>
+    </div> -->
+
+    <swiper-container pagination="true" free-mode="true" pagination-clickable="true" space-between="30"
+      slides-per-view="5">
+      
+      <swiper-slide *ngFor="let stake of stakes">
+        <img [src]="stake.img" alt="">
+      </swiper-slide>
+  
+    </swiper-container>
 
   </div>
 
@@ -629,8 +634,7 @@
     <!-- Casino Slider Content -->
 
 
-    <div class="slick-carousel overflow-x-auto
-">
+    <div class="slick-carousel overflow-x-auto">
       <ngx-slick-carousel class="carousel overflow-x-auto" [config]="casinoConfig" #casinoSlider="slick-carousel">
         <div ngxSlickItem *ngFor="let stake of casinos" class="image-card">
           <img [src]="stake.img" alt="Image" class="card-image" />
@@ -642,6 +646,14 @@
 
       </ngx-slick-carousel>
     </div>
+
+      <swiper-container pagination="true" free-mode="true" pagination-clickable="true" space-between="30" slides-per-view="5">
+      
+        <swiper-slide *ngFor="let stake of casinos">
+          <img [src]="stake.img" alt="">
+        </swiper-slide>
+      
+      </swiper-container>
 
   </div>
 
