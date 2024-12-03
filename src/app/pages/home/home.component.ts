@@ -7,6 +7,10 @@ import { LeaderboardComponent } from '../../modal/leaderboard/leaderboard.compon
 import { RaceComponent } from '../../modal/race/race.component';
 import { ActivatedRoute, Router } from '@angular/router';
 import { BetsModalComponent } from '../../modal/bets-modal/bets-modal.component';
+import Swiper from 'swiper/bundle';
+
+// import { SwiperContainer } from 'swiper/element';
+// import { SwiperOptions } from 'swiper/types';
 
 
 @Component({
@@ -19,6 +23,7 @@ import { BetsModalComponent } from '../../modal/bets-modal/bets-modal.component'
 })
 export class HomeComponent implements OnInit {
   isLoggedIn: boolean = false;
+  swiper: Swiper | null = null;
   routeType: 'sport' | 'casino' | 'authenticated' | '' = '';
   // Navigate to specific routes
   isMarketOpen = true;
@@ -51,8 +56,11 @@ export class HomeComponent implements OnInit {
   @ViewChild('casinoSlider') casinoSlider!: SlickCarouselComponent;
   @ViewChild('providerSlider') providerSlider!: SlickCarouselComponent;
   @ViewChild('slickModal') slickModal!: SlickCarouselComponent;
+  swiperConfig: any;
 
   constructor(private router: Router, private toggleService: ToggleService, private route: ActivatedRoute) { }
+
+
 
   ngOnInit() {
     const currentPath = this.route.snapshot.routeConfig?.path || '';
@@ -377,7 +385,24 @@ export class HomeComponent implements OnInit {
   }
 
   ngAfterViewInit() {
-    this.checkCarousel();
+
+  this.checkCarousel();
+
+   this.swiper = new Swiper('.swiper', {
+      // Swiper configuration options here
+      // For example:
+      direction: 'horizontal',
+      loop: true,
+      pagination: {
+        el: '.swiper-pagination',
+        clickable: true,
+      },
+      navigation: {
+        nextEl: '.swiper-button-next',
+        prevEl: '.swiper-button-prev',   
+
+      },
+    });
   }
 
   checkCarousel() {
@@ -731,5 +756,6 @@ export class HomeComponent implements OnInit {
   nextSlide(): void {
     this.slickModal.slickNext(); // Navigate to the next slide
   }
+
 
 }

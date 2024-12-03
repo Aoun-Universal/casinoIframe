@@ -104,6 +104,8 @@
       </div>
 
 
+
+
       <!-- Cards -->
       <div class="top-sports-header events-header sm-cards-header">
         <!-- left -->
@@ -243,6 +245,17 @@
   </button>
 </section>
 
+
+<swiper-container loop="true" navigation="true">
+  @for (slide of slides; track $index) {
+  <swiper-slide>
+     <img [src]="slide.img" alt="">
+  </swiper-slide>
+  }
+
+  
+</swiper-container>
+
 <!------------------------------ Search Wrap --------------------->
 <section class="main-section">
   <div class="search-wrap">
@@ -369,7 +382,7 @@
           <span>Live Casino</span>
         </a>
 
-        
+
 
       </div>
     </div>
@@ -425,15 +438,15 @@
     <!-- Sports Slider Content -->
 
 
-      <div class="slick-carousel">
-        <ngx-slick-carousel class="carousel" [config]="topSportsConfig" #sportsSlider="slick-carousel">
-          <div ngxSlickItem *ngFor="let stake of sports" class="image-card">
-            <img loading="lazy" [src]="stake.img" alt="Image" class="card-image" />
+    <div class="slick-carousel">
+      <ngx-slick-carousel class="carousel" [config]="topSportsConfig" #sportsSlider="slick-carousel">
+        <div ngxSlickItem *ngFor="let stake of sports" class="image-card">
+          <img loading="lazy" [src]="stake.img" alt="Image" class="card-image" />
 
-          </div>
+        </div>
 
-        </ngx-slick-carousel>
-      </div>
+      </ngx-slick-carousel>
+    </div>
 
 
 
@@ -558,7 +571,7 @@
     <div class="slick-carousel">
       <ngx-slick-carousel class="carousel" [config]="slideConfig" #providerSlider="slick-carousel">
         <div ngxSlickItem *ngFor="let stake of providers" class="image-card">
-          <img  [src]="stake.img" alt="Image" class="card-image" />
+          <img [src]="stake.img" alt="Image" class="card-image" />
         </div>
 
       </ngx-slick-carousel>
@@ -1809,9 +1822,13 @@
 
     </div>
 
+
+
+
   </div>
 </section>
 <div class="md:hidden">
+
   <app-bet-slip></app-bet-slip>
 </div>
 

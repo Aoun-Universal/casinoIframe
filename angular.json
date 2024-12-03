@@ -31,7 +31,8 @@
               "node_modules/datatables.net-dt/css/dataTables.dataTables.min.css",
               "node_modules/slick-carousel/slick/slick.scss",
                "node_modules/slick-carousel/slick/slick-theme.scss",
-              "node_modules/ngx-toastr/toastr.css"
+              "node_modules/ngx-toastr/toastr.css",
+              "node_modules/swiper/swiper-bundle.min.css"
             ],
             "scripts": [
               "node_modules/jquery/dist/jquery.js",
