@@ -9,8 +9,6 @@ import { ActivatedRoute, Router } from '@angular/router';
 import { BetsModalComponent } from '../../modal/bets-modal/bets-modal.component';
 import Swiper from 'swiper/bundle';
 
-
-
 @Component({
   selector: 'app-home',
   standalone: true,
