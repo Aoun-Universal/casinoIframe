@@ -25,9 +25,9 @@ import 'swiper/css/pagination';
 
 export class HomeComponent implements OnInit, AfterViewInit {
   isLoggedIn: boolean = false;
-  // swiper: Swiper | null = null;
+
   routeType: 'sport' | 'casino' | 'authenticated' | '' = '';
-  // Navigate to specific routes
+
   isMarketOpen = true;
   isMarketOpen2 = true;
   betSlipContent = false
@@ -36,9 +36,9 @@ export class HomeComponent implements OnInit, AfterViewInit {
   liveCasino!: Swiper;
   activeTab: number = 1;
   LiveTab = 'basketball';
-  // swiperInstance: Swiper | null = null;
+  stakeOrigin!: Swiper;
   TableTab: number = 1;
-  // Winner Dropdown
+
   WinnerDropdown = false;
   heroCurrentSlideIndex = 0;
   heroSlideCount = 0;
@@ -403,6 +403,35 @@ export class HomeComponent implements OnInit, AfterViewInit {
   ngAfterViewInit() {
     // this.checkCarousel();
     this.homeSwiper = new Swiper('.sport-swiper', {
+      loop: false,
+      slidesPerView: 7.5,
+      slidesPerGroup: 6,
+      freeMode: true,
+      spaceBetween: 10,
+      navigation: {
+        nextEl: '.myCarouselRight',
+        prevEl: '.myCarouselLeft',
+      },
+      breakpoints: {
+        300: {
+          slidesPerView: 3,
+          slidesPerGroup: 3,
+          spaceBetween: 6,
+        },
+        768: {
+          slidesPerView: 4,
+          slidesPerGroup: 3,
+          spaceBetween: 6,
+        },
+        1024: {
+          slidesPerView: 7.5,
+          slidesPerGroup: 6,
+          spaceBetween: 10,
+        },
+      },
+    },)
+
+    this.stakeOrigin = new Swiper('.stake-swiper', {
       loop: false,
       slidesPerView: 7.5,
       slidesPerGroup: 6,

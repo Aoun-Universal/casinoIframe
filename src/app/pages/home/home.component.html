@@ -466,7 +466,7 @@
 
       <!-- Right -->
       <div class="flex cursor-pointer">
-        <button (click)="homeSwiper.slidePrev()" class="left-arrow arrows-btn">
+        <button (click)="stakeOrigin.slidePrev()" class="left-arrow arrows-btn">
           <div class="arrow-inner">
             <svg class="svg-icon " fill="currentColor" viewBox="0 0 64 64">
               <title></title>
@@ -478,7 +478,7 @@
           </div>
         </button>
 
-        <button (click)="homeSwiper.slideNext()" class="right-arrow arrows-btn">
+        <button (click)="stakeOrigin.slideNext()" class="right-arrow arrows-btn">
           <div class="arrow-inner">
             <svg class="svg-icon " fill="currentColor" viewBox="0 0 64 64">
               <title></title>
@@ -492,7 +492,7 @@
 
       </div>
     </div>
-    <div class="sport-swiper">
+    <div class="stake-swiper">
       <div class="swiper-wrapper">
         <div *ngFor="let stake of stakes" class="swiper-slide">
           <img [src]="stake.img" alt="" class="rounded-lg">
