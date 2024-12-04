@@ -7,8 +7,12 @@ import { LeaderboardComponent } from '../../modal/leaderboard/leaderboard.compon
 import { RaceComponent } from '../../modal/race/race.component';
 import { ActivatedRoute, Router } from '@angular/router';
 import { BetsModalComponent } from '../../modal/bets-modal/bets-modal.component';
-import Swiper from 'swiper/bundle';
 
+import Swiper from 'swiper';
+import { Navigation, Pagination } from 'swiper/modules';
+import 'swiper/css';
+import 'swiper/css/navigation';
+import 'swiper/css/pagination';
 
 @Component({
   selector: 'app-home',
@@ -21,15 +25,16 @@ import Swiper from 'swiper/bundle';
 
 export class HomeComponent implements OnInit, AfterViewInit {
   isLoggedIn: boolean = false;
-  swiper: Swiper | null = null;
+  // swiper: Swiper | null = null;
   routeType: 'sport' | 'casino' | 'authenticated' | '' = '';
   // Navigate to specific routes
   isMarketOpen = true;
   isMarketOpen2 = true;
   betSlipContent = false
+  homeSwiper!: Swiper;
   activeTab: number = 1;
   LiveTab = 'basketball';
-  swiperInstance: Swiper | null = null;
+  // swiperInstance: Swiper | null = null;
   TableTab: number = 1;
   // Winner Dropdown
   WinnerDropdown = false;
@@ -55,14 +60,23 @@ export class HomeComponent implements OnInit, AfterViewInit {
   @ViewChild('casinoSlider') casinoSlider!: SlickCarouselComponent;
   @ViewChild('providerSlider') providerSlider!: SlickCarouselComponent;
   swiperConfig: any;
-  @ViewChild('swiperContainer', { static: false }) swiperContainer!: ElementRef;
-// swiperInstance: Swiper;
-
+  @ViewChild('swiperContainer', { static: true }) swiperContainer!: ElementRef;
+  // swiperInstance: Swiper;
   constructor(private router: Router, private toggleService: ToggleService, private route: ActivatedRoute) { }
-
+  swiperBreakPoint = {
+    slide: 7.5,
+    space: 10
+  }
 
 
   ngOnInit() {
+    const inner = window.innerWidth
+    if (inner <= 992 && inner >= 400) {
+      this.swiperBreakPoint.slide = 4
+    } else if (inner <= 400) {
+      this.swiperBreakPoint.slide = 3
+    }
+
     const currentPath = this.route.snapshot.routeConfig?.path || '';
     console.log('Current Route Path:', currentPath);
 
@@ -381,15 +395,36 @@ export class HomeComponent implements OnInit, AfterViewInit {
   @HostListener('window:resize', ['$event'])
   onResize() {
     this.screenWidth = window.innerWidth;
-    this.checkCarousel();
+    // this.checkCarousel();
   }
 
   ngAfterViewInit() {
+    // this.checkCarousel();
+    this.homeSwiper = new Swiper('.sport-swiper', {
+      loop: false,
+      slidesPerView: 7.5,
+      freeMode: true,
+      spaceBetween: 10,
+      navigation: {
+        nextEl: '.myCarouselRight',
+        prevEl: '.myCarouselLeft',
+      },
+      breakpoints: {
+        300: {
+          slidesPerView: 3,
+          spaceBetween: 6,
+        },
+        768: {
+          slidesPerView: 4,
+          spaceBetween: 6,
+        },
+        1024: {
+          slidesPerView: 7.5,
+          spaceBetween: 10,
+        },
+      },
+    },)
 
-  this.checkCarousel();
-    console.log('hi', this.swiperContainer.nativeElement);
-    // this.swiperInstance = this.swiperContainer?.swiperRef;
-  
   }
 
   checkCarousel() {
@@ -681,6 +716,8 @@ export class HomeComponent implements OnInit, AfterViewInit {
   providerConfig = {
     slidesToShow: 6.4,
     slidesToScroll: 1,
+    swipe: true,
+    touchThreshold: 10,
     infinite: false,
     arrows: false,
     navigation: false,
@@ -737,14 +774,16 @@ export class HomeComponent implements OnInit, AfterViewInit {
   };
 
 
-  slideNext(): void {
-    this.swiperInstance?.slideNext(); // Move to the next slide
-  }
+  // slideNext(): void {
+  //   this.swiperInstance?.slideNext(); // Move to the next slide
+  //   console.log('hi', this.swiperInstance);
+  // }
 
-  slidePrev(): void {
-    this.swiperInstance?.slidePrev(); // Move to the previous slide
-  }
- 
+  // slidePrev(): void {
+  //   this.swiperInstance?.slidePrev(); // Move to the previous slide
+  //   console.log('', this.swiperInstance);
+  // }
+
 
 
 }
