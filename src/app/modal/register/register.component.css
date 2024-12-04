@@ -1,5 +1,5 @@
 .Modal-container {
-  @apply fixed left-0 z-[1500] top-0 bottom-0 right-0  p-[1rem] justify-center flex items-center text-sm;
+  @apply fixed left-0 z-[1500] top-0 bottom-0 right-0  md:p-[1rem] justify-center flex items-center text-sm;
 }
 
 input[type="date"]::-webkit-calendar-picker-indicator {
@@ -15,7 +15,7 @@ input[type="date"]::-webkit-calendar-picker-indicator {
 }
 
 .card-svelte {
-  @apply max-w-[630px] border-[rgb(26,44,56)] h-full max-h-[716px] border  rounded-lg [background-position:center] relative w-full min-w-[200px]  flex flex-col bg-[#1a2c38]  text-[#b1bad3]  overflow-hidden;
+  @apply max-w-[630px] border-[rgb(26,44,56)] h-full max-h-[716px] border  md:rounded-lg [background-position:center] relative w-full min-w-[200px]  flex flex-col bg-[#1a2c38]  text-[#b1bad3]  overflow-hidden;
 }
 .ctainer {
   @apply bg-[#0f212e] flex flex-col sticky top-0 z-[1] gap-2 touch-auto pt-2;
