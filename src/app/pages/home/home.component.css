@@ -775,3 +775,7 @@ tr:hover {
 ::ng-deep .slick-slider {
   @apply !translate-x-0;
 }
+
+::ng-deep .swiper-slide{
+  @apply hover:-translate-y-1 duration-300
+}

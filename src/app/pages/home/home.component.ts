@@ -32,6 +32,8 @@ export class HomeComponent implements OnInit, AfterViewInit {
   isMarketOpen2 = true;
   betSlipContent = false
   homeSwiper!: Swiper;
+  providerSwiper!: Swiper;
+  liveCasino!: Swiper;
   activeTab: number = 1;
   LiveTab = 'basketball';
   // swiperInstance: Swiper | null = null;
@@ -403,6 +405,35 @@ export class HomeComponent implements OnInit, AfterViewInit {
     this.homeSwiper = new Swiper('.sport-swiper', {
       loop: false,
       slidesPerView: 7.5,
+      slidesPerGroup: 6,
+      freeMode: true,
+      spaceBetween: 10,
+      navigation: {
+        nextEl: '.myCarouselRight',
+        prevEl: '.myCarouselLeft',
+      },
+      breakpoints: {
+        300: {
+          slidesPerView: 3,
+          slidesPerGroup: 3,
+          spaceBetween: 6,
+        },
+        768: {
+          slidesPerView: 4,
+          slidesPerGroup: 3,
+          spaceBetween: 6,
+        },
+        1024: {
+          slidesPerView: 7.5,
+          slidesPerGroup: 6,
+          spaceBetween: 10,
+        },
+      },
+    },)
+
+    this.providerSwiper = new Swiper('.provider-swiper', {
+      loop: false,
+      slidesPerView: 7.5,
       slidesPerGroup: 3,
       freeMode: true,
       spaceBetween: 10,
@@ -413,14 +444,46 @@ export class HomeComponent implements OnInit, AfterViewInit {
       breakpoints: {
         300: {
           slidesPerView: 3,
+          slidesPerGroup: 3,
           spaceBetween: 6,
         },
         768: {
           slidesPerView: 4,
+          slidesPerGroup: 3,
           spaceBetween: 6,
         },
         1024: {
           slidesPerView: 7.5,
+          slidesPerGroup: 6,
+          spaceBetween: 10,
+        },
+      },
+    },)
+
+    this.liveCasino = new Swiper('.casino-swiper', {
+      loop: false,
+      slidesPerView: 7.5,
+      slidesPerGroup: 3,
+      freeMode: true,
+      spaceBetween: 10,
+      navigation: {
+        nextEl: '.myCarouselRight',
+        prevEl: '.myCarouselLeft',
+      },
+      breakpoints: {
+        300: {
+          slidesPerView: 3,
+          slidesPerGroup: 3,
+          spaceBetween: 6,
+        },
+        768: {
+          slidesPerView: 4,
+          slidesPerGroup: 3,
+          spaceBetween: 6,
+        },
+        1024: {
+          slidesPerView: 7.5,
+          slidesPerGroup: 6,
           spaceBetween: 10,
         },
       },
