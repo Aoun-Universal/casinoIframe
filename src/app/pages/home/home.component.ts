@@ -435,7 +435,7 @@ export class HomeComponent implements OnInit, AfterViewInit {
     this.heroSlider = new Swiper('.hero-swiper', {
       loop: false,
       slidesPerView: 3,
-      slidesPerGroup: 1,
+      slidesPerGroup: 3,
       freeMode: true,
       spaceBetween: 16,
       navigation: {
@@ -450,12 +450,12 @@ export class HomeComponent implements OnInit, AfterViewInit {
         },
         768: {
           slidesPerView: 2,
-          slidesPerGroup: 1,
+          slidesPerGroup: 2,
           spaceBetween: 16,
         },
         1024: {
           slidesPerView: 3,
-          slidesPerGroup: 1,
+          slidesPerGroup: 3,
           spaceBetween: 16,
         },
       },
