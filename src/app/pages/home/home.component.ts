@@ -34,6 +34,7 @@ export class HomeComponent implements OnInit, AfterViewInit {
   homeSwiper!: Swiper;
   providerSwiper!: Swiper;
   liveCasino!: Swiper;
+  heroSlider!: Swiper;
   activeTab: number = 1;
   LiveTab = 'basketball';
   stakeOrigin!: Swiper;
@@ -55,7 +56,7 @@ export class HomeComponent implements OnInit, AfterViewInit {
   slides: Array<any> = [];
   searchPlaceholder: string = '';
   soccerBettingOddsState: boolean = false;
-  @ViewChild('heroSlider') heroSlider!: SlickCarouselComponent;
+
   @ViewChild('sportsSlider') sportsSlider!: SlickCarouselComponent;
   @ViewChild('gallerySlider') gallerySlider!: SlickCarouselComponent;
   @ViewChild('stakeSlider') stakeSlider!: SlickCarouselComponent;
@@ -431,6 +432,35 @@ export class HomeComponent implements OnInit, AfterViewInit {
       },
     },)
 
+    this.heroSlider = new Swiper('.hero-swiper', {
+      loop: false,
+      slidesPerView: 3,
+      slidesPerGroup: 1,
+      freeMode: true,
+      spaceBetween: 16,
+      navigation: {
+        nextEl: '.myCarouselRight',
+        prevEl: '.myCarouselLeft',
+      },
+      breakpoints: {
+        300: {
+          slidesPerView: 1,
+          slidesPerGroup: 1,
+          spaceBetween: 16,
+        },
+        768: {
+          slidesPerView: 2,
+          slidesPerGroup: 1,
+          spaceBetween: 16,
+        },
+        1024: {
+          slidesPerView: 3,
+          slidesPerGroup: 1,
+          spaceBetween: 16,
+        },
+      },
+    },)
+
     this.stakeOrigin = new Swiper('.stake-swiper', {
       loop: false,
       slidesPerView: 7.5,
@@ -626,11 +656,7 @@ export class HomeComponent implements OnInit, AfterViewInit {
     this.casinoCurrentSlideIndex = e.currentSlide;
   }
 
-  heroPrev() {
-    if (this.heroCurrentSlideIndex !== 0) {
-      this.heroSlider.slickPrev();
-    }
-  }
+ 
 
   galleryPrev() {
     if (this.galleryCurrentSlideIndex !== 0) {
@@ -659,11 +685,7 @@ export class HomeComponent implements OnInit, AfterViewInit {
 
   }
 
-  heroNext() {
-    if (this.heroCurrentSlideIndex !== this.heroSlideCount) {
-      this.heroSlider.slickNext();
-    }
-  }
+ 
 
   sportsNext() {
 

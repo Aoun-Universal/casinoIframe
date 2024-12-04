@@ -187,57 +187,59 @@
 
 <!--slider section-->
 <section class="main-section">
-  <!------------------------------ Hero Slider ---------------------->
-  <ngx-slick-carousel #heroSlider="slick-carousel" (afterChange)="heroAfterChange($event)"
-    (init)="heroSlickInit($event)" [config]="heroSliderConfig" class="carousel mt-6">
-    @for (slide of slides; track $index) {
-    <div ngxSlickItem class="hero-card">
-      <a>
-        <div class="card-wrapper">
-          <div class="content-wrapper">
-            <!-- Text Content -->
-            <div class="content">
-              <!-- Badge -->
-              <div class="mb-2">
-                <div class="badge-content">{{ slide.badge }}</div>
+  <div class="hero-swiper overflow-hidden mt-[24px]">
+    <div class="swiper-wrapper ">
+      @for (slide of slides; track $index) {
+      <div class="hero-card swiper-slide">
+        <a>
+          <div class="card-wrapper">
+            <div class="content-wrapper">
+              <!-- Text Content -->
+              <div class="content">
+                <!-- Badge -->
+                <div class="mb-2">
+                  <div class="badge-content">{{ slide.badge }}</div>
+                </div>
+                <!-- Card Title -->
+                <span class="card-title !text-[18px]">{{ slide.title }}</span>
+                <!-- Card description -->
+                <div class="mt-1">
+                  <span class="description-wrapper">
+                    {{ slide.description }}
+                    <span class="font-semibold">Read More</span>
+                  </span>
+                </div>
+                <!-- Action button -->
+                <div class="button-wrapper">
+                  <a class="btn-content">{{ slide.buttonText }}</a>
+                </div>
               </div>
-              <!-- Card Title -->
-              <span class="card-title !text-[18px]">{{ slide.title }}</span>
-              <!-- Card description -->
-              <div class="mt-1">
-                <span class="description-wrapper">
-                  {{ slide.description }}
-                  <span class="font-semibold">Read More</span>
-                </span>
-              </div>
-              <!-- Action button -->
-              <div class="button-wrapper">
-                <a class="btn-content">{{ slide.buttonText }}</a>
+            </div>
+            <!-- Image -->
+            <div class="relative">
+              <div class="img-inner">
+                <img class="!object-contain" [src]="slide.img" [alt]="slide.title" decoding="async"
+                  style="object-fit: cover; max-width: 220px; max-height: 220px; aspect-ratio: 1 / 1; width: 100%;" />
               </div>
             </div>
           </div>
-          <!-- Image -->
-          <div class="relative">
-            <div class="img-inner">
-              <img class="!object-contain" [src]="slide.img" [alt]="slide.title" decoding="async"
-                style="object-fit: cover; max-width: 220px; max-height: 220px; aspect-ratio: 1 / 1; width: 100%;" />
-            </div>
-          </div>
-        </div>
-      </a>
+        </a>
+      </div>
+      }
     </div>
-    }
-  </ngx-slick-carousel>
+  </div>
 
 
-  <button (click)="heroPrev()" class="max-[1155px]:hidden group absolute left-[5px] top-[40%] z-10  text-white">
+  <button (click)="heroSlider.slidePrev()"
+    class="max-[1155px]:hidden group absolute left-[5px] top-[40%] z-10  text-white">
     <span class="inline-block translate-y-3 opacity-50 transition-all duration-200 group-hover:opacity-100">
       <svg class="svg-icon text-[24px]" fill="currentColor" viewBox="0 0 64 64">
         <title></title>
         <path d="M36.998 53.995 16 32.998 36.998 12l6.306 6.306L28.61 33l14.694 14.694L36.998 54v-.005Z"></path>
       </svg></span>
   </button>
-  <button (click)="heroNext()" class=" max-[1155px]:hidden group absolute right-[5px] top-[40%] z-10   text-white">
+  <button (click)="heroSlider.slideNext()"
+    class=" max-[1155px]:hidden group absolute right-[5px] top-[40%] z-10   text-white">
     <span
       class="inline-block  text-white translate-y-3  opacity-50 transition-all duration-200 group-hover:opacity-100">
       <svg class="svg-icon text-[24px]" fill="currentColor" viewBox="0 0 64 64">
@@ -439,7 +441,9 @@
       <div class="swiper-wrapper">
         <div *ngFor="let stake of sports; let i = index" class="swiper-slide">
           <img [src]="stake.img" alt="" class="rounded-lg">
-          <div class="index-ribbon absolute bg-[#2f4553] p-2 font-bold left-0 top-[20px] shadow-sm shadow-grey-600 rounded-tr rounded-br">{{i + 1}}</div>
+          <div
+            class="index-ribbon absolute bg-[#2f4553] p-2 font-bold left-0 top-[20px] shadow-sm shadow-grey-600 rounded-tr rounded-br">
+            {{i + 1}}</div>
         </div>
       </div>
     </div>
