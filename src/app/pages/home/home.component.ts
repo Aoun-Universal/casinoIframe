@@ -403,6 +403,7 @@ export class HomeComponent implements OnInit, AfterViewInit {
     this.homeSwiper = new Swiper('.sport-swiper', {
       loop: false,
       slidesPerView: 7.5,
+      slidesPerGroup: 3,
       freeMode: true,
       spaceBetween: 10,
       navigation: {
