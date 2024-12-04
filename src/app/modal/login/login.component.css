@@ -1,12 +1,12 @@
 .Modal-container {
-  @apply fixed left-0 z-[1500] top-0 bottom-0 right-0  p-[1rem] justify-center flex items-center text-sm;
+  @apply fixed left-0 z-[1500] top-0 bottom-0 right-0  md:p-[1rem] justify-center flex items-center text-sm;
 }
 .svelte-syudie {
   @apply absolute  left-0 top-0 bottom-0 right-0  touch-none bg-[rgba(0,0,0,0.75)];
 }
 
 .card-svelte {
-  @apply max-w-[630px] h-full max-h-[716px] border border-[rgb(26,44,56)]  rounded-lg [background-position:center] relative w-full min-w-[200px]  flex flex-col bg-[#1a2c38]  text-[#b1bad3]  overflow-hidden;
+  @apply max-w-[630px] h-full max-h-[716px] border border-[rgb(26,44,56)]  md:rounded-lg [background-position:center] relative w-full min-w-[200px]  flex flex-col bg-[#1a2c38]  text-[#b1bad3]  overflow-hidden;
 }
 .ctainer {
   @apply flex  bg-[#1a2c38] justify-between items-center min-h-[60px] py-0 px-4;
