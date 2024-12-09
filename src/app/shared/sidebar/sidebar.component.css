@@ -49,13 +49,14 @@
   @apply relative flex  items-center justify-center bg-cover text-white text-[.875rem] !h-[2.25rem] md:!w-[78px] rounded-[.25rem] bg-no-repeat  font-bold select-none;
 }
 .sports {
-  background-image: url("/assets/sports-balls-en.jpg");
+  background-image: url("/assets/Sports.svg");
   background-repeat: no-repeat;
   background-size: cover;
   @apply max-md:[background-position:0_-15px];
 }
 .casino {
-  background-image: url("/assets/casino.jpeg");
+  background-image: url("/assets/Casino.svg");
+   background-size: cover;
   @apply max-md:[background-position:0_-15px]
 }
 .main-container-content {
