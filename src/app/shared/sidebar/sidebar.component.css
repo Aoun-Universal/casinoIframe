@@ -49,12 +49,14 @@
   @apply relative flex  items-center justify-center bg-cover text-white text-[.875rem] !h-[2.25rem] md:!w-[78px] rounded-[.25rem] bg-no-repeat  font-bold select-none;
 }
 .sports {
-  background-image: url("/assets/sidebar/sports-balls-en.webp");
+  background-image: url("/assets/sports-balls-en.jpg");
   background-repeat: no-repeat;
   background-size: cover;
+  background-position: 0 -15px;
 }
 .casino {
-  background-image: url("/assets/sidebar/casino-poker-cards-en.webp");
+  background-image: url("/assets/casino.jpeg");
+  background-position: 0 -15px;
 }
 .main-container-content {
   @apply p-4 max-md:mb-10 max-md:max-h-[calc(100vh-280px)] max-md:!overflow-y-auto;
@@ -142,6 +144,7 @@
   display: flex;
   gap: 0.5rem;
   padding: 0 1rem 1rem 1rem;
+  @apply max-md:gap-1;
 }
 
 .header-button.mobile {
@@ -161,6 +164,7 @@
   display: flex;
   flex: auto;
   align-items: center;
+  justify-content: end;
   background-size: cover;
   background-repeat: no-repeat;
   border-radius: 4px;
@@ -171,8 +175,8 @@
   -webkit-user-select: none;
   -moz-user-select: none;
   user-select: none;
-
-  min-height: 70.57px;
+  padding-right: 12px;
+  min-height: 48px;
 }
 .option {
   @apply cursor-pointer flex justify-between w-full leading-[1.5rem];
