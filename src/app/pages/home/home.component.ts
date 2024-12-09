@@ -1,15 +1,22 @@
-import { CommonModule, NgClass, NgIf, NgStyle, NgSwitch, NgSwitchCase } from '@angular/common';
-import { AfterViewInit, Component, CUSTOM_ELEMENTS_SCHEMA, ElementRef, HostListener, OnInit, ViewChild } from '@angular/core';
-import { ToggleService } from '../../services/toggle.service';
-import { BetSlipComponent } from '../../shared/bet-slip/bet-slip.component';
-import { SlickCarouselComponent, SlickCarouselModule } from 'ngx-slick-carousel';
-import { LeaderboardComponent } from '../../modal/leaderboard/leaderboard.component';
-import { RaceComponent } from '../../modal/race/race.component';
-import { ActivatedRoute, Router } from '@angular/router';
-import { BetsModalComponent } from '../../modal/bets-modal/bets-modal.component';
+import {CommonModule, NgClass, NgIf, NgStyle, NgSwitch, NgSwitchCase} from '@angular/common';
+import {
+  AfterViewInit,
+  Component,
+  CUSTOM_ELEMENTS_SCHEMA,
+  ElementRef,
+  HostListener,
+  OnInit,
+  ViewChild
+} from '@angular/core';
+import {ToggleService} from '../../services/toggle.service';
+import {BetSlipComponent} from '../../shared/bet-slip/bet-slip.component';
+import {SlickCarouselComponent, SlickCarouselModule} from 'ngx-slick-carousel';
+import {LeaderboardComponent} from '../../modal/leaderboard/leaderboard.component';
+import {RaceComponent} from '../../modal/race/race.component';
+import {ActivatedRoute, Router} from '@angular/router';
+import {BetsModalComponent} from '../../modal/bets-modal/bets-modal.component';
 
 import Swiper from 'swiper';
-import { Navigation, Pagination } from 'swiper/modules';
 import 'swiper/css';
 import 'swiper/css/navigation';
 import 'swiper/css/pagination';
@@ -63,14 +70,341 @@ export class HomeComponent implements OnInit, AfterViewInit {
   @ViewChild('casinoSlider') casinoSlider!: SlickCarouselComponent;
   @ViewChild('providerSlider') providerSlider!: SlickCarouselComponent;
   swiperConfig: any;
-  @ViewChild('swiperContainer', { static: true }) swiperContainer!: ElementRef;
-  // swiperInstance: Swiper;
-  constructor(private router: Router, private toggleService: ToggleService, private route: ActivatedRoute) { }
+  @ViewChild('swiperContainer', {static: true}) swiperContainer!: ElementRef;
   swiperBreakPoint = {
     slide: 7.5,
     space: 10
   }
+  sports = [
+    {
+      img: "/assets/home/sport-1.avif",
+      count: 1
+    },
+    {img: "/assets/home/sport-2.avif", count: 2},
+    {img: "/assets/home/sport-3.avif", count: 3},
+    {img: "/assets/home/sport-4.avif", count: 4},
+    {img: "/assets/home/sport-5.avif", count: 5},
+    {img: "/assets/home/sport-6.avif", count: 6},
+    {
+      img: "/assets/home/sport-7.avif",
+      count: 7
+    },
+    {img: "/assets/home/sport-8.avif", count: 8},
+    {img: "/assets/home/sport-9.avif", count: 9},
+    {img: "/assets/home/sport-10.avif", count: 10},
 
+  ];
+  cards = [
+    {
+      title: "$100k Race",
+      description: "Ready to race to the top?",
+      leaderboardText: "Leaderboard",
+      timer: {hours: 9, minutes: 11},
+      footerType: "notEnteredYet",  // Unique identifier for footer type
+      clickFunction: this.openLeaderBoardModal.bind(this),
+      InfoModal: this.openRaceModal.bind(this),
+    },
+    {
+      title: "$75k Weekly Raffle",
+      description: "Finish your week with a win!",
+      leaderboardText: "0 Tickets",
+      timer: {days: 2, hours: 8, minutes: 5},
+      footerType: "progressBar",
+      progress: 0,
+      clickFunction: this.openLeaderBoardModal.bind(this),
+      InfoModal: this.openRaceModal.bind(this),
+    },
+  ];
+  stakes = [
+    {
+      img: "/assets/home/stake-1.avif",
+      count: 3469
+    },
+    {img: "/assets/home/stake-2.avif", count: 1943},
+    {img: "/assets/home/stake-3.avif", count: 1931},
+    {img: "/assets/home/stake-4.avif", count: 1962},
+    {img: "/assets/home/stake-5.avif", count: 4814},
+    {img: "/assets/home/stake-6.avif", count: 3218},
+    {
+      img: "/assets/home/stake-7.avif",
+      count: 1450
+    },
+    {img: "/assets/home/stake-8.avif", count: 895},
+    {img: "/assets/home/stake-9.avif", count: 930},
+    {img: "/assets/home/stake-10.avif", count: 1414},
+    {img: "/assets/home/stake-11.avif", count: 186},
+    {img: "/assets/home/stake-12.avif", count: 711},
+    {img: "/assets/home/stake-13.avif", count: 105},
+    {img: "/assets/home/stake-14.avif", count: 895},
+    {img: "/assets/home/stake-15.avif", count: 930},
+    {img: "/assets/home/stake-16.avif", count: 1414},
+    {img: "/assets/home/stake-17.avif", count: 895},
+    {img: "/assets/home/stake-18.avif", count: 930},
+  ];
+  casinos: { img: string }[] = [
+    {
+      img: "/assets/home/casino-1.avif"
+    },
+    {img: "/assets/home/casino-2.avif"},
+    {img: "/assets/home/casino-3.avif"},
+    {img: "/assets/home/casino-4.avif"},
+    {img: "/assets/home/casino-5.avif"},
+    {img: "/assets/home/casino-6.avif"},
+    {img: "/assets/home/casino-7.avif"},
+    {img: "/assets/home/casino-8.avif"},
+    {img: "/assets/home/casino-9.avif"},
+    {img: "/assets/home/casino-10.avif"},
+    {img: "/assets/home/casino-11.avif"},
+    {img: "/assets/home/casino-12.avif"},
+    {img: "/assets/home/casino-13.avif"},
+    {img: "/assets/home/casino-14.avif"},
+    {img: "/assets/home/casino-15.avif"},
+    {img: "/assets/home/casino-16.avif"},
+    {img: "/assets/home/casino-17.avif"},
+    {img: "/assets/home/casino-18.avif"},
+    {img: "/assets/home/casino-19.avif"},
+    {img: "/assets/home/casino-20.avif"},
+    {img: "/assets/home/casino-21.avif"},
+    {img: "/assets/home/casino-22.avif"},
+
+  ];
+  providers = [
+    {img: "/assets/providers/pragmatic.png"},
+    {img: "/assets/providers/evolution.png"},
+    {img: "/assets/providers/hacksaw.png"},
+    {img: "/assets/providers/nolimit.jpeg"},
+    {img: "/assets/providers/play-go.png"},
+    {img: "/assets/providers/push-gaming.png"},
+    {img: "/assets/providers/real-gaming.png"},
+    {img: "/assets/providers/massive.png"},
+    {img: "/assets/providers/stake-gaming.png"},
+    {img: "/assets/providers/titan-gaming.png"},
+    {img: "/assets/providers/avatar-ux.png"},
+    {img: "/assets/providers/backseat.png"},
+    {img: "/assets/providers/twist.png"},
+    {img: "/assets/providers/octoplay.png"},
+    {img: "/assets/providers/elk-studios.png"},
+    {img: "/assets/providers/thunderkick.jpeg"},
+    {img: "/assets/providers/popiplay.png"},
+    {img: "/assets/providers/bg-gaming.png"},
+    {img: "/assets/providers/print-studios.png"},
+    {img: "/assets/providers/bullshark.png"},
+    {img: "/assets/providers/pg-gaming.jpeg"},
+    {img: "/assets/providers/netent.png"},
+    {img: "/assets/providers/btg.png"},
+    {img: "/assets/providers/red-tiger.png"},
+    {img: "/assets/providers/fantasma.png"},
+    {img: "/assets/providers/game-art.png"},
+    {img: "/assets/providers/oslotmill.png"},
+    {img: "/assets/providers/one-touch.png"},
+    {img: "/assets/providers/wazdan.png"},
+    {img: "/assets/providers/live-88.png"},
+    {img: "/assets/providers/gamomat.png"},
+    {img: "/assets/providers/games-global.png"},
+    {img: "/assets/providers/belatra.png"},
+    {img: "/assets/providers/endorphina.png"},
+    {img: "/assets/providers/true-lab.png"},
+    {img: "/assets/providers/blue-print.png"},
+    {img: "/assets/providers/redrake.png"},
+    {img: "/assets/providers/boming-games.png"},
+    {img: "/assets/providers/quick-spin.png"},
+    {img: "/assets/providers/novomatic.png"},
+    {img: "/assets/providers/oaks-gaming.png"},
+    {img: "/assets/providers/jade-rabbit.png"},
+    {img: "/assets/providers/jade-rabbit.png"},
+  ];
+  index = 0;
+  heroSliderConfig = {
+    slidesToShow: 3,
+    slidesToScroll: 3,
+    arrows: false,
+    infinite: false,
+    variableWidth: false,
+    responsive: [
+      {
+        breakpoint: 1024,
+        settings: {
+          slidesToShow: 2,
+        },
+      },
+      {
+        breakpoint: 947,
+        settings: {
+          slidesToShow: 2,
+        },
+      },
+      {
+        breakpoint: 480,
+        settings: {
+          slidesToShow: 1,
+        },
+      },
+    ],
+
+  };
+  isCarouselActive = true;
+  screenWidth = window.innerWidth;
+  galleryConfig = {
+    slidesToShow: 2,
+    slidesToScroll: 1,
+    arrows: false,
+    infinite: false,
+    variableWidth: false,
+    responsive: [
+      {
+        breakpoint: 1154,
+        settings: {
+          slidesToShow: 1,
+          slidesToScroll: 1,
+          variableWidth: false
+        }
+      },
+    ],
+  };
+  stakeConfig = {
+    slidesToShow: 3,
+    slidesToScroll: 3,
+    arrows: false,
+    infinite: false,
+    variableWidth: true,
+    responsive: [
+      {
+        breakpoint: 1154,
+        settings: {
+          slidesToShow: 1,
+          slidesToScroll: 1,
+          variableWidth: true
+        }
+      },
+    ],
+
+  };
+  slideConfig = {
+    slidesToShow: 6.4,
+    slidesToScroll: 1,
+    infinite: false,
+    arrows: false,
+    navigation: false,
+    responsive: [
+      {
+        breakpoint: 1024,
+        settings: {
+          slidesToShow: 7,
+        },
+      },
+      {
+        breakpoint: 947,
+        settings: {
+          slidesToShow: 4,
+          slidesToScroll: 3,
+        },
+      },
+      {
+        breakpoint: 480,
+        settings: {
+          slidesToShow: 3,
+          slidesToScroll: 3
+        },
+      },
+    ],
+
+  };
+
+  // Adjust width issues of gallery slider
+  casinoConfig = {
+    slidesToShow: 6.4,
+    slidesToScroll: 3,
+    infinite: true,
+    arrows: false,
+    navigation: false,
+    swipeToSlide: true,
+    responsive: [
+      {
+        breakpoint: 1024,
+        settings: {
+          slidesToShow: 7,
+          slidesToScroll: 3,
+        },
+      },
+      {
+        breakpoint: 947,
+        settings: {
+          slidesToShow: 4,
+          slidesToScroll: 3,
+        },
+      },
+      {
+        breakpoint: 480,
+        settings: {
+          slidesToShow: 3,
+          slidesToScroll: 3,
+        },
+      },
+    ],
+
+  };
+  providerConfig = {
+    slidesToShow: 6.4,
+    slidesToScroll: 1,
+    swipe: true,
+    touchThreshold: 10,
+    infinite: false,
+    arrows: false,
+    navigation: false,
+    responsive: [
+      {
+        breakpoint: 1024,
+        settings: {
+          slidesToShow: 7,
+        },
+      },
+      {
+        breakpoint: 947,
+        settings: {
+          slidesToShow: 4,
+        },
+      },
+      {
+        breakpoint: 480,
+        settings: {
+          slidesToShow: 3,
+        },
+      },
+    ],
+
+  };
+  topSportsConfig = {
+    slidesToShow: 6.4,
+    slidesToScroll: 1,
+    infinite: false,
+    arrows: false,
+    navigation: false,
+    responsive: [
+      {
+        breakpoint: 1024,
+        settings: {
+          slidesToShow: 7,
+        },
+      },
+      {
+        breakpoint: 947,
+        settings: {
+          slidesToShow: 4,
+        },
+      },
+      {
+        breakpoint: 480,
+        settings: {
+          slidesToShow: 3,
+        },
+      },
+    ],
+
+  };
+
+  // swiperInstance: Swiper;
+  constructor(private router: Router, private toggleService: ToggleService, private route: ActivatedRoute) {
+  }
 
   ngOnInit() {
     const inner = window.innerWidth
@@ -80,28 +414,24 @@ export class HomeComponent implements OnInit, AfterViewInit {
       this.swiperBreakPoint.slide = 3
     }
 
-    const currentPath = this.route.snapshot.routeConfig?.path || '';
-    console.log('Current Route Path:', currentPath);
+    this.route.data.subscribe((data) => {
+      this.routeType = data['type'] || '';
+      console.log('Route Type:', this.routeType);
 
-    // Assign routeType based on the route
-    if (currentPath.includes('sport')) {
-      this.routeType = 'sport';
-    } else if (currentPath.includes('casino')) {
-      this.routeType = 'casino';
-    } else if (currentPath.includes('authenticated')) {
-      this.routeType = 'authenticated';
-    } else {
-      this.routeType = '';
-    }
+      // Set placeholders and login status
+      this.searchPlaceholder =
+        this.routeType === 'sport'
+          ? 'Search your event'
+          : this.routeType === 'casino'
+            ? 'Search your game'
+            : 'Search';
+      this.isLoggedIn =
+        this.routeType === 'authenticated' ? this.isUserLoggedIn() : true;
 
-    console.log('Route Type:', this.routeType);
+      // Set up slides based on the route type
+      this.setupSlides();
+    });
 
-    // Set placeholders and login status
-    this.searchPlaceholder = this.routeType === 'sport' ? 'Search your event' : 'Search your game';
-    this.isLoggedIn = this.routeType === 'authenticated' ? this.isUserLoggedIn() : true;
-
-    // Set up slides based on the route type
-    this.setupSlides();
   }
 
   isUserLoggedIn(): boolean {
@@ -216,184 +546,6 @@ export class HomeComponent implements OnInit, AfterViewInit {
 
 
   }
-  sports = [
-    {
-      img: "/assets/home/sport-1.avif",
-      count: 1
-    },
-    { img: "/assets/home/sport-2.avif", count: 2 },
-    { img: "/assets/home/sport-3.avif", count: 3 },
-    { img: "/assets/home/sport-4.avif", count: 4 },
-    { img: "/assets/home/sport-5.avif", count: 5 },
-    { img: "/assets/home/sport-6.avif", count: 6 },
-    {
-      img: "/assets/home/sport-7.avif",
-      count: 7
-    },
-    { img: "/assets/home/sport-8.avif", count: 8 },
-    { img: "/assets/home/sport-9.avif", count: 9 },
-    { img: "/assets/home/sport-10.avif", count: 10 },
-
-  ];
-
-  cards = [
-    {
-      title: "$100k Race",
-      description: "Ready to race to the top?",
-      leaderboardText: "Leaderboard",
-      timer: { hours: 9, minutes: 11 },
-      footerType: "notEnteredYet",  // Unique identifier for footer type
-      clickFunction: this.openLeaderBoardModal.bind(this),
-      InfoModal: this.openRaceModal.bind(this),
-    },
-    {
-      title: "$75k Weekly Raffle",
-      description: "Finish your week with a win!",
-      leaderboardText: "0 Tickets",
-      timer: { days: 2, hours: 8, minutes: 5 },
-      footerType: "progressBar",
-      progress: 0,
-      clickFunction: this.openLeaderBoardModal.bind(this),
-      InfoModal: this.openRaceModal.bind(this),
-    },
-  ];
-
-  stakes = [
-    {
-      img: "/assets/home/stake-1.avif",
-      count: 3469
-    },
-    { img: "/assets/home/stake-2.avif", count: 1943 },
-    { img: "/assets/home/stake-3.avif", count: 1931 },
-    { img: "/assets/home/stake-4.avif", count: 1962 },
-    { img: "/assets/home/stake-5.avif", count: 4814 },
-    { img: "/assets/home/stake-6.avif", count: 3218 },
-    {
-      img: "/assets/home/stake-7.avif",
-      count: 1450
-    },
-    { img: "/assets/home/stake-8.avif", count: 895 },
-    { img: "/assets/home/stake-9.avif", count: 930 },
-    { img: "/assets/home/stake-10.avif", count: 1414 },
-    { img: "/assets/home/stake-11.avif", count: 186 },
-    { img: "/assets/home/stake-12.avif", count: 711 },
-    { img: "/assets/home/stake-13.avif", count: 105 },
-    { img: "/assets/home/stake-14.avif", count: 895 },
-    { img: "/assets/home/stake-15.avif", count: 930 },
-    { img: "/assets/home/stake-16.avif", count: 1414 },
-    { img: "/assets/home/stake-17.avif", count: 895 },
-    { img: "/assets/home/stake-18.avif", count: 930 },
-  ];
-
-  casinos: { img: string }[] = [
-    {
-      img: "/assets/home/casino-1.avif"
-    },
-    { img: "/assets/home/casino-2.avif" },
-    { img: "/assets/home/casino-3.avif" },
-    { img: "/assets/home/casino-4.avif" },
-    { img: "/assets/home/casino-5.avif" },
-    { img: "/assets/home/casino-6.avif" },
-    { img: "/assets/home/casino-7.avif" },
-    { img: "/assets/home/casino-8.avif" },
-    { img: "/assets/home/casino-9.avif" },
-    { img: "/assets/home/casino-10.avif" },
-    { img: "/assets/home/casino-11.avif" },
-    { img: "/assets/home/casino-12.avif" },
-    { img: "/assets/home/casino-13.avif" },
-    { img: "/assets/home/casino-14.avif" },
-    { img: "/assets/home/casino-15.avif" },
-    { img: "/assets/home/casino-16.avif" },
-    { img: "/assets/home/casino-17.avif" },
-    { img: "/assets/home/casino-18.avif" },
-    { img: "/assets/home/casino-19.avif" },
-    { img: "/assets/home/casino-20.avif" },
-    { img: "/assets/home/casino-21.avif" },
-    { img: "/assets/home/casino-22.avif" },
-
-  ];
-
-  providers = [
-    { img: "/assets/providers/pragmatic.png" },
-    { img: "/assets/providers/evolution.png" },
-    { img: "/assets/providers/hacksaw.png" },
-    { img: "/assets/providers/nolimit.jpeg" },
-    { img: "/assets/providers/play-go.png" },
-    { img: "/assets/providers/push-gaming.png" },
-    { img: "/assets/providers/real-gaming.png" },
-    { img: "/assets/providers/massive.png" },
-    { img: "/assets/providers/stake-gaming.png" },
-    { img: "/assets/providers/titan-gaming.png" },
-    { img: "/assets/providers/avatar-ux.png" },
-    { img: "/assets/providers/backseat.png" },
-    { img: "/assets/providers/twist.png" },
-    { img: "/assets/providers/octoplay.png" },
-    { img: "/assets/providers/elk-studios.png" },
-    { img: "/assets/providers/thunderkick.jpeg" },
-    { img: "/assets/providers/popiplay.png" },
-    { img: "/assets/providers/bg-gaming.png" },
-    { img: "/assets/providers/print-studios.png" },
-    { img: "/assets/providers/bullshark.png" },
-    { img: "/assets/providers/pg-gaming.jpeg" },
-    { img: "/assets/providers/netent.png" },
-    { img: "/assets/providers/btg.png" },
-    { img: "/assets/providers/red-tiger.png" },
-    { img: "/assets/providers/fantasma.png" },
-    { img: "/assets/providers/game-art.png" },
-    { img: "/assets/providers/oslotmill.png" },
-    { img: "/assets/providers/one-touch.png" },
-    { img: "/assets/providers/wazdan.png" },
-    { img: "/assets/providers/live-88.png" },
-    { img: "/assets/providers/gamomat.png" },
-    { img: "/assets/providers/games-global.png" },
-    { img: "/assets/providers/belatra.png" },
-    { img: "/assets/providers/endorphina.png" },
-    { img: "/assets/providers/true-lab.png" },
-    { img: "/assets/providers/blue-print.png" },
-    { img: "/assets/providers/redrake.png" },
-    { img: "/assets/providers/boming-games.png" },
-    { img: "/assets/providers/quick-spin.png" },
-    { img: "/assets/providers/novomatic.png" },
-    { img: "/assets/providers/oaks-gaming.png" },
-    { img: "/assets/providers/jade-rabbit.png" },
-    { img: "/assets/providers/jade-rabbit.png" },
-  ];
-
-  index = 0;
-
-  heroSliderConfig = {
-    slidesToShow: 3,
-    slidesToScroll: 3,
-    arrows: false,
-    infinite: false,
-    variableWidth: false,
-    responsive: [
-      {
-        breakpoint: 1024,
-        settings: {
-          slidesToShow: 2,
-        },
-      },
-      {
-        breakpoint: 947,
-        settings: {
-          slidesToShow: 2,
-        },
-      },
-      {
-        breakpoint: 480,
-        settings: {
-          slidesToShow: 1,
-        },
-      },
-    ],
-
-  };
-
-  // Adjust width issues of gallery slider
-
-  isCarouselActive = true;
-  screenWidth = window.innerWidth;
 
   @HostListener('window:resize', ['$event'])
   onResize() {
@@ -562,51 +714,9 @@ export class HomeComponent implements OnInit, AfterViewInit {
     }
   }
 
-
-
-  galleryConfig = {
-    slidesToShow: 2,
-    slidesToScroll: 1,
-    arrows: false,
-    infinite: false,
-    variableWidth: false,
-    responsive: [
-      {
-        breakpoint: 1154,
-        settings: {
-          slidesToShow: 1,
-          slidesToScroll: 1,
-          variableWidth: false
-        }
-      },
-    ],
-  };
-
-  stakeConfig = {
-    slidesToShow: 3,
-    slidesToScroll: 3,
-    arrows: false,
-    infinite: false,
-    variableWidth: true,
-    responsive: [
-      {
-        breakpoint: 1154,
-        settings: {
-          slidesToShow: 1,
-          slidesToScroll: 1,
-          variableWidth: true
-        }
-      },
-    ],
-
-  };
-
-
-
   openstatisticsTableModalState() {
     this.toggleService.setstatisticsTableModalState(true)
   }
-
 
   heroSlickInit(e: any) {
     this.heroSlideCount = e.slick.slideCount;
@@ -656,8 +766,6 @@ export class HomeComponent implements OnInit, AfterViewInit {
     this.casinoCurrentSlideIndex = e.currentSlide;
   }
 
- 
-
   galleryPrev() {
     if (this.galleryCurrentSlideIndex !== 0) {
       this.gallerySlider.slickPrev();
@@ -685,8 +793,6 @@ export class HomeComponent implements OnInit, AfterViewInit {
 
   }
 
- 
-
   sportsNext() {
 
     this.sportsSlider.slickNext();
@@ -697,6 +803,8 @@ export class HomeComponent implements OnInit, AfterViewInit {
       this.stakeSlider.slickNext();
     }
   }
+
+  // Betslip
 
   casinoNext() {
     this.casinoSlider.slickNext();
@@ -717,8 +825,6 @@ export class HomeComponent implements OnInit, AfterViewInit {
       this.gallerySlider.slickNext();
     }
   }
-
-  // Betslip
 
   openModal() {
     this.toggleService.setBetslipstate(true);
@@ -760,133 +866,10 @@ export class HomeComponent implements OnInit, AfterViewInit {
   setLiveTabActive(tab: string) {
     this.LiveTab = tab;
   }
+
   toggleSoccerBettingOddState() {
     this.soccerBettingOddsState = !this.soccerBettingOddsState;
   }
-
-  slideConfig = {
-    slidesToShow: 6.4,
-    slidesToScroll: 1,
-    infinite: false,
-    arrows: false,
-    navigation: false,
-    responsive: [
-      {
-        breakpoint: 1024,
-        settings: {
-          slidesToShow: 7,
-        },
-      },
-      {
-        breakpoint: 947,
-        settings: {
-          slidesToShow: 4,
-          slidesToScroll: 3,
-        },
-      },
-      {
-        breakpoint: 480,
-        settings: {
-          slidesToShow: 3,
-          slidesToScroll: 3
-        },
-      },
-    ],
-
-  };
-
-  casinoConfig = {
-    slidesToShow: 6.4,
-    slidesToScroll: 3,
-    infinite: true,
-    arrows: false,
-    navigation: false,
-    swipeToSlide: true,
-    responsive: [
-      {
-        breakpoint: 1024,
-        settings: {
-          slidesToShow: 7,
-          slidesToScroll: 3,
-        },
-      },
-      {
-        breakpoint: 947,
-        settings: {
-          slidesToShow: 4,
-          slidesToScroll: 3,
-        },
-      },
-      {
-        breakpoint: 480,
-        settings: {
-          slidesToShow: 3,
-          slidesToScroll: 3,
-        },
-      },
-    ],
-
-  };
-
-  providerConfig = {
-    slidesToShow: 6.4,
-    slidesToScroll: 1,
-    swipe: true,
-    touchThreshold: 10,
-    infinite: false,
-    arrows: false,
-    navigation: false,
-    responsive: [
-      {
-        breakpoint: 1024,
-        settings: {
-          slidesToShow: 7,
-        },
-      },
-      {
-        breakpoint: 947,
-        settings: {
-          slidesToShow: 4,
-        },
-      },
-      {
-        breakpoint: 480,
-        settings: {
-          slidesToShow: 3,
-        },
-      },
-    ],
-
-  };
-
-  topSportsConfig = {
-    slidesToShow: 6.4,
-    slidesToScroll: 1,
-    infinite: false,
-    arrows: false,
-    navigation: false,
-    responsive: [
-      {
-        breakpoint: 1024,
-        settings: {
-          slidesToShow: 7,
-        },
-      },
-      {
-        breakpoint: 947,
-        settings: {
-          slidesToShow: 4,
-        },
-      },
-      {
-        breakpoint: 480,
-        settings: {
-          slidesToShow: 3,
-        },
-      },
-    ],
-
-  };
 
 
   // slideNext(): void {
@@ -898,7 +881,6 @@ export class HomeComponent implements OnInit, AfterViewInit {
   //   this.swiperInstance?.slidePrev(); // Move to the previous slide
   //   console.log('', this.swiperInstance);
   // }
-
 
 
 }
