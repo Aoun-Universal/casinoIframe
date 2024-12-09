@@ -52,11 +52,11 @@
   background-image: url("/assets/sports-balls-en.jpg");
   background-repeat: no-repeat;
   background-size: cover;
-  background-position: 0 -15px;
+  @apply max-md:[background-position:0_-15px];
 }
 .casino {
   background-image: url("/assets/casino.jpeg");
-  background-position: 0 -15px;
+  @apply max-md:[background-position:0_-15px]
 }
 .main-container-content {
   @apply p-4 max-md:mb-10 max-md:max-h-[calc(100vh-280px)] max-md:!overflow-y-auto;
@@ -153,9 +153,8 @@
   min-height: 70.57px;
   flex: auto;
   justify-content: end;
-  background-position: 0 -15px;
   padding-right: 0.75rem;
-
+  
   background-color: url(/assets/casino-poker-cards-en.jpg);
 }
 
