@@ -1,4 +1,5 @@
-import { CommonModule, NgIf } from '@angular/common';
+import { CommonModule, NgIf, Location } from '@angular/common';
+
 import { Component, ElementRef, ViewChild } from '@angular/core';
 
 @Component({
@@ -11,6 +12,7 @@ import { Component, ElementRef, ViewChild } from '@angular/core';
 export class SettingsComponent {
   tab = 'General';
   isopen = false;
+  constructor(private location:Location){}
   toggledropdown() {
     this.isopen = !this.isopen;
   }
@@ -44,5 +46,9 @@ export class SettingsComponent {
   revealfunc(){
     this.type=this.type === 'password' ? 'text' : 'password'
     this.isDisabled=false
+  }
+
+  navigateBack(){
+    this.location.back()
   }
 }
