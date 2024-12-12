@@ -279,6 +279,12 @@ export const routes: Routes = [
           import('./pages/stake-offer/stake-offer.component').then((c) => c.StakeOfferComponent),
       },
 
+      {
+        path: 'chat',
+        loadComponent: () =>
+          import('./pages/chat/chat.component').then((c) => c.ChatComponent),
+      },
+
     ],
   },
 
