@@ -15,12 +15,13 @@ import { RaceComponent } from '../../modal/race/race.component';
 })
 export class SidebarComponent implements OnInit {
   openBar: any;
+  currentRoute: any
   isSidebar = true
-  selectedOption:any
+  selectedOption: any
   routerPath: any
   smScreen: boolean = false;
 
-  constructor(private router: Router, private toggle: ToggleService, @Inject(DOCUMENT) private document: Document, private route:ActivatedRoute) {
+  constructor(private router: Router, private toggle: ToggleService, @Inject(DOCUMENT) private document: Document, private route: ActivatedRoute) {
     this.router.events
       .pipe(filter((event) => event instanceof NavigationEnd))
       .subscribe((event: NavigationEnd) => {
@@ -48,6 +49,12 @@ export class SidebarComponent implements OnInit {
       this.toggle.setSidebar(true)
     }
   }
+
+  closeSidebarMobile() {
+    if (window.innerWidth <= 767) {
+      this.toggle.setSidebar(true)
+    }
+  }
   @HostListener('window:resize', ['$event'])
   onResize(event: Event) {
     this.checkScreenSize();
@@ -62,34 +69,50 @@ export class SidebarComponent implements OnInit {
     this.toggle.sidebarState$.subscribe((state) => {
       this.isSidebar = state
     })
-    if(this.smScreen){
+    if (this.smScreen) {
       this.toggle.setSidebar(false)
     }
-
-    console.log(this.route.parent);
-
-
   }
+
   toggleSidebar() {
     this.toggle.toggleSidebar()
   }
   openvaultModal() {
     this.toggle.setVaultModalState(true);
+    if (window.innerWidth <= 767) {
+      this.toggle.setSidebar(true)
+    }
+
   }
   openvipModal() {
     this.toggle.setVipModalState(true);
+    if (window.innerWidth <= 767) {
+      this.toggle.setSidebar(true)
+    }
   }
   openstatisticModal() {
     this.toggle.setstatisticModal(true)
+    if (window.innerWidth <= 767) {
+      this.toggle.setSidebar(true)
+    }
   }
   opennotificationModal() {
     this.toggle.setnotificationModal(true)
+    if (window.innerWidth <= 767) {
+      this.toggle.setSidebar(true)
+    }
   }
-  onWalletBtnClick(){
+  onWalletBtnClick() {
     this.toggle.setWalletModal(true)
+    if (window.innerWidth <= 767) {
+      this.toggle.setSidebar(true)
+    }
   }
   openRaceModal() {
     this.toggle.setRaceModal(true);
+    if (window.innerWidth <= 767) {
+      this.toggle.setSidebar(true)
+    }
   }
   options = [
     { id: 'decimal', value: 'decimal', label: 'Decimal' },
