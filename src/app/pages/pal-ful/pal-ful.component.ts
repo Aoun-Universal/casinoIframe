@@ -1,4 +1,4 @@
-import { NgClass, NgFor, NgIf, NgStyle } from '@angular/common';
+import { NgClass, NgFor, NgIf, NgStyle, Location } from '@angular/common';
 import { Component, OnInit } from '@angular/core';
 import { FormsModule } from '@angular/forms';
 import { ToggleService } from '../../services/toggle.service';
@@ -41,7 +41,7 @@ export class PalFulComponent implements OnInit {
   prevTranslate = 0;
 
   // Betslip
-  constructor(private toggleS: ToggleService) { }
+  constructor(private toggleS: ToggleService, private location:Location) { }
 
   openBetSlipModal() {
     this.toggleS.setBetslipstate(true);
@@ -188,5 +188,9 @@ export class PalFulComponent implements OnInit {
       this.minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
       this.seconds = Math.floor((distance % (1000 * 60)) / 1000);
     }, 1000);
+  }
+
+  navigateBack(){
+    this.location.back()
   }
 }

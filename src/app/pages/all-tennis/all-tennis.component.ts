@@ -1,4 +1,4 @@
-import { CommonModule, NgClass } from '@angular/common';
+import { CommonModule, Location } from '@angular/common';
 import { Component } from '@angular/core';
 import { TabSliderComponent } from '../../shared/tab-slider/tab-slider.component';
 
@@ -17,6 +17,7 @@ export class AllTennisComponent {
   accCards=[1,2,3,4,5,6]
   isAcc:boolean=false;
   isNestedAcc:boolean=false;
+  constructor(private location:Location){}
   tabsItem = [
     { tabTitle: 'Live & Upcoming', dotState: false },
     { tabTitle: 'Outrights', dotState: false },
@@ -36,5 +37,9 @@ export class AllTennisComponent {
       this.statusType = key
     }
     this.statusSelection = !this.statusSelection
+  }
+
+  navigateBack(){
+    this.location.back()
   }
 }

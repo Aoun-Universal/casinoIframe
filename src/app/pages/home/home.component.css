@@ -240,7 +240,7 @@
 }
 
 .market-header {
-  @apply px-4 py-3 flex justify-between items-center;
+  @apply px-4 py-3 flex cursor-pointer justify-between items-center;
   z-index: 4;
 }
 

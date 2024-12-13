@@ -1,8 +1,8 @@
-import { ChangeDetectorRef, Component, ElementRef, HostListener } from '@angular/core';
+import { ChangeDetectorRef, Component, ElementRef, HostListener,  } from '@angular/core';
 import { StakeSmartComponent } from '../stake-smart/stake-smart.component';
 import { NavigationEnd, Router, RouterLink, RouterOutlet } from '@angular/router';
 import { filter, Subscription } from 'rxjs';
-import { CommonModule } from '@angular/common';
+import { CommonModule, Location } from '@angular/common';
 
 @Component({
   selector: 'app-responsible-gambling',
@@ -14,7 +14,7 @@ import { CommonModule } from '@angular/common';
 export class ResponsibleGamblingComponent {
   selectedOption: string = 'Stake Smart';
   routerPath: any
-  constructor(private router: Router,private eRef: ElementRef, private cdRef: ChangeDetectorRef) { }
+  constructor(private router: Router,private eRef: ElementRef, private cdRef: ChangeDetectorRef, private location:Location) { }
   ngOnInit(): void {
     this.router.events
       .pipe(
@@ -88,5 +88,9 @@ export class ResponsibleGamblingComponent {
     setActiveIndex(index: number): void {
       this.activeIndex = index;
       this.cdRef.detectChanges();
+    }
+
+    navigateBack(){
+      this.location.back()
     }
 }

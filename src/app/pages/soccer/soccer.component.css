@@ -19,7 +19,7 @@
     @apply border-0 rounded px-5 py-4 max-h-11 max-w-[98.91px] text-[14px];
   }
   .soccer_left_arrow {
-    @apply max-h-11 max-w-[54px] py-[15px] px-5 border-0 rounded mr-3;
+    @apply max-h-11 max-w-[54px] cursor-pointer py-[15px] px-5 border-0 rounded mr-3;
   }
   .bar_wrapper {
     @apply overflow-x-auto overflow-y-hidden w-full;
