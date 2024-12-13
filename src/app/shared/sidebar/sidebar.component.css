@@ -202,8 +202,10 @@
 }
 
 .casino-active {
-  background-image: url("/assets/sidebar/casino-poker-cards-green-en.webp") !important;
+  background-image: url("/assets/sidebar/Casino-active.svg") !important;
+  background-size: cover !important;
 }
+
 
 .sport-btn-mobile {
   width: 2.75rem !important;
