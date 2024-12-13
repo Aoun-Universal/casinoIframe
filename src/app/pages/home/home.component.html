@@ -952,7 +952,7 @@
   <div *ngIf="routeType === 'sport'" class="mt-3">
     <div class="market-accordion">
       <!-- Market Header -->
-      <div class="market-header">
+      <div class="market-header" (click)="toggleMarket()">
         <div class="market-title">
           <span>Republic of Korea / KBL</span>
         </div>
@@ -960,7 +960,7 @@
           <div *ngIf="!isMarketOpen" class="flex mr-4">
             <div class="market-badge">1</div>
           </div>
-          <div (click)="toggleMarket()" [ngClass]="{'rotate-90': !isMarketOpen}" class="arrow svelte-69p9vw">
+          <div [ngClass]="{'rotate-90': !isMarketOpen}" class="arrow svelte-69p9vw">
             <svg class="svg-icon " fill="currentColor" style="transform: rotate(0deg);
           " viewBox="0 0 64 64">
               <title></title>
@@ -1120,7 +1120,7 @@
   <div *ngIf="routeType === 'sport'" class="mt-3">
     <div class="market-accordion">
       <!-- Market Header -->
-      <div class="market-header">
+      <div class="market-header" (click)="toggleMarket2()">
         <div class="market-title">
           <span>UEFA Champion League</span>
         </div>
@@ -1128,7 +1128,7 @@
           <div *ngIf="!isMarketOpen2" class="flex mr-4">
             <div class="market-badge">1</div>
           </div>
-          <div (click)="toggleMarket2()" [ngClass]="{'rotate-90': !isMarketOpen2}" class="arrow svelte-69p9vw">
+          <div [ngClass]="{'rotate-90': !isMarketOpen2}" class="arrow svelte-69p9vw">
             <svg class="svg-icon " fill="currentColor" style="transform: rotate(0deg);
           " viewBox="0 0 64 64">
               <title></title>
