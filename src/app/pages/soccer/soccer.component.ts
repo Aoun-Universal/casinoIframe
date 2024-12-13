@@ -1,4 +1,4 @@
-import { NgClass, NgIf } from '@angular/common';
+import { NgClass, NgIf, Location } from '@angular/common';
 import { Component } from '@angular/core';
 import { RouterLink, RouterLinkActive } from '@angular/router';
 
@@ -19,7 +19,7 @@ export class SoccerComponent {
   subEventDropdown: boolean = true;
   isLive: boolean = true;
   soccerBettingOddsState: boolean = false;
-
+  constructor(private location:Location){}
   setActiveTab(val: string) {
     this.activeTab = val;
   }
@@ -51,5 +51,9 @@ export class SoccerComponent {
   }
   toggleSoccerBettingOddState() {
     this.soccerBettingOddsState = !this.soccerBettingOddsState;
+  }
+
+  navigateBack(){
+    this.location.back()
   }
 }

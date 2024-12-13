@@ -3,7 +3,7 @@ section {
 }
 
 .svg-main {
-  @apply py-[15px] px-[20px] bg-[#0f212e] rounded-sm;
+  @apply py-[15px] px-[20px] bg-[#0f212e] rounded-sm cursor-pointer;
 }
 .svg-main svg {
   @apply w-[14.2px];
