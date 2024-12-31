@@ -295,39 +295,40 @@ export class HomeComponent implements OnInit, AfterViewInit {
     //   },
     // });
     this.setDefaultView();
-    this.providerSwiper = new Swiper('.provider-swiper', {
-      loop: false,
-      slidesPerView: 7.5,
-      slidesPerGroup: 3,
-      freeMode: true,
-      spaceBetween: 10,
-      navigation: {
-        nextEl: '.myCarouselRight',
-        prevEl: '.myCarouselLeft',
-      },
-      breakpoints: {
-        300: {
-          slidesPerView: 3,
-          slidesPerGroup: 3,
-          spaceBetween: 6,
-        },
-        768: {
-          slidesPerView: 4,
-          slidesPerGroup: 3,
-          spaceBetween: 6,
-        },
-        1024: {
-          slidesPerView: 7.5,
-          slidesPerGroup: 6,
-          spaceBetween: 10,
-        },
-      },
-      on: {
-        slideChange: () => this.updateProviderNavigationButtons(),
-        reachBeginning: () => (this.ProviderPrevBtn = true),
-        reachEnd: () => (this.ProviderNextBtn = true),
-      },
-    });
+    this.setDefaultViewProvider();
+    // this.providerSwiper = new Swiper('.provider-swiper', {
+    //   loop: false,
+    //   slidesPerView: 7.5,
+    //   slidesPerGroup: 3,
+    //   freeMode: true,
+    //   spaceBetween: 10,
+    //   navigation: {
+    //     nextEl: '.myCarouselRight',
+    //     prevEl: '.myCarouselLeft',
+    //   },
+    //   breakpoints: {
+    //     300: {
+    //       slidesPerView: 3,
+    //       slidesPerGroup: 3,
+    //       spaceBetween: 6,
+    //     },
+    //     768: {
+    //       slidesPerView: 4,
+    //       slidesPerGroup: 3,
+    //       spaceBetween: 6,
+    //     },
+    //     1024: {
+    //       slidesPerView: 7.5,
+    //       slidesPerGroup: 6,
+    //       spaceBetween: 10,
+    //     },
+    //   },
+    //   on: {
+    //     slideChange: () => this.updateProviderNavigationButtons(),
+    //     reachBeginning: () => (this.ProviderPrevBtn = true),
+    //     reachEnd: () => (this.ProviderNextBtn = true),
+    //   },
+    // });
   }
   updateNavigationButtons() {
     if (this.stakeOrigin) {
@@ -410,6 +411,7 @@ export class HomeComponent implements OnInit, AfterViewInit {
       slidesPerGroup: 6,
       freeMode: true,
       spaceBetween: 10,
+      speed:700,
       navigation: {
         nextEl: '.myCarouselRight',
         prevEl: '.myCarouselLeft',
@@ -516,6 +518,7 @@ export class HomeComponent implements OnInit, AfterViewInit {
       slidesPerGroup: 3,
       freeMode: true,
       spaceBetween: 10,
+      speed:700,
       navigation: {
         nextEl: '.myCarouselRight',
         prevEl: '.myCarouselLeft',
