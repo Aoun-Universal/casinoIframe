@@ -229,6 +229,7 @@ export class HomeComponent implements OnInit, AfterViewInit {
       slidesPerGroup: 1,
       freeMode: true,
       spaceBetween: 16,
+      speed: 800,
       navigation: {
         nextEl: '.myCarouselRight',
         prevEl: '.myCarouselLeft',

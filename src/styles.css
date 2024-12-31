@@ -11,7 +11,7 @@ body {
   color: #fff;
   font-family: "SF-PRO", sans-serif !important;
   cursor: default;
-  overflow: hidden;
+  /* overflow: hidden; */
 }
 
 /* Proxima Nova Regular */
