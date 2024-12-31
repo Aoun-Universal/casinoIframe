@@ -27,14 +27,7 @@ import { CreateNewCampaingComponent } from "../../modal/create-new-campaing/crea
     CommonModule,
     HeaderComponent,
     MobileNavigationComponent,
-    BetSlipComponent,
-    VaultComponent,
-    VipComponent,
-    StatisticsComponent,
-    NotificationComponent,
-    StatisticsModalTableComponent,
-    WalletModalComponent,
-    SetupWalletComponent, CreateNewCampaingComponent],
+  ],
   templateUrl: './layout.component.html',
   styleUrls: ['./layout.component.css']
 })
