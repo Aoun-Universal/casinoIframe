@@ -29,7 +29,10 @@ export class HomeComponent implements OnInit, AfterViewInit {
   isLoggedIn: boolean = false;
 
   routeType: 'sport' | 'casino' | 'authenticated' | '' = '';
-
+  owlPrevBtn: boolean = true;
+  owlNextBtn: boolean = false;
+  ProviderPrevBtn: boolean = true;
+  ProviderNextBtn: boolean = false;
   isMarketOpen = true;
   isMarketOpen2 = true;
   betSlipContent = false;
@@ -513,6 +516,11 @@ export class HomeComponent implements OnInit, AfterViewInit {
           spaceBetween: 10,
         },
       },
+      on: {
+        slideChange: () => this.updateNavigationButtons(),
+        reachBeginning: () => (this.owlPrevBtn = true),
+        reachEnd: () => (this.owlNextBtn = true),
+      },
     });
 
     this.providerSwiper = new Swiper('.provider-swiper', {
@@ -542,9 +550,25 @@ export class HomeComponent implements OnInit, AfterViewInit {
           spaceBetween: 10,
         },
       },
+      on: {
+        slideChange: () => this.updateProviderNavigationButtons(),
+        reachBeginning: () => (this.ProviderPrevBtn = true),
+        reachEnd: () => (this.ProviderNextBtn = true),
+      },
     });
   }
-
+ updateNavigationButtons() {
+    if (this.stakeOrigin) {
+      this.owlPrevBtn = this.stakeOrigin.isBeginning;
+      this.owlNextBtn = this.stakeOrigin.isEnd;
+    }
+  }
+  updateProviderNavigationButtons() {
+    if (this.providerSwiper) {
+      this.ProviderPrevBtn = this.providerSwiper.isBeginning;
+      this.ProviderNextBtn = this.providerSwiper.isEnd;
+    }
+  }
   checkCarousel() {
     if (this.screenWidth > 700 && this.isCarouselActive) {
       // this.gallerySlider.unslick();

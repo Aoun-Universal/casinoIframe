@@ -168,7 +168,7 @@
       </span>
 
       <!-- Right -->
-      <div class="flex cursor-pointer">
+      <!-- <div class="flex cursor-pointer">
         <button (click)="stakeOrigin.slidePrev()" class="left-arrow arrows-btn">
           <div class="arrow-inner">
             <svg class="svg-icon " fill="currentColor" viewBox="0 0 64 64">
@@ -193,6 +193,20 @@
           </div>
         </button>
 
+      </div> -->
+      <div class="flex_row cursor-pointer btnContainer">
+        <button (click)="this.stakeOrigin.slidePrev()" [disabled]="owlPrevBtn"
+          [ngClass]="!owlPrevBtn? '!border-[#55758A] ':'border-[#304553] '" class="btn_left !border-r-0  ">
+          <img
+            [ngClass]="[!owlPrevBtn ? '[filter:_brightness(0)_saturate(100%)_invert(100%)_sepia(0%)_saturate(7439%)_hue-rotate(33deg)_brightness(107%)_contrast(112%)]':'']"
+            class="w-[18px] h-[18px]" src="/images/Arrow - Right.svg" alt="right">
+        </button>
+        <button (click)="this.stakeOrigin.slideNext()" [disabled]="owlNextBtn"
+          [ngClass]="!owlNextBtn? 'border-[#55758A] ':'border-[#304553] '" class="btn_right border-l  ">
+          <img
+            [ngClass]="[!owlNextBtn ? '[filter:_brightness(0)_saturate(100%)_invert(100%)_sepia(0%)_saturate(7439%)_hue-rotate(33deg)_brightness(107%)_contrast(112%)]':'']"
+            class="rotate-180 w-[18px] h-[18px]" src="/images/Arrow - Right.svg" alt="right">
+        </button>
       </div>
     </div>
     <div class="stake-swiper">
@@ -248,31 +262,20 @@
       </span>
 
       <!-- Right -->
-      <div class="flex cursor-pointer">
-        <button (click)="providerSwiper.slidePrev()" class="left-arrow arrows-btn">
-          <div class="arrow-inner">
-            <svg class="svg-icon " fill="currentColor" viewBox="0 0 64 64">
-              <title></title>
-              <path
-                d="M56 37.486H25.091L35.335 47.73l-6.313 6.314L8 33.022 29.022 12l6.313 6.314-10.244 10.244H56v8.933-.005Z"
-                fill="#b1bad3">
-              </path>
-            </svg>
-          </div>
-        </button>
 
-        <button (click)="providerSwiper.slideNext()" class="right-arrow arrows-btn">
-          <div class="arrow-inner">
-            <svg class="svg-icon " fill="currentColor" viewBox="0 0 64 64">
-              <title></title>
-              <path
-                d="M8 37.486h30.909L28.665 47.73l6.313 6.314L56 33.022 34.978 12l-6.313 6.314 10.244 10.244H8v8.933-.005Z"
-                fill="#b1bad3">
-              </path>
-            </svg>
-          </div>
+      <div class="flex_row cursor-pointer btnContainer">
+        <button (click)="this.providerSwiper.slidePrev()" [disabled]="ProviderPrevBtn"
+          [ngClass]="!ProviderPrevBtn? '!border-[#55758A] ':'border-[#304553] '" class="btn_left !border-r-0  ">
+          <img
+            [ngClass]="[!ProviderPrevBtn ? '[filter:_brightness(0)_saturate(100%)_invert(100%)_sepia(0%)_saturate(7439%)_hue-rotate(33deg)_brightness(107%)_contrast(112%)]':'']"
+            class="w-[18px] h-[18px]" src="/images/Arrow - Right.svg" alt="right">
         </button>
-
+        <button (click)="this.providerSwiper.slideNext()" [disabled]="ProviderNextBtn"
+          [ngClass]="!ProviderNextBtn? 'border-[#55758A] ':'border-[#304553] '" class="btn_right border-l  ">
+          <img
+            [ngClass]="[!ProviderNextBtn ? '[filter:_brightness(0)_saturate(100%)_invert(100%)_sepia(0%)_saturate(7439%)_hue-rotate(33deg)_brightness(107%)_contrast(112%)]':'']"
+            class="rotate-180 w-[18px] h-[18px]" src="/images/Arrow - Right.svg" alt="right">
+        </button>
       </div>
 
 

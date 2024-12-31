@@ -738,6 +738,7 @@ tr:hover {
 .suspend_text {
   @apply text-[10px] font-bold leading-[11.93px] mt-[10px] tracking-wide text-white text-center;
 }
+
 @keyframes pulsered {
   0% {
     box-shadow: 0 0 #ce525456;
@@ -804,4 +805,13 @@ tr:hover {
 
 ::ng-deep .swiper-slide {
   @apply hover:-translate-y-1 duration-300;
+}
+.btnContainer {
+  @apply flex flex-row justify-center items-center;
+}
+.btn_left {
+  @apply border border-solid border-[#304553] w-[35px]  xm:w-[50px] h-[35px] rounded-l-[20px] flex justify-center items-center;
+}
+.btn_right {
+  @apply border border-solid w-[35px]  xm:w-[50px] h-[35px] rounded-r-[20px] flex justify-center items-center;
 }
