@@ -7,8 +7,7 @@
       @for (slide of heroSlides; track $index) {
       <div class="hero-card swiper-slide max-w-[380px]">
         <div class="sliderImgC carousel_img_wrapper">
-          <img [src]="slide.img"
-            alt="slider" class="border-0 rounded-[20px]">
+          <img [src]="slide.img" alt="slider" class="border-0 rounded-[20px]">
 
         </div>
       </div>
@@ -177,20 +176,20 @@
         </button>
         }
 
-      <div class="flex_row cursor-pointer btnContainer">
-        <button (click)="this.stakeOrigin.slidePrev()" [disabled]="owlPrevBtn"
-          [ngClass]="!owlPrevBtn? '!border-[#55758A] ':'border-[#304553] '" class="btn_left !border-r-0  ">
-          <img
-            [ngClass]="[!owlPrevBtn ? '[filter:_brightness(0)_saturate(100%)_invert(100%)_sepia(0%)_saturate(7439%)_hue-rotate(33deg)_brightness(107%)_contrast(112%)]':'']"
-            class="w-[18px] h-[18px]" src="/images/Arrow - Right.svg" alt="right">
-        </button>
-        <button (click)="this.stakeOrigin.slideNext()" [disabled]="owlNextBtn"
-          [ngClass]="!owlNextBtn? 'border-[#55758A] ':'border-[#304553] '" class="btn_right border-l  ">
-          <img
-            [ngClass]="[!owlNextBtn ? '[filter:_brightness(0)_saturate(100%)_invert(100%)_sepia(0%)_saturate(7439%)_hue-rotate(33deg)_brightness(107%)_contrast(112%)]':'']"
-            class="rotate-180 w-[18px] h-[18px]" src="/images/Arrow - Right.svg" alt="right">
-        </button>
-      </div>
+        <div class="flex_row cursor-pointer btnContainer">
+          <button (click)="this.stakeOrigin.slidePrev()" [disabled]="owlPrevBtn"
+            [ngClass]="!owlPrevBtn? '!border-[#55758A] ':'border-[#304553] '" class="btn_left !border-r-0  ">
+            <img
+              [ngClass]="[!owlPrevBtn ? '[filter:_brightness(0)_saturate(100%)_invert(100%)_sepia(0%)_saturate(7439%)_hue-rotate(33deg)_brightness(107%)_contrast(112%)]':'']"
+              class="w-[18px] h-[18px]" src="/images/Arrow - Right.svg" alt="right">
+          </button>
+          <button (click)="this.stakeOrigin.slideNext()" [disabled]="owlNextBtn"
+            [ngClass]="!owlNextBtn? 'border-[#55758A] ':'border-[#304553] '" class="btn_right border-l  ">
+            <img
+              [ngClass]="[!owlNextBtn ? '[filter:_brightness(0)_saturate(100%)_invert(100%)_sepia(0%)_saturate(7439%)_hue-rotate(33deg)_brightness(107%)_contrast(112%)]':'']"
+              class="rotate-180 w-[18px] h-[18px]" src="/images/Arrow - Right.svg" alt="right">
+          </button>
+        </div>
       </div>
     </div>
     <div class="stake-swiper" [ngClass]="casinoViewAllState?'swiper-container-viewAll':''">
@@ -294,24 +293,24 @@
   <!-- --------------------------Table Topbar ------------------>
   <div class="top-sports-header overflow-x-auto events-header">
     <!-- left tab slider -->
-    <div class="tab-slider   ">
+    <div class="tab-slider  min-w-full ">
       <div class="flex">
         <!-- Tab item 1 -->
         <a (click)="setActiveTableTab(1)" [class.active]="TableTab === 1" class="tab-item tab-item1">
-          <span>All Bets</span>
+          <span>My Bets</span>
         </a>
 
         <!-- Tab item 2 -->
         <a (click)="setActiveTableTab(2)" [class.active]="TableTab === 2" class="tab-item">
-          <span>High Rollers</span>
+          <span>All Bets</span>
         </a>
 
         <!-- Tab item 3 -->
         <a (click)="setActiveTableTab(3)" [class.active]="TableTab === 3" class="tab-item">
-          <span>Race Leaderboard</span>
-          <div class="bubble-wrap">
+          <span>High Rollers</span>
+          <!-- <div class="bubble-wrap">
             <div class="scale-up"></div>
-          </div>
+          </div> -->
         </a>
 
       </div>
