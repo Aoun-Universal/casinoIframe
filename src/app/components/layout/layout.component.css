@@ -15,5 +15,5 @@
 }
 
 .page-wrapper {
-  @apply h-[calc(100vh-60px)]   bg-[rgb(26,44,56)] overflow-y-auto;
+  @apply h-[calc(100vh-67px)]   bg-[rgb(26,44,56)] overflow-y-auto;
 }

@@ -104,7 +104,7 @@
 
 /* Tabs */
 .tabs-wrapper {
-  @apply flex mt-6;
+  @apply flex mt-[12px];
 }
 
 .tab-slider {
@@ -421,7 +421,7 @@ select {
 
 /* Table */
 .table-container {
-  @apply !w-full  rounded-lg p-5 pb-[100px] shadow-lg;
+  @apply !w-full  rounded-lg p-5 mb-[140px] shadow-lg;
 }
 table {
   @apply w-full;
@@ -821,7 +821,7 @@ tr:hover {
   @apply flex flex-row justify-center items-center gap-2;
 }
 .view_text {
-  @apply font-bold text-[#B1BAD3] tracking-wide whitespace-nowrap;
+  @apply font-bold text-[#B1BAD3] text-[14px] tracking-wide whitespace-nowrap;
 }
 .swiper-container-viewAll {
   width: 100%; /* Full width of the container */

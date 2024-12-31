@@ -38,7 +38,7 @@
 
 
 <!------------------------------ Search Wrap --------------------->
-<section class="main-section">
+<section class="main-section ">
   <div class="search-wrap">
     <div class="search-wrap-input">
       <!-- search icon -->
@@ -214,7 +214,7 @@
           <div class="stake-player-row flex justify-center gap-2 pt-1">
             <span [ngClass]="[stake.status==='Playing' ? 'stake-dot-green' :'stake-dot-red']"></span>
             <span *ngIf="stake.status==='Playing'" class="count-text"> {{stake.count}}</span>
-            <span class="text-[#b1bad3] text-xs">{{stake.status}}</span>
+            <span class="text-[#b1bad3] text-xs font-semibold">{{stake.status}}</span>
 
           </div>
         </div>
