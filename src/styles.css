@@ -9,11 +9,11 @@
 body {
   background: #1a2c38;
   color: #fff;
-  font-family: "SF-PRO", sans-serif !important;
+  font-family: "SF-PRO", Arial, sans-serif !important;
   cursor: default;
   /* overflow: hidden; */
 }
-@font-face {
+/* @font-face {
   font-family: "SF-PRO";
   src: url("/sf-font/SF-Pro-Display-Regular.otf");
   font-weight: 400;
@@ -43,7 +43,7 @@ body {
   font-weight: 600;
   font-style: normal;
   font-display: swap;
-}
+} */
 
 /* Proxima Nova Regular */
 @font-face {

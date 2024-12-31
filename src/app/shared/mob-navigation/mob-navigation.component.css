@@ -2,7 +2,7 @@
 
 @layer utilities {
   .content_wrapper {
-    @apply fixed z-[1600] bottom-0 bg-[#0E212E] h-[60px] max-h-[60px] font-['SF-PRO'] md:hidden flex flex-row justify-between items-center w-full;
+    @apply fixed z-[1600] bottom-0 bg-[#0E212E] h-[60px] max-h-[60px]  md:hidden flex flex-row justify-between items-center w-full;
   }
   .content_container {
     @apply grid grid-cols-4 w-full place-items-center;
