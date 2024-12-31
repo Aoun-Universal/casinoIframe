@@ -199,9 +199,11 @@
       <div class="swiper-wrapper">
         <div *ngFor="let stake of stakes" class="swiper-slide">
           <img [src]="stake.img" alt="" class="rounded-lg">
-          <div class="stake-player-row flex gap-2 pt-1">
-            <span class="stake-dot"></span>
-            <span class="count-text"> {{stake.count}} <span class="text-[#b1bad3] text-xs">playing</span></span>
+          <div class="stake-player-row flex justify-center gap-2 pt-1">
+            <span [ngClass]="[stake.status==='Playing' ? 'stake-dot-red' :'stake-dot-green']"></span>
+            <span *ngIf="stake.status==='Playing'" class="count-text"> {{stake.count}}</span>
+              <span class="text-[#b1bad3] text-xs">{{stake.status}}</span>
+
           </div>
         </div>
       </div>

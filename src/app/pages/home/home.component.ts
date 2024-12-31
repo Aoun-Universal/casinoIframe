@@ -110,28 +110,30 @@ export class HomeComponent implements OnInit, AfterViewInit {
   stakes = [
     {
       img: "/assets/home/stake-1.avif",
-      count: 3469
+      count: 3469,
+      status: 'Playing'
     },
-    {img: "/assets/home/stake-2.avif", count: 1943},
-    {img: "/assets/home/stake-3.avif", count: 1931},
-    {img: "/assets/home/stake-4.avif", count: 1962},
-    {img: "/assets/home/stake-5.avif", count: 4814},
-    {img: "/assets/home/stake-6.avif", count: 3218},
+    {img: "/assets/home/stake-2.avif", count: 1943 , status: 'Maintenance'},
+    {img: "/assets/home/stake-3.avif", count: 1931 , status: 'Playing'},
+    {img: "/assets/home/stake-4.avif", count: 1962,  status: 'Maintenance'},
+    {img: "/assets/home/stake-5.avif", count: 4814 ,status: 'Playing'},
+    {img: "/assets/home/stake-6.avif", count: 3218 ,status: 'Playing'},
     {
       img: "/assets/home/stake-7.avif",
-      count: 1450
+      count: 1450,
+      status: 'Playing'
     },
-    {img: "/assets/home/stake-8.avif", count: 895},
-    {img: "/assets/home/stake-9.avif", count: 930},
-    {img: "/assets/home/stake-10.avif", count: 1414},
-    {img: "/assets/home/stake-11.avif", count: 186},
-    {img: "/assets/home/stake-12.avif", count: 711},
-    {img: "/assets/home/stake-13.avif", count: 105},
-    {img: "/assets/home/stake-14.avif", count: 895},
-    {img: "/assets/home/stake-15.avif", count: 930},
-    {img: "/assets/home/stake-16.avif", count: 1414},
-    {img: "/assets/home/stake-17.avif", count: 895},
-    {img: "/assets/home/stake-18.avif", count: 930},
+    {img: "/assets/home/stake-8.avif", count: 895 ,status: 'Playing'},
+    {img: "/assets/home/stake-9.avif", count: 930 ,status: 'Playing'},
+    {img: "/assets/home/stake-10.avif", count: 1414 ,status: 'Maintenance'},
+    {img: "/assets/home/stake-11.avif", count: 186 ,status: 'Playing'},
+    {img: "/assets/home/stake-12.avif", count: 711 ,status: 'Playing'},
+    {img: "/assets/home/stake-13.avif", count: 105 ,status: 'Playing'},
+    {img: "/assets/home/stake-14.avif", count: 895 ,status: 'Maintenance'},
+    {img: "/assets/home/stake-15.avif", count: 930 ,status: 'Playing'},
+    {img: "/assets/home/stake-16.avif", count: 1414 ,status: 'Playing'},
+    {img: "/assets/home/stake-17.avif", count: 895 ,status: 'Maintenance'},
+    {img: "/assets/home/stake-18.avif", count: 930 ,status: 'Playing'},
   ];
   casinos: { img: string }[] = [
     {
@@ -507,7 +509,7 @@ export class HomeComponent implements OnInit, AfterViewInit {
 
 
     this.heroSlider = new Swiper('.hero-swiper', {
-      loop: false,
+      loop: true,
       slidesPerView: 3,
       slidesPerGroup: 3,
       freeMode: true,

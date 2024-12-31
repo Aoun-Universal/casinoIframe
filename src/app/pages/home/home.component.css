@@ -721,11 +721,29 @@ tr:hover {
   }
 }
 
-.stake-dot {
+.stake-dot-green {
   @apply my-auto size-[6.5px] ml-0.5 rounded-[50%] bg-[#1fff20];
   animation: pulse 1s infinite ease-out;
 }
+.stake-dot-red {
+  @apply my-auto size-[6.5px] ml-0.5 rounded-[50%] bg-[#ff1e22];
+  animation: pulsered 1s infinite ease-out;
+}
 
+@keyframes pulsered {
+  0% {
+    box-shadow: 0 0 #ce525456;
+  }
+  30% {
+    box-shadow: 0 0 2px 2px #ce525456;;
+  }
+  70% {
+    box-shadow: 0 0 2px 2px #ce525456;;
+  }
+  100% {
+    box-shadow: 0 0 #ce525456;;
+  }
+}
 @keyframes pulse {
   0% {
     box-shadow: 0 0 #00e70166;
