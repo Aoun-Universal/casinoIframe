@@ -44,6 +44,7 @@ export class HomeComponent implements OnInit, AfterViewInit {
   stakeOrigin!: Swiper;
   TableTab: number = 1;
   casinoViewAllState:boolean = false;
+  ProviderViewAllState:boolean = false;
   WinnerDropdown = false;
   heroCurrentSlideIndex = 0;
   heroSlideCount = 0;
@@ -484,6 +485,103 @@ export class HomeComponent implements OnInit, AfterViewInit {
   setGridView(): void {
     const config = this.getGridSwiperConfig();
     this.initializeSwiper(config);
+  }
+  setProviderViewType(){
+    this.ProviderViewAllState = !this.ProviderViewAllState;
+    if(this.ProviderViewAllState){
+      this.setGridViewProvider();
+    }
+    else{
+      this.setDefaultViewProvider();
+    }
+  }
+  setGridViewProvider(){
+    const config = this.getGridProviderSwiperConfig();
+    this.initializeProviderSwiper(config);
+  }
+  setDefaultViewProvider(){
+    const config = this.getDefaultProviderSwiperConfig();
+    this.initializeProviderSwiper(config);
+  }
+  private initializeProviderSwiper(config: any): void {
+    if (this.providerSwiper) {
+      this.providerSwiper.destroy(true, true); // Destroy existing Swiper instance
+    }
+    this.providerSwiper = new Swiper('.provider-swiper', config); // Initialize Swiper with new config
+  }
+  private getDefaultProviderSwiperConfig(): any {
+    return {
+      loop: false,
+      slidesPerView: 7.5,
+      slidesPerGroup: 3,
+      freeMode: true,
+      spaceBetween: 10,
+      navigation: {
+        nextEl: '.myCarouselRight',
+        prevEl: '.myCarouselLeft',
+      },
+      breakpoints: {
+        300: {
+          slidesPerView: 3,
+          slidesPerGroup: 3,
+          spaceBetween: 6,
+        },
+        768: {
+          slidesPerView: 4,
+          slidesPerGroup: 3,
+          spaceBetween: 6,
+        },
+        1024: {
+          slidesPerView: 7.5,
+          slidesPerGroup: 6,
+          spaceBetween: 10,
+        },
+      },
+      on: {
+        slideChange: () => this.updateProviderNavigationButtons(),
+        reachBeginning: () => (this.ProviderPrevBtn = true),
+        reachEnd: () => (this.ProviderNextBtn = true),
+      },
+    };
+  }
+  private getGridProviderSwiperConfig(): any {
+    const totalSlides = this.providers.length;
+    const slidesPerView = 3; // Number of slides per row
+    const rows = Math.ceil(totalSlides / slidesPerView);
+
+    return {
+      slidesPerView: slidesPerView,
+      spaceBetween: 6,
+      grid: {
+        rows: rows,
+        fill: 'row',
+      },
+      navigation: false,
+      loop: false,
+      allowTouchMove: false,
+      freeMode: false,
+      breakpoints: {
+        300: {
+          slidesPerView: 3,
+          slidesPerGroup: 3,
+          spaceBetween: 6,
+          grid: {
+            rows: rows,
+            fill: 'row',
+          },
+        },
+        768: {
+          slidesPerView: 4,
+          slidesPerGroup: 3,
+          spaceBetween: 6,
+        },
+        1024: {
+          slidesPerView: 7.5,
+          slidesPerGroup: 6,
+          spaceBetween: 10,
+        },
+      },
+    };
   }
 
 }

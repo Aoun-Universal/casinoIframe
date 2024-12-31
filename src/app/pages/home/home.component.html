@@ -246,7 +246,16 @@
       </span>
 
       <!-- Right -->
-
+      <div class="view_type">
+        @if (!ProviderViewAllState) {
+        <button (click)="setProviderViewType()" class="sports-heading view_text">
+          View All
+        </button>
+        }@else {
+        <button (click)="setProviderViewType()" class="sports-heading view_text">
+          Hide All
+        </button>
+        }
       <div class="flex_row cursor-pointer btnContainer">
         <button (click)="this.providerSwiper.slidePrev()" [disabled]="ProviderPrevBtn"
           [ngClass]="!ProviderPrevBtn? '!border-[#55758A] ':'border-[#304553] '" class="btn_left !border-r-0  ">
@@ -261,7 +270,7 @@
             class="rotate-180 w-[18px] h-[18px]" src="/images/Arrow - Right.svg" alt="right">
         </button>
       </div>
-
+      </div>
 
     </div>
 
