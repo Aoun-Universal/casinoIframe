@@ -1,0 +1,22 @@
+@tailwind utilities;
+
+@layer utilities {
+  .content_wrapper {
+    @apply fixed z-[1600] bottom-0 bg-[#0E212E] h-[60px] max-h-[60px] font-['SF-PRO'] md:hidden flex flex-row justify-between items-center w-full;
+  }
+  .content_container {
+    @apply grid grid-cols-4 w-full place-items-center;
+  }
+  .browse_wrapper {
+    @apply flex flex-col justify-center items-center gap-1 cursor-pointer  w-[56px] col-span-1;
+  }
+  .home_wrapper {
+    @apply flex flex-col justify-center items-center gap-1 cursor-pointer bg-[#0E212E]  border-0 rounded-full col-span-2  w-[79px] h-[80px];
+  }
+  .profile_wrapper {
+    @apply flex flex-col justify-end items-center gap-1 cursor-pointer  w-[50px] col-span-1;
+  }
+  .btn_text {
+    @apply text-[15px] leading-[17.9px] font-bold text-white;
+  }
+}
