@@ -17,6 +17,6 @@
     @apply flex flex-col justify-end items-center gap-1 cursor-pointer  w-[50px] col-span-1;
   }
   .btn_text {
-    @apply text-[15px] leading-[17.9px] font-bold text-white;
+    @apply text-[15px] leading-[17.9px] font-semibold text-white;
   }
 }
