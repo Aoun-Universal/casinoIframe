@@ -44,19 +44,14 @@ export class HomeComponent implements OnInit, AfterViewInit {
   WinnerDropdown = false;
   heroCurrentSlideIndex = 0;
   heroSlideCount = 0;
-  sportsCurrentSlideIndex = 0;
-  sportsSlideCount = 0;
-  galleryCurrentSlideIndex = 0;
-  gallerySlideCount = 0;
+
   stakeCurrentSlideIndex = 0;
   stakeSlideCount = 0;
-  casinoCurrentSlideIndex = 0;
-  casinoSlideCount = 0;
+
   providerCurrentSlideIndex = 0;
   providerSlideCount = 0;
   slides: Array<any> = [];
   searchPlaceholder: string = '';
-  soccerBettingOddsState: boolean = false;
 
   swiperConfig: any;
   @ViewChild('swiperContainer', { static: true }) swiperContainer!: ElementRef;
@@ -64,45 +59,7 @@ export class HomeComponent implements OnInit, AfterViewInit {
     slide: 7.5,
     space: 10,
   };
-  sports = [
-    {
-      img: '/assets/home/sport-1.avif',
-      count: 1,
-    },
-    { img: '/assets/home/sport-2.avif', count: 2 },
-    { img: '/assets/home/sport-3.avif', count: 3 },
-    { img: '/assets/home/sport-4.avif', count: 4 },
-    { img: '/assets/home/sport-5.avif', count: 5 },
-    { img: '/assets/home/sport-6.avif', count: 6 },
-    {
-      img: '/assets/home/sport-7.avif',
-      count: 7,
-    },
-    { img: '/assets/home/sport-8.avif', count: 8 },
-    { img: '/assets/home/sport-9.avif', count: 9 },
-    { img: '/assets/home/sport-10.avif', count: 10 },
-  ];
-  cards = [
-    {
-      title: '$100k Race',
-      description: 'Ready to race to the top?',
-      leaderboardText: 'Leaderboard',
-      timer: { hours: 9, minutes: 11 },
-      footerType: 'notEnteredYet', // Unique identifier for footer type
-      clickFunction: this.openLeaderBoardModal.bind(this),
-      InfoModal: this.openRaceModal.bind(this),
-    },
-    {
-      title: '$75k Weekly Raffle',
-      description: 'Finish your week with a win!',
-      leaderboardText: '0 Tickets',
-      timer: { days: 2, hours: 8, minutes: 5 },
-      footerType: 'progressBar',
-      progress: 0,
-      clickFunction: this.openLeaderBoardModal.bind(this),
-      InfoModal: this.openRaceModal.bind(this),
-    },
-  ];
+
   stakes = [
     {
       img: '/assets/home/stake-1.avif',
@@ -597,28 +554,12 @@ export class HomeComponent implements OnInit, AfterViewInit {
     }
   }
 
-  openstatisticsTableModalState() {
-    this.toggleService.setstatisticsTableModalState(true);
-  }
-
   heroSlickInit(e: any) {
     this.heroSlideCount = e.slick.slideCount;
   }
 
-  sportsSlickInit(e: any) {
-    this.sportsSlideCount = e.slick.slideCount;
-  }
-
-  gallerySlickInit(e: any) {
-    this.gallerySlideCount = e.slick.slideCount;
-  }
-
   stakeSlickInit(e: any) {
     this.stakeSlideCount = e.slick.slideCount;
-  }
-
-  casinoSlickInit(e: any) {
-    this.casinoSlideCount = e.slick.slideCount;
   }
 
   providerSlickInit(e: any) {
@@ -629,60 +570,12 @@ export class HomeComponent implements OnInit, AfterViewInit {
     this.heroCurrentSlideIndex = e.currentSlide;
   }
 
-  galleryAfterChange(e: any) {
-    this.galleryCurrentSlideIndex = e.currentSlide;
-  }
-
-  sportsAfterChange(e: any) {
-    this.sportsCurrentSlideIndex = e.currentSlide;
-  }
-
   stakeAfterChange(e: any) {
     this.stakeCurrentSlideIndex = e.currentSlide;
   }
 
   providerAfterChange(e: any) {
     this.providerCurrentSlideIndex = e.currentSlide;
-  }
-
-  casinoAfterChange(e: any) {
-    this.casinoCurrentSlideIndex = e.currentSlide;
-  }
-
-  openBetModal() {
-    this.toggleService.setBetModal(true);
-  }
-
-  galleryNext() {
-    if (this.galleryCurrentSlideIndex !== this.gallerySlideCount) {
-      // this.gallerySlider.slickNext();
-    }
-  }
-
-  openModal() {
-    this.toggleService.setBetslipstate(true);
-    this.toggleService.setBetslipContent(!this.betSlipContent);
-  }
-
-  openLeaderBoardModal() {
-    this.toggleService.setLeaderBoardModal(true);
-  }
-
-  openRaceModal() {
-    this.toggleService.setRaceModal(true);
-  }
-
-  toggleDropdown() {
-    this.WinnerDropdown = !this.WinnerDropdown;
-  }
-
-  // Market 1
-  toggleMarket() {
-    this.isMarketOpen = !this.isMarketOpen;
-  }
-
-  toggleMarket2() {
-    this.isMarketOpen2 = !this.isMarketOpen2;
   }
 
   // Tabs
@@ -696,21 +589,7 @@ export class HomeComponent implements OnInit, AfterViewInit {
   }
 
   // Table Tabs
-  setLiveTabActive(tab: string) {
-    this.LiveTab = tab;
-  }
-
-  toggleSoccerBettingOddState() {
-    this.soccerBettingOddsState = !this.soccerBettingOddsState;
-  }
-
-  // slideNext(): void {
-  //   this.swiperInstance?.slideNext(); // Move to the next slide
-  //   console.log('hi', this.swiperInstance);
-  // }
-
-  // slidePrev(): void {
-  //   this.swiperInstance?.slidePrev(); // Move to the previous slide
-  //   console.log('', this.swiperInstance);
+  // setLiveTabActive(tab: string) {
+  //   this.LiveTab = tab;
   // }
 }

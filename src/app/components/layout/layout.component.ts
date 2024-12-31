@@ -7,8 +7,8 @@ import { CommonModule } from '@angular/common';
 import { HeaderComponent } from '../../shared/header/header.component';
 import { filter } from 'rxjs';
 import { ToggleService } from '../../services/toggle.service';
-import { MobNavigationComponent } from "../../shared/mob-navigation/mob-navigation.component";
-import { MobSidebarComponent } from "../../shared/mob-sidebar/mob-sidebar.component";
+import { MobNavigationComponent } from '../../shared/mob-navigation/mob-navigation.component';
+import { MobSidebarComponent } from '../../shared/mob-sidebar/mob-sidebar.component';
 
 @Component({
   selector: 'app-layout',
@@ -16,12 +16,11 @@ import { MobSidebarComponent } from "../../shared/mob-sidebar/mob-sidebar.compon
   imports: [
     ContentComponent,
     SidebarComponent,
-    FooterComponent,
     CommonModule,
     HeaderComponent,
     MobNavigationComponent,
-    MobSidebarComponent
-],
+    MobSidebarComponent,
+  ],
   templateUrl: './layout.component.html',
   styleUrls: ['./layout.component.css'],
 })
