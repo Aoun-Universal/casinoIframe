@@ -29,16 +29,15 @@
             "styles": [
               "src/styles.css",
               "node_modules/datatables.net-dt/css/dataTables.dataTables.min.css",
-              "node_modules/slick-carousel/slick/slick.scss",
-              "node_modules/slick-carousel/slick/slick-theme.scss",
+
               "node_modules/ngx-toastr/toastr.css",
               "node_modules/swiper/swiper-bundle.min.css"
             ],
             "scripts": [
               "node_modules/jquery/dist/jquery.js",
               "node_modules/datatables.net/js/dataTables.min.js",
-              "node_modules/jquery/dist/jquery.min.js",
-              "node_modules/slick-carousel/slick/slick.min.js"
+              "node_modules/jquery/dist/jquery.min.js"
+
             ]
           },
           "configurations": {
@@ -96,15 +95,13 @@
             ],
             "styles": [
               "node_modules/datatables.net-dt/css/dataTables.dataTables.min.css",
-              "src/styles.css",
-              "node_modules/slick-carousel/slick/slick.scss",
-              "node_modules/slick-carousel/slick/slick-theme.scss"
+              "src/styles.css"
+
             ],
             "scripts": [
               "node_modules/jquery/dist/jquery.js",
-              "node_modules/datatables.net/js/dataTables.min.js",
-              "node_modules/jquery/dist/jquery.min.js",
-              "node_modules/slick-carousel/slick/slick.min.js"
+              "node_modules/datatables.net/js/dataTables.min.js"
+
             ]
           }
         }

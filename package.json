@@ -21,10 +21,8 @@
     "angular-datatables": "18.0.0",
     "datatables.net": "^2.0.3",
     "datatables.net-dt": "^2.0.3",
-    "ngx-slick-carousel": "^17.0.0",
     "ngx-toastr": "^19.0.0",
     "rxjs": "~7.8.0",
-    "slick-carousel": "^1.8.1",
     "swiper": "^11.1.15",
     "tslib": "^2.3.0",
     "zone.js": "~0.14.10"

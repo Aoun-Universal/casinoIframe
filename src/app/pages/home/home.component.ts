@@ -10,7 +10,6 @@ import {
 } from '@angular/core';
 import {ToggleService} from '../../services/toggle.service';
 import {BetSlipComponent} from '../../shared/bet-slip/bet-slip.component';
-import {SlickCarouselComponent, SlickCarouselModule} from 'ngx-slick-carousel';
 import {LeaderboardComponent} from '../../modal/leaderboard/leaderboard.component';
 import {RaceComponent} from '../../modal/race/race.component';
 import {ActivatedRoute, Router} from '@angular/router';
@@ -24,7 +23,7 @@ import 'swiper/css/pagination';
 @Component({
   selector: 'app-home',
   standalone: true,
-  imports: [NgIf, CommonModule, NgClass, NgStyle, BetSlipComponent, SlickCarouselModule, NgSwitch, NgSwitchCase, LeaderboardComponent, RaceComponent, BetsModalComponent],
+  imports: [NgIf, CommonModule, NgClass, NgStyle, BetSlipComponent, NgSwitch, NgSwitchCase, LeaderboardComponent, RaceComponent, BetsModalComponent],
   templateUrl: './home.component.html',
   styleUrl: './home.component.css',
   schemas: [CUSTOM_ELEMENTS_SCHEMA]
@@ -64,11 +63,7 @@ export class HomeComponent implements OnInit, AfterViewInit {
   searchPlaceholder: string = '';
   soccerBettingOddsState: boolean = false;
 
-  @ViewChild('sportsSlider') sportsSlider!: SlickCarouselComponent;
-  @ViewChild('gallerySlider') gallerySlider!: SlickCarouselComponent;
-  @ViewChild('stakeSlider') stakeSlider!: SlickCarouselComponent;
-  @ViewChild('casinoSlider') casinoSlider!: SlickCarouselComponent;
-  @ViewChild('providerSlider') providerSlider!: SlickCarouselComponent;
+
   swiperConfig: any;
   @ViewChild('swiperContainer', {static: true}) swiperContainer!: ElementRef;
   swiperBreakPoint = {
@@ -704,13 +699,11 @@ export class HomeComponent implements OnInit, AfterViewInit {
 
   checkCarousel() {
     if (this.screenWidth > 700 && this.isCarouselActive) {
-      this.gallerySlider.unslick();
+      // this.gallerySlider.unslick();
       this.isCarouselActive = false;
     } else if (this.screenWidth <= 700 && !this.isCarouselActive) {
       this.isCarouselActive = true;
-      setTimeout(() => {
-        this.gallerySlider.initSlick(); // Reinitialize carousel below 700px
-      });
+
     }
   }
 
@@ -766,55 +759,6 @@ export class HomeComponent implements OnInit, AfterViewInit {
     this.casinoCurrentSlideIndex = e.currentSlide;
   }
 
-  galleryPrev() {
-    if (this.galleryCurrentSlideIndex !== 0) {
-      this.gallerySlider.slickPrev();
-    }
-  }
-
-  sportsPrev() {
-
-    this.sportsSlider.slickPrev();
-
-  }
-
-  stakesPrev() {
-    this.stakeSlider.slickPrev();
-
-  }
-
-  casinoPrev() {
-    this.casinoSlider.slickPrev();
-  }
-
-  providerPrev() {
-
-    this.providerSlider.slickPrev();
-
-  }
-
-  sportsNext() {
-
-    this.sportsSlider.slickNext();
-  }
-
-  stakesNext() {
-    if (this.stakeCurrentSlideIndex !== this.stakeSlideCount) {
-      this.stakeSlider.slickNext();
-    }
-  }
-
-  // Betslip
-
-  casinoNext() {
-    this.casinoSlider.slickNext();
-
-  }
-
-  providerNext() {
-    this.providerSlider.slickNext();
-  }
-
   openBetModal() {
     this.toggleService.setBetModal(true)
   }
@@ -822,7 +766,7 @@ export class HomeComponent implements OnInit, AfterViewInit {
   galleryNext() {
 
     if (this.galleryCurrentSlideIndex !== this.gallerySlideCount) {
-      this.gallerySlider.slickNext();
+      // this.gallerySlider.slickNext();
     }
   }
 
