@@ -28,7 +28,7 @@
 }
 
 .hero-card {
-  @apply overflow-hidden flex flex-col relative text-white bg-[#213743] rounded-[.5rem] cursor-pointer;
+  @apply overflow-hidden flex flex-col relative  rounded-[.5rem] cursor-pointer;
 }
 
 .card-wrapper {
