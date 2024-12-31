@@ -53,7 +53,6 @@ export class HomeComponent implements OnInit, AfterViewInit {
 
   providerCurrentSlideIndex = 0;
   providerSlideCount = 0;
-  slides: Array<any> = [];
   searchPlaceholder: string = '';
 
   swiperConfig: any;
@@ -63,6 +62,13 @@ export class HomeComponent implements OnInit, AfterViewInit {
     space: 10,
   };
 
+  heroSlides = [
+    { img: '/sliders/VIMAAN.svg' },
+    {
+      img: 'http://market.mgmopr.com/api/trader/tips/images/8843645f-1434-465b-9eab-ad31eca01e35.jpg',
+    },
+    { img: '/sliders/VIMAAN.svg' },
+  ];
   stakes = [
     {
       img: '/assets/home/stake-1.avif',
@@ -163,191 +169,9 @@ export class HomeComponent implements OnInit, AfterViewInit {
     { img: '/assets/providers/jade-rabbit.png' },
   ];
   index = 0;
-  heroSliderConfig = {
-    slidesToShow: 3,
-    slidesToScroll: 3,
-    arrows: false,
-    infinite: false,
-    variableWidth: false,
-    autoplay: {
-      delay: 1000,
-      disableOnInteraction: false,
-    },
-    responsive: [
-      {
-        breakpoint: 1024,
-        settings: {
-          slidesToShow: 2,
-        },
-      },
-      {
-        breakpoint: 947,
-        settings: {
-          slidesToShow: 2,
-        },
-      },
-      {
-        breakpoint: 480,
-        settings: {
-          slidesToShow: 1,
-        },
-      },
-    ],
-  };
+
   isCarouselActive = true;
   screenWidth = window.innerWidth;
-  galleryConfig = {
-    slidesToShow: 2,
-    slidesToScroll: 1,
-    arrows: false,
-    infinite: false,
-    variableWidth: false,
-    responsive: [
-      {
-        breakpoint: 1154,
-        settings: {
-          slidesToShow: 1,
-          slidesToScroll: 1,
-          variableWidth: false,
-        },
-      },
-    ],
-  };
-  stakeConfig = {
-    slidesToShow: 3,
-    slidesToScroll: 3,
-    arrows: false,
-    infinite: false,
-    variableWidth: true,
-    responsive: [
-      {
-        breakpoint: 1154,
-        settings: {
-          slidesToShow: 1,
-          slidesToScroll: 1,
-          variableWidth: true,
-        },
-      },
-    ],
-  };
-  slideConfig = {
-    slidesToShow: 6.4,
-    slidesToScroll: 1,
-    infinite: false,
-    arrows: false,
-    navigation: false,
-    responsive: [
-      {
-        breakpoint: 1024,
-        settings: {
-          slidesToShow: 7,
-        },
-      },
-      {
-        breakpoint: 947,
-        settings: {
-          slidesToShow: 4,
-          slidesToScroll: 3,
-        },
-      },
-      {
-        breakpoint: 480,
-        settings: {
-          slidesToShow: 3,
-          slidesToScroll: 3,
-        },
-      },
-    ],
-  };
-
-  // Adjust width issues of gallery slider
-  casinoConfig = {
-    slidesToShow: 6.4,
-    slidesToScroll: 3,
-    infinite: true,
-    arrows: false,
-    navigation: false,
-    swipeToSlide: true,
-    responsive: [
-      {
-        breakpoint: 1024,
-        settings: {
-          slidesToShow: 7,
-          slidesToScroll: 3,
-        },
-      },
-      {
-        breakpoint: 947,
-        settings: {
-          slidesToShow: 4,
-          slidesToScroll: 3,
-        },
-      },
-      {
-        breakpoint: 480,
-        settings: {
-          slidesToShow: 3,
-          slidesToScroll: 3,
-        },
-      },
-    ],
-  };
-  providerConfig = {
-    slidesToShow: 6.4,
-    slidesToScroll: 1,
-    swipe: true,
-    touchThreshold: 10,
-    infinite: false,
-    arrows: false,
-    navigation: false,
-    responsive: [
-      {
-        breakpoint: 1024,
-        settings: {
-          slidesToShow: 7,
-        },
-      },
-      {
-        breakpoint: 947,
-        settings: {
-          slidesToShow: 4,
-        },
-      },
-      {
-        breakpoint: 480,
-        settings: {
-          slidesToShow: 3,
-        },
-      },
-    ],
-  };
-  topSportsConfig = {
-    slidesToShow: 6.4,
-    slidesToScroll: 1,
-    infinite: false,
-    arrows: false,
-    navigation: false,
-    responsive: [
-      {
-        breakpoint: 1024,
-        settings: {
-          slidesToShow: 7,
-        },
-      },
-      {
-        breakpoint: 947,
-        settings: {
-          slidesToShow: 4,
-        },
-      },
-      {
-        breakpoint: 480,
-        settings: {
-          slidesToShow: 3,
-        },
-      },
-    ],
-  };
 
   // swiperInstance: Swiper;
   constructor(
@@ -379,7 +203,6 @@ export class HomeComponent implements OnInit, AfterViewInit {
         this.routeType === 'authenticated' ? this.isUserLoggedIn() : true;
 
       // Set up slides based on the route type
-      this.setupSlides();
     });
   }
 
@@ -389,62 +212,6 @@ export class HomeComponent implements OnInit, AfterViewInit {
 
   navigateTo(path: string): void {
     this.router.navigate([path]);
-  }
-
-  setupSlides() {
-    if (this.routeType === 'casino') {
-      this.slides = [
-        {
-          img: '/assets/home/daily-races.avif',
-          badge: 'Promo',
-          title: 'Daily Races',
-          description: 'Play in our $100,000 Daily Race',
-          buttonText: 'Race Now',
-        },
-        {
-          img: '/assets/home/weekly-raffle.avif',
-          badge: 'Promo',
-          title: 'Weekly Raffle',
-          description: 'Share in $75,000 each week',
-          buttonText: 'Learn More',
-        },
-        {
-          img: '/assets/home/conquer-casino.avif',
-          badge: 'Promo',
-          title: 'Conquer the Casino',
-          description: 'Win a share in $50,000 every week',
-          buttonText: 'Play Now',
-        },
-        {
-          img: '/assets/home/stake-vs-eddie.avif',
-          badge: 'Promo',
-          title: 'Stake vs Eddie',
-          description: 'Win a share in $30,000 every week',
-          buttonText: 'Play Now',
-        },
-        {
-          img: '/assets/home/chaos.avif',
-          badge: 'Promo',
-          title: 'Chaos Collector',
-          description: 'Win a share in $10,000 every week',
-          buttonText: 'Play Now',
-        },
-        {
-          img: '/assets/home/level-up.avif',
-          badge: 'Promo',
-          title: 'The Level Up',
-          description: 'Win a share in $20,000 every week',
-          buttonText: 'Play Now',
-        },
-        {
-          img: '/assets/home/multiplier-races.avif',
-          badge: 'Promo',
-          title: 'Multiplier Race',
-          description: 'Win a share in $10,000 every week',
-          buttonText: 'Play Now',
-        },
-      ];
-    }
   }
 
   @HostListener('window:resize', ['$event'])
@@ -458,8 +225,8 @@ export class HomeComponent implements OnInit, AfterViewInit {
 
     this.heroSlider = new Swiper('.hero-swiper', {
       loop: true,
-      slidesPerView: 3,
-      slidesPerGroup: 3,
+      slidesPerView: 1,
+      slidesPerGroup: 1,
       freeMode: true,
       spaceBetween: 16,
       navigation: {
@@ -472,7 +239,7 @@ export class HomeComponent implements OnInit, AfterViewInit {
       },
       breakpoints: {
         300: {
-          slidesPerView: 1,
+          slidesPerView: 1.1,
           slidesPerGroup: 1,
           spaceBetween: 16,
         },
@@ -560,7 +327,7 @@ export class HomeComponent implements OnInit, AfterViewInit {
       },
     });
   }
- updateNavigationButtons() {
+  updateNavigationButtons() {
     if (this.stakeOrigin) {
       this.owlPrevBtn = this.stakeOrigin.isBeginning;
       this.owlNextBtn = this.stakeOrigin.isEnd;

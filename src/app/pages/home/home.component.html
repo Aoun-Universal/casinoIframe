@@ -3,42 +3,14 @@
 <!--slider section-->
 <section class="main-section">
   <div class="hero-swiper overflow-hidden mt-[9px]">
-    <div class="swiper-wrapper ">
-      @for (slide of slides; track $index) {
-      <div class="hero-card swiper-slide">
-        <a>
-          <div class="card-wrapper">
-            <div class="content-wrapper">
-              <!-- Text Content -->
-              <div class="content">
-                <!-- Badge -->
-                <div class="mb-2">
-                  <div class="badge-content">{{ slide.badge }}</div>
-                </div>
-                <!-- Card Title -->
-                <span class="card-title !text-[18px]">{{ slide.title }}</span>
-                <!-- Card description -->
-                <div class="mt-1">
-                  <span class="description-wrapper">
-                    {{ slide.description }}
-                    <span class="font-semibold">Read More</span>
-                  </span>
-                </div>
-                <!-- Action button -->
-                <div class="button-wrapper">
-                  <a class="btn-content">{{ slide.buttonText }}</a>
-                </div>
-              </div>
-            </div>
-            <!-- Image -->
-            <div class="relative">
-              <div class="img-inner">
-                <img class="!object-contain" [src]="slide.img" [alt]="slide.title" decoding="async"
-                  style="object-fit: cover; max-width: 220px; max-height: 220px; aspect-ratio: 1 / 1; width: 100%;" />
-              </div>
-            </div>
-          </div>
-        </a>
+    <div class="swiper-wrapper  ">
+      @for (slide of heroSlides; track $index) {
+      <div class="hero-card swiper-slide max-w-[380px]">
+        <div class="sliderImgC carousel_img_wrapper">
+          <img [src]="slide.img"
+            alt="slider" class="border-0 rounded-[20px]">
+
+        </div>
       </div>
       }
     </div>
