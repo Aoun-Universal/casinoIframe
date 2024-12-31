@@ -1,4 +1,4 @@
-import {CommonModule, NgClass, NgIf, NgStyle, NgSwitch, NgSwitchCase} from '@angular/common';
+import {CommonModule, NgClass, NgIf, NgStyle} from '@angular/common';
 import {
   AfterViewInit,
   Component,
@@ -9,11 +9,8 @@ import {
   ViewChild
 } from '@angular/core';
 import {ToggleService} from '../../services/toggle.service';
-import {BetSlipComponent} from '../../shared/bet-slip/bet-slip.component';
-import {LeaderboardComponent} from '../../modal/leaderboard/leaderboard.component';
-import {RaceComponent} from '../../modal/race/race.component';
+
 import {ActivatedRoute, Router} from '@angular/router';
-import {BetsModalComponent} from '../../modal/bets-modal/bets-modal.component';
 
 import Swiper from 'swiper';
 import 'swiper/css';
@@ -23,7 +20,7 @@ import 'swiper/css/pagination';
 @Component({
   selector: 'app-home',
   standalone: true,
-  imports: [NgIf, CommonModule, NgClass, NgStyle, BetSlipComponent, NgSwitch, NgSwitchCase, LeaderboardComponent, RaceComponent, BetsModalComponent],
+  imports: [NgIf, CommonModule, NgClass, NgStyle,],
   templateUrl: './home.component.html',
   styleUrl: './home.component.css',
   schemas: [CUSTOM_ELEMENTS_SCHEMA]
@@ -215,6 +212,10 @@ export class HomeComponent implements OnInit, AfterViewInit {
     arrows: false,
     infinite: false,
     variableWidth: false,
+    autoplay: {
+      delay: 1000,
+      disableOnInteraction: false,
+    },
     responsive: [
       {
         breakpoint: 1024,
@@ -491,54 +492,7 @@ export class HomeComponent implements OnInit, AfterViewInit {
         },
 
       ]
-    } else if (this.routeType === 'sport') {
-      this.slides = [
-        {
-          img: "/assets/home/1.avif",
-          badge: "Promo",
-          title: "Industry-Best Election Odds",
-          description: "Bet With Stake Today.",
-          buttonText: "View Market"
-        },
-        {
-          img: "/assets/home/2.avif",
-          badge: "Politics",
-          title: "Live Betting During Election",
-          description: "Plus Bingo Markets & More.",
-          buttonText: "Bet Now"
-        },
-        {
-          img: "/assets/home/3.webp",
-          badge: "Promo",
-          title: "Champions League",
-          description: "Early Goal Payout.",
-          buttonText: "Bet Now"
-        },
-        {
-          img: "/assets/home/4.webp",
-          badge: "Promo",
-          title: "NBA - 3rd Quarter Payout",
-          description: "Insurance For Bad Beats",
-          buttonText: "View Matches"
-        },
-        {
-          img: "/assets/home/5.webp",
-          badge: "Promo",
-          title: "WTA Finals ",
-          description: "Final Set Tiebreaker Payout.",
-          buttonText: "Bet Now"
-        },
-        {
-          img: "/assets/home/6.webp",
-          badge: "Promo",
-          title: "NHL",
-          description: "2+ Lead Payout",
-          buttonText: "Bet Now"
-        },
-
-      ];
     }
-
 
   }
 
@@ -550,34 +504,7 @@ export class HomeComponent implements OnInit, AfterViewInit {
 
   ngAfterViewInit() {
     // this.checkCarousel();
-    this.homeSwiper = new Swiper('.sport-swiper', {
-      loop: false,
-      slidesPerView: 7.5,
-      slidesPerGroup: 6,
-      freeMode: true,
-      spaceBetween: 10,
-      navigation: {
-        nextEl: '.myCarouselRight',
-        prevEl: '.myCarouselLeft',
-      },
-      breakpoints: {
-        300: {
-          slidesPerView: 3,
-          slidesPerGroup: 3,
-          spaceBetween: 6,
-        },
-        768: {
-          slidesPerView: 4,
-          slidesPerGroup: 3,
-          spaceBetween: 6,
-        },
-        1024: {
-          slidesPerView: 7.5,
-          slidesPerGroup: 6,
-          spaceBetween: 10,
-        },
-      },
-    },)
+
 
     this.heroSlider = new Swiper('.hero-swiper', {
       loop: false,
@@ -588,6 +515,10 @@ export class HomeComponent implements OnInit, AfterViewInit {
       navigation: {
         nextEl: '.myCarouselRight',
         prevEl: '.myCarouselLeft',
+      },
+      autoplay: {
+        delay: 3500,
+        disableOnInteraction: false,
       },
       breakpoints: {
         300: {
