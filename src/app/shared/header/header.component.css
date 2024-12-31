@@ -2,7 +2,7 @@
 
 @layer utilities {
   .header_wrapper {
-    @apply bg-[#1A2C38] border-0 boxShadowHeader h-[60px] flex flex-row justify-between items-center px-1 xm:px-[16.5px];
+    @apply font-['SF-PRO'] bg-[#1A2C38] border-0 boxShadowHeader h-[60px] flex flex-row justify-between items-center px-1 xm:px-[16.5px];
   }
   .logo_img {
     @apply w-[150px] h-[39.58px];
