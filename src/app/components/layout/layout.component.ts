@@ -1,8 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { NavigationEnd, Router } from '@angular/router';
 import { ContentComponent } from '../content/content.component';
-import { SidebarComponent } from '../../shared/sidebar/sidebar.component';
-import { FooterComponent } from '../../shared/footer/footer.component';
+
 import { CommonModule } from '@angular/common';
 import { HeaderComponent } from '../../shared/header/header.component';
 import { filter } from 'rxjs';
@@ -15,7 +14,6 @@ import { MobSidebarComponent } from '../../shared/mob-sidebar/mob-sidebar.compon
   standalone: true,
   imports: [
     ContentComponent,
-    SidebarComponent,
     CommonModule,
     HeaderComponent,
     MobNavigationComponent,
@@ -41,30 +39,5 @@ export class LayoutComponent implements OnInit {
         this.currentRoute = event.urlAfterRedirects;
       });
   }
-  ngOnInit(): void {
-    this.toggle.getSidebar().subscribe((state) => {
-      this.sidebarOpen = state;
-    });
-    this.toggle.getBetslipState().subscribe((state) => {
-      this.showBetslip = state;
-    });
-    this.toggle.getVaultModalState().subscribe((state) => {
-      this.vaultModal = state;
-    });
-    this.toggle.getVipModalState().subscribe((state) => {
-      this.vipModal = state;
-    });
-    this.toggle.getstatisticModalstate().subscribe((state) => {
-      this.statisticModal = state;
-    });
-    this.toggle.getstatisticsTableModalState().subscribe((state) => {
-      this.statisticTableModal = state;
-    });
-    this.toggle.getnotificationModalState().subscribe((state) => {
-      this.notificationState = state;
-    });
-    this.toggle.getCampaingModalState().subscribe((state) => {
-      this.campaingState = state;
-    });
-  }
+  ngOnInit(): void {}
 }
