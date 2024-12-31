@@ -729,7 +729,15 @@ tr:hover {
   @apply my-auto size-[6.5px] ml-0.5 rounded-[50%] bg-[#ff1e22];
   animation: pulsered 1s infinite ease-out;
 }
-
+.maintenance_wrapper {
+  @apply absolute inset-0 border-0 rounded-[10px] z-20 bg-[rgba(0,_0,_0,_0.7)] pointer-events-none;
+}
+.lock_img_wrapper {
+  @apply flex flex-col justify-center items-center h-full;
+}
+.suspend_text {
+  @apply text-[10px] font-bold leading-[11.93px] mt-[10px] tracking-wide text-white text-center;
+}
 @keyframes pulsered {
   0% {
     box-shadow: 0 0 #ce525456;

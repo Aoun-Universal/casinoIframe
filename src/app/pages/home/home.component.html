@@ -198,9 +198,24 @@
     <div class="stake-swiper">
       <div class="swiper-wrapper">
         <div *ngFor="let stake of stakes" class="swiper-slide">
-          <img [src]="stake.img" alt="" class="rounded-lg">
+          <div class="relative">
+            <img [src]="stake.img" alt="" class="border-0 rounded-[10px]">
+            @if (stake.status==='Maintenance') {
+              <div class="maintenance_wrapper">
+                <div class="lock_img_wrapper">
+                  <img class="!w-[34px] h-10" src="/images/Lock.svg" alt="">
+                  <div class="suspend_text">
+                    This Game Under
+                    Maintenance
+                  </div>
+                </div>
+
+              </div>
+              }
+          </div>
+
           <div class="stake-player-row flex justify-center gap-2 pt-1">
-            <span [ngClass]="[stake.status==='Playing' ? 'stake-dot-red' :'stake-dot-green']"></span>
+            <span [ngClass]="[stake.status==='Playing' ? 'stake-dot-green' :'stake-dot-red']"></span>
             <span *ngIf="stake.status==='Playing'" class="count-text"> {{stake.count}}</span>
               <span class="text-[#b1bad3] text-xs">{{stake.status}}</span>
 
