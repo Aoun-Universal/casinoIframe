@@ -815,3 +815,25 @@ tr:hover {
 .btn_right {
   @apply border border-solid w-[35px]  xm:w-[50px] h-[35px] rounded-r-[20px] flex justify-center items-center;
 }
+.view_type {
+  @apply flex flex-row justify-center items-center gap-2;
+}
+.view_text {
+  @apply font-bold text-[#B1BAD3] tracking-wide whitespace-nowrap;
+}
+.swiper-container-viewAll {
+  width: 100%; /* Full width of the container */
+  overflow: hidden; /* Prevent horizontal scrolling */
+}
+
+.swiper-wrapper-viewAll {
+  display: flex;
+  flex-wrap: wrap; /* Allow wrapping to multiple rows */
+  overflow: hidden; /* Prevent horizontal scrolling within wrapper */
+}
+
+.swiper-slide-viewAll {
+  flex: 0 0 calc(33.33% - 10px); /* 3 slides per row, adjust as needed */
+  margin-bottom: 10px; /* Space between rows */
+  box-sizing: border-box;
+}

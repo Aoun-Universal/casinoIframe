@@ -43,7 +43,7 @@ export class HomeComponent implements OnInit, AfterViewInit {
   LiveTab = 'basketball';
   stakeOrigin!: Swiper;
   TableTab: number = 1;
-
+  casinoViewAllState:boolean = false;
   WinnerDropdown = false;
   heroCurrentSlideIndex = 0;
   heroSlideCount = 0;
@@ -489,40 +489,43 @@ export class HomeComponent implements OnInit, AfterViewInit {
       },
     });
 
-    this.stakeOrigin = new Swiper('.stake-swiper', {
-      loop: false,
-      slidesPerView: 7.5,
-      slidesPerGroup: 6,
-      freeMode: true,
-      spaceBetween: 10,
-      navigation: {
-        nextEl: '.myCarouselRight',
-        prevEl: '.myCarouselLeft',
-      },
-      breakpoints: {
-        300: {
-          slidesPerView: 3,
-          slidesPerGroup: 3,
-          spaceBetween: 6,
-        },
-        768: {
-          slidesPerView: 4,
-          slidesPerGroup: 3,
-          spaceBetween: 6,
-        },
-        1024: {
-          slidesPerView: 7.5,
-          slidesPerGroup: 6,
-          spaceBetween: 10,
-        },
-      },
-      on: {
-        slideChange: () => this.updateNavigationButtons(),
-        reachBeginning: () => (this.owlPrevBtn = true),
-        reachEnd: () => (this.owlNextBtn = true),
-      },
-    });
+    // this.stakeOrigin = new Swiper('.stake-swiper', {
+    //   loop: false,
+    //   slidesPerView: 7.5,
+    //   slidesPerGroup: 6,
+    //   freeMode: true,
 
+    //   spaceBetween: 10,
+    //   navigation: {
+    //     nextEl: '.myCarouselRight',
+    //     prevEl: '.myCarouselLeft',
+    //   },
+    //   breakpoints: {
+    //     300: {
+    //       slidesPerView: 3,
+    //       slidesPerGroup: 3,
+    //       spaceBetween: 6,
+
+    //     },
+    //     768: {
+    //       slidesPerView: 4,
+    //       slidesPerGroup: 3,
+    //       spaceBetween: 6,
+
+    //     },
+    //     1024: {
+    //       slidesPerView: 7.5,
+    //       slidesPerGroup: 6,
+    //       spaceBetween: 10,
+    //     },
+    //   },
+    //   on: {
+    //     slideChange: () => this.updateNavigationButtons(),
+    //     reachBeginning: () => (this.owlPrevBtn = true),
+    //     reachEnd: () => (this.owlNextBtn = true),
+    //   },
+    // });
+    this.setDefaultView();
     this.providerSwiper = new Swiper('.provider-swiper', {
       loop: false,
       slidesPerView: 7.5,
@@ -616,4 +619,103 @@ export class HomeComponent implements OnInit, AfterViewInit {
   // setLiveTabActive(tab: string) {
   //   this.LiveTab = tab;
   // }
+  setCasinoViewType(){
+    this.casinoViewAllState = !this.casinoViewAllState;
+    if(this.casinoViewAllState){
+      this.setGridView();
+    }
+    else{
+      this.setDefaultView();
+    }
+  }
+  private initializeSwiper(config: any): void {
+    if (this.stakeOrigin) {
+      this.stakeOrigin.destroy(true, true); // Destroy existing Swiper instance
+    }
+    this.stakeOrigin = new Swiper('.stake-swiper', config); // Initialize Swiper with new config
+  }
+  private getDefaultSwiperConfig(): any {
+    return {
+      loop: false,
+      slidesPerView: 7.5,
+      slidesPerGroup: 6,
+      freeMode: true,
+      spaceBetween: 10,
+      navigation: {
+        nextEl: '.myCarouselRight',
+        prevEl: '.myCarouselLeft',
+      },
+      breakpoints: {
+        300: {
+          slidesPerView: 3,
+          slidesPerGroup: 3,
+          spaceBetween: 6,
+        },
+        768: {
+          slidesPerView: 4,
+          slidesPerGroup: 3,
+          spaceBetween: 6,
+        },
+        1024: {
+          slidesPerView: 7.5,
+          slidesPerGroup: 6,
+          spaceBetween: 10,
+        },
+      },
+      on: {
+        slideChange: () => this.updateNavigationButtons(),
+        reachBeginning: () => (this.owlPrevBtn = true),
+        reachEnd: () => (this.owlNextBtn = true),
+      },
+    };
+  }
+  private getGridSwiperConfig(): any {
+    const totalSlides = this.stakes.length;
+    const slidesPerView = 3; // Number of slides per row
+    const rows = Math.ceil(totalSlides / slidesPerView);
+
+    return {
+      slidesPerView: slidesPerView,
+      spaceBetween: 6,
+      grid: {
+        rows: rows,
+        fill: 'row',
+      },
+      navigation: false,
+      loop: false,
+      allowTouchMove: false,
+      freeMode: false,
+      breakpoints: {
+        300: {
+          slidesPerView: 3,
+          slidesPerGroup: 3,
+          spaceBetween: 6,
+          grid: {
+            rows: rows,
+            fill: 'row',
+          },
+        },
+        768: {
+          slidesPerView: 4,
+          slidesPerGroup: 3,
+          spaceBetween: 6,
+        },
+        1024: {
+          slidesPerView: 7.5,
+          slidesPerGroup: 6,
+          spaceBetween: 10,
+        },
+      },
+    };
+  }
+  setDefaultView(): void {
+    const config = this.getDefaultSwiperConfig();
+    this.initializeSwiper(config);
+  }
+
+  setGridView(): void {
+    const config = this.getGridSwiperConfig();
+    this.initializeSwiper(config);
+  }
+
 }

@@ -194,6 +194,17 @@
         </button>
 
       </div> -->
+      <div class="view_type">
+        @if (!casinoViewAllState) {
+        <button (click)="setCasinoViewType()" class="sports-heading view_text">
+          View All
+        </button>
+        }@else {
+        <button (click)="setCasinoViewType()" class="sports-heading view_text">
+          Hide All
+        </button>
+        }
+
       <div class="flex_row cursor-pointer btnContainer">
         <button (click)="this.stakeOrigin.slidePrev()" [disabled]="owlPrevBtn"
           [ngClass]="!owlPrevBtn? '!border-[#55758A] ':'border-[#304553] '" class="btn_left !border-r-0  ">
@@ -208,8 +219,9 @@
             class="rotate-180 w-[18px] h-[18px]" src="/images/Arrow - Right.svg" alt="right">
         </button>
       </div>
+      </div>
     </div>
-    <div class="stake-swiper">
+    <div class="stake-swiper" [ngClass]="casinoViewAllState?'swiper-container-viewAll':''">
       <div class="swiper-wrapper">
         <div *ngFor="let stake of stakes" class="swiper-slide">
           <div class="relative">
