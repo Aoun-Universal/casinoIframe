@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { ToggleService } from '../../services/toggle.service';
-import { CommonModule } from '@angular/common';
+import { CommonModule, NgClass } from '@angular/common';
 import { FormsModule } from '@angular/forms';
 
 @Component({
@@ -17,12 +17,17 @@ export class MobSidebarComponent implements OnInit {
   viewType = 'Profile';
   timeoutId: any;
   toggleCoolDown: boolean = false;
-
+  languageSelectionState: boolean = true;
   constructor(private toggle: ToggleService) {}
+
   ngOnInit(): void {
     this.hideSideBar = true;
     this.getViewType();
     this.getMobSidebarState();
+  }
+
+  toggleLanguageMenu() {
+    this.languageSelectionState = !this.languageSelectionState;
   }
 
   getViewType() {
