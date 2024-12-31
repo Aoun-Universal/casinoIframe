@@ -5,34 +5,64 @@ import { BehaviorSubject } from 'rxjs';
   providedIn: 'root',
 })
 export class ToggleService {
-  private sidebarState: BehaviorSubject<boolean> = new BehaviorSubject<boolean>(true);
-  private Betslip: BehaviorSubject<boolean> = new BehaviorSubject<boolean>(false);
-  private BetslipContent: BehaviorSubject<boolean> = new BehaviorSubject<boolean>(false);
-  private vipModalState: BehaviorSubject<boolean> = new BehaviorSubject<boolean>(false);
-  private vaultModalState: BehaviorSubject<boolean> = new BehaviorSubject<boolean>(false);
-  private statisticsModalState: BehaviorSubject<boolean> = new BehaviorSubject<boolean>(false);
-  private statisticsTableModalState: BehaviorSubject<boolean> = new BehaviorSubject<boolean>(false);
-  private notificationModalState: BehaviorSubject<boolean> = new BehaviorSubject<boolean>(false);
-  private signUpState: BehaviorSubject<boolean> = new BehaviorSubject<boolean>(false);
-  private walletModal: BehaviorSubject<boolean> = new BehaviorSubject<boolean>(false);
-  private loginState: BehaviorSubject<boolean> = new BehaviorSubject<boolean>(false);
-  private wallet: BehaviorSubject<boolean> = new BehaviorSubject<boolean>(false);
-  private logoutState: BehaviorSubject<boolean> = new BehaviorSubject<boolean>(false);
-  private LeaderBoardModalState: BehaviorSubject<boolean> = new BehaviorSubject<boolean>(false);
-  private RaceModalState: BehaviorSubject<boolean> = new BehaviorSubject<boolean>(false);
-  private campaingModalState: BehaviorSubject<boolean> = new BehaviorSubject<boolean>(false);
-  private WalletsettingState: BehaviorSubject<boolean> = new BehaviorSubject<boolean>(false);
+  mobSideBarState: BehaviorSubject<boolean> = new BehaviorSubject<boolean>(
+    false
+  );
+  mobSideBarContent: BehaviorSubject<string> = new BehaviorSubject<string>(
+    'Game'
+  );
+  private sidebarState: BehaviorSubject<boolean> = new BehaviorSubject<boolean>(
+    true
+  );
+  private Betslip: BehaviorSubject<boolean> = new BehaviorSubject<boolean>(
+    false
+  );
+  private BetslipContent: BehaviorSubject<boolean> =
+    new BehaviorSubject<boolean>(false);
+  private vipModalState: BehaviorSubject<boolean> =
+    new BehaviorSubject<boolean>(false);
+  private vaultModalState: BehaviorSubject<boolean> =
+    new BehaviorSubject<boolean>(false);
+  private statisticsModalState: BehaviorSubject<boolean> =
+    new BehaviorSubject<boolean>(false);
+  private statisticsTableModalState: BehaviorSubject<boolean> =
+    new BehaviorSubject<boolean>(false);
+  private notificationModalState: BehaviorSubject<boolean> =
+    new BehaviorSubject<boolean>(false);
+  private signUpState: BehaviorSubject<boolean> = new BehaviorSubject<boolean>(
+    false
+  );
+  private walletModal: BehaviorSubject<boolean> = new BehaviorSubject<boolean>(
+    false
+  );
+  private loginState: BehaviorSubject<boolean> = new BehaviorSubject<boolean>(
+    false
+  );
+  private wallet: BehaviorSubject<boolean> = new BehaviorSubject<boolean>(
+    false
+  );
+  private logoutState: BehaviorSubject<boolean> = new BehaviorSubject<boolean>(
+    false
+  );
+  private LeaderBoardModalState: BehaviorSubject<boolean> =
+    new BehaviorSubject<boolean>(false);
+  private RaceModalState: BehaviorSubject<boolean> =
+    new BehaviorSubject<boolean>(false);
+  private campaingModalState: BehaviorSubject<boolean> =
+    new BehaviorSubject<boolean>(false);
+  private WalletsettingState: BehaviorSubject<boolean> =
+    new BehaviorSubject<boolean>(false);
 
-  private ForgotpasswordState: BehaviorSubject<boolean> = new BehaviorSubject<boolean>(false);
+  private ForgotpasswordState: BehaviorSubject<boolean> =
+    new BehaviorSubject<boolean>(false);
 
-  private betModal: BehaviorSubject<boolean> = new BehaviorSubject<boolean>(false);
-
-
+  private betModal: BehaviorSubject<boolean> = new BehaviorSubject<boolean>(
+    false
+  );
 
   sidebarState$ = this.sidebarState.asObservable();
 
-
-  constructor() { }
+  constructor() {}
 
   // Sidebar methods
   getSidebar() {
@@ -53,7 +83,6 @@ export class ToggleService {
   getBetslipContent() {
     return this.BetslipContent;
   }
-
 
   setBetslipContent(value: boolean) {
     this.BetslipContent.next(value);
@@ -91,37 +120,36 @@ export class ToggleService {
     return this.statisticsModalState;
   }
   setstatisticModal(value: boolean) {
-    this.statisticsModalState.next(value)
+    this.statisticsModalState.next(value);
   }
   // statisticsmodal
   getstatisticsTableModalState() {
     return this.statisticsTableModalState;
   }
   setstatisticsTableModalState(value: boolean) {
-    this.statisticsTableModalState.next(value)
+    this.statisticsTableModalState.next(value);
   }
   // notificationModal
   getnotificationModalState() {
-    return this.notificationModalState
+    return this.notificationModalState;
   }
   setnotificationModal(value: boolean) {
-    this.notificationModalState.next(value)
+    this.notificationModalState.next(value);
   }
 
   getWalletModal() {
-    return this.walletModal
+    return this.walletModal;
   }
   setWalletModal(value: boolean) {
-    this.walletModal.next(value)
+    this.walletModal.next(value);
   }
 
   getWallet() {
-    return this.wallet
+    return this.wallet;
   }
   setWallet(value: boolean) {
-    this.wallet.next(value)
+    this.wallet.next(value);
   }
-
 
   getLeaderBoardstate() {
     return this.LeaderBoardModalState;
@@ -130,17 +158,15 @@ export class ToggleService {
     this.LeaderBoardModalState.next(value);
   }
 
-
   getRaceModalstate() {
     return this.RaceModalState;
   }
   setRaceModal(value: boolean) {
     this.RaceModalState.next(value);
-
   }
 
   getLogin() {
-    return this.loginState
+    return this.loginState;
   }
   setLogin(value: boolean) {
     this.loginState.next(value);
@@ -148,7 +174,7 @@ export class ToggleService {
   // Wallet setting Modal
 
   getWalletsetting() {
-    return this.WalletsettingState
+    return this.WalletsettingState;
   }
   setWalletsetting(value: boolean) {
     this.WalletsettingState.next(value);
@@ -157,32 +183,46 @@ export class ToggleService {
   // Forgot password Modal
 
   getForgotpassword() {
-    return this.ForgotpasswordState
+    return this.ForgotpasswordState;
   }
   setForgotpassword(value: boolean) {
     this.ForgotpasswordState.next(value);
   }
 
-
   getSignUp() {
-    return this.signUpState
+    return this.signUpState;
   }
   setSignUp(value: boolean) {
     this.signUpState.next(value);
   }
 
   getLogout() {
-    return this.logoutState
+    return this.logoutState;
   }
   setLogout(value: boolean) {
     this.logoutState.next(value);
   }
 
   getBetModal() {
-    return this.betModal
+    return this.betModal;
   }
   setBetModal(value: boolean) {
     this.betModal.next(value);
   }
 
+  getMobileSideBarState() {
+    return this.mobSideBarState;
+  }
+
+  getMobSideBarContent() {
+    return this.mobSideBarContent;
+  }
+
+  setMobSideBarState(val: boolean) {
+    this.mobSideBarState.next(val);
+  }
+
+  setMobSideBarContent(val: string) {
+    this.mobSideBarContent.next(val);
+  }
 }
