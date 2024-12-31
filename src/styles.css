@@ -124,3 +124,34 @@ tr:hover {
 ::-webkit-scrollbar {
   @apply hidden;
 }
+.loaderMain {
+  position: fixed;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: rgba(26, 44, 56, 1);
+  z-index: 10000;
+}
+
+.loaderMain img {
+  width: 350px;
+}
+
+#progressbar {
+  background-color: black;
+  border-radius: 13px;
+  /* (height of inner div) / 2 + padding */
+  padding: 0px;
+}
+
+#progressbar>div {
+  background-color: orange;
+  width: 40%;
+  /* Adjust with JavaScript */
+  height: 10px;
+  border-radius: 10px;
+}
