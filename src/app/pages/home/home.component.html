@@ -1,409 +1,138 @@
 <!-- Home starts -->
 <section class="w-full h-fit">
 
-<!--slider section-->
-<section class="main-section">
-  <div class="hero-swiper overflow-hidden mt-[9px]">
-    <div class="swiper-wrapper  ">
-      @for (slide of heroSlides; track $index) {
-      <div class="hero-card swiper-slide max-w-[380px]">
-        <div class="sliderImgC carousel_img_wrapper">
-          <img [src]="slide.img" alt="slider" class="border-0 rounded-[20px] w-full">
+  <!--slider section-->
+  <section class="main-section">
+    <div class="hero-swiper overflow-hidden mt-[9px]">
+      <div class="swiper-wrapper  ">
+        @for (slide of heroSlides; track $index) {
+        <div class="hero-card swiper-slide max-w-[380px]">
+          <div class="sliderImgC carousel_img_wrapper">
+            <img [src]="slide.img" alt="slider" class="border-0 rounded-[20px] w-full">
 
+          </div>
         </div>
+        }
       </div>
-      }
     </div>
-  </div>
 
 
-  <button (click)="heroSlider.slideNext()"
-    class="max-[1155px]:hidden group absolute left-[5px] top-[40%] z-10  text-white">
-    <span class="inline-block translate-y-3 opacity-50 transition-all duration-200 group-hover:opacity-100">
-      <svg class="svg-icon text-[24px]" fill="currentColor" viewBox="0 0 64 64">
-        <title></title>
-        <path d="M36.998 53.995 16 32.998 36.998 12l6.306 6.306L28.61 33l14.694 14.694L36.998 54v-.005Z"></path>
-      </svg></span>
-  </button>
-  <button (click)="heroSlider.slidePrev()"
-    class=" max-[1155px]:hidden group absolute right-[5px] top-[40%] z-10   text-white">
-    <span
-      class="inline-block  text-white translate-y-3  opacity-50 transition-all duration-200 group-hover:opacity-100">
-      <svg class="svg-icon text-[24px]" fill="currentColor" viewBox="0 0 64 64">
-        <title></title>
-        <path d="m26.307 53.995 20.998-20.997L26.307 12 20 18.306 34.694 33 20.001 47.694 26.307 54v-.005Z"></path>
-      </svg>
-    </span>
-  </button>
-</section>
-
-
-<!------------------------------ Search Wrap --------------------->
-<section class="main-section ">
-  <div class="search-wrap">
-    <div class="search-wrap-input">
-      <!-- search icon -->
-      <div class="search-icon">
-        <svg class="svg-icon " fill="currentColor" viewBox="0 0 64 64">
+    <button (click)="heroSlider.slideNext()"
+      class="max-[1155px]:hidden group absolute left-[5px] top-[40%] z-10  text-white">
+      <span class="inline-block translate-y-3 opacity-50 transition-all duration-200 group-hover:opacity-100">
+        <svg class="svg-icon text-[24px]" fill="currentColor" viewBox="0 0 64 64">
           <title></title>
-          <path clip-rule="evenodd"
-            d="M10.266 3.893a23.1 23.1 0 1 1 25.668 38.414A23.1 23.1 0 0 1 10.266 3.893Zm5.112 30.764a13.9 13.9 0 1 0 15.444-23.114 13.9 13.9 0 0 0-15.444 23.114ZM38.55 46.33a28.002 28.002 0 0 0 7.78-7.78L64 56.22 56.22 64 38.55 46.33Z"
-            fill-rule="evenodd">
-          </path>
+          <path d="M36.998 53.995 16 32.998 36.998 12l6.306 6.306L28.61 33l14.694 14.694L36.998 54v-.005Z"></path>
+        </svg></span>
+    </button>
+    <button (click)="heroSlider.slidePrev()"
+      class=" max-[1155px]:hidden group absolute right-[5px] top-[40%] z-10   text-white">
+      <span
+        class="inline-block  text-white translate-y-3  opacity-50 transition-all duration-200 group-hover:opacity-100">
+        <svg class="svg-icon text-[24px]" fill="currentColor" viewBox="0 0 64 64">
+          <title></title>
+          <path d="m26.307 53.995 20.998-20.997L26.307 12 20 18.306 34.694 33 20.001 47.694 26.307 54v-.005Z"></path>
         </svg>
-      </div>
-      <!-- search-input -->
-      <input [placeholder]="searchPlaceholder" class="search-input" data-analytics="sports-home-search"
-        data-testid="search">
-    </div>
-  </div>
+      </span>
+    </button>
+  </section>
 
 
-  <!------------------------------- Tabs Wrapper For Casino ------------------->
-  <div *ngIf="routeType === 'casino'" class="tabs-wrapper overflow-scroll">
-    <div class="tab-slider">
-      <div class="flex">
-        <!-- Tab item 1 -->
-        <a (click)="setActiveTab(1)" [class.active]="activeTab === 1" class="tab-item tab-item1">
-          <svg class="svg-icon" fill="currentColor" viewBox="0 0 96 96">
+  <!------------------------------ Search Wrap --------------------->
+  <section class="main-section ">
+    <div class="search-wrap">
+      <div class="search-wrap-input">
+        <!-- search icon -->
+        <div class="search-icon">
+          <svg class="svg-icon " fill="currentColor" viewBox="0 0 64 64">
             <title></title>
-            <path [ngStyle]="{ fill: activeTab === 1 ? '#fff' : '#b1bad3' }" clip-rule="evenodd"
-              d="M82.013 45.482c-3.172-11.05-9.322-20.4-17.525-27.42L64.41 18h13.6V6H18.005v12h17.521c-.35 11.428-3.087 22.136-7.725 31.752l.204-.47c-2.08-.802-4.483-1.27-6.997-1.282h-.006C9.402 47.999 0 57.402 0 69.001 0 80.6 9.403 90.003 21.002 90.003c11.6 0 21.002-9.403 21.002-21.002a20.707 20.707 0 0 0-4.395-12.727l.035.045c5.542-10.36 9.061-22.562 9.712-35.52l.01-.205c10.572 5.617 18.595 14.86 22.502 26.034l.099.33c-5.914 3.021-9.892 9.07-9.892 16.045 0 9.92 8.04 17.963 17.962 17.963S96 72.926 96 63.003c0-8.526-5.94-15.664-13.91-17.503l-.12-.024.043.006Z"
+            <path clip-rule="evenodd"
+              d="M10.266 3.893a23.1 23.1 0 1 1 25.668 38.414A23.1 23.1 0 0 1 10.266 3.893Zm5.112 30.764a13.9 13.9 0 1 0 15.444-23.114 13.9 13.9 0 0 0-15.444 23.114ZM38.55 46.33a28.002 28.002 0 0 0 7.78-7.78L64 56.22 56.22 64 38.55 46.33Z"
               fill-rule="evenodd">
             </path>
           </svg>
-
-          <span>Lobby</span>
-        </a>
-
-        <!-- Tab item 2 -->
-        <a (click)="setActiveTab(2)" [class.active]="activeTab === 2" class="tab-item">
-          <svg class="svg-icon " fill="currentColor" viewBox="0 0 64 64">
-            <title></title>
-            <path [ngStyle]="{ fill: activeTab === 2 ? '#fff' : '#b1bad3' }"
-              d="M7.36 42.39c1-12.78 14.728-25.29 17.926-29.976 2.778-4.206 1.719-9.203.83-11.4a.78.78 0 0 1 .893-1h-.004c13.889 2.918 14.588 13.48 14.168 18.206-.42 4.726.42 7.913 3.478 7.224 3.057-.69 2.028-8.443 2.028-8.443s14.039 16.676 8.893 33.073c-2.588 8.574-9.033 12.19-14.449 13.89-.28.14-.56-.14-.56-.55.7-2.638 2.509-4.726 3.058-7.644 1.12-4.796-3.327-9.213-6.624-11.71-2.063-1.538-3.386-3.97-3.386-6.712 0-.127.002-.255.008-.381v.018c0-.28-.42-.42-.55-.28a90.106 90.106 0 0 1-6.652 7.202l-.022.022c-5.136 5.696-7.784 12.09-3.197 19.175.14.28-.14.69-.41.56C11.387 60.596 6.67 51.973 7.36 42.39Z">
-            </path>
-          </svg>
-
-          <span> Originals</span>
-        </a>
-
-        <!-- Tab item 3 -->
-        <a (click)="setActiveTab(4)" [class.active]="activeTab === 4" class="tab-item">
-          <svg class="svg-icon " fill="currentColor" viewBox="0 0 96 96">
-            <title></title>
-            <path [ngStyle]="{ fill: activeTab === 4 ? '#fff' : '#b1bad3' }"
-              d="M62.8 7.2h-1.2L48 12 34.401 7.2c-2.4-.8-5.199.801-5.6 3.6v10c0 2.798 2.4 4.8 4.8 4.8h1.2l13.2-6 13.598 6c2.8.8 5.2-.802 6-3.6V12c0-2.799-2.4-4.8-4.8-4.8ZM41.199 82.8l-18-60c-1.2-2.4-3.6-3.6-6.399-2.799l-6 2.001c-2.001.4-3.201 2.4-3.201 4.401l-3.6 57.6c0 2.8 2.001 4.8 4.401 5.2h27.999c2.799 0 4.8-2.002 4.8-4.8.399-.4 0-1.204 0-1.603Zm47.202-56.4c0-2-1.2-3.6-3.2-4.4l-6-2.4c-2.4-.802-5.2.398-6 2.798l-18 60c-.802 2.4.8 5.2 3.2 6 .4 0 .801.4 1.6.4h27.6c2.798 0 4.8-2.002 4.8-4.8l-4-57.598Z">
-            </path>
-          </svg>
-
-          <span>Live Casino</span>
-        </a>
-
-        <!-- Tab item 4 -->
-
-
-        <a (click)="setActiveTab(3)" [class.active]="activeTab === 3" class="tab-item">
-          <svg class="svg-icon " fill="currentColor" viewBox="0 0 96 96">
-            <title></title>
-            <path [ngStyle]="{ fill: activeTab === 3 ? '#fff' : '#b1bad3' }"
-              d="M56.8 47.08a49.761 49.761 0 0 0-5.6 22.8v5H32.32a55.56 55.56 0 0 1 5-22.76A86.916 86.916 0 0 1 50.8 31h-28V16.36H72v7.76a133.838 133.838 0 0 0-15.2 22.96Zm26.4 16.24a30.56 30.56 0 0 0-6 13.04l-.6 3L60 76.32a38.12 38.12 0 0 1 13.36-22.28l-12-2.36 5.04-10.64L96 46.88l-.92 4.64a85.487 85.487 0 0 0-11.88 11.8Zm-58.52 9.32a30.08 30.08 0 0 1 0-14.36 79.675 79.675 0 0 1 5.8-15.84l-1.12-4.6L0 44.88v11.68l12-2.84a37.88 37.88 0 0 0-2.88 25.92l16.28-4-.72-3Z">
-            </path>
-          </svg>
-          <span>Slots</span>
-        </a>
-
-
+        </div>
+        <!-- search-input -->
+        <input [placeholder]="searchPlaceholder" class="search-input" data-analytics="sports-home-search"
+          data-testid="search">
       </div>
     </div>
-  </div>
 
 
-
-
-  <!--------------------------------- Stake Originals ---------------------->
-  <div *ngIf="routeType === 'casino'" class="page-content">
-    <!-- Stake Sports Slider -->
-    <div class="top-sports-header mb-2.5">
-      <!-- left -->
-      <span>
-        <span>
-          <svg class="svg-icon mr-2" fill="currentColor" viewBox="0 0 64 64">
-            <title></title>
-            <path
-              d="M7.36 42.39c1-12.78 14.728-25.29 17.926-29.976 2.778-4.206 1.719-9.203.83-11.4a.78.78 0 0 1 .893-1h-.004c13.889 2.918 14.588 13.48 14.168 18.206-.42 4.726.42 7.913 3.478 7.224 3.057-.69 2.028-8.443 2.028-8.443s14.039 16.676 8.893 33.073c-2.588 8.574-9.033 12.19-14.449 13.89-.28.14-.56-.14-.56-.55.7-2.638 2.509-4.726 3.058-7.644 1.12-4.796-3.327-9.213-6.624-11.71-2.063-1.538-3.386-3.97-3.386-6.712 0-.127.002-.255.008-.381v.018c0-.28-.42-.42-.55-.28a90.106 90.106 0 0 1-6.652 7.202l-.022.022c-5.136 5.696-7.784 12.09-3.197 19.175.14.28-.14.69-.41.56C11.387 60.596 6.67 51.973 7.36 42.39Z"
-              fill="#b1bad3">
-            </path>
-          </svg>
-        </span>
-        <span class="sports-heading">Universe Originals</span>
-      </span>
-
-      <!-- Right -->
-      <!-- <div class="flex cursor-pointer">
-        <button (click)="stakeOrigin.slidePrev()" class="left-arrow arrows-btn">
-          <div class="arrow-inner">
-            <svg class="svg-icon " fill="currentColor" viewBox="0 0 64 64">
+    <!------------------------------- Tabs Wrapper For Casino ------------------->
+    <div class="tabs-wrapper overflow-scroll">
+      <div class="tab-slider">
+        <div class="flex">
+          <!-- Tab item 1 -->
+          <a routerLink="/home/lobby" (click)="setActiveTab(1)" [class.active]="activeTab === 1"
+            class="tab-item tab-item1">
+            <svg class="svg-icon" fill="currentColor" viewBox="0 0 96 96">
               <title></title>
-              <path
-                d="M56 37.486H25.091L35.335 47.73l-6.313 6.314L8 33.022 29.022 12l6.313 6.314-10.244 10.244H56v8.933-.005Z"
-                fill="#b1bad3">
+              <path [ngStyle]="{ fill: activeTab === 1 ? '#fff' : '#b1bad3' }" clip-rule="evenodd"
+                d="M82.013 45.482c-3.172-11.05-9.322-20.4-17.525-27.42L64.41 18h13.6V6H18.005v12h17.521c-.35 11.428-3.087 22.136-7.725 31.752l.204-.47c-2.08-.802-4.483-1.27-6.997-1.282h-.006C9.402 47.999 0 57.402 0 69.001 0 80.6 9.403 90.003 21.002 90.003c11.6 0 21.002-9.403 21.002-21.002a20.707 20.707 0 0 0-4.395-12.727l.035.045c5.542-10.36 9.061-22.562 9.712-35.52l.01-.205c10.572 5.617 18.595 14.86 22.502 26.034l.099.33c-5.914 3.021-9.892 9.07-9.892 16.045 0 9.92 8.04 17.963 17.962 17.963S96 72.926 96 63.003c0-8.526-5.94-15.664-13.91-17.503l-.12-.024.043.006Z"
+                fill-rule="evenodd">
               </path>
             </svg>
-          </div>
-        </button>
 
-        <button (click)="stakeOrigin.slideNext()" class="right-arrow arrows-btn">
-          <div class="arrow-inner">
+            <span>Lobby</span>
+          </a>
+
+          <!-- Tab item 2 -->
+          <a routerLink="/home/universe-originals" (click)="setActiveTab(2)" [class.active]="activeTab === 2"
+            class="tab-item">
             <svg class="svg-icon " fill="currentColor" viewBox="0 0 64 64">
               <title></title>
-              <path
-                d="M8 37.486h30.909L28.665 47.73l6.313 6.314L56 33.022 34.978 12l-6.313 6.314 10.244 10.244H8v8.933-.005Z"
-                fill="#b1bad3">
+              <path [ngStyle]="{ fill: activeTab === 2 ? '#fff' : '#b1bad3' }"
+                d="M7.36 42.39c1-12.78 14.728-25.29 17.926-29.976 2.778-4.206 1.719-9.203.83-11.4a.78.78 0 0 1 .893-1h-.004c13.889 2.918 14.588 13.48 14.168 18.206-.42 4.726.42 7.913 3.478 7.224 3.057-.69 2.028-8.443 2.028-8.443s14.039 16.676 8.893 33.073c-2.588 8.574-9.033 12.19-14.449 13.89-.28.14-.56-.14-.56-.55.7-2.638 2.509-4.726 3.058-7.644 1.12-4.796-3.327-9.213-6.624-11.71-2.063-1.538-3.386-3.97-3.386-6.712 0-.127.002-.255.008-.381v.018c0-.28-.42-.42-.55-.28a90.106 90.106 0 0 1-6.652 7.202l-.022.022c-5.136 5.696-7.784 12.09-3.197 19.175.14.28-.14.69-.41.56C11.387 60.596 6.67 51.973 7.36 42.39Z">
               </path>
             </svg>
-          </div>
-        </button>
 
-      </div> -->
-      <div class="view_type">
-        @if (!casinoViewAllState) {
-        <button (click)="setCasinoViewType()" class="sports-heading view_text">
-          View All
-        </button>
-        }@else {
-        <button (click)="setCasinoViewType()" class="sports-heading view_text">
-          Hide All
-        </button>
-        }
+            <span>Universe Originals</span>
+          </a>
 
-        <div class="flex_row cursor-pointer btnContainer">
-          <button (click)="this.stakeOrigin.slidePrev()" [disabled]="owlPrevBtn"
-            [ngClass]="!owlPrevBtn? '!border-[#55758A] ':'border-[#304553] '" class="btn_left !border-r-0  ">
-            <img
-              [ngClass]="[!owlPrevBtn ? '[filter:_brightness(0)_saturate(100%)_invert(100%)_sepia(0%)_saturate(7439%)_hue-rotate(33deg)_brightness(107%)_contrast(112%)]':'']"
-              class="w-[18px] h-[18px]" src="/images/Arrow - Right.svg" alt="right">
-          </button>
-          <button (click)="this.stakeOrigin.slideNext()" [disabled]="owlNextBtn"
-            [ngClass]="!owlNextBtn? 'border-[#55758A] ':'border-[#304553] '" class="btn_right border-l  ">
-            <img
-              [ngClass]="[!owlNextBtn ? '[filter:_brightness(0)_saturate(100%)_invert(100%)_sepia(0%)_saturate(7439%)_hue-rotate(33deg)_brightness(107%)_contrast(112%)]':'']"
-              class="rotate-180 w-[18px] h-[18px]" src="/images/Arrow - Right.svg" alt="right">
-          </button>
-        </div>
-      </div>
-    </div>
-    <div class="stake-swiper" [ngClass]="casinoViewAllState?'swiper-container-viewAll':''">
-      <div class="swiper-wrapper">
-        <div *ngFor="let stake of stakes" class="swiper-slide">
-          <div class="relative">
-            <img [src]="stake.img" alt="" class="border-0 rounded-[10px]">
-            @if (stake.status==='Maintenance') {
-            <div class="maintenance_wrapper">
-              <div class="lock_img_wrapper">
-                <img class="!w-[34px] h-10" src="/images/Lock.svg" alt="">
-                <div class="suspend_text">
-                  This Game Under
-                  Maintenance
-                </div>
-              </div>
-
-            </div>
-            }
-          </div>
-
-          <div class="stake-player-row flex justify-center gap-2 pt-1">
-            <span [ngClass]="[stake.status==='Playing' ? 'stake-dot-green' :'stake-dot-red']"></span>
-            <span *ngIf="stake.status==='Playing'" class="count-text"> {{stake.count}}</span>
-            <span class="text-[#b1bad3] text-xs font-semibold">{{stake.status}}</span>
-
-          </div>
-        </div>
-      </div>
-    </div>
-
-
-  </div>
-
-
-  <!--------------------------------- Providers slider ---------------------->
-  <div *ngIf="routeType === 'casino'" class="page-content">
-    <!-- Providers Slider -->
-    <div class="top-sports-header mb-2.5">
-      <!-- left -->
-      <span>
-        <span>
-          <svg class="svg-icon mr-2" fill="currentColor" viewBox="0 0 96 96">
-            <title></title>
-            <path clip-rule="evenodd"
-              d="M48.117 24.078c6.648 0 12.04-5.391 12.04-12.039S54.764 0 48.116 0C41.47 0 36.078 5.391 36.078 12.039s5.391 12.039 12.04 12.039ZM3.594 50.246l40.003 18.4a10.33 10.33 0 0 0 4.32.933 10.41 10.41 0 0 0 4.387-.96l-.066.027 40.003-18.4a2.608 2.608 0 0 0 1.509-2.362 2.597 2.597 0 0 0-1.494-2.352l-.015-.006-39.445-18.16v16.36a4.8 4.8 0 0 1-4.8 4.8 4.8 4.8 0 0 1-4.801-4.8v-16.36L3.59 45.526a2.608 2.608 0 0 0-1.509 2.361c0 1.041.612 1.939 1.494 2.353l.015.006h.003Zm40.403 28.922L2.074 60.206V72.82c0 1.932 1.134 3.6 2.772 4.377l.03.012L44 95.13c1.173.55 2.55.87 4 .87 1.449 0 2.826-.32 4.059-.893l-.06.024 39.124-17.92c1.668-.79 2.799-2.458 2.799-4.39V60.206L51.999 79.168a9.305 9.305 0 0 1-4 .888 9.365 9.365 0 0 1-4-.889l.001-.002-.057-.024.055.026v.001Z"
-              fill="#b1bad3" fill-rule="evenodd">
-            </path>
-          </svg>
-        </span>
-
-        <span class="sports-heading">Providers</span>
-      </span>
-
-      <!-- Right -->
-      <div class="view_type">
-        @if (!ProviderViewAllState) {
-        <button (click)="setProviderViewType()" class="sports-heading view_text">
-          View All
-        </button>
-        }@else {
-        <button (click)="setProviderViewType()" class="sports-heading view_text">
-          Hide All
-        </button>
-        }
-      <div class="flex_row cursor-pointer btnContainer">
-        <button (click)="this.providerSwiper.slidePrev()" [disabled]="ProviderPrevBtn"
-          [ngClass]="!ProviderPrevBtn? '!border-[#55758A] ':'border-[#304553] '" class="btn_left !border-r-0  ">
-          <img
-            [ngClass]="[!ProviderPrevBtn ? '[filter:_brightness(0)_saturate(100%)_invert(100%)_sepia(0%)_saturate(7439%)_hue-rotate(33deg)_brightness(107%)_contrast(112%)]':'']"
-            class="w-[18px] h-[18px]" src="/images/Arrow - Right.svg" alt="right">
-        </button>
-        <button (click)="this.providerSwiper.slideNext()" [disabled]="ProviderNextBtn"
-          [ngClass]="!ProviderNextBtn? 'border-[#55758A] ':'border-[#304553] '" class="btn_right border-l  ">
-          <img
-            [ngClass]="[!ProviderNextBtn ? '[filter:_brightness(0)_saturate(100%)_invert(100%)_sepia(0%)_saturate(7439%)_hue-rotate(33deg)_brightness(107%)_contrast(112%)]':'']"
-            class="rotate-180 w-[18px] h-[18px]" src="/images/Arrow - Right.svg" alt="right">
-        </button>
-      </div>
-      </div>
-
-    </div>
-
-    <!-- Providers Slider Content -->
-
-    <!-- <div class="slick-carousel">
-      <ngx-slick-carousel #providerSlider="slick-carousel" [config]="slideConfig" class="carousel">
-        <div *ngFor="let stake of providers" class="image-card" ngxSlickItem>
-          <img [src]="stake.img" alt="Image" class="card-image"/>
-        </div>
-
-      </ngx-slick-carousel>
-
-    </div> -->
-
-    <div class="provider-swiper">
-      <div class="swiper-wrapper">
-        <div *ngFor="let stake of providers" class="swiper-slide">
-          <img [src]="stake.img" alt="" class="rounded-lg">
-        </div>
-      </div>
-    </div>
-
-  </div>
-
-
-
-
-
-  <!-- --------------------------Table Topbar ------------------>
-  <div class="top-sports-header overflow-x-auto events-header">
-    <!-- left tab slider -->
-    <div class="tab-slider  min-w-full ">
-      <div class="flex">
-        <!-- Tab item 1 -->
-        <a (click)="setActiveTableTab(1)" [class.active]="TableTab === 1" class="tab-item tab-item1">
-          <span>My Bets</span>
-        </a>
-
-        <!-- Tab item 2 -->
-        <a (click)="setActiveTableTab(2)" [class.active]="TableTab === 2" class="tab-item">
-          <span>All Bets</span>
-        </a>
-
-        <!-- Tab item 3 -->
-        <a (click)="setActiveTableTab(3)" [class.active]="TableTab === 3" class="tab-item">
-          <span>High Rollers</span>
-          <!-- <div class="bubble-wrap">
-            <div class="scale-up"></div>
-          </div> -->
-        </a>
-
-      </div>
-    </div>
-
-
-  </div>
-
-  <!-- Table -->
-
-  <div *ngIf="routeType === 'casino'" class="table-container">
-    <table>
-      <thead>
-        <tr>
-          <th class="text-start">Game</th>
-          <th class="lg-row">User</th>
-          <th class="lg-row">Time</th>
-          <th class="lg-row">Bet Amount</th>
-          <th class="lg-row"> Multiplier</th>
-          <th class="max-md:text-end">Payout</th>
-        </tr>
-      </thead>
-      <tbody>
-        <tr>
-          <td class="cursor-pointer table-btn text-left">
+          <!-- Tab item 3 -->
+          <a routerLink="/home/providers" (click)="setActiveTab(4)" [class.active]="activeTab === 4" class="tab-item">
             <svg class="svg-icon " fill="currentColor" viewBox="0 0 96 96">
               <title></title>
-              <path clip-rule="evenodd"
-                d="M79.2 0H16.8L0 16.8v62.4L16.8 96h62.4L96 79.2V16.8L79.2 0Zm5.85 72.09L71.957 85.18h-48L10.866 72.09V24.086l13.09-13.09h48.002l13.091 13.09V72.09ZM48 35.738h-.088a5.456 5.456 0 1 0 5.455 5.456v-.043a5.456 5.456 0 0 0-5.364-5.41H48v-.003ZM28.15 17.457h39.709L78.55 28.15v39.709L67.858 78.55H28.149L17.457 67.858V28.149l10.692-10.692ZM41.98 68.08c.174 0 .338-.032.482-.091l.183-.046c10.77-3.096 18.694-12.918 18.93-24.654 0-8.77-4.844-15.274-13.572-15.274h-.004c-7.137 0-12.94 5.715-13.087 12.83l.003-.04a11.98 11.98 0 0 0-.036.913c0 6.222 5.03 11.272 11.248 11.301h.036a16.098 16.098 0 0 0 5.29-1.132c-1.179 5.802-8.64 8.378-11.302 9.206-1.047.35-1.266.962-1.047 1.66l1.614 4.362.003.01c.154.55.658.955 1.26.955Z"
-                fill-rule="evenodd">
+              <path [ngStyle]="{ fill: activeTab === 4 ? '#fff' : '#b1bad3' }"
+                d="M62.8 7.2h-1.2L48 12 34.401 7.2c-2.4-.8-5.199.801-5.6 3.6v10c0 2.798 2.4 4.8 4.8 4.8h1.2l13.2-6 13.598 6c2.8.8 5.2-.802 6-3.6V12c0-2.799-2.4-4.8-4.8-4.8ZM41.199 82.8l-18-60c-1.2-2.4-3.6-3.6-6.399-2.799l-6 2.001c-2.001.4-3.201 2.4-3.201 4.401l-3.6 57.6c0 2.8 2.001 4.8 4.401 5.2h27.999c2.799 0 4.8-2.002 4.8-4.8.399-.4 0-1.204 0-1.603Zm47.202-56.4c0-2-1.2-3.6-3.2-4.4l-6-2.4c-2.4-.802-5.2.398-6 2.798l-18 60c-.802 2.4.8 5.2 3.2 6 .4 0 .801.4 1.6.4h27.6c2.798 0 4.8-2.002 4.8-4.8l-4-57.598Z">
               </path>
             </svg>
-            <span class="ml-2">Keno</span>
-          </td>
-          <td class=" table-btn text-center gap-2 lg-row">
-            <svg class="svg-icon " fill="currentColor" viewBox="0 0 64 64">
+
+            <span>Providers</span>
+          </a>
+
+          <!-- Tab item 4 -->
+
+
+          <a (click)="setActiveTab(3)" [class.active]="activeTab === 3" class="tab-item">
+            <svg class="svg-icon " fill="currentColor" viewBox="0 0 96 96">
               <title></title>
-              <path clip-rule="evenodd"
-                d="M42.05 8.613c2.815 0 5.192 1.879 5.955 4.494l3.64 12.792H12.253l3.64-12.792.01-.044a6.197 6.197 0 0 1 5.944-4.45H42.05ZM61.488 30.77H2.461a2.461 2.461 0 0 0 0 4.921c8.873 1.271 19.12 1.997 29.539 1.997s20.664-.726 30.696-2.131l-.598.068a2.461 2.461 0 0 0-.56-4.858l-.05.003ZM33.484 43.074h-3.05c-6.335-1.515-13.677-1.22-21.547 0v2.501l3.05.58s0 9.233 9.233 9.233c6.223 0 8.247-5.583 8.908-9.233h3.721c.661 3.65 2.685 9.233 8.908 9.233 9.233 0 9.233-9.233 9.233-9.233l3.05-.58v-2.501c-7.718-1.24-15.008-1.485-21.506 0Z"
-                fill-rule="evenodd">
+              <path [ngStyle]="{ fill: activeTab === 3 ? '#fff' : '#b1bad3' }"
+                d="M56.8 47.08a49.761 49.761 0 0 0-5.6 22.8v5H32.32a55.56 55.56 0 0 1 5-22.76A86.916 86.916 0 0 1 50.8 31h-28V16.36H72v7.76a133.838 133.838 0 0 0-15.2 22.96Zm26.4 16.24a30.56 30.56 0 0 0-6 13.04l-.6 3L60 76.32a38.12 38.12 0 0 1 13.36-22.28l-12-2.36 5.04-10.64L96 46.88l-.92 4.64a85.487 85.487 0 0 0-11.88 11.8Zm-58.52 9.32a30.08 30.08 0 0 1 0-14.36 79.675 79.675 0 0 1 5.8-15.84l-1.12-4.6L0 44.88v11.68l12-2.84a37.88 37.88 0 0 0-2.88 25.92l16.28-4-.72-3Z">
               </path>
             </svg>
-            <span> Hidden </span>
-          </td>
-          <td class="text-center lg-row">3:11 PM</td>
-          <td class="bet-amount gap-1 lg-row">
-            <span>9761.39394799999 </span>
-            <svg class="svg-icon " fill="none" viewBox="0 0 96 96">
-              <title></title>
-              <path
-                d="M95.895 48.105C95.895 74.557 74.451 96 48 96 21.548 96 .105 74.556.105 48.105.105 21.653 21.548.21 48 .21c26.451 0 47.895 21.443 47.895 47.895Z"
-                fill="#5E5E5E"></path>
-              <path
-                d="m69.72 74.295-7.5-7.41-6.84-6.78a11.11 11.11 0 0 0-7.905-3.289 11.11 11.11 0 0 0-7.904 3.288v.001l-14.326 14.19h-9l1.305-1.35 4.5-4.5 10.305-10.2c1.23-1.215 2.43-2.475 3.735-3.6a16.52 16.52 0 0 1 9.057-4.058l.078-.007a16.705 16.705 0 0 1 2.358-.162 17.15 17.15 0 0 1 11.371 4.289l-.019-.017c1.065.915 2.01 1.935 3 2.91L74.16 69.69l4.305 4.275c.081.074.15.157.207.25l.003.005-8.955.075ZM25.395 22.5l5.1 5.07c2.34 2.31 4.65 4.62 6.99 6.915a41.505 41.505 0 0 0 3.162 2.948l.063.052a10.998 10.998 0 0 0 6.803 2.337c3.062 0 5.833-1.243 7.837-3.252 3.27-3.27 6.57-6.51 9.87-9.78l4.38-4.29h9l-1.02 1.08L68.025 33l-8.31 8.22a16.752 16.752 0 0 1-9.604 4.746l-.086.01a16.57 16.57 0 0 1-2.65.206 17 17 0 0 1-11.772-4.713l.007.006c-1.665-1.5-3.225-3.15-4.83-4.74L16.62 22.71c-.075-.075-.135-.165-.21-.255l8.985.045Z"
-                fill="#fff"></path>
-            </svg>
-          </td>
-          <td class="text-center lg-row">2.00x</td>
-          <td class="bet-amount gap-1">
-            <span>961.393 </span>
-            <svg class="svg-icon " fill="none" viewBox="0 0 96 96">
-              <title></title>
-              <path
-                d="M95.895 48.105C95.895 74.557 74.451 96 48 96 21.548 96 .105 74.556.105 48.105.105 21.653 21.548.21 48 .21c26.451 0 47.895 21.443 47.895 47.895Z"
-                fill="#5E5E5E"></path>
-              <path
-                d="m69.72 74.295-7.5-7.41-6.84-6.78a11.11 11.11 0 0 0-7.905-3.289 11.11 11.11 0 0 0-7.904 3.288v.001l-14.326 14.19h-9l1.305-1.35 4.5-4.5 10.305-10.2c1.23-1.215 2.43-2.475 3.735-3.6a16.52 16.52 0 0 1 9.057-4.058l.078-.007a16.705 16.705 0 0 1 2.358-.162 17.15 17.15 0 0 1 11.371 4.289l-.019-.017c1.065.915 2.01 1.935 3 2.91L74.16 69.69l4.305 4.275c.081.074.15.157.207.25l.003.005-8.955.075ZM25.395 22.5l5.1 5.07c2.34 2.31 4.65 4.62 6.99 6.915a41.505 41.505 0 0 0 3.162 2.948l.063.052a10.998 10.998 0 0 0 6.803 2.337c3.062 0 5.833-1.243 7.837-3.252 3.27-3.27 6.57-6.51 9.87-9.78l4.38-4.29h9l-1.02 1.08L68.025 33l-8.31 8.22a16.752 16.752 0 0 1-9.604 4.746l-.086.01a16.57 16.57 0 0 1-2.65.206 17 17 0 0 1-11.772-4.713l.007.006c-1.665-1.5-3.225-3.15-4.83-4.74L16.62 22.71c-.075-.075-.135-.165-.21-.255l8.985.045Z"
-                fill="#fff"></path>
-            </svg>
-          </td>
+            <span>Slots</span>
+          </a>
 
-        </tr>
-      </tbody>
-    </table>
-  </div>
 
-</section>
-<!-- <div class="md:hidden">
+        </div>
+      </div>
+    </div>
 
-  <app-bet-slip></app-bet-slip>
-</div> -->
+    <router-outlet></router-outlet>
 
-<!-- <app-leaderboard></app-leaderboard>
-<app-race></app-race>
-<app-bets-modal></app-bets-modal> -->
+
+
+
+
+
+
+
+
+
+
+
+  </section>
+
 </section>
