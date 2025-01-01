@@ -705,6 +705,8 @@ body {
     @apply flex-1 rounded-t-md overflow-hidden;
   }
 
+
+
   .img-area img {
     @apply object-cover max-w-[350px] max-h-[230px] w-full [aspect-ratio:1.52174/1];
   }
