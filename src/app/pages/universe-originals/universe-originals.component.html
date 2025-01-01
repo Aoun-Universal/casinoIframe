@@ -1,5 +1,5 @@
 <!--------------------------------- Stake Originals ---------------------->
-<div class="page-content">
+<div class="page-content ">
     <!-- Stake Sports Slider -->
     <div class="top-sports-header mb-2.5">
         <!-- left -->
@@ -43,13 +43,15 @@
         </button>
 
       </div> -->
-        <!-- <div class="view_type">
-            @if (!casinoViewAllState) {
-            <button (click)="setCasinoViewType()" class="sports-heading view_text">
+
+        <!-- This content is hidden and dont required -->
+        <div class="view_type !opacity-0">
+            @if (false) {
+            <button class="sports-heading view_text">
                 View All
             </button>
             }@else {
-            <button (click)="setCasinoViewType()" class="sports-heading view_text">
+            <button class="sports-heading view_text">
                 Hide All
             </button>
             }
@@ -66,7 +68,9 @@
                         class="rotate-180 w-[18px] h-[18px]" src="/images/Arrow - Right.svg" alt="right">
                 </button>
             </div>
-        </div> -->
+        </div>
+        <!-- above content is hidden and dont required -->
+
     </div>
     <div class="stake-swiper" [ngClass]="casinoViewAllState?'swiper-container-viewAll':''">
         <div class="swiper-wrapper">
