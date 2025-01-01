@@ -46,35 +46,34 @@
 
         <!-- This content is hidden and dont required -->
         <div class="view_type " [ngClass]="defaultView?'':'!opacity-0'">
-          @if (!casinoViewAllState) {
+            @if (!casinoViewAllState) {
             <button (click)="setCasinoViewType()" class="sports-heading view_text">
-              View All
+                View All
             </button>
             }@else {
             <button (click)="setCasinoViewType()" class="sports-heading view_text">
-              Hide All
+                Hide All
             </button>
             }
 
             <div class="flex_row cursor-pointer btnContainer">
-              <button (click)="this.stakeOrigin?.slidePrev()" [disabled]="owlPrevBtn"
-                [ngClass]="!owlPrevBtn? '!border-[#55758A] ':'border-[#304553] '" class="btn_left !border-r-0  ">
-                <img
-                  [ngClass]="[!owlPrevBtn ? '[filter:_brightness(0)_saturate(100%)_invert(100%)_sepia(0%)_saturate(7439%)_hue-rotate(33deg)_brightness(107%)_contrast(112%)]':'']"
-                  class="w-[18px] h-[18px]" src="/images/Arrow - Right.svg" alt="right">
-              </button>
-              <button (click)="this.stakeOrigin?.slideNext()" [disabled]="owlNextBtn"
-                [ngClass]="!owlNextBtn? 'border-[#55758A] ':'border-[#304553] '" class="btn_right border-l  ">
-                <img
-                  [ngClass]="[!owlNextBtn ? '[filter:_brightness(0)_saturate(100%)_invert(100%)_sepia(0%)_saturate(7439%)_hue-rotate(33deg)_brightness(107%)_contrast(112%)]':'']"
-                  class="rotate-180 w-[18px] h-[18px]" src="/images/Arrow - Right.svg" alt="right">
-              </button>
+                <button (click)="this.stakeOrigin?.slidePrev()" [disabled]="owlPrevBtn"
+                    [ngClass]="!owlPrevBtn? '!border-[#55758A] ':'border-[#304553] '" class="btn_left !border-r-0  ">
+                    <img [ngClass]="[!owlPrevBtn ? '[filter:_brightness(0)_saturate(100%)_invert(100%)_sepia(0%)_saturate(7439%)_hue-rotate(33deg)_brightness(107%)_contrast(112%)]':'']"
+                        class="w-[18px] h-[18px]" src="/images/Arrow - Right.svg" alt="right">
+                </button>
+                <button (click)="this.stakeOrigin?.slideNext()" [disabled]="owlNextBtn"
+                    [ngClass]="!owlNextBtn? 'border-[#55758A] ':'border-[#304553] '" class="btn_right border-l  ">
+                    <img [ngClass]="[!owlNextBtn ? '[filter:_brightness(0)_saturate(100%)_invert(100%)_sepia(0%)_saturate(7439%)_hue-rotate(33deg)_brightness(107%)_contrast(112%)]':'']"
+                        class="rotate-180 w-[18px] h-[18px]" src="/images/Arrow - Right.svg" alt="right">
+                </button>
             </div>
         </div>
         <!-- above content is hidden and dont required -->
 
     </div>
-    <div class="stake-swiper" [ngClass]="casinoViewAllState?'swiper-container-viewAll':''">
+    <div class="stake-swiper"
+        [ngClass]="{'swiper-container-viewAll':casinoViewAllState, 'stake-swiper':defaultView, 'stake-swiper-grid':!defaultView}">
         <div class="swiper-wrapper">
             <div *ngFor="let stake of stakes" class="swiper-slide">
                 <div class="relative">

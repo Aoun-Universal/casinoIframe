@@ -22,8 +22,10 @@ import Swiper from 'swiper';
   styleUrl: './universe-originals.component.css',
   schemas: [CUSTOM_ELEMENTS_SCHEMA],
 })
-export class UniverseOriginalsComponent implements OnInit, AfterViewInit,OnDestroy {
-  @Input() defaultView:boolean=false;
+export class UniverseOriginalsComponent
+  implements OnInit, AfterViewInit, OnDestroy
+{
+  @Input() defaultView: boolean = false;
   owlPrevBtn: boolean = true;
   owlNextBtn: boolean = false;
   stakeOrigin!: Swiper | undefined;
@@ -109,14 +111,12 @@ export class UniverseOriginalsComponent implements OnInit, AfterViewInit,OnDestr
   }
 
   ngAfterViewInit() {
-    if(this.defaultView){
-
+    if (this.defaultView) {
       this.initializeSwiper(this.getDefaultSwiperConfig());
-    }else{
+    } else {
       // this.casinoViewAllState=true;
       this.initializeSwiper(this.getGridSwiperConfig());
     }
-
   }
   updateNavigationButtons() {
     if (this.stakeOrigin) {
@@ -141,7 +141,6 @@ export class UniverseOriginalsComponent implements OnInit, AfterViewInit,OnDestr
   stakeAfterChange(e: any) {
     this.stakeCurrentSlideIndex = e.currentSlide;
   }
-
 
   private getDefaultSwiperConfig(): any {
     return {
@@ -254,8 +253,10 @@ export class UniverseOriginalsComponent implements OnInit, AfterViewInit,OnDestr
       this.stakeOrigin.destroy(true, true); // Destroy existing Swiper
       this.stakeOrigin = undefined; // Reset reference
     }
-    this.stakeOrigin = new Swiper('.stake-swiper', config); // Initialize new Swiper
+    if (this.defaultView) {
+      this.stakeOrigin = new Swiper('.stake-swiper', config);
+    } else {
+      this.stakeOrigin = new Swiper('.stake-swiper-grid', config);
+    }
   }
-
-
 }
