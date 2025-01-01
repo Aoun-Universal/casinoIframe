@@ -839,3 +839,10 @@ tr:hover {
   margin-bottom: 10px; /* Space between rows */
   box-sizing: border-box;
 }
+.tab-item span,.tab-item svg path{
+  color: #b1bad3;
+}
+.tab-item.active span,.tab-item.active svg path {
+  color: white !important;
+}
+
