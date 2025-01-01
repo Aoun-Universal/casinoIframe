@@ -22,6 +22,7 @@
     "datatables.net": "^2.0.3",
     "datatables.net-dt": "^2.0.3",
     "ngx-toastr": "^19.0.0",
+    "idb": "^7.1.1",
     "rxjs": "~7.8.0",
     "swiper": "^11.1.15",
     "tslib": "^2.3.0",

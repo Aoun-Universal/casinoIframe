@@ -4,7 +4,7 @@ const BASE_URL = 'http://101.0.20.58:5011';
 
 
 export const CONFIG = {
-
+  SiteName:'Universe',
   bannersList : BASE_URL + "/v2/operator/banners/bannersList",
   NavigationList: BASE_URL + "/v2/operator/navigation/NavigationList",
   tablesList: BASE_URL + "/v2/operator/navigation/tablesList",
