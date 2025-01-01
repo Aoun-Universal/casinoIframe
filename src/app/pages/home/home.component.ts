@@ -58,19 +58,26 @@ export class HomeComponent implements OnInit, AfterViewInit {
   };
 
   heroSlides:any = [];
-
+  navList:any = [];
   isCarouselActive = true;
   screenWidth = window.innerWidth;
-  subscription:any;
+
   // swiperInstance: Swiper;
-  constructor(private router: Router, private activeRoute: ActivatedRoute,private mainService:MainService) {}
+  constructor(private router: Router,
+    private activeRoute: ActivatedRoute
+    ,private mainService:MainService) {}
 
   ngOnInit() {
-   this.subscription = this.mainService.getBannersList().subscribe((res:any)=>{
+   this.mainService.getBannersList().subscribe((res:any)=>{
     if(res){
-      this.heroSlides = res;
+      this.heroSlides = res.sort((a: any, b: any) => a.sequence - b.sequence);;
     }
-    })
+    });
+    this.mainService.getNavigationList().subscribe((res:any)=>{
+      if(res){
+        this.navList = res.sort((a: any, b: any) => a.sequence - b.sequence);;
+      }
+      });
     const inner = window.innerWidth;
     if (inner <= 992 && inner >= 400) {
       this.swiperBreakPoint.slide = 4;
@@ -108,7 +115,7 @@ export class HomeComponent implements OnInit, AfterViewInit {
         prevEl: '.myCarouselLeft',
       },
       autoplay: {
-        delay: 3500,
+        delay: 3000,
         disableOnInteraction: false,
       },
       breakpoints: {
@@ -230,4 +237,13 @@ export class HomeComponent implements OnInit, AfterViewInit {
   // setLiveTabActive(tab: string) {
   //   this.LiveTab = tab;
   // }
+  NaviagteTo(item:any){
+    if(item.title=='Universe Originals'){
+      this.router.navigateByUrl('/home/universe-originals')
+    }
+    else if(item.title=='Lobby'){
+        this.router.navigateByUrl('/home/lobby')
+    }
+
+  }
 }

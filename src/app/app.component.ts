@@ -19,11 +19,17 @@ export class AppComponent implements OnInit{
   }
   ngOnInit(): void {
     this.getBanners();
+    this.getNavigationList();
   }
 
   getBanners() {
     this.mainService.getDataFromServices(CONFIG.bannersList, CONFIG.bannersListTime, { key: CONFIG.siteKey }).subscribe((data: any) => {
       this.mainService.setBannersList(data.data);
+    });
+  }
+  getNavigationList() {
+    this.mainService.getDataFromServices(CONFIG.NavigationList, CONFIG.NavigationListTime, { key: CONFIG.siteKey }).subscribe((data: any) => {
+      this.mainService.setNavigationList(data.data);
     });
   }
 }
