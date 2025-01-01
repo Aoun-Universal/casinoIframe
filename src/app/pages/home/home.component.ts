@@ -21,6 +21,7 @@ import Swiper from 'swiper';
 import 'swiper/css';
 import 'swiper/css/navigation';
 import 'swiper/css/pagination';
+import { CONFIG } from '../../../../config';
 import { MainService } from '../../services/main.service';
 
 @Component({
@@ -64,8 +65,8 @@ export class HomeComponent implements OnInit, AfterViewInit {
 
   // swiperInstance: Swiper;
   constructor(private router: Router,
-    private activeRoute: ActivatedRoute
-    ,private mainService:MainService) {}
+    private activeRoute: ActivatedRoute,
+    private mainService:MainService) {}
 
   ngOnInit() {
    this.mainService.getBannersList().subscribe((res:any)=>{
@@ -76,8 +77,11 @@ export class HomeComponent implements OnInit, AfterViewInit {
     this.mainService.getNavigationList().subscribe((res:any)=>{
       if(res){
         this.navList = res.sort((a: any, b: any) => a.sequence - b.sequence);;
+        // universeId:
+        this.getUniverseOriginals('67728edcff8aeae796164df3');
       }
       });
+
     const inner = window.innerWidth;
     if (inner <= 992 && inner >= 400) {
       this.swiperBreakPoint.slide = 4;
@@ -85,7 +89,14 @@ export class HomeComponent implements OnInit, AfterViewInit {
       this.swiperBreakPoint.slide = 3;
     }
   }
+  getUniverseOriginals(navigationId:any){
 
+    this.mainService.getDataFromServices(CONFIG.tablesList,CONFIG.tablesListTime,{navigationId}).subscribe((resp:any)=>{
+      if(resp){
+
+      }
+  })
+  }
   isUserLoggedIn(): boolean {
     return true;
   }
