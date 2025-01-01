@@ -64,7 +64,7 @@
       <div class="tab-slider">
         <div class="flex">
           <!-- Tab item 1 -->
-          <a routerLink="/home/lobby" (click)="setActiveTab(1)" [class.active]="activeTab === 1"
+          <a routerLink="/home/lobby" routerLinkActive="active"
             class="tab-item tab-item1">
             <svg class="svg-icon" fill="currentColor" viewBox="0 0 96 96">
               <title></title>
@@ -78,7 +78,7 @@
           </a>
 
           <!-- Tab item 2 -->
-          <a routerLink="/home/universe-originals" (click)="setActiveTab(2)" [class.active]="activeTab === 2"
+          <a routerLink="/home/universe-originals" routerLinkActive="active"
             class="tab-item">
             <svg class="svg-icon " fill="currentColor" viewBox="0 0 64 64">
               <title></title>
@@ -91,7 +91,7 @@
           </a>
 
           <!-- Tab item 3 -->
-          <a routerLink="/home/providers" (click)="setActiveTab(4)" [class.active]="activeTab === 4" class="tab-item">
+          <a routerLink="/home/providers" routerLinkActive="active" class="tab-item">
             <svg class="svg-icon " fill="currentColor" viewBox="0 0 96 96">
               <title></title>
               <path [ngStyle]="{ fill: activeTab === 4 ? '#fff' : '#b1bad3' }"
