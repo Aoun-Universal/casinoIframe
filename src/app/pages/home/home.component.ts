@@ -21,6 +21,7 @@ import Swiper from 'swiper';
 import 'swiper/css';
 import 'swiper/css/navigation';
 import 'swiper/css/pagination';
+import { MainService } from '../../services/main.service';
 
 @Component({
   selector: 'app-home',
@@ -56,21 +57,20 @@ export class HomeComponent implements OnInit, AfterViewInit {
     space: 10,
   };
 
-  heroSlides = [
-    { img: '/sliders/VIMAAN.svg' },
-    {
-      img: 'http://market.mgmopr.com/api/trader/tips/images/8843645f-1434-465b-9eab-ad31eca01e35.jpg',
-    },
-    { img: '/sliders/VIMAAN.svg' },
-  ];
+  heroSlides:any = [];
 
   isCarouselActive = true;
   screenWidth = window.innerWidth;
-
+  subscription:any;
   // swiperInstance: Swiper;
-  constructor(private router: Router, private activeRoute: ActivatedRoute) {}
+  constructor(private router: Router, private activeRoute: ActivatedRoute,private mainService:MainService) {}
 
   ngOnInit() {
+   this.subscription = this.mainService.getBannersList().subscribe((res:any)=>{
+    if(res){
+      this.heroSlides = res;
+    }
+    })
     const inner = window.innerWidth;
     if (inner <= 992 && inner >= 400) {
       this.swiperBreakPoint.slide = 4;

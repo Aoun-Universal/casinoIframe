@@ -1,5 +1,5 @@
 import { Injectable } from '@angular/core';
-import { Observable } from 'rxjs';
+import { BehaviorSubject, Observable } from 'rxjs';
 import { IndexedDbService } from './indexed-db.service';
 import { NetworkService } from './network.service';
 
@@ -7,6 +7,8 @@ import { NetworkService } from './network.service';
   providedIn: 'root'
 })
 export class MainService {
+
+  private bannersList: BehaviorSubject<any | null> = new BehaviorSubject<any | null>(null);
 
   constructor( private networkService: NetworkService,
     private indexedDBService: IndexedDbService) { }
@@ -103,5 +105,12 @@ export class MainService {
         }
       );
     });
+  }
+
+  getBannersList(): BehaviorSubject<any | null> {
+    return this.bannersList;
+  }
+  setBannersList(value: any | null): void {
+    this.bannersList.next(value);
   }
 }
