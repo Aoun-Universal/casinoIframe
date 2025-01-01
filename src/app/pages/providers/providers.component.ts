@@ -4,6 +4,7 @@ import {
   CUSTOM_ELEMENTS_SCHEMA,
   ElementRef,
   HostListener,
+  Input,
   OnInit,
   ViewChild,
 } from '@angular/core';
@@ -21,6 +22,7 @@ import { CommonModule } from '@angular/common';
   schemas: [CUSTOM_ELEMENTS_SCHEMA],
 })
 export class ProvidersComponent implements OnInit, AfterViewInit {
+  @Input() defaultView:boolean=false;
   owlPrevBtn: boolean = true;
   owlNextBtn: boolean = false;
   ProviderPrevBtn: boolean = true;
@@ -97,6 +99,8 @@ export class ProvidersComponent implements OnInit, AfterViewInit {
   constructor(private router: Router) {}
 
   ngOnInit() {
+    this.ProviderViewAllState = this.defaultView;
+    console.log('ede',this.ProviderViewAllState)
     const inner = window.innerWidth;
     if (inner <= 992 && inner >= 400) {
       this.swiperBreakPoint.slide = 4;
@@ -120,79 +124,13 @@ export class ProvidersComponent implements OnInit, AfterViewInit {
   }
 
   ngAfterViewInit() {
-    // this.checkCarousel();
 
-    // this.stakeOrigin = new Swiper('.stake-swiper', {
-    //   loop: false,
-    //   slidesPerView: 7.5,
-    //   slidesPerGroup: 6,
-    //   freeMode: true,
+    if(this.defaultView){
+      this.setDefaultViewProvider();
+    }else{
+      this.setGridViewProvider();
+    }
 
-    //   spaceBetween: 10,
-    //   navigation: {
-    //     nextEl: '.myCarouselRight',
-    //     prevEl: '.myCarouselLeft',
-    //   },
-    //   breakpoints: {
-    //     300: {
-    //       slidesPerView: 3,
-    //       slidesPerGroup: 3,
-    //       spaceBetween: 6,
-
-    //     },
-    //     768: {
-    //       slidesPerView: 4,
-    //       slidesPerGroup: 3,
-    //       spaceBetween: 6,
-
-    //     },
-    //     1024: {
-    //       slidesPerView: 7.5,
-    //       slidesPerGroup: 6,
-    //       spaceBetween: 10,
-    //     },
-    //   },
-    //   on: {
-    //     slideChange: () => this.updateNavigationButtons(),
-    //     reachBeginning: () => (this.owlPrevBtn = true),
-    //     reachEnd: () => (this.owlNextBtn = true),
-    //   },
-    // });
-    // this.setDefaultViewProvider();
-    this.setGridViewProvider();
-    // this.providerSwiper = new Swiper('.provider-swiper', {
-    //   loop: false,
-    //   slidesPerView: 7.5,
-    //   slidesPerGroup: 3,
-    //   freeMode: true,
-    //   spaceBetween: 10,
-    //   navigation: {
-    //     nextEl: '.myCarouselRight',
-    //     prevEl: '.myCarouselLeft',
-    //   },
-    //   breakpoints: {
-    //     300: {
-    //       slidesPerView: 3,
-    //       slidesPerGroup: 3,
-    //       spaceBetween: 6,
-    //     },
-    //     768: {
-    //       slidesPerView: 4,
-    //       slidesPerGroup: 3,
-    //       spaceBetween: 6,
-    //     },
-    //     1024: {
-    //       slidesPerView: 7.5,
-    //       slidesPerGroup: 6,
-    //       spaceBetween: 10,
-    //     },
-    //   },
-    //   on: {
-    //     slideChange: () => this.updateProviderNavigationButtons(),
-    //     reachBeginning: () => (this.ProviderPrevBtn = true),
-    //     reachEnd: () => (this.ProviderNextBtn = true),
-    //   },
-    // });
   }
 
   updateProviderNavigationButtons() {

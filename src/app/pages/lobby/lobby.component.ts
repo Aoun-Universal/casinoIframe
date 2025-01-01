@@ -11,14 +11,16 @@ import {
 import { Router, ActivatedRoute } from '@angular/router';
 import Swiper from 'swiper';
 import { ToggleService } from '../../services/toggle.service';
+import { ProvidersComponent } from '../providers/providers.component';
+import { UniverseOriginalsComponent } from '../universe-originals/universe-originals.component';
 
 @Component({
   selector: 'app-lobby',
   standalone: true,
-  imports: [CommonModule],
+  imports: [CommonModule,UniverseOriginalsComponent,ProvidersComponent],
   templateUrl: './lobby.component.html',
   styleUrl: './lobby.component.css',
-  schemas: [CUSTOM_ELEMENTS_SCHEMA],
+  // schemas: [CUSTOM_ELEMENTS_SCHEMA],
 })
 export class LobbyComponent implements OnInit, AfterViewInit {
   owlPrevBtn: boolean = true;

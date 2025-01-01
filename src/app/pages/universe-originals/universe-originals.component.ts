@@ -5,6 +5,9 @@ import {
   CUSTOM_ELEMENTS_SCHEMA,
   ElementRef,
   HostListener,
+  Input,
+  input,
+  OnDestroy,
   OnInit,
   ViewChild,
 } from '@angular/core';
@@ -19,10 +22,11 @@ import Swiper from 'swiper';
   styleUrl: './universe-originals.component.css',
   schemas: [CUSTOM_ELEMENTS_SCHEMA],
 })
-export class UniverseOriginalsComponent implements OnInit, AfterViewInit {
+export class UniverseOriginalsComponent implements OnInit, AfterViewInit,OnDestroy {
+  @Input() defaultView:boolean=false;
   owlPrevBtn: boolean = true;
   owlNextBtn: boolean = false;
-  stakeOrigin!: Swiper;
+  stakeOrigin!: Swiper | undefined;
   TableTab: number = 1;
   casinoViewAllState: boolean = false;
 
@@ -74,6 +78,12 @@ export class UniverseOriginalsComponent implements OnInit, AfterViewInit {
 
   // swiperInstance: Swiper;
   constructor(private router: Router) {}
+  ngOnDestroy(): void {
+    if (this.stakeOrigin) {
+      this.stakeOrigin.destroy(true, true);
+      this.stakeOrigin = undefined;
+    }
+  }
 
   ngOnInit() {
     const inner = window.innerWidth;
@@ -99,79 +109,14 @@ export class UniverseOriginalsComponent implements OnInit, AfterViewInit {
   }
 
   ngAfterViewInit() {
-    // this.checkCarousel();
+    if(this.defaultView){
 
-    // this.stakeOrigin = new Swiper('.stake-swiper', {
-    //   loop: false,
-    //   slidesPerView: 7.5,
-    //   slidesPerGroup: 6,
-    //   freeMode: true,
+      this.initializeSwiper(this.getDefaultSwiperConfig());
+    }else{
+      // this.casinoViewAllState=true;
+      this.initializeSwiper(this.getGridSwiperConfig());
+    }
 
-    //   spaceBetween: 10,
-    //   navigation: {
-    //     nextEl: '.myCarouselRight',
-    //     prevEl: '.myCarouselLeft',
-    //   },
-    //   breakpoints: {
-    //     300: {
-    //       slidesPerView: 3,
-    //       slidesPerGroup: 3,
-    //       spaceBetween: 6,
-
-    //     },
-    //     768: {
-    //       slidesPerView: 4,
-    //       slidesPerGroup: 3,
-    //       spaceBetween: 6,
-
-    //     },
-    //     1024: {
-    //       slidesPerView: 7.5,
-    //       slidesPerGroup: 6,
-    //       spaceBetween: 10,
-    //     },
-    //   },
-    //   on: {
-    //     slideChange: () => this.updateNavigationButtons(),
-    //     reachBeginning: () => (this.owlPrevBtn = true),
-    //     reachEnd: () => (this.owlNextBtn = true),
-    //   },
-    // });
-    // this.setDefaultView();
-    this.setGridView();
-
-    //   loop: false,
-    //   slidesPerView: 7.5,
-    //   slidesPerGroup: 3,
-    //   freeMode: true,
-    //   spaceBetween: 10,
-    //   navigation: {
-    //     nextEl: '.myCarouselRight',
-    //     prevEl: '.myCarouselLeft',
-    //   },
-    //   breakpoints: {
-    //     300: {
-    //       slidesPerView: 3,
-    //       slidesPerGroup: 3,
-    //       spaceBetween: 6,
-    //     },
-    //     768: {
-    //       slidesPerView: 4,
-    //       slidesPerGroup: 3,
-    //       spaceBetween: 6,
-    //     },
-    //     1024: {
-    //       slidesPerView: 7.5,
-    //       slidesPerGroup: 6,
-    //       spaceBetween: 10,
-    //     },
-    //   },
-    //   on: {
-    //     slideChange: () => this.updateProviderNavigationButtons(),
-    //     reachBeginning: () => (this.ProviderPrevBtn = true),
-    //     reachEnd: () => (this.ProviderNextBtn = true),
-    //   },
-    // });
   }
   updateNavigationButtons() {
     if (this.stakeOrigin) {
@@ -197,17 +142,7 @@ export class UniverseOriginalsComponent implements OnInit, AfterViewInit {
     this.stakeCurrentSlideIndex = e.currentSlide;
   }
 
-  // Table Tabs
-  // setLiveTabActive(tab: string) {
-  //   this.LiveTab = tab;
-  // }
 
-  private initializeSwiper(config: any): void {
-    if (this.stakeOrigin) {
-      this.stakeOrigin.destroy(true, true); // Destroy existing Swiper instance
-    }
-    this.stakeOrigin = new Swiper('.stake-swiper', config); // Initialize Swiper with new config
-  }
   private getDefaultSwiperConfig(): any {
     return {
       loop: false,
@@ -260,6 +195,7 @@ export class UniverseOriginalsComponent implements OnInit, AfterViewInit {
       loop: false,
       allowTouchMove: false,
       freeMode: false,
+
       breakpoints: {
         300: {
           slidesPerView: 3,
@@ -292,4 +228,34 @@ export class UniverseOriginalsComponent implements OnInit, AfterViewInit {
     const config = this.getGridSwiperConfig();
     this.initializeSwiper(config);
   }
+  // setCasinoViewType() {
+  //   this.casinoViewAllState = !this.casinoViewAllState;
+  //   if (this.casinoViewAllState) {
+  //     this.setGridView();
+  //   } else {
+  //     this.setDefaultView();
+  //   }
+  // }
+  // ngAfterViewInit(): void {
+
+  // }
+
+  setCasinoViewType() {
+    this.casinoViewAllState = !this.casinoViewAllState;
+    if (this.casinoViewAllState) {
+      this.initializeSwiper(this.getGridSwiperConfig());
+    } else {
+      this.initializeSwiper(this.getDefaultSwiperConfig());
+    }
+  }
+
+  private initializeSwiper(config: any): void {
+    if (this.stakeOrigin) {
+      this.stakeOrigin.destroy(true, true); // Destroy existing Swiper
+      this.stakeOrigin = undefined; // Reset reference
+    }
+    this.stakeOrigin = new Swiper('.stake-swiper', config); // Initialize new Swiper
+  }
+
+
 }

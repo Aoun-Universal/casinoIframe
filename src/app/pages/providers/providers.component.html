@@ -1,5 +1,5 @@
 <!--------------------------------- Providers slider ---------------------->
-<div class="page-content !pb-[100px] !h-fit  ">
+<div class="page-content  " [ngClass]="!defaultView?'!pb-[100px] !h-fit ':''">
     <!-- Providers Slider -->
     <div class="top-sports-header mb-2.5">
         <!-- left -->
@@ -20,28 +20,29 @@
 
         <!-- This below content is hidden and dont required -->
 
-        <div class="view_type !opacity-0">
-            @if (false) {
-            <button class="sports-heading view_text">
-                View All
+        <div class="view_type" [ngClass]="defaultView?'':'!opacity-0'">
+          @if (!ProviderViewAllState) {
+            <button (click)="setProviderViewType()" class="sports-heading view_text">
+              View All
             </button>
             }@else {
-            <button class="sports-heading view_text">
-                Hide All
+            <button (click)="setProviderViewType()" class="sports-heading view_text">
+              Hide All
             </button>
             }
             <div class="flex_row cursor-pointer btnContainer">
-                <button (click)="this.providerSwiper.slidePrev()" [disabled]="ProviderPrevBtn"
-                    [ngClass]="!ProviderPrevBtn? '!border-[#55758A] ':'border-[#304553] '"
-                    class="btn_left !border-r-0  ">
-                    <img [ngClass]="[!ProviderPrevBtn ? '[filter:_brightness(0)_saturate(100%)_invert(100%)_sepia(0%)_saturate(7439%)_hue-rotate(33deg)_brightness(107%)_contrast(112%)]':'']"
-                        class="w-[18px] h-[18px]" src="/images/Arrow - Right.svg" alt="right">
-                </button>
-                <button (click)="this.providerSwiper.slideNext()" [disabled]="ProviderNextBtn"
-                    [ngClass]="!ProviderNextBtn? 'border-[#55758A] ':'border-[#304553] '" class="btn_right border-l  ">
-                    <img [ngClass]="[!ProviderNextBtn ? '[filter:_brightness(0)_saturate(100%)_invert(100%)_sepia(0%)_saturate(7439%)_hue-rotate(33deg)_brightness(107%)_contrast(112%)]':'']"
-                        class="rotate-180 w-[18px] h-[18px]" src="/images/Arrow - Right.svg" alt="right">
-                </button>
+              <button (click)="this.providerSwiper.slidePrev()" [disabled]="ProviderPrevBtn"
+                [ngClass]="!ProviderPrevBtn? '!border-[#55758A] ':'border-[#304553] '" class="btn_left !border-r-0  ">
+                <img
+                  [ngClass]="[!ProviderPrevBtn ? '[filter:_brightness(0)_saturate(100%)_invert(100%)_sepia(0%)_saturate(7439%)_hue-rotate(33deg)_brightness(107%)_contrast(112%)]':'']"
+                  class="w-[18px] h-[18px]" src="/images/Arrow - Right.svg" alt="right">
+              </button>
+              <button (click)="this.providerSwiper.slideNext()" [disabled]="ProviderNextBtn"
+                [ngClass]="!ProviderNextBtn? 'border-[#55758A] ':'border-[#304553] '" class="btn_right border-l  ">
+                <img
+                  [ngClass]="[!ProviderNextBtn ? '[filter:_brightness(0)_saturate(100%)_invert(100%)_sepia(0%)_saturate(7439%)_hue-rotate(33deg)_brightness(107%)_contrast(112%)]':'']"
+                  class="rotate-180 w-[18px] h-[18px]" src="/images/Arrow - Right.svg" alt="right">
+              </button>
             </div>
         </div>
         <!-- This above content is hidden and dont required -->
@@ -56,9 +57,9 @@
             <div *ngFor="let stake of providers" class="image-card" ngxSlickItem>
               <img [src]="stake.img" alt="Image" class="card-image"/>
             </div>
-    
+
           </ngx-slick-carousel>
-    
+
         </div> -->
 
     <div class="provider-swiper">
