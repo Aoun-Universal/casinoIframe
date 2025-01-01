@@ -68,7 +68,7 @@
             </div>
         </div>
     </div>
-    <div class="stake-swiper" [ngClass]="casinoViewAllState?'swiper-container-viewAll':''">
+    <div class="stake-swiper-lobby" [ngClass]="casinoViewAllState?'swiper-container-viewAll':''">
         <div class="swiper-wrapper">
             <div *ngFor="let stake of stakes" class="swiper-slide">
                 <div class="relative">
@@ -154,12 +154,12 @@
             <div *ngFor="let stake of providers" class="image-card" ngxSlickItem>
               <img [src]="stake.img" alt="Image" class="card-image"/>
             </div>
-    
+
           </ngx-slick-carousel>
-    
+
         </div> -->
 
-    <div class="provider-swiper">
+    <div class="provider-swiper-lobby">
         <div class="swiper-wrapper">
             <div *ngFor="let stake of providers" class="swiper-slide">
                 <img [src]="stake.img" alt="" class="rounded-lg">

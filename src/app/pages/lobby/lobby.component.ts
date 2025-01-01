@@ -316,7 +316,7 @@ export class LobbyComponent implements OnInit, AfterViewInit {
     if (this.stakeOrigin) {
       this.stakeOrigin.destroy(true, true); // Destroy existing Swiper instance
     }
-    this.stakeOrigin = new Swiper('.stake-swiper', config); // Initialize Swiper with new config
+    this.stakeOrigin = new Swiper('.stake-swiper-lobby', config); // Initialize Swiper with new config
   }
   private getDefaultSwiperConfig(): any {
     return {
@@ -422,7 +422,7 @@ export class LobbyComponent implements OnInit, AfterViewInit {
     if (this.providerSwiper) {
       this.providerSwiper.destroy(true, true); // Destroy existing Swiper instance
     }
-    this.providerSwiper = new Swiper('.provider-swiper', config); // Initialize Swiper with new config
+    this.providerSwiper = new Swiper('.provider-swiper-lobby', config); // Initialize Swiper with new config
   }
   private getDefaultProviderSwiperConfig(): any {
     return {
