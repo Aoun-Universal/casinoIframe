@@ -18,12 +18,31 @@
         </div>
     </div>
     @if (viewType==='Game') {
-    <div class="bg-[#1A2C38] mt-[24px] border-0 rounded-[10px] h-fit  ">
+    <div class="bg-[#1A2C38] mt-[24px] border-0 rounded-[10px] h-fit mb-[70px]  ">
         <div
             class="h-[59px] w-full text-[18px] leading-[21.48px] tracking-wide font-bold flex justify-start items-center pl-5 text-white border-b border-[#55758A] border-solid">
             Game
         </div>
-        <ul class=" pb-5" [ngClass]="{'border-b border-[#55758A] border-solid': optionSelectionState}">
+        <li class="flex flex-row justify-between items-center gap-4 px-5 mt-5 cursor-pointer">
+            <div class="flex flex-row justify-start items-center gap-4">
+                <div>
+                    <img class="w-[13px] h-[17px]" src="/images/fire.svg" alt="originals">
+                </div>
+                <div
+                    class="text-[14px] font-bold leading-[16.71px] text-white flex flex-row justify-center items-center gap-1.5">
+                    Universe Originals
+                </div>
+            </div>
+            <button (click)="toggleUniverseOriginalMenu()"
+                class="bg-[#0f5eb4] w-4 h-4 border-0 rounded-full flex justify-center items-center">
+                <img class="w-[7.61px] h-[4.69px] duration-300 "
+                    [ngClass]="[universeOriginalState ? ' rotate-0 ' :'rotate-180']" src="/images/arrow-down.svg"
+                    alt="Game_selector">
+            </button>
+        </li>
+
+        <ul class="overflow-hidden transition-all duration-1000 ease-in-out"
+            [@toggleHeight]="universeOriginalState ? 'expanded' : 'collapsed'">
             @for (item of gameList; track $index) {
             <li class="flex flex-row justify-start items-center gap-4 pl-5 mt-5 cursor-pointer">
                 <div [ngClass]="[item?.img==='' ? 'opacity-0':'']">
@@ -32,7 +51,12 @@
                 <div class="text-[14px] font-bold leading-[16.71px] text-white">{{item?.name}}</div>
             </li>
             }
-            <li class="flex flex-row justify-between items-center gap-4 px-5 mt-5 cursor-pointer">
+
+        </ul>
+
+        <ul class="pb-[5px] border-b border-transparent border-solid"
+            [ngClass]="{' !border-[#55758A]': optionSelectionState}">
+            <li class="flex flex-row justify-between items-center gap-4 px-5 my-5 cursor-pointer">
                 <div class="flex flex-row justify-start items-center gap-4">
                     <div>
                         <img class="w-[13px] h-[17px]" src="/images/language.svg" alt="language">
@@ -56,8 +80,9 @@
             </li>
         </ul>
 
-        @if(optionSelectionState){
-        <ul class=" max-h-[250px] overflow-auto bg-[#1A2C38] border-0 rounded-[10px] py-5">
+
+        <ul class=" max-h-[250px] overflow-auto bg-[#1A2C38] border-0 rounded-[10px] py-5"
+            [@toggleHeight]="optionSelectionState ? 'expanded' : 'collapsed'">
             @for (item of gameList; track $index) {
             <li class="mt-[14px] px-5 flex flex-row justify-between items-center  ">
                 <div class="text-[14px] font-semibold leading-[16.71px] text-white">
@@ -79,7 +104,7 @@
             }
 
         </ul>
-        }
+
 
     </div>
     }@else if(viewType==='Profile') {
@@ -145,8 +170,9 @@
                 </button>
             </li>
         </ul>
-        @if(languageSelectionState){
-        <ul class="pb-[58px] mb-[70px]">
+
+        <ul class="mb-[70px]" [ngClass]="{'pb-[58px] ':languageSelectionState }"
+            [@toggleHeight]="languageSelectionState ? 'expanded' : 'collapsed'">
             @for (item of languages; track $index) {
             <li class="mt-[14px] px-5 flex flex-row justify-between items-center">
                 <div class="text-[14px] font-semibold leading-[16.71px] text-white">
@@ -168,7 +194,7 @@
             }
 
         </ul>
-        }
+
 
 
     </div>

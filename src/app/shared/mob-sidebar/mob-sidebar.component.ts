@@ -2,13 +2,40 @@ import { Component, OnInit } from '@angular/core';
 import { ToggleService } from '../../services/toggle.service';
 import { CommonModule, NgClass } from '@angular/common';
 import { FormsModule } from '@angular/forms';
-
+import {
+  trigger,
+  state,
+  style,
+  transition,
+  animate,
+} from '@angular/animations';
 @Component({
   selector: 'app-mob-sidebar',
   standalone: true,
   imports: [CommonModule, FormsModule],
   templateUrl: './mob-sidebar.component.html',
   styleUrl: './mob-sidebar.component.css',
+  animations: [
+    trigger('toggleHeight', [
+      state(
+        'collapsed',
+        style({
+          height: '0px',
+          overflow: 'hidden',
+          opacity: 0,
+        })
+      ),
+      state(
+        'expanded',
+        style({
+          height: '*',
+          overflow: 'hidden',
+          opacity: 1,
+        })
+      ),
+      transition('collapsed <=> expanded', [animate('500ms ease-in-out')]),
+    ]),
+  ],
 })
 export class MobSidebarComponent implements OnInit {
   mobSidebarState: boolean = false;
@@ -20,12 +47,17 @@ export class MobSidebarComponent implements OnInit {
   toggleCoolDown: boolean = false;
   languageSelectionState: boolean = false;
   optionSelectionState: boolean = false;
+  universeOriginalState: boolean = false;
   constructor(private toggle: ToggleService) {}
 
   ngOnInit(): void {
     this.hideSideBar = true;
     this.getViewType();
     this.getMobSidebarState();
+  }
+
+  toggleUniverseOriginalMenu() {
+    this.universeOriginalState = !this.universeOriginalState;
   }
 
   toggleLanguageMenu() {
@@ -93,10 +125,6 @@ export class MobSidebarComponent implements OnInit {
     this.selectedOption = option;
   }
   gameList = [
-    {
-      img: '/images/fire.svg',
-      name: 'Universe Originals',
-    },
     {
       img: '',
       name: 'Slots',
