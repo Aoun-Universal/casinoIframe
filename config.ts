@@ -15,6 +15,7 @@ export const CONFIG = {
 };
 
 
+
 export const STACK_VALUE = [
   {
     stakeName: '1000',
