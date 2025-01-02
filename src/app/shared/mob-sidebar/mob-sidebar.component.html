@@ -1,5 +1,5 @@
 <section
-    class="bg-[#0d212e] px-5  py-2.5 min-h-[calc(100svh-52px)] max-h-[calc(100svh-52px)] overflow-auto tracking-wider  absolute z-[1500] top-[0px] transition-transform duration-700 ease-in-out w-full "
+    class="bg-[#0d212e] px-5  py-2.5 min-h-[calc(100svh-60px)] max-h-[calc(100svh-60px)] overflow-auto tracking-wider  absolute z-[1500] top-[0px] transition-transform duration-700 ease-in-out w-full "
     [ngClass]="{'  translate-y-full': !mobSidebarState, 'translate-y-[60px]   ease-in-out': mobSidebarState ,'hidden': hideSideBar}">
     <div>
         <div class="input-wrap mobile">
@@ -54,8 +54,7 @@
 
         </ul>
 
-        <ul class="pb-[5px] border-b border-transparent border-solid"
-            [ngClass]="{' !border-[#55758A]': optionSelectionState}">
+        <ul class="pb-[5px] ">
             <li class="flex flex-row justify-between items-center gap-4 px-5 my-5 cursor-pointer">
                 <div class="flex flex-row justify-start items-center gap-4">
                     <div>
@@ -78,32 +77,33 @@
                         alt="language_selector">
                 </button>
             </li>
+
+            <ul class=" max-h-[250px] overflow-auto bg-[#1A2C38] border-0 rounded-[10px] pb-5"
+                [@toggleHeight]="optionSelectionState ? 'expanded' : 'collapsed'">
+                @for (item of gameList; track $index) {
+                <li class="mb-[14px] px-5 flex flex-row justify-between items-center  ">
+                    <div class="text-[14px] font-semibold leading-[16.71px] text-white">
+                        {{ item?.name }}
+                    </div>
+
+                    <div class="flex items-center">
+                        <input id="{{ item?.name }}Checkbox" type="checkbox" class="hidden peer" [value]="item?.name"
+                            [checked]="selectedOption === item?.name" (change)="onOptionChange(item.name)" />
+                        <label for="{{ item?.name }}Checkbox"
+                            class="w-[15px] h-[15px] rounded-full border-2 border-[#55758A] cursor-pointer peer-checked:bg-white peer-checked:border-[#55758A] transition-colors relative">
+                            @if (selectedOption === item?.name) {
+                            <span class="absolute inset-0 rounded-full border-2 border-black transition-colors">
+                            </span>
+                            }
+                        </label>
+                    </div>
+                </li>
+                }
+
+            </ul>
+
         </ul>
 
-
-        <ul class=" max-h-[250px] overflow-auto bg-[#1A2C38] border-0 rounded-[10px] py-5"
-            [@toggleHeight]="optionSelectionState ? 'expanded' : 'collapsed'">
-            @for (item of gameList; track $index) {
-            <li class="mt-[14px] px-5 flex flex-row justify-between items-center  ">
-                <div class="text-[14px] font-semibold leading-[16.71px] text-white">
-                    {{ item?.name }}
-                </div>
-
-                <div class="flex items-center">
-                    <input id="{{ item?.name }}Checkbox" type="checkbox" class="hidden peer" [value]="item?.name"
-                        [checked]="selectedOption === item?.name" (change)="onOptionChange(item.name)" />
-                    <label for="{{ item?.name }}Checkbox"
-                        class="w-[15px] h-[15px] rounded-full border-2 border-[#55758A] cursor-pointer peer-checked:bg-white peer-checked:border-[#55758A] transition-colors relative">
-                        @if (selectedOption === item?.name) {
-                        <span class="absolute inset-0 rounded-full border-2 border-black transition-colors">
-                        </span>
-                        }
-                    </label>
-                </div>
-            </li>
-            }
-
-        </ul>
 
 
     </div>
@@ -170,9 +170,8 @@
                 </button>
             </li>
         </ul>
-
-        <ul class="mb-[70px]" [ngClass]="{'pb-[58px] ':languageSelectionState }"
-            [@toggleHeight]="languageSelectionState ? 'expanded' : 'collapsed'">
+        @if(languageSelectionState){
+        <ul class="pb-[58px] mb-[70px]">
             @for (item of languages; track $index) {
             <li class="mt-[14px] px-5 flex flex-row justify-between items-center">
                 <div class="text-[14px] font-semibold leading-[16.71px] text-white">
@@ -194,7 +193,7 @@
             }
 
         </ul>
-
+        }
 
 
     </div>
