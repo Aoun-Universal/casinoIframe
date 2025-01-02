@@ -1,5 +1,5 @@
 <section
-    class="bg-[#0d212e] px-5  py-2.5 max-h-[calc(100svh-60px)] overflow-auto tracking-wider  absolute z-[1500] top-[0px] transition-transform duration-700 ease-in-out w-full"
+    class="bg-[#0d212e] px-5  py-2.5 min-h-[calc(100svh-60px)] max-h-[calc(100svh-60px)] overflow-auto tracking-wider  absolute z-[1500] top-[0px] transition-transform duration-700 ease-in-out w-full"
     [ngClass]="{'  translate-y-full': !mobSidebarState, 'translate-y-[60px]   ease-in-out': mobSidebarState ,'hidden': hideSideBar}">
     <div>
         <div class="input-wrap mobile">
@@ -61,7 +61,7 @@
         </button>
     </div>
     <div class="mt-[14px] bg-[#1A2C38]  border-0 rounded-[10px]">
-        <ul class=" pb-[14px] border-b border-[#304553]">
+        <ul class=" pb-[14px] " [ngClass]="{'border-b border-[#304553]':languageSelectionState}">
             <li class="flex flex-row justify-start items-center gap-4 pl-5 pt-[24px] mt-5 cursor-pointer">
                 <div>
                     <img class="w-[13px] h-[17px]" src="/images/support.svg" alt="support">
@@ -92,13 +92,13 @@
                 <button (click)="toggleLanguageMenu()"
                     class="bg-[#0f5eb4] w-4 h-4 border-0 rounded-full flex justify-center items-center">
                     <img class="w-[7.61px] h-[4.69px] duration-300 "
-                        [ngClass]="[!languageSelectionState ? 'rotate-180 ' :'rotate-0']" src="/images/arrow-down.svg"
+                        [ngClass]="[!languageSelectionState ? ' rotate-0 ' :'rotate-180']" src="/images/arrow-down.svg"
                         alt="language_selector">
                 </button>
             </li>
         </ul>
-
-        <ul class="pb-[58px]" [ngClass]="[!languageSelectionState ? 'opacity-0' :'']">
+        @if(languageSelectionState){
+        <ul class="pb-[58px]">
             @for (item of languages; track $index) {
             <li class="mt-[14px] px-5 flex flex-row justify-between items-center">
                 <div class="text-[14px] font-semibold leading-[16.71px] text-white">
@@ -120,6 +120,9 @@
             }
 
         </ul>
+        }
+
+
     </div>
     }
 

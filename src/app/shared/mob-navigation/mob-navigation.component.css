@@ -11,7 +11,7 @@
     @apply flex flex-col justify-center items-center gap-1 cursor-pointer  w-[56px] col-span-1;
   }
   .home_wrapper {
-    @apply flex flex-col justify-center items-center gap-1 cursor-pointer bg-[#0E212E]  border-0 rounded-full col-span-2  w-[79px] h-[100px];
+    @apply flex flex-col justify-center items-center gap-1 cursor-pointer bg-[#0E212E]  border-0 rounded-full col-span-2  w-[79px] h-[90px];
   }
   .profile_wrapper {
     @apply flex flex-col justify-end items-center gap-1 cursor-pointer  w-[50px] col-span-1;
