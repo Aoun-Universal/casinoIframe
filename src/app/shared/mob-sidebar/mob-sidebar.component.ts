@@ -14,10 +14,12 @@ export class MobSidebarComponent implements OnInit {
   mobSidebarState: boolean = false;
   hideSideBar: boolean = false;
   selectedLanguage: string = 'English';
+  selectedOption: string = 'xyz';
   viewType = 'Profile';
   timeoutId: any;
   toggleCoolDown: boolean = false;
   languageSelectionState: boolean = false;
+  optionSelectionState: boolean = false;
   constructor(private toggle: ToggleService) {}
 
   ngOnInit(): void {
@@ -28,6 +30,10 @@ export class MobSidebarComponent implements OnInit {
 
   toggleLanguageMenu() {
     this.languageSelectionState = !this.languageSelectionState;
+  }
+
+  toggleOptionMenu() {
+    this.optionSelectionState = !this.optionSelectionState;
   }
 
   getViewType() {
@@ -82,6 +88,9 @@ export class MobSidebarComponent implements OnInit {
   // }
   onLanguageChange(language: string): void {
     this.selectedLanguage = language;
+  }
+  onOptionChange(option: string) {
+    this.selectedOption = option;
   }
   gameList = [
     {
