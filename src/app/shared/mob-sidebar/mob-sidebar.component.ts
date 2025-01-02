@@ -88,7 +88,7 @@ export class MobSidebarComponent implements OnInit {
 
         this.timeoutId = setTimeout(() => {
           this.hideSideBar = true;
-        }, 500);
+        }, 700);
       } else {
         this.hideSideBar = false;
       }
